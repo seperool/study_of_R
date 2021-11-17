@@ -1,0 +1,6 @@
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("data.table")
+install.packages("janitor")
+install.packages("DescTools")
+install.packages("tidyverse")
