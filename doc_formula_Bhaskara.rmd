@@ -1,0 +1,29 @@
+---
+title: "Exemplo de documento - Fórmula de Bhaskara"
+output:
+     html_document:
+       toc: yes
+---
+
+# A fórmula de Bhaskara
+
+É um método resolutivo para equações do segundo grau cujo nome homenageia o grande matemático indiano que a demostrou. Essa fórmula nada mais é do que um método para encontrar as raízes reais de uma equação do segundo grau fazendo uso apenas de seus coeficientes.
+
+## A equação do segundo grau
+
+Uma equação do segundo grau é representada matematicamente por:
+
+$ax²+bx+c$, sendo $a\ne 0$
+
+## A fórmula de Bhaskara
+
+$\Delta$ = $b²-4ac$
+
+$x_1 = \frac{-b -\sqrt{\Delta}}{2a}$
+
+$x_2 = \frac{-b +\sqrt{\Delta}}{2a}$
+
+---
+  # Ainda trabalhando no texto, porem o texto base esta pronto.
+---
+
