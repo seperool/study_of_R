@@ -7,7 +7,7 @@ output:
 
 # A fórmula de Bhaskara
 
-É um método resolutivo para equações do segundo grau cujo nome homenageia o grande matemático indiano que a demostrou. Essa fórmula nada mais é do que um método para encontrar as raízes reais de uma equação do segundo grau fazendo uso apenas de seus coeficientes.
+**É um método resolutivo para equações do segundo grau cujo nome homenageia o grande matemático indiano que a demostrou. Essa fórmula nada mais é do que um método para encontrar as raízes reais de uma equação do segundo grau fazendo uso apenas de seus coeficientes.**
 
 ## A equação do segundo grau
 
@@ -22,6 +22,8 @@ $\Delta$ = $b²-4ac$
 $x_1 = \frac{-b -\sqrt{\Delta}}{2a}$
 
 $x_2 = \frac{-b +\sqrt{\Delta}}{2a}$
+
+![Logo R](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg){width=40, height=40}
 
 ---
   # Ainda trabalhando no texto, porem o texto base esta pronto.
