@@ -1,0 +1,42 @@
+---
+output:
+     html_document: default
+---
+
+# Curriculum Vitae
+
+---
+
+**Seu_nome**
+
+**Seu telefone e seu e-mail**
+
+![](/home/serigo/R/kisspng-computer-icons-silhouette-user-profile-5ada934abfd286.8113450015242739947857.png){height=60}
+
+## Dados Pessoais
+
+---
+
+**Natural de **: Cidade
+
+**RG**: 00.000.000-0
+
+**CPF**: 000.000.000-00
+
+**Endereço**: Av. XXXX, nº XX, CEP, CIDADE, ESTADO.
+
+## Formação acadêmica
+
+---
+
+* Bacharelado em XXXX pela Universidade de XXXX no ano de xxxx.
+
+## Experiência
+
+---
+
+* Descrição 1
+
+* Descrição 2
+
+---
