@@ -62,3 +62,28 @@ filial
 filial = as.character(filial) #por fim, de numerico de volta para caractere
 is.character(filial)
 filial
+
+#---
+
+# Operador pipe
+#concatena linhas de comando na ordem de execução
+
+#modo tradicional sem uso do pipe
+summary(dados1)
+
+#modo pipe
+library(magrittr)
+dados1 %>% summary()
+
+#exemplo mais complexo uso do pipe
+#dados1, selecionar coluna filial e quinzena, visualizar apenas resultados quinzena 1
+# OBS.: lembrar de carregar o pacote no inicio do script "magrittr"
+library(magrittr)
+#agora aplicamos o procedimento com pipe
+dados1 %>%
+  dplyr::select(filial, quinzena) %>%
+  dplyr::filter(quinzena==1)
+
+#sem uso do pipe
+dplyr::filter(dplyr::select(dados1, filial,quinzena), quinzena==1)
+#maior dificuldade de entender o que esta acontecendo
