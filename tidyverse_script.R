@@ -87,3 +87,26 @@ dados1 %>%
 #sem uso do pipe
 dplyr::filter(dplyr::select(dados1, filial,quinzena), quinzena==1)
 #maior dificuldade de entender o que esta acontecendo
+
+#---
+
+#Manipulando dados com o dplyr
+#select
+library(magrittr)
+library(dplyr)
+dados1 %>% #indica a tabela, concatena...
+  dplyr::select(filial,quinzena, valor_compra) #seleciona as colunas a serem mostradas
+
+#pull
+#extrai uma coluna de uma tabela de dados na forma de um vetor
+library(magrittr)
+library(dplyr)
+vetor= dados1 %>% pull(filial)
+vetor1= dados1 %>% pull(2) #posição da coluna da esquerda para direita
+vetor2= dados1 %>% pull(-5) #posição da coluna da direita para esquerda
+vetor
+vetor1
+vetor2
+
+#filter
+#filtra os dados, necessario conhecer alguns comandos logicos.
