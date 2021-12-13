@@ -110,3 +110,33 @@ vetor2
 
 #filter
 #filtra os dados, necessario conhecer alguns comandos logicos.
+  #comandos logicos:
+    #iqualdade: ==
+    #diferença: !=
+    #desiqualdade: >;<;>=;<=
+    #consições logicas:& (e); | (ou); ! (negação)
+library(magrittr)
+library(dplyr)
+#somente a filial A
+dados1 %>%
+  filter(filial=="A")
+#filial A ou n_itens iqual a 1
+dados1 %>%
+  filter(filial =="A" | n_itens == 1)
+#filial B e quinzena iqual a 2
+dados1 %>%
+  filter(filial=="B" & quinzena == 2)
+
+#distinct
+#comando elimina a redundancia de dados de uma determinada coluna ou conjunto de colunas
+library(magrittr)
+library(dplyr)
+#extraindo linhas distintas para a coluna n_itens
+dados1 %>%
+  distinct(n_itens)
+#extraindo as linhas distintas para as colunas filial, quinzena e descontro_perc
+dados1 %>%
+  distinct(filial, quinzena, desconto_perc)
+#extrair todas as linhas distintas do banco de dados dados1
+dados1 %>%
+  distinct()
