@@ -101,7 +101,7 @@ dados1 %>% #indica a tabela, concatena...
 #extrai uma coluna de uma tabela de dados na forma de um vetor
 library(magrittr)
 library(dplyr)
-vetor= dados1 %>% pull(filial)
+vetor= dados1 %>% pull(filial) #definindo a coluna em especifico 
 vetor1= dados1 %>% pull(2) #posição da coluna da esquerda para direita
 vetor2= dados1 %>% pull(-5) #posição da coluna da direita para esquerda
 vetor
