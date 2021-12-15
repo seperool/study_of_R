@@ -172,3 +172,20 @@ dados1 %>%
   arrange(n_itens,valor_compra) %>%
   filter(valor_compra > 100) %>%
   select(filial,n_itens,valor_compra)
+
+#---
+
+#mutate e transmute
+  #mutate
+  #atraves de mutate é possivel criar novas colunas na base de dados
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  mutate(vmci = round(valor_compra/n_itens))
+  
+  #transmute
+  #faz o mesmo que mutate, mas não adiciona a nova variavel as colunas originais
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  transmute(vmci = valor_compra/n_itens)
