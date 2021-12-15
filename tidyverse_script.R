@@ -162,3 +162,13 @@ dados1 %>%
   #ou:
 dados1 %>%
   arrange(-n_itens,filial)
+
+#---
+
+#funções dplyr juntas ao mesmo tempo
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  arrange(n_itens,valor_compra) %>%
+  filter(valor_compra > 100) %>%
+  select(filial,n_itens,valor_compra)
