@@ -211,3 +211,22 @@ dados1 %>%
   select(filial, cupom) %>%
   filter(filial == "B") %>%
   summarise(cupons_distintos = n_distinct(cupom))
+
+#Group_by
+  #para agruparmos dados
+#observando o numero de cupons distintos por cada filial
+dados1 %>%
+  group_by(filial)%>%
+  summarise(cupons_distintos = n_distinct(cupom))
+
+#Observando o total de compras por cada filial
+dados1 %>%
+  group_by(filial) %>%
+  summarise(compra_total = sum(valor_compra))
+
+#Observando o total de itens vendidos por cada filial
+dados1 %>%
+  group_by(filial) %>%
+  summarise(item_total= sum(n_itens))
+
+#casos especiais summarise & group_by
