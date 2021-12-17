@@ -189,3 +189,25 @@ library(magrittr)
 library(dplyr)
 dados1 %>%
   transmute(vmci = valor_compra/n_itens)
+
+#summarise & group_by
+  #summarise
+  #o summarise nos permite responder perguntas sobre nossos dados atraves da...
+  #aplicação de funções que resumem as variaveis.
+  #possibilitando produzir tabelas resumidas do banco de dados
+library(magrittr)
+library(dplyr)
+#observando o numero de observaçoes da base de dados
+dados1 %>%
+  summarise(contagem = n())
+
+#observando numero de filiais distintas
+dados1 %>%
+  select(filial)%>%
+  summarise(filiais_distintas = n_distinct(filial))
+
+#observando o numero de cupons distintos na filial "B"
+dados1 %>%
+  select(filial, cupom) %>%
+  filter(filial == "B") %>%
+  summarise(cupons_distintos = n_distinct(cupom))
