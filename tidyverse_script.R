@@ -230,3 +230,18 @@ dados1 %>%
   summarise(item_total= sum(n_itens))
 
 #casos especiais summarise & group_by
+#mais de um summarise
+#observando o numero de cupons vendidos, o total de itens vendidos e o total do valor de compras em cada filial
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  group_by(filial)%>%
+  summarise(cupom_distintos = n_distinct(cupom),
+            itens_total = sum(n_itens),
+            compra_total = sum(valor_compra))
+
+#obter media e desvio-padrão do valor_compra agrupado por quinzena, com duas casas decimais
+dados1 %>%
+  group_by(quinzena) %>%
+  summarise(media = mean(valor_compra) %>%
+              round(2))
