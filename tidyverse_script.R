@@ -245,3 +245,31 @@ dados1 %>%
   group_by(quinzena) %>%
   summarise(media = mean(valor_compra) %>%
               round(2))
+
+#---
+
+#tibble
+#adicionar coluna: add_column
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  tibble::add_column(adicionada = 1:23)
+
+#definindo o lugar onde deve ser adicionado a nova coluna
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  tibble::add_column(adicionada = 1:23, .before = 1)
+#obs.: também pode definir antes da coluna em especifico, .before = "cupom"
+
+#adicionando linha: add_row
+library(magrittr)
+library(dplyr)
+dados1 %>%
+  tibble::add_row(cupom=100,filial="A",valor_compra=10,n_itens=1,desconto_perc=0,quinzena=1,.before = 1)
+
+#renomeando uma coluna: rename
+library(magrittr)
+library(dplyr)
+dados %>%
+  rename(venda = valor_compra)
