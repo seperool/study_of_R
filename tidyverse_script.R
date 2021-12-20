@@ -273,3 +273,21 @@ library(magrittr)
 library(dplyr)
 dados %>%
   rename(venda = valor_compra)
+
+#---
+#Combinando tabela de dados
+#comandos: bind_cols & bind_rows
+#une duas tabelas lado a lado, ou sobrepostas
+
+#bind_cols
+library(magrittr)
+library(dplyr)
+#criando duas tabelas x e y, apartir de dados1
+x = dados1 %>% select(cupom, filial, valor_compra)
+x
+y=dados1 %>% select(cupom,n_itens)
+y
+#unindo x e y pelas colunas
+View(bind_cols(x,y))
+#obs.: para que essa combinação seja possivel é necessario o mesmo numero de linhas nas duas tabelas
+#obs2.: como tem a coluna "cupom" nas duas tabelas é acrescentado automaticamente um numero ao nome da coluna para diferenciar
