@@ -285,9 +285,26 @@ library(dplyr)
 #criando duas tabelas x e y, apartir de dados1
 x = dados1 %>% select(cupom, filial, valor_compra)
 x
-y=dados1 %>% select(cupom,n_itens)
+y = dados1 %>% select(cupom,n_itens)
 y
 #unindo x e y pelas colunas
 View(bind_cols(x,y))
 #obs.: para que essa combinação seja possivel é necessario o mesmo numero de linhas nas duas tabelas
 #obs2.: como tem a coluna "cupom" nas duas tabelas é acrescentado automaticamente um numero ao nome da coluna para diferenciar
+
+#bind_rows
+library(magrittr)
+library(dplyr)
+#criando duas tabelas x e y, apartir da tabela de dados1
+x = dados1 %>% 
+  select (cupom, filial, valor_compra) %>%
+  filter(filial == "A")
+x
+y = dados1 %>%
+  select(cupom, n_itens) %>%
+  filter(n_itens == 1)
+y
+#unindo x e y pelas linhas
+bind_rows(x,y)
+#obs.: para fazer essa combinação, não é necessario que o numero de linhas ou colunas seja iguais em x e y
+#obs2.: observe que quando não há correspondencia o comando retorna NA
