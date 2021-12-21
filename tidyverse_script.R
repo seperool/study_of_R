@@ -308,3 +308,33 @@ y
 bind_rows(x,y)
 #obs.: para fazer essa combinação, não é necessario que o numero de linhas ou colunas seja iguais em x e y
 #obs2.: observe que quando não há correspondencia o comando retorna NA
+
+#---
+#inner_join
+#junta as tabelas pela intersecção
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom,filial,valor_compra)
+x
+y = dados1 %>%
+  select(cupom, filial,n_itens)
+y
+#unindo x e y pela intersecção da coluna chave
+inner_join(x,y)
+#esse comando une x e y através da intersecção das colunas chaves
+
+#inner_join com condições
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom, filial, valor_compra) %>%
+  filter(valor_compra >500)
+x
+y = dados1 %>%
+  select(filial,n_itens) %>%
+  filter(n_itens < 8)
+y
+inner_join(x,y)
+#quando unidos as condições se somam
+#cuidado quando unir tabelas para não mesclar informações que não queira
