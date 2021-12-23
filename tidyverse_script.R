@@ -338,3 +338,39 @@ y
 inner_join(x,y)
 #quando unidos as condições se somam
 #cuidado quando unir tabelas para não mesclar informações que não queira
+
+#---
+#left_join & right_join
+#left_join
+#a tabela final será o resultado de todas as colunas da tabela a esquerda
+#que possuam pelo menos uma coluna em comum, a coluna chave
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom, filial, valor_compra) %>%
+  filter(valor_compra > 500)
+x
+y = dados1 %>%
+  select(filial, n_itens) %>%
+  filter(n_itens < 8)
+y
+left_join(x,y)
+#a coluna filial é a coluna chave
+#ao juntar x e y pela esqueda, a tabela final resultou nas colunas de x que possuem correspondentes em y
+#a base da junção é a tabela x
+
+#right_join
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom, filial, valor_compra) %>%
+  filter(valor_compra > 500)
+x
+y = dados1 %>%
+  select(filial, n_itens) %>%
+  filter(n_itens < 8)
+y
+right_join(x,y)
+#a coluna filial é a coluna chave
+#ao juntar x e y pela esqueda, a tabela final resultou nas colunas de y que possuem correspondentes em x
+#a base da junção é a tabela y
