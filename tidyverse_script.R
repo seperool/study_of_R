@@ -374,3 +374,22 @@ right_join(x,y)
 #a coluna filial é a coluna chave
 #ao juntar x e y pela esqueda, a tabela final resultou nas colunas de y que possuem correspondentes em x
 #a base da junção é a tabela y
+
+#---
+#full_join
+#união de todas as colunas de x e y
+#que possum pelo menos uma coluna em comum, coluna chave
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom, filial, valor_compra) %>%
+  filter(valor_compra > 500)
+x
+y = dados1 %>%
+  select(filial, n_itens) %>%
+  filter(n_itens < 8)
+y
+full_join(x,y)
+#filial é a coluna chave
+#a tabela é as combinações de x e y, combinações possiveis de serem feitas
+#cuidado com as combinações
