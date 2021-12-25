@@ -393,3 +393,27 @@ full_join(x,y)
 #filial é a coluna chave
 #a tabela é as combinações de x e y, combinações possiveis de serem feitas
 #cuidado com as combinações
+
+#---
+#intersect, union e setdiff
+library(magrittr)
+library(dplyr)
+x = dados1 %>%
+  select(cupom, filial, valor_compra)%>%
+  filter(valor_compra > 500)
+x
+y = dados1 %>%
+  select(cupom, filial, valor_compra)%>%
+  filter(valor_compra < 700)
+y
+#obtendo a intersecção
+intersect(x,y)
+
+#obtendo a união
+union(x,y)
+
+#obtendo a diferença, tudo que esta em x e não esta em y
+setdiff(x,y)
+
+#obtendo a diferença, tudo que esta em y e não esta em x
+setdiff(y,x)
