@@ -417,3 +417,21 @@ setdiff(x,y)
 
 #obtendo a diferença, tudo que esta em y e não esta em x
 setdiff(y,x)
+
+#---
+#setequal
+#verifica se as tabelas possuem os mesmos conjuntos de dados
+#sem se emportar com a ordem dos dados
+library(magrittr)
+library(dplyr)
+x = dados1 %>% filter(valor_compra > 0)
+y = dados1 %>% filter(valor_compra > 500)
+#testando se as duas tabelas são iguais
+setequal(x,dados1)
+setequal(y,dados1)
+
+#unindo as colunas de x e y
+z= full_join(y,x)
+z
+
+setequal(z,dados1)
