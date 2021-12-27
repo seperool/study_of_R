@@ -89,7 +89,7 @@ dplyr::filter(dplyr::select(dados1, filial,quinzena), quinzena==1)
 #maior dificuldade de entender o que esta acontecendo
 
 #---
-
+#dplyr
 #Manipulando dados com o dplyr
 #select
 library(magrittr)
@@ -202,11 +202,15 @@ dados1 %>%
   summarise(contagem = n())
 
 #observando numero de filiais distintas
+library(magrittr)
+library(dplyr)
 dados1 %>%
   select(filial)%>%
   summarise(filiais_distintas = n_distinct(filial))
 
 #observando o numero de cupons distintos na filial "B"
+library(magrittr)
+library(dplyr)
 dados1 %>%
   select(filial, cupom) %>%
   filter(filial == "B") %>%
@@ -215,16 +219,22 @@ dados1 %>%
 #Group_by
   #para agruparmos dados
 #observando o numero de cupons distintos por cada filial
+library(magrittr)
+library(dplyr)
 dados1 %>%
   group_by(filial)%>%
   summarise(cupons_distintos = n_distinct(cupom))
 
 #Observando o total de compras por cada filial
+library(magrittr)
+library(dplyr)
 dados1 %>%
   group_by(filial) %>%
   summarise(compra_total = sum(valor_compra))
 
 #Observando o total de itens vendidos por cada filial
+library(magrittr)
+library(dplyr)
 dados1 %>%
   group_by(filial) %>%
   summarise(item_total= sum(n_itens))
@@ -435,3 +445,7 @@ z= full_join(y,x)
 z
 
 setequal(z,dados1)
+
+#---
+#tidyr
+#Organização de dados
