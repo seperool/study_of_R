@@ -675,14 +675,22 @@ dadosdieta = dadosdieta %>%
 
 dadosdieta %>%
   drop_na()
+#observe que quando aplicamos a função drop_na() foram eliminadas todas as linhas
+#que apresentavam algum NA.
 
 dadosdieta %>%
   drop_na(c(sexo,tempo))
+#ao especificar as colunas sexo e tempo nenhum NA foi eliminado
+#pois essas colunas não apresentam valor ausentes.
 
 #substituindo NA nas colunas especificas
 
 dadosdieta %>%
   replace_na(list(pacientes = "ausente", antes = 0, depois = 0))
+#ao aplicar a função replace_na(), podemos escolher tanto a coluna a ser aplicada
+#como  também definir o valor da substituição.
+#note que quando definimos em "pacientes" com NA o valor ausente
+#modificou-se a natureza da variavel de inteiro para caractere.
 
 #substituindo NA das colunas antes e depois
 
