@@ -661,3 +661,30 @@ dadosdieta
 
 dadosdieta %>%
   complete(sexo,nesting(tempo))
+
+#drop_na & replace_na
+#para liminar linhas que contenham valores ausentes (NA), usamos a função drop_na
+#ou podemos substituir os NA's por valores com a função replace_na
+
+#tabela inicial
+dadosdieta = dadosdieta %>%
+  complete(sexo,nesting(tempo))
+
+#eliminando as linhas com NA com base em todas as colunas 
+#ou considerando algumas colunas
+
+dadosdieta %>%
+  drop_na()
+
+dadosdieta %>%
+  drop_na(c(sexo,tempo))
+
+#substituindo NA nas colunas especificas
+
+dadosdieta %>%
+  replace_na(list(pacientes = "ausente", antes = 0, depois = 0))
+
+#substituindo NA das colunas antes e depois
+
+dadosdieta %>%
+  replace_na(list(antes=0,depois=0))
