@@ -143,4 +143,26 @@ aluno_x = aluno_x %>% pull(questões)
 aluno_x
 
 #9 - quais alunos acertaram a questão cinco?
+
 #10 - quais alunos erraram a questão cinco?
+
+#11 - visualize o numero de acertos de cada questão.
+
+#12 - visualize o numero de acertos de cada aluno.
+
+#13 - visualize o numero de acertos por cada aluno na forma de ranking,
+#do primeiro colocado ao ultimo.
+
+#14 - visualize o ranking das questões de acordo com o numero de acertos,
+#no topo do ranking as questões com menos acertos.
+
+#15 - crie uma tabela com três colunas:
+#a primeira "aluno"
+#a segunda "numero_acetos"
+#e a terceira "nota"
+#sendo nota = numero_acertos/5
+
+#16 - selecione da tabela "prova" as colunas
+#"alunos" e as colunas de "q1" a "q5".
+#crie uma nova tabela que una as questões de um a cinco
+#cujos valores ficarão separados por espaço em branco.
