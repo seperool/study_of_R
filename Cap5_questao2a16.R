@@ -10,6 +10,7 @@ prova=data.frame(aluno=1:20,q1,q2,q3,q4,q5,q6,q7,q8,q9,
                  q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50)
 prova[1:6,1:10]
 
+#---
 #3 - organize od dados de prova em duas colunas, uma com os alunos e outra com
 #as questões
 
@@ -23,6 +24,8 @@ prova %>%
                      q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
                      q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50),sep = ",")
 View(prova)
+
+#---
 #4 - organize as questões em dois blocos, o primeiro com questões de 1 a 25
 #e o segundo com questões de 26 a 50
 
@@ -37,6 +40,7 @@ prova %>%
                      q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
                      q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50),sep = ",")
 
+#---
 #5 - ordene a tabela "nota" de acordo com a ordem crescente do numero de acertos
 #da questão um
 library(magrittr) #operador pipe %>%, concatena linhas de comando
@@ -46,6 +50,7 @@ nota = prova %>%
   arrange(q1)
 nota
 
+#---
 #6 - quais questões o aluno um acertou?
 
 library(magrittr) #operador pipe %>%, concatena linhas de comando
@@ -78,6 +83,7 @@ aluno_x = aluno_x %>%
 aluno_x = aluno_x %>% pull(questões)
 aluno_x
 
+#---
 #7 - quais questões o aluno cinco acertou?
 
 library(magrittr) #operador pipe %>%, concatena linhas de comando
@@ -110,6 +116,7 @@ aluno_x = aluno_x %>%
 aluno_x = aluno_x %>% pull(questões)
 aluno_x
 
+#---
 #8 - quais questões o aluno dez errou?
 
 library(magrittr) #operador pipe %>%, concatena linhas de comando
@@ -142,26 +149,49 @@ aluno_x = aluno_x %>%
 aluno_x = aluno_x %>% pull(questões)
 aluno_x
 
+#---
 #9 - quais alunos acertaram a questão cinco?
 
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(dplyr) #manipulação de dados
+
+#seleciona e filtra os alunos que acertaram a questão 5
+alunos_q5 = prova %>%
+  select(aluno) %>%
+  filter(q5 == 1)
+
+#transforma em vetor a lista dos alunos que acertaram a questão 5
+alunos_q5 = alunos_q5 %>%
+  pull(aluno)
+
+#mostra o vetor com o numero dos alunos que acertaram a questão 5
+alunos_q5
+
+#---
 #10 - quais alunos erraram a questão cinco?
 
+#---
 #11 - visualize o numero de acertos de cada questão.
 
+#---
 #12 - visualize o numero de acertos de cada aluno.
 
+#---
 #13 - visualize o numero de acertos por cada aluno na forma de ranking,
 #do primeiro colocado ao ultimo.
 
+#---
 #14 - visualize o ranking das questões de acordo com o numero de acertos,
 #no topo do ranking as questões com menos acertos.
 
+#---
 #15 - crie uma tabela com três colunas:
 #a primeira "aluno"
 #a segunda "numero_acetos"
 #e a terceira "nota"
 #sendo nota = numero_acertos/5
 
+#---
 #16 - selecione da tabela "prova" as colunas
 #"alunos" e as colunas de "q1" a "q5".
 #crie uma nova tabela que una as questões de um a cinco
