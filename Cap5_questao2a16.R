@@ -156,19 +156,34 @@ library(magrittr) #operador pipe %>%, concatena linhas de comando
 library(dplyr) #manipulação de dados
 
 #seleciona e filtra os alunos que acertaram a questão 5
-alunos_q5 = prova %>%
+alunos_q5a = prova %>%
   select(aluno) %>%
   filter(q5 == 1)
 
 #transforma em vetor a lista dos alunos que acertaram a questão 5
-alunos_q5 = alunos_q5 %>%
+alunos_q5a = alunos_q5a %>%
   pull(aluno)
 
 #mostra o vetor com o numero dos alunos que acertaram a questão 5
-alunos_q5
+alunos_q5a
 
 #---
 #10 - quais alunos erraram a questão cinco?
+
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(dplyr) #manipulação de dados
+
+#seleciona e filtra os alunos que erraram a questão 5
+alunos_q5e = prova %>%
+  select(aluno) %>%
+  filter(q5 == 0)
+
+#transforma em vetor a lista dos alunos que erraram a questão 5
+alunos_q5e = alunos_q5e %>%
+  pull(aluno)
+
+#mostra o vetor com o numero dos alunos que erraram a questão 5
+alunos_q5e
 
 #---
 #11 - visualize o numero de acertos de cada questão.
