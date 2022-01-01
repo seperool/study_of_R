@@ -24,6 +24,7 @@ prova %>%
                      q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
                      q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50),sep = ",")
 View(prova)
+prova
 
 #---
 #4 - organize as questões em dois blocos, o primeiro com questões de 1 a 25
@@ -188,8 +189,41 @@ alunos_q5e
 #---
 #11 - visualize o numero de acertos de cada questão.
 
+library(tibble) #tipo de data.frame, tabela
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(dplyr) #manipulação de dados
+library(tidyr) #organização de dados
+
+#remover coluna aluno
+n_acertos = tibble(prova) %>%
+  select(q1,q2,q3,q4,q5,q6,q7,q8,q9,
+         q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,
+         q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,
+         q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
+         q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50)
+
+#pivot_longer q's
+n_acertos = n_acertos %>%
+  pivot_longer(cols = c(q1,q2,q3,q4,q5,q6,q7,q8,q9,
+                        q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,
+                        q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,
+                        q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
+                        q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50), names_to = "questão" ,values_to = "acertos")
+
+#group_by e summary, somar acertos
+n_acertos = n_acertos %>%
+  group_by(questão) %>%
+  summarise(n_ac_q = sum(acertos))
+
+n_acertos = n_acertos %>%
+  arrange(questão)
+
+View(n_acertos)
+
 #---
 #12 - visualize o numero de acertos de cada aluno.
+
+
 
 #---
 #13 - visualize o numero de acertos por cada aluno na forma de ranking,
