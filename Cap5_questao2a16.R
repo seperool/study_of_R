@@ -317,8 +317,23 @@ ranking_questions
 #e a terceira "nota"
 #sendo nota = numero_acertos/5
 
+#bibliotecas
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(dplyr) #manipulação de dados
+library(tibble) #tipo de data.frame, "tabela"
+
+#nova tabela, colunas aluno e num_acertos
+aluno_nota = ac_aluno
+
+#nova coluna nota = (num_acertos/5)
+aluno_nota = aluno_nota %>%
+  mutate(nota = (num_acertos/5))
+
+aluno_nota
+
 #---
 #16 - selecione da tabela "prova" as colunas
 #"alunos" e as colunas de "q1" a "q5".
 #crie uma nova tabela que una as questões de um a cinco
 #cujos valores ficarão separados por espaço em branco.
+
