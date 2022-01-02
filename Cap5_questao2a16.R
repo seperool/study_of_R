@@ -275,7 +275,40 @@ ac_aluno
 #14 - visualize o ranking das questões de acordo com o numero de acertos,
 #no topo do ranking as questões com menos acertos.
 
+#bibliotecas
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(tibble) #tipo de data.frame, "tabela"
+library(dplyr) #manipulação de dados
+library(tidyr) #organização de dados
 
+#remover informação de numero dos alunos
+ranking_questions = prova %>%
+  select(q1,q2,q3,q4,q5,q6,q7,q8,q9,
+         q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,
+         q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,
+         q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
+         q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50)
+
+#transformar a tabela em tibble
+ranking_questions = tibble(ranking_questions)
+
+
+ranking_questions=ranking_questions %>%
+  pivot_longer(cols = c(q1,q2,q3,q4,q5,q6,q7,q8,q9,
+                        q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,
+                        q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,
+                        q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,
+                        q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50), 
+               names_to = "questions", values_to = "acertos")
+
+ranking_questions = ranking_questions %>%
+  group_by(questions) %>%
+  summarise(total_acertos = sum(acertos))
+
+ranking_questions = ranking_questions %>%
+  arrange(total_acertos)
+
+ranking_questions
 
 #---
 #15 - crie uma tabela com três colunas:
