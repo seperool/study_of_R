@@ -337,3 +337,21 @@ aluno_nota
 #crie uma nova tabela que una as questões de um a cinco
 #cujos valores ficarão separados por espaço em branco.
 
+#bibliotecas
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(tidyr) #organização de dados
+library(dplyr) #manipulação de dados
+library(tibble) #tipo de data.frame, "tabela"
+
+#criando nova tabela com base na tabela prova
+question_1a5 = prova %>%
+  select(aluno,q1,q2,q3,q4,q5)
+
+#transformando a tabela question_1a5 em tibble
+question_1a5 = tibble(question_1a5)
+
+#unindo as colunas q1 a q5, sepadando por espaço
+question_1a5 = question_1a5 %>%
+  unite("questions1a5", c(q1,q2,q3,q4,q5), sep = " ")
+
+question_1a5
