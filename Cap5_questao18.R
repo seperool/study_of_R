@@ -1,8 +1,8 @@
 #bibliotecas
-library(magrittr)
-library(tibble)
-library(dplyr)
-library(tidyr)
+library(magrittr) #operador pipe %>%, concatena linhas de comando
+library(tibble) #tipo de data.frame, "tabela"
+library(dplyr) #manipulação de dados
+library(tidyr) #organização de dados
 
 #b) crie uma tabela de dados para respresentar as respostas na forma larga
 #criação da tabela
@@ -19,23 +19,29 @@ pesquisa_longa
 View(pesquisa_longa)
 #c) quantas e quais marcas distintas foram mencionadas pelos entrevistados?
 
+#consulta marcas com mais de uma menção e quantidade de menções de cada marca
+#tabela
 consul_marcas = pesquisa_longa %>%
   group_by(marcas) %>%
   summarise("Qtd" = sum(preferencia)) %>%
   filter(Qtd > 0) %>%
   arrange(Qtd)
 
+#nome das marcas mencionadas
 marcas_vet = consul_marcas %>%
   pull(marcas)
 
+#quantidade de marcas mencionadas
 length(marcas_vet)
 
 #d) quantas menções cada marca recebeu, em ordem decrescente de menções?
 
+#quantidade de menções de cada marca
 mencoes = pesquisa_longa %>%
   group_by(marcas) %>%
   summarise(Q_mencoes = sum(preferencia))
 
+#ordem decrescente
 mencoes = mencoes %>%
   arrange(-Q_mencoes)
 
