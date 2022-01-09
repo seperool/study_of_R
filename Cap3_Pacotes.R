@@ -1,3 +1,4 @@
+install.packages("stringr") #pacote para trabalhar com strings, texto
 install.packages("rmarkdown") #pacote para fazer relatorio, rmd
 install.packages("knitr") #
 install.packages("data.table") #
