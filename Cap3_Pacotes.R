@@ -1,7 +1,7 @@
 install.packages("stringr") #pacote para trabalhar com strings, texto
 install.packages("rmarkdown") #pacote para fazer relatorio, rmd
 install.packages("knitr") #
-install.packages("data.table") #
+install.packages("data.table") #Manipulação de base de dados DataFrame
 install.packages("janitor") #
 install.packages("DescTools") #
 install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
