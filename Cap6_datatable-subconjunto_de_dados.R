@@ -57,4 +57,5 @@ dt[,c(lapply(.SD, sum),lapply(.SD,mean)),
    by = .(filial, quinzena)]
 
 #obs.: lembra a biblioteca magrittr, concatenando funções com o operador pipe "%>%"
+#aplica funções sobre os dados como a biblioteca dplyr, summarise,
 #associado a biblioteca dplyr agrupando os resultados com group_by
