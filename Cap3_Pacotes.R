@@ -5,7 +5,7 @@ install.packages("data.table") #Manipulação de base de dados DataFrame
 install.packages("janitor") #
 install.packages("DescTools") #
 install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
-#ggplot2 (visualização)
+#ggplot2 (elaboração de graficos)
 #tibble (tipo de data.frame, "tabela") 
 #tidyr (organização de dados)
 #readr (leitura de dados)
