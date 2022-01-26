@@ -157,3 +157,38 @@ turismo
 
 #segments(x0,y0, x1, y1,....)
 #desenha segmentos de linha a partir do ponto (x0,y0) ate (x1,y1)
+
+#---
+#JANELA GRAFICA
+#use o comando par(mfrow = c(i,j)) que prepara uma janela grafica
+#pronta para receber grafico em i linhas e em j colunas
+#assim se desejamos criar:
+
+#dois graficos lado a lado devemos fazer
+#par(mfrow = c(1,2))
+
+#dois graficos, um abaixo do outro devemos fazer
+#par(mfrow = c(2,1))
+
+#quatro graficos, sendo dois em cada linha fazemos
+#par(mfrow = c(2,2))
+
+#se omitirmos esse comando será criado um unico grafico na janela grafica
+
+#outros parametros podem ser definidos em par()
+#consulte a documentação de ajuda do R para ajustar algum parametro alem dos
+#indicados aqui
+
+#par(mar = c(5,4,4,2)) é o padrão do R para definir numero de linhas
+#apartir das margens da janela grafica na ordem:
+#baixo, esquerda, cima e direito.
+#isso impacta no espaço dos titulos do grafico
+#mude esses valores para o melhor ajuste de seu grafico
+
+#par(mai = c(x1, x2, x3, x4)) define a medida das margens em polegadas:
+#baixo, esquerda, cima e direita
+#1pol = 2,54cm
+#apartir das margens da janela grafica
+
+#utilize dev.off() para fechar a janela de devices,
+#isto é, os dispositivos graficos estabelecidos e retornar para o padrão
