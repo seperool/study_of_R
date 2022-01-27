@@ -21,6 +21,7 @@ turismo
 
 #barplot(x)
 #produz um grafico de colunas do vetor x
+#grafico de barras
 
 #boxplot(x)
 #produz boxplot de x, distribuição de dados de varios grupos
