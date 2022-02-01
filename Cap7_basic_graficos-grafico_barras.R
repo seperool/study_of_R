@@ -1,8 +1,8 @@
 #declarando bibliotecas
-library(readr)
-library(magrittr)
-library(dplyr)
-library(tibble)
+library(readr) #leitura de dados
+library(magrittr) #operador pipe, concatena linhas de comando
+library(dplyr) #manipulação de dados
+library(tibble) #tipo de data.frame, tabela
 
 #importando dados
 turismo <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
@@ -32,6 +32,9 @@ x
 y
 
 #definindo parametros para a janela grafica
+#mar = margens do grafico em relação a margem
+#mai = margem em polegada
+#c(baixo, esquerda, cima, direita)
 par(mar = c(9, 5, 4, 2), mai = c(1.8, 1, 0.8, 0.4))
 
 barplot(y, names.arg = x,
@@ -64,16 +67,33 @@ x
 y
 
 #definindo parametros para a janela grafica
-
 #mar = margens do grafico em relação a margem
 #mai = margem em polegada
+#c(baixo, esquerda, cima, direita)
 par(mar = c(5,4,4,2), mai = c(1,0.8,0.8,0.4))
 
-barplot(y, names.arg = x,
+xbar = barplot(y, names.arg = x,
         main = "Chegadas de turistas ao Brasil em 2012",
         ylab = "Chegadas por mil",
         xlab = "Estados",
-        cex.main = 1.5,
+        cex.main = 1.5, #controla o tamanho da fonte do textos
         cex.names = 1,
         axisnames = T, #inclui os nomes das categorias no eixo x
-        las = 2)
+        las = 2, #controla a orientação dos rotulos dos eixos
+        ylim = c(0,1.2*max(y)) #ajuste no eixo y
+        )
+
+#adicionando os valores de y no topo de cada barra de xbar
+text(xbar, #variavel com o grafico
+     y, #variavel a ser trabalhada
+     label = round(y,2), #arredondamento de duas casas decimais
+     pos = 3, #substitui qualquer valor de ajuste fornecido mar e mai (?)
+     cex= 0.8, #controla o tamanho da fonte do texto
+     col = "black") #comando para colorir diversos itens do grafico
+
+#fechando dispositivo grafico
+dev.off()
+
+#---
+#grafico barra na horizontal
+
