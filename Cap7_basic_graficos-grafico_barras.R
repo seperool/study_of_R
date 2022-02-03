@@ -97,3 +97,24 @@ dev.off()
 #---
 #grafico barra na horizontal
 
+#categorias
+x <- tabula_Estados$Estado[order(tabula_Estados$cheg_2012)]
+y <- sort(tabula_Estados$cheg_2012)/1000
+x
+y
+
+#definindo parametros para a janela grafica
+par(mar = c(6,8,4,2), mai = c(1.2,1.6,0.8,0.4))
+
+barplot(y,names.arg = x, #eixos
+        main = "Chegadas de turistas ao Brasil em 2012", #titulo
+        xlab = "Chegadas por mil", #titulo eixo x
+        cex.main = 1.5, #tamanho da fonte titulo
+        cex.names = 1, #tamanho da fonte titulo eixos
+        axisnames = T, 
+        las = 2, #controla a orientação dos rotulos dos eixos
+        horiz = TRUE #coloca o grafico na horizontal
+        )
+
+#fechando dispositivo grafico
+dev.off()
