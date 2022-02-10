@@ -25,4 +25,3 @@ Cap5_tidyr-pivot_longer__gather_ex2.R
 Cap5_tidyr-pivot_wider__spread.R
 Cap5_tidyr-separate.R
 Cap5_tidyr-unite.R
-Cap7_basic_graficos-grafico_circular.R
