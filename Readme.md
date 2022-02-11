@@ -5,11 +5,9 @@ Editora: ALTA BOOKS EDITORA
 Atualmente estou estudando Graficos de linhas
 
 Em andamento:
-Cap7_basic_graficos-grafico_de_linhas.R
+Cap7_basic_graficos-grafico_de_linhas-comparar_series.R
 
 Vazios:
-Cap7_basic_graficos-grafico_de_linhas-comparar_series.R
-Cap7_basic_graficos-grafico_de_linhas-cores.R
 
 Finalizando detalhes:
 Cap5_tibble-inner_join_part1.R
@@ -24,3 +22,5 @@ Cap5_tidyr-pivot_longer__gather_ex2.R
 Cap5_tidyr-pivot_wider__spread.R
 Cap5_tidyr-separate.R
 Cap5_tidyr-unite.R
+Cap7_basic_graficos-grafico_de_linhas.R
+Cap7_basic_graficos-grafico_de_linhas-cores.R
