@@ -12,7 +12,6 @@ Cap7_basic_graficos-grafico_de_linhas-comparar_series.R
 Cap7_basic_graficos-grafico_de_linhas-cores.R
 
 Finalizando detalhes:
-Cap5_tibble-full_join.R
 Cap5_tibble-inner_join_part1.R
 Cap5_tibble-inner_join_part2.R
 Cap5_tibble-intersect__union__setdiff.R
