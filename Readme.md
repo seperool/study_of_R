@@ -51,6 +51,8 @@ Editora: ALTA BOOKS EDITORA
             -   *add_row*  
             -   *rename*  
         2.  combinando tabelas de dados:  
+            -   *bind_cols*  
+            -   *bind_rows*  
             -   *inner_join*  
             -   *left_join*  
             -   *right_join*  
