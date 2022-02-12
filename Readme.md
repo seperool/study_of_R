@@ -90,7 +90,6 @@ Atualmente estou estudando Grafico de linhas
 
 ## Finalizando detalhes:
 
--   Cap5_tibble-inner_join_part1.R  
 -   Cap5_tibble-inner_join_part2.R  
 -   Cap5_tibble-intersect\_\_union\_\_setdiff.R  
 -   Cap5_tibble-left_join.R  
