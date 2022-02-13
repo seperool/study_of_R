@@ -80,11 +80,9 @@ Editora: ALTA BOOKS EDITORA
 
 ## Assunto em andamento:
 
-Atualmente estou estudando Grafico de linhas
+Atualmente estou estudando Grafico de dispersão
 
 ## Em andamento:
-
--   Cap7_basic_graficos-grafico_de_linhas-comparar_series.R
 
 ## Vazios:
 
@@ -103,3 +101,4 @@ Atualmente estou estudando Grafico de linhas
 -   Cap5_tidyr-unite.R  
 -   Cap7_basic_graficos-grafico_de_linhas.R  
 -   Cap7_basic_graficos-grafico_de_linhas-cores.R  
+-   Cap7_basic_graficos-grafico_de_linhas-comparar_series.R  

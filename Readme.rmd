@@ -3,12 +3,12 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "Fevereiro de 2022"
 output:
-  md_document:
-    variant: markdown_github
-  pdf_document: default
-  word_document: default
   html_document:
     df_print: paged
+  pdf_document: default
+  word_document: default
+  md_document:
+    variant: markdown_github
 ---
 
 # Objetivo
@@ -92,10 +92,9 @@ Editora: ALTA BOOKS EDITORA
 # Andamento dos Estudos
 
 ## Assunto em andamento:
-Atualmente estou estudando Grafico de linhas
+Atualmente estou estudando Grafico de dispersão
 
 ## Em andamento:
-- Cap7_basic_graficos-grafico_de_linhas-comparar_series.R
 
 ## Vazios:
 
@@ -113,3 +112,4 @@ Atualmente estou estudando Grafico de linhas
 - Cap5_tidyr-unite.R\
 - Cap7_basic_graficos-grafico_de_linhas.R\
 - Cap7_basic_graficos-grafico_de_linhas-cores.R\
+- Cap7_basic_graficos-grafico_de_linhas-comparar_series.R\
