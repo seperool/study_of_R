@@ -108,22 +108,19 @@ Editora: ALTA BOOKS EDITORA
 
 ## Assunto em andamento:
 
-Atualmente estou estudando histograma  
+Atualmente estou estudando boxplot  
 
 ## Em andamento:
 
-Cap7_basic_graficos-grafico_histograma.R  
+-   Cap7_basic_graficos-grafico_boxplot.R  
 
 ## Vazios:
 
--   Cap7_basic_graficos-grafico_histograma.R  
 -   Cap7_basic_graficos-grafico_boxplot.R  
 
 ## Finalizando detalhes:
 
 -   Cap5_tibble-intersect\_\_union\_\_setdiff.R  
--   Cap5_tibble-left_join.R  
--   Cap5_tibble-right_join.R  
 -   Cap5_tidyr-complete.R  
 -   Cap5_tidyr-drop_na\_\_replace_na.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
@@ -135,3 +132,4 @@ Cap7_basic_graficos-grafico_histograma.R
 -   Cap7_basic_graficos-grafico_de_linhas-cores.R  
 -   Cap7_basic_graficos-grafico_de_linhas-comparar_series.R  
 -   Cap7_basic_graficos-grafico_de_dispersao.R  
+-   Cap7_basic_graficos-grafico_histograma.R  
