@@ -56,14 +56,26 @@ Editora: ALTA BOOKS EDITORA
             -   *rename*  
         2.  combinando tabelas de dados:  
             -   *bind_cols*  
+
             -   *bind_rows*  
+
             -   *inner_join*  
+
             -   *left_join*  
+
             -   *right_join*  
+
             -   *full_join*  
+
             -   *intersect*  
+                retorna a interseção entre tabelas.  
+
             -   *union*  
+                retorna a união de tabelas.  
+
             -   *setdiff*  
+                retorna a diferença entre tabelas.  
+
             -   *setequal*  
 
     -   **tidyr**  
@@ -120,7 +132,6 @@ Atualmente estou estudando boxplot
 
 ## Finalizando detalhes:
 
--   Cap5_tibble-intersect\_\_union\_\_setdiff.R  
 -   Cap5_tidyr-complete.R  
 -   Cap5_tidyr-drop_na\_\_replace_na.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
