@@ -43,17 +43,41 @@ Editora: ALTA BOOKS EDITORA
 
         1.  munipulação de dados:  
             -   *select*  
+                seleciona e retorna as colunas selecionadas da tabela.  
+
             -   *pull*  
+                extrai uma coluna de uma tabela de dados e retorna ela
+                como vetor.  
+
             -   *filter*  
+                filtra linhas.  
+
             -   *distinct*  
+                remove linhas com valores repetidos.  
+
             -   *arrange*  
+                reordena ou combina linhas.  
+
             -   *mutate*  
+                cria novas colunas.  
+
             -   *transmute*  
+                cria novas colunas, mas não adiciona na base de dados.  
+
             -   *summarise*  
+                sumariza valores.  
+
             -   *group_by*  
+                permite operações por grupo.  
+
             -   *add_column*  
+                adiciona novas colunas.  
+
             -   *add_row*  
+                adiciona novas linhas.  
+
             -   *rename*  
+                renomeia uma coluna.  
         2.  combinando tabelas de dados:  
             -   *bind_cols*  
 
@@ -82,11 +106,19 @@ Editora: ALTA BOOKS EDITORA
         Organização de dados.  
 
         -   *pivot_longer* ou *gather*  
+
         -   *pivot_wider* ou *spread*  
+
         -   *separate*  
+
         -   *unite*  
+
         -   *complete*  
+            Completa as combinações de duas colunas, se não houver valor
+            completa com *NA*.  
+
         -   *drop_na*  
+
         -   *replace_na*  
 
 -   Cap 6 - Pacote data.table  
@@ -132,7 +164,6 @@ Atualmente estou estudando boxplot
 
 ## Finalizando detalhes:
 
--   Cap5_tidyr-complete.R  
 -   Cap5_tidyr-drop_na\_\_replace_na.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex2.R  
