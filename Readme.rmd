@@ -3,10 +3,10 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "Fevereiro de 2022"
 output:
-  pdf_document: default
   md_document:
     variant: markdown_github
   word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -121,7 +121,10 @@ Editora: ALTA BOOKS EDITORA\
     Completa as combinações de duas colunas, se não houver valor completa com *NA*.\
     
     - *drop_na*\
+    Elimina as linhas, especificadas ou não, com valor NA.\
+    
     - *replace_na*\
+    Substitui o valor NA por outro valor especificado.\
 
 \newpage
 
@@ -172,7 +175,6 @@ Atualmente estou estudando boxplot\
 - Cap7_basic_graficos-grafico_boxplot.R\
 
 ## Finalizando detalhes:
-- Cap5_tidyr-drop_na__replace_na.R\
 - Cap5_tidyr-pivot_longer__gather_ex1.R\
 - Cap5_tidyr-pivot_longer__gather_ex2.R\
 - Cap5_tidyr-pivot_wider__spread.R\

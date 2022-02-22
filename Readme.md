@@ -118,8 +118,10 @@ Editora: ALTA BOOKS EDITORA
             completa com *NA*.  
 
         -   *drop_na*  
+            Elimina as linhas, especificadas ou não, com valor NA.  
 
         -   *replace_na*  
+            Substitui o valor NA por outro valor especificado.  
 
 -   Cap 6 - Pacote data.table  
     1.  **data.table**  
@@ -164,7 +166,6 @@ Atualmente estou estudando boxplot
 
 ## Finalizando detalhes:
 
--   Cap5_tidyr-drop_na\_\_replace_na.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
 -   Cap5_tidyr-pivot_longer\_\_gather_ex2.R  
 -   Cap5_tidyr-pivot_wider\_\_spread.R  
