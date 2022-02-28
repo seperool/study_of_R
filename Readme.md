@@ -147,22 +147,19 @@ Editora: ALTA BOOKS EDITORA
         -   Gráfico circular (pizza)  
         -   Gráfico de linhas  
         -   Gráfico de dispersão  
-        -   boxplot e histograma  
+        -   Histograma  
+        -   Boxplot (diagrama de caixa)  
     2.  Pacote **ggplot2**
 
 # Andamento dos Estudos
 
 ## Assunto em andamento:
 
-Atualmente estou estudando boxplot  
+Atualmente estou estudando exercicios de gráficos basicos.  
 
 ## Em andamento:
 
--   Cap7_basic_graficos-grafico_boxplot.R  
-
 ## Vazios:
-
--   Cap7_basic_graficos-grafico_boxplot.R  
 
 ## Finalizando detalhes:
 
@@ -171,8 +168,5 @@ Atualmente estou estudando boxplot
 -   Cap5_tidyr-pivot_wider\_\_spread.R  
 -   Cap5_tidyr-separate.R  
 -   Cap5_tidyr-unite.R  
--   Cap7_basic_graficos-grafico_de_linhas.R  
--   Cap7_basic_graficos-grafico_de_linhas-cores.R  
--   Cap7_basic_graficos-grafico_de_linhas-comparar_series.R  
 -   Cap7_basic_graficos-grafico_de_dispersao.R  
 -   Cap7_basic_graficos-grafico_histograma.R  

@@ -5,10 +5,10 @@ date: "Fevereiro de 2022"
 output:
   md_document:
     variant: markdown_github
-  word_document: default
-  pdf_document: default
   html_document:
     df_print: paged
+  word_document: default
+  pdf_document: default
 ---
 
 # Objetivo
@@ -154,7 +154,8 @@ Editora: ALTA BOOKS EDITORA\
       - Gráfico circular (pizza)\
       - Gráfico de linhas\
       - Gráfico de dispersão\
-      - boxplot e histograma\
+      - Histograma\
+      - Boxplot (diagrama de caixa)\
 
   2. Pacote **ggplot2**
     
@@ -164,15 +165,11 @@ Editora: ALTA BOOKS EDITORA\
 
 ## Assunto em andamento:
 
-Atualmente estou estudando boxplot\
+Atualmente estou estudando exercicios de gráficos basicos.\
 
 ## Em andamento:
 
-- Cap7_basic_graficos-grafico_boxplot.R\
-
 ## Vazios:
-
-- Cap7_basic_graficos-grafico_boxplot.R\
 
 ## Finalizando detalhes:
 - Cap5_tidyr-pivot_longer__gather_ex1.R\
@@ -180,8 +177,5 @@ Atualmente estou estudando boxplot\
 - Cap5_tidyr-pivot_wider__spread.R\
 - Cap5_tidyr-separate.R\
 - Cap5_tidyr-unite.R\
-- Cap7_basic_graficos-grafico_de_linhas.R\
-- Cap7_basic_graficos-grafico_de_linhas-cores.R\
-- Cap7_basic_graficos-grafico_de_linhas-comparar_series.R\
 - Cap7_basic_graficos-grafico_de_dispersao.R\
 - Cap7_basic_graficos-grafico_histograma.R\
