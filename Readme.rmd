@@ -5,10 +5,10 @@ date: "Fevereiro de 2022"
 output:
   md_document:
     variant: markdown_github
-  html_document:
-    df_print: paged
   word_document: default
   pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 # Objetivo
@@ -22,17 +22,57 @@ Editora: ALTA BOOKS EDITORA\
 
 # Assuntos por capitulos e resumos
 
-- Cap 1 - Instalação do R e Rstudio\
+## Cap 1 - Instalação do R e Rstudio\
 
-- Cap 2 - Pacote base e funções estatísticas básicas\
+## Cap 2 - Pacote base e funções estatísticas básicas\
 
-- Cap 3 - Principais pacotes\
+## Cap 3 - Principais pacotes\
 
-- Cap 4 - R Markdown\
+1. Principais pacotes:\
+
+  - **Rmarkdown**\
+  Produção de relatorios(html, pdf, doc, md).\
+
+  - **knitr**\
+  Interpretação e compilação do documento rmd.\
+
+  - **data.table**\
+  Exploração de data.frames.\
+
+  - **janitor**\
+  Limpeza de dados.\
+
+  - **DescTools**\
+  Analise descritiva de dados.\
+
+  - **tidyverse**\
+  conjunto de pacotes.\
+    - **readr**\
+    Importação e leitura de arquivos de dados.\
+    - **tibble**\
+    estruturação de data.frame.\
+    - **dplyr**\
+    Manipulação de data.frame.\
+    - **tidyr**\
+    Organização de data.frame.\
+    - **ggplot2**\
+    Visualização de dados, produção de gráficos.\
+    - **purr**\
+    Manipulação de vetores e listas.\
+
+2. Instalação de pacotes:\
+ - sintaxe de instalação:\
+ **install.packages**("*nome do pacote*")\
+ - sintaxe de variais instalações simultaneas:\
+ **install.packages**(c("*nome do pacote*","*nome do pacote*",...), dependencies = **TRUE**)\
+ 
+\newpage
+
+## Cap 4 - R Markdown\
 
 \newpage
 
-- Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis\
+## Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis\
 
   1. identificando/mudando tipos de variaveis\
     
@@ -128,7 +168,7 @@ Editora: ALTA BOOKS EDITORA\
 
 \newpage
 
-- Cap 6 - Pacote data.table\
+## Cap 6 - Pacote data.table\
   1. **data.table**\
       - Manipulando linhas\
       - Manipulando colunas\
@@ -147,7 +187,7 @@ Editora: ALTA BOOKS EDITORA\
 
 \newpage
 
-- Cap 7 - Gráficos basicos e pacote ggplot2\
+## Cap 7 - Gráficos basicos e pacote ggplot2\
 
   1. Gráficos basicos:\
       - Gráfico de barras\
