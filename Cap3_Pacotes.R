@@ -1,18 +1,15 @@
 install.packages("stringr") #pacote para trabalhar com strings, texto
-install.packages("rmarkdown") #pacote para fazer relatorio, rmd
-install.packages("knitr") #
+install.packages("Rmarkdown") #pacote para fazer relatorio, rmd
+install.packages("knitr") #interpretação e compilação do documento rmd
 install.packages("data.table") #Manipulação de base de dados DataFrame
-install.packages("janitor") #
+install.packages("janitor") #limpeza de dados
 install.packages("DescTools") #
 install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
 #ggplot2 (elaboração de graficos)
-#tibble (tipo de data.frame, "tabela") 
+#tibble (estruturação de data.frame) 
 #tidyr (organização de dados)
 #readr (leitura de dados)
 #purrr (programação funcional)
 #magrittr (operador pipe "%>%", concatena linhas de comando)
 #dplyr (manipulação de dados)
 install.packages("foreign") #leitura de arquivos com extensão minitab, Octave, ...
-install.packages("tidyr") #pacote auxiliará a organização dos dados, tendo duas propriedades:
-#cada coluna é uma variavel
-#cada linha é uma observação
