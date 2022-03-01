@@ -215,11 +215,10 @@ Atualmente estou estudando exercicios de gráficos basicos.
 
 ## Em andamento:
 
--   exercicio 3 - ramo e folhas  
+-   exercicio 4 - grade de dispersão  
 
 ## Vazios:
 
--   exercicio 4 - grade de dispersão  
 -   exercicio 5 - pizza  
 -   exercicio 6 - dispersão  
 -   exercicio 7 - QQnorm  
@@ -231,5 +230,3 @@ Atualmente estou estudando exercicios de gráficos basicos.
 -   Cap5_tidyr-pivot_wider\_\_spread.R  
 -   Cap5_tidyr-separate.R  
 -   Cap5_tidyr-unite.R  
--   exercicio 1 - histograma  
--   exercicio 2 - boxplot  
