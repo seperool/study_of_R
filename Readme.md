@@ -64,79 +64,98 @@ Editora: ALTA BOOKS EDITORA
 
     1.  identificando:  
         uso do **is**.  
-    2.  mudando o tipo de variavel:  
+    2.  mudando o tipo de variavel:   
         uso do **as**.  
 
 2.  pacotes do Tidyverse:  
 
-<!-- -->
+-   **readr**  
+    Leitura de dados.  
 
-    - **readr**\
-    Leitura de dados.\
+-   **tibble**  
+    Tipo de data.frame.  
 
-    - **tibble**\
-    Tipo de data.frame.\
+-   **magrittr**  
+    Operador pipe ‘%>%’, concatena linhas de comando.  
 
-    - **magrittr**\
-    Operador pipe '%>%', concatena linhas de comando.\
+-   **dplyr**  
+    Manipulação de dados.  
 
-    - **dplyr**\
-    Manipulação de dados.\
+    1.  munipulação de dados:  
+        -   *select*  
+            seleciona e retorna as colunas selecionadas da tabela.  
 
-      i. munipulação de dados:\
-          - *select*\
-          seleciona e retorna as colunas selecionadas da tabela.\
-          
-          - *pull*\
-          extrai uma coluna de uma tabela de dados e retorna ela como vetor.\
-          
-          - *filter*\
-          filtra linhas.\
-          
-          - *distinct*\
-          remove linhas com valores repetidos.\
-          
-          - *arrange*\
-          reordena ou combina linhas.\
-          
-          - *mutate*\
-          cria novas colunas.\
-          
-          - *transmute*\
-          cria novas colunas, mas não adiciona na base de dados.\
-          
-          - *summarise*\
-          sumariza valores.\
-          
-          - *group_by*\
-          permite operações por grupo.\
-          
-          - *add_column*\
-          adiciona novas colunas.\
-          
-          - *add_row*\
-          adiciona novas linhas.\
-          
-          - *rename*\
-          renomeia uma coluna.\
-        
-      ii. combinando tabelas de dados:\
-          - *bind_cols*\
-          - *bind_rows*\
-          - *inner_join*\
-          - *left_join*\
-          - *right_join*\
-          - *full_join*\
-          - *intersect*\
-          retorna a interseção entre tabelas.\
-          
-          - *union*\
-          retorna a união de tabelas.\
-          
-          - *setdiff*\
-          retorna a diferença entre tabelas.\
-          
-          - *setequal*\
+        -   *pull*  
+            extrai uma coluna de uma tabela de dados e retorna ela como
+            vetor.  
+
+        -   *filter*  
+            filtra linhas.  
+
+        -   *distinct*  
+            remove linhas com valores repetidos.  
+
+        -   *arrange*  
+            reordena ou combina linhas.  
+
+        -   *mutate*  
+            cria novas colunas.  
+
+        -   *transmute*  
+            cria novas colunas, mas não adiciona na base de dados.  
+
+        -   *summarise*  
+            sumariza valores.  
+
+        -   *group_by*  
+            permite operações por grupo.  
+
+        -   *add_column*  
+            adiciona novas colunas.  
+
+        -   *add_row*  
+            adiciona novas linhas.  
+
+        -   *rename*  
+            renomeia uma coluna.  
+    2.  combinando tabelas de dados:  
+        -   *bind_cols*  
+            Une duas tabelas lado a lado. acrescenta numeração as
+            colunas repetidas.  
+            É necessario que tenha o mesmo numero de linhas nas duas
+            tabelas para fazer essa combinação.  
+
+        -   *bind_rows*  
+            Une duas tabelas sobrepostas.  
+            Quando não há correspondencia o comando retorna **NA**.  
+
+        -   *inner_join*  
+            A tabela final será o resultado da intersecção das duas
+            colunas de x e y, que possuem pelo menos uma coluna em
+            comum, a coluna chave.  
+            Junta duas colunas pela interseção.  
+
+        -   *left_join*  
+
+        -   *right_join*  
+
+        -   *full_join*  
+
+        -   *intersect*  
+            Retorna a interseção entre tabelas.  
+
+        -   *union*  
+            Retorna a união de tabelas.  
+
+        -   *setdiff*  
+            Retorna a diferença entre tabelas.  
+
+        -   *setequal*  
+            Esse comando verifica se duas tabelas de dados possuem
+            linhas com os mesmos valores, independentemente da ordem em
+            que tais valores se apresentem. retorna **TRUE**, se os
+            registros forem iguais, ou **FALSE**, se os registros forem
+            diferentes.  
 
 -   **tidyr**  
     Organização de dados.  
@@ -196,7 +215,14 @@ Atualmente estou estudando exercicios de gráficos basicos.
 
 ## Em andamento:
 
+-   exercicio 3 - ramo e folhas  
+
 ## Vazios:
+
+-   exercicio 4 - grade de dispersão  
+-   exercicio 5 - pizza  
+-   exercicio 6 - dispersão  
+-   exercicio 7 - QQnorm  
 
 ## Finalizando detalhes:
 
@@ -205,5 +231,5 @@ Atualmente estou estudando exercicios de gráficos basicos.
 -   Cap5_tidyr-pivot_wider\_\_spread.R  
 -   Cap5_tidyr-separate.R  
 -   Cap5_tidyr-unite.R  
--   Cap7_basic_graficos-grafico_de_dispersao.R  
--   Cap7_basic_graficos-grafico_histograma.R  
+-   exercicio 1 - histograma  
+-   exercicio 2 - boxplot  
