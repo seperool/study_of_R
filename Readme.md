@@ -219,10 +219,6 @@ Atualmente estou estudando exercicios de gráficos basicos.
 
 ## Vazios:
 
--   exercicio 5 - pizza  
--   exercicio 6 - dispersão  
--   exercicio 7 - QQnorm  
-
 ## Finalizando detalhes:
 
 -   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
