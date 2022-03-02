@@ -1,4 +1,4 @@
-#grafico circular
+#grafico circular (pizza)
 
 #Utilize-o somente em caso de a variavel possuir poucas categorias 
 #(em torno de 5)
