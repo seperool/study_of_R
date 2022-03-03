@@ -13,3 +13,7 @@ install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, 
 #magrittr (operador pipe "%>%", concatena linhas de comando)
 #dplyr (manipulação de dados)
 install.packages("foreign") #leitura de arquivos com extensão minitab, Octave, ...
+
+#Pacotes auxiliares ggplot2
+install.packages("ggthemes") #
+install.packages("grid") #
