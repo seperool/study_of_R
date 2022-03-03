@@ -161,12 +161,20 @@ Editora: ALTA BOOKS EDITORA
     Organização de dados.  
 
     -   *pivot_longer* ou *gather*  
+        Converte a tabela de dados para o formato longo. (larga ->
+        longo)  
 
     -   *pivot_wider* ou *spread*  
+        Converte a tabela de dados para o formato larga. (longo ->
+        larga)  
 
     -   *separate*  
+        Separa as respostas que estão em uma unica coluna para diversas
+        colunas.  
 
     -   *unite*  
+        O comando unite é utilizado para unir duas ou mais colunas em
+        uma unica coluna.  
 
     -   *complete*  
         Completa as combinações de duas colunas, se não houver valor
@@ -214,8 +222,6 @@ Editora: ALTA BOOKS EDITORA
 Atualmente estou estudando exercicios de gráficos basicos.  
 
 ## Em andamento:
-
--   exercicio 4 - grade de dispersão  
 
 ## Vazios:
 
