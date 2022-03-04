@@ -62,8 +62,9 @@ Editora: ALTA BOOKS EDITORA
 
 1.  identificando/mudando tipos de variaveis  
 
-    1.  identificando:  
+    1.  identificando  
         uso do **is**.  
+
     2.  mudando o tipo de variavel:   
         uso do **as**.  
 
@@ -136,10 +137,26 @@ Editora: ALTA BOOKS EDITORA
             Junta duas colunas pela interseção.  
 
         -   *left_join*  
+            Une duas tabelas, definindo qual será a tabela principal e a
+            unida a esquerda da outra. Esse fator muda a interpretação
+            das linhas/registros correspondentes uma na outra, no caso,
+            a tabela principal e tabela que será colocada a esquerda. É
+            necessario que tenha pelo menos uma coluna em comum, uma
+            coluna chave.
 
         -   *right_join*  
+            Une duas tabelas, definindo qual será a tabela principal e a
+            unida a direita da outra. Esse fator muda a interpretação
+            das linhas/registros correspondentes uma na outra, no caso,
+            a tabela principal e tabela que será colocada a direita. É
+            necessario que tenha pelo menos uma coluna em comum, uma
+            coluna chave.
 
         -   *full_join*  
+            Une duas tabelas. Prestar atenção na junção das
+            linhas/registros que formam novas informações, atraves da
+            junção de correspondentes. É necessario que tenha pelo menos
+            uma coluna em comum, uma coluna chave.
 
         -   *intersect*  
             Retorna a interseção entre tabelas.  
@@ -226,9 +243,3 @@ Atualmente estou estudando exercicios de gráficos basicos.
 ## Vazios:
 
 ## Finalizando detalhes:
-
--   Cap5_tidyr-pivot_longer\_\_gather_ex1.R  
--   Cap5_tidyr-pivot_longer\_\_gather_ex2.R  
--   Cap5_tidyr-pivot_wider\_\_spread.R  
--   Cap5_tidyr-separate.R  
--   Cap5_tidyr-unite.R  

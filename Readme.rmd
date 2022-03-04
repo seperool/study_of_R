@@ -4,9 +4,9 @@ author: "Sergio Pedro R Oliveira"
 date: "Março de 2022"
 output:
   pdf_document: default
-  word_document: default
   html_document:
     df_print: paged
+  word_document: default
   md_document:
     variant: markdown_github
 ---
@@ -76,8 +76,9 @@ Editora: ALTA BOOKS EDITORA\
 
 1. identificando/mudando tipos de variaveis\
     
-    i. identificando:\
+    i. identificando\
     uso do **is**.\
+    
     ii. mudando o tipo de variavel:\      
     uso do **as**.\
   
@@ -145,8 +146,18 @@ Editora: ALTA BOOKS EDITORA\
          Junta duas colunas pela interseção.\
           
         - *left_join*\
+        Une duas tabelas, definindo qual será a tabela principal e a unida a esquerda da outra. Esse fator muda a interpretação das linhas/registros correspondentes uma na outra, no caso, a tabela principal e tabela que será colocada a esquerda.
+        É necessario que tenha pelo menos uma coluna em comum, uma coluna chave.
+        
         - *right_join*\
+        Une duas tabelas, definindo qual será a tabela principal e a unida a direita da outra. Esse fator muda a interpretação das linhas/registros correspondentes uma na outra, no caso, a tabela principal e tabela que será colocada a direita.
+        É necessario que tenha pelo menos uma coluna em comum, uma coluna chave.
+        
         - *full_join*\
+        Une duas tabelas.
+        Prestar atenção na junção das linhas/registros que formam novas informações, atraves da junção de correspondentes.
+        É necessario que tenha pelo menos uma coluna em comum, uma coluna chave.
+        
         - *intersect*\
         Retorna a interseção entre tabelas.\
           
@@ -229,8 +240,3 @@ Atualmente estou estudando exercicios de gráficos basicos.\
 ## Vazios:
 
 ## Finalizando detalhes:
-- Cap5_tidyr-pivot_longer__gather_ex1.R\
-- Cap5_tidyr-pivot_longer__gather_ex2.R\
-- Cap5_tidyr-pivot_wider__spread.R\
-- Cap5_tidyr-separate.R\
-- Cap5_tidyr-unite.R\
