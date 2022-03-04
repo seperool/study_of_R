@@ -1,3 +1,8 @@
+Readme.rmd
+================
+Sergio Pedro R Oliveira
+2022-03-04
+
 # Objetivo
 
 Estudo dirigido de linguagem R.  
@@ -48,7 +53,7 @@ Editora: ALTA BOOKS EDITORA
     -   **purr**  
         Manipulação de vetores e listas.  
 
-1.  Instalação de pacotes:  
+2.  Instalação de pacotes:  
 
 -   sintaxe de instalação:  
     **install.packages**(“*nome do pacote*”)  
@@ -57,6 +62,46 @@ Editora: ALTA BOOKS EDITORA
     dependencies = **TRUE**)  
 
 ## Cap 4 - R Markdown 
+
+1.  Preâmbulo:  
+
+-   *title*: “Titulo desejado”  
+-   *author*: “Nome dos autores”  
+-   *date*: “Data do dia da compilação”, para adicionar a data atual
+    pode usar a função atraves do chunk “r Sys.Date()”  
+-   *output*: o tipo de saida, podem ser:  
+    -   Documentos:  
+        -   *pdf_document*  
+        -   *md_document*  
+        -   *html_document*  
+        -   *word_document*  
+        -   *odt_document*  
+        -   *rtf_document*  
+    -   Apresentação:  
+        -   *powerpoint_presentation*  
+        -   *ioslides_presentation*  
+        -   *beamer_presentation*  
+    -   mais:  
+        -   *flexdashboard::flex_dashboard*  
+        -   *github_document*  
+
+2.  Chunks/codigos embutidos:  
+3.  Titulos e subtitulos:  
+4.  Listas e blocos de citação:  
+5.  Inserir tabelas:  
+6.  Fontes:  
+7.  Hiperlinks e imagens:  
+
+-   Hiperlinks  
+-   Hmagens  
+
+8.  Letras gregas:  
+9.  Fórmulas:  
+    -   Subscritos e superescritos  
+    -   Sublinhados, sobrelinhas e vetores  
+    -   Frações, matrizes e chavetas  
+    -   Expressões  
+    -   Sinais e setas  
 
 ## Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
