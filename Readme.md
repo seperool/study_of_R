@@ -140,23 +140,24 @@ Editora: ALTA BOOKS EDITORA
             Une duas tabelas, definindo qual será a tabela principal e a
             unida a esquerda da outra. Esse fator muda a interpretação
             das linhas/registros correspondentes uma na outra, no caso,
-            a tabela principal e tabela que será colocada a esquerda. É
-            necessario que tenha pelo menos uma coluna em comum, uma
-            coluna chave.
+            a tabela principal e tabela que será colocada a esquerda.  
+            É necessario que tenha pelo menos uma coluna em comum, uma
+            coluna chave.  
 
         -   *right_join*  
             Une duas tabelas, definindo qual será a tabela principal e a
             unida a direita da outra. Esse fator muda a interpretação
             das linhas/registros correspondentes uma na outra, no caso,
-            a tabela principal e tabela que será colocada a direita. É
-            necessario que tenha pelo menos uma coluna em comum, uma
-            coluna chave.
+            a tabela principal e tabela que será colocada a direita.  
+            É necessario que tenha pelo menos uma coluna em comum, uma
+            coluna chave.  
 
         -   *full_join*  
             Une duas tabelas. Prestar atenção na junção das
             linhas/registros que formam novas informações, atraves da
-            junção de correspondentes. É necessario que tenha pelo menos
-            uma coluna em comum, uma coluna chave.
+            junção de correspondentes.  
+            É necessario que tenha pelo menos uma coluna em comum, uma
+            coluna chave.  
 
         -   *intersect*  
             Retorna a interseção entre tabelas.  
@@ -236,7 +237,7 @@ Editora: ALTA BOOKS EDITORA
 
 ## Assunto em andamento:
 
-Atualmente estou estudando exercicios de gráficos basicos.  
+Atualmente estou estudando pacote ggplot2.  
 
 ## Em andamento:
 
