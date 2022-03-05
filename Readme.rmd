@@ -4,13 +4,13 @@ author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
   github_document: default
-  html_document:
-    df_print: paged
-  odt_document: default
-  word_document: default
   md_document:
     variant: markdown_github
+  word_document: default
   pdf_document: default
+  odt_document: default
+  html_document:
+    df_print: paged
 ---
 
 # Objetivo
@@ -264,7 +264,46 @@ Editora: ALTA BOOKS EDITORA\
       - Histograma\
       - Boxplot (diagrama de caixa)\
 
-  2. Pacote **ggplot2**
+  2. Pacote **ggplot2**\
+  Constroi diversos tipos de graficos a partir da mesma estrutura de componentes.\
+    - *data*: referente ao banco de dados.\
+    - *geom_forma*: um rol de tipos possiveis de representação dos dados.\
+    - *coord_system*: referente ao sistema de coordenadas, que podem ser cartesianas, polares e projeção de mapas.\
+      1. O que precisa para fazer o grafico?\
+      2. Quais formatos podemos utilizar no ggplot2 - geom_forma?\
+    
+```{r echo = FALSE}
+forma <- c("geom_area ou geom_ribbon",
+           "geom_bar ou geom_col",
+           "geom_bar+coord_polar",
+           "geom_boxplot",
+           "geom_curve",
+           "geom_density",
+           "geom_dotplot",
+           "geom_histogram",
+           "geom_line, geom_abline, geom_hline, geom_vline",
+           "geom_point",
+           "geom_qq ou geom_qq_line",
+           "geom_tile, geom_rect ou geom_raster",
+           "geom_violin")
+tipo_de_grafico <- c("Produz um grafico para visualizar área sob a curva ou entre curvas.",
+           "Produz um grafico de colunas do vetor x.",
+           "Produz um grafico circular (Pizza).",
+           "Produz o boxplot de x.",
+           "Produz um grafico em curva.",
+           "Produz um grafico da densidade de x.",
+           "Produz um grafico de pontos.",
+           "Produz um histograma do vetor x.",
+           "Produz um grafico de linhas",
+           "Produz um grafico de dispersão entre x e y.",
+           "plota os quantis de x usando como base a curva normal.",
+           "Produz uma grade de retangulos.",
+           "Produz um grafico em forma de violino.")
+geom_forma <- data.frame(forma,tipo_de_grafico)
+geom_forma
+    
+```
+      3. Nome dos argumentos para adicionar efeito em graficos do pacote ggplot2.
     
 \newpage
 

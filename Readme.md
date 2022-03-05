@@ -276,7 +276,49 @@ Editora: ALTA BOOKS EDITORA
     -   Gráfico de dispersão  
     -   Histograma  
     -   Boxplot (diagrama de caixa)  
-2.  Pacote **ggplot2**
+2.  Pacote **ggplot2**  
+    Constroi diversos tipos de graficos a partir da mesma estrutura de
+    componentes.  
+    - *data*: referente ao banco de dados.  
+    - *geom_forma*: um rol de tipos possiveis de representação dos
+    dados.  
+    - *coord_system*: referente ao sistema de coordenadas, que podem ser
+    cartesianas, polares e projeção de mapas.  
+    1.  O que precisa para fazer o grafico?  
+    2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
+
+<!-- -->
+
+    ##                                             forma
+    ## 1                        geom_area ou geom_ribbon
+    ## 2                            geom_bar ou geom_col
+    ## 3                            geom_bar+coord_polar
+    ## 4                                    geom_boxplot
+    ## 5                                      geom_curve
+    ## 6                                    geom_density
+    ## 7                                    geom_dotplot
+    ## 8                                  geom_histogram
+    ## 9  geom_line, geom_abline, geom_hline, geom_vline
+    ## 10                                     geom_point
+    ## 11                        geom_qq ou geom_qq_line
+    ## 12            geom_tile, geom_rect ou geom_raster
+    ## 13                                    geom_violin
+    ##                                                        tipo_de_grafico
+    ## 1  Produz um grafico para visualizar área sob a curva ou entre curvas.
+    ## 2                             Produz um grafico de colunas do vetor x.
+    ## 3                                  Produz um grafico circular (Pizza).
+    ## 4                                               Produz o boxplot de x.
+    ## 5                                          Produz um grafico em curva.
+    ## 6                                 Produz um grafico da densidade de x.
+    ## 7                                         Produz um grafico de pontos.
+    ## 8                                     Produz um histograma do vetor x.
+    ## 9                                          Produz um grafico de linhas
+    ## 10                         Produz um grafico de dispersão entre x e y.
+    ## 11              plota os quantis de x usando como base a curva normal.
+    ## 12                                     Produz uma grade de retangulos.
+    ## 13                              Produz um grafico em forma de violino.
+
+      3. Nome dos argumentos para adicionar efeito em graficos do pacote ggplot2.
 
 # Andamento dos Estudos
 
