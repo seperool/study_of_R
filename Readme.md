@@ -1,8 +1,3 @@
-Readme.rmd
-================
-Sergio Pedro R Oliveira
-2022-03-04
-
 # Objetivo
 
 Estudo dirigido de linguagem R.  
@@ -53,7 +48,7 @@ Editora: ALTA BOOKS EDITORA
     -   **purr**  
         Manipulação de vetores e listas.  
 
-2.  Instalação de pacotes:  
+1.  Instalação de pacotes:  
 
 -   sintaxe de instalação:  
     **install.packages**(“*nome do pacote*”)  
@@ -85,18 +80,18 @@ Editora: ALTA BOOKS EDITORA
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
 
-2.  Chunks/codigos embutidos:  
-3.  Titulos e subtitulos:  
-4.  Listas e blocos de citação:  
-5.  Inserir tabelas:  
-6.  Fontes:  
-7.  Hiperlinks e imagens:  
+1.  Chunks/codigos embutidos:  
+2.  Titulos e subtitulos:  
+3.  Listas e blocos de citação:  
+4.  Inserir tabelas:  
+5.  Fontes:  
+6.  Hiperlinks e imagens:  
 
 -   Hiperlinks  
--   Hmagens  
+-   Imagens  
 
-8.  Letras gregas:  
-9.  Fórmulas:  
+1.  Letras gregas:  
+2.  Fórmulas:  
     -   Subscritos e superescritos  
     -   Sublinhados, sobrelinhas e vetores  
     -   Frações, matrizes e chavetas  
@@ -270,12 +265,33 @@ Editora: ALTA BOOKS EDITORA
 ## Cap 7 - Gráficos basicos e pacote ggplot2 
 
 1.  Gráficos basicos:  
+
     -   Gráfico de barras  
+        **barplot**  
+
     -   Gráfico circular (pizza)  
+        **pie**
+
     -   Gráfico de linhas  
+        **plot**
+
+        -   Para adicionar mais linhas no grafico.  
+            **lines**
+
     -   Gráfico de dispersão  
+
+        -   Para obter a correlação.  
+            **cor**(x,y)  
+        -   Para obter o coeficiente da reta de regressão.  
+            **lm**(y \~x)$coef  
+        -   Adiciona a reta tracejada.  
+            **abline**  
+
     -   Histograma  
-    -   Boxplot (diagrama de caixa)  
+        **hist**  
+
+    -   **Boxplot** (diagrama de caixa)  
+
 2.  Pacote **ggplot2**  
     Constroi diversos tipos de graficos a partir da mesma estrutura de
     componentes.  
@@ -284,6 +300,7 @@ Editora: ALTA BOOKS EDITORA
     dados.  
     - *coord_system*: referente ao sistema de coordenadas, que podem ser
     cartesianas, polares e projeção de mapas.  
+
     1.  O que precisa para fazer o grafico?  
     2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
 
