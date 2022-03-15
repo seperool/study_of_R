@@ -15,5 +15,5 @@ install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, 
 install.packages("foreign") #leitura de arquivos com extensão minitab, Octave, ...
 
 #Pacotes auxiliares ggplot2
-install.packages("ggthemes") #
+install.packages("ggthemes") #temas adicionais para graficos
 install.packages("grid") #
