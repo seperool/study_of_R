@@ -266,43 +266,55 @@ Editora: ALTA BOOKS EDITORA
 
 1.  Gráficos basicos:  
 
-    -   Gráfico de barras  
-        **barplot**  
+-   Gráfico de barras  
+    **barplot**  
 
-    -   Gráfico circular (pizza)  
-        **pie**
+-   Gráfico circular (pizza)  
+    **pie**
 
-    -   Gráfico de linhas  
-        **plot**
+-   Gráfico de linhas  
+    **plot**
 
-        -   Para adicionar mais linhas no grafico.  
-            **lines**
+    -   Para adicionar mais linhas no grafico.  
+        **lines**
 
-    -   Gráfico de dispersão  
+-   Gráfico de dispersão  
 
-        -   Para obter a correlação.  
-            **cor**(x,y)  
-        -   Para obter o coeficiente da reta de regressão.  
-            **lm**(y \~x)$coef  
-        -   Adiciona a reta tracejada.  
-            **abline**  
+    -   Para obter a correlação.  
+        **cor**(x,y)  
+    -   Para obter o coeficiente da reta de regressão.  
+        **lm**(y \~x)$coef  
+    -   Adiciona a reta tracejada.  
+        **abline**  
 
-    -   Histograma  
-        **hist**  
+-   Histograma  
+    **hist**  
 
-    -   **Boxplot** (diagrama de caixa)  
+-   **Boxplot** (diagrama de caixa)  
 
-2.  Pacote **ggplot2**  
-    Constroi diversos tipos de graficos a partir da mesma estrutura de
-    componentes.  
-    - *data*: referente ao banco de dados.  
-    - *geom_forma*: um rol de tipos possiveis de representação dos
-    dados.  
-    - *coord_system*: referente ao sistema de coordenadas, que podem ser
-    cartesianas, polares e projeção de mapas.  
+1.  Pacote **ggplot2**  
 
-    1.  O que precisa para fazer o grafico?  
-    2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
+-   Constroi diversos tipos de graficos a partir da mesma estrutura de
+    componentes:  
+    -   *data*: referente ao banco de dados.  
+    -   *geom_forma*: um rol de tipos possiveis de representação dos
+        dados.  
+    -   *coord_system*: referente ao sistema de coordenadas, que podem
+        ser cartesianas, polares e projeção de mapas.  
+
+1.  O que precisa para fazer o grafico?  
+    A. Um nome de objeto para guardar o grafico (uma variavel).  
+    B. A base de dados que será utilizada para a plotagem.  
+    **ggplot**(*data***=***nome_da_base*)  
+    C. Descrever como as variaveis serão utilizadas na plotagem:  
+    **aes**(*x***=**…, *y***=**…, …)  
+    D. Especificar o tipo de grafico:  
+    *geom_forma*(…)  
+    E. Utilizar o operador “**+**” para adicionar camadas ao objeto
+    **ggplot** criado.  
+    F. Pacotes auxiliares como *ggthemes* e *grid*, dentre outros.  
+
+2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
 
 <!-- -->
 
@@ -335,7 +347,60 @@ Editora: ALTA BOOKS EDITORA
     ## 12                                     Produz uma grade de retangulos.
     ## 13                              Produz um grafico em forma de violino.
 
-      3. Nome dos argumentos para adicionar efeito em graficos do pacote ggplot2.
+1.  Nome dos argumentos para adicionar efeito em graficos do pacote
+    ggplot2.
+
+<!-- -->
+
+    ##                                      funcao
+    ## 1                                  autoplot
+    ## 2                           coord_cartesian
+    ## 3                               coord_fixed
+    ## 4                                coord_flip
+    ## 5                               coord_polar
+    ## 6                                geom_blank
+    ## 7                               geom_jitter
+    ## 8                               geom_smooth
+    ## 9                                 geom_text
+    ## 10 scale_fill_(=brewer ou grey ou gradient)
+    ## 11                        scale_*_continuos
+    ## 12                         scale_*_discrete
+    ## 13                           scale_*_manual
+    ##                                          efeito_no_grafico
+    ## 1     Produz um grafico apropriado para o tipo de variavel
+    ## 2                                    Coordenada cartesiana
+    ## 3  Coordenada cartesiana com razão entre eixo x e y fixada
+    ## 4                        Inverte a posição dos eixos x e y
+    ## 5                                         Coordenada polar
+    ## 6                                         Janela em branco
+    ## 7                                  Produz um efeito jitter
+    ## 8                               Produz uma curva suavizada
+    ## 9                            Aplica texto a janela grafica
+    ## 10                                Define a escala de cores
+    ## 11          Define parametros para o eixo x ou y continuos
+    ## 12           Define parametros para o eixo x ou y discreto
+    ## 13             Define parametros para os eixos manualmente
+
+-   Definindo um tema para o grafico **ggplot**.  
+    -   *theme_gray*  
+        Fundo cinza e linhas grandes brancas.  
+    -   *theme_bw*  
+        O classico preto e branco. Otimo para projetor.  
+    -   *theme_linedraw*  
+        Linhas pretasde varias larguras num fundo branco. semelhante ao
+        theme_bw.  
+    -   *theme_light*  
+        Semelhante ao theme_linedraw, porem com as linhas mais cinza
+        claro, para dar atenção aos dados.  
+    -   *theme_dark*  
+        Versão escura do theme_light, com o fundo escuro, util para
+        criar linhas finas coloridas.  
+    -   *theme_minimal*  
+        Um tema minimalista sem anotações de fundo.  
+    -   *theme_classic*  
+        Tema classico, com linhas do eixo x e y, sem linhas de grade.  
+    -   *theme_void*  
+        Um tema completamente vazio.  
 
 # Andamento dos Estudos
 
