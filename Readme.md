@@ -1,19 +1,19 @@
-# Objetivo
+# 1 Objetivo
 
 Estudo dirigido de linguagem R.  
 
-# Livro de referência
+# 2 Livro de referência
 
 Utilizando a Linguagem R.  
 Editora: ALTA BOOKS EDITORA  
 
-# Assuntos por capitulos e resumos
+# 3 Assuntos por capitulos e resumos
 
-## Cap 1 - Instalação do R e Rstudio 
+## 3.1 Cap 1 - Instalação do R e Rstudio 
 
-## Cap 2 - Pacote base e funções estatísticas básicas 
+## 3.2 Cap 2 - Pacote base e funções estatísticas básicas 
 
-## Cap 3 - Principais pacotes 
+## 3.3 Cap 3 - Principais pacotes 
 
 1.  Principais pacotes:  
 
@@ -56,7 +56,7 @@ Editora: ALTA BOOKS EDITORA
     **install.packages**(c(“*nome do pacote*”,“*nome do pacote*”,…),
     dependencies = **TRUE**)  
 
-## Cap 4 - R Markdown 
+## 3.4 Cap 4 - R Markdown 
 
 1.  Preâmbulo:  
 
@@ -98,7 +98,7 @@ Editora: ALTA BOOKS EDITORA
     -   Expressões  
     -   Sinais e setas  
 
-## Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
+## 3.5 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
 1.  identificando/mudando tipos de variaveis  
 
@@ -117,7 +117,7 @@ Editora: ALTA BOOKS EDITORA
     Tipo de data.frame.  
 
 -   **magrittr**  
-    Operador pipe ‘%>%’, concatena linhas de comando.  
+    Operador pipe ‘%\>%’, concatena linhas de comando.  
 
 -   **dplyr**  
     Manipulação de dados.  
@@ -219,11 +219,11 @@ Editora: ALTA BOOKS EDITORA
     Organização de dados.  
 
     -   *pivot_longer* ou *gather*  
-        Converte a tabela de dados para o formato longo. (larga ->
+        Converte a tabela de dados para o formato longo. (larga -\>
         longo)  
 
     -   *pivot_wider* ou *spread*  
-        Converte a tabela de dados para o formato larga. (longo ->
+        Converte a tabela de dados para o formato larga. (longo -\>
         larga)  
 
     -   *separate*  
@@ -244,7 +244,7 @@ Editora: ALTA BOOKS EDITORA
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
-## Cap 6 - Pacote data.table 
+## 3.6 Cap 6 - Pacote data.table 
 
 1.  **data.table**  
     -   Manipulando linhas  
@@ -262,7 +262,7 @@ Editora: ALTA BOOKS EDITORA
         -   *setcolorder*  
             modificando ordem das colunas.  
 
-## Cap 7 - Gráficos basicos e pacote ggplot2 
+## 3.7 Cap 7 - Gráficos basicos e pacote ggplot2 
 
 1.  Gráficos basicos:  
 
@@ -402,14 +402,14 @@ Editora: ALTA BOOKS EDITORA
     -   *theme_void*  
         Um tema completamente vazio.  
 
-# Andamento dos Estudos
+# 4 Andamento dos Estudos
 
-## Assunto em andamento:
+## 4.1 Assunto em andamento:
 
 Atualmente estou estudando pacote ggplot2.  
 
-## Em andamento:
+## 4.2 Em andamento:
 
-## Vazios:
+## 4.3 Vazios:
 
-## Finalizando detalhes:
+## 4.4 Finalizando detalhes:
