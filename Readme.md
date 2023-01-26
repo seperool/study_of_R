@@ -7,13 +7,11 @@ Estudo dirigido de linguagem R.
 Utilizando a Linguagem R.  
 Editora: ALTA BOOKS EDITORA  
 
-# 3 Assuntos por capitulos e resumos
+# 3 Cap 1 - Instalação do R e Rstudio 
 
-## 3.1 Cap 1 - Instalação do R e Rstudio 
+# 4 Cap 2 - Pacote base e funções estatísticas básicas 
 
-## 3.2 Cap 2 - Pacote base e funções estatísticas básicas 
-
-## 3.3 Cap 3 - Principais pacotes 
+# 5 Cap 3 - Principais pacotes 
 
 1.  Principais pacotes:  
 
@@ -56,7 +54,7 @@ Editora: ALTA BOOKS EDITORA
     **install.packages**(c(“*nome do pacote*”,“*nome do pacote*”,…),
     dependencies = **TRUE**)  
 
-## 3.4 Cap 4 - R Markdown 
+# 6 Cap 4 - R Markdown 
 
 1.  Preâmbulo:  
 
@@ -98,7 +96,7 @@ Editora: ALTA BOOKS EDITORA
     -   Expressões  
     -   Sinais e setas  
 
-## 3.5 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
+# 7 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
 1.  identificando/mudando tipos de variaveis  
 
@@ -244,7 +242,7 @@ Editora: ALTA BOOKS EDITORA
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
-## 3.6 Cap 6 - Pacote data.table 
+# 8 Cap 6 - Pacote data.table 
 
 1.  **data.table**  
     -   Manipulando linhas  
@@ -262,7 +260,7 @@ Editora: ALTA BOOKS EDITORA
         -   *setcolorder*  
             modificando ordem das colunas.  
 
-## 3.7 Cap 7 - Gráficos basicos e pacote ggplot2 
+# 9 Cap 7 - Gráficos basicos e pacote ggplot2 
 
 1.  Gráficos basicos:  
 
@@ -402,14 +400,14 @@ Editora: ALTA BOOKS EDITORA
     -   *theme_void*  
         Um tema completamente vazio.  
 
-# 4 Andamento dos Estudos
+# 10 Andamento dos Estudos
 
-## 4.1 Assunto em andamento:
+## 10.1 Assunto em andamento:
 
 Atualmente estou estudando pacote ggplot2.  
 
-## 4.2 Em andamento:
+## 10.2 Em andamento:
 
-## 4.3 Vazios:
+## 10.3 Vazios:
 
-## 4.4 Finalizando detalhes:
+## 10.4 Finalizando detalhes:
