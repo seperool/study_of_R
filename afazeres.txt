@@ -1,0 +1,20 @@
+ESCRITO EM 26/01/23
+---
+PARA 27/01/23
+---
+Subir github:
+	
+Estudar:
+	Cap. 7 - Visualizando dados
+Afazeres:
+	- Revisar capitulos anteriores
+		- Readme.*		
+			- Cap. 1
+			- Cap. 2
+			- Cap. 3
+			- Cap. 4
+			- Cap. 5
+			- Cap. 6
+			- Cap. 7
+	- Cap. 7 - Visualizando dados
+		- script - ggplot2
