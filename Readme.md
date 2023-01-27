@@ -9,7 +9,80 @@ Editora: ALTA BOOKS EDITORA
 
 # 3 Cap 1 - Instalação do R e Rstudio 
 
+-   Download da linguagem R:  
+    <https://www.r-project.org/>  
+
+-   Download Rstudio IDE:  
+    <https://posit.co/downloads/>  
+
 # 4 Cap 2 - Pacote base e funções estatísticas básicas 
+
+## 4.1 Operações matematicas basicas
+
+| Nome da operação                | Operação  | Resultado |
+|:--------------------------------|:---------:|----------:|
+| Adição                          |    5+4    |     \[9\] |
+| Subtração                       |    6-2    |     \[4\] |
+| Multiplicação                   |   7\*3    |    \[21\] |
+| Divisão                         |   45/9    |     \[5\] |
+| Potência                        |    2^2    |     \[4\] |
+| Raiz                            | sqrt(121) |    \[11\] |
+| Exponencial                     |  exp(0)   |     \[1\] |
+| Log na base e                   |  log(1)   |     \[0\] |
+| Log na base 10                  | log10(1)  |     \[0\] |
+| Log na base 2                   |  log2(4)  |     \[2\] |
+| Log na base 3 ou qualquer outra | log(9,3)  |     \[2\] |
+
+## 4.2 Vetor
+
+-   Para criar um vetor usamos a função *c*().  
+-   Os argumentos são separados por virgula dentro do parênteses.  
+-   strings devem estar entre aspas duplas.  
+    Ex.: *c*(“um”,“sete”,“nove”)  
+-   Vetores são compostos de elementos todos do mesmo tipo.  
+-   Armazenando vetores em um objeto:  
+    Ex.: *obj_qualquer* \<- *c*(1,2,3)  
+
+## 4.3 Tabela de dados - **data.frame** e **matrizes**
+
+### 4.3.1 **data.frame**
+
+-   Uma tabela onde cada coluna é um vetor.  
+-   Como cada coluna é um vetor, cada coluna pode ser de um tipo
+    diferente.  
+    Ex.: nome_data.frame \<- **data.frame**(vetor_1, vetor_2)  
+-   Acrescentando uma nova coluna ao data.frame.  
+    Ex.: nome_data.frame \<- **data.frame**(nome_data.frame, vetor_3)  
+-   Para visualizar um **data.frame** podemos usar a função
+    **View**().  
+    Ex.: **View**(nome_data.frame)  
+
+### 4.3.2 **Matrizes**
+
+-   A diferença entre **matrizes** e **data.frames**, é que no caso das
+    matrizes todas as colunas e linhas devem ser do mesmo tipo. Enquanto
+    nos **data.frames** as colunas podem ser de tipos diferentes.  
+
+-   Para adicionar uma coluna numa matriz, usamos a função cbind().  
+    Ex.: nome_matriz \<- **cbind**(vetor_1, vetor_2, …)  
+
+-   Para adicionar uma linha numa matriz, usamos a função rbind().  
+    Ex.: nome_matriz \<- **rbind**(vetor_3, vetor_4, …)  
+
+-   Quando inserimos dados (vetor) de naturezas diferentes (tipos) numa
+    matriz, ela converte todos os dados para um único tipo. A principio
+    *string* (*chr*).  
+
+## 4.4 Visualizando dados
+
+-   Podemos visualizar dados de duas formas:  
+    -   Escrevendo o nome da variável  
+        O valor dela será impressa na tela.  
+    -   Atraves da função **View**()  
+        Ao chamar a função View() e colocar dentro a variavel que
+        queremos ver, será exibido uma nova janela com o valor da
+        variável numa tabela.  
+-   Analisando a estrutura de um objeto, usamos a função **str**().  
 
 # 5 Cap 3 - Principais pacotes 
 
@@ -314,70 +387,40 @@ Editora: ALTA BOOKS EDITORA
 
 2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
 
-<!-- -->
-
-    ##                                             forma
-    ## 1                        geom_area ou geom_ribbon
-    ## 2                            geom_bar ou geom_col
-    ## 3                            geom_bar+coord_polar
-    ## 4                                    geom_boxplot
-    ## 5                                      geom_curve
-    ## 6                                    geom_density
-    ## 7                                    geom_dotplot
-    ## 8                                  geom_histogram
-    ## 9  geom_line, geom_abline, geom_hline, geom_vline
-    ## 10                                     geom_point
-    ## 11                        geom_qq ou geom_qq_line
-    ## 12            geom_tile, geom_rect ou geom_raster
-    ## 13                                    geom_violin
-    ##                                                        tipo_de_grafico
-    ## 1  Produz um grafico para visualizar área sob a curva ou entre curvas.
-    ## 2                             Produz um grafico de colunas do vetor x.
-    ## 3                                  Produz um grafico circular (Pizza).
-    ## 4                                               Produz o boxplot de x.
-    ## 5                                          Produz um grafico em curva.
-    ## 6                                 Produz um grafico da densidade de x.
-    ## 7                                         Produz um grafico de pontos.
-    ## 8                                     Produz um histograma do vetor x.
-    ## 9                                          Produz um grafico de linhas
-    ## 10                         Produz um grafico de dispersão entre x e y.
-    ## 11              plota os quantis de x usando como base a curva normal.
-    ## 12                                     Produz uma grade de retangulos.
-    ## 13                              Produz um grafico em forma de violino.
+| Forma                                          |                                                     Tipo de grafico |
+|:-----------------|-----------------------------------------------------:|
+| geom_area ou geom_ribbon                       | Produz um grafico para visualizar área sob a curva ou entre curvas. |
+| geom_bar ou geom_col                           |                            Produz um grafico de colunas do vetor x. |
+| geom_bar+coord_polar                           |                                 Produz um grafico circular (Pizza). |
+| geom_boxplot                                   |                                              Produz o boxplot de x. |
+| geom_curve                                     |                                         Produz um grafico em curva. |
+| geom_density                                   |                                Produz um grafico da densidade de x. |
+| geom_dotplot                                   |                                        Produz um grafico de pontos. |
+| geom_histogram                                 |                                    Produz um histograma do vetor x. |
+| geom_line, geom_abline, geom_hline, geom_vline |                                         Produz um grafico de linhas |
+| geom_point                                     |                         Produz um grafico de dispersão entre x e y. |
+| geom_qq ou geom_qq_line                        |              plota os quantis de x usando como base a curva normal. |
+| geom_tile, geom_rect ou geom_raster            |                                     Produz uma grade de retangulos. |
+| geom_violin                                    |                              Produz um grafico em forma de violino. |
 
 1.  Nome dos argumentos para adicionar efeito em graficos do pacote
     ggplot2.
 
-<!-- -->
-
-    ##                                      funcao
-    ## 1                                  autoplot
-    ## 2                           coord_cartesian
-    ## 3                               coord_fixed
-    ## 4                                coord_flip
-    ## 5                               coord_polar
-    ## 6                                geom_blank
-    ## 7                               geom_jitter
-    ## 8                               geom_smooth
-    ## 9                                 geom_text
-    ## 10 scale_fill_(=brewer ou grey ou gradient)
-    ## 11                        scale_*_continuos
-    ## 12                         scale_*_discrete
-    ## 13                           scale_*_manual
-    ##                                          efeito_no_grafico
-    ## 1     Produz um grafico apropriado para o tipo de variavel
-    ## 2                                    Coordenada cartesiana
-    ## 3  Coordenada cartesiana com razão entre eixo x e y fixada
-    ## 4                        Inverte a posição dos eixos x e y
-    ## 5                                         Coordenada polar
-    ## 6                                         Janela em branco
-    ## 7                                  Produz um efeito jitter
-    ## 8                               Produz uma curva suavizada
-    ## 9                            Aplica texto a janela grafica
-    ## 10                                Define a escala de cores
-    ## 11          Define parametros para o eixo x ou y continuos
-    ## 12           Define parametros para o eixo x ou y discreto
-    ## 13             Define parametros para os eixos manualmente
+| Função                                    |                                        Efeito no grafico |
+|:------------------|----------------------------------------------------:|
+| autoplot                                  |    Produz um grafico apropriado para o tipo de variavel. |
+| coord_cartesian                           |                                   Coordenada cartesiana. |
+| coord_fixed                               | Coordenada cartesiana com razão entre eixo x e y fixada. |
+| coord_flip                                |                       Inverte a posição dos eixos x e y. |
+| coord_polar                               |                                        Coordenada polar. |
+| geom_blank                                |                                        Janela em branco. |
+| geom_jitter                               |                                 Produz um efeito jitter. |
+| geom_smooth                               |                              Produz uma curva suavizada. |
+| geom_text                                 |                           Aplica texto a janela grafica. |
+| scale_fill\_(=brewer ou grey ou gradient) |                                Define a escala de cores. |
+| scale\_\*\_continuos                      |          Define parametros para o eixo x ou y continuos. |
+| scale\_\*\_discrete                       |           Define parametros para o eixo x ou y discreto. |
+| scale\_\*\_manual                         |             Define parametros para os eixos manualmente. |
 
 -   Definindo um tema para o grafico **ggplot**.  
     -   *theme_gray*  
