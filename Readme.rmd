@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
-    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
 ---
 
 # Objetivo
@@ -67,7 +67,7 @@ Ex.: *obj_qualquer* <- *c*(1,2,3)\
 
 \newpage
 
-## Tabela de dados - **data.frame** e **matrizes**
+## Tabela de dados (**data.frame**) e **matrizes**
 
 ### **data.frame**
 
@@ -102,6 +102,10 @@ Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
   Ao chamar a função View() e colocar dentro a variavel que queremos ver, será exibido uma nova janela com o valor da variável numa tabela.\
 
 - Analisando a estrutura de um objeto, usamos a função **str**().\
+
+- Resumo dos dados, usamos a função **summary**().\
+
+- Descobrindo a classe de uma variável, usamos a função **class**().\
 
 \newpage
 
@@ -440,7 +444,8 @@ Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
 
 ## Assunto em andamento:
 
-Atualmente estou estudando pacote ggplot2.\
+Atualmente estou estudando Cap.7, pacote ggplot2.\
+E revisando Cap.2, acessando valores de posições especificas de objetos.\
 
 ## Em andamento:
 

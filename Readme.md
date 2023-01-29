@@ -43,7 +43,7 @@ Editora: ALTA BOOKS EDITORA
 -   Armazenando vetores em um objeto:  
     Ex.: *obj_qualquer* \<- *c*(1,2,3)  
 
-## 4.3 Tabela de dados - **data.frame** e **matrizes**
+## 4.3 Tabela de dados (**data.frame**) e **matrizes**
 
 ### 4.3.1 **data.frame**
 
@@ -76,13 +76,19 @@ Editora: ALTA BOOKS EDITORA
 ## 4.4 Visualizando dados
 
 -   Podemos visualizar dados de duas formas:  
+
     -   Escrevendo o nome da variável  
         O valor dela será impressa na tela.  
     -   Atraves da função **View**()  
         Ao chamar a função View() e colocar dentro a variavel que
         queremos ver, será exibido uma nova janela com o valor da
         variável numa tabela.  
+
 -   Analisando a estrutura de um objeto, usamos a função **str**().  
+
+-   Resumo dos dados, usamos a função **summary**().  
+
+-   Descobrindo a classe de uma variável, usamos a função **class**().  
 
 # 5 Cap 3 - Principais pacotes 
 
@@ -447,7 +453,9 @@ Editora: ALTA BOOKS EDITORA
 
 ## 10.1 Assunto em andamento:
 
-Atualmente estou estudando pacote ggplot2.  
+Atualmente estou estudando Cap.7, pacote ggplot2.  
+E revisando Cap.2, acessando valores de posições especificas de
+objetos.  
 
 ## 10.2 Em andamento:
 
