@@ -75,8 +75,9 @@ Editora: ALTA BOOKS EDITORA
 
 ## 4.4 Visualizando dados
 
--   Podemos visualizar dados de duas formas:  
+### 4.4.1 **View**() - visualização de dados
 
+-   Podemos visualizar dados de duas formas:  
     -   Escrevendo o nome da variável  
         O valor dela será impressa na tela.  
     -   Atraves da função **View**()  
@@ -84,11 +85,42 @@ Editora: ALTA BOOKS EDITORA
         queremos ver, será exibido uma nova janela com o valor da
         variável numa tabela.  
 
--   Analisando a estrutura de um objeto, usamos a função **str**().  
+### 4.4.2 **str**() - estrutura de objetos
 
--   Resumo dos dados, usamos a função **summary**().  
+-   A função “**str**()” retorna a estrutura do objeto do argumento.  
+-   Retorna diversos dados, entre eles:  
+    -   A classe do objeto.  
+    -   Tamanho do objeto.  
+    -   A lista, ou vertor, dos campos com o tipo e tamanho. 
+-   Sintaxe:  
+    **str**(*argumento*)  
 
--   Descobrindo a classe de uma variável, usamos a função **class**().  
+### 4.4.3 **summary**() - resumo de variáveis
+
+-   A função **summary**() retorna o resumo de variaveis.  
+-   O retorno depende do argumento (se for um vetor, uma lista, um
+    data.frame).  
+-   O retorno para uma matriz ou **data**.**frame**, vai ser os metodos
+    aplicados a cada campo/coluna.  
+-   O retorno da função, no geral, retorna diversos metodos aplicados
+    aos dados, tais como:  
+    -   valor mínimo  
+    -   1º quantil  
+    -   valor da mediana  
+    -   valor da media  
+    -   3º quantil  
+    -   valor máximo  
+-   Sintaxe:  
+    **summary**(*nome_variavel*)  
+
+### 4.4.4 **class**() - classe de objetos
+
+-   A função “**class**()” retorna a que classe do objeto do argemunto
+    pertence.  
+-   Basicamente diz se o objeto é numerico, string, vetor, lista,
+    data.frame, matriz, …  
+-   Sintaxe:  
+    **class**(*argumento*)  
 
 # 5 Cap 3 - Principais pacotes 
 

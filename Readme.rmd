@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
   odt_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
 ---
 
 # Objetivo
@@ -95,17 +95,41 @@ Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
 
 ## Visualizando dados
 
+### **View**() - visualização de dados
 - Podemos visualizar dados de duas formas:\
   - Escrevendo o nome da variável\
   O valor dela será impressa na tela.\
   - Atraves da função **View**()\
   Ao chamar a função View() e colocar dentro a variavel que queremos ver, será exibido uma nova janela com o valor da variável numa tabela.\
 
-- Analisando a estrutura de um objeto, usamos a função **str**().\
+### **str**() - estrutura de objetos
+- A função "**str**()" retorna a estrutura do objeto do argumento.\
+- Retorna diversos dados, entre eles:\
+  - A classe do objeto.\
+  - Tamanho do objeto.\
+  - A lista, ou vertor, dos campos com o tipo e tamanho.\ 
+- Sintaxe:\
+**str**(*argumento*)\
 
-- Resumo dos dados, usamos a função **summary**().\
+### **summary**() - resumo de variáveis
+- A função **summary**() retorna o resumo de variaveis.\
+- O retorno depende do argumento (se for um vetor, uma lista, um data.frame).\
+- O retorno para uma matriz ou **data**.**frame**, vai ser os metodos aplicados a cada campo/coluna.\
+- O retorno da função, no geral, retorna diversos metodos aplicados aos dados, tais como:\
+  - valor mínimo\
+  - 1º quantil\
+  - valor da mediana\
+  - valor da media\
+  - 3º quantil\
+  - valor máximo\
+- Sintaxe:\
+**summary**(*nome_variavel*)\
 
-- Descobrindo a classe de uma variável, usamos a função **class**().\
+### **class**() - classe de objetos
+- A função "**class**()" retorna a que classe do objeto do argemunto pertence.\
+- Basicamente diz se o objeto é numerico, string, vetor, lista, data.frame, matriz, ...\
+- Sintaxe:\
+**class**(*argumento*)\
 
 \newpage
 
