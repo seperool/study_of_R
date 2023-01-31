@@ -9,7 +9,7 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
-			- Cap. 2 (revisando)
+			- Cap. 2 (revisando) - funções estatísicas básicas
 			- Cap. 3
 			- Cap. 4
 			- Cap. 5
