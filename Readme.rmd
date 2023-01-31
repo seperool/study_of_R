@@ -7,16 +7,16 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
 ---
 
@@ -90,6 +90,37 @@ Ex.: nome_matriz <- **cbind**(vetor_1, vetor_2, ...)\
 Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
 
 - Quando inserimos dados (vetor) de naturezas diferentes (tipos) numa matriz, ela converte todos os dados para um único tipo. A principio *string* (*chr*).\
+
+\newpage
+
+## Acessando valores em posições especificadas dos objetos - **vetor**, **matriz** e **data.frame**
+
+### Caso **vetor** e **matriz**
+
+- Podemos acessar os valores do objeto tipo **vetor** e **matriz**, informando a posição entre colchetes [].\
+
+- Para os **vetores** precisamos apenas informa a posição. A contagem da posição começa a partir do 1.\
+Ex.:\
+vetor <- c(5,18,89)\
+vetor[1]\
+
+- Para as **matrizes**, é necessario informar a posição [*linha*, *coluna*]. A contagem da posição começa a partir do 1.\
+Ex.:\
+Mc[1,2]\
+
+- Para acessar todos os valores de uma *linha* da **matriz**, podemos determinar a *linha* e deixar a *coluna* em branco.\
+Ex.: Mc[1,]\
+
+- Para acessar todos os valores de uma *coluna* da **matriz**, podemos determinar a *coluna* e deixar a *linha* em branco.\
+Ex.: Mc[,2]\
+
+### Caso **data.frame**
+
+- No caso do **data.frame** podemos acessar os valores das colunas informando, "nome do **data.frame**" "\$" "nome da coluna".\
+Sintaxe:\
+**nome_dataframe\$nome_coluna**\
+
+- O **data.frame** também aceita as mesmas formas de acessar posições que as **matrizes**.\
 
 \newpage
 

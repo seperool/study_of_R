@@ -73,9 +73,45 @@ Editora: ALTA BOOKS EDITORA
     matriz, ela converte todos os dados para um único tipo. A principio
     *string* (*chr*).  
 
-## 4.4 Visualizando dados
+## 4.4 Acessando valores em posições especificadas dos objetos - **vetor**, **matriz** e **data.frame**
 
-### 4.4.1 **View**() - visualização de dados
+### 4.4.1 Caso **vetor** e **matriz**
+
+-   Podemos acessar os valores do objeto tipo **vetor** e **matriz**,
+    informando a posição entre colchetes \[\].  
+
+-   Para os **vetores** precisamos apenas informa a posição. A contagem
+    da posição começa a partir do 1.  
+    Ex.:  
+    vetor \<- c(5,18,89)  
+    vetor\[1\]  
+
+-   Para as **matrizes**, é necessario informar a posição \[*linha*,
+    *coluna*\]. A contagem da posição começa a partir do 1.  
+    Ex.:  
+    Mc\[1,2\]  
+
+-   Para acessar todos os valores de uma *linha* da **matriz**, podemos
+    determinar a *linha* e deixar a *coluna* em branco.  
+    Ex.: Mc\[1,\]  
+
+-   Para acessar todos os valores de uma *coluna* da **matriz**, podemos
+    determinar a *coluna* e deixar a *linha* em branco.  
+    Ex.: Mc\[,2\]  
+
+### 4.4.2 Caso **data.frame**
+
+-   No caso do **data.frame** podemos acessar os valores das colunas
+    informando, “nome do **data.frame**” “$” “nome da coluna”.  
+    Sintaxe:  
+    **nome_dataframe$nome_coluna**  
+
+-   O **data.frame** também aceita as mesmas formas de acessar posições
+    que as **matrizes**.  
+
+## 4.5 Visualizando dados
+
+### 4.5.1 **View**() - visualização de dados
 
 -   Podemos visualizar dados de duas formas:  
     -   Escrevendo o nome da variável  
@@ -85,7 +121,7 @@ Editora: ALTA BOOKS EDITORA
         queremos ver, será exibido uma nova janela com o valor da
         variável numa tabela.  
 
-### 4.4.2 **str**() - estrutura de objetos
+### 4.5.2 **str**() - estrutura de objetos
 
 -   A função “**str**()” retorna a estrutura do objeto do argumento.  
 -   Retorna diversos dados, entre eles:  
@@ -95,7 +131,7 @@ Editora: ALTA BOOKS EDITORA
 -   Sintaxe:  
     **str**(*argumento*)  
 
-### 4.4.3 **summary**() - resumo de variáveis
+### 4.5.3 **summary**() - resumo de variáveis
 
 -   A função **summary**() retorna o resumo de variaveis.  
 -   O retorno depende do argumento (se for um vetor, uma lista, um
@@ -113,7 +149,7 @@ Editora: ALTA BOOKS EDITORA
 -   Sintaxe:  
     **summary**(*nome_variavel*)  
 
-### 4.4.4 **class**() - classe de objetos
+### 4.5.4 **class**() - classe de objetos
 
 -   A função “**class**()” retorna a que classe do objeto do argemunto
     pertence.  
