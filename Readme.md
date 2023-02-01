@@ -158,6 +158,55 @@ Editora: ALTA BOOKS EDITORA
 -   Sintaxe:  
     **class**(*argumento*)  
 
+## 4.6 Funções estatísticas básicas
+
+| Função                    | Descrição                                                                                                                |
+|:-----------------------------|:-----------------------------------------|
+| apply(D,i,f)              | Retorna os valores resultantes da aplicação da função f ao objeto D, linhas i=1, ou colunas i=2.                         |
+| c(valor1, valor2, valor3) | Concatena uma sequência de valores seja númerico ou de caracteres. Neste último caso os valores devem estar entre aspas. |
+| cbind(x1, x2, …, xn)      | Cria uma matriz com n colunas formada pelos vetores x1, x2, …, xn.                                                       |
+| ceiling(x)                | Retorna o menor inteiro maior ou igual ao valor x.                                                                       |
+| cor(x,y)                  | Calcula o coeficiente de correlação.                                                                                     |
+| cumsum(x)                 | Retorna um vetor com valores acumulados em soma sobre os elementos de x.                                                 |
+| cumprod(x)                | Retorna um vetor com valores acumulados em produto sobre os elementos de x.                                              |
+| cummin(x)                 | Retorna um vetor com valores acumulados em mínimo sobre os elementos de x.                                               |
+| cummax(x)                 | Retorna um vetor com valores acumulados em máximo sobre os elementos de x.                                               |
+| data.frame(x1, x2, …, xn) | Cria um dataframe com os vatores x1, x2, …, xn.                                                                          |
+| det(M)                    | Calcula o determinante da matriz quadrada M.                                                                             |
+| dim(M)                    | Retorna as dimensões do objeto M.                                                                                        |
+| diff(x)                   | Retorna um vetor com a diferença entre os valores de x.                                                                  |
+| eigen(M)                  | Retorna os autovalores e os autovetores da matriz quadrada M.                                                            |
+| floor(x)                  | Retorna o maior inteiro menor ou igual a x.                                                                              |
+| identical(x,y)            | Verifica se os vetores são idênticos.                                                                                    |
+| intersect(x,y)            | Realiza a interseção de dois conjuntos.                                                                                  |
+| head(D)                   | Mostra o cabeçalho do objeto D.                                                                                          |
+| length(x)                 | Calcula o comprimento do vetor x.                                                                                        |
+| mean(x)                   | Calcula a média do vetor x.                                                                                              |
+| median(x)                 | Calcula a mediana do vetor x.                                                                                            |
+| min(x)                    | Calcula o mínimo de x.                                                                                                   |
+| max(x)                    | Calcula o máximo de x.                                                                                                   |
+| ncol(M)                   | Retorna o número de colunas da matriz M.                                                                                 |
+| nrow(M)                   | Retorna o número de linhas da matriz M.                                                                                  |
+| polyroot(x)               | Encontra as raízes do polinômio de ordem n cujos coeficientes são representados no vetor x em ordem decrescente.         |
+| prod(x)                   | Multiplica os valores de x.                                                                                              |
+| quantile(x,k)             | Calcula o percentil de ordem 0 ≤ *x* ≤ 1 dos valores de x.                                                               |
+| Re(x)                     | Retorna a parte real de um vetor x.                                                                                      |
+| rep(x,k)                  | Cria um vetor repetindo a sequência x k vezes.                                                                           |
+| round(x,k)                | Arredonda o valor x com k casas decimais.                                                                                |
+| sd(x)                     | Calcula o desvio-padrão do vetor x.                                                                                      |
+| seq(i,j,k)                | Cria uma sequência de i ate j com tamanho de passo k.                                                                    |
+| setdiff(x,y)              | Retorna um vetor contendo os elementos do conjunto diferença entre x e y.                                                |
+| setequal(x,y)             | Verifica se os elementos dos vetores x e y são iguais, idenpendentemente da frequência em que aparecem no vetor.         |
+| solve(A,b)                | Resolve Ax=b, retornando x.                                                                                              |
+| sort(x)                   | Ordena os valores de vetor x em ordem crescente.                                                                         |
+| sort(x, decreasing = T)   | Ordena os valores de x em ordem decrescente.                                                                             |
+| str(D)                    | Retorna a estrutura do objeto D.                                                                                         |
+| sum(x)                    | Soma os valores de x.                                                                                                    |
+| union(x,y)                | Retorna os elementos da união entre x e y.                                                                               |
+| var(x)                    | Calcula a variância do vetor x.                                                                                          |
+| var(x,y)                  | Calcula a covariância entre x e y.                                                                                       |
+| View(D)                   | Mostra o dataframe em janela separada.                                                                                   |
+
 # 5 Cap 3 - Principais pacotes 
 
 1.  Principais pacotes:  
@@ -522,8 +571,7 @@ Editora: ALTA BOOKS EDITORA
 ## 10.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.  
-E revisando Cap.2, acessando valores de posições especificas de
-objetos.  
+E revisando Cap.3.  
 
 ## 10.2 Em andamento:
 
