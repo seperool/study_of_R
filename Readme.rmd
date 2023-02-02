@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  odt_document: 
+    number_sections: true
 ---
 
 # Objetivo
@@ -217,10 +217,21 @@ View(D)    |   Mostra o dataframe em janela separada.
 
 # Cap 3 - Principais pacotes\
 
+## Instalação de pacotes\
+ - sintaxe de instalação:\
+ **install.packages**("*nome do pacote*")\
+ - sintaxe de variais instalações simultaneas:\
+ **install.packages**(c("*nome do pacote*","*nome do pacote*",...), dependencies = **TRUE**)\
+
+## Pacotes
+
 1. Principais pacotes:\
 
+  - **stringr**\
+  Pacote para trabalhar com strings (texto).\
+  
   - **Rmarkdown**\
-  Produção de relatorios(html, pdf, doc, md).\
+  Produção de relatorios (html, pdf, doc, md).\
 
   - **knitr**\
   Interpretação e compilação do documento rmd.\
@@ -248,15 +259,44 @@ View(D)    |   Mostra o dataframe em janela separada.
     Visualização de dados, produção de gráficos.\
     - **purr**\
     Manipulação de vetores e listas.\
+  - **foreign**\
+  Leitura e gravação de dados armazenados por algumas versões de "Epi Info", "Octave", "Minitab", "S", "SAS", "SPSS", "Stata", "Systat", "Weka" e para leitura e gravação de alguns "dBase" arquivos.\
+  - **devtools**\
+  Para instalar pacotes que não estejam no **CRAN**.\
+
+2. Pacotes auxiliares ao pacote **ggplot2**:\
+  - **ggthemes**\
+  - **grid**\
+
+## Carregamento de pacotes
+
+- Para poder utilizar o conjunto de funções de um determinado pacote, não basta apenas instalar o pacote, é preciso carrega-lo no script.\
+- As principais formas de carregar um pacote no script é través dos comandos *library*() e *require*().\
+**library**(*nome_pacote*)\
+**require**(*nome_pacote*)\
+- Outra possibilidade, é ao usar um função especificar a qual pacote ela pertence.\
+*nome_pacote***::***função*.\
+
+## Obter ajuda (informações) sobre pacotes
+
+Duas formas de se conseguir informações sobre determinado pacote é através dos comandos:\
+1. **package?***nome_pacote*\
+2. **help**(**package** = "*nome_pacote*")\
 
 \newpage
 
-2. Instalação de pacotes:\
- - sintaxe de instalação:\
- **install.packages**("*nome do pacote*")\
- - sintaxe de variais instalações simultaneas:\
- **install.packages**(c("*nome do pacote*","*nome do pacote*",...), dependencies = **TRUE**)\
- 
+# Sites para uso Remote do R
+- Alguns sites que possibilitam utilizar o R básico, sem que seja necessário instala-lo no computador.\
+- Uma otima saída quando necessario utilizar em algum computador público (lan houses, hotéis, laboratórios, ...)\
+1. <http://rstudio.cloud/>
+2. <http://jupyter.org/try>
+3. <http://www.tutorialspoint.com/execute_r_online.php>
+4. <http://github.com/datacamp/datacamp_light>
+5. <http://rdrr.io/snippets>
+6. <http://www.jdoodle.com/execute-r-online>
+7. <http://rextester.com/l/r_online_compiler>
+8. <http://rnotebook.io>
+
 \newpage
 
 # Cap 4 - R Markdown\
@@ -264,7 +304,7 @@ View(D)    |   Mostra o dataframe em janela separada.
 1. Preâmbulo:\
   - *title*: "Titulo desejado"\
   - *author*: "Nome dos autores"\
-  - *date*: "Data do dia da compilação", para adicionar a data atual pode usar a função atraves do chunk "r Sys.Date()"\
+  - *date*: "Data do dia da compilação", para adicionar a data atual, podemos usar uma função dentro de um *chunk* "r Sys.Date()"\
   - *output*: o tipo de saida, podem ser:\
     - Documentos:\
       - *pdf_document*\
@@ -551,7 +591,7 @@ View(D)    |   Mostra o dataframe em janela separada.
 ## Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.\
-E revisando Cap.3.\
+E revisando Cap.4 \- R Markdown.\
 
 ## Em andamento:
 

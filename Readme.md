@@ -209,10 +209,23 @@ Editora: ALTA BOOKS EDITORA
 
 # 5 Cap 3 - Principais pacotes 
 
+## 5.1 Instalação de pacotes 
+
+-   sintaxe de instalação:  
+    **install.packages**(“*nome do pacote*”)  
+-   sintaxe de variais instalações simultaneas:  
+    **install.packages**(c(“*nome do pacote*”,“*nome do pacote*”,…),
+    dependencies = **TRUE**)  
+
+## 5.2 Pacotes
+
 1.  Principais pacotes:  
 
+-   **stringr**  
+    Pacote para trabalhar com strings (texto).  
+
 -   **Rmarkdown**  
-    Produção de relatorios(html, pdf, doc, md).  
+    Produção de relatorios (html, pdf, doc, md).  
 
 -   **knitr**  
     Interpretação e compilação do documento rmd.  
@@ -242,22 +255,63 @@ Editora: ALTA BOOKS EDITORA
     -   **purr**  
         Manipulação de vetores e listas.  
 
-1.  Instalação de pacotes:  
+-   **foreign**  
+    Leitura e gravação de dados armazenados por algumas versões de “Epi
+    Info”, “Octave”, “Minitab”, “S”, “SAS”, “SPSS”, “Stata”, “Systat”,
+    “Weka” e para leitura e gravação de alguns “dBase” arquivos.  
 
--   sintaxe de instalação:  
-    **install.packages**(“*nome do pacote*”)  
--   sintaxe de variais instalações simultaneas:  
-    **install.packages**(c(“*nome do pacote*”,“*nome do pacote*”,…),
-    dependencies = **TRUE**)  
+-   **devtools**  
+    Para instalar pacotes que não estejam no **CRAN**.  
 
-# 6 Cap 4 - R Markdown 
+1.  Pacotes auxiliares ao pacote **ggplot2**:  
+
+-   **ggthemes**  
+-   **grid**  
+
+## 5.3 Carregamento de pacotes
+
+-   Para poder utilizar o conjunto de funções de um determinado pacote,
+    não basta apenas instalar o pacote, é preciso carrega-lo no
+    script.  
+-   As principais formas de carregar um pacote no script é través dos
+    comandos *library*() e *require*().  
+    **library**(*nome_pacote*)  
+    **require**(*nome_pacote*)  
+-   Outra possibilidade, é ao usar um função especificar a qual pacote
+    ela pertence.  
+    *nome_pacote***::***função*.  
+
+## 5.4 Obter ajuda (informações) sobre pacotes
+
+Duas formas de se conseguir informações sobre determinado pacote é
+através dos comandos:  
+1. **package?***nome_pacote*  
+2. **help**(**package** = “*nome_pacote*”)  
+
+# 6 Sites para uso Remote do R
+
+-   Alguns sites que possibilitam utilizar o R básico, sem que seja
+    necessário instala-lo no computador.  
+-   Uma otima saída quando necessario utilizar em algum computador
+    público (lan houses, hotéis, laboratórios, …)  
+
+1.  <http://rstudio.cloud/>
+2.  <http://jupyter.org/try>
+3.  <http://www.tutorialspoint.com/execute_r_online.php>
+4.  <http://github.com/datacamp/datacamp_light>
+5.  <http://rdrr.io/snippets>
+6.  <http://www.jdoodle.com/execute-r-online>
+7.  <http://rextester.com/l/r_online_compiler>
+8.  <http://rnotebook.io>
+
+# 7 Cap 4 - R Markdown 
 
 1.  Preâmbulo:  
 
 -   *title*: “Titulo desejado”  
 -   *author*: “Nome dos autores”  
--   *date*: “Data do dia da compilação”, para adicionar a data atual
-    pode usar a função atraves do chunk “r Sys.Date()”  
+-   *date*: “Data do dia da compilação”, para adicionar a data atual,
+    podemos usar uma função dentro de um *chunk* “r Sys.Date()”  
 -   *output*: o tipo de saida, podem ser:  
     -   Documentos:  
         -   *pdf_document*  
@@ -292,7 +346,7 @@ Editora: ALTA BOOKS EDITORA
     -   Expressões  
     -   Sinais e setas  
 
-# 7 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
+# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
 1.  identificando/mudando tipos de variaveis  
 
@@ -438,7 +492,7 @@ Editora: ALTA BOOKS EDITORA
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
-# 8 Cap 6 - Pacote data.table 
+# 9 Cap 6 - Pacote data.table 
 
 1.  **data.table**  
     -   Manipulando linhas  
@@ -456,7 +510,7 @@ Editora: ALTA BOOKS EDITORA
         -   *setcolorder*  
             modificando ordem das colunas.  
 
-# 9 Cap 7 - Gráficos basicos e pacote ggplot2 
+# 10 Cap 7 - Gráficos basicos e pacote ggplot2 
 
 1.  Gráficos basicos:  
 
@@ -566,15 +620,15 @@ Editora: ALTA BOOKS EDITORA
     -   *theme_void*  
         Um tema completamente vazio.  
 
-# 10 Andamento dos Estudos
+# 11 Andamento dos Estudos
 
-## 10.1 Assunto em andamento:
+## 11.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.  
-E revisando Cap.3.  
+E revisando Cap.4 - R Markdown.  
 
-## 10.2 Em andamento:
+## 11.2 Em andamento:
 
-## 10.3 Vazios:
+## 11.3 Vazios:
 
-## 10.4 Finalizando detalhes:
+## 11.4 Finalizando detalhes:
