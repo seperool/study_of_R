@@ -1,6 +1,6 @@
-ESCRITO EM 01/02/23
+ESCRITO EM 02/02/23
 ---
-PARA 02/02/23
+PARA 03/02/23
 ---
 Subir github:
 	
@@ -9,8 +9,7 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
-			- Cap. 3 - revisando principais pacotes
-			- Cap. 4
+			- Cap. 4 - revisando R markdown
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
