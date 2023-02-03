@@ -328,12 +328,25 @@ através dos comandos:
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
 
-1.  Chunks/codigos embutidos:  
-2.  Titulos e subtitulos:  
-3.  Listas e blocos de citação:  
-4.  Inserir tabelas:  
-5.  Fontes:  
-6.  Hiperlinks e imagens:  
+1.  *Chunks* (códigos embutidos):  
+
+-   Códigos em R, ou em outras linguagens, podem ser inseriodos nos
+    documentos através de *chunks*.  
+-   *Chunks* são blocos de programação.  
+-   A principal forma de inserir *chunks* é:  
+    - Três sinais de acento grave (crases) para abrir o *chunk*.  
+    - Definição da linguagem do bloco de programação.  
+    - Considerações sobre o bloco de programação.  
+    - Bloco de programação.  
+    - Três sinais de acento grave (crases) para fechar o *chunk*.  
+-   Outras formas de inserir *chunks* é atraves do botão *Insert*, na
+    área superior da tela do script, do **RStudio**.  
+
+1.  Titulos e subtitulos:  
+2.  Listas e blocos de citação:  
+3.  Inserir tabelas:  
+4.  Fontes:  
+5.  Hiperlinks e imagens:  
 
 -   Hiperlinks  
 -   Imagens  

@@ -3,13 +3,13 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
@@ -323,7 +323,17 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
       - *flexdashboard::flex_dashboard*\
       - *github_document*\
     
-2. Chunks/codigos embutidos:\
+2. *Chunks* (códigos embutidos):\
+  - Códigos em R, ou em outras linguagens, podem ser inseriodos nos documentos através de *chunks*.\
+  - *Chunks* são blocos de programação.\
+  -  A principal forma de inserir *chunks* é:\
+    - Três sinais de acento grave (crases) para abrir o *chunk*.\
+    - Definição da linguagem do bloco de programação.\
+    - Considerações sobre o bloco de programação.\
+    - Bloco de programação.\
+    - Três sinais de acento grave (crases) para fechar o *chunk*.\
+  - Outras formas de inserir *chunks* é atraves do botão *Insert*, na área superior da tela do script, do **RStudio**.\
+
 3. Titulos e subtitulos:\
 4. Listas e blocos de citação:\
 5. Inserir tabelas:\
