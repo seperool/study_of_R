@@ -327,6 +327,14 @@ através dos comandos:
     -   mais:  
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
+-   Sumário:  
+    Para inserir o sumário no documento, basta colocar o comando “*doc*:
+    *yes*” indentado dentro do tipo de saída.  
+-   Formatação desejada:  
+    Para determinar a formatação desejada, basta salvar um arquivo com o
+    nome *estilo*.*docx*, que contenha a formatação e referenciar o
+    arquivo, indentado dentro do tipo de arquivo, através do comando
+    “*reference_docx*: caminho/…/estilo.docx”.  
 
 1.  *Chunks* (códigos embutidos):  
 

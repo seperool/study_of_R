@@ -3,20 +3,20 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
     number_sections: true
 ---
 
@@ -322,6 +322,10 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
     - mais:\
       - *flexdashboard::flex_dashboard*\
       - *github_document*\
+  - Sumário:\
+  Para inserir o sumário no documento, basta colocar o comando "*doc*: *yes*" indentado dentro do tipo de saída.\
+  - Formatação desejada:\
+  Para determinar a formatação desejada, basta salvar um arquivo com o nome *estilo*.*docx*, que contenha a formatação e referenciar o arquivo, indentado dentro do tipo de arquivo, através do comando "*reference_docx*: caminho/.../estilo.docx".\
     
 2. *Chunks* (códigos embutidos):\
   - Códigos em R, ou em outras linguagens, podem ser inseriodos nos documentos através de *chunks*.\
