@@ -10,6 +10,10 @@ Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
 			- Cap. 4 - revisando R markdown
+				- Preambulo
+					- autores
+					- bibliografia
+				- ...
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
