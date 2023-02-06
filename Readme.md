@@ -306,12 +306,31 @@ através dos comandos:
 
 # 7 Cap 4 - R Markdown 
 
-1.  Preâmbulo:  
+## 7.1 Preâmbulo
 
--   *title*: “Titulo desejado”  
--   *author*: “Nome dos autores”  
--   *date*: “Data do dia da compilação”, para adicionar a data atual,
-    podemos usar uma função dentro de um *chunk* “r Sys.Date()”  
+1.  **Titulo**  
+    *title*: “Titulo desejado”  
+2.  **Autor**  
+
+-   Para inserir um autor:  
+    *author*: “Nome do autor”  
+-   Para inserir varios autores:  
+    *author*:  
+    -   autor_1^\[instituto\]  
+    -   autor_2^\[instituto\]  
+
+1.  **Data**  
+
+-   O comando “*date*:”, adiciona uma data ao documento.  
+-   Podemos adicionar uma data qualquer para o documento no formato
+    “dd/mm/aaaa”.  
+    *date*: “dd/mm/aaaa”  
+-   Outra possibilidade é usar uma função dentro de um *chunk* “r
+    Sys.Date()”, para adicionar a data atual do sistema.  
+    *date*: “r Sys.Date()”  
+
+1.  **Tipo do Documento** (*output*)  
+
 -   *output*: o tipo de saida, podem ser:  
     -   Documentos:  
         -   *pdf_document*  
@@ -327,16 +346,48 @@ através dos comandos:
     -   mais:  
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
--   Sumário:  
+
+1.  **Sumário**  
     Para inserir o sumário no documento, basta colocar o comando “*doc*:
     *yes*” indentado dentro do tipo de saída.  
--   Formatação desejada:  
+2.  Formatação desejada  
     Para determinar a formatação desejada, basta salvar um arquivo com o
     nome *estilo*.*docx*, que contenha a formatação e referenciar o
     arquivo, indentado dentro do tipo de arquivo, através do comando
     “*reference_docx*: caminho/…/estilo.docx”.  
+3.  **Abstract**  
+    *Abstract*: “Texto de abstract”.  
+4.  **Bibliografia**  
 
-1.  *Chunks* (códigos embutidos):  
+-   Ter um arquivo \*.bib com as referencias.  
+-   Adicionar o arquivo \*.bib no preâmbulo do **R Markdown**, atravês
+    do comando:  
+    *bibliograpy*: caminho/arquivo.bib  
+-   Um arquivo \*.csl com o estilo da citação.  
+    Este arquivo pode ser obtido no site:  
+    <https://www.zotero.org/styles>  
+    Pesquisar por: “abnt”  
+    Opção: “Instituto de Pesquisa Econômica Aplicada - ABNT (Português -
+    Brasil)”  
+-   Adicionar o arquivo \*.csl no preâmbulo do R Markdown, através do
+    comando:  
+    *csl*: caminho/arquivo.csl  
+-   É necessario criar um capítulo no final para as referências. A
+    bibliografia vai ser alocada no final do documento, logo neste
+    ultímo capítulo. A bibliografio é sempre inserida ao final do
+    documento.  
+-   Por fim, para aparecer as referencias elas precisam ser citadas no
+    texto.  
+    As principais formas de citar uma referência num texto de **R
+    Markdown** é:  
+    -   Uma citação:  
+        Exemplo do comando: \[@ chave_da_referencia\]  
+        Exemplo de como fica no arquivo final: (Alcoforado, 2021).  
+    -   Mais de uma citação ao mesmo tempo:  
+        Exemplo do comando: \[@ chave_da_referencia_1, @
+        chave_da_referencia_2\]  
+
+## 7.2 *Chunks* (códigos embutidos)
 
 -   Códigos em R, ou em outras linguagens, podem ser inseriodos nos
     documentos através de *chunks*.  
@@ -350,22 +401,28 @@ através dos comandos:
 -   Outras formas de inserir *chunks* é atraves do botão *Insert*, na
     área superior da tela do script, do **RStudio**.  
 
-1.  Titulos e subtitulos:  
-2.  Listas e blocos de citação:  
-3.  Inserir tabelas:  
-4.  Fontes:  
-5.  Hiperlinks e imagens:  
+## 7.3 Titulos e subtitulos
+
+## 7.4 Listas e blocos de citação
+
+## 7.5 Inserir tabelas
+
+## 7.6 Fontes
+
+## 7.7 Hiperlinks e imagens
 
 -   Hiperlinks  
 -   Imagens  
 
-1.  Letras gregas:  
-2.  Fórmulas:  
-    -   Subscritos e superescritos  
-    -   Sublinhados, sobrelinhas e vetores  
-    -   Frações, matrizes e chavetas  
-    -   Expressões  
-    -   Sinais e setas  
+## 7.8 Letras gregas
+
+## 7.9 Fórmulas
+
+    - Subscritos e superescritos\
+    - Sublinhados, sobrelinhas e vetores\
+    - Frações, matrizes e chavetas\
+    - Expressões\
+    - Sinais e setas\
 
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
@@ -648,8 +705,10 @@ através dos comandos:
 Atualmente estou estudando Cap.7, pacote ggplot2.  
 E revisando Cap.4 - R Markdown.  
 
-## 11.2 Em andamento:
+# 12 Referências
 
-## 11.3 Vazios:
-
-## 11.4 Finalizando detalhes:
+ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
+visualização, modelagem e elaboração de
+relatórios](https://altabooks.com.br/produto/utilizando-a-linguagem-r/)**.
+Rio de Janeiro: Departamento de estatística da UFF; Alta Books Editora,
+2021.
