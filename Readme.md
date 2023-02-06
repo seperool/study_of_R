@@ -308,9 +308,11 @@ através dos comandos:
 
 ## 7.1 Preâmbulo
 
-1.  **Titulo**  
-    *title*: “Titulo desejado”  
-2.  **Autor**  
+### 7.1.1 **Titulo**
+
+*title*: “Titulo desejado”  
+
+### 7.1.2 **Autor**
 
 -   Para inserir um autor:  
     *author*: “Nome do autor”  
@@ -319,7 +321,7 @@ através dos comandos:
     -   autor_1^\[instituto\]  
     -   autor_2^\[instituto\]  
 
-1.  **Data**  
+### 7.1.3 **Data**
 
 -   O comando “*date*:”, adiciona uma data ao documento.  
 -   Podemos adicionar uma data qualquer para o documento no formato
@@ -329,7 +331,7 @@ através dos comandos:
     Sys.Date()”, para adicionar a data atual do sistema.  
     *date*: “r Sys.Date()”  
 
-1.  **Tipo do Documento** (*output*)  
+### 7.1.4 **Tipo do Documento** (*output*)
 
 -   *output*: o tipo de saida, podem ser:  
     -   Documentos:  
@@ -347,17 +349,23 @@ através dos comandos:
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
 
-1.  **Sumário**  
-    Para inserir o sumário no documento, basta colocar o comando “*doc*:
-    *yes*” indentado dentro do tipo de saída.  
-2.  Formatação desejada  
-    Para determinar a formatação desejada, basta salvar um arquivo com o
-    nome *estilo*.*docx*, que contenha a formatação e referenciar o
-    arquivo, indentado dentro do tipo de arquivo, através do comando
-    “*reference_docx*: caminho/…/estilo.docx”.  
-3.  **Abstract**  
-    *Abstract*: “Texto de abstract”.  
-4.  **Bibliografia**  
+### 7.1.5 **Sumário**
+
+Para inserir o sumário no documento, basta colocar o comando “*doc*:
+*yes*” indentado dentro do tipo de saída.  
+
+### 7.1.6 Formatação desejada
+
+Para determinar a formatação desejada, basta salvar um arquivo com o
+nome *estilo*.*docx*, que contenha a formatação e referenciar o arquivo,
+indentado dentro do tipo de arquivo, através do comando
+“*reference_docx*: caminho/…/estilo.docx”.  
+
+### 7.1.7 **Abstract**
+
+*Abstract*: “Texto de abstract”.  
+
+### 7.1.8 **Bibliografia**
 
 -   Ter um arquivo \*.bib com as referencias.  
 -   Adicionar o arquivo \*.bib no preâmbulo do **R Markdown**, atravês
@@ -405,18 +413,20 @@ através dos comandos:
 
 ## 7.4 Listas e blocos de citação
 
-## 7.5 Inserir tabelas
+## 7.5 Notas de rodapé
 
-## 7.6 Fontes
+## 7.6 Inserir tabelas
 
-## 7.7 Hiperlinks e imagens
+## 7.7 Fontes
+
+## 7.8 Hiperlinks e imagens
 
 -   Hiperlinks  
 -   Imagens  
 
-## 7.8 Letras gregas
+## 7.9 Letras gregas
 
-## 7.9 Fórmulas
+## 7.10 Fórmulas
 
     - Subscritos e superescritos\
     - Sublinhados, sobrelinhas e vetores\

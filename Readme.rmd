@@ -3,9 +3,9 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  word_document: 
-    toc: TRUE
+  html_document:
     number_sections: true
+    df_print: paged
   github_document: 
   pdf_document: 
     number_sections: true
@@ -13,9 +13,9 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
+  word_document: 
+    toc: TRUE
     number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
@@ -304,22 +304,25 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
 # Cap 4 - R Markdown\
 
 ## Preâmbulo
-1. **Titulo**\
+### **Titulo**
 *title*: "Titulo desejado"\
-2. **Autor**\
+
+### **Autor**
   - Para inserir um autor:\
   *author*: "Nome do autor"\
   - Para inserir varios autores:\
   *author*:\
     - autor_1\^[instituto]\
     - autor_2\^[instituto]\
-3. **Data**\
+
+### **Data**
 - O comando "*date*:", adiciona uma data ao documento.\
 - Podemos adicionar uma data qualquer para o documento no formato "dd/mm/aaaa".\
 *date*: "dd/mm/aaaa"\
 - Outra possibilidade é usar uma função dentro de um *chunk* "r Sys.Date()", para adicionar a data atual do sistema.\
 *date*: "r Sys.Date()"\
-4. **Tipo do Documento** (*output*)\
+
+### **Tipo do Documento** (*output*)
 - *output*: o tipo de saida, podem ser:\
   - Documentos:\
     - *pdf_document*\
@@ -337,13 +340,17 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
   - mais:\
     - *flexdashboard::flex_dashboard*\
     - *github_document*\
-5. **Sumário**\
+
+### **Sumário**
   Para inserir o sumário no documento, basta colocar o comando "*doc*: *yes*" indentado dentro do tipo de saída.\
-6. Formatação desejada\
+
+### Formatação desejada
   Para determinar a formatação desejada, basta salvar um arquivo com o nome *estilo*.*docx*, que contenha a formatação e referenciar o arquivo, indentado dentro do tipo de arquivo, através do comando "*reference_docx*: caminho/.../estilo.docx".\
-7. **Abstract**\
+
+### **Abstract**
   *Abstract*: "Texto de abstract".\
-8. **Bibliografia**\
+
+### **Bibliografia**
   - Ter um arquivo \*.bib com as referencias.\
   - Adicionar o arquivo \*.bib no preâmbulo do **R Markdown**, atravês do comando:\
   *bibliograpy*: caminho/arquivo.bib\
