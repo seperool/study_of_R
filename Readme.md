@@ -330,6 +330,7 @@ através dos comandos:
 -   Outra possibilidade é usar uma função dentro de um *chunk* “r
     Sys.Date()”, para adicionar a data atual do sistema.  
     *date*: “r Sys.Date()”  
+    Obs.: *chunk* deve ser colocado entre acentos graves.  
 
 ### 7.1.4 **Tipo do Documento** (*output*)
 
@@ -428,11 +429,11 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.10 Fórmulas
 
-    - Subscritos e superescritos\
-    - Sublinhados, sobrelinhas e vetores\
-    - Frações, matrizes e chavetas\
-    - Expressões\
-    - Sinais e setas\
+-   Subscritos e superescritos  
+-   Sublinhados, sobrelinhas e vetores  
+-   Frações, matrizes e chavetas  
+-   Expressões  
+-   Sinais e setas  
 
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
