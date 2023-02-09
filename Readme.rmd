@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  odt_document: 
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -372,15 +372,26 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
     Exemplo do comando: [\@ chave_da_referencia_1, \@ chave_da_referencia_2]\
     
 ## *Chunks* (códigos embutidos)
-  - Códigos em R, ou em outras linguagens, podem ser inseriodos nos documentos através de *chunks*.\
-  - *Chunks* são blocos de programação.\
-  -  A principal forma de inserir *chunks* é:\
-    - Três sinais de acento grave (crases) para abrir o *chunk*.\
-    - Definição da linguagem do bloco de programação.\
-    - Considerações sobre o bloco de programação.\
-    - Bloco de programação.\
-    - Três sinais de acento grave (crases) para fechar o *chunk*.\
-  - Outras formas de inserir *chunks* é atraves do botão *Insert*, na área superior da tela do script, do **RStudio**.\
+- Códigos em R, ou em outras linguagens, podem ser inseriodos nos documentos através de *chunks*.\
+- *Chunks* são blocos de programação.\
+-  A principal forma de inserir *chunks* é:\
+  - Três sinais de acento grave (crases) para abrir o *chunk*.\
+  - Na primeira linha, definir a linguagem do bloco de programação:\
+    - **R**\
+    - **Python**\
+    - **Julia**\
+    - **C++**\
+    - **SQL**\
+    ...\
+  - Ainda na primeira linha, considerações sobre o bloco de programação (*chunk options*):\
+    - *include*\
+    Mostra (*true*), ou não (*false*), o código e os resultados no arquivo finalizado. O R Markdown ainda executa o código e o resultado dele ainda pode ser usado em outro bloco de programação.\
+    - *echo*\
+    - *message*\
+    - *warning*\
+  - Bloco de programação, escrito na linguagme definida.\
+  - Três sinais de acento grave (crases) para fechar o *chunk*.\
+- Outras formas de inserir *chunks* é atraves do botão *Insert*, na área superior da tela do script, do **RStudio**.\
 
 ## Titulos e subtitulos
 ## Listas e blocos de citação

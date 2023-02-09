@@ -402,11 +402,26 @@ indentado dentro do tipo de arquivo, através do comando
     documentos através de *chunks*.  
 -   *Chunks* são blocos de programação.  
 -   A principal forma de inserir *chunks* é:  
-    - Três sinais de acento grave (crases) para abrir o *chunk*.  
-    - Definição da linguagem do bloco de programação.  
-    - Considerações sobre o bloco de programação.  
-    - Bloco de programação.  
-    - Três sinais de acento grave (crases) para fechar o *chunk*.  
+-   Três sinais de acento grave (crases) para abrir o *chunk*.  
+-   Na primeira linha, definir a linguagem do bloco de programação:  
+    -   **R**  
+    -   **Python**  
+    -   **Julia**  
+    -   **C++**  
+    -   **SQL**  
+        …  
+-   Ainda na primeira linha, considerações sobre o bloco de programação
+    (*chunk options*):  
+    -   *include*  
+        Mostra (*true*), ou não (*false*), o código e os resultados no
+        arquivo finalizado. O R Markdown ainda executa o código e o
+        resultado dele ainda pode ser usado em outro bloco de
+        programação.  
+    -   *echo*  
+    -   *message*  
+    -   *warning*  
+-   Bloco de programação, escrito na linguagme definida.  
+-   Três sinais de acento grave (crases) para fechar o *chunk*.  
 -   Outras formas de inserir *chunks* é atraves do botão *Insert*, na
     área superior da tela do script, do **RStudio**.  
 
