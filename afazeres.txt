@@ -1,6 +1,6 @@
-ESCRITO EM 09/02/23
+ESCRITO EM 10/02/23
 ---
-PARA 10/02/23
+PARA 11/02/23
 ---
 Subir github:
 	
@@ -9,11 +9,10 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Videos R Markdown (0/5)
+			- Video 1 - 26:47
 		- Readme.*
 			- Cap. 4 - revisando R markdown
-				- chunks (revisar)
-					- chunk options
-				- titulos e subtitulos (revisar)
+				- Formatação
 				- ...
 			- Cap. 5
 			- Cap. 6
