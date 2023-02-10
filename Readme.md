@@ -417,9 +417,22 @@ indentado dentro do tipo de arquivo, através do comando
         arquivo finalizado. O R Markdown ainda executa o código e o
         resultado dele ainda pode ser usado em outro bloco de
         programação.  
+        *include* = *false* \| *true*  
     -   *echo*  
+        Impede (*false*), ou não (*true*), que o código apareça, não
+        afeta o resultado.  
+        *echo* = *false* \| *true*  
     -   *message*  
+        Imprede (*false*), ou não (*true*),que mensagens geradas por
+        código apareçam no arquivo finalizado.  
+        *message* = *false* \| *true*  
     -   *warning*  
+        Imprede (*false*), ou não (*true*), que avisos gerados pelo
+        código apareçam no final.  
+        *warning* = *false* \| *true*  
+    -   *fig.cap*  
+        Adiciona uma legenda aos resultados gráficos.  
+        *fig*.*cap* = “…”  
 -   Bloco de programação, escrito na linguagme definida.  
 -   Três sinais de acento grave (crases) para fechar o *chunk*.  
 -   Outras formas de inserir *chunks* é atraves do botão *Insert*, na
@@ -427,27 +440,60 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.3 Titulos e subtitulos
 
-## 7.4 Listas e blocos de citação
+-   Ao utilizar o comando \# e em seguencia um texo, geramos um
+    titulo.  
+    \# Titulo  
+-   A cada \# que adicionamos, diminuimos uma camada de subtitulos.  
+    \## Subtitulo  
 
-## 7.5 Notas de rodapé
+## 7.4 Pular linha
 
-## 7.6 Inserir tabelas
+-   Para que duas frases fiquem em linhas separadas, dê dois espaços
+    entre elas.  
+-   Os dois espaços funcionam também para deixar uma linha em branco.  
+-   Outra forma é adicinal “\\”, tem o mesmo efeito.  
 
-## 7.7 Fontes
+## 7.5 Listas e blocos de citação
 
-## 7.8 Hiperlinks e imagens
+## 7.6 Notas de rodapé
+
+## 7.7 Inserir tabelas
+
+## 7.8 Fontes
+
+## 7.9 Hiperlinks e imagens
 
 -   Hiperlinks  
 -   Imagens  
 
-## 7.9 Letras gregas
+## 7.10 Letras gregas
 
-## 7.10 Fórmulas
+## 7.11 Formatação
 
--   Subscritos e superescritos  
--   Sublinhados, sobrelinhas e vetores  
+-   Para deixar uma palavra em **negrito**, coloque-a entre quatro
+    asteriscos: `**negrito**`.
+
+-   Para deixar uma palavra em *itálico*, coloque-a entre dois
+    asteriscos: `*itálico*`.
+
+-   Para deixar caracteres <sup>sobrescritos</sup>, coloque-os entre
+    acentos circunflexos: `^1^`.
+
+-   Para deixar caracteres <sub>subscritos</sub>, coloque-os entre til:
+    `~1~`.
+
+-   Para destacar um termo como `código`, coloque-o entre crases
+    (backticks): `` `código` ``.
+
+-   Para criar uma citação (quote), escreva o texto após um sinal de
+    maior: `> Citação`.
+
+-   Vetores  
+
 -   Frações, matrizes e chavetas  
+
 -   Expressões  
+
 -   Sinais e setas  
 
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
