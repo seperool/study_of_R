@@ -4,9 +4,7 @@ PARA 12/02/23
 ---
 Subir github:
 	- Cap. 4 - R Markdown
-		- Hiperlinks e imagens
-		- Notas de Rodapé
-	- Imagem R Markdown
+		
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
