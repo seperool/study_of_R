@@ -455,7 +455,29 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.5 Listas e blocos de citação
 
-## 7.6 Notas de rodapé
+## 7.6 Notas de rodapé (clicáveis)
+
+-   Há duas opções para criar uma nota de rodapé:  
+
+1.  Escrever ao final do texto `[^1]` e então (pode ser logo abaixo, ou
+    depois) escrever a nota de rodapé:  
+    “Essa informação não é um consenso `[^1]`”  
+    `[^1]: Esta é uma nota de rodapé.`  
+
+2.  Colocar a informação da nota de rodapé no meio do texto, e o R
+    numerará automaticamente:  
+    “Essa informação não é um consenso `^[Esta é uma nota de rodapé]`”  
+
+-   Observação:  
+    A informação da nota de rodapé deve estar separado do texto por uma
+    linha, no primeiro caso. Ou contida na nota no link clicável, como
+    no segundo caso.  
+
+-   Exemplo:  
+    O RMarkdown é uma ferramenta excelente para documentar seus códigos
+    e apresentar os resultados. As muitas funcionalidades dele são
+    descritas detalhadamente no livro R Markdown: The Definitive Guide
+    [1].  
 
 ## 7.7 Inserir tabelas
 
@@ -463,8 +485,26 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.9 Hiperlinks e imagens
 
--   Hiperlinks  
--   Imagens  
+### 7.9.1 Hiperlinks 
+
+-   Sintaxe:  
+    `[Nome do Link](Endereço do Link)`  
+-   Exemplo:  
+    [Canal do YouTube](https://www.youtube.com/)  
+
+### 7.9.2 Imagens 
+
+-   Existem duas formas de pegar uma imagem são elas:  
+    -   Pegar a imagem de um endereço da web (igual a hiperlink).  
+        `![Legenda](https://miro.medium.com/max/600/1*sCJzUnDilAuvGrlllJeXKw.jpeg)`
+    -   Pegar a imagem de uma pasta no computador (adicionar caminho ate
+        a imagem).  
+        `![Legenda](Cap4-R_markdown/RMarkdown.png)`
+-   Sintaxe:  
+    `![Legenda](Endereço da Imagem)`  
+-   Exemplo:  
+    <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
+    alt="Logo do RMarkdown" />  
 
 ## 7.10 Letras gregas
 
@@ -784,3 +824,7 @@ visualização, modelagem e elaboração de
 relatórios](https://altabooks.com.br/produto/utilizando-a-linguagem-r/)**.
 Rio de Janeiro: Departamento de estatística da UFF; Alta Books Editora,
 2021.
+
+[1] R Markdown: The Definitive Guide. Yihui Xie, J. J. Allaire, Garrett
+Grolemund. Disponível em:  
+<https://bookdown.org/yihui/rmarkdown/>  

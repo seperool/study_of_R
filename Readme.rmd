@@ -7,16 +7,16 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   html_document:
     number_sections: true
     df_print: paged
   word_document: 
     toc: TRUE
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -419,12 +419,45 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
 - Outra forma é adicinal "\\", tem o mesmo efeito.\
 
 ## Listas e blocos de citação
-## Notas de rodapé
+## Notas de rodapé (clicáveis)
+- Há duas opções para criar uma nota de rodapé:\
+  
+1. Escrever ao final do texto `[^1]` e então (pode ser logo abaixo, ou depois) escrever a nota de rodapé:\
+"Essa informação não é um consenso `[^1]`"\
+`[^1]: Esta é uma nota de rodapé.`\
+
+2. Colocar a informação da nota de rodapé no meio do texto, e o R numerará automaticamente:\
+"Essa informação não é um consenso `^[Esta é uma nota de rodapé]`"\
+
+- Observação:\
+A informação da nota de rodapé deve estar separado do texto por uma linha, no primeiro caso, ou contida na nota no link clicável, como no segundo caso.\
+
+- Exemplo:\
+O RMarkdown é uma ferramenta excelente para documentar seus códigos e apresentar os resultados. As muitas funcionalidades dele são descritas detalhadamente no livro R Markdown: The Definitive Guide [^1].\
+  
+[^1]: R Markdown: The Definitive Guide. Yihui Xie, J. J. Allaire, Garrett Grolemund. Disponível em:\
+<https://bookdown.org/yihui/rmarkdown/>\
+
 ## Inserir tabelas
 ## Fontes
+
 ## Hiperlinks e imagens
-  - Hiperlinks\
-  - Imagens\
+### Hiperlinks\
+- Sintaxe:\
+`[Nome do Link](Endereço do Link)`\
+- Exemplo:\
+[Canal do YouTube](https://www.youtube.com/)\
+
+### Imagens\
+  - Existem duas formas de pegar uma imagem são elas:\
+    - Pegar a imagem de um endereço da web (igual a hiperlink).\
+    `![Legenda](https://miro.medium.com/max/600/1*sCJzUnDilAuvGrlllJeXKw.jpeg)`
+    - Pegar a imagem de uma pasta no computador (adicionar caminho ate a imagem).\
+    `![Legenda](Cap4-R_markdown/RMarkdown.png)`
+  - Sintaxe:\
+  `![Legenda](Endereço da Imagem)`\
+  - Exemplo:\
+  ![Logo do RMarkdown](Cap4-R_markdown/RMarkdown.png){ width=35% }\
 
 ## Letras gregas
 ## Formatação
