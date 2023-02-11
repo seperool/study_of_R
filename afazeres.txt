@@ -1,15 +1,18 @@
-ESCRITO EM 10/02/23
+ESCRITO EM 11/02/23
 ---
-PARA 11/02/23
+PARA 12/02/23
 ---
 Subir github:
-	
+	- Cap. 4 - R Markdown
+		- Hiperlinks e imagens
+		- Notas de Rodapé
+	- Imagem R Markdown
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
 	- Revisar capitulos anteriores
-		- Videos R Markdown (0/5)
-			- Video 1 - 26:47
+		- Videos R Markdown (1/5)
+			- Video 2 - 00:00
 		- Readme.*
 			- Cap. 4 - revisando R markdown
 				- Formatação
