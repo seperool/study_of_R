@@ -453,7 +453,22 @@ indentado dentro do tipo de arquivo, através do comando
 -   Os dois espaços funcionam também para deixar uma linha em branco.  
 -   Outra forma é adicinal “\\”, tem o mesmo efeito.  
 
-## 7.5 Listas e blocos de citação
+## 7.5 Listas
+
+### 7.5.1 Listas numeradas
+
+Basta inserir o número seguido de ponto e espaço.  
+`1. Tópico da lista numerada`  
+
+### 7.5.2 Listas não numeradas
+
+-   Os principais simbolos (na ordem de utilização) da lista não
+    númerada:  
+    -   Asterisco(\*)  
+    -   Mais(+)  
+    -   Traço(-)  
+-   Para inserir uma lista dentro de uma outra lista, é necessario
+    indentar os tópicos.  
 
 ## 7.6 Notas de rodapé (clicáveis)
 
@@ -470,7 +485,7 @@ indentado dentro do tipo de arquivo, através do comando
 
 -   Observação:  
     A informação da nota de rodapé deve estar separado do texto por uma
-    linha, no primeiro caso. Ou contida na nota no link clicável, como
+    linha, no primeiro caso, ou contida na nota no link clicável, como
     no segundo caso.  
 
 -   Exemplo:  
@@ -481,18 +496,16 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.7 Inserir tabelas
 
-## 7.8 Fontes
+## 7.8 Hiperlinks e imagens
 
-## 7.9 Hiperlinks e imagens
-
-### 7.9.1 Hiperlinks 
+### 7.8.1 Hiperlinks 
 
 -   Sintaxe:  
     `[Nome do Link](Endereço do Link)`  
 -   Exemplo:  
     [Canal do YouTube](https://www.youtube.com/)  
 
-### 7.9.2 Imagens 
+### 7.8.2 Imagens 
 
 -   Existem duas formas de pegar uma imagem são elas:  
     -   Pegar a imagem de um endereço da web (igual a hiperlink).  
@@ -506,9 +519,9 @@ indentado dentro do tipo de arquivo, através do comando
     <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
     alt="Logo do RMarkdown" />  
 
-## 7.10 Letras gregas
+## 7.9 Letras gregas
 
-## 7.11 Formatação
+## 7.10 Formatação
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.
