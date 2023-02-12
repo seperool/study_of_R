@@ -1,6 +1,6 @@
-ESCRITO EM 11/02/23
+ESCRITO EM 12/02/23
 ---
-PARA 12/02/23
+PARA 13/02/23
 ---
 Subir github:
 	- Cap. 4 - R Markdown
