@@ -1,6 +1,6 @@
-ESCRITO EM 12/02/23
+ESCRITO EM 13/02/23
 ---
-PARA 13/02/23
+PARA 14/02/23
 ---
 Subir github:
 	- Cap. 4 - R Markdown
@@ -13,6 +13,8 @@ Afazeres:
 			- Video 2 - 00:00
 		- Readme.*
 			- Cap. 4 - revisando R markdown
+				- Código embutido
+				- Letras gregas
 				- Formatação
 				- ...
 			- Cap. 5
