@@ -519,9 +519,11 @@ Basta inserir o número seguido de ponto e espaço.
     <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
     alt="Logo do RMarkdown" />  
 
-## 7.9 Letras gregas
+## 7.9 Código embutido
 
-## 7.10 Formatação
+## 7.10 Letras gregas
+
+## 7.11 Formatação
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.
