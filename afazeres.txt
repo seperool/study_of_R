@@ -3,16 +3,19 @@ ESCRITO EM 14/02/23
 PARA 15/02/23
 ---
 Subir github:
-	- Cap. 4 - R Markdown
+	- Readme.*
+		- Cap. 4 - R Markdown
+			- Equações
 		
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
 	- Revisar capitulos anteriores
 		- Videos R Markdown (1/5)
-			- Video 2 - 00:00
+			- Video 2 - 07:40
 		- Readme.*
 			- Cap. 4 - revisando R markdown
+				- Chunks (revisar)
 				- Código embutido
 				- Letras gregas
 				- Formatação
