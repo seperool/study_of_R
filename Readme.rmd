@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -420,9 +420,19 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
 
 ## Listas
 ### Listas numeradas
-Basta inserir o número seguido de ponto e espaço.\
+- Basta inserir o número seguido de ponto e espaço.\
 `1. Tópico da lista numerada`\
+
+- A ordem das principais camadas de lista numeradas são:\
+  - Número\
+  `1. Primeira camada`\
+  - Algarismos romanos\
+  `i) Segunda camada`\
+  - Letra\
+  `A. Terceira camada`\
   
+- Para inserir uma lista dentro de uma outra lista, é necessario indentar os tópicos.\
+
 ### Listas não numeradas
 
 - Os principais simbolos (na ordem de utilização) da lista não númerada:\

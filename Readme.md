@@ -457,8 +457,20 @@ indentado dentro do tipo de arquivo, através do comando
 
 ### 7.5.1 Listas numeradas
 
-Basta inserir o número seguido de ponto e espaço.  
-`1. Tópico da lista numerada`  
+-   Basta inserir o número seguido de ponto e espaço.  
+    `1. Tópico da lista numerada`  
+
+-   A ordem das principais camadas de lista numeradas são:  
+
+    -   Número  
+        `1. Primeira camada`  
+    -   Algarismos romanos  
+        `i) Segunda camada`  
+    -   Letra  
+        `A. Terceira camada`  
+
+-   Para inserir uma lista dentro de uma outra lista, é necessario
+    indentar os tópicos.  
 
 ### 7.5.2 Listas não numeradas
 
