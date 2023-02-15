@@ -410,6 +410,9 @@ indentado dentro do tipo de arquivo, através do comando
     -   **C++**  
     -   **SQL**  
         …  
+-   Para dar um nome ao *chunk*, após definir a linguagem de programação
+    basta colocar o nome do *chunk*. Nomear o *chunk* facilita
+    determinar sua função dentro do relatório/documento.  
 -   Ainda na primeira linha, considerações sobre o bloco de programação
     (*chunk options*):  
     -   *include*  
@@ -531,11 +534,23 @@ indentado dentro do tipo de arquivo, através do comando
     <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
     alt="Logo do RMarkdown" />  
 
-## 7.9 Código embutido
+## 7.9 Equações
 
-## 7.10 Letras gregas
+-   As equações no **R Markdown** são escritas com a linguagem
+    **LaTeX**.  
 
-## 7.11 Formatação
+-   Para que a equação apareça no meio do texto, devemos escrevê-la
+    entre dois cifrões: `$equação$`  
+
+-   Para que a equação apareça no formato destacado (display), deve ser
+    colocada entre quatro cifrões:  
+    `$$equação$$`  
+
+## 7.10 Código embutido
+
+## 7.11 Letras gregas
+
+## 7.12 Formatação
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.
