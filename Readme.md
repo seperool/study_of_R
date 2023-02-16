@@ -511,6 +511,27 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.7 Inserir tabelas
 
+### 7.7.1 Formato de tabela padrão
+
+-   A tabela mais simples é atraves do padrão:  
+    -   Primeira linha:  
+        Cabeçalho das colunas, separado por barra vertical(\|).  
+    -   Segunda linha:  
+        -   Tracejados (pelo menos 3), para representar cada coluna, com
+            dois pontos onde se espera que o texto esteja alinhado:
+            -   Dois pontos no inicio do tracejado para representar
+                alinhamento do texo a esquerda.  
+            -   Dois pontos no inicio e no fim do tracejado para
+                representar alinhamento centralizado do texto.  
+            -   Dois ponstos no final do tracejado para representar
+                alinhamento do texto a direita.  
+        -   Cada coluna separada por barra vertical.  
+    -   Terceira linha em diante:  
+        Cada dado de linha em uma linha, com os dados de cada coluna
+        separado por barras verticais.  
+
+### 7.7.2 Tabelas provenientes de banco de dados
+
 ## 7.8 Hiperlinks e imagens
 
 ### 7.8.1 Hiperlinks 
