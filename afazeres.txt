@@ -3,12 +3,7 @@ ESCRITO EM 17/02/23
 PARA 18/02/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 4 - Revisando R Markdown
-			- Tabelas
-	- Imagens
-		- kable
-		- paged_table
+
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
