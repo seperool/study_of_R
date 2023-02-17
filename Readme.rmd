@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -405,6 +405,8 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
   + Bloco de programação, escrito na linguagme definida.\
   + Três sinais de acento grave (crases) para fechar o *chunk*.\
 - Outras formas de inserir *chunks* é atraves do botão *Insert*, na área superior da tela do script, do **RStudio**.\
+- Observação:\
+*messagem* e *warning* igual a *false* é muito utilizado quando se carrega bibliotecas (**library**) no *chunk*, evita que as mensagens do carregamento apareçam.\
 
 \newpage
 
@@ -418,6 +420,8 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
 - Para que duas frases fiquem em linhas separadas, dê dois espaços entre elas.\
 - Os dois espaços funcionam também para deixar uma linha em branco.\
 - Outra forma é adicinal "\\", tem o mesmo efeito.\
+
+\newpage
 
 ## Listas
 ### Listas numeradas
@@ -442,6 +446,8 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
   - Traço(\-)\
 - Para inserir uma lista dentro de uma outra lista, é necessario indentar os tópicos.\
 
+\newpage
+
 ## Notas de rodapé (clicáveis)
 - Há duas opções para criar uma nota de rodapé:\
   
@@ -461,6 +467,8 @@ O RMarkdown é uma ferramenta excelente para documentar seus códigos e apresent
 [^1]: R Markdown: The Definitive Guide. Yihui Xie, J. J. Allaire, Garrett Grolemund. Disponível em:\
 <https://bookdown.org/yihui/rmarkdown/>\
 
+\newpage
+
 ## Inserir tabelas
 
 ### Formato de tabela padrão
@@ -479,6 +487,40 @@ O RMarkdown é uma ferramenta excelente para documentar seus códigos e apresent
 
 ### Tabelas provenientes de banco de dados
 
+#### Mostrar todos os dados
+Dentro do *chunk* chamar a variável que contém um **dataframe**, para imprimir ela na tela.\
+
+#### Mostrar apenas os primeiros dados
+
+- Dentro do *chunk* chamar a variável que contém um **dataframe**, e usar a função **head**() que mostra as 5 primeiras linhas. Podemos adicionar o parâmetro de quantidade de linhas desejamos apresentar.\
+
+- Exemplo:\
+**head**(*var_dataframe*, *n_linha*)\
+
+#### Tabela profissional
+
+- Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a função **kable**(), onde podemos chamar como argumento a variável **dataframe** (e outras funções).\
+- A função **kable**(), apresenta uma tabela em formato mais profissional.\
+- Exemplo:\
+**library**(**knitr**)\
+**kable**(**head**(*var_dataframe*,10))\
+
+![Exemplo Tabela kable](Cap4-R_markdown/tables-1-kable.png){ width=50% }
+
+#### Tabela para paginas web
+
+-  Dentro do *chunk*, podemos chamar a biblioteca **rmarkdown**, e usar a função **paged_table**(), onde podemos chamar como argumento a variável **dataframe**.\
+- Esse tipo de tabela é ideal para aplicações *web*.\
+- Separa os dados por páginas, de maneira dinâmica e com interação do usuário.\
+- Mostra dez linhas por página.\
+- Exemplo:\
+**library**(**rmarkdown**)\
+**paged_table**(*var_dataframe*)\
+
+![Exemplo tabela paged_table](Cap4-R_markdown/paged_rmarkdown.png){ width=50% }
+
+\newpage
+
 ## Hiperlinks e imagens
 ### Hiperlinks\
 - Sintaxe:\
@@ -495,7 +537,7 @@ O RMarkdown é uma ferramenta excelente para documentar seus códigos e apresent
   - Sintaxe:\
   `![Legenda](Endereço da Imagem)`\
   - Exemplo:\
-  ![Logo do RMarkdown](Cap4-R_markdown/RMarkdown.png){ width=35% }\
+  ![Logo do R Markdown](Cap4-R_markdown/RMarkdown.png){ width=35% }\
 
 ## Equações
 

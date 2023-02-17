@@ -440,6 +440,10 @@ indentado dentro do tipo de arquivo, através do comando
 -   Três sinais de acento grave (crases) para fechar o *chunk*.  
 -   Outras formas de inserir *chunks* é atraves do botão *Insert*, na
     área superior da tela do script, do **RStudio**.  
+-   Observação:  
+    *messagem* e *warning* igual a *false* é muito utilizado quando se
+    carrega bibliotecas (**library**) no *chunk*, evita que as mensagens
+    do carregamento apareçam.  
 
 ## 7.3 Titulos e subtitulos
 
@@ -532,6 +536,57 @@ indentado dentro do tipo de arquivo, através do comando
 
 ### 7.7.2 Tabelas provenientes de banco de dados
 
+#### 7.7.2.1 Mostrar todos os dados
+
+Dentro do *chunk* chamar a variável que contém um **dataframe**, para
+imprimir ela na tela.  
+
+#### 7.7.2.2 Mostrar apenas os primeiros dados
+
+-   Dentro do *chunk* chamar a variável que contém um **dataframe**, e
+    usar a função **head**() que mostra as 5 primeiras linhas. Podemos
+    adicionar o parâmetro de quantidade de linhas desejamos
+    apresentar.  
+
+-   Exemplo:  
+    **head**(*var_dataframe*, *n_linha*)  
+
+#### 7.7.2.3 Tabela profissional
+
+-   Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a
+    função **kable**(), onde podemos chamar como argumento a variável
+    **dataframe** (e outras funções).  
+-   A função **kable**(), apresenta uma tabela em formato mais
+    profissional.  
+-   Exemplo:  
+    **library**(**knitr**)  
+    **kable**(**head**(*var_dataframe*,10))  
+
+<figure>
+<img src="Cap4-R_markdown/tables-1-kable.png" style="width:50.0%"
+alt="Exemplo Tabela kable" />
+<figcaption aria-hidden="true">Exemplo Tabela kable</figcaption>
+</figure>
+
+#### 7.7.2.4 Tabela para paginas web
+
+-   Dentro do *chunk*, podemos chamar a biblioteca **rmarkdown**, e usar
+    a função **paged_table**(), onde podemos chamar como argumento a
+    variável **dataframe**.  
+-   Esse tipo de tabela é ideal para aplicações *web*.  
+-   Separa os dados por páginas, de maneira dinâmica e com interação do
+    usuário.  
+-   Mostra dez linhas por página.  
+-   Exemplo:  
+    **library**(**rmarkdown**)  
+    **paged_table**(*var_dataframe*)  
+
+<figure>
+<img src="Cap4-R_markdown/paged_rmarkdown.png" style="width:50.0%"
+alt="Exemplo tabela paged_table" />
+<figcaption aria-hidden="true">Exemplo tabela paged_table</figcaption>
+</figure>
+
 ## 7.8 Hiperlinks e imagens
 
 ### 7.8.1 Hiperlinks 
@@ -553,7 +608,7 @@ indentado dentro do tipo de arquivo, através do comando
     `![Legenda](Endereço da Imagem)`  
 -   Exemplo:  
     <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
-    alt="Logo do RMarkdown" />  
+    alt="Logo do R Markdown" />  
 
 ## 7.9 Equações
 
