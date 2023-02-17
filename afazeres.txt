@@ -1,18 +1,22 @@
-ESCRITO EM 15/02/23
+ESCRITO EM 17/02/23
 ---
-PARA 16/02/23
+PARA 18/02/23
 ---
 Subir github:
-		
+	- Readme.*
+		- Cap. 4 - Revisando R Markdown
+			- Tabelas
+	- Imagens
+		- kable
+		- paged_table
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
 	- Revisar capitulos anteriores
-		- Videos R Markdown (1/5)
-			- Video 2 - 07:40
+		- Videos R Markdown (2/5)
+			- Video 3 - 00:00
 		- Readme.*
-			- Cap. 4 - revisando R markdown
-				- Chunks (revisar)
+			- Cap. 4 - Revisando R Markdown
 				- Código embutido
 				- Letras gregas
 				- Formatação
