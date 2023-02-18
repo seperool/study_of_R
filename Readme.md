@@ -398,6 +398,26 @@ indentado dentro do tipo de arquivo, através do comando
 
 ## 7.2 *Chunks* (códigos embutidos)
 
+### 7.2.1 Códigos embutidos no texto
+
+-   Podemos embutir códigos ao longo do texto.  
+
+-   Para inserir um código que será rodado no meio do texto, usamos um
+    sinais de crase para abrir, definimos a linguagem (normalmente r), o
+    comando que desejamos e um sinal de crase para fechar o código.  
+    `Este é um código embutido`
+
+-   Para rodar pequenos comandos no meio do texto códigos embutidos é
+    uma ótima opção.  
+
+-   Exemplo:  
+    O resultado do comando 1:3 é criar uma sequencia com os valores
+    `1:3`. A soma destes valores é `sum(1:3)`.  
+    O resultado do comando 1:3 é criar uma sequencia com os valores 1,
+    2, 3. A soma destes valores é 6.  
+
+### 7.2.2 Chunk
+
 -   Códigos em R, ou em outras linguagens, podem ser inseriodos nos
     documentos através de *chunks*.  
 -   *Chunks* são blocos de programação.  
@@ -444,6 +464,35 @@ indentado dentro do tipo de arquivo, através do comando
     *messagem* e *warning* igual a *false* é muito utilizado quando se
     carrega bibliotecas (**library**) no *chunk*, evita que as mensagens
     do carregamento apareçam.  
+
+### 7.2.3 Configurando imagens e tabelas dentro do *chunk*
+
+-   Os comandos de configuração de imagem no *chunk* são inseridos no
+    cabeçalho do *chunk*.  
+
+-   Principais comando de configuração de imagens com *chunk*:  
+
+    -   **fig.width** =  
+        Largura da figura em cm na janela gráfica.  
+    -   **fig.height** =  
+        Altura da figura em cm na janela gráfica.  
+    -   **fig.align** =  
+        Alinha a figura no arquivo final (“left”, “right” ou
+        “center”).  
+    -   **fig.cap** = ” “  
+        Texto para legenda.  
+    -   **dpi** =  
+        Valor referente a qualidade da imagem, padrão é 72.  
+    -   **out.width ou out.height** =  
+        Porcentagem do tamanho original da imagem.  
+
+### 7.2.4 Global *Chunk*
+
+-   Para definir as opções globais que se aplicam a cada parte do seu
+    arquivo, chame `knitr::opts_chunk$set` em uma parte do código.  
+-   O **knitr** tratará cada opção que você passar para
+    `knitr::opts_chunk$set` como um padrão global que pode ser
+    substituído em cabeçalhos de blocos individuais.  
 
 ## 7.3 Titulos e subtitulos
 
@@ -622,11 +671,9 @@ alt="Exemplo tabela paged_table" />
     colocada entre quatro cifrões:  
     `$$equação$$`  
 
-## 7.10 Código embutido
+## 7.10 Letras gregas
 
-## 7.11 Letras gregas
-
-## 7.12 Formatação
+## 7.11 Formatação
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.

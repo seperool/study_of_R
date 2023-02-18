@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
+  odt_document: 
+    number_sections: true
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -374,6 +374,21 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
 \newpage
 
 ## *Chunks* (códigos embutidos)
+
+### Códigos embutidos no texto
+
+- Podemos embutir códigos ao longo do texto.\
+- Para inserir um código que será rodado no meio do texto, usamos um sinais de crase para abrir, definimos a linguagem (normalmente r), o comando que desejamos e um sinal de crase para fechar o código.\
+` Este é um código embutido`
+
+- Para rodar pequenos comandos no meio do texto códigos embutidos é uma ótima opção.\
+
+- Exemplo:\
+O resultado do comando 1:3 é criar uma sequencia com os valores `1:3`. A soma destes valores é `sum(1:3)`.\
+O resultado do comando 1:3 é criar uma sequencia com os valores `r 1:3`. A soma destes valores é `r sum(1:3)`.\
+
+### Chunk
+
 - Códigos em R, ou em outras linguagens, podem ser inseriodos nos documentos através de *chunks*.\
 - *Chunks* são blocos de programação.\
 -  A principal forma de inserir *chunks* é:\
@@ -407,6 +422,28 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
 - Outras formas de inserir *chunks* é atraves do botão *Insert*, na área superior da tela do script, do **RStudio**.\
 - Observação:\
 *messagem* e *warning* igual a *false* é muito utilizado quando se carrega bibliotecas (**library**) no *chunk*, evita que as mensagens do carregamento apareçam.\
+
+### Configurando imagens e tabelas dentro do *chunk*
+
+- Os comandos de configuração de imagem no *chunk* são inseridos no cabeçalho do *chunk*.\
+
+- Principais comando de configuração de imagens com *chunk*:\
+  - **fig.width** =\
+  Largura da figura em cm na janela gráfica.\
+  - **fig.height** =\
+  Altura da figura em cm na janela gráfica.\
+  - **fig.align** =\
+  Alinha a figura no arquivo final ("left", "right" ou "center").\
+  - **fig.cap** = " "\
+  Texto para legenda.\
+  - **dpi** =\
+  Valor referente a qualidade da imagem, padrão é 72.\
+  - **out.width ou out.height** = \
+  Porcentagem do tamanho original da imagem.\
+
+### Global *Chunk*
+- Para definir as opções globais que se aplicam a cada parte do seu arquivo, chame `knitr::opts_chunk$set` em uma parte do código.\
+- O **knitr** tratará cada opção que você passar para `knitr::opts_chunk$set` como um padrão global que pode ser substituído em cabeçalhos de blocos individuais.\
 
 \newpage
 
@@ -548,7 +585,6 @@ Dentro do *chunk* chamar a variável que contém um **dataframe**, para imprimir
 - Para que a equação apareça no formato destacado (display), deve ser colocada entre quatro cifrões:\
 `$$equação$$`\
 
-## Código embutido
 ## Letras gregas
 ## Formatação
 - Para deixar uma palavra em **negrito**, coloque-a entre quatro asteriscos: `**negrito**`.
