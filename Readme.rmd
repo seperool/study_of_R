@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  odt_document: 
-    number_sections: true
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -408,6 +408,9 @@ O resultado do comando 1:3 é criar uma sequencia com os valores `r 1:3`. A soma
     - *echo*\
     Impede (*false*), ou não (*true*), que o código apareça, não afeta o resultado.\
     *echo* = *false* | *true*\
+    - *results*\
+    "*hide*" mostra o código e omite o resultado.\
+    *results* = "*hide*"\
     - *message*\
     Imprede (*false*), ou não (*true*),que mensagens geradas por código apareçam no arquivo finalizado.\
     *message* = *false* | *true*\
@@ -522,6 +525,11 @@ O RMarkdown é uma ferramenta excelente para documentar seus códigos e apresent
   - Terceira linha em diante:\
   Cada dado de linha em uma linha, com os dados de cada coluna separado por barras verticais.\
 
+### Criador de tabelas online para R Markdown
+
+Site que ajuda a construir tabelas para **R Markdown**:\
+<https://tablesgenerator.com/markdown_tables>
+
 ### Tabelas provenientes de banco de dados
 
 #### Mostrar todos os dados
@@ -534,7 +542,9 @@ Dentro do *chunk* chamar a variável que contém um **dataframe**, para imprimir
 - Exemplo:\
 **head**(*var_dataframe*, *n_linha*)\
 
-#### Tabela profissional
+#### Bibliotecas para criação de Tabelas
+
+##### **kable**
 
 - Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a função **kable**(), onde podemos chamar como argumento a variável **dataframe** (e outras funções).\
 - A função **kable**(), apresenta uma tabela em formato mais profissional.\
@@ -542,7 +552,25 @@ Dentro do *chunk* chamar a variável que contém um **dataframe**, para imprimir
 **library**(**knitr**)\
 **kable**(**head**(*var_dataframe*,10))\
 
-![Exemplo Tabela kable](Cap4-R_markdown/tables-1-kable.png){ width=50% }
+![Exemplo Tabela kable](Cap4-R_markdown/tables-1-kable.png){ width=50% } \
+
+##### **xtable**
+
+- A biblioteca **xtable** converte um objeto R em um objeto **xtable**, que pode ser expresso como uma tabela **LaTeX** ou **HTML**.\
+- Dentro do *chunk*, podemos chamar a biblioteca **xtable**, e usar a função **xtable**(), que recebe como argumentos a variável **dataframe** (e outras funções) e o *tipo* da saída para a tabela (**LaTeX** ou **HTML**).\
+`library(xtable)`\
+`xtable(dataframe, type = "latex")`\
+
+```{r Teste Tabela xtable, message=FALSE, warning=FALSE, results='hide'}
+library(xtable)
+
+coluna1 <- c(1,2,3,4,5,6)
+coluna2<- c("a","b","c","d","e","f")
+tab <- data.frame(coluna1,coluna2)
+
+xtable(tab,type = "latex")
+xtable(tab,type = "html")
+```
 
 #### Tabela para paginas web
 

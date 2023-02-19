@@ -445,6 +445,9 @@ indentado dentro do tipo de arquivo, através do comando
         Impede (*false*), ou não (*true*), que o código apareça, não
         afeta o resultado.  
         *echo* = *false* \| *true*  
+    -   *results*  
+        “*hide*” mostra o código e omite o resultado.  
+        *results* = “*hide*”  
     -   *message*  
         Imprede (*false*), ou não (*true*),que mensagens geradas por
         código apareçam no arquivo finalizado.  
@@ -583,14 +586,19 @@ indentado dentro do tipo de arquivo, através do comando
         Cada dado de linha em uma linha, com os dados de cada coluna
         separado por barras verticais.  
 
-### 7.7.2 Tabelas provenientes de banco de dados
+### 7.7.2 Criador de tabelas online para R Markdown
 
-#### 7.7.2.1 Mostrar todos os dados
+Site que ajuda a construir tabelas para **R Markdown**:  
+<https://tablesgenerator.com/markdown_tables>
+
+### 7.7.3 Tabelas provenientes de banco de dados
+
+#### 7.7.3.1 Mostrar todos os dados
 
 Dentro do *chunk* chamar a variável que contém um **dataframe**, para
 imprimir ela na tela.  
 
-#### 7.7.2.2 Mostrar apenas os primeiros dados
+#### 7.7.3.2 Mostrar apenas os primeiros dados
 
 -   Dentro do *chunk* chamar a variável que contém um **dataframe**, e
     usar a função **head**() que mostra as 5 primeiras linhas. Podemos
@@ -600,7 +608,9 @@ imprimir ela na tela.
 -   Exemplo:  
     **head**(*var_dataframe*, *n_linha*)  
 
-#### 7.7.2.3 Tabela profissional
+#### 7.7.3.3 Bibliotecas para criação de Tabelas
+
+##### 7.7.3.3.1 **kable**
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a
     função **kable**(), onde podemos chamar como argumento a variável
@@ -611,13 +621,33 @@ imprimir ela na tela.
     **library**(**knitr**)  
     **kable**(**head**(*var_dataframe*,10))  
 
-<figure>
 <img src="Cap4-R_markdown/tables-1-kable.png" style="width:50.0%"
-alt="Exemplo Tabela kable" />
-<figcaption aria-hidden="true">Exemplo Tabela kable</figcaption>
-</figure>
+alt="Exemplo Tabela kable" />  
 
-#### 7.7.2.4 Tabela para paginas web
+##### 7.7.3.3.2 **xtable**
+
+-   A biblioteca **xtable** converte um objeto R em um objeto
+    **xtable**, que pode ser expresso como uma tabela **LaTeX** ou
+    **HTML**.  
+-   Dentro do *chunk*, podemos chamar a biblioteca **xtable**, e usar a
+    função **xtable**(), que recebe como argumentos a variável
+    **dataframe** (e outras funções) e o *tipo* da saída para a tabela
+    (**LaTeX** ou **HTML**).  
+    `library(xtable)`  
+    `xtable(dataframe, type = "latex")`  
+
+``` r
+library(xtable)
+
+coluna1 <- c(1,2,3,4,5,6)
+coluna2<- c("a","b","c","d","e","f")
+tab <- data.frame(coluna1,coluna2)
+
+xtable(tab,type = "latex")
+xtable(tab,type = "html")
+```
+
+#### 7.7.3.4 Tabela para paginas web
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **rmarkdown**, e usar
     a função **paged_table**(), onde podemos chamar como argumento a
