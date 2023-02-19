@@ -13,7 +13,6 @@ Afazeres:
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 				- Tabelas pacotes
-					- xtable
 					- pander (pandoc.table())
 				- Letras gregas
 				- Formatação
