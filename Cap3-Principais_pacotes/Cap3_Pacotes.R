@@ -1,10 +1,12 @@
-install.packages("stringr") #pacote para trabalhar com strings, texto
-install.packages("Rmarkdown") #pacote para fazer relatorio, rmd
-install.packages("knitr") #interpretação e compilação do documento rmd
-install.packages("data.table") #Manipulação de base de dados DataFrame
-install.packages("janitor") #limpeza de dados
+install.packages("stringr") # Pacote para trabalhar com strings, texto
+install.packages("Rmarkdown") # Pacote para fazer relatorio, rmd
+install.packages("knitr") # Interpretação e compilação do documento rmd
+install.packages("pander") # Converte R em pandoc, para gerar .md
+install.packages("xtable") # Ajuda a fazer tabela
+install.packages("data.table") # Manipulação de base de dados DataFrame
+install.packages("janitor") # Limpeza de dados
 install.packages("DescTools") #
-install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
+install.packages("tidyverse") # Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
 #ggplot2 (elaboração de graficos)
 #tibble (estruturação de data.frame) 
 #tidyr (organização de dados)
@@ -12,8 +14,8 @@ install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, 
 #purrr (programação funcional)
 #magrittr (operador pipe "%>%", concatena linhas de comando)
 #dplyr (manipulação de dados)
-install.packages("foreign") #leitura de arquivos com extensão minitab, Octave, ...
+install.packages("foreign") # Leitura de arquivos com extensão minitab, Octave, ...
 
 #Pacotes auxiliares ggplot2
-install.packages("ggthemes") #temas adicionais para graficos
+install.packages("ggthemes") # Temas adicionais para graficos
 install.packages("grid") #
