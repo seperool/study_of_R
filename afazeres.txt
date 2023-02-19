@@ -1,6 +1,6 @@
-ESCRITO EM 18/02/23
+ESCRITO EM 19/02/23
 ---
-PARA 19/02/23
+PARA 20/02/23
 ---
 Subir github:
 
@@ -12,6 +12,9 @@ Afazeres:
 			- Video 3 - 00:00
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
+				- Tabelas pacotes
+					- xtable
+					- pander (pandoc.table())
 				- Letras gregas
 				- Formatação
 				- ...
