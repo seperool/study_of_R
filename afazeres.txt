@@ -1,6 +1,6 @@
-ESCRITO EM 19/02/23
+ESCRITO EM 20/02/23
 ---
-PARA 20/02/23
+PARA 21/02/23
 ---
 Subir github:
 
@@ -13,9 +13,12 @@ Afazeres:
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 				- Tabelas pacotes
-					- pander (pandoc.table())
+					- pander (pandoc.table)
+						- celulas destacadas
+						- Largura
+						- 
 				- Letras gregas
-				- Formatação
+				- Formatação (revisar)
 				- ...
 			- Cap. 5
 			- Cap. 6
