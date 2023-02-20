@@ -647,6 +647,42 @@ xtable(tab,type = "latex")
 xtable(tab,type = "html")
 ```
 
+##### 7.7.3.3.3 **pander**
+
+-   O principal objetivo do pacote **pander** R é oferecer uma
+    ferramenta de fácil renderização de objetos R no markdown do
+    Pandoc.  
+
+-   Um dos recursos mais populares do **pander** é `pandoc.table`,
+    renderizando a maioria dos objetos R tabulares em tabelas de
+    remarcação com várias opções de configuração:  
+
+    -   *Style* (**Estilo**)  
+        -   “*simple*”  
+            `style = "simple"`  
+        -   “*grid*”  
+            `style = "grid"`  
+        -   “*markdown*”  
+            `style = "markdown"`  
+    -   *Caption* (**Legenda**)  
+        `caption = "Legenda"`  
+    -   *Highlighting cells* (**Celulas destacadas**)  
+    -   *Justify* (**Alinhamento da celula**)  
+        -   Opções de alinhamento de celula:  
+            -   “*right*”  
+            -   “*left*”  
+            -   “*center*”  
+        -   Formas de alinhamento de celula:  
+            -   Alinhando tudo de uma vez:  
+                `justify = "right"`  
+            -   Alinhando cada coluna separadamente:  
+                `justify = c("right","center","left")`  
+    -   *Table and Cell width* (**Largura**)  
+
+-   Exemplo:  
+    `library(pander)`  
+    `pandoc.table(dataframe, justify = "center", caption = "Exemplo de tabela")`  
+
 #### 7.7.3.4 Tabela para paginas web
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **rmarkdown**, e usar
@@ -660,11 +696,8 @@ xtable(tab,type = "html")
     **library**(**rmarkdown**)  
     **paged_table**(*var_dataframe*)  
 
-<figure>
 <img src="Cap4-R_markdown/paged_rmarkdown.png" style="width:50.0%"
-alt="Exemplo tabela paged_table" />
-<figcaption aria-hidden="true">Exemplo tabela paged_table</figcaption>
-</figure>
+alt="Exemplo tabela paged_table" />  
 
 ## 7.8 Hiperlinks e imagens
 
