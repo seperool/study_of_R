@@ -658,16 +658,21 @@ xtable(tab,type = "html")
     remarcação com várias opções de configuração:  
 
     -   *Style* (**Estilo**)  
+
         -   “*simple*”  
             `style = "simple"`  
         -   “*grid*”  
             `style = "grid"`  
         -   “*markdown*”  
             `style = "markdown"`  
+
     -   *Caption* (**Legenda**)  
         `caption = "Legenda"`  
+
     -   *Highlighting cells* (**Celulas destacadas**)  
+
     -   *Justify* (**Alinhamento da celula**)  
+
         -   Opções de alinhamento de celula:  
             -   “*right*”  
             -   “*left*”  
@@ -677,7 +682,27 @@ xtable(tab,type = "html")
                 `justify = "right"`  
             -   Alinhando cada coluna separadamente:  
                 `justify = c("right","center","left")`  
+
     -   *Table and Cell width* (**Largura**)  
+
+        -   split.table (**Largura tabela**) A largura máxima da tabela
+            são 80 caracteres, caso ultrapasse esse tamanho, a tabela
+            será quebrada e a parte excendente será inserida abaixo,
+            como uma continuação. Para desligar essa opção e aumentar o
+            tamanho da tabela, basta adicionar a opção *Inf*.  
+            `split.table = Inf`  
+        -   split.cell (**Largura celula**) O tamanho máximo da celula
+            são 30 caracteres, caso ultrapasse esse tamanho, o texto
+            será quebrado e adicionado a baixo, ainda na celula.  
+            Para ajustar o tamanho da celula (definir o número de
+            caracteres) existem três opções:  
+            -   Todas de uma vez.  
+                `split.cell = 40`  
+            -   Coluna por coluna.  
+                `split.cell = c(40,20,5)`  
+            -   Em termos de porcentagem.  
+                `split.cell = "40%"`  
+                `split.cell = c("80%","20%","40%")`  
 
 -   Exemplo:  
     `library(pander)`  
