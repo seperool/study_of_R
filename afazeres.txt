@@ -1,6 +1,6 @@
-ESCRITO EM 20/02/23
+ESCRITO EM 21/02/23
 ---
-PARA 21/02/23
+PARA 22/02/23
 ---
 Subir github:
 
@@ -15,8 +15,6 @@ Afazeres:
 				- Tabelas pacotes
 					- pander (pandoc.table)
 						- celulas destacadas
-						- Largura
-						- 
 				- Letras gregas
 				- Formatação (revisar)
 				- ...
