@@ -658,21 +658,35 @@ xtable(tab,type = "html")
     remarcação com várias opções de configuração:  
 
     -   *Style* (**Estilo**)  
-
         -   “*simple*”  
             `style = "simple"`  
         -   “*grid*”  
             `style = "grid"`  
         -   “*markdown*”  
             `style = "markdown"`  
-
     -   *Caption* (**Legenda**)  
         `caption = "Legenda"`  
-
     -   *Highlighting cells* (**Celulas destacadas**)  
-
+        Comandos para destacar linhas, colunas e celulas.  
+        As celulas pode estar em negrito e italico ao mesmo tempo.  
+        -   Italics (*italico*):  
+            `emphasize.italics.rows(1)`  
+            `emphasize.italics.cols(2)`  
+            `emphasize.italics.cells(which(t > 20, arr.ind = TRUE))`  
+        -   strong (**negrito**):  
+            `emphasize.strong.rows(1)`  
+            `emphasize.strong.cols(1)`  
+            `emphasize.strong.cells(which(t > 20, arr.ind = TRUE))`  
+        -   verbatim (estilo literal):  
+            `emphasize.verbatim.rows(1)`  
+            `emphasize.verbatim.cols(2)`  
+            `emphasize.verbatim.cells(which(t > 20, arr.ind = TRUE))`  
+            Exemplo:  
+            `emphasize.italics.cols(1)`  
+            `emphasize.italics.rows(1)`  
+            `emphasize.strong.cells(which(t > 20, arr.ind = TRUE))`  
+            `pandoc.table(t)`  
     -   *Justify* (**Alinhamento da celula**)  
-
         -   Opções de alinhamento de celula:  
             -   “*right*”  
             -   “*left*”  
@@ -682,9 +696,7 @@ xtable(tab,type = "html")
                 `justify = "right"`  
             -   Alinhando cada coluna separadamente:  
                 `justify = c("right","center","left")`  
-
     -   *Table and Cell width* (**Largura**)  
-
         -   split.table (**Largura tabela**) A largura máxima da tabela
             são 80 caracteres, caso ultrapasse esse tamanho, a tabela
             será quebrada e a parte excendente será inserida abaixo,
