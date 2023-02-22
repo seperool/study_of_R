@@ -1,6 +1,6 @@
-ESCRITO EM 21/02/23
+ESCRITO EM 22/02/23
 ---
-PARA 22/02/23
+PARA 23/02/23
 ---
 Subir github:
 
@@ -9,12 +9,9 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Videos R Markdown (2/5)
-			- Video 3 - 00:00
+			- Video 3 - 04:50
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
-				- Tabelas pacotes
-					- pander (pandoc.table)
-						- celulas destacadas
 				- Letras gregas
 				- Formatação (revisar)
 				- ...
