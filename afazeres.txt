@@ -1,11 +1,9 @@
-ESCRITO EM 23/02/23
+ESCRITO EM 24/02/23
 ---
-PARA 24/02/23
+PARA 25/02/23
 ---
 Subir github:
-	- Cap. 4 - R Markdown
-		- Readme.*
-			- Letras gregas
+
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
@@ -14,7 +12,12 @@ Afazeres:
 			- Video 3 - 04:50
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
-				- ...
+				- Fórmulas LaTeX
+					- Subscritos e superescritos
+					- Sublinhados, sobrelinhas e vetores
+					- Frações, matrizes e chavetas
+					- Expressões
+					- Sinais e setas
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
