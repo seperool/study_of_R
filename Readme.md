@@ -776,22 +776,29 @@ alt="Exemplo tabela paged_table" />
 ## 7.11 Formatação
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
-    asteriscos: `**negrito**`.
+    asteriscos: `**negrito**`.  
 
 -   Para deixar uma palavra em *itálico*, coloque-a entre dois
-    asteriscos: `*itálico*`.
+    asteriscos: `*itálico*`.  
+
+-   Para deixar uma palavra em ~~tachado~~, coloque-a entre dois til:
+    `~~tachado~~`.  
 
 -   Para deixar caracteres <sup>sobrescritos</sup>, coloque-os entre
-    acentos circunflexos: `^1^`.
+    acentos circunflexos: `^1^`.  
 
 -   Para deixar caracteres <sub>subscritos</sub>, coloque-os entre til:
-    `~1~`.
+    `~1~`.  
+
+-   Outra forma de escrever subscritos<sub>2</sub> (forma *LaTeX*),
+    colocar no formato subscrito equação do *LaTeX*:
+    `subscrito$_{2}$`.  
 
 -   Para destacar um termo como `código`, coloque-o entre crases
-    (backticks): `` `código` ``.
+    (backticks): `` `código` ``.  
 
 -   Para criar uma citação (quote), escreva o texto após um sinal de
-    maior: `> Citação`.
+    maior: `> Citação`.  
 
 -   Vetores  
 
