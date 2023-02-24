@@ -3,7 +3,9 @@ ESCRITO EM 23/02/23
 PARA 24/02/23
 ---
 Subir github:
-
+	- Cap. 4 - R Markdown
+		- Readme.*
+			- Letras gregas
 Estudar:
 	Cap. 7 - Visualizando dados
 Afazeres:
@@ -12,7 +14,6 @@ Afazeres:
 			- Video 3 - 04:50
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
-				- Letras gregas
 				- ...
 			- Cap. 5
 			- Cap. 6
