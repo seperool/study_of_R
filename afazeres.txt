@@ -3,9 +3,15 @@ ESCRITO EM 24/02/23
 PARA 25/02/23
 ---
 Subir github:
-
+	- Cap. 4 - R Markdown
+		- Readme.*
+			- Fórmulas LaTeX
+					- Subscritos e superescritos
+					- Sublinhados, sobrelinhas e vetores
+					- Sinais e setas
 Estudar:
 	Cap. 7 - Visualizando dados
+
 Afazeres:
 	- Revisar capitulos anteriores
 		- Videos R Markdown (2/5)
@@ -13,11 +19,8 @@ Afazeres:
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 				- Fórmulas LaTeX
-					- Subscritos e superescritos
-					- Sublinhados, sobrelinhas e vetores
 					- Frações, matrizes e chavetas
 					- Expressões
-					- Sinais e setas
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
