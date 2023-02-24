@@ -1,6 +1,6 @@
-ESCRITO EM 22/02/23
+ESCRITO EM 23/02/23
 ---
-PARA 23/02/23
+PARA 24/02/23
 ---
 Subir github:
 
@@ -13,7 +13,6 @@ Afazeres:
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 				- Letras gregas
-				- Formatação (revisar)
 				- ...
 			- Cap. 5
 			- Cap. 6
