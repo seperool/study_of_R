@@ -3,21 +3,21 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
   odt_document: 
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -674,7 +674,11 @@ xtable(tab,type = "html")
   - Exemplo:\
   ![Logo do R Markdown](Cap4-R_markdown/RMarkdown.png){ width=35% }\
 
-## Equações
+\newpage
+
+## Fórmulas LaTeX
+
+### Equações
 
 - As equações no **R Markdown** são escritas com a linguagem **LaTeX**.\
   
@@ -683,11 +687,59 @@ xtable(tab,type = "html")
 - Para que a equação apareça no formato destacado (display), deve ser colocada entre quatro cifrões:\
 `$$equação$$`\
 
+### Subscritos e Superescrito
+### Sublinhados, Sobrelinhas e Vetores
+### Frações, matrizes e chavetas
+### Expressões
+### Sinais e setas
+
+\newpage
+
 ## Letras gregas
 
+- Expressões matemáticas, ou letras gregas, devem vir entre símbolos de $.\
+
+Fórmula   |   Símbolo
+:------   |   :------:
+`$\alpha$`    |    $\alpha$ 
+`$\beta$`   |   $\beta$ 
+`$\gamma$`    |   $\gamma$
+`$delta$`   |   $\delta$
+`$\epsilon$`    |   $\epsilon$
+`$\varepsilon$`   |    $\varepsilon$
+`$\zeta$`   |    $\zeta$
+`$\eta$`    |   $\eta$
+`$\theta$`    |   $\theta$
+`$\vartheta$`   |   $\vartheta$
+`$\iota$`   |   $\iota$
+`$\kappa$`    |   $\kappa$
+`$\lambda$`   |    $\lambda$
+`$\mu$`   |    $\mu$
+`$\nu$`   |   $\nu$
+`$\xi$`   |   $\xi$
+`$\pi$`   |   $\pi$
+`$\varpi$`    |   $\varpi$
+`$\rho$`    |   $\rho$
+`$\varrho$`   |   $\varrho$
+`$\sigma$`    |   $\sigma$
+`$\varsigma$`   |   $\varsigma$
+`$\tau$`    |   $\tau$
+`$\upsilon$`    |   $\upsilon$
+`$\phi$`    |   $\phi$
+`$\varphi$`   |   $\varphi$
+`$\chi$`    |   $\chi$
+`$\psi$`    |   $\psi$
+`$\omega$`    |   $\omega$
 
 
-## Formatação
+- Para letra maiúscula, inicie a letra na fórmula com letra maiúscula.\
+$\delta$ = `$\delta$`\
+$\Delta$ = `$\Delta$`\
+
+\newpage
+
+## Formatação (Fontes)
+
 - Para deixar uma palavra em **negrito**, coloque-a entre quatro asteriscos: `**negrito**`.\
 - Para deixar uma palavra em *itálico*, coloque-a entre dois asteriscos: `*itálico*`.\
 - Para deixar uma palavra em ~~tachado~~, coloque-a entre dois til: `~~tachado~~`.\
@@ -696,11 +748,6 @@ xtable(tab,type = "html")
 - Outra forma de escrever subscritos$_{2}$ (forma *LaTeX*), colocar no formato subscrito equação do *LaTeX*: `subscrito$_{2}$`.\
 - Para destacar um termo como `código`, coloque-o entre crases (backticks): `` `código` ``.\
 - Para criar uma citação (quote), escreva o texto após um sinal de maior: `> Citação`.\
-  
-- Vetores\
-- Frações, matrizes e chavetas\
-- Expressões\
-- Sinais e setas\
 
 \newpage
 

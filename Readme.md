@@ -759,7 +759,9 @@ alt="Exemplo tabela paged_table" />
     <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
     alt="Logo do R Markdown" />  
 
-## 7.9 Equações
+## 7.9 Fórmulas LaTeX
+
+### 7.9.1 Equações
 
 -   As equações no **R Markdown** são escritas com a linguagem
     **LaTeX**.  
@@ -771,42 +773,77 @@ alt="Exemplo tabela paged_table" />
     colocada entre quatro cifrões:  
     `$$equação$$`  
 
+### 7.9.2 Subscritos e Superescrito
+
+### 7.9.3 Sublinhados, Sobrelinhas e Vetores
+
+### 7.9.4 Frações, matrizes e chavetas
+
+### 7.9.5 Expressões
+
+### 7.9.6 Sinais e setas
+
 ## 7.10 Letras gregas
 
-## 7.11 Formatação
+-   Expressões matemáticas, ou letras gregas, devem vir entre símbolos
+    de $.  
+
+| Fórmula         | Símbolo |
+|:----------------|:-------:|
+| `$\alpha$`      |   *α*   |
+| `$\beta$`       |   *β*   |
+| `$\gamma$`      |   *γ*   |
+| `$delta$`       |   *δ*   |
+| `$\epsilon$`    |   *ϵ*   |
+| `$\varepsilon$` |   *ε*   |
+| `$\zeta$`       |   *ζ*   |
+| `$\eta$`        |   *η*   |
+| `$\theta$`      |   *θ*   |
+| `$\vartheta$`   |   *ϑ*   |
+| `$\iota$`       |   *ι*   |
+| `$\kappa$`      |   *κ*   |
+| `$\lambda$`     |   *λ*   |
+| `$\mu$`         |   *μ*   |
+| `$\nu$`         |   *ν*   |
+| `$\xi$`         |   *ξ*   |
+| `$\pi$`         |   *π*   |
+| `$\varpi$`      |    ϖ    |
+| `$\rho$`        |   *ρ*   |
+| `$\varrho$`     |    𝜚    |
+| `$\sigma$`      |   *σ*   |
+| `$\varsigma$`   |    𝜍    |
+| `$\tau$`        |   *τ*   |
+| `$\upsilon$`    |   *υ*   |
+| `$\phi$`        |   *ϕ*   |
+| `$\varphi$`     |   *φ*   |
+| `$\chi$`        |   *χ*   |
+| `$\psi$`        |   *ψ*   |
+| `$\omega$`      |   *ω*   |
+
+-   Para letra maiúscula, inicie a letra na fórmula com letra
+    maiúscula.  
+    *δ* = `$\delta$`  
+    *Δ* = `$\Delta$`  
+
+## 7.11 Formatação (Fontes)
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.  
-
 -   Para deixar uma palavra em *itálico*, coloque-a entre dois
     asteriscos: `*itálico*`.  
-
 -   Para deixar uma palavra em ~~tachado~~, coloque-a entre dois til:
     `~~tachado~~`.  
-
 -   Para deixar caracteres <sup>sobrescritos</sup>, coloque-os entre
     acentos circunflexos: `^1^`.  
-
 -   Para deixar caracteres <sub>subscritos</sub>, coloque-os entre til:
     `~1~`.  
-
 -   Outra forma de escrever subscritos<sub>2</sub> (forma *LaTeX*),
     colocar no formato subscrito equação do *LaTeX*:
     `subscrito$_{2}$`.  
-
 -   Para destacar um termo como `código`, coloque-o entre crases
     (backticks): `` `código` ``.  
-
 -   Para criar uma citação (quote), escreva o texto após um sinal de
     maior: `> Citação`.  
-
--   Vetores  
-
--   Frações, matrizes e chavetas  
-
--   Expressões  
-
--   Sinais e setas  
 
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
 
