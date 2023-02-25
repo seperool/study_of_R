@@ -3,13 +3,13 @@ title: "Readme.rmd"
 author: "Sergio Pedro R Oliveira"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
@@ -687,11 +687,62 @@ xtable(tab,type = "html")
 - Para que a equação apareça no formato destacado (display), deve ser colocada entre quatro cifrões:\
 `$$equação$$`\
 
-### Subscritos e Superescrito
-### Sublinhados, Sobrelinhas e Vetores
+###  Superescrito e subscritos
+
+- Superescrito `$a^2$` = $a^2$\
+- Subscrito `$a_2$` = $a_2$\
+- Agrupado `$a^{2+2}$` = $a^{2+2}$\
+- Subscrito dois índices `$a_{i,j}$` = $a_{i,j}$\
+- Combinando super e subscrito `$a_2^3$` = $a_2^3$\
+- Derivadas `$x'$` = $x'$\
+
+### Sublinhados, sobrelinhas e vetores
+Fórmula   |   Símbolo
+:-----    |   :-------:
+`$\hat a$`    |   $\hat a$
+`$\bar b$`    |   $\bar b$
+`$\overrightarrow{a b}$`    |   $\overrightarrow{a b}$
+`$\overleftarrow{c d}$`   |   $\overleftarrow{c d}$
+`$\widehat{d e f}$`   |   $\widehat{d e f}$
+`$\overline{g h i}$`    |   $\overline{g h i}$
+`$\underline{j k l}$`   |   $\underline{j k l}$
+
 ### Frações, matrizes e chavetas
 ### Expressões
+
+\newpage
+
 ### Sinais e setas
+
+- Principais sinais e setas:\
+
+Fórmula   |   Símbolo
+:-----    |   :-------:
+`$\sim$`    |   $\sim$
+`$\simeq$`    |   $\simeq$
+`$\cong$`   |   $\cong$
+`$\le$`   |   $\le$
+`$\ge$`   |   $\ge$
+`$\equiv$`    |   $\equiv$
+`$\approx$`   |   $\approx$
+`$\ne$`   |   $\ne$
+`$\leftarrow$`    |   $\leftarrow$
+`$\rightarrow$`   |   $\rightarrow$
+`$\leftrightarrow$`   |   $\leftrightarrow$
+`$\longleftarrow$`    |   $\longleftarrow$
+`$\longrightarrow$`   |   $\longrightarrow$
+`$\mapsto$`   |   $\mapsto$
+`$\longmapsto$`   |   $\longmapsto$
+`$\nearrow$`    |   $\nearrow$
+`$\searrow$`    |   $\searrow$
+`$\swarrow$`    |   $\swarrow$
+`$\nwarrow$`    |   $\nwarrow$
+`$\uparrow$`    |   $\uparrow$
+`$\downarrow$`    |   $\downarrow$
+`$\updownarrow$`    |   $\updownarrow$
+
+- Guia de fórmulas:\
+<http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX>
 
 \newpage
 

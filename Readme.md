@@ -773,15 +773,64 @@ alt="Exemplo tabela paged_table" />
     colocada entre quatro cifrões:  
     `$$equação$$`  
 
-### 7.9.2 Subscritos e Superescrito
+### 7.9.2 Superescrito e subscritos
 
-### 7.9.3 Sublinhados, Sobrelinhas e Vetores
+-   Superescrito `$a^2$` = *a*<sup>2</sup>  
+-   Subscrito `$a_2$` = *a*<sub>2</sub>  
+-   Agrupado `$a^{2+2}$` = *a*<sup>2 + 2</sup>  
+-   Subscrito dois índices `$a_{i,j}$` = *a*<sub>*i*, *j*</sub>  
+-   Combinando super e subscrito `$a_2^3$` =
+    *a*<sub>2</sub><sup>3</sup>  
+-   Derivadas `$x'$` = *x*′  
+
+### 7.9.3 Sublinhados, sobrelinhas e vetores
+
+| Fórmula                  |        Símbolo         |
+|:-------------------------|:----------------------:|
+| `$\hat a$`               |          *â*           |
+| `$\bar b$`               |          *b̄*           |
+| `$\overrightarrow{a b}$` | $\overrightarrow{a b}$ |
+| `$\overleftarrow{c d}$`  | $\overleftarrow{c d}$  |
+| `$\widehat{d e f}$`      |   $\widehat{d e f}$    |
+| `$\overline{g h i}$`     |   $\overline{g h i}$   |
+| `$\underline{j k l}$`    |  $\underline{j k l}$   |
 
 ### 7.9.4 Frações, matrizes e chavetas
 
 ### 7.9.5 Expressões
 
 ### 7.9.6 Sinais e setas
+
+-   Principais sinais e setas:  
+
+| Fórmula             | Símbolo |
+|:--------------------|:-------:|
+| `$\sim$`            |    ∼    |
+| `$\simeq$`          |    ≃    |
+| `$\cong$`           |    ≅    |
+| `$\le$`             |    ≤    |
+| `$\ge$`             |    ≥    |
+| `$\equiv$`          |    ≡    |
+| `$\approx$`         |    ≈    |
+| `$\ne$`             |    ≠    |
+| `$\leftarrow$`      |    ←    |
+| `$\rightarrow$`     |    →    |
+| `$\leftrightarrow$` |    ↔    |
+| `$\longleftarrow$`  |    ←    |
+| `$\longrightarrow$` |    →    |
+| `$\mapsto$`         |    ↦    |
+| `$\longmapsto$`     |    ↦    |
+| `$\nearrow$`        |    ↗    |
+| `$\searrow$`        |    ↘    |
+| `$\swarrow$`        |    ↙    |
+| `$\nwarrow$`        |    ↖    |
+| `$\uparrow$`        |    ↑    |
+| `$\downarrow$`      |    ↓    |
+| `$\updownarrow$`    |    ↕    |
+
+-   Guia de fórmulas:  
+    <a href="http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX"
+    class="uri">http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX</a>
 
 ## 7.10 Letras gregas
 
