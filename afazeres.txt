@@ -1,12 +1,9 @@
-ESCRITO EM 25/02/23
+ESCRITO EM 26/02/23
 ---
-PARA 26/02/23
+PARA 27/02/23
 ---
 Subir github:
-	- Readme.*
-		- Cap.4 - R Markdown
-			- Fórmulas LaTeX
-				- Frações, matrizes e chavetas
+
 Estudar:
 	Cap. 7 - Visualizando dados
 
