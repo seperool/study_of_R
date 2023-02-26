@@ -797,7 +797,92 @@ alt="Exemplo tabela paged_table" />
 
 ### 7.9.4 Frações, matrizes e chavetas
 
+-   Fração:  
+    `$\frac{1}{2}$` = $\frac{1}{2}$  
+
+-   pmatrix:  
+
+<!-- -->
+
+    $\begin{pmatrix}
+    x & y \\
+    z & v \\
+    \end{pmatrix}$
+
+$\begin{pmatrix} x & y \\\\ z & v \\\\ \end{pmatrix}$  
+
+-   bmatrix:  
+
+<!-- -->
+
+    $\begin{bmatrix}
+    0 & \cdots & 0 \\
+    \vdots & \ddots & \vdots \\
+    0 & \cdots & 0 \\
+    \end{bmatrix}$
+
+$\begin{bmatrix} 0 & \cdots & 0 \\\\ \vdots & \ddots & \vdots \\\\ 0 & \cdots & 0 \\\\ \end{bmatrix}$  
+
+-   Bmatrix:  
+
+<!-- -->
+
+    $\begin{Bmatrix}
+    x & y \\
+    z & v \\
+    \end{Bmatrix}$
+
+$\begin{Bmatrix} x & y \\\\ z & v \\\\ \end{Bmatrix}$  
+
+-   vmatrix:  
+
+<!-- -->
+
+    $\begin{vmatrix}
+    x & y \\
+    z & v \\
+    \end{vmatrix}$ 
+
+$\begin{vmatrix} x & y \\\\ z & v \\\\ \end{vmatrix}$  
+
+-   Vmatrix:  
+
+<!-- -->
+
+    $\begin{Vmatrix}
+    x & y \\
+    z & v \\
+    \end{Vmatrix}$ 
+
+$\begin{Vmatrix} x & y \\\\ z & v \\\\ \end{Vmatrix}$  
+
+-   matrix:  
+
+<!-- -->
+
+    $\begin{matrix}
+    x & y \\
+    z & v \\
+    \end{matrix}$ 
+
+$\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$  
+
 ### 7.9.5 Expressões
+
+-   Combinação  
+-   Função piso  
+-   Função teto  
+-   Sobrechaves  
+-   Sobchaves  
+-   Função por partes  
+-   Limites  
+-   Integral  
+-   Integral Linear  
+-   Integral Múltipla  
+-   Somatório  
+-   Somatório com dois índices  
+-   Produtório  
+-   Raiz n-ésima  
 
 ### 7.9.6 Sinais e setas
 
