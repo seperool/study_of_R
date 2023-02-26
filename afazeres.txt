@@ -3,6 +3,10 @@ ESCRITO EM 26/02/23
 PARA 27/02/23
 ---
 Subir github:
+	- Readme.*
+		- Cap. 4 - Revisando R Markdown
+			- Fórmulas LaTeX
+				- Expressões
 
 Estudar:
 	Cap. 7 - Visualizando dados
@@ -13,8 +17,6 @@ Afazeres:
 			- Video 3 - 04:50
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
-				- Fórmulas LaTeX
-					- Expressões
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
