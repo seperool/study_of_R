@@ -7,9 +7,6 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   pdf_document: 
     number_sections: true
     toc: TRUE
@@ -18,6 +15,9 @@ output:
     number_sections: true
   odt_document: 
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -793,19 +793,47 @@ z & v \\
 ### Expressões
 
 - Combinação\
+`${n \choose k}$` = ${n \choose k}$\
+
 - Função piso\
+`$\lfloor x \rfloor$` = $\lfloor x \rfloor$\
+
 - Função teto\
+`$\lceil x \rceil$` = $\lceil x \rceil$\
+
 - Sobrechaves\
+`$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$` = $\begin{matrix} 5050 \\ \overbrace{1+2+\cdots+100} \end{matrix}$\
+
 - Sobchaves\
+`$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$` = $\begin{matrix} \underbrace{1+2+\cdots+100}  \\ 5050 \end{matrix}$\
+
 - Função por partes\
+`$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$` =\
+$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$\
+
 - Limites\
+`$\lim_{n \to \infty}x_n$` = $\lim_{n \to \infty}x_n$\
+
 - Integral\
+`$\int_{-N}^{N} e^x\, dx$` = $\int_{-N}^{N} e^x\, dx$\
+
 - Integral Linear\
+`$\oint_{C}x^3 \, dx + 4y^2 \, dy$` = $\oint_{C}x^3 \, dx + 4y^2 \, dy$\
+
 - Integral Múltipla\
+`$\iiint_V \mu(u,v,w) \, du \, dv \, dw$` = $\iiint_V \mu(u,v,w) \, du \, dv \, dw$\
+
 - Somatório\
+`$\sum_{k=1}^{N} k^2$` = $\sum_{k=1}^{N} k^2$\
+
 - Somatório com dois índices\
+`$\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$` = $\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$\
+
 - Produtório\
+`$\prod_{i=1}^{N}x_{i}$` = $\prod_{i=1}^{N}x_{i}$\
+
 - Raiz n-ésima\
+`$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt[n]{x}$\
 
 \newpage
 
@@ -899,13 +927,11 @@ $\Delta$ = `$\Delta$`\
 
 \newpage
 
-# Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis\
+# Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis
 
 1. identificando/mudando tipos de variaveis\
-    
     i. identificando\
     uso do **is**.\
-    
     ii. mudando o tipo de variavel:\      
     uso do **as**.\
   

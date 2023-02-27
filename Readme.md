@@ -870,19 +870,57 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 ### 7.9.5 Expressões
 
 -   Combinação  
+    `${n \choose k}$` = ${n \choose k}$  
+
 -   Função piso  
+    `$\lfloor x \rfloor$` = ⌊*x*⌋  
+
 -   Função teto  
+    `$\lceil x \rceil$` = ⌈*x*⌉  
+
 -   Sobrechaves  
+    `$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$`
+    =
+    $\begin{matrix} 5050 \\\\ \overbrace{1+2+\cdots+100} \end{matrix}$  
+
 -   Sobchaves  
+    `$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$`
+    =
+    $\begin{matrix} \underbrace{1+2+\cdots+100} \\\\ 5050 \end{matrix}$  
+
 -   Função por partes  
+    `$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$`
+    =  
+    $f(n) = \Bigg \\{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\\\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$  
+
 -   Limites  
+    `$\lim_{n \to \infty}x_n$` =
+    lim<sub>*n* → ∞</sub>*x*<sub>*n*</sub>  
+
 -   Integral  
+    `$\int_{-N}^{N} e^x\, dx$` =
+    ∫<sub>−*N*</sub><sup>*N*</sup>*e*<sup>*x*</sup> *d**x*  
+
 -   Integral Linear  
+    `$\oint_{C}x^3 \, dx + 4y^2 \, dy$` =
+    ∮<sub>*C*</sub>*x*<sup>3</sup> *d**x* + 4*y*<sup>2</sup> *d**y*  
+
 -   Integral Múltipla  
+    `$\iiint_V \mu(u,v,w) \, du \, dv \, dw$` =
+    ∭<sub>*V*</sub>*μ*(*u*,*v*,*w*) *d**u* *d**v* *d**w*  
+
 -   Somatório  
+    `$\sum_{k=1}^{N} k^2$` = $\sum\_{k=1}^{N} k^2$  
+
 -   Somatório com dois índices  
+    `$\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$` =
+    $\sum\_{\overset{0\<i\<m}{0\<j\<n}}k\_{i,j}$  
+
 -   Produtório  
+    `$\prod_{i=1}^{N}x_{i}$` = $\prod\_{i=1}^{N}x\_{i}$  
+
 -   Raiz n-ésima  
+    `$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt\[n\]{x}$  
 
 ### 7.9.6 Sinais e setas
 
@@ -979,16 +1017,13 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Para criar uma citação (quote), escreva o texto após um sinal de
     maior: `> Citação`.  
 
-# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis 
+# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis
 
 1.  identificando/mudando tipos de variaveis  
-
     1.  identificando  
         uso do **is**.  
-
     2.  mudando o tipo de variavel:   
         uso do **as**.  
-
 2.  pacotes do Tidyverse:  
 
 -   **readr**  
