@@ -3,6 +3,9 @@ ESCRITO EM 27/02/23
 PARA 28/02/23
 ---
 Subir github:
+	- Readme.*
+		- Cap. 4 - Revisando R Markdown
+			- knitr::kable argumentos
 
 Estudar:
 	Cap. 7 - Visualizando dados
@@ -10,9 +13,10 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Videos R Markdown (2/5)
-			- Video 3 - 04:50
+			- Video 3 - 15:50
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
+				- kableExtra::kable_styling()
 			- Cap. 5
 			- Cap. 6
 			- Cap. 7
