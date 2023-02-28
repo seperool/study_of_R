@@ -613,16 +613,65 @@ imprimir ela na tela.
 ##### 7.7.3.3.1 **kable**
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a
-    função **kable**(), onde podemos chamar como argumento a variável
+    função **kable**() onde podemos chamar como argumento a variável
     **dataframe** (e outras funções).  
 -   A função **kable**(), apresenta uma tabela em formato mais
     profissional.  
+-   Argumentos do **kable**:  
+    -   format  
+        Tipos de formatos que a tabela pode ser representada.  
+        `knitr::kable(head(mtcars[, 1:4]), "pipe")`  
+        -   pipe  
+        -   simple  
+        -   latex  
+        -   html  
+        -   rst  
+    -   **col.names**  
+        O nome das colunas.  
+        Podemos usar o argumento **col.names** para substituir os nomes
+        das colunas por um vetor de novos nomes.  
+        `knitr::kable(iris,  col.names = c('We', 'Need', 'Five', 'Names', 'Here'))`  
+    -   **row.names**  
+        Adiciona nome as linhas.  
+    -   **align**  
+        Para alterar o alinhamento das colunas da tabela.  
+        Podemos usar um vetor contendo os valores consistindo dos
+        caracteres **l** (esquerda), **c** (centro) e **r** (direita).  
+        `kable(..., align = c("l","c",...))`  
+        ou  
+        `knitr::kable(iris2, align = "lccrr")`  
+    -   **caption**  
+        Adiciona uma legenda a tabela.  
+        `knitr::kable(iris2, caption = "An example table caption.")`  
+    -   **digits**  
+        Define o número máximo de casas decimais.  
+        `knitr::kable(d, digits = 4)`  
+        `knitr::kable(d, digits = c(5, 0, 2))`  
+    -   **format.args**  
+        Define o formato me que os números serão apresentados.  
+        -   scientific  
+            Se é no formato cientifico (**true** ou **false**).  
+            `knitr::kable(d, digits = 3, format.args = list(scientific = FALSE))`  
+        -   big.mark  
+            Como será a separação para números grandes.  
+            `knitr::kable(d, digits = 3, format.args = list(big.mark = ",",  scientific = FALSE))`  
+    -   **escape**  
+        Ativa (**TRUE**) e desativa (**FALSE**) os caracteres
+        especiais.  
+        `knitr::kable(d, format = "latex", escape = TRUE)`  
 -   Exemplo:  
-    **library**(**knitr**)  
-    **kable**(**head**(*var_dataframe*,10))  
+
+<!-- -->
+
+    library(knitr)
+    kable(head(var_dataframe,10))
 
 <img src="Cap4-R_markdown/tables-1-kable.png" style="width:50.0%"
 alt="Exemplo Tabela kable" />  
+\#### kableExtra
+
+-   Para mais opções de formatação do `knitr::kable`, temos o pacote
+    `kableExtra`.  
 
 ##### 7.7.3.3.2 **xtable**
 
@@ -1017,13 +1066,13 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Para criar uma citação (quote), escreva o texto após um sinal de
     maior: `> Citação`.  
 
-# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variaveis
+# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
 
-1.  identificando/mudando tipos de variaveis  
-    1.  identificando  
-        uso do **is**.  
-    2.  mudando o tipo de variavel:   
-        uso do **as**.  
+1.  identificando/mudando tipos de variáveis  
+    1.  Identificando o tipo de variável:  
+        Uso do **is**.  
+    2.  Mudando o tipo de variável:  
+        Uso do **as**.  
 2.  pacotes do Tidyverse:  
 
 -   **readr**  
