@@ -1,11 +1,8 @@
-ESCRITO EM 28/02/23
+ESCRITO EM 01/03/23
 ---
-PARA 29/02/23
+PARA 02/03/23
 ---
 Subir github:
-	- Cap. 4 - Revisando R Markdown
-		- Readme.*
-			- kableExtra
 
 Estudar:
 	Cap. 7 - Visualizando dados
