@@ -668,12 +668,103 @@ imprimir ela na tela.
 
 <img src="Cap4-R_markdown/tables-1-kable.png" style="width:50.0%"
 alt="Exemplo Tabela kable" />  
-\#### kableExtra
+
+##### 7.7.3.3.2 kableExtra
 
 -   Para mais opções de formatação do `knitr::kable`, temos o pacote
     `kableExtra`.  
+-   `kableExtra` é um pacote complementar ao `knitr::kable`, por conta
+    disto, é necessário chamar a função `kable` (primeiramente), e
+    concatenar as funções do pacote `kableExtra` pelo operador pipe
+    `%>%`.  
 
-##### 7.7.3.3.2 **xtable**
+<!-- -->
+
+    library(knitr)
+    library(kableExtra)
+    kable(iris) %>%
+      kable_styling(latex_options = "striped")
+
+-   Definir o tamanho da fonte:  
+
+<!-- -->
+
+    kable(head(iris, 5), booktabs = TRUE) %>%
+      kable_styling(font_size = 8)
+
+-   Estilizar linhas e colunas especificas:  
+    -   Funções:  
+        -   **row_spec**  
+            Especifica a linha que vai ser estilizada.  
+        -   **column_spec**  
+            Especifica a coluna que vai ser estilizada.  
+    -   Estilizações:  
+        -   negrito (**bold**)  
+        -   italico (**italic**)  
+        -   fundo preto (**background**)  
+        -   fonte branca (**color**)  
+        -   sublinhado (**underline**)  
+        -   espaçamento (**monospace**)  
+        -   ângulo (**angle**)  
+
+        <!-- -->
+
+            kable(head(iris, 5), align = 'c', booktabs = TRUE) %>%
+            row_spec(1, bold = TRUE, italic = TRUE) %>% 
+            row_spec(2:3, color = 'white', background = 'black') %>%
+            row_spec(4, underline = TRUE, monospace = TRUE) %>% 
+            row_spec(5, angle = 45) %>% 
+            column_spec(5, strikeout = TRUE)
+-   Alterar o tamanho da tabela, preenche todo espaço disponível
+    (**full_width**).  
+
+<!-- -->
+
+    kable(head(dados, 10), col.names = c("Gênero", "Álcool", "Memória", "Latência")) %>%
+      kable_styling(full_width = FALSE)
+
+-   **bootstap_options**  
+    -   Cores alternadas entre linhas (**bootstap_options** =
+        c(“striped”)).  
+
+    <!-- -->
+
+        kable(head(dados, 10), col.names = c("Gênero", "Álcool", "Memória", "Latência")) %>%
+          kable_styling(full_width = F, bootstrap_options = c("striped"))
+
+    -   Deixando a tabela mais condensada/junta (**bootstap_options** =
+        c(“striped”, “condensed”)).  
+
+    <!-- -->
+
+        kable(head(dados, 10), col.names = c("Gênero", "Álcool", "Memória", "Latência")) %>%
+          kable_styling(full_width = F, bootstrap_options = c("striped", "condensed"))
+-   Agrupar linhas e colunas.  
+    Podemos agrupar conjunto de linhas, ou colunas, e dar um cobeçalho
+    para elas.  
+    -   Agrupar colunas:  
+        Através da função `add_header_above` podemos dar nome aos
+        agrupamentos e definir o número de colunas agrupadas.  
+
+    <!-- -->
+
+        iris2 <- iris[1:5, c(1, 3, 2, 4, 5)]
+        names(iris2) <- gsub('[.].+', '', names(iris2))
+        kable(iris2, booktabs = TRUE) %>%
+          add_header_above(c("Length" = 2, "Width" = 2, " " = 1)) %>% 
+          add_header_above(c("Measurements" = 4, "More attributes" = 1))
+
+    -   Agrupar linhas:  
+        Através da função `pack_rows` e do argumento `index` podemos dar
+        nome aos agrupamentos e definir o número de linhas agrupadas.  
+
+    <!-- -->
+
+        iris3 <- iris[c(1:2, 51:54, 101:103), ]
+        kable(iris3[, 1:4], booktabs = TRUE) %>% 
+          pack_rows(index = c("setosa" = 2, "versicolor" = 4, "virginica" = 3))
+
+##### 7.7.3.3.3 **xtable**
 
 -   A biblioteca **xtable** converte um objeto R em um objeto
     **xtable**, que pode ser expresso como uma tabela **LaTeX** ou
@@ -696,7 +787,7 @@ xtable(tab,type = "latex")
 xtable(tab,type = "html")
 ```
 
-##### 7.7.3.3.3 **pander**
+##### 7.7.3.3.4 **pander**
 
 -   O principal objetivo do pacote **pander** R é oferecer uma
     ferramenta de fácil renderização de objetos R no markdown do
