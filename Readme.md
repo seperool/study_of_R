@@ -1157,6 +1157,14 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Para criar uma citação (quote), escreva o texto após um sinal de
     maior: `> Citação`.  
 
+## 7.12 Abas
+
+-   Aplica a um `#titulo` um comando (`{.tabset}`) que transforma em
+    abas os `##subtitulo` com os graficos e tabelas contidos neles.  
+-   Muito útil para relatórios dinâmicos (**html**).  
+-   Exemplo:  
+    `# titulo {.tabset}`  
+
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
 
 1.  identificando/mudando tipos de variáveis  

@@ -7,16 +7,16 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
   pdf_document: 
     number_sections: true
     toc: TRUE
   odt_document: 
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
+  word_document: 
+    toc: TRUE
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -1046,6 +1046,13 @@ $\Delta$ = `$\Delta$`\
 - Outra forma de escrever subscritos$_{2}$ (forma *LaTeX*), colocar no formato subscrito equação do *LaTeX*: `subscrito$_{2}$`.\
 - Para destacar um termo como `código`, coloque-o entre crases (backticks): `` `código` ``.\
 - Para criar uma citação (quote), escreva o texto após um sinal de maior: `> Citação`.\
+
+## Abas
+
+- Aplica a um `#titulo` um comando (`{.tabset}`) que transforma em abas os `##subtitulo` com os graficos e tabelas contidos neles.\
+- Muito útil para relatórios dinâmicos (**html**).\
+- Exemplo:\
+`# titulo {.tabset}`\
 
 \newpage
 
