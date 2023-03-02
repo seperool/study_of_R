@@ -3,14 +3,19 @@ ESCRITO EM 02/03/23
 PARA 03/03/23
 ---
 Subir github:
+	- Readme.*
+		- Cap. 4 - Revisando R Markdown
+			- Preâmbulo 
+				- data
+				- Sumário
 
 Estudar:
 	Cap. 7 - Visualizando dados
 
 Afazeres:
 	- Revisar capitulos anteriores
-		- Videos R Markdown (3/5)
-			- Video 4 - 00:00
+		- Videos R Markdown (4/5)
+			- Video 5 - 00:00
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 			- Cap. 5
