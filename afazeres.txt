@@ -1,6 +1,6 @@
-ESCRITO EM 01/03/23
+ESCRITO EM 02/03/23
 ---
-PARA 02/03/23
+PARA 03/03/23
 ---
 Subir github:
 
@@ -9,8 +9,8 @@ Estudar:
 
 Afazeres:
 	- Revisar capitulos anteriores
-		- Videos R Markdown (2/5)
-			- Video 3 - 22:30
+		- Videos R Markdown (3/5)
+			- Video 4 - 00:00
 		- Readme.*
 			- Cap. 4 - Revisando R Markdown
 			- Cap. 5
