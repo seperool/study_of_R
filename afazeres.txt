@@ -9,11 +9,11 @@ Estudar:
 
 Afazeres:
 	- Revisar capitulos anteriores
-		- Videos R Markdown (4/5)
-			- Video 5 - 00:00
 		- Readme.*
-			- Cap. 4 - Revisando R Markdown
-			- Cap. 5
+			- Cap. 5 - O sistema tidyverse
+				- Leitura de dados
+				- tibble
+				- ...
 			- Cap. 6
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
