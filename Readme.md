@@ -328,8 +328,13 @@ através dos comandos:
     “dd/mm/aaaa”.  
     *date*: “dd/mm/aaaa”  
 -   Outra possibilidade é usar uma função dentro de um *chunk* “r
-    Sys.Date()”, para adicionar a data atual do sistema.  
+    Sys.Date()”, para adicionar a data atual do sistema (modelo
+    inglês).  
     *date*: “r Sys.Date()”  
+-   Outra opção é usar o a função dentro de um *chunk* “r
+    format(Sys.time(), ‘%d %B %Y’)”. A data será gerada no modelo: 02
+    agosto 2004.  
+    *date*: “r format(Sys.time(), ‘%d %B %Y’)”  
     Obs.: *chunk* deve ser colocado entre acentos graves.  
 
 ### 7.1.4 **Tipo do Documento** (*output*)
@@ -352,8 +357,10 @@ através dos comandos:
 
 ### 7.1.5 **Sumário**
 
-Para inserir o sumário no documento, basta colocar o comando “*doc*:
-*yes*” indentado dentro do tipo de saída.  
+-   Para inserir o sumário no documento, basta colocar o comando “*doc*:
+    *yes*” indentado dentro do tipo de saída.  
+-   O comando **number_sections: true** adiciona numeração aos capítulos
+    do sumário.  
 
 ### 7.1.6 Formatação desejada
 

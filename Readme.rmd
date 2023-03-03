@@ -1,23 +1,23 @@
 ---
 title: "R"
 author: "Sergio Pedro R Oliveira"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   md_document:
     number_sections: true
     variant: markdown_github
   github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -319,8 +319,10 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
 - O comando "*date*:", adiciona uma data ao documento.\
 - Podemos adicionar uma data qualquer para o documento no formato "dd/mm/aaaa".\
 *date*: "dd/mm/aaaa"\
-- Outra possibilidade é usar uma função dentro de um *chunk* "r Sys.Date()", para adicionar a data atual do sistema.\
+- Outra possibilidade é usar uma função dentro de um *chunk* "r Sys.Date()", para adicionar a data atual do sistema (modelo inglês).\
 *date*: "r Sys.Date()"\
+- Outra opção é usar o a função dentro de um *chunk* "r format(Sys.time(), '\%d \%B \%Y')". A data será gerada no modelo: 02 agosto 2004.\
+*date*: "r format(Sys.time(), '\%d \%B \%Y')"\
 Obs.: *chunk* deve ser colocado entre acentos graves.\
 
 ### **Tipo do Documento** (*output*)
@@ -343,7 +345,8 @@ Obs.: *chunk* deve ser colocado entre acentos graves.\
     - *github_document*\
 
 ### **Sumário**
-  Para inserir o sumário no documento, basta colocar o comando "*doc*: *yes*" indentado dentro do tipo de saída.\
+- Para inserir o sumário no documento, basta colocar o comando "*doc*: *yes*" indentado dentro do tipo de saída.\
+- O comando **number_sections: true** adiciona numeração aos capítulos do sumário.\
 
 ### Formatação desejada
   Para determinar a formatação desejada, basta salvar um arquivo com o nome *estilo*.*docx*, que contenha a formatação e referenciar o arquivo, indentado dentro do tipo de arquivo, através do comando "*reference_docx*: caminho/.../estilo.docx".\
