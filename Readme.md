@@ -1315,6 +1315,8 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
+## 8.1 Leitura de dados (readr)
+
 # 9 Cap 6 - Pacote data.table 
 
 1.  **data.table**  
@@ -1448,7 +1450,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 ## 11.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.  
-E revisando Cap.4 - R Markdown.  
+E revisando Cap.5 - O sistema tidyverse.  
 
 # 12 Referências
 

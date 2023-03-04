@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   odt_document: 
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1181,6 +1181,10 @@ $\Delta$ = `$\Delta$`\
 
 \newpage
 
+## Leitura de dados (readr)
+
+\newpage
+
 # Cap 6 - Pacote data.table\
   1. **data.table**\
       - Manipulando linhas\
@@ -1307,7 +1311,7 @@ $\Delta$ = `$\Delta$`\
 ## Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.\
-E revisando Cap.4 \- R Markdown.\
+E revisando Cap.5 \- O sistema tidyverse.\
 
 \newpage
 
