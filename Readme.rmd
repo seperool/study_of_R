@@ -3,13 +3,10 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
@@ -18,6 +15,9 @@ output:
   word_document: 
     toc: TRUE
     number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1195,6 +1195,18 @@ $\Delta$ = `$\Delta$`\
 - Entre os princiais formatos de importação de dados o mais usado é o *csv*.\
 
 ### Importação de dados via **RStudio**
+
+- No "**Environment**" tem a opção "**Import Dataset**", que pode ser usada para importação de dados "*.csv*".\
+"**Environment**" > "**Import Dataset**" > "**From Text (Readr)**"\
+- Dentro de "**Import Text Data**":\
+  - **File/URL**\
+  O caminho ate o arquivo ".csv".\
+  - **Data Preview**\
+  Mostra uma previa de como os dados serão lidos (ficarão organizados no **R**).\
+  - **Import Options**\
+  São as configurações que podem ser modificadas para garantir a integridade da importação dos dados.\
+  Definindo, por exemplo, se o que serpara casas decimais nos dados é virgula ou ponto.\ 
+
 ### Importação de dados via biblioteca **readr**
 ### Sincronização com banco de dados
 

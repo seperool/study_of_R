@@ -1331,6 +1331,22 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 ### 8.1.1 Importação de dados via **RStudio**
 
+-   No “**Environment**” tem a opção “**Import Dataset**”, que pode ser
+    usada para importação de dados “*.csv*”.  
+    “**Environment**” \> “**Import Dataset**” \> “**From Text
+    (Readr)**”  
+-   Dentro de “**Import Text Data**”:  
+    -   **File/URL**  
+        O caminho ate o arquivo “.csv”.  
+    -   **Data Preview**  
+        Mostra uma previa de como os dados serão lidos (ficarão
+        organizados no **R**).  
+    -   **Import Options**  
+        São as configurações que podem ser modificadas para garantir a
+        integridade da importação dos dados.  
+        Definindo, por exemplo, se o que serpara casas decimais nos
+        dados é virgula ou ponto. 
+
 ### 8.1.2 Importação de dados via biblioteca **readr**
 
 ### 8.1.3 Sincronização com banco de dados
