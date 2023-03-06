@@ -1,6 +1,6 @@
-ESCRITO EM 05/03/23
+ESCRITO EM 06/03/23
 ---
-PARA 06/03/23
+PARA 07/03/23
 ---
 Subir github:
 
@@ -12,7 +12,6 @@ Afazeres:
 		- Readme.*
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
-					- Importação de dados RStudio
 					- Importação de dados via biblioteca readr
 					- Sincronização com banco de dados
 				- tibble
