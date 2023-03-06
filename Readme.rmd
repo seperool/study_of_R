@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1171,10 +1171,10 @@ $\Delta$ = `$\Delta$`\
     O comando unite é utilizado para unir duas ou mais colunas em uma unica coluna.\
     
     - *complete*\
-    Completa as combinações de duas colunas, se não houver valor completa com *NA*.\
+    Completa as combinações de duas colunas, se não houver valor completa com **NA**.\
     
     - *drop_na*\
-    Elimina as linhas, especificadas ou não, com valor NA.\
+    Elimina as linhas, especificadas ou não, com valor **NA**.\
     
     - *replace_na*\
     Substitui o valor NA por outro valor especificado.\
@@ -1182,6 +1182,21 @@ $\Delta$ = `$\Delta$`\
 \newpage
 
 ## Leitura de dados (readr)
+
+- Os principais formatos de importação de dados são:\
+  - *csv*\
+  - *xls*\
+  - *xlsx*\
+  - *sav*\
+  - *dta*\
+  - *por*\
+  - *sas*\
+  - *stata*\
+- Entre os princiais formatos de importação de dados o mais usado é o *csv*.\
+
+### Importação de dados via **RStudio**
+### Importação de dados via biblioteca **readr**
+### Sincronização com banco de dados
 
 \newpage
 

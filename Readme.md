@@ -1307,15 +1307,33 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
     -   *complete*  
         Completa as combinações de duas colunas, se não houver valor
-        completa com *NA*.  
+        completa com **NA**.  
 
     -   *drop_na*  
-        Elimina as linhas, especificadas ou não, com valor NA.  
+        Elimina as linhas, especificadas ou não, com valor **NA**.  
 
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
 ## 8.1 Leitura de dados (readr)
+
+-   Os principais formatos de importação de dados são:  
+    -   *csv*  
+    -   *xls*  
+    -   *xlsx*  
+    -   *sav*  
+    -   *dta*  
+    -   *por*  
+    -   *sas*  
+    -   *stata*  
+-   Entre os princiais formatos de importação de dados o mais usado é o
+    *csv*.  
+
+### 8.1.1 Importação de dados via **RStudio**
+
+### 8.1.2 Importação de dados via biblioteca **readr**
+
+### 8.1.3 Sincronização com banco de dados
 
 # 9 Cap 6 - Pacote data.table 
 
