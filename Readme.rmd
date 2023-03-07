@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  html_document:
+    number_sections: true
+    df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1202,12 +1202,19 @@ $\Delta$ = `$\Delta$`\
   - **File/URL**\
   O caminho ate o arquivo ".csv".\
   - **Data Preview**\
-  Mostra uma previa de como os dados serão lidos (ficarão organizados no **R**).\
+  Mostra uma prévia de como os dados serão lidos (ficarão organizados no **R**). Se não estiver vizualizando, aperte o botão **update**.\
   - **Import Options**\
   São as configurações que podem ser modificadas para garantir a integridade da importação dos dados.\
-  Definindo, por exemplo, se o que serpara casas decimais nos dados é virgula ou ponto.\ 
+  Definindo, por exemplo, se o que serpara casas decimais nos dados é virgula ou ponto.\
+  - **Code Preview**\
+  Apresenta o código que esta sento construido pela automatização da janela. Este código pode ser copiado e executado fora da janela.\
+  -  **Import**\
+  Botão para concluir a operação da importação dos dados.\
 
 ### Importação de dados via biblioteca **readr**
+
+
+
 ### Sincronização com banco de dados
 
 \newpage

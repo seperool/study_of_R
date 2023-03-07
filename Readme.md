@@ -1339,13 +1339,20 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     -   **File/URL**  
         O caminho ate o arquivo “.csv”.  
     -   **Data Preview**  
-        Mostra uma previa de como os dados serão lidos (ficarão
-        organizados no **R**).  
+        Mostra uma prévia de como os dados serão lidos (ficarão
+        organizados no **R**). Se não estiver vizualizando, aperte o
+        botão **update**.  
     -   **Import Options**  
         São as configurações que podem ser modificadas para garantir a
         integridade da importação dos dados.  
         Definindo, por exemplo, se o que serpara casas decimais nos
-        dados é virgula ou ponto. 
+        dados é virgula ou ponto.  
+    -   **Code Preview**  
+        Apresenta o código que esta sento construido pela automatização
+        da janela. Este código pode ser copiado e executado fora da
+        janela.  
+    -   **Import**  
+        Botão para concluir a operação da importação dos dados.  
 
 ### 8.1.2 Importação de dados via biblioteca **readr**
 
