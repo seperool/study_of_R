@@ -1,13 +1,9 @@
-ESCRITO EM 06/03/23
+ESCRITO EM 07/03/23
 ---
-PARA 07/03/23
+PARA 08/03/23
 ---
 Subir github:
-	- Cap. 5 - O sistema tidyverse
-		- Dados
-			- UFF
-			- csv
-		- Atualização importação via RStudio
+
 Estudar:
 	Cap. 7 - Visualizando dados
 
