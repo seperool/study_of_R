@@ -1,6 +1,6 @@
-ESCRITO EM 07/03/23
+ESCRITO EM 08/03/23
 ---
-PARA 08/03/23
+PARA 09/03/23
 ---
 Subir github:
 
@@ -13,6 +13,8 @@ Afazeres:
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
 					- Importação de dados via biblioteca readr
+						- read.csv2
+						- read_csv2
 					- Sincronização com banco de dados
 				- tibble
 				- ...
