@@ -1356,6 +1356,12 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 ### 8.1.2 Importação de dados via biblioteca **readr**
 
+-   As principais funções de importação de arquivo *.csv* são:  
+    -   read.csv  
+    -   read.csv2  
+    -   read_csv  
+    -   read_csv2  
+
 ### 8.1.3 Sincronização com banco de dados
 
 # 9 Cap 6 - Pacote data.table 

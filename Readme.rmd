@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
   odt_document: 
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1213,7 +1213,11 @@ $\Delta$ = `$\Delta$`\
 
 ### Importação de dados via biblioteca **readr**
 
-
+- As principais funções de importação de arquivo *.csv* são:\
+  - read.csv\
+  - read.csv2\
+  - read_csv\
+  - read_csv2\
 
 ### Sincronização com banco de dados
 
