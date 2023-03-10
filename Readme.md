@@ -1357,10 +1357,45 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 ### 8.1.2 Importação de dados via biblioteca **readr**
 
 -   As principais funções de importação de arquivo *.csv* são:  
-    -   read.csv  
-    -   read.csv2  
-    -   read_csv  
-    -   read_csv2  
+    -   `read.csv`  
+        É uma função basica do **R**, não precisa chamar nenhuma
+        biblioteca. Usa o separador de campos virgula.  
+    -   `read.csv2`  
+        É uma função basica do **R**, não precisa chamar nenhuma
+        biblioteca. Usa o separador de campos ponto e virgula.  
+    -   `readr::read_csv`  
+        É uma função do pacote **readr**, por isso o uso de “readr::”
+        para chamar a função. Usa o separador de campos virgula.  
+    -   `readr::read_csv2`  
+        É uma função do pacote **readr**, por isso o uso de “readr::”
+        para chamar a função. Usa o separador de campos ponto e
+        virgula.  
+    -   `readr::read_tsv`  
+        É uma função do pacote **readr**, por isso o uso de “readr::”
+        para chamar a função. Usa o separador de campos tabulação.  
+    -   `readr::read_delim`  
+        É uma função do pacote **readr**, por isso o uso de “readr::”
+        para chamar a função. Usa o separador de campos generico, deve
+        ser especificado pelo parâmetro `delim =`.  
+-   Principais parâmetros, das funções de importação, do pacote
+    `readr`:  
+    -   `file =`  
+        Define o caminho, que deve ser pecorrido, e o arquivo, no
+        formato .csv, a ser importado. Deve estar entre aspas.  
+        Exemplo: `file = "Caminho/arquivo.csv"`  
+    -   `col_names =`  
+    -   `col_types =`  
+    -   `skip =`  
+    -   `na =`  
+    -   `delim =`  
+-   Observações:  
+    -   O separador, assim como outros parâmetros, podem ser modificados
+        na função.  
+    -   Por padrão *csv* usa separação por virgula, porém no brasil como
+        a virgula é usado para separação de casas decimais, o padrão
+        *csv* brasileiro o separador de campo é o ponto e virgula, sendo
+        assim, para importar dados em formato *csv* no brasil a melhor
+        escolha é o pacote `readr::read_csv2`.  
 
 ### 8.1.3 Sincronização com banco de dados
 

@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1211,13 +1211,39 @@ $\Delta$ = `$\Delta$`\
   -  **Import**\
   Botão para concluir a operação da importação dos dados.\
 
+\newpage
+
 ### Importação de dados via biblioteca **readr**
 
 - As principais funções de importação de arquivo *.csv* são:\
-  - read.csv\
-  - read.csv2\
-  - read_csv\
-  - read_csv2\
+  - `read.csv`\
+  É uma função basica do **R**, não precisa chamar nenhuma biblioteca. Usa o separador de campos virgula.\
+  - `read.csv2`\
+  É uma função basica do **R**, não precisa chamar nenhuma biblioteca. Usa o separador de campos ponto e virgula.\
+  - `readr::read_csv`\
+  É uma função do pacote **readr**, por isso o uso de "readr::" para chamar a função. Usa o separador de campos virgula.\
+  - `readr::read_csv2`\
+  É uma função do pacote **readr**, por isso o uso de "readr::" para chamar a função. Usa o separador de campos ponto e virgula.\
+  - `readr::read_tsv`\
+  É uma função do pacote **readr**, por isso o uso de "readr::" para chamar a função. Usa o separador de campos tabulação.\
+  - `readr::read_delim`\
+  É uma função do pacote **readr**, por isso o uso de "readr::" para chamar a função. Usa o separador de campos generico, deve ser especificado pelo parâmetro `delim =`.\
+  
+- Principais parâmetros, das funções de importação, do pacote `readr`:\
+  - `file = `\
+  Define o caminho, que deve ser pecorrido, e o arquivo, no formato .csv, a ser importado. Deve estar entre aspas.\
+  Exemplo: `file = "Caminho/arquivo.csv"`\
+  - `col_names =`\
+  - `col_types =`\
+  - `skip =`\
+  - `na =`\
+  - `delim =`\
+  
+- Observações:\
+  - O separador, assim como outros parâmetros, podem ser modificados na função.\
+  - Por padrão *csv* usa separação por virgula, porém no brasil como a virgula é usado para separação de casas decimais, o padrão *csv* brasileiro o separador de campo é o ponto e virgula, sendo assim, para importar dados em formato *csv* no brasil a melhor escolha é o pacote `readr::read_csv2`.\
+
+\newpage
 
 ### Sincronização com banco de dados
 
