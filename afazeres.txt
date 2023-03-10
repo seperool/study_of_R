@@ -1,13 +1,9 @@
-ESCRITO EM 09/03/23
+ESCRITO EM 10/03/23
 ---
-PARA 10/03/23
+PARA 11/03/23
 ---
 Subir github:		
-	- Readme.*
-		- Cap. 5 - O sistema tidyverse
-			- Leitura de dados
-				- Importação de dados via biblioteca readr
-					- Principais parâmetros
+
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -16,8 +12,6 @@ Afazeres:
 		- Readme.*
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
-					- Importação de dados via biblioteca readr
-						- Principais parâmetros
 					- Sincronização com banco de dados
 				- tibble
 				- ...
