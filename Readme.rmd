@@ -10,12 +10,12 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  word_document: 
+    toc: TRUE
+    number_sections: true
   odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
@@ -1231,21 +1231,76 @@ $\Delta$ = `$\Delta$`\
   
 - Principais parâmetros, das funções de importação, do pacote `readr`:\
   - `file = `\
-  Define o caminho, que deve ser pecorrido, e o arquivo, no formato .csv, a ser importado. Deve estar entre aspas.\
+  Define o caminho (ou **URL**), que deve ser pecorrido, e o arquivo, no formato .csv, a ser importado. Deve estar entre aspas.\
   Exemplo: `file = "Caminho/arquivo.csv"`\
   - `col_names =`\
+  Indica se a primeira linha contém, ou não, o nome das colunas. Também pode ser usado para renomear colunas.\
+  Se a primeira linha contém o nome das colunas = **TRUE**.\
+  Para nomear, ou renomear, colunas podemos usar um vetor contendo os nomes.\
+  Exemplo:\
+  `col_names = TRUE`\
+  `col_names = c("coluna_1", "coluna_2", ...)`\
   - `col_types =`\
+    Caso alguma coluna tenha sido importada com a classe errada, podemos usar esse parâmetro para mudar e especificar o tipo de cada coluna.\
+    Podemos especificar através de uma lista contendo as classes de cada coluna, ou uma cadeia de caracteres com caracteres simbolicos para cada classe de cada coluna.\
+    Outra possibilidade é mudar as classes através de funções de mudança de classe, usando a função `cols()`, onde `.default =` indica a classe default de importação, para casos não especificados, e caso precisarmos identificar uma coluna em especifico `nome_da_coluna =`.\
+    - Caracteres simbólicos:\
+      - c = character\
+      - i = integer\
+      - n = number\
+      - d = double\
+      - l = logical\
+      - f = factor\
+      - D = date\
+      - T = date time\
+      - t = time\
+      - ? = guess\
+      - _or- = skip\
+    - Funções de mudança de classe:\
+      - `col_character()`\
+      - `col_date()`\
+      - `col_time()`\
+      - `col_datetime()`\
+      - `col_double()`\
+      - `col_factor()`\
+      - `col_integer()`\
+      - `col_logical()`\
+      - `col_number()`\
+      - `col_skip()`\
+    - Exemplos:\
+    `col_types = "iccD"`\
+    `col_types = cols(.default = "i", xxx = "c")`\
+    `col_types = cols(.default = col_integer(), xxx = col_character())`\
   - `skip =`\
+  Pula linhas do começo do arquivo antes de iniciar a importação. Utíl quando tem algum texto explicativo na primeira linha do arquivo.\
+  Exemplos:\
+  `skip = 0`\
+  `skip = 1`\
   - `na =`\
+  Indica quais *strings* deverão ser tratas como **NA** na hora da importação.\
+  Exemplo: `na = c("","NA")`\
   - `delim =`\
-  
-- Observações:\
-  - O separador, assim como outros parâmetros, podem ser modificados na função.\
-  - Por padrão *csv* usa separação por virgula, porém no brasil como a virgula é usado para separação de casas decimais, o padrão *csv* brasileiro o separador de campo é o ponto e virgula, sendo assim, para importar dados em formato *csv* no brasil a melhor escolha é o pacote `readr::read_csv2`.\
+  No caso da função `read_delim`, podemos definir através deste parâmetro o tipo de delimitador de campos usado no arquivo. O caractere usado como delimitador de campo deve estar entre aspas.\
+  Exemplo: `delim = ","`\
+
+- Sintaxe:\
+```
+library(readr)
+dt <- read_csv2(file = "~/caminho/arquivo.csv",
+  col_names = TRUE,
+  col_types = "iccD",
+  na = c("","NA"),
+  skip = 0)
+```
+
+- Observação:\
+  Por padrão *csv* usa separação por virgula, porém no brasil como a virgula é usado para separação de casas decimais, o padrão *csv* brasileiro o separador de campo é o ponto e virgula, sendo assim, para importar dados em formato *csv* no brasil a melhor escolha é o pacote `readr::read_csv2`.\
 
 \newpage
 
 ### Sincronização com banco de dados
+
+
 
 \newpage
 
