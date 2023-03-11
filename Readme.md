@@ -1469,6 +1469,8 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 ### 8.1.3 Sincronização com banco de dados
 
+## 8.2 tibble
+
 # 9 Cap 6 - Pacote data.table 
 
 1.  **data.table**  
