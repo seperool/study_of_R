@@ -1469,6 +1469,68 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 ### 8.1.3 Sincronização com banco de dados
 
+-   Drives **ODBC** é um conector com banco de dados.  
+
+    -   instalando **ODBC** no linux/Ubuntu:  
+        `sudo apt-get install unixodbc unixodbc-dev --install-suggests`  
+
+    -   Instalação de cada ODBC separadamente:  
+
+        -   SQL Server ODBC Drivers (Free TDS)  
+            `sudo apt-get install tdsodbc`  
+        -   PostgreSQL ODBC ODBC Drivers  
+            `sudo apt-get install odbc-postgresql`  
+        -   MySQL ODBC Drivers  
+            `sudo apt-get install libmyodbc`  
+        -   SQLite ODBC Drivers  
+            `sudo apt-get install libsqliteodbc`  
+
+    -   É necessário configurar dois arquivos `odbcinst.ini` e
+        `odbc.ini`.  
+
+        -   `odbcinst.ini`  
+
+        <!-- -->
+
+            [PostgreSQL Driver]
+            Driver          = caminho/psqlodbcw.so
+            [SQLite Driver]
+            Driver          = caminho/libsqlite3odbc.dylib
+
+        -   `odbc.ini`  
+
+        <!-- -->
+
+            [PostgreSQL]
+            Driver      = PostgreSQL Driver
+            Database    = test_db
+            Servername  = localhost
+            UserName    = postgres
+            Password    = password
+            Port        = 5432
+
+            [SQLite]
+            Driver      = SQLite Driver
+            Database    =/tmp/testing
+
+-   O pacote **DBI** ajuda a conectar o **R** aos sistemas de
+    gerenciamento de banco de dados (DBMS).  
+
+-   Conectando com banco de dados **Postgres**:  
+
+<!-- -->
+
+    con <- DBI::dbConnect(odbc::odbc(),
+                          Driver   = "PostgreSQL Driver",
+                          Server   = "localhost",
+                          Database = "name_database",
+                          UID      = rstudioapi::askForPassword("Database user"),
+                          PWD      = rstudioapi::askForPassword("Database password"),
+                          Port     = 5432)
+
+-   Referência:  
+    <http://db.rstudio.com/>  
+
 ## 8.2 tibble
 
 # 9 Cap 6 - Pacote data.table 
