@@ -1,6 +1,6 @@
-ESCRITO EM 11/03/23
+ESCRITO EM 12/03/23
 ---
-PARA 12/03/23
+PARA 13/03/23
 ---
 Subir github:		
 
@@ -13,6 +13,11 @@ Afazeres:
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
 					- Sincronização com banco de dados
+						- Pacote RPostgres
+						- Importação de tabelas
+						- Manipulação de tabelas
+							- No R
+							- No banco de dados
 				- tibble
 				- ...
 			- Cap. 6
