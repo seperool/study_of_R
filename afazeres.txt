@@ -1,15 +1,13 @@
-ESCRITO EM 12/03/23
+ESCRITO EM 13/03/23
 ---
-PARA 13/03/23
+PARA 14/03/23
 ---
 Subir github:
-	- Cap3_Pacotes.R
 
 Estudar:
 	Cap. 7 - Visualizando dados
 
 Afazeres:
-	- Atualizar pacotes R-basic
 	- Revisar capitulos anteriores
 		- Readme.*
 			- Cap. 5 - O sistema tidyverse
