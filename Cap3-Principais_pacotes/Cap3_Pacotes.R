@@ -20,3 +20,10 @@ install.packages("foreign") # Leitura de arquivos com extensão minitab, Octave,
 #Pacotes auxiliares ggplot2
 install.packages("ggthemes") # Temas adicionais para graficos
 install.packages("grid") #
+
+# Conectores com banco de dados
+install.packages("DBI")
+install.packages("odbc")
+install.packages("RPostgres") # quebrado!
+install.packages("RPostgreSQL") # RPostgres alternativo, quebrado!
+install.packages("dbplyr")
