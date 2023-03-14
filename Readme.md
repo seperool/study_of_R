@@ -1533,6 +1533,36 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 ## 8.2 tibble
 
+### 8.2.1 Visualização de tabelas tipo *tibble*
+
+-   *tibble* é um tipo especial de tabela equivalente ao *data.frame*,
+    porem mais compacta e com mais informações.  
+
+-   O *tibble* exibe informações sobre os tipos de cada variável:  
+
+    -   *factor*(**fct**)  
+    -   *character*(**chr**)  
+    -   *integer*(**int**)  
+    -   *double*(**dbl**)  
+
+-   Visualização da tabela:  
+
+-   O *tibble* também omite linhas quando a tabela é muito numerosa,
+    para melhor visualização.  
+
+-   O *tibble* por **default** exibira ate 10 linhas.  
+
+<!-- -->
+
+    library(tibble)
+    dt <- tibble(dados)
+    dt
+
+-   Caso necessite ver mais linhas basta especificar.  
+    `print(dt, n=15)`  
+
+### 8.2.2 Criação de tabela tipo *tibble*
+
 # 9 Cap 6 - Pacote data.table 
 
 1.  **data.table**  

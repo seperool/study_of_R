@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1358,6 +1358,28 @@ con <- DBI::dbConnect(odbc::odbc(),
 \newpage
 
 ## tibble
+
+### Visualização de tabelas tipo *tibble*
+
+- *tibble* é um tipo especial de tabela equivalente ao *data.frame*, porem mais compacta e com mais informações.\
+
+- O *tibble* exibe informações sobre os tipos de cada variável:\
+  - *factor*(**fct**)\
+  - *character*(**chr**)\
+  - *integer*(**int**)\
+  - *double*(**dbl**)\
+-  Visualização da tabela:\
+  - O *tibble* também omite linhas quando a tabela é muito numerosa, para melhor visualização.\
+  - O *tibble* por **default** exibira ate 10 linhas.\
+  ```
+  library(tibble)
+  dt <- tibble(dados)
+  dt
+  ```
+  - Caso necessite ver mais linhas basta especificar.\
+  `print(dt, n=15)`\
+
+### Criação de tabela tipo *tibble*
 
 \newpage
 
