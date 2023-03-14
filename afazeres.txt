@@ -1,6 +1,6 @@
-ESCRITO EM 13/03/23
+ESCRITO EM 14/03/23
 ---
-PARA 14/03/23
+PARA 15/03/23
 ---
 Subir github:
 
@@ -19,6 +19,7 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- tibble
+					- Criação de tabela tibble
 				- ...
 			- Cap. 6
 			- Cap. 7
