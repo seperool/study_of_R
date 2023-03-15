@@ -1174,12 +1174,50 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 # 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
 
-1.  identificando/mudando tipos de variáveis  
-    1.  Identificando o tipo de variável:  
-        Uso do **is**.  
-    2.  Mudando o tipo de variável:  
-        Uso do **as**.  
-2.  pacotes do Tidyverse:  
+## 8.1 Identificando/mudando tipos de variáveis
+
+1.  Principais tipos de variáveis:  
+
+| Tipo      |                          Descrição                           |
+|:----------|:------------------------------------------------------------:|
+| numeric   | Pode ser tanto inteiro (int, ou integer) quanto float (dbl). |
+| character |                    São caracteres (chr).                     |
+| factor    |                 São variáveis do tipo fator.                 |
+| logical   |           Variáveis do tipo lógico: TRUE ou FALSE.           |
+| complex   |           No formato de números complexo: 4 + 5i.            |
+
+Principais tipos de dados
+
+1.  Identificando o tipo da variável:  
+    Uso do **is**.  
+
+<!-- -->
+
+    is.numeric(variavel)
+    [TRUE]
+
+1.  Mudando o tipo da variável:  
+    Uso do **as**.  
+    `as.caracter(variavel)`  
+2.  Observações:  
+    -   Não é possivel transformar uma variavel do tipo
+        caracter(character) direto para tipo número (numeric), é preciso
+        transformar de caracter (character) para fator (factor) e de
+        fator (factor) para número (numeric).  
+
+            is.character(varaivel)
+            [TRUE]
+            as.factor(variavel)
+            as.numeric(variavel)
+
+    -   O contrário, transformar de numero (numeric) para caracter
+        (character) é possivel.  
+
+            is.numeric(variavel)
+            [TRUE]
+            as.character(variavel)
+
+## 8.2 Pacotes do Tidyverse
 
 -   **readr**  
     Leitura de dados.  
@@ -1315,7 +1353,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     -   *replace_na*  
         Substitui o valor NA por outro valor especificado.  
 
-## 8.1 Leitura de dados (readr)
+## 8.3 Leitura de dados (readr)
 
 -   Os principais formatos de importação de dados são:  
     -   *csv*  
@@ -1329,7 +1367,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Entre os princiais formatos de importação de dados o mais usado é o
     *csv*.  
 
-### 8.1.1 Importação de dados via **RStudio**
+### 8.3.1 Importação de dados via **RStudio**
 
 -   No “**Environment**” tem a opção “**Import Dataset**”, que pode ser
     usada para importação de dados “*.csv*”.  
@@ -1354,7 +1392,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     -   **Import**  
         Botão para concluir a operação da importação dos dados.  
 
-### 8.1.2 Importação de dados via biblioteca **readr**
+### 8.3.2 Importação de dados via biblioteca **readr**
 
 -   As principais funções de importação de arquivo *.csv* são:  
     -   `read.csv`  
@@ -1467,7 +1505,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     para importar dados em formato *csv* no brasil a melhor escolha é o
     pacote `readr::read_csv2`.  
 
-### 8.1.3 Sincronização com banco de dados
+### 8.3.3 Sincronização com banco de dados
 
 -   Drives **ODBC** é um conector com banco de dados.  
 
@@ -1531,9 +1569,9 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Referência:  
     <http://db.rstudio.com/>  
 
-## 8.2 tibble
+## 8.4 tibble
 
-### 8.2.1 Visualização de tabelas tipo *tibble*
+### 8.4.1 Visualização de tabelas tipo *tibble*
 
 -   *tibble* é um tipo especial de tabela equivalente ao *data.frame*,
     porem mais compacta e com mais informações.  
@@ -1561,7 +1599,25 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Caso necessite ver mais linhas basta especificar.  
     `print(dt, n=15)`  
 
-### 8.2.2 Criação de tabela tipo *tibble*
+### 8.4.2 Criação de tabela tipo *tibble*
+
+-   Primeiramente é necessario chamar a biblioteca **tibble**  
+    `library(tibble)`  
+
+-   De forma semelhante ao **data.frame**, podemos criar tabelas do tipo
+    **tibble**.  
+    `x = tibble(coluna1 = c(...), coluna2 = c(...), ...`  
+
+### 8.4.3 Funções tibble
+
+-   Transformando um **data.frame** em tipo **tibble**, através da
+    função **as_tibble()**.  
+    `x <- as_tibble(x)`  
+
+-   Verificando se uma tabela é tipo **tibble**, através da função
+    **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se
+    falso).  
+    `is_tibble(x)`  
 
 # 9 Cap 6 - Pacote data.table 
 

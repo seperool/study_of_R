@@ -7,13 +7,13 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
@@ -25,6 +25,15 @@ csl: Cap4-R_markdown/abnt.csl
 # Objetivo
 
 Estudo dirigido de linguagem R.\
+
+```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
+library(knitr)
+library(rmarkdown)
+library(readr)
+library(tibble)
+library(magrittr)
+library(dplyr)
+```
 
 # Livro de referência
 
@@ -1061,13 +1070,46 @@ $\Delta$ = `$\Delta$`\
 
 # Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
 
-1. identificando/mudando tipos de variáveis\
-    i. Identificando o tipo de variável:\
-    Uso do **is**.\
-    ii. Mudando o tipo de variável:\
-    Uso do **as**.\
-  
-2. pacotes do Tidyverse:\
+## Identificando/mudando tipos de variáveis
+i. Principais tipos de variáveis:\
+```{r Tabela principais tipos, echo = FALSE}
+    tipos_var <- c("numeric","character","factor","logical","complex")
+    descricao <- c("Pode ser tanto inteiro (int, ou integer) quanto float (dbl).",
+            "São caracteres (chr).",
+            "São variáveis do tipo fator.",
+            "Variáveis do tipo lógico: TRUE ou FALSE.",
+            "No formato de números complexo: 4 + 5i.")
+    tab_tipos <- tibble(tipos_var, descricao)
+    kable(tab_tipos, col.names = c('Tipo','Descrição'), align = 'lc', caption = "Principais tipos de dados")
+
+```
+ii. Identificando o tipo da variável:\
+Uso do **is**.\
+```
+is.numeric(variavel)
+[TRUE]
+```
+iii. Mudando o tipo da variável:\
+Uso do **as**.\
+`as.caracter(variavel)`\
+iv. Observações:\
+    - Não é possivel transformar uma variavel do tipo caracter(character) direto para tipo número (numeric), é preciso transformar de caracter (character) para fator (factor) e de fator (factor) para número (numeric).\
+  ```
+    is.character(varaivel)
+    [TRUE]
+    as.factor(variavel)
+    as.numeric(variavel)
+  ```
+    - O contrário, transformar de numero (numeric) para caracter (character) é possivel.\
+  ```
+    is.numeric(variavel)
+    [TRUE]
+    as.character(variavel)
+  ```
+
+\newpage
+
+## Pacotes do Tidyverse
   - **readr**\
   Leitura de dados.\
   
@@ -1380,6 +1422,20 @@ con <- DBI::dbConnect(odbc::odbc(),
   `print(dt, n=15)`\
 
 ### Criação de tabela tipo *tibble*
+
+- Primeiramente é necessario chamar a biblioteca **tibble**\
+`library(tibble)`\
+
+- De forma semelhante ao **data.frame**, podemos criar tabelas do tipo **tibble**.\
+`x = tibble(coluna1 = c(...), coluna2 = c(...), ...`\
+
+### Funções tibble
+
+- Transformando um **data.frame** em tipo **tibble**, através da função **as_tibble()**.\
+`x <- as_tibble(x)`\
+
+- Verificando se uma tabela é tipo **tibble**, através da função **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se falso).\
+`is_tibble(x)`\
 
 \newpage
 
