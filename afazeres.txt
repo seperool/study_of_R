@@ -1,6 +1,6 @@
-ESCRITO EM 14/03/23
+ESCRITO EM 15/03/23
 ---
-PARA 15/03/23
+PARA 16/03/23
 ---
 Subir github:
 
@@ -18,8 +18,8 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-				- tibble
-					- Criação de tabela tibble
+				- Operador pipe
+				- Manipulando dados com dplyr
 				- ...
 			- Cap. 6
 			- Cap. 7
