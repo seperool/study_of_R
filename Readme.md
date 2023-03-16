@@ -21,17 +21,19 @@ Editora: ALTA BOOKS EDITORA
 
 | Nome da operação                | Operação  | Resultado |
 |:--------------------------------|:---------:|----------:|
-| Adição                          |    5+4    |     \[9\] |
-| Subtração                       |    6-2    |     \[4\] |
-| Multiplicação                   |   7\*3    |    \[21\] |
-| Divisão                         |   45/9    |     \[5\] |
-| Potência                        |    2^2    |     \[4\] |
-| Raiz                            | sqrt(121) |    \[11\] |
-| Exponencial                     |  exp(0)   |     \[1\] |
-| Log na base e                   |  log(1)   |     \[0\] |
-| Log na base 10                  | log10(1)  |     \[0\] |
-| Log na base 2                   |  log2(4)  |     \[2\] |
-| Log na base 3 ou qualquer outra | log(9,3)  |     \[2\] |
+| Adição                          |    5+4    |         9 |
+| Subtração                       |    6-2    |         4 |
+| Multiplicação                   |   7\*3    |        21 |
+| Divisão                         |   45/9    |         5 |
+| Potência                        |    2^2    |         4 |
+| Raiz                            | sqrt(121) |        11 |
+| Exponencial                     |  exp(0)   |         1 |
+| Log na base e                   |  log(1)   |         0 |
+| Log na base 10                  | log10(1)  |         0 |
+| Log na base 2                   |  log2(4)  |         2 |
+| Log na base 3 ou qualquer outra | log(9,3)  |         2 |
+
+Operações básicas do R
 
 ## 4.2 Vetor
 
@@ -50,12 +52,12 @@ Editora: ALTA BOOKS EDITORA
 -   Uma tabela onde cada coluna é um vetor.  
 -   Como cada coluna é um vetor, cada coluna pode ser de um tipo
     diferente.  
-    Ex.: nome_data.frame \<- **data.frame**(vetor_1, vetor_2)  
+    Ex.: `nome_data.frame <- data.frame(vetor_1, vetor_2)`  
 -   Acrescentando uma nova coluna ao data.frame.  
-    Ex.: nome_data.frame \<- **data.frame**(nome_data.frame, vetor_3)  
+    Ex.: `nome_data.frame <- data.frame(nome_data.frame, vetor_3)`  
 -   Para visualizar um **data.frame** podemos usar a função
     **View**().  
-    Ex.: **View**(nome_data.frame)  
+    Ex.: `View(nome_data.frame)`  
 
 ### 4.3.2 **Matrizes**
 
@@ -64,10 +66,10 @@ Editora: ALTA BOOKS EDITORA
     nos **data.frames** as colunas podem ser de tipos diferentes.  
 
 -   Para adicionar uma coluna numa matriz, usamos a função cbind().  
-    Ex.: nome_matriz \<- **cbind**(vetor_1, vetor_2, …)  
+    Ex.: `nome_matriz <- cbind(vetor_1, vetor_2, ...)`  
 
 -   Para adicionar uma linha numa matriz, usamos a função rbind().  
-    Ex.: nome_matriz \<- **rbind**(vetor_3, vetor_4, …)  
+    Ex.: `nome_matriz <- rbind(vetor_3, vetor_4, ...)`  
 
 -   Quando inserimos dados (vetor) de naturezas diferentes (tipos) numa
     matriz, ela converte todos os dados para um único tipo. A principio
@@ -83,28 +85,27 @@ Editora: ALTA BOOKS EDITORA
 -   Para os **vetores** precisamos apenas informa a posição. A contagem
     da posição começa a partir do 1.  
     Ex.:  
-    vetor \<- c(5,18,89)  
-    vetor\[1\]  
+    `vetor <- c(5,18,89)`  
+    `vetor[1]`  
 
 -   Para as **matrizes**, é necessario informar a posição \[*linha*,
     *coluna*\]. A contagem da posição começa a partir do 1.  
-    Ex.:  
-    Mc\[1,2\]  
+    Ex.:`Mc[1,2]`  
 
 -   Para acessar todos os valores de uma *linha* da **matriz**, podemos
     determinar a *linha* e deixar a *coluna* em branco.  
-    Ex.: Mc\[1,\]  
+    Ex.: `Mc[1,]`  
 
 -   Para acessar todos os valores de uma *coluna* da **matriz**, podemos
     determinar a *coluna* e deixar a *linha* em branco.  
-    Ex.: Mc\[,2\]  
+    Ex.: `Mc[,2]`  
 
 ### 4.4.2 Caso **data.frame**
 
 -   No caso do **data.frame** podemos acessar os valores das colunas
     informando, “nome do **data.frame**” “$” “nome da coluna”.  
     Sintaxe:  
-    **nome_dataframe$nome_coluna**  
+    `nome_dataframe$nome_coluna`  
 
 -   O **data.frame** também aceita as mesmas formas de acessar posições
     que as **matrizes**.  
@@ -129,7 +130,7 @@ Editora: ALTA BOOKS EDITORA
     -   Tamanho do objeto.  
     -   A lista, ou vertor, dos campos com o tipo e tamanho. 
 -   Sintaxe:  
-    **str**(*argumento*)  
+    `str(argumento)`  
 
 ### 4.5.3 **summary**() - resumo de variáveis
 
@@ -147,7 +148,7 @@ Editora: ALTA BOOKS EDITORA
     -   3º quantil  
     -   valor máximo  
 -   Sintaxe:  
-    **summary**(*nome_variavel*)  
+    `summary(nome_variavel)`  
 
 ### 4.5.4 **class**() - classe de objetos
 
@@ -156,7 +157,7 @@ Editora: ALTA BOOKS EDITORA
 -   Basicamente diz se o objeto é numerico, string, vetor, lista,
     data.frame, matriz, …  
 -   Sintaxe:  
-    **class**(*argumento*)  
+    `class(argumento)`  
 
 ## 4.6 Funções estatísticas básicas
 

@@ -7,20 +7,22 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
   odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
+
+\newpage
 
 # Objetivo
 
@@ -40,6 +42,8 @@ library(dplyr)
 Utilizando a Linguagem R.\
 Editora: ALTA BOOKS EDITORA\
 
+\newpage
+
 # Cap 1 - Instalação do R e Rstudio\
 
 - Download da linguagem R:\
@@ -48,23 +52,21 @@ Editora: ALTA BOOKS EDITORA\
 - Download Rstudio IDE:\
 <https://posit.co/downloads/>\
 
+\newpage
+
 # Cap 2 - Pacote base e funções estatísticas básicas\
 
 ## Operações matematicas basicas
 
-Nome da operação | Operação | Resultado
-:---------------- | :--------: | ------:
-Adição    |   5+4   |   [9]
-Subtração   |   6-2   |   [4]
-Multiplicação   |   7*3     |   [21]
-Divisão   |   45/9    |   [5]
-Potência    |   2^2   |   [4]
-Raiz    |   sqrt(121)   |   [11]
-Exponencial   |   exp(0)    |   [1]
-Log na base e   |   log(1)    |   [0]
-Log na base 10    |   log10(1)    |   [0]
-Log na base 2   |   log2(4)   |   [2]
-Log na base 3 ou qualquer outra   |   log(9,3)    |   [2]
+```{r Operações Básicas, echo=FALSE}
+library(tibble)
+library(knitr)
+nome_op <- c("Adição","Subtração","Multiplicação","Divisão","Potência","Raiz","Exponencial","Log na base e","Log na base 10","Log na base 2","Log na base 3 ou qualquer outra")
+op <- c("5+4","6-2","7*3","45/9","2^2","sqrt(121)","exp(0)","log(1)","log10(1)","log2(4)","log(9,3)")
+res <- c(9,4,21,5,4,11,1,0,0,2,2)
+tbl_op_bas <- tibble(nome_op,op,res)
+kable(tbl_op_bas, "simple" , col.names = c("Nome da operação", "Operação", "Resultado"),align = "lcr",caption = "Operações básicas do R")
+```
 
 ## Vetor
 
@@ -84,21 +86,21 @@ Ex.: *obj_qualquer* <- *c*(1,2,3)\
 
 - Uma tabela onde cada coluna é um vetor.\
 - Como cada coluna é um vetor, cada coluna pode ser de um tipo diferente.\
-Ex.: nome_data.frame <- **data.frame**(vetor_1, vetor_2)\
+Ex.: `nome_data.frame <- data.frame(vetor_1, vetor_2)`\
 - Acrescentando uma nova coluna ao data.frame.\
-Ex.: nome_data.frame <- **data.frame**(nome_data.frame, vetor_3)\
+Ex.: `nome_data.frame <- data.frame(nome_data.frame, vetor_3)`\
 - Para visualizar um **data.frame** podemos usar a função **View**().\
-Ex.: **View**(nome_data.frame)\
+Ex.: `View(nome_data.frame)`\
 
 ### **Matrizes**
 
 - A diferença entre **matrizes** e **data.frames**, é que no caso das matrizes todas as colunas e linhas devem ser do mesmo tipo. Enquanto nos **data.frames** as colunas podem ser de tipos diferentes.\
 
 - Para adicionar uma coluna numa matriz, usamos a função cbind().\
-Ex.: nome_matriz <- **cbind**(vetor_1, vetor_2, ...)\
+Ex.: `nome_matriz <- cbind(vetor_1, vetor_2, ...)`\
 
 - Para adicionar uma linha numa matriz, usamos a função rbind().\
-Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
+Ex.: `nome_matriz <- rbind(vetor_3, vetor_4, ...)`\
 
 - Quando inserimos dados (vetor) de naturezas diferentes (tipos) numa matriz, ela converte todos os dados para um único tipo. A principio *string* (*chr*).\
 
@@ -112,24 +114,23 @@ Ex.: nome_matriz <- **rbind**(vetor_3, vetor_4, ...)\
 
 - Para os **vetores** precisamos apenas informa a posição. A contagem da posição começa a partir do 1.\
 Ex.:\
-vetor <- c(5,18,89)\
-vetor[1]\
+`vetor <- c(5,18,89)`\
+`vetor[1]`\
 
 - Para as **matrizes**, é necessario informar a posição [*linha*, *coluna*]. A contagem da posição começa a partir do 1.\
-Ex.:\
-Mc[1,2]\
+Ex.:`Mc[1,2]`\
 
 - Para acessar todos os valores de uma *linha* da **matriz**, podemos determinar a *linha* e deixar a *coluna* em branco.\
-Ex.: Mc[1,]\
+Ex.: `Mc[1,]`\
 
 - Para acessar todos os valores de uma *coluna* da **matriz**, podemos determinar a *coluna* e deixar a *linha* em branco.\
-Ex.: Mc[,2]\
+Ex.: `Mc[,2]`\
 
 ### Caso **data.frame**
 
 - No caso do **data.frame** podemos acessar os valores das colunas informando, "nome do **data.frame**" "\$" "nome da coluna".\
 Sintaxe:\
-**nome_dataframe\$nome_coluna**\
+`nome_dataframe$nome_coluna`\
 
 - O **data.frame** também aceita as mesmas formas de acessar posições que as **matrizes**.\
 
@@ -151,7 +152,7 @@ Sintaxe:\
   - Tamanho do objeto.\
   - A lista, ou vertor, dos campos com o tipo e tamanho.\ 
 - Sintaxe:\
-**str**(*argumento*)\
+`str(argumento)`\
 
 ### **summary**() - resumo de variáveis
 - A função **summary**() retorna o resumo de variaveis.\
@@ -165,13 +166,13 @@ Sintaxe:\
   - 3º quantil\
   - valor máximo\
 - Sintaxe:\
-**summary**(*nome_variavel*)\
+`summary(nome_variavel)`\
 
 ### **class**() - classe de objetos
 - A função "**class**()" retorna a que classe do objeto do argemunto pertence.\
 - Basicamente diz se o objeto é numerico, string, vetor, lista, data.frame, matriz, ...\
 - Sintaxe:\
-**class**(*argumento*)\
+`class(argumento)`\
 
 \newpage
 
