@@ -1,6 +1,6 @@
-ESCRITO EM 15/03/23
+ESCRITO EM 16/03/23
 ---
-PARA 16/03/23
+PARA 17/03/23
 ---
 Subir github:
 
@@ -10,6 +10,8 @@ Estudar:
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
+			- Revisar tabelas
+			- Revisar fórmulas
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
 					- Sincronização com banco de dados
