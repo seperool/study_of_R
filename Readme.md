@@ -1570,9 +1570,9 @@ Principais tipos de dados
 -   Referência:  
     <http://db.rstudio.com/>  
 
-## 8.4 tibble
+## 8.4 **tibble**
 
-### 8.4.1 Visualização de tabelas tipo *tibble*
+### 8.4.1 Visualização de tabelas tipo **tibble**
 
 -   *tibble* é um tipo especial de tabela equivalente ao *data.frame*,
     porem mais compacta e com mais informações.  
@@ -1600,16 +1600,16 @@ Principais tipos de dados
 -   Caso necessite ver mais linhas basta especificar.  
     `print(dt, n=15)`  
 
-### 8.4.2 Criação de tabela tipo *tibble*
+### 8.4.2 Criação de tabela tipo **tibble**
 
 -   Primeiramente é necessario chamar a biblioteca **tibble**  
     `library(tibble)`  
 
 -   De forma semelhante ao **data.frame**, podemos criar tabelas do tipo
     **tibble**.  
-    `x = tibble(coluna1 = c(...), coluna2 = c(...), ...`  
+    `x = tibble(coluna1 = c(...), coluna2 = c(...), ...)`  
 
-### 8.4.3 Funções tibble
+### 8.4.3 Funções **tibble**
 
 -   Transformando um **data.frame** em tipo **tibble**, através da
     função **as_tibble()**.  
@@ -1619,6 +1619,27 @@ Principais tipos de dados
     **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se
     falso).  
     `is_tibble(x)`  
+
+## 8.5 Operador **pipe**
+
+-   Esta contido do pacote `magrittr`.  
+-   Funciona como uma função composta, tornando a leitura das linhas de
+    comando mais lógica e natural.  
+-   Trata-se de um operador cuja notação é `%>%`. Com ele podemos
+    encadear (concatenar) linhas de comandos na ordem de execução.  
+-   Atalho no teclado `ctrl+shift+M`.  
+-   Exemplo:  
+
+<!-- -->
+
+    library(magrittr)
+    library(dplyr)
+
+    dados1 %>% 
+    select(filial,quinzena) %>%
+    filter(quinzena == 1)
+
+## 8.6 Manipulando dados com o **dplyr**
 
 # 9 Cap 6 - Pacote data.table 
 

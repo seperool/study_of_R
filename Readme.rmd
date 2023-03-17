@@ -7,14 +7,14 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
   pdf_document: 
     number_sections: true
     toc: TRUE
@@ -1400,9 +1400,9 @@ con <- DBI::dbConnect(odbc::odbc(),
 
 \newpage
 
-## tibble
+## **tibble**
 
-### Visualização de tabelas tipo *tibble*
+### Visualização de tabelas tipo **tibble**
 
 - *tibble* é um tipo especial de tabela equivalente ao *data.frame*, porem mais compacta e com mais informações.\
 
@@ -1422,21 +1422,43 @@ con <- DBI::dbConnect(odbc::odbc(),
   - Caso necessite ver mais linhas basta especificar.\
   `print(dt, n=15)`\
 
-### Criação de tabela tipo *tibble*
+### Criação de tabela tipo **tibble**
 
 - Primeiramente é necessario chamar a biblioteca **tibble**\
 `library(tibble)`\
 
 - De forma semelhante ao **data.frame**, podemos criar tabelas do tipo **tibble**.\
-`x = tibble(coluna1 = c(...), coluna2 = c(...), ...`\
+`x = tibble(coluna1 = c(...), coluna2 = c(...), ...)`\
 
-### Funções tibble
+### Funções **tibble**
 
 - Transformando um **data.frame** em tipo **tibble**, através da função **as_tibble()**.\
 `x <- as_tibble(x)`\
 
 - Verificando se uma tabela é tipo **tibble**, através da função **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se falso).\
 `is_tibble(x)`\
+
+\newpage
+
+## Operador **pipe**
+
+- Esta contido do pacote `magrittr`.\
+- Funciona como uma função composta, tornando a leitura das linhas de comando mais lógica e natural.\
+- Trata-se de um operador cuja notação é `%>%`. Com ele podemos encadear (concatenar) linhas de comandos na ordem de execução.\
+- Atalho no teclado `ctrl+shift+M`.\
+- Exemplo:\
+```
+library(magrittr)
+library(dplyr)
+
+dados1 %>% 
+select(filial,quinzena) %>%
+filter(quinzena == 1)
+```
+
+\newpage
+
+## Manipulando dados com o **dplyr**
 
 \newpage
 
