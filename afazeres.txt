@@ -1,6 +1,6 @@
-ESCRITO EM 17/03/23
+ESCRITO EM 18/03/23
 ---
-PARA 18/03/23
+PARA 19/03/23
 ---
 Subir github:
 
@@ -20,8 +20,8 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-				- Manipulando dados com dplyr
-				- ...
+				- Manipulando dados com o dplyr
+				- Organizando os dados com o tidyr
 			- Cap. 6
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
