@@ -1233,60 +1233,60 @@ Principais tipos de dados
     Manipulação de dados.  
 
     1.  munipulação de dados:  
-        -   *select*  
+        -   `select()`  
             seleciona e retorna as colunas selecionadas da tabela.  
 
-        -   *pull*  
+        -   `pull()`  
             extrai uma coluna de uma tabela de dados e retorna ela como
             vetor.  
 
-        -   *filter*  
+        -   `filter()`  
             filtra linhas.  
 
-        -   *distinct*  
+        -   `distinct()`  
             remove linhas com valores repetidos.  
 
-        -   *arrange*  
+        -   `arrange()`  
             reordena ou combina linhas.  
 
-        -   *mutate*  
+        -   `mutate()`  
             cria novas colunas.  
 
-        -   *transmute*  
+        -   `transmute()`  
             cria novas colunas, mas não adiciona na base de dados.  
 
-        -   *summarise*  
+        -   `summarise()`  
             sumariza valores.  
 
-        -   *group_by*  
+        -   `group_by()`  
             permite operações por grupo.  
 
-        -   *add_column*  
+        -   `add_column()`  
             adiciona novas colunas.  
 
-        -   *add_row*  
+        -   `add_row()`  
             adiciona novas linhas.  
 
-        -   *rename*  
+        -   `rename()`  
             renomeia uma coluna.  
     2.  combinando tabelas de dados:  
-        -   *bind_cols*  
+        -   `bind_cols()`  
             Une duas tabelas lado a lado. acrescenta numeração as
             colunas repetidas.  
             É necessario que tenha o mesmo numero de linhas nas duas
             tabelas para fazer essa combinação.  
 
-        -   *bind_rows*  
+        -   `bind_rows()`  
             Une duas tabelas sobrepostas.  
             Quando não há correspondencia o comando retorna **NA**.  
 
-        -   *inner_join*  
+        -   `inner_join()`  
             A tabela final será o resultado da intersecção das duas
             colunas de x e y, que possuem pelo menos uma coluna em
             comum, a coluna chave.  
             Junta duas colunas pela interseção.  
 
-        -   *left_join*  
+        -   `left_join()`  
             Une duas tabelas, definindo qual será a tabela principal e a
             unida a esquerda da outra. Esse fator muda a interpretação
             das linhas/registros correspondentes uma na outra, no caso,
@@ -1294,7 +1294,7 @@ Principais tipos de dados
             É necessario que tenha pelo menos uma coluna em comum, uma
             coluna chave.  
 
-        -   *right_join*  
+        -   `right_join()`  
             Une duas tabelas, definindo qual será a tabela principal e a
             unida a direita da outra. Esse fator muda a interpretação
             das linhas/registros correspondentes uma na outra, no caso,
@@ -1302,23 +1302,23 @@ Principais tipos de dados
             É necessario que tenha pelo menos uma coluna em comum, uma
             coluna chave.  
 
-        -   *full_join*  
+        -   `full_join()`  
             Une duas tabelas. Prestar atenção na junção das
             linhas/registros que formam novas informações, atraves da
             junção de correspondentes.  
             É necessario que tenha pelo menos uma coluna em comum, uma
             coluna chave.  
 
-        -   *intersect*  
+        -   `intersect()`  
             Retorna a interseção entre tabelas.  
 
-        -   *union*  
+        -   `union()`  
             Retorna a união de tabelas.  
 
-        -   *setdiff*  
+        -   `setdiff()`  
             Retorna a diferença entre tabelas.  
 
-        -   *setequal*  
+        -   `setequal()`  
             Esse comando verifica se duas tabelas de dados possuem
             linhas com os mesmos valores, independentemente da ordem em
             que tais valores se apresentem. retorna **TRUE**, se os
@@ -1328,31 +1328,31 @@ Principais tipos de dados
 -   **tidyr**  
     Organização de dados.  
 
-    -   *pivot_longer* ou *gather*  
+    -   `pivot_longer()` ou `gather()`  
         Converte a tabela de dados para o formato longo. (larga -\>
         longo)  
 
-    -   *pivot_wider* ou *spread*  
+    -   `pivot_wider()` ou `spread()`  
         Converte a tabela de dados para o formato larga. (longo -\>
         larga)  
 
-    -   *separate*  
+    -   `separate()`  
         Separa as respostas que estão em uma unica coluna para diversas
         colunas.  
 
-    -   *unite*  
+    -   `unite()`  
         O comando unite é utilizado para unir duas ou mais colunas em
         uma unica coluna.  
 
-    -   *complete*  
+    -   `complete()`  
         Completa as combinações de duas colunas, se não houver valor
         completa com **NA**.  
 
-    -   *drop_na*  
+    -   `drop_na()`  
         Elimina as linhas, especificadas ou não, com valor **NA**.  
 
-    -   *replace_na*  
-        Substitui o valor NA por outro valor especificado.  
+    -   `replace_na()`  
+        Substitui o valor **NA** por outro valor especificado.  
 
 ## 8.3 Leitura de dados (readr)
 
