@@ -1227,132 +1227,16 @@ Principais tipos de dados
     Tipo de data.frame.  
 
 -   **magrittr**  
-    Operador pipe ‘%\>%’, concatena linhas de comando.  
+    Operador pipe `%>%`, concatena linhas de comando.  
 
 -   **dplyr**  
     Manipulação de dados.  
 
-    1.  munipulação de dados:  
-        -   `select()`  
-            seleciona e retorna as colunas selecionadas da tabela.  
-
-        -   `pull()`  
-            extrai uma coluna de uma tabela de dados e retorna ela como
-            vetor.  
-
-        -   `filter()`  
-            filtra linhas.  
-
-        -   `distinct()`  
-            remove linhas com valores repetidos.  
-
-        -   `arrange()`  
-            reordena ou combina linhas.  
-
-        -   `mutate()`  
-            cria novas colunas.  
-
-        -   `transmute()`  
-            cria novas colunas, mas não adiciona na base de dados.  
-
-        -   `summarise()`  
-            sumariza valores.  
-
-        -   `group_by()`  
-            permite operações por grupo.  
-
-        -   `add_column()`  
-            adiciona novas colunas.  
-
-        -   `add_row()`  
-            adiciona novas linhas.  
-
-        -   `rename()`  
-            renomeia uma coluna.  
-    2.  combinando tabelas de dados:  
-        -   `bind_cols()`  
-            Une duas tabelas lado a lado. acrescenta numeração as
-            colunas repetidas.  
-            É necessario que tenha o mesmo numero de linhas nas duas
-            tabelas para fazer essa combinação.  
-
-        -   `bind_rows()`  
-            Une duas tabelas sobrepostas.  
-            Quando não há correspondencia o comando retorna **NA**.  
-
-        -   `inner_join()`  
-            A tabela final será o resultado da intersecção das duas
-            colunas de x e y, que possuem pelo menos uma coluna em
-            comum, a coluna chave.  
-            Junta duas colunas pela interseção.  
-
-        -   `left_join()`  
-            Une duas tabelas, definindo qual será a tabela principal e a
-            unida a esquerda da outra. Esse fator muda a interpretação
-            das linhas/registros correspondentes uma na outra, no caso,
-            a tabela principal e tabela que será colocada a esquerda.  
-            É necessario que tenha pelo menos uma coluna em comum, uma
-            coluna chave.  
-
-        -   `right_join()`  
-            Une duas tabelas, definindo qual será a tabela principal e a
-            unida a direita da outra. Esse fator muda a interpretação
-            das linhas/registros correspondentes uma na outra, no caso,
-            a tabela principal e tabela que será colocada a direita.  
-            É necessario que tenha pelo menos uma coluna em comum, uma
-            coluna chave.  
-
-        -   `full_join()`  
-            Une duas tabelas. Prestar atenção na junção das
-            linhas/registros que formam novas informações, atraves da
-            junção de correspondentes.  
-            É necessario que tenha pelo menos uma coluna em comum, uma
-            coluna chave.  
-
-        -   `intersect()`  
-            Retorna a interseção entre tabelas.  
-
-        -   `union()`  
-            Retorna a união de tabelas.  
-
-        -   `setdiff()`  
-            Retorna a diferença entre tabelas.  
-
-        -   `setequal()`  
-            Esse comando verifica se duas tabelas de dados possuem
-            linhas com os mesmos valores, independentemente da ordem em
-            que tais valores se apresentem. retorna **TRUE**, se os
-            registros forem iguais, ou **FALSE**, se os registros forem
-            diferentes.  
-
 -   **tidyr**  
     Organização de dados.  
 
-    -   `pivot_longer()` ou `gather()`  
-        Converte a tabela de dados para o formato longo. (larga -\>
-        longo)  
-
-    -   `pivot_wider()` ou `spread()`  
-        Converte a tabela de dados para o formato larga. (longo -\>
-        larga)  
-
-    -   `separate()`  
-        Separa as respostas que estão em uma unica coluna para diversas
-        colunas.  
-
-    -   `unite()`  
-        O comando unite é utilizado para unir duas ou mais colunas em
-        uma unica coluna.  
-
-    -   `complete()`  
-        Completa as combinações de duas colunas, se não houver valor
-        completa com **NA**.  
-
-    -   `drop_na()`  
-        Elimina as linhas, especificadas ou não, com valor **NA**.  
-
-    -   `replace_na()`  
-        Substitui o valor **NA** por outro valor especificado.  
+-   **ggplot2**  
+    Elaboração de gráficos.  
 
 ## 8.3 Leitura de dados (readr)
 
@@ -1640,6 +1524,153 @@ Principais tipos de dados
     filter(quinzena == 1)
 
 ## 8.6 Manipulando dados com o **dplyr**
+
+### 8.6.1 munipulação de dados: 
+
+-   `select()`  
+
+    -   Seleciona e retorna as colunas selecionadas da tabela.  
+    -   Retorna as colunas selecionadas no formato tabela.  
+    -   Pode retornar mais de uma coluna.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(dplyr)
+        library(magrittr)
+        dados1 %>% 
+        select(filial,quinzena,valor_compra)
+
+-   `pull()`  
+
+    -   Extrai uma coluna de uma tabela de dados e retorna ela como
+        vetor.  
+    -   A coluna identificada para extração pode ser tanto pelo nome,
+        quanto pela posição.  
+    -   Retorna apenas uma coluna, no formato vetor.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(dplyr)
+        library(magrittr)
+        vetor <- dados1 %>% 
+        pull(filial)
+
+    ou  
+    `pull(2)`  
+    ou  
+    `pull(-5)`  
+
+-   `filter()`  
+    Filtra linhas.  
+
+-   `distinct()`  
+    Remove linhas com valores repetidos.  
+
+-   `arrange()`  
+    Reordena ou combina linhas.  
+
+-   `mutate()`  
+    Cria novas colunas.  
+
+-   `transmute()`  
+    Cria novas colunas, mas não adiciona na base de dados.  
+
+-   `summarise()`  
+    Sumariza valores.  
+
+-   `group_by()`  
+    Permite operações por grupo.  
+
+-   `add_column()`  
+    Adiciona novas colunas.  
+
+-   `add_row()`  
+    Adiciona novas linhas.  
+
+-   `rename()`  
+    Renomeia uma coluna.  
+
+### 8.6.2 combinando tabelas de dados: 
+
+-   `bind_cols()`  
+    Une duas tabelas lado a lado. acrescenta numeração as colunas
+    repetidas.  
+    É necessario que tenha o mesmo numero de linhas nas duas tabelas
+    para fazer essa combinação.  
+
+-   `bind_rows()`  
+    Une duas tabelas sobrepostas.  
+    Quando não há correspondencia o comando retorna **NA**.  
+
+-   `inner_join()`  
+    A tabela final será o resultado da intersecção das duas colunas de x
+    e y, que possuem pelo menos uma coluna em comum, a coluna chave.  
+    Junta duas colunas pela interseção.  
+
+-   `left_join()`  
+    Une duas tabelas, definindo qual será a tabela principal e a unida a
+    esquerda da outra. Esse fator muda a interpretação das
+    linhas/registros correspondentes uma na outra, no caso, a tabela
+    principal e tabela que será colocada a esquerda.  
+    É necessario que tenha pelo menos uma coluna em comum, uma coluna
+    chave.  
+
+-   `right_join()`  
+    Une duas tabelas, definindo qual será a tabela principal e a unida a
+    direita da outra. Esse fator muda a interpretação das
+    linhas/registros correspondentes uma na outra, no caso, a tabela
+    principal e tabela que será colocada a direita.  
+    É necessario que tenha pelo menos uma coluna em comum, uma coluna
+    chave.  
+
+-   `full_join()`  
+    Une duas tabelas. Prestar atenção na junção das linhas/registros que
+    formam novas informações, atraves da junção de correspondentes.  
+    É necessario que tenha pelo menos uma coluna em comum, uma coluna
+    chave.  
+
+-   `intersect()`  
+    Retorna a interseção entre tabelas.  
+
+-   `union()`  
+    Retorna a união de tabelas.  
+
+-   `setdiff()`  
+    Retorna a diferença entre tabelas.  
+
+-   `setequal()`  
+    Esse comando verifica se duas tabelas de dados possuem linhas com os
+    mesmos valores, independentemente da ordem em que tais valores se
+    apresentem. retorna **TRUE**, se os registros forem iguais, ou
+    **FALSE**, se os registros forem diferentes.  
+
+## 8.7 Organizando dados com o **tidyr**
+
+-   `pivot_longer()` ou `gather()`  
+    Converte a tabela de dados para o formato longo. (larga -\> longo)  
+
+-   `pivot_wider()` ou `spread()`  
+    Converte a tabela de dados para o formato larga. (longo -\> larga)  
+
+-   `separate()`  
+    Separa as respostas que estão em uma unica coluna para diversas
+    colunas.  
+
+-   `unite()`  
+    O comando unite é utilizado para unir duas ou mais colunas em uma
+    unica coluna.  
+
+-   `complete()`  
+    Completa as combinações de duas colunas, se não houver valor
+    completa com **NA**.  
+
+-   `drop_na()`  
+    Elimina as linhas, especificadas ou não, com valor **NA**.  
+
+-   `replace_na()`  
+    Substitui o valor **NA** por outro valor especificado.  
 
 # 9 Cap 6 - Pacote data.table 
 
