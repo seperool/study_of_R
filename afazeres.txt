@@ -3,7 +3,11 @@ ESCRITO EM 19/03/23
 PARA 20/03/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 5 - O sistema tidyverse
+			- Manipulando dados com o dplyr
+				- filter
+				- distinct
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -21,8 +25,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Manipulando dados com o dplyr
-					- filter
-					- distinct
 					- arrange
 					- mutate
 					- transmutate
