@@ -1557,16 +1557,58 @@ Principais tipos de dados
         vetor <- dados1 %>% 
         pull(filial)
 
-    ou  
+    ou,  
     `pull(2)`  
-    ou  
+    ou,  
     `pull(-5)`  
 
 -   `filter()`  
-    Filtra linhas.  
+
+    -   Filtra linhas.  
+    -   Pricipais operadores lógicos:  
+
+| Operador lógico |          Descrição |
+|:----------------|-------------------:|
+| ==              |          Igualdade |
+| !=              |          Diferença |
+| \>              |          Maior que |
+| \<              |          Menor que |
+| \>=             | Maior ou igual que |
+| \<=             | Menor ou igual que |
+| &               |                  E |
+| \|              |                 OU |
+| !               |            Negação |
+
+Tabela dos principais operadores lógicos usados na função filter.
+
+-   Exemplo:  
+
+<!-- -->
+
+    library(dplyr)
+    library(magrittr)
+    dados1 %>% 
+    filter(filial == "A")
 
 -   `distinct()`  
-    Remove linhas com valores repetidos.  
+
+    -   Remove linhas com valores repetidos de determinadas colunas.  
+    -   Podemos extrair todas as linhas distintas , do banco de dados,
+        pelo comando `distinct()`, apenas não especificando as
+        colunas.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(dplyr)
+        library(magrittr)
+        dados1 %>% 
+        distinct(filial)
+
+    ou,  
+    `distinct(filial, quinzena, desconto_perc)`  
+    ou,  
+    `distinct()`  
 
 -   `arrange()`  
     Reordena ou combina linhas.  

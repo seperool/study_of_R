@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  odt_document: 
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1391,17 +1391,51 @@ select(filial,quinzena,valor_compra)
   vetor <- dados1 %>% 
   pull(filial)
   ```
-  ou\
+  ou,\
   `pull(2)`\
-  ou\
+  ou,\
   `pull(-5)`\
           
 - `filter()`\
-Filtra linhas.\
-          
+  - Filtra linhas.\
+  - Pricipais operadores lógicos:\
+```{r operadores lógicos usados na função filter, echo=FALSE,message=FALSE}
+# Pacotes
+library(knitr)
+library(tibble)
+
+# Colunas
+op_logic <- c("==","!=", ">","<",">=","<=","&","|","!")
+desc_op_logic <- c("Igualdade","Diferença","Maior que","Menor que", "Maior ou igual que", "Menor ou igual que", "E", "OU", "Negação")
+
+# Tabela
+tbl_op_logic <- tibble(op_logic,desc_op_logic) # tibble
+kable(tbl_op_logic, align = "lr", col.names = c("Operador lógico","Descrição"), caption = "Tabela dos principais operadores lógicos usados na função filter.")
+```
+
+  - Exemplo:\
+  ```
+  library(dplyr)
+  library(magrittr)
+  dados1 %>% 
+  filter(filial == "A")
+  ```
+
 - `distinct()`\
-Remove linhas com valores repetidos.\
-          
+  - Remove linhas com valores repetidos de determinadas colunas.\
+  - Podemos extrair todas as linhas distintas , do banco de dados, pelo comando `distinct()`, apenas não especificando as colunas.\
+  - Exemplo:\
+  ```
+  library(dplyr)
+  library(magrittr)
+  dados1 %>% 
+  distinct(filial)
+  ```
+  ou,\
+  `distinct(filial, quinzena, desconto_perc)`\
+  ou,\
+  `distinct()`\
+    
 - `arrange()`\
 Reordena ou combina linhas.\
           
