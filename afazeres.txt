@@ -3,7 +3,13 @@ ESCRITO EM 20/03/23
 PARA 21/03/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 5 - O sistema tidyverse
+			- Manipulando dados com o dplyr
+				- arrange
+				- mutate
+				- transmutate
+		
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -21,9 +27,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Manipulando dados com o dplyr
-					- arrange
-					- mutate
-					- transmutate
 					- summarise
 					- group_by
 					- add_column
