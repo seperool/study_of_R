@@ -1,13 +1,9 @@
-ESCRITO EM 19/03/23
+ESCRITO EM 20/03/23
 ---
-PARA 20/03/23
+PARA 21/03/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 5 - O sistema tidyverse
-			- Manipulando dados com o dplyr
-				- filter
-				- distinct
+
 Estudar:
 	Cap. 7 - Visualizando dados
 
