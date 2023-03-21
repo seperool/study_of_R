@@ -1,14 +1,8 @@
-ESCRITO EM 20/03/23
+ESCRITO EM 21/03/23
 ---
-PARA 21/03/23
+PARA 22/03/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 5 - O sistema tidyverse
-			- Manipulando dados com o dplyr
-				- arrange
-				- mutate
-				- transmutate
 		
 Estudar:
 	Cap. 7 - Visualizando dados
