@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   odt_document: 
     number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1395,9 +1395,18 @@ select(filial,quinzena,valor_compra)
   `pull(2)`\
   ou,\
   `pull(-5)`\
-          
+
+\newpage
+
 - `filter()`\
   - Filtra linhas.\
+  - Exemplo:\
+  ```
+  library(dplyr)
+  library(magrittr)
+  dados1 %>% 
+  filter(filial == "A")
+  ```
   - Pricipais operadores lógicos:\
 ```{r operadores lógicos usados na função filter, echo=FALSE,message=FALSE}
 # Pacotes
@@ -1413,14 +1422,6 @@ tbl_op_logic <- tibble(op_logic,desc_op_logic) # tibble
 kable(tbl_op_logic, align = "lr", col.names = c("Operador lógico","Descrição"), caption = "Tabela dos principais operadores lógicos usados na função filter.")
 ```
 
-  - Exemplo:\
-  ```
-  library(dplyr)
-  library(magrittr)
-  dados1 %>% 
-  filter(filial == "A")
-  ```
-
 - `distinct()`\
   - Remove linhas com valores repetidos de determinadas colunas.\
   - Podemos extrair todas as linhas distintas , do banco de dados, pelo comando `distinct()`, apenas não especificando as colunas.\
@@ -1435,16 +1436,61 @@ kable(tbl_op_logic, align = "lr", col.names = c("Operador lógico","Descrição"
   `distinct(filial, quinzena, desconto_perc)`\
   ou,\
   `distinct()`\
-    
+
+\newpage
+
 - `arrange()`\
-Reordena ou combina linhas.\
-          
+  - Reordena em determinadas colunas as linhas.\
+  - Pode reordenar mais de uma coluna por vez.\
+  `arrange(coluna_1,coluna_2,...)`\
+  ou\
+  ```
+  arrange(coluna_1) %>% 
+  arrange(coluna_2)
+  ```
+  - A ordem das colunas na função determina a prioridade na ordenação.\
+  - Por **default** reordena as linhas em ordem crescente.\
+  - Podemos também reordenar as linhas em ordem decrescente:\
+    - `arrange(-nome_coluna)`\
+    Colocando um sinal de negativo na frente da coluna é informar ordenar em decrescente.\
+    - `arrange(desc(nome_coluna))`\
+    Usando a função `desc()`.\
+  - Exemplo:\
+  ```
+  library(magrittr)
+  library(dplyr)
+  
+  dados1 %>% 
+  arrange(n_itens,valor_compra) %>% 
+  filter(valor_compra > 100) %>% 
+  select(filial,n_itens,valor_compra)
+  ```
+
+\newpage
+
 - `mutate()`\
-Cria novas colunas.\
-          
+  - Cria novas colunas, na base de dados.\
+  - Exemplo:\
+  ```
+  library(magrittr)
+  library(dplyr)
+  
+  dados1 %>% 
+  mutate(vmci = round(valor_compra/n_itens))
+  ```
+    
 - `transmute()`\
-Cria novas colunas, mas não adiciona na base de dados.\
-          
+  - Cria novas colunas, mas não adiciona na base de dados.\
+  - A diferença de `transmute()` para `mutate()` é que em `mutate()` acrescenta novas colunas aos dados originais, enquanto que em `transmute()` criamos novas colunas a partir dos dados originais.\
+  - Exemplo:\
+  ```
+  library(magrittr)
+  library(dplyr)
+  
+  dados1 %>% 
+  transmute(vmci = round(valor_compra/n_itens))
+  ```
+  
 - `summarise()`\
 Sumariza valores.\
 

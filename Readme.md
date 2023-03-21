@@ -1528,7 +1528,6 @@ Principais tipos de dados
 ### 8.6.1 munipulação de dados: 
 
 -   `select()`  
-
     -   Seleciona e retorna as colunas selecionadas da tabela.  
     -   Retorna as colunas selecionadas no formato tabela.  
     -   Pode retornar mais de uma coluna.  
@@ -1540,9 +1539,7 @@ Principais tipos de dados
         library(magrittr)
         dados1 %>% 
         select(filial,quinzena,valor_compra)
-
 -   `pull()`  
-
     -   Extrai uma coluna de uma tabela de dados e retorna ela como
         vetor.  
     -   A coluna identificada para extração pode ser tanto pelo nome,
@@ -1563,8 +1560,16 @@ Principais tipos de dados
     `pull(-5)`  
 
 -   `filter()`  
-
     -   Filtra linhas.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(dplyr)
+        library(magrittr)
+        dados1 %>% 
+        filter(filial == "A")
+
     -   Pricipais operadores lógicos:  
 
 | Operador lógico |          Descrição |
@@ -1581,17 +1586,7 @@ Principais tipos de dados
 
 Tabela dos principais operadores lógicos usados na função filter.
 
--   Exemplo:  
-
-<!-- -->
-
-    library(dplyr)
-    library(magrittr)
-    dados1 %>% 
-    filter(filial == "A")
-
 -   `distinct()`  
-
     -   Remove linhas com valores repetidos de determinadas colunas.  
     -   Podemos extrair todas as linhas distintas , do banco de dados,
         pelo comando `distinct()`, apenas não especificando as
@@ -1611,13 +1606,66 @@ Tabela dos principais operadores lógicos usados na função filter.
     `distinct()`  
 
 -   `arrange()`  
-    Reordena ou combina linhas.  
+    -   Reordena em determinadas colunas as linhas.  
+    -   Pode reordenar mais de uma coluna por vez.  
+        `arrange(coluna_1,coluna_2,...)`  
+        ou  
+
+    <!-- -->
+
+        arrange(coluna_1) %>% 
+        arrange(coluna_2)
+
+    -   A ordem das colunas na função determina a prioridade na
+        ordenação.  
+    -   Por **default** reordena as linhas em ordem crescente.  
+    -   Podemos também reordenar as linhas em ordem decrescente:  
+        -   `arrange(-nome_coluna)`  
+            Colocando um sinal de negativo na frente da coluna é
+            informar ordenar em decrescente.  
+        -   `arrange(desc(nome_coluna))`  
+            Usando a função `desc()`.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(magrittr)
+        library(dplyr)
+
+        dados1 %>% 
+        arrange(n_itens,valor_compra) %>% 
+        filter(valor_compra > 100) %>% 
+        select(filial,n_itens,valor_compra)
 
 -   `mutate()`  
-    Cria novas colunas.  
+
+    -   Cria novas colunas, na base de dados.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(magrittr)
+        library(dplyr)
+
+        dados1 %>% 
+        mutate(vmci = round(valor_compra/n_itens))
 
 -   `transmute()`  
-    Cria novas colunas, mas não adiciona na base de dados.  
+
+    -   Cria novas colunas, mas não adiciona na base de dados.  
+    -   A diferença de `transmute()` para `mutate()` é que em `mutate()`
+        acrescenta novas colunas aos dados originais, enquanto que em
+        `transmute()` criamos novas colunas a partir dos dados
+        originais.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(magrittr)
+        library(dplyr)
+
+        dados1 %>% 
+        transmute(vmci = round(valor_compra/n_itens))
 
 -   `summarise()`  
     Sumariza valores.  
