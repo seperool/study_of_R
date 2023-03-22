@@ -1638,7 +1638,6 @@ Tabela dos principais operadores lógicos usados na função filter.
         select(filial,n_itens,valor_compra)
 
 -   `mutate()`  
-
     -   Cria novas colunas, na base de dados.  
     -   Exemplo:  
 
@@ -1649,9 +1648,7 @@ Tabela dos principais operadores lógicos usados na função filter.
 
         dados1 %>% 
         mutate(vmci = round(valor_compra/n_itens))
-
 -   `transmute()`  
-
     -   Cria novas colunas, mas não adiciona na base de dados.  
     -   A diferença de `transmute()` para `mutate()` é que em `mutate()`
         acrescenta novas colunas aos dados originais, enquanto que em
@@ -1668,10 +1665,52 @@ Tabela dos principais operadores lógicos usados na função filter.
         transmute(vmci = round(valor_compra/n_itens))
 
 -   `summarise()`  
-    Sumariza valores.  
+
+    -   Permite sumarizar variáveis, ou seja, produzir tabelas resumidas
+        do banco de dados.  
+    -   Pode ser usado em conjunto com o comando `group_by()` para obter
+        o resumo de grupos.  
+    -   Sintaxe:  
+        `summarise(nome_da_coluna = função_summarise(coluna))`
+    -   Exemplo:  
+
+    <!-- -->
+
+        dados1 %>%
+        select(filial) %>%
+        summarise(item_total = sum(n_itens))
+
+    ou
+
+        dados1 %>%
+        group_by(filial) %>%
+        summarise(cupons_distintos = n_distinct(cupom))
+
+    -   Principais funções de sumarização:  
+
+| Funções            |                                      Descrição                                      |
+|:-------------|:--------------------------------------------------------:|
+| n()                |                       Conta o número de elementos da coluna x                       |
+| n_distinct(x)      |                      Conta os elementos distintos da coluna x                       |
+| sum(x)             |                  Soma os valores da coluna x, retorna o acumulado                   |
+| mean(x)            |                             Cálcula a média da coluna x                             |
+| median(x)          |                            Cálcula a mediana da coluna x                            |
+| quantile(x,k)      |           Cálcula o percentil de ordem 0\<=k\<=1 dos valores da coluna x            |
+| min(x)             |                          Retorna o valor mínimo da coluna                           |
+| max(x)             |                          Retorna o valor máximo da coluna                           |
+| var(x) ou var(x,y) | Cálcula a variância da coluna x, ou a covariância da coluna x em relação a coluna y |
+| sd(x)              |                         Cálcula o desvio-padrão da coluna x                         |
+| prod(x)            |                          Multiplica os valores da coluna x                          |
+
+Principais funções de summarise
 
 -   `group_by()`  
-    Permite operações por grupo.  
+    -   Permite operações por grupo. Agrupa dados de determinadas
+        colunas.  
+    -   Agrupa as colunas priorizando a ordem em que aparecem na
+        função.  
+    -   Exemplo:  
+        `group_by(coluna1,coluna2,...)`  
 
 -   `add_column()`  
     Adiciona novas colunas.  

@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  github_document: 
   odt_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
   html_document:
     number_sections: true
     df_print: paged
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1490,12 +1490,69 @@ kable(tbl_op_logic, align = "lr", col.names = c("Operador lógico","Descrição"
   dados1 %>% 
   transmute(vmci = round(valor_compra/n_itens))
   ```
-  
+
+\newpage
+
 - `summarise()`\
-Sumariza valores.\
+  - Permite sumarizar variáveis, ou seja, produzir tabelas resumidas do banco de dados.\
+  - Pode ser usado em conjunto com o comando `group_by()` para obter o resumo de grupos.\
+  - Sintaxe:\
+  `summarise(nome_da_coluna = função_summarise(coluna))`
+  - Exemplo:\
+  ```
+  dados1 %>%
+  select(filial) %>%
+  summarise(item_total = sum(n_itens))
+  ```
+  ou
+  ```
+  dados1 %>%
+  group_by(filial) %>%
+  summarise(cupons_distintos = n_distinct(cupom))
+  ```
+  - Principais funções de sumarização:\
+```{r Principais funções de sumarização, echo=FALSE}
+# bibliotecas
+library(tibble)
+library(knitr)
+
+# colunas  
+funcoes_sum <- c(
+  "n()",
+  "n_distinct(x)",
+  "sum(x)",
+  "mean(x)",
+  "median(x)",
+  "quantile(x,k)",
+  "min(x)",
+  "max(x)",
+  "var(x) ou var(x,y)",
+  "sd(x)",
+  "prod(x)")
+desc_func_sum <- c(
+  "Conta o número de elementos da coluna x",
+  "Conta os elementos distintos da coluna x",
+  "Soma os valores da coluna x, retorna o acumulado",
+  "Cálcula a média da coluna x",
+  "Cálcula a mediana da coluna x",
+  "Cálcula o percentil de ordem 0<=k<=1 dos valores da coluna x",
+  "Retorna o valor mínimo da coluna",
+  "Retorna o valor máximo da coluna",
+  "Cálcula a variância da coluna x, ou a covariância da coluna x em relação a coluna y",
+  "Cálcula o desvio-padrão da coluna x",
+  "Multiplica os valores da coluna x"
+)
+tbl_func_sum <- tibble(funcoes_sum,desc_func_sum)
+kable(tbl_func_sum,col.names = c("Funções", "Descrição"), caption = "Principais funções de summarise", align = "lc")
+```
 
 - `group_by()`\
-Permite operações por grupo.\
+  - Permite operações por grupo. Agrupa dados de determinadas colunas.\
+  - Agrupa as colunas priorizando a ordem em que aparecem na função.\
+  - Exemplo:\
+  `group_by(coluna1,coluna2,...)`\
+
+\newpage
           
 - `add_column()`\
 Adiciona novas colunas.\
