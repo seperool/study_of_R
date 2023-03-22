@@ -1,6 +1,6 @@
-ESCRITO EM 21/03/23
+ESCRITO EM 22/03/23
 ---
-PARA 22/03/23
+PARA 23/03/23
 ---
 Subir github:
 		
@@ -21,8 +21,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Manipulando dados com o dplyr
-					- summarise
-					- group_by
 					- add_column
 					- add_row
 					- rename
