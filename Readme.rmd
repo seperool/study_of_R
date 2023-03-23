@@ -3,18 +3,18 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  odt_document: 
+  md_document:
     number_sections: true
+    variant: markdown_github
   github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  md_document:
-    number_sections: true
-    variant: markdown_github
   word_document: 
     toc: TRUE
     number_sections: true
@@ -1337,13 +1337,41 @@ con <- DBI::dbConnect(odbc::odbc(),
 - De forma semelhante ao **data.frame**, podemos criar tabelas do tipo **tibble**.\
 `x = tibble(coluna1 = c(...), coluna2 = c(...), ...)`\
 
+\newpage
+
 ### Funções **tibble**
 
-- Transformando um **data.frame** em tipo **tibble**, através da função **as_tibble()**.\
-`x <- as_tibble(x)`\
+- `as_tibble()`\
+  - Transforma um **data.frame** em tipo **tibble**, através da função **as_tibble()**.\
+  `x <- as_tibble(x)`\
 
-- Verificando se uma tabela é tipo **tibble**, através da função **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se falso).\
-`is_tibble(x)`\
+- `is_tibble()`\
+  - Verifica se uma tabela é tipo **tibble**, através da função **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se falso).\
+  `is_tibble(x)`\
+
+- `add_column()`\
+  - Adiciona novas colunas.\
+  ```
+  dados1 %>% 
+  add_column(nome = valor)
+  ```
+  - Também é possivel definir a posição onde a nova coluna vai se encaixar, indicando a posição (`.before = 1` ou `.after = 1`).\
+  ```
+  dados1 %>% 
+  add_column(nome = valor, .before = 1)
+  ```
+  
+- `add_row()`\
+  - Adiciona novas linhas.\
+  - Também é possivel definir a posição da nova linha através dos comandos `.before` ou `.after`.\
+  - É necessário adicionar as informações e referenciar as colunas.\
+  ```
+  dados1 %>% 
+  add_row(cupom = 100, filial = "A",
+  valor_compra = 10, n_itens = 1,
+  desconto_perc = 0, quinzena = 1,
+  .before = 1)
+  ```
 
 \newpage
 
@@ -1367,7 +1395,7 @@ filter(quinzena == 1)
 
 ## Manipulando dados com o **dplyr**
 
-### munipulação de dados:\
+### munipulação de dados:
 - `select()`\
   - Seleciona e retorna as colunas selecionadas da tabela.\
   - Retorna as colunas selecionadas no formato tabela.\
@@ -1553,16 +1581,12 @@ kable(tbl_func_sum,col.names = c("Funções", "Descrição"), caption = "Princip
   `group_by(coluna1,coluna2,...)`\
 
 \newpage
-          
-- `add_column()`\
-Adiciona novas colunas.\
-          
-- `add_row()`\
-Adiciona novas linhas.\
-          
+  
 - `rename()`\
 Renomeia uma coluna.\
-        
+
+\newpage
+
 ### combinando tabelas de dados:\
 - `bind_cols()`\
 Une duas tabelas lado a lado. acrescenta numeração as colunas repetidas.\

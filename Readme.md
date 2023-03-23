@@ -1495,14 +1495,44 @@ Principais tipos de dados
 
 ### 8.4.3 Funções **tibble**
 
--   Transformando um **data.frame** em tipo **tibble**, através da
-    função **as_tibble()**.  
-    `x <- as_tibble(x)`  
+-   `as_tibble()`  
+    -   Transforma um **data.frame** em tipo **tibble**, através da
+        função **as_tibble()**.  
+        `x <- as_tibble(x)`  
+-   `is_tibble()`  
+    -   Verifica se uma tabela é tipo **tibble**, através da função
+        **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE**
+        (se falso).  
+        `is_tibble(x)`  
+-   `add_column()`  
+    -   Adiciona novas colunas.  
 
--   Verificando se uma tabela é tipo **tibble**, através da função
-    **is_tibble()**. Retorna **TRUE** (se verdadeiro), ou **FALSE** (se
-    falso).  
-    `is_tibble(x)`  
+    <!-- -->
+
+        dados1 %>% 
+        add_column(nome = valor)
+
+    -   Também é possivel definir a posição onde a nova coluna vai se
+        encaixar, indicando a posição (`.before = 1` ou `.after = 1`).  
+
+    <!-- -->
+
+        dados1 %>% 
+        add_column(nome = valor, .before = 1)
+-   `add_row()`  
+    -   Adiciona novas linhas.  
+    -   Também é possivel definir a posição da nova linha através dos
+        comandos `.before` ou `.after`.  
+    -   É necessário adicionar as informações e referenciar as
+        colunas.  
+
+    <!-- -->
+
+        dados1 %>% 
+        add_row(cupom = 100, filial = "A",
+        valor_compra = 10, n_itens = 1,
+        desconto_perc = 0, quinzena = 1,
+        .before = 1)
 
 ## 8.5 Operador **pipe**
 
@@ -1525,7 +1555,7 @@ Principais tipos de dados
 
 ## 8.6 Manipulando dados com o **dplyr**
 
-### 8.6.1 munipulação de dados: 
+### 8.6.1 munipulação de dados:
 
 -   `select()`  
     -   Seleciona e retorna as colunas selecionadas da tabela.  
@@ -1711,12 +1741,6 @@ Principais funções de summarise
         função.  
     -   Exemplo:  
         `group_by(coluna1,coluna2,...)`  
-
--   `add_column()`  
-    Adiciona novas colunas.  
-
--   `add_row()`  
-    Adiciona novas linhas.  
 
 -   `rename()`  
     Renomeia uma coluna.  
