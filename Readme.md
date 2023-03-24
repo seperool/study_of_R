@@ -280,14 +280,14 @@ Operações básicas do R
     **require**(*nome_pacote*)  
 -   Outra possibilidade, é ao usar um função especificar a qual pacote
     ela pertence.  
-    *nome_pacote***::***função*.  
+    `nome_pacote::função`.  
 
 ## 5.4 Obter ajuda (informações) sobre pacotes
 
 Duas formas de se conseguir informações sobre determinado pacote é
 através dos comandos:  
-1. **package?***nome_pacote*  
-2. **help**(**package** = “*nome_pacote*”)  
+1. `package?nome_pacote`  
+2. `help(package = "nome_pacote")`  
 
 # 6 Sites para uso Remote do R
 
@@ -1743,7 +1743,14 @@ Principais funções de summarise
         `group_by(coluna1,coluna2,...)`  
 
 -   `rename()`  
-    Renomeia uma coluna.  
+    -   Renomeia uma coluna.  
+        `rename(novo_nome = antigo_nome)`  
+    -   Pode renomear várias colunas de uma vez.  
+
+    <!-- -->
+
+        dados1 %>% 
+        rename(x1 = coluna1, x2 = coluna2, ...)
 
 ### 8.6.2 combinando tabelas de dados: 
 
