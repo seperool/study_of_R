@@ -1,6 +1,6 @@
-ESCRITO EM 23/03/23
+ESCRITO EM 24/03/23
 ---
-PARA 24/03/23
+PARA 25/03/23
 ---
 Subir github:
 	
@@ -20,8 +20,17 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-				- Manipulando dados com o dplyr
-					- rename
+				- Combinando tabelas de dados com o dplyr
+					- bind_cols
+					- bind_rows
+					- inner_join
+					- left_join
+					- right_join
+					- full_join
+					- intersect
+					- union
+					- setdiff
+					- setequal
 				- Organizando os dados com o tidyr
 			- Cap. 6
 			- Cap. 7
