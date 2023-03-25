@@ -1755,10 +1755,29 @@ Principais funções de summarise
 ### 8.6.2 combinando tabelas de dados: 
 
 -   `bind_cols()`  
-    Une duas tabelas lado a lado. acrescenta numeração as colunas
-    repetidas.  
-    É necessario que tenha o mesmo numero de linhas nas duas tabelas
-    para fazer essa combinação.  
+
+    -   Une duas tabelas lado a lado, sobrepostas. Ou seja, soma o
+        número de colunas das duas tabelas.  
+    -   Acrescenta numeração as colunas repetidas. Ou seja, se hover a
+        mesma coluna nas duas tabelas, será acrescido ao nome das
+        colunas repetidas um valor.  
+    -   É necessario que tenha o mesmo número de linhas nas duas tabelas
+        para fazer essa combinação.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(tibble)
+        library(magrittr)
+        library(dplyr)
+        x <- dados1 %>% 
+        select(cupom,filial,valor_compra)
+        y <- dados1 %>%
+        select(cupom,n_itens)
+        z <- bind_cols(x,y)
+        colnames(z)
+
+    `[1] "cupom...1"    "filial"       "valor_compra" "cupom...4"    "n_itens"`  
 
 -   `bind_rows()`  
     Une duas tabelas sobrepostas.  
