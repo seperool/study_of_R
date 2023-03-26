@@ -29,5 +29,7 @@ View(bind_cols(x,y))
 #obs.: para que essa combinação seja possivel é necessario o mesmo numero de linhas nas duas tabelas
 #obs2.: como tem a coluna "cupom" nas duas tabelas é acrescentado automaticamente um numero ao nome da coluna para diferenciar
 
+# Pegando o nome das colunas da tabela combinação x e y
+#para demonstra o nome acrescido de número nas colunas repetidas
 z <- bind_cols(x,y)
 colnames(z)
