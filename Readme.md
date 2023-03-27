@@ -1763,6 +1763,8 @@ Principais funções de summarise
         colunas repetidas um valor.  
     -   É necessario que tenha o mesmo número de linhas nas duas tabelas
         para fazer essa combinação.  
+    -   Dentro da função, a ordem de chamada de cada tabela determina a
+        ordem das colunas.  
     -   Exemplo:  
 
     <!-- -->
@@ -1777,11 +1779,35 @@ Principais funções de summarise
         z <- bind_cols(x,y)
         colnames(z)
 
-    `[1] "cupom...1"    "filial"       "valor_compra" "cupom...4"    "n_itens"`  
+    `[1] "cupom...1" "filial" "valor_compra" "cupom...4" "n_itens"`  
 
 -   `bind_rows()`  
-    Une duas tabelas sobrepostas.  
-    Quando não há correspondencia o comando retorna **NA**.  
+
+    -   Une duas tabelas pelas linhas.  
+    -   Não é necessário que o número de linhas, ou colunas, seja igual
+        nas duas tabelas. Nesse ponto é diferente do comando
+        `bind_cols()`.  
+    -   As colunas das duas tabelas são combinadas, porém das colunas
+        repetidas é mantida apenas uma.  
+    -   Quando não há correspondencia entre as colunas o comando retorna
+        **NA**, no valor especifico da linha.  
+    -   Dentro da função, a ordem de chamada de cada tabela determina a
+        ordem das colunas.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        library(tibble)
+        library(magrittr)
+        library(dplyr)
+        x <- dados1 %>% 
+        select(cupom,filial,valor_compra)
+        y <- dados1 %>%
+        select(cupom,n_itens)
+        z <- bind_rows(x,y)
+        colnames(z)
+
+    `[1] "cupom" "filial" "valor_compra" "n_itens"`  
 
 -   `inner_join()`  
     A tabela final será o resultado da intersecção das duas colunas de x

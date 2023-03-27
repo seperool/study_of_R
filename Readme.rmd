@@ -7,14 +7,14 @@ output:
     number_sections: true
     toc: TRUE
   github_document: 
+  md_document:
+    number_sections: true
+    variant: markdown_github
   word_document: 
     toc: TRUE
     number_sections: true
   odt_document: 
     number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
@@ -1598,6 +1598,7 @@ kable(tbl_func_sum,col.names = c("Funções", "Descrição"), caption = "Princip
   - Une duas tabelas lado a lado, sobrepostas. Ou seja, soma o número de colunas das duas tabelas.\
   - Acrescenta numeração as colunas repetidas. Ou seja, se hover a mesma coluna nas duas tabelas, será acrescido ao nome das colunas repetidas um valor.\
   - É necessario que tenha o mesmo número de linhas nas duas tabelas para fazer essa combinação.\
+  - Dentro da função, a ordem de chamada de cada tabela determina a ordem das colunas.\
   - Exemplo:\
   ```
   library(tibble)
@@ -1610,11 +1611,28 @@ kable(tbl_func_sum,col.names = c("Funções", "Descrição"), caption = "Princip
   z <- bind_cols(x,y)
   colnames(z)
   ```
-  ` [1] "cupom...1"    "filial"       "valor_compra" "cupom...4"    "n_itens"`\
+  ` [1] "cupom...1" "filial" "valor_compra" "cupom...4" "n_itens"`\
   
 - `bind_rows()`\
-Une duas tabelas sobrepostas.\
-Quando não há correspondencia o comando retorna **NA**.\
+  - Une duas tabelas pelas linhas.\
+  - Não é necessário que o número de linhas, ou colunas, seja igual nas duas tabelas. Nesse ponto é diferente do comando `bind_cols()`.\
+  - As colunas das duas tabelas são combinadas, porém das colunas repetidas é mantida apenas uma.\
+  - Quando não há correspondencia entre as colunas o comando retorna **NA**, no valor especifico da linha.\
+  - Dentro da função, a ordem de chamada de cada tabela determina a ordem das colunas.\
+  - Exemplo:\
+  ```
+  library(tibble)
+  library(magrittr)
+  library(dplyr)
+  x <- dados1 %>% 
+  select(cupom,filial,valor_compra)
+  y <- dados1 %>%
+  select(cupom,n_itens)
+  z <- bind_rows(x,y)
+  colnames(z)
+  ```
+  ` [1] "cupom" "filial" "valor_compra" "n_itens"`\
+  
           
 - `inner_join()`\
 A tabela final será o resultado da intersecção das duas colunas de x e y, que possuem pelo menos uma coluna em comum, a coluna chave.\
