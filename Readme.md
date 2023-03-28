@@ -1810,9 +1810,28 @@ Principais funções de summarise
     `[1] "cupom" "filial" "valor_compra" "n_itens"`  
 
 -   `inner_join()`  
-    A tabela final será o resultado da intersecção das duas colunas de x
-    e y, que possuem pelo menos uma coluna em comum, a coluna chave.  
-    Junta duas colunas pela interseção.  
+
+    -   A tabela final será o resultado da intersecção das colunas de x
+        e y, que possuem pelo menos uma coluna em comum, a coluna
+        *chave*.  
+    -   Junta duas colunas pela interseção.  
+    -   Ao juntar as duas tabelas pela função `inner_join()`, apenas os
+        registros que existam nas duas tabelas (pela coluna chave) são
+        unidos, os demais registros de cada tabela não são agregados.  
+    -   Os filtros (`filter()`) aplicados a cada tabela são somados.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        x = dados1 %>%
+        select(cupom, filial, valor_compra) %>%
+        filter(valor_compra >500)
+        x
+        y = dados1 %>%
+        select(filial,n_itens) %>%
+        filter(n_itens < 8)
+        y
+        inner_join(x,y)
 
 -   `left_join()`  
     Une duas tabelas, definindo qual será a tabela principal e a unida a

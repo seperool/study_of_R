@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
   word_document: 
     toc: TRUE
-    number_sections: true
-  odt_document: 
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1632,11 +1632,26 @@ kable(tbl_func_sum,col.names = c("Funções", "Descrição"), caption = "Princip
   colnames(z)
   ```
   ` [1] "cupom" "filial" "valor_compra" "n_itens"`\
-  
-          
+
+\newpage
+ 
 - `inner_join()`\
-A tabela final será o resultado da intersecção das duas colunas de x e y, que possuem pelo menos uma coluna em comum, a coluna chave.\
-Junta duas colunas pela interseção.\
+  - A tabela final será o resultado da intersecção das colunas de x e y, que possuem pelo menos uma coluna em comum, a coluna *chave*.\
+  - Junta duas colunas pela interseção.\
+  - Ao juntar as duas tabelas pela função `inner_join()`, apenas os registros que existam nas duas tabelas (pela coluna chave) são unidos, os demais registros de cada tabela não são agregados.\
+  - Os filtros (`filter()`) aplicados a cada tabela são somados.\
+  - Exemplo:\
+  ```
+  x = dados1 %>%
+  select(cupom, filial, valor_compra) %>%
+  filter(valor_compra >500)
+  x
+  y = dados1 %>%
+  select(filial,n_itens) %>%
+  filter(n_itens < 8)
+  y
+  inner_join(x,y)
+  ```
           
 - `left_join()`\
 Une duas tabelas, definindo qual será a tabela principal e a unida a esquerda da outra. Esse fator muda a interpretação das linhas/registros correspondentes uma na outra, no caso, a tabela principal e tabela que será colocada a esquerda.\
