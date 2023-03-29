@@ -1,6 +1,6 @@
-ESCRITO EM 28/03/23
+ESCRITO EM 29/03/23
 ---
-PARA 29/03/23
+PARA 30/03/23
 ---
 Subir github:
 	
@@ -21,8 +21,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Combinando tabelas de dados com o dplyr
-					- left_join
-					- right_join
 					- full_join
 					- intersect
 					- union
