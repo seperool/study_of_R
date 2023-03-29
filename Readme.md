@@ -1834,20 +1834,30 @@ Principais funções de summarise
         inner_join(x,y)
 
 -   `left_join()`  
-    Une duas tabelas, definindo qual será a tabela principal e a unida a
-    esquerda da outra. Esse fator muda a interpretação das
-    linhas/registros correspondentes uma na outra, no caso, a tabela
-    principal e tabela que será colocada a esquerda.  
-    É necessario que tenha pelo menos uma coluna em comum, uma coluna
-    chave.  
+
+    -   Une duas tabelas, definindo qual será a tabela principal (tabela
+        da **esquerda**).  
+    -   Apresenta e prioriza os registros da tabela principal (tabela da
+        **esquerda**).  
+    -   O resultado final reúne todos os registros da tabela principal e
+        os correspondentes na outra tabela.  
+    -   É necessário que tenha pelo menos uma coluna em comum, a coluna
+        chave.  
+    -   Exemplo:  
+        `left_join(tabela_principal, tabela_secundaria)`  
 
 -   `right_join()`  
-    Une duas tabelas, definindo qual será a tabela principal e a unida a
-    direita da outra. Esse fator muda a interpretação das
-    linhas/registros correspondentes uma na outra, no caso, a tabela
-    principal e tabela que será colocada a direita.  
-    É necessario que tenha pelo menos uma coluna em comum, uma coluna
-    chave.  
+
+    -   Une duas tabelas, definindo qual será a tabela principal (tabela
+        da **direita**).  
+    -   Apresenta e prioriza os registros da tabela principal (tabela da
+        **direita**).  
+    -   O resultado final reúne todos os registros da tabela principal e
+        os correspondentes na outra tabela.  
+    -   É necessário que tenha pelo menos uma coluna em comum, a coluna
+        chave.  
+    -   Exemplo:  
+        `right_join(tabela_secundaria, tabela_principal)`  
 
 -   `full_join()`  
     Une duas tabelas. Prestar atenção na junção das linhas/registros que
