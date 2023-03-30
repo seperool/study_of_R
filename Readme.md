@@ -1810,7 +1810,6 @@ Principais funções de summarise
     `[1] "cupom" "filial" "valor_compra" "n_itens"`  
 
 -   `inner_join()`  
-
     -   A tabela final será o resultado da intersecção das colunas de x
         e y, que possuem pelo menos uma coluna em comum, a coluna
         *chave*.  
@@ -1832,9 +1831,7 @@ Principais funções de summarise
         filter(n_itens < 8)
         y
         inner_join(x,y)
-
 -   `left_join()`  
-
     -   Une duas tabelas, definindo qual será a tabela principal (tabela
         da **esquerda**).  
     -   Apresenta e prioriza os registros da tabela principal (tabela da
@@ -1845,9 +1842,7 @@ Principais funções de summarise
         chave.  
     -   Exemplo:  
         `left_join(tabela_principal, tabela_secundaria)`  
-
 -   `right_join()`  
-
     -   Une duas tabelas, definindo qual será a tabela principal (tabela
         da **direita**).  
     -   Apresenta e prioriza os registros da tabela principal (tabela da
@@ -1858,12 +1853,28 @@ Principais funções de summarise
         chave.  
     -   Exemplo:  
         `right_join(tabela_secundaria, tabela_principal)`  
-
 -   `full_join()`  
-    Une duas tabelas. Prestar atenção na junção das linhas/registros que
-    formam novas informações, atraves da junção de correspondentes.  
-    É necessario que tenha pelo menos uma coluna em comum, uma coluna
-    chave.  
+    -   Une duas tabelas.  
+    -   Mantem todos os registros.  
+    -   Prestar atenção na junção das linhas/registros que formam novas
+        informações, através da combinação de correspondentes.  
+    -   Os registros sem correspondentes na outra tabela são preenchidos
+        com valor **NA**.  
+    -   É necessario que tenha pelo menos uma coluna em comum, uma
+        coluna chave.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        x <- dados1 %>% 
+        select(cupom,filial,valor_compra) %>% 
+        filter(valor_compra > 500)
+
+        y <- dados1 %>% 
+        select(filial,n_itens) %>% 
+        filter(n_itens < 8)
+
+        full_join(x,y)
 
 -   `intersect()`  
     Retorna a interseção entre tabelas.  
