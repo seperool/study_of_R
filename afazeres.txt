@@ -3,7 +3,12 @@ ESCRITO EM 30/03/23
 PARA 31/03/23
 ---
 Subir github:
-	
+	- Readme.*
+		- Cap. 5 - O sistema tidyverse
+			- Combinando tabelas de dados com o dplyr
+				- intersect
+				- union
+				- setdiff
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -21,9 +26,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Combinando tabelas de dados com o dplyr
-					- intersect
-					- union
-					- setdiff
 					- setequal
 				- Organizando os dados com o tidyr
 			- Cap. 6
