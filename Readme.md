@@ -1878,12 +1878,25 @@ Principais funções de summarise
 
 -   `intersect()`  
     Retorna a interseção entre tabelas.  
+    `intersect(x,y)`  
 
 -   `union()`  
-    Retorna a união de tabelas.  
+
+    -   Retorna a união de tabelas.  
+    -   Não repete registros iguais nas duas tabelas.  
+    -   Monta a nova tabela na ordem em que as tabelas foram inseridas
+        na função.  
+    -   Exemplo:  
+        `union(x,y)`  
 
 -   `setdiff()`  
-    Retorna a diferença entre tabelas.  
+
+    -   Retorna a diferença entre tabelas.  
+    -   A ordem das tabelas na função interfere na saída:  
+        -   `setdiff(x,y)`  
+            Retorna tudo que esta em x e não esta em y.  
+        -   `setdiff(y,x)`  
+            Retorna tudo que esta em y e não esta em x.  
 
 -   `setequal()`  
     Esse comando verifica se duas tabelas de dados possuem linhas com os
