@@ -1,6 +1,6 @@
-ESCRITO EM 31/03/23
+ESCRITO EM 01/04/23
 ---
-PARA 01/04/23
+PARA 02/04/23
 ---
 Subir github:
 
@@ -20,9 +20,14 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-				- Combinando tabelas de dados com o dplyr
-					- setequal
 				- Organizando os dados com o tidyr
+					- pivot_longer ou gather
+					- pivot_wider ou spread
+					- separate
+					- unite
+					- complete
+					- drop_na
+					- replace_na
 			- Cap. 6
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
