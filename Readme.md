@@ -1899,10 +1899,14 @@ Principais funções de summarise
             Retorna tudo que esta em y e não esta em x.  
 
 -   `setequal()`  
-    Esse comando verifica se duas tabelas de dados possuem linhas com os
-    mesmos valores, independentemente da ordem em que tais valores se
-    apresentem. retorna **TRUE**, se os registros forem iguais, ou
-    **FALSE**, se os registros forem diferentes.  
+
+    -   Esse comando verifica se duas tabelas de dados possuem linhas
+        com os mesmos valores, independentemente da ordem em que tais
+        valores se apresentem.  
+    -   Retorna **TRUE**, se os registros forem iguais, ou **FALSE**, se
+        os registros forem diferentes.  
+    -   Sintaxe:  
+        `setequal(tabela_1,tabela_2)`  
 
 ## 8.7 Organizando dados com o **tidyr**
 
