@@ -7,17 +7,17 @@ output:
     number_sections: true
     variant: markdown_github
   github_document: 
-  odt_document: 
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -35,6 +35,7 @@ library(readr)
 library(tibble)
 library(magrittr)
 library(dplyr)
+library(tidyr)
 ```
 
 # Livro de referência
@@ -1720,8 +1721,70 @@ Retorna a interseção entre tabelas.\
 ## Organizando dados com o **tidyr**
 
 - `pivot_longer()` ou `gather()`\
-Converte a tabela de dados para o formato longo. (larga -> longo)\
-    
+  - Converte a tabela de dados do formato larga para o formato longo. (larga -> longo)\
+  - A função `pivot_longer()` substituiu a função `gather()`, após o ano de 2019.\
+  - Transformação:\
+    - Converte várias colunas do dataframe original em duas colunas.\
+    - Uma coluna recebe o nome das variáveis em colunas e a outra recebe os valores dessas variáveis.\
+    - Ao final o número de linhas do dataframe é ampliado e o número de colunas diminuiu.\
+  - Condição:\
+    - As colunas originais devem ter em comum a mesma variável.\
+    - Pelo menos duas colunas contendo os nomes das categorias de uma variável separados por colunas.\
+  - Sintaxe:\
+  `tabela_longa <- tabela_larga %>% pivot_longer(cols = c(coluna_4,coluna_5)), names_to = "nova_coluna_1", values_to = "nova_coluna_2")`\
+    - `cols`\
+    Recebe as colunas que vão ser transformadas em linhas.\
+    - `names_to`\
+    Nome da nova coluna que vai receber como variável o nome das colunas originais.\
+    - `values_to`\
+    Nome da nova coluna que vai receber os valores contidos nas colunas originais.\
+  - Exemplo:\
+```{r pivot_longer tabela formato larga, message=FALSE, warning=FALSE, echo=FALSE}
+#Bibliotecas
+library(tidyr)
+library(tibble)
+library(magrittr)
+library(knitr)
+
+# dados e tibble
+Estado <- c("SP","RS","RJ")
+Terrestre <- c(3900,2800,2600)
+Aereo <- c(4200,3800,3950)
+viagem_larga <- tibble(Estado,Terrestre,Aereo)
+
+# tidyr - pivot_longer
+#transformando larga em longa
+viagem_longo <- viagem_larga %>% 
+  pivot_longer(cols = c(Terrestre,Aereo), names_to = "Meio", values_to = "Chegada")
+
+# Imprimir tabela
+kable(viagem_larga, col.names = c("Estado","Terrestre","Aéreo"), align = "ccc",caption = "Tabela de chegada de turistas no formato larga")
+
+```
+```{r pivot_longer Tabela formato longo, message=FALSE, warning=FALSE, echo=FALSE}
+#Bibliotecas
+library(tidyr)
+library(tibble)
+library(magrittr)
+library(knitr)
+
+# dados e tibble
+Estado <- c("SP","RS","RJ")
+Terrestre <- c(3900,2800,2600)
+Aereo <- c(4200,3800,3950)
+viagem_larga <- tibble(Estado,Terrestre,Aereo)
+
+# tidyr - pivot_longer
+#transformando larga em longa
+viagem_longo <- viagem_larga %>% 
+  pivot_longer(cols = c(Terrestre,Aereo), names_to = "Meio", values_to = "Chegada")
+
+# Imprimir tabela
+kable(viagem_longo, col.names = c("Estado","Meio","Chegada"), align = "ccc",caption = "Tabela de chegada de turistas no formato longo")
+```
+
+\newpage
+
 - `pivot_wider()` ou `spread()`\
 Converte a tabela de dados para o formato larga. (longo -> larga)\
     

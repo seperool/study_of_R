@@ -1911,7 +1911,51 @@ Principais funções de summarise
 ## 8.7 Organizando dados com o **tidyr**
 
 -   `pivot_longer()` ou `gather()`  
-    Converte a tabela de dados para o formato longo. (larga -\> longo)  
+    -   Converte a tabela de dados do formato larga para o formato
+        longo. (larga -\> longo)  
+    -   A função `pivot_longer()` substituiu a função `gather()`, após o
+        ano de 2019.  
+    -   Transformação:  
+        -   Converte várias colunas do dataframe original em duas
+            colunas.  
+        -   Uma coluna recebe o nome das variáveis em colunas e a outra
+            recebe os valores dessas variáveis.  
+        -   Ao final o número de linhas do dataframe é ampliado e o
+            número de colunas diminuiu.  
+    -   Condição:  
+        -   As colunas originais devem ter em comum a mesma variável.  
+        -   Pelo menos duas colunas contendo os nomes das categorias de
+            uma variável separados por colunas.  
+    -   Sintaxe:  
+        `tabela_longa <- tabela_larga %>% pivot_longer(cols = c(coluna_4,coluna_5)), names_to = "nova_coluna_1", values_to = "nova_coluna_2")`  
+        -   `cols`  
+            Recebe as colunas que vão ser transformadas em linhas.  
+        -   `names_to`  
+            Nome da nova coluna que vai receber como variável o nome das
+            colunas originais.  
+        -   `values_to`  
+            Nome da nova coluna que vai receber os valores contidos nas
+            colunas originais.  
+    -   Exemplo:  
+
+| Estado | Terrestre | Aéreo |
+|:------:|:---------:|:-----:|
+|   SP   |   3900    | 4200  |
+|   RS   |   2800    | 3800  |
+|   RJ   |   2600    | 3950  |
+
+Tabela de chegada de turistas no formato larga
+
+| Estado |   Meio    | Chegada |
+|:------:|:---------:|:-------:|
+|   SP   | Terrestre |  3900   |
+|   SP   |   Aereo   |  4200   |
+|   RS   | Terrestre |  2800   |
+|   RS   |   Aereo   |  3800   |
+|   RJ   | Terrestre |  2600   |
+|   RJ   |   Aereo   |  3950   |
+
+Tabela de chegada de turistas no formato longo
 
 -   `pivot_wider()` ou `spread()`  
     Converte a tabela de dados para o formato larga. (longo -\> larga)  
