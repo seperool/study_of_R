@@ -3,6 +3,10 @@ ESCRITO EM 02/04/23
 PARA 03/04/23
 ---
 Subir github:
+	- Readme.*
+		- Cap. 5 - O sistema tidyverse
+			- Organizando os dados com o tidyr
+				- pivot_wider ou spread
 
 Estudar:
 	Cap. 7 - Visualizando dados
@@ -21,7 +25,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Organizando os dados com o tidyr
-					- pivot_wider ou spread
 					- separate
 					- unite
 					- complete
