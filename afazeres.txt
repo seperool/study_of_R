@@ -3,7 +3,10 @@ ESCRITO EM 03/04/23
 PARA 04/04/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 5 - O sistema tidyverse
+			- Organizando os dados com o tidyr
+				- separate
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -21,7 +24,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Organizando os dados com o tidyr
-					- separate
 					- unite
 					- complete
 					- drop_na
