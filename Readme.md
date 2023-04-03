@@ -1917,7 +1917,7 @@ Principais funções de summarise
         ano de 2019.  
     -   Transformação:  
         -   Converte várias colunas do dataframe original em duas
-            colunas.  
+            colunas e várias linhas/registros.  
         -   Uma coluna recebe o nome das variáveis em colunas e a outra
             recebe os valores dessas variáveis.  
         -   Ao final o número de linhas do dataframe é ampliado e o
@@ -1958,7 +1958,49 @@ Tabela de chegada de turistas no formato larga
 Tabela de chegada de turistas no formato longo
 
 -   `pivot_wider()` ou `spread()`  
-    Converte a tabela de dados para o formato larga. (longo -\> larga)  
+    -   Converte a tabela de dados do formato longo para o formato
+        larga. (longo -\> larga)  
+    -   A função `pivot_wider()` substituiu a função `spread()`, após o
+        ano de 2019.  
+    -   As funções `pivot_wider()` e `spread()`, faz o inverso das
+        funções `pivot_longer()` e `gather()`, ou seja, espalha os dados
+        das linhas por colunas.  
+    -   Transformação:  
+        -   Converte várias linhas do dataframe original em colunas.  
+    -   Sintaxe:  
+        `tabela_larga <- tabela_longa %>% pivot_wider(names_to = "coluna_4", values_to = "coluna_5")`  
+        -   `names_to`  
+            Determina qual coluna terá seus valores transformados em
+            novas colunas.  
+        -   `values_to`  
+            Determina qual coluna terá seus valores distribuidos entre
+            as novas colunas.  
+    -   Exemplo:  
+
+| Pacientes | Tempo |  Sexo  | dieta  | Peso |
+|:---------:|:-----:|:------:|:------:|:----:|
+|     1     |   4   | Homem  | Antes  | 150  |
+|     2     |   4   | Homem  | Antes  | 160  |
+|     3     |   3   | Mulher | Antes  |  90  |
+|     4     |   3   | Mulher | Antes  |  95  |
+|     5     |   6   | Mulher | Antes  | 110  |
+|     1     |   4   | Homem  | Depois | 140  |
+|     2     |   4   | Homem  | Depois | 110  |
+|     3     |   3   | Mulher | Depois |  80  |
+|     4     |   3   | Mulher | Depois |  80  |
+|     5     |   6   | Mulher | Depois |  82  |
+
+Tabela em formato longo dieta de pacientes
+
+| Pacientes | Tempo |  Sexo  | Antes | Depois |
+|:---------:|:-----:|:------:|:-----:|:------:|
+|     1     |   4   | Homem  |  150  |  140   |
+|     2     |   4   | Homem  |  160  |  110   |
+|     3     |   3   | Mulher |  90   |   80   |
+|     4     |   3   | Mulher |  95   |   80   |
+|     5     |   6   | Mulher |  110  |   82   |
+
+Tabela em formato larga dieta de pacientes
 
 -   `separate()`  
     Separa as respostas que estão em uma unica coluna para diversas

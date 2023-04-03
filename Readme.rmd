@@ -3,16 +3,16 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
+  html_document:
     number_sections: true
-    variant: markdown_github
+    df_print: paged
   github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
+  md_document:
     number_sections: true
-    df_print: paged
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: TRUE
@@ -1724,7 +1724,7 @@ Retorna a interseção entre tabelas.\
   - Converte a tabela de dados do formato larga para o formato longo. (larga -> longo)\
   - A função `pivot_longer()` substituiu a função `gather()`, após o ano de 2019.\
   - Transformação:\
-    - Converte várias colunas do dataframe original em duas colunas.\
+    - Converte várias colunas do dataframe original em duas colunas e várias linhas/registros.\
     - Uma coluna recebe o nome das variáveis em colunas e a outra recebe os valores dessas variáveis.\
     - Ao final o número de linhas do dataframe é ampliado e o número de colunas diminuiu.\
   - Condição:\
@@ -1786,8 +1786,73 @@ kable(viagem_longo, col.names = c("Estado","Meio","Chegada"), align = "ccc",capt
 \newpage
 
 - `pivot_wider()` ou `spread()`\
-Converte a tabela de dados para o formato larga. (longo -> larga)\
-    
+  - Converte a tabela de dados do formato longo para o formato larga. (longo -> larga)\
+  - A função `pivot_wider()` substituiu a função `spread()`, após o ano de 2019.\
+  - As funções `pivot_wider()` e `spread()`, faz o inverso das funções `pivot_longer()` e `gather()`, ou seja, espalha os dados das linhas por colunas.\
+  - Transformação:\
+    - Converte várias linhas do dataframe original em colunas.\
+  - Sintaxe:\
+  `tabela_larga <- tabela_longa %>% pivot_wider(names_to = "coluna_4", values_to = "coluna_5")`\
+    - `names_to`\
+    Determina qual coluna terá seus valores transformados em novas colunas.\
+    - `values_to`\
+    Determina qual coluna terá seus valores distribuidos entre as novas colunas.\
+  - Exemplo:\
+```{r Formato longo tabela pivot_wider, message=FALSE, warning=FALSE, echo=FALSE, results='hide'}
+# Bibliotecas
+library(tidyr)
+library(magrittr)
+library(tibble)
+
+# dados e tibble
+pacientes <- c(1,2,3,4,5,1,2,3,4,5)
+tempo <- c(4,4,3,3,6,4,4,3,3,6)
+sexo <- c("Homem","Homem","Mulher","Mulher","Mulher","Homem","Homem","Mulher","Mulher","Mulher")
+dieta <- c("Antes","Antes","Antes","Antes","Antes","Depois","Depois","Depois","Depois","Depois")
+peso <- c(150,160,90,95,110,140,110,80,80,82)
+as.factor(sexo)
+as.factor(dieta)
+dadosdieta_longo <- tibble(pacientes,tempo,sexo,dieta,peso)
+
+```
+
+```{r Print formato longo tabela pivot_wider, message=FALSE, warning=FALSE, echo=FALSE}
+# Imprimir tabela
+kable(dadosdieta_longo, col.names = c("Pacientes","Tempo","Sexo","dieta","Peso"),
+      caption = c("Tabela em formato longo dieta de pacientes"), align = "ccccc")
+
+```
+
+```{r Formato larga tabela pivot_wider, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+# Bibliotecas
+library(tidyr)
+library(magrittr)
+library(tibble)
+
+# dados e tibble
+pacientes <- c(1,2,3,4,5,1,2,3,4,5)
+tempo <- c(4,4,3,3,6,4,4,3,3,6)
+sexo <- c("Homem","Homem","Mulher","Mulher","Mulher","Homem","Homem","Mulher","Mulher","Mulher")
+dieta <- c("Antes","Antes","Antes","Antes","Antes","Depois","Depois","Depois","Depois","Depois")
+peso <- c(150,160,90,95,110,140,110,80,80,82)
+as.factor(sexo)
+as.factor(dieta)
+dadosdieta_longo <- tibble(pacientes,tempo,sexo,dieta,peso)
+
+# tidyr - pivot_longer
+#transformando larga em longa
+dadosdieta_larga <- dadosdieta_longo %>% 
+  pivot_wider(names_from = "dieta", values_from = "peso")
+```
+
+```{r Print formato larga tabela pivot_wider, echo=FALSE, message=FALSE, warning=FALSE}
+# Imprimir tabela
+kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "Depois"),
+      align = "ccccc", caption = "Tabela em formato larga dieta de pacientes")
+```
+
+\newpage
+
 - `separate()`\
 Separa as respostas que estão em uma unica coluna para diversas colunas.\
     
