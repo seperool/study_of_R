@@ -1,12 +1,8 @@
-ESCRITO EM 02/04/23
+ESCRITO EM 03/04/23
 ---
-PARA 03/04/23
+PARA 04/04/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 5 - O sistema tidyverse
-			- Organizando os dados com o tidyr
-				- pivot_wider ou spread
 
 Estudar:
 	Cap. 7 - Visualizando dados
