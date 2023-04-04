@@ -2003,12 +2003,27 @@ Tabela em formato longo dieta de pacientes
 Tabela em formato larga dieta de pacientes
 
 -   `separate()`  
-    Separa as respostas que estão em uma unica coluna para diversas
-    colunas.  
-
+    -   Separa os dados contidos numa mesma coluna para diversas
+        colunas.  
+    -   Transforma um campo vetorizado em diversas colunas separadas.  
+    -   É necessário determinar o separador, o caracter que separa os
+        dados dentro do campo.  
+    -   Argumentos:  
+        -   Coluna que vai ter seus dados separados.  
+        -   Novas colunas que vão receber os dados.  
+        -   Caracter que separa os dados na coluna original.  
+    -   Exemplo:  
+        `resposta <- dados %>% separate(cor, c("cor1","cor2"), sep = ",")`  
 -   `unite()`  
-    O comando unite é utilizado para unir duas ou mais colunas em uma
-    unica coluna.  
+    -   O comando `unite()` é utilizado para unir duas ou mais colunas
+        em uma unica coluna.  
+    -   Argumentos:  
+        -   Nova coluna que vai receber os dados unidos.  
+        -   Colunas originais que vão ceder os dados.  
+        -   Caracter separador usados para separar os dados na nova
+            coluna.  
+    -   Exemplo:  
+        `resposta_unida <- dados %>% unite("cor", c("cor1","cor2"), sep = ",")`  
 
 -   `complete()`  
     Completa as combinações de duas colunas, se não houver valor
