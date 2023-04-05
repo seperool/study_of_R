@@ -3,7 +3,7 @@
 #complete, drop_na & replace_na
 
 #complete
-#podemos completar valores faltantes da nossa tabela de dados
+#Podemos completar valores faltantes da nossa tabela de dados
 #em diversas situações em que haja falta de combinações de casos na tabela
 #gera todas as combinações possiveis que envolvam determinadas colunas
 #caso não haja determinado dado, completa com "NA"
@@ -21,7 +21,10 @@ dadosdieta = data.frame(
 )
 dadosdieta
 
-#completando as combinações de tempo e sexo
+#Completando as combinações de tempo e sexo
+#O comando nesting(), que pode ser usado dentro da função complete(),
+#cruza todos os valores de determinado grupo (tabela)
+#com os pares unicos dos valores das colunas selecionadas em nesting().
 
 dadosdieta %>%
   complete(sexo,nesting(tempo))
