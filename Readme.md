@@ -2026,8 +2026,18 @@ Tabela em formato larga dieta de pacientes
         `resposta_unida <- dados %>% unite("cor", c("cor1","cor2"), sep = ",")`  
 
 -   `complete()`  
-    Completa as combinações de duas colunas, se não houver valor
-    completa com **NA**.  
+
+    -   Gera todas as combinações possiveis entre as colunas, ou
+        tabelas, selecionadas.  
+        `dados %>% complete(coluna1,coluna2,coluna3,...)`  
+        `dados %>% complete(dt1,dt2,...)`  
+    -   Completa as combinações de colunas, se não houver valor, com
+        **NA**.  
+    -   O comando `nesting()`, que pode ser usado dentro da função
+        `complete()`, cruza todos os valores de determinado grupo
+        (tabela) com os pares unicos dos valores das colunas
+        selecionadas em `nesting()`.  
+        `dados1 %>% complete(dt,nesting(coluna1,coluna3))`  
 
 -   `drop_na()`  
     Elimina as linhas, especificadas ou não, com valor **NA**.  
