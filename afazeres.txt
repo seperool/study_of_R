@@ -1,6 +1,6 @@
-ESCRITO EM 04/04/23
+ESCRITO EM 05/04/23
 ---
-PARA 05/04/23
+PARA 06/04/23
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 				- Organizando os dados com o tidyr
-					- complete
 					- drop_na
 					- replace_na
 			- Cap. 6
