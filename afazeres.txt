@@ -1,12 +1,8 @@
-ESCRITO EM 05/04/23
+ESCRITO EM 06/04/23
 ---
-PARA 06/04/23
+PARA 07/04/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 5 - O sistema tidyverse
-			- Organizando os dados com o tidyr
-					- drop_na
 
 Estudar:
 	Cap. 7 - Visualizando dados
