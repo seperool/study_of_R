@@ -2026,7 +2026,6 @@ Tabela em formato larga dieta de pacientes
         `resposta_unida <- dados %>% unite("cor", c("cor1","cor2"), sep = ",")`  
 
 -   `complete()`  
-
     -   Gera todas as combinações possiveis entre as colunas, ou
         tabelas, selecionadas.  
         `dados %>% complete(coluna1,coluna2,coluna3,...)`  
@@ -2038,10 +2037,12 @@ Tabela em formato larga dieta de pacientes
         (tabela) com os pares unicos dos valores das colunas
         selecionadas em `nesting()`.  
         `dados1 %>% complete(dt,nesting(coluna1,coluna3))`  
-
 -   `drop_na()`  
-    Elimina as linhas, especificadas ou não, com valor **NA**.  
-
+    -   Elimina as linhas, especificadas ou não, com valor **NA**.  
+    -   Eliminando linhas com **NA**, de colunas especificadas:  
+        `dados %>% drop_na(c(coluna1,coluna2))`  
+    -   Eliminando todas as linhas com valor **NA**:  
+        `dados %>% drop_na()`  
 -   `replace_na()`  
     Substitui o valor **NA** por outro valor especificado.  
 
