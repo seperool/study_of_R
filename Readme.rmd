@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
   odt_document: 
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1891,8 +1891,11 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
   `dados %>% drop_na()`\
 
 - `replace_na()`\
-Substitui o valor **NA** por outro valor especificado.\
-
+  - Substitui os valores **NA**, de determinada coluna, por outro valor especificado.\
+  - Especifica a coluna, ou as colunas atraves de `list()`, e define o valor caso **NA**.\
+  - Exemplo:\
+  `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`\
+  
 \newpage
 
 # Cap 6 - Pacote data.table\

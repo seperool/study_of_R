@@ -2044,7 +2044,12 @@ Tabela em formato larga dieta de pacientes
     -   Eliminando todas as linhas com valor **NA**:  
         `dados %>% drop_na()`  
 -   `replace_na()`  
-    Substitui o valor **NA** por outro valor especificado.  
+    -   Substitui os valores **NA**, de determinada coluna, por outro
+        valor especificado.  
+    -   Especifica a coluna, ou as colunas atraves de `list()`, e define
+        o valor caso **NA**.  
+    -   Exemplo:  
+        `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`  
 
 # 9 Cap 6 - Pacote data.table 
 
