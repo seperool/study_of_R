@@ -1,6 +1,6 @@
-ESCRITO EM 06/04/23
+ESCRITO EM 08/04/23
 ---
-PARA 07/04/23
+PARA 09/04/23
 ---
 Subir github:
 
@@ -20,8 +20,6 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-				- Organizando os dados com o tidyr
-					- replace_na
 			- Cap. 6
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
