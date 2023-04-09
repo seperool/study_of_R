@@ -1,6 +1,6 @@
-ESCRITO EM 08/04/23
+ESCRITO EM 09/04/23
 ---
-PARA 09/04/23
+PARA 10/04/23
 ---
 Subir github:
 
@@ -21,6 +21,12 @@ Afazeres:
 							- No R
 							- No banco de dados
 			- Cap. 6
+				- Manipulando linhas
+				- Manipulando colunas
+				- Sumarizando dados
+				- Operando subconjunto de dados
+				- Modifique com set
+				- data.table e dtplyr
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
