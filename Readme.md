@@ -2053,21 +2053,63 @@ Tabela em formato larga dieta de pacientes
 
 # 9 Cap 6 - Pacote data.table 
 
-1.  **data.table**  
-    -   Manipulando linhas  
-    -   Manipulando colunas  
-    -   Sumarizando dados  
-    -   Operando um subconjunto de dados
-        -   *lapply*  
-    -   modificando dados com set:
-        -   *set*  
-            modificando um valor.  
-        -   *setnames*  
-            modificando nome da coluna.  
-        -   *setorder*  
-            modificando ordem das linhas.  
-        -   *setcolorder*  
-            modificando ordem das colunas.  
+## 9.1 Teoria
+
+-   Manipula dados, porém usa uma filosofia diferente de
+    **tidyverse**.  
+-   Chega nos mesmo resultados que **tidyverse**.  
+-   Apresenta um ganho em desempenho no tempo, em relação ao
+    **tidyverse**.  
+-   Não necessita de tantos pacotes para executar as tarefas.  
+
+## 9.2 Estrutura
+
+-   A estrutura básica do `data.table`:  
+    `DT[i,j,by]`  
+    onde,  
+    -   **DT**  
+        É o nome do data.frame.  
+    -   *i*  
+        Corresponde a(s) linha(s) selecionadas, ou uma operção sobre
+        a(s) linha(s).  
+    -   *j*  
+        Corresponde a(s) coluna(s) selecionadas, ou uma operção sobre
+        a(s) coluna(s).  
+    -   *by*  
+        Agrupa os dados em torno de determinada(s) coluna(s) (semelhante
+        a `group_by`).  
+-   O `data.table` pode receber mais argumentos (como no `magrittr`):  
+    `DT[i,j,by][...]...`  
+-   Exemplo:  
+    `dt[, .N, by = filial]`  
+    Obs.: A função `.N` conta número de registros.  
+
+## 9.3 Transformando **data.frame** em **data.table**
+
+Para transformar `data.frame` em `data.table` basta aplicar a função:  
+
+    # Biblioteca
+    library(data.table)
+
+    # Transformando data.frame dados em data.table dt
+    dt <- data.table(dados)
+
+## 9.4 **data.table**
+
+-   Manipulando linhas  
+-   Manipulando colunas  
+-   Sumarizando dados  
+-   Operando um subconjunto de dados
+    -   *lapply*  
+-   modificando dados com set:
+    -   *set*  
+        modificando um valor.  
+    -   *setnames*  
+        modificando nome da coluna.  
+    -   *setorder*  
+        modificando ordem das linhas.  
+    -   *setcolorder*  
+        modificando ordem das colunas.  
 
 # 10 Cap 7 - Gráficos basicos e pacote ggplot2 
 
