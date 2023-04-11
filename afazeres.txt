@@ -3,7 +3,9 @@ ESCRITO EM 11/04/23
 PARA 12/04/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap.6 - O pacote data.table
+			- Sumarizando dados (tabela)
 Estudar:
 	Cap. 7 - Visualizando dados
 
@@ -20,7 +22,7 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-			- Cap. 6
+			- Cap. 6 - O pacote data.table
 				- Manipulando linhas
 				- Manipulando colunas
 				- Sumarizando dados
