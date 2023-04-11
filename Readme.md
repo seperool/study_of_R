@@ -2119,6 +2119,19 @@ Tabela em formato larga dieta de pacientes
 
 ### 9.4.2 Manipulando colunas 
 
+|                              Comando                               |                            O que faz?                            |
+|:-----------------------------------:|:---------------------------------:|
+|                      DT\[,j\] ou DT\[\[j\]\]                       |             Seleciona a coluna j e retorna um vetor.             |
+|                   DT\[,list(j)\] ou DT\[,.(j)\]                    |           Seleciona a coluna j e retorna um data.table           |
+|                       DT\[,-c(j1,j2,…,jn)\]                        |             Exclui as colunas listadas j1, j2, …, jn             |
+|                        DT\[,.(j1,j2,…,jn)\]                        |            Retorna as colunas listadas j1, j2, …, jn             |
+|                DT\[,.(nome_escolhido = função(j))\]                | Aplica a função especificada à coluna j e retorna um data.table. |
+|    DT\[,.(nome_1 = f(j1), nome_2 = f(j2), …, nome_n = f(jn))\]     | Aplica várias funções a várias colunas e retorna um data.table.  |
+|                      DT\[,novacol := vetor\]                       |                    Adiciona uma nova coluna.                     |
+| DT\[,c(‘col1’, ‘col2’, …,‘coln’) := c(vetor1, vetor2, …, vetorn)\] |                  Adiciona várias novas colunas.                  |
+
+8 formas de manipulação de colunas no data.table
+
 ### 9.4.3 Sumarizando dados 
 
 ### 9.4.4 Operando um subconjunto de dados

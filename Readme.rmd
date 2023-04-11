@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1944,28 +1944,48 @@ dt <- data.table(dados)
 ## **data.table**
 ### Manipulando linhas\
 ```{r manipulação de linhas, echo=FALSE, message=FALSE, warning=FALSE}
-#Biblioteca
-library(data.table)
-
 # data.frame
-cmds <- c("DT[condições sobre as colunas]",
+cmds_lin <- c("DT[condições sobre as colunas]",
           "DT[1:k]",
           "DT[order(j1,j2)]",
           "unique(DT) ou unique(DT,by = colunas selecionadas)",
           "na.omit(DT,cols = colunas selecionadas)")
-OQF <- c("Seleciona as linhas de DT que satisfazem as condições.",
+OQF_com_lin <- c("Seleciona as linhas de DT que satisfazem as condições.",
          "Seleciona as linhas de 1 a k.",
          "Ordena os dados em ordem ascendente do vetor 1, seguido por vetor 2. Para ordem descendente use sinal de menos antes do nome do vetor. Ex.: DT[order(-j)]",
          "Seleciona as linhas distintas (elimina as repetidas) considerando as colunas selecionadas.",
          "Elimina as linhas com valores faltantes, considerando as colunas selecionadas.")
-dt_man_lin <- data.frame(cmds,OQF)
+dt_man_lin <- data.frame(cmds_lin,OQF_com_lin)
 
 # tabela
 kable(dt_man_lin, col.names = c("Comando","O que faz?"), align = "cc", caption = "5 formas de manipulação de linhas no data.table")
-
 ```
 
 ### Manipulando colunas\
+```{r manipulação de colunas, echo=FALSE, message=FALSE, warning=FALSE}
+# data.frame
+cmds_col <- c("DT[,j] ou DT[[j]]",
+              "DT[,list(j)] ou DT[,.(j)]",
+              "DT[,-c(j1,j2,...,jn)]",
+              "DT[,.(j1,j2,...,jn)]",
+              "DT[,.(nome_escolhido = função(j))]",
+              "DT[,.(nome_1 = f(j1), nome_2 = f(j2), ..., nome_n = f(jn))]",
+              "DT[,novacol := vetor]",
+              "DT[,c('col1', 'col2', ...,'coln') := c(vetor1, vetor2, ..., vetorn)]")
+OQF_com_col <- c("Seleciona a coluna j e retorna um vetor.",
+                 "Seleciona a coluna j e retorna um data.table",
+                 "Exclui as colunas listadas j1, j2, ..., jn",
+                 "Retorna as colunas listadas j1, j2, ..., jn",
+                 "Aplica a função especificada à coluna j e retorna um data.table.",
+                 "Aplica várias funções a várias colunas e retorna um data.table.",
+                 "Adiciona uma nova coluna.",
+                 "Adiciona várias novas colunas.")
+dt_man_col <- data.frame(cmds_col,OQF_com_col)
+
+# tabela
+kable(dt_man_col, col.names = c("Comando","O que faz?"), align = "cc", caption = "8 formas de manipulação de colunas no data.table")
+```
+
 ### Sumarizando dados\
 ### Operando um subconjunto de dados
   - *lapply*\
