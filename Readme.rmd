@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
+  odt_document: 
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1987,6 +1987,22 @@ kable(dt_man_col, col.names = c("Comando","O que faz?"), align = "cc", caption =
 ```
 
 ### Sumarizando dados\
+```{r sumariazando dados apuração de valores, echo=FALSE, message=FALSE, warning=FALSE}
+# data.frame
+cmds_suma <- c(".N",
+               "DT[,.N, by = c(j1,...,jn)]",
+               "DT[,.(f1(j1),...,fn(jn)), by = j]",
+               "DT[,.(f1(j1),...,fn(jn)), keyby = .(j1,...,jn)]")
+OQF_suma <- c("Conta o número de linhas.",
+              "Conta o número de linhas de acordo com os agrupamentos das colunas j1, ..., jn",
+              "Aplica diversas funções nas colunas especificadas, de acordo com o agrupamento da coluna j em by.",
+              "Aplica diversas funções nas colunas especificadas, de acordo com o agrupamento das colunas listadas j1, ..., jn em keyby.")
+dt_suma <- data.frame(cmds_suma,OQF_suma)
+
+# tabela
+kable(dt_suma, col.names = c("Comandos", "O que faz?"), align = "cc", caption = "Argumentos para operações em um DT aplicados a uma ou mais colunas")
+```
+
 ### Operando um subconjunto de dados
   - *lapply*\
 

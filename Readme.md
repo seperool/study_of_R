@@ -2134,6 +2134,15 @@ Tabela em formato larga dieta de pacientes
 
 ### 9.4.3 Sumarizando dados 
 
+|                   Comandos                    |                                                       O que faz?                                                        |
+|:-------------------:|:-------------------------------------------------:|
+|                      .N                       |                                                Conta o número de linhas.                                                |
+|          DT\[,.N, by = c(j1,…,jn)\]           |                      Conta o número de linhas de acordo com os agrupamentos das colunas j1, …, jn                       |
+|       DT\[,.(f1(j1),…,fn(jn)), by = j\]       |            Aplica diversas funções nas colunas especificadas, de acordo com o agrupamento da coluna j em by.            |
+| DT\[,.(f1(j1),…,fn(jn)), keyby = .(j1,…,jn)\] | Aplica diversas funções nas colunas especificadas, de acordo com o agrupamento das colunas listadas j1, …, jn em keyby. |
+
+Argumentos para operações em um DT aplicados a uma ou mais colunas
+
 ### 9.4.4 Operando um subconjunto de dados
 
 -   *lapply*  
