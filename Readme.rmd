@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1986,6 +1986,8 @@ dt_man_col <- data.frame(cmds_col,OQF_com_col)
 kable(dt_man_col, col.names = c("Comando","O que faz?"), align = "cc", caption = "8 formas de manipulação de colunas no data.table")
 ```
 
+\newpage
+
 ### Sumarizando dados\
 ```{r sumariazando dados apuração de valores, echo=FALSE, message=FALSE, warning=FALSE}
 # data.frame
@@ -2003,8 +2005,34 @@ dt_suma <- data.frame(cmds_suma,OQF_suma)
 kable(dt_suma, col.names = c("Comandos", "O que faz?"), align = "cc", caption = "Argumentos para operações em um DT aplicados a uma ou mais colunas")
 ```
 
+\newpage
+
 ### Operando um subconjunto de dados
-  - *lapply*\
+- O pacote possui um símbolo especial denotado por `.SD` para realizar operações em um subconjunto de dados do `data.table` **DT**, de acordo com um grupo definido por `by` (agrupa em torno de determinadas colunas, igual a `group_by`).\
+  - `DT[,.SD]`\
+  Subconjunto completo dos dados.\
+  - `DT[,.SD, by = .(j)]`\
+  É o subconjunto completo dos dados exeto pela coluna j, formando subconjuntos para cada grupo da coluna j.\
+  - `DT[,.SD, by = .(j,k)]`\
+  Podemos agrupar entorno de mais de uma coluna, definidas por `by`.\
+  
+- É possível ainda definir (**selecionar**) as colunas do conjunto completo que deverão ser consideradas em `.SD` através do operador `.SDcols`. São as colunas que vão receber as funções.\
+`DT[,lapply(.SD,mean), .SDcols = c("coluna_1", "coluna_2"), by = .(coluna_3)]`\
+
+- `lapply`\
+  - Aplica a função determinada no subconjunto.\
+  Sintaxe: `lapply(.SD, função)`\
+  - É comum que apareça dentro de `data.table` quando realizando operação de subconjuntos. É fundamental para as operações.\
+  Ex.: `DT[,lapply(.SD, mean), .SDcols = "coluna_1", by = .(coluna_2)]`\
+  - Podem ser aplicadas várias funções no subconjunto.\
+  Ex.: `DT[,c(lapply(.SD,mean),lapply(.SD,sum)), .SDcols = "coluna_1", by = .(coluna_2)]`
+
+- Exemplo:\
+`DT[, c(lapply(.SD,mean), lapply(.SD, sum)), .SDcols = c("coluna_1", "coluna_2"), by = .(coluna_3, coluna_4)]`\
+  - Aplica as funções média(`mean`) e soma(`sum`) sobre as colunas selecionadas coluna_1 e coluna_2.\
+  - Agrupando os dados (`by`) entorno das colunas selecionadas coluna_3 e coluna_4.\
+
+\newpage
 
 ### modificando dados com set:
   - *set*\

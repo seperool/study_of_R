@@ -2145,7 +2145,44 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 
 ### 9.4.4 Operando um subconjunto de dados
 
--   *lapply*  
+-   O pacote possui um símbolo especial denotado por `.SD` para realizar
+    operações em um subconjunto de dados do `data.table` **DT**, de
+    acordo com um grupo definido por `by` (agrupa em torno de
+    determinadas colunas, igual a `group_by`).  
+
+    -   `DT[,.SD]`  
+        Subconjunto completo dos dados.  
+    -   `DT[,.SD, by = .(j)]`  
+        É o subconjunto completo dos dados exeto pela coluna j, formando
+        subconjuntos para cada grupo da coluna j.  
+    -   `DT[,.SD, by = .(j,k)]`  
+        Podemos agrupar entorno de mais de uma coluna, definidas por
+        `by`.  
+
+-   É possível ainda definir (**selecionar**) as colunas do conjunto
+    completo que deverão ser consideradas em `.SD` através do operador
+    `.SDcols`. São as colunas que vão receber as funções.  
+    `DT[,lapply(.SD,mean), .SDcols = c("coluna_1", "coluna_2"), by = .(coluna_3)]`  
+
+-   `lapply`  
+
+    -   Aplica a função determinada no subconjunto.  
+        Sintaxe: `lapply(.SD, função)`  
+    -   É comum que apareça dentro de `data.table` quando realizando
+        operação de subconjuntos. É fundamental para as operações.  
+        Ex.:
+        `DT[,lapply(.SD, mean), .SDcols = "coluna_1", by = .(coluna_2)]`  
+    -   Podem ser aplicadas várias funções no subconjunto.  
+        Ex.:
+        `DT[,c(lapply(.SD,mean),lapply(.SD,sum)), .SDcols = "coluna_1", by = .(coluna_2)]`
+
+-   Exemplo:  
+    `DT[, c(lapply(.SD,mean), lapply(.SD, sum)), .SDcols = c("coluna_1", "coluna_2"), by = .(coluna_3, coluna_4)]`  
+
+    -   Aplica as funções média(`mean`) e soma(`sum`) sobre as colunas
+        selecionadas coluna_1 e coluna_2.  
+    -   Agrupando os dados (`by`) entorno das colunas selecionadas
+        coluna_3 e coluna_4.  
 
 ### 9.4.5 modificando dados com set:
 
