@@ -1,6 +1,6 @@
-ESCRITO EM 12/04/23
+ESCRITO EM 13/04/23
 ---
-PARA 13/04/23
+PARA 14/04/23
 ---
 Subir github:
 
@@ -24,7 +24,6 @@ Afazeres:
 				- Manipulando linhas
 				- Manipulando colunas
 				- Sumarizando dados
-				- Operando subconjunto de dados
 				- Modifique com set
 				- data.table e dtplyr
 			- Cap. 7
