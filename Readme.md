@@ -2184,16 +2184,16 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
     -   Agrupando os dados (`by`) entorno das colunas selecionadas
         coluna_3 e coluna_4.  
 
-### 9.4.5 modificando dados com set:
+### 9.4.5 Modificando dados com **set**
 
--   *set*  
-    modificando um valor.  
--   *setnames*  
-    modificando nome da coluna.  
--   *setorder*  
-    modificando ordem das linhas.  
--   *setcolorder*  
-    modificando ordem das colunas.  
+| Funções set |                          Descrição                          |                         Fórmula                         |
+|:------:|:-------------------------------:|:-----------------------------:|
+|     set     |             Modifica o valor da linha e coluna.             |              set(dt, i=1, j=3, value=999)               |
+|  setnames   |                 Modifica o nome da coluna.                  | setnames(dt, old=‘nome_coluna’, new=‘novo_nome_coluna’) |
+|  setorder   | Reordena linhas de forma de forma decrescente ou crescente. |             setorder(dt, -vendas, n_itens)              |
+| setcolorder |                      Reordena colunas.                      |                setcolorder(dt, c(1,3,2))                |
+
+Funções set para modificação de dados no formato data.table
 
 # 10 Cap 7 - Gráficos basicos e pacote ggplot2 
 
@@ -2310,7 +2310,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 ## 11.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.  
-E revisando Cap.5 - O sistema tidyverse.  
+E revisando Cap.6 - O pacote `data.table`.  
 
 # 12 Referências
 

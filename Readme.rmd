@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
   odt_document: 
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2034,15 +2034,26 @@ kable(dt_suma, col.names = c("Comandos", "O que faz?"), align = "cc", caption = 
 
 \newpage
 
-### modificando dados com set:
-  - *set*\
-  modificando um valor.\
-  - *setnames*\
-  modificando nome da coluna.\
-  - *setorder*\
-  modificando ordem das linhas.\
-  - *setcolorder*\
-  modificando ordem das colunas.\
+### Modificando dados com **set**
+```{r set, echo=FALSE, message=FALSE, warning=FALSE}
+# Bibliteca
+library(knitr)
+
+# data.frame
+Func_set <- c("set", "setnames", "setorder", "setcolorder")
+Descr_set <- c("Modifica o valor da linha e coluna.",
+               "Modifica o nome da coluna.",
+               "Reordena linhas de forma de forma decrescente ou crescente.",
+               "Reordena colunas.")
+formula_set <- c("set(dt, i=1, j=3, value=999)",
+                 "setnames(dt, old='nome_coluna', new='novo_nome_coluna')",
+                 "setorder(dt, -vendas, n_itens)",
+                 "setcolorder(dt, c(1,3,2))")
+dt_set <- data.frame(Func_set,Descr_set,formula_set)
+
+# Tabela
+kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = "ccc", caption = "Funções set para modificação de dados no formato data.table")
+```
 
 \newpage
 
@@ -2153,7 +2164,7 @@ kable(dt_suma, col.names = c("Comandos", "O que faz?"), align = "cc", caption = 
 ## Assunto em andamento:
 
 Atualmente estou estudando Cap.7, pacote ggplot2.\
-E revisando Cap.5 \- O sistema tidyverse.\
+E revisando Cap.6 \- O pacote `data.table`.\
 
 \newpage
 
