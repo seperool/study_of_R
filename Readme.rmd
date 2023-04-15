@@ -3,18 +3,18 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
   odt_document: 
     number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   html_document:
     number_sections: true
     df_print: paged
@@ -1942,7 +1942,7 @@ dt <- data.table(dados)
 \newpage
 
 ## **data.table**
-### Manipulando linhas\
+### Manipulando linhas
 ```{r manipulação de linhas, echo=FALSE, message=FALSE, warning=FALSE}
 # data.frame
 cmds_lin <- c("DT[condições sobre as colunas]",
@@ -1961,7 +1961,7 @@ dt_man_lin <- data.frame(cmds_lin,OQF_com_lin)
 kable(dt_man_lin, col.names = c("Comando","O que faz?"), align = "cc", caption = "5 formas de manipulação de linhas no data.table")
 ```
 
-### Manipulando colunas\
+### Manipulando colunas
 ```{r manipulação de colunas, echo=FALSE, message=FALSE, warning=FALSE}
 # data.frame
 cmds_col <- c("DT[,j] ou DT[[j]]",
@@ -1988,7 +1988,11 @@ kable(dt_man_col, col.names = c("Comando","O que faz?"), align = "cc", caption =
 
 \newpage
 
-### Sumarizando dados\
+### Sumarizando dados
+
+- Realiza operações para apuração de valores sobre linhas de um `data.table`.\
+- Argumentos de operações de sumariazação de dados:\
+
 ```{r sumariazando dados apuração de valores, echo=FALSE, message=FALSE, warning=FALSE}
 # data.frame
 cmds_suma <- c(".N",
@@ -2035,6 +2039,10 @@ kable(dt_suma, col.names = c("Comandos", "O que faz?"), align = "cc", caption = 
 \newpage
 
 ### Modificando dados com **set**
+
+- As funções **set** são para modificação de dados do `data.table`.\
+- São as principais funções **set**:\
+
 ```{r set, echo=FALSE, message=FALSE, warning=FALSE}
 # Bibliteca
 library(knitr)

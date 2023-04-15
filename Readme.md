@@ -2105,7 +2105,7 @@ Tabela em formato larga dieta de pacientes
 
 ## 9.4 **data.table**
 
-### 9.4.1 Manipulando linhas 
+### 9.4.1 Manipulando linhas
 
 |                      Comando                       |                                                                         O que faz?                                                                          |
 |:-----------------:|:---------------------------------------------------:|
@@ -2117,7 +2117,7 @@ Tabela em formato larga dieta de pacientes
 
 5 formas de manipulação de linhas no data.table
 
-### 9.4.2 Manipulando colunas 
+### 9.4.2 Manipulando colunas
 
 |                              Comando                               |                            O que faz?                            |
 |:-----------------------------------:|:---------------------------------:|
@@ -2132,7 +2132,11 @@ Tabela em formato larga dieta de pacientes
 
 8 formas de manipulação de colunas no data.table
 
-### 9.4.3 Sumarizando dados 
+### 9.4.3 Sumarizando dados
+
+-   Realiza operações para apuração de valores sobre linhas de um
+    `data.table`.  
+-   Argumentos de operações de sumariazação de dados:  
 
 |                   Comandos                    |                                                       O que faz?                                                        |
 |:-------------------:|:-------------------------------------------------:|
@@ -2185,6 +2189,9 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
         coluna_3 e coluna_4.  
 
 ### 9.4.5 Modificando dados com **set**
+
+-   As funções **set** são para modificação de dados do `data.table`.  
+-   São as principais funções **set**:  
 
 | Funções set |                          Descrição                          |                         Fórmula                         |
 |:------:|:-------------------------------:|:-----------------------------:|
