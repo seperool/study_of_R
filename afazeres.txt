@@ -1,6 +1,6 @@
-ESCRITO EM 14/04/23
+ESCRITO EM 15/04/23
 ---
-PARA 15/04/23
+PARA 16/04/23
 ---
 Subir github:
 
@@ -23,8 +23,6 @@ Afazeres:
 			- Cap. 6 - O pacote data.table
 				- Manipulando linhas
 				- Manipulando colunas
-				- Sumarizando dados
-				- Modifique com set
 				- data.table e dtplyr
 			- Cap. 7
 	- Cap. 7 - Visualizando dados
