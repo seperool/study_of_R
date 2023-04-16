@@ -1,6 +1,6 @@
-ESCRITO EM 15/04/23
+ESCRITO EM 16/04/23
 ---
-PARA 16/04/23
+PARA 17/04/23
 ---
 Subir github:
 
@@ -20,10 +20,15 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-			- Cap. 6 - O pacote data.table
-				- Manipulando linhas
-				- Manipulando colunas
-				- data.table e dtplyr
-			- Cap. 7
+			- Cap. 7 - Visualizando dados
+				- Pacote básico
+					- funções
+					- argumentos
+					- observações
+					- gráficos
+						- barras
+						- circular
+						- ...
+				- ggplot2
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
