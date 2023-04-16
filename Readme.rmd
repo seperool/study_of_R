@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
   odt_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  html_document:
-    number_sections: true
-    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2066,35 +2066,79 @@ kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = 
 \newpage
 
 # Cap 7 - Gráficos basicos e pacote ggplot2\
+- Objetivo é obter o grafico ideal, com o qual se consiga visualizar os dados e analiza-los.\
 
-1. Gráficos basicos:\
-  
-  - Gráfico de barras\
-  **barplot**\
+- Os principais passos:\
+  - Identificação dos tipos de variáveis.\
+  - Construção dos gráficos.\
+  - Ajustes.\
+  - Refinamento.\
+
+## Gráficos com o pacote básico
+
+```{r Graficos do pacote basico, echo=FALSE, message=FALSE, warning=FALSE}
+# Biblioteca
+library(knitr)
+
+# data.frame
+func_graf_basic <- c("barplot(x)",
+                     "boxplot(x)",
+                     "coplot(y~x|z)",
+                     "curve(expressão)",
+                     "dotplot(x)",
+                     "hist(x)",
+                     "mosaicplot",
+                     "pairs(x)",
+                     "pie(x)",
+                     "plot(x)",
+                     "qqnorm(x)",
+                     "stem(x)",
+                     "stripchart")
+tipo_graf <- c("Produz um gráfico de colunas do vetor x.",
+               "Produz o boxplot de x.",
+               "Produz um gráfico de dispersão entre x e y condicionado por z.",
+               "Produz um gráfico a partir da expressão de certa função de x.",
+               "Produz um gráfico de pontos.",
+               "Produz um histograma do vetor x.",
+               "Produz um mosaico para tabelas de contigência.",
+               "Produz uma grande de gráficos de dispersão entre variáveis quantitativas de uma tabela.",
+               "Produz um gráfico circular (pizza).",
+               "Produz um gráfico de dispersão entre x e y",
+               "Plota os quantis de x usando como base a curva normal.",
+               "Produz um ramo e folha.",
+               "Produz um gráfico de dispersão unidimensional.")
+grafic_pac_basic <- data.frame(func_graf_basic,tipo_graf)
+
+# Tabela
+kable(grafic_pac_basic, col.names = c("Função", "Tipo de Gráfico"), align = "cc", caption = "Nome das principais funções para construção de gráficos do pacote base.")
+
+```
+- Gráfico de barras\
+**barplot**\
       
-  - Gráfico circular (pizza)\
-  **pie**
+- Gráfico circular (pizza)\
+**pie**
       
-  - Gráfico de linhas\
-  **plot**
-    - Para adicionar mais linhas no grafico.\
-    **lines** 
+- Gráfico de linhas\
+**plot**
+Para adicionar mais linhas no grafico:\
+**lines** 
         
-  - Gráfico de dispersão\
-    - Para obter a correlação.\
-    **cor**(x,y)\
-    - Para obter o coeficiente da reta de regressão.\
-    **lm**(y ~x)$coef\
-    - Adiciona a reta tracejada.\
-    **abline**\
+- Gráfico de dispersão\
+  - Para obter a correlação.\
+  **cor**(x,y)\
+  - Para obter o coeficiente da reta de regressão.\
+  **lm**(y ~x)$coef\
+  - Adiciona a reta tracejada.\
+  **abline**\
         
-  - Histograma\
-  **hist**\
+- Histograma\
+**hist**\
       
-  - **Boxplot** (diagrama de caixa)\
+- **Boxplot** (diagrama de caixa)\
       
 
-2. Pacote **ggplot2**\
+## Pacote **ggplot2**
   - Constroi diversos tipos de graficos a partir da mesma estrutura de componentes:\
     - *data*: referente ao banco de dados.\
     - *geom_forma*: um rol de tipos possiveis de representação dos dados.\
@@ -2171,8 +2215,7 @@ kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = 
 
 ## Assunto em andamento:
 
-Atualmente estou estudando Cap.7, pacote ggplot2.\
-E revisando Cap.6 \- O pacote `data.table`.\
+Atualmente estou estudando Cap.7, gráficos do pacote básico.\
 
 \newpage
 

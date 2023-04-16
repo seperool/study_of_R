@@ -2204,7 +2204,35 @@ Funções set para modificação de dados no formato data.table
 
 # 10 Cap 7 - Gráficos basicos e pacote ggplot2 
 
-1.  Gráficos basicos:  
+-   Objetivo é obter o grafico ideal, com o qual se consiga visualizar
+    os dados e analiza-los.  
+
+-   Os principais passos:  
+
+    -   Identificação dos tipos de variáveis.  
+    -   Construção dos gráficos.  
+    -   Ajustes.  
+    -   Refinamento.  
+
+## 10.1 Gráficos com o pacote básico
+
+|      Função      |                                     Tipo de Gráfico                                     |
+|:------------:|:--------------------------------------------------------:|
+|    barplot(x)    |                        Produz um gráfico de colunas do vetor x.                         |
+|    boxplot(x)    |                                 Produz o boxplot de x.                                  |
+| coplot(y\~x\|z)  |             Produz um gráfico de dispersão entre x e y condicionado por z.              |
+| curve(expressão) |              Produz um gráfico a partir da expressão de certa função de x.              |
+|    dotplot(x)    |                              Produz um gráfico de pontos.                               |
+|     hist(x)      |                            Produz um histograma do vetor x.                             |
+|    mosaicplot    |                     Produz um mosaico para tabelas de contigência.                      |
+|     pairs(x)     | Produz uma grande de gráficos de dispersão entre variáveis quantitativas de uma tabela. |
+|      pie(x)      |                           Produz um gráfico circular (pizza).                           |
+|     plot(x)      |                       Produz um gráfico de dispersão entre x e y                        |
+|    qqnorm(x)     |                 Plota os quantis de x usando como base a curva normal.                  |
+|     stem(x)      |                                 Produz um ramo e folha.                                 |
+|    stripchart    |                     Produz um gráfico de dispersão unidimensional.                      |
+
+Nome das principais funções para construção de gráficos do pacote base.
 
 -   Gráfico de barras  
     **barplot**  
@@ -2213,10 +2241,8 @@ Funções set para modificação de dados no formato data.table
     **pie**
 
 -   Gráfico de linhas  
-    **plot**
-
-    -   Para adicionar mais linhas no grafico.  
-        **lines**
+    **plot** Para adicionar mais linhas no grafico:  
+    **lines**
 
 -   Gráfico de dispersão  
 
@@ -2232,7 +2258,7 @@ Funções set para modificação de dados no formato data.table
 
 -   **Boxplot** (diagrama de caixa)  
 
-1.  Pacote **ggplot2**  
+## 10.2 Pacote **ggplot2**
 
 -   Constroi diversos tipos de graficos a partir da mesma estrutura de
     componentes:  
@@ -2316,8 +2342,7 @@ Funções set para modificação de dados no formato data.table
 
 ## 11.1 Assunto em andamento:
 
-Atualmente estou estudando Cap.7, pacote ggplot2.  
-E revisando Cap.6 - O pacote `data.table`.  
+Atualmente estou estudando Cap.7, gráficos do pacote básico.  
 
 # 12 Referências
 
