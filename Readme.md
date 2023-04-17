@@ -2202,7 +2202,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 
 Funções set para modificação de dados no formato data.table
 
-# 10 Cap 7 - Gráficos basicos e pacote ggplot2 
+# 10 Cap 7 - Gráficos pacote básico e pacote ggplot2
 
 -   Objetivo é obter o grafico ideal, com o qual se consiga visualizar
     os dados e analiza-los.  
@@ -2215,6 +2215,8 @@ Funções set para modificação de dados no formato data.table
     -   Refinamento.  
 
 ## 10.1 Gráficos com o pacote básico
+
+-   Principais funções de gráfico do pacote básico:  
 
 |      Função      |                                     Tipo de Gráfico                                     |
 |:------------:|:--------------------------------------------------------:|
@@ -2233,6 +2235,33 @@ Funções set para modificação de dados no formato data.table
 |    stripchart    |                     Produz um gráfico de dispersão unidimensional.                      |
 
 Nome das principais funções para construção de gráficos do pacote base.
+
+-   Principais argumentos das funções de gráfico do pacote básico:  
+
+|          Função           | Efeito no gráfico |
+|:-------------------------:|:-----------------:|
+|           adj =           |                   |
+|         main = ’’         |                   |
+|           col =           |                   |
+|         border =          |                   |
+|          font =           |                   |
+|           cex =           |                   |
+|           lty =           |                   |
+|           lwd =           |                   |
+|           pch =           |                   |
+|          type =           |                   |
+|   xlim = (inicio, fim)    |                   |
+|   ylim = (inicio, fim)    |                   |
+|         xlab = ’’         |                   |
+|         ylab = ’’         |                   |
+|         las = ’’          |                   |
+|     xaxt ou yaxt = ’’     |                   |
+| text(x,y,‘texto’,cex,col) |                   |
+|    legend(x,y,legenda)    |                   |
+|  locator(n,type = ‘n’,…)  |                   |
+|   segments(x0,y0,x1,y1)   |                   |
+
+Nome dos argumentos para adicionar efeito em gráficos.
 
 -   Gráfico de barras  
     **barplot**  

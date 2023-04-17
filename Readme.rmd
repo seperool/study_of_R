@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
   odt_document: 
     number_sections: true
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2065,7 +2065,7 @@ kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = 
 
 \newpage
 
-# Cap 7 - Gráficos basicos e pacote ggplot2\
+# Cap 7 - Gráficos pacote básico e pacote ggplot2
 - Objetivo é obter o grafico ideal, com o qual se consiga visualizar os dados e analiza-los.\
 
 - Os principais passos:\
@@ -2075,6 +2075,8 @@ kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = 
   - Refinamento.\
 
 ## Gráficos com o pacote básico
+
+- Principais funções de gráfico do pacote básico:\
 
 ```{r Graficos do pacote basico, echo=FALSE, message=FALSE, warning=FALSE}
 # Biblioteca
@@ -2113,6 +2115,63 @@ grafic_pac_basic <- data.frame(func_graf_basic,tipo_graf)
 kable(grafic_pac_basic, col.names = c("Função", "Tipo de Gráfico"), align = "cc", caption = "Nome das principais funções para construção de gráficos do pacote base.")
 
 ```
+
+- Principais argumentos das funções de gráfico do pacote básico:\
+```{r Argumentos funções de grafico pacote basico, echo=FALSE, message=FALSE, warning=FALSE}
+# Biblioteca
+library(knitr)
+
+# data.frame
+func_arg_graf_basic <- c("adj = ",
+                         "main = ''",
+                         "col = ",
+                         "border = ",
+                         "font = ",
+                         "cex = ",
+                         "lty = ",
+                         "lwd = ",
+                         "pch = ",
+                         "type = ",
+                         "xlim = (inicio, fim)",
+                         "ylim = (inicio, fim)",
+                         "xlab = ''",
+                         "ylab = ''",
+                         "las = ''",
+                         "xaxt ou yaxt = ''",
+                         "text(x,y,'texto',cex,col)",
+                         "legend(x,y,legenda)",
+                         "locator(n,type = 'n',...)",
+                         "segments(x0,y0,x1,y1)")
+
+desc_arg_graf_basic <- c("",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "")
+
+dt_arg_graf_basic <- data.frame(func_arg_graf_basic,desc_arg_graf_basic)
+
+# Tabela
+kable(dt_arg_graf_basic, col.names = c("Função", "Efeito no gráfico"), align = "cc",
+      caption = "Nome dos argumentos para adicionar efeito em gráficos.")
+
+```
+
 - Gráfico de barras\
 **barplot**\
       
