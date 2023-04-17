@@ -1,11 +1,10 @@
-ESCRITO EM 16/04/23
+ESCRITO EM 17/04/23
 ---
-PARA 17/04/23
+PARA 18/04/23
 ---
 Subir github:
 
 Estudar:
-	Cap. 7 - Visualizando dados
 
 Afazeres:
 	- Revisar capitulos anteriores
@@ -22,8 +21,7 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- Pacote básico
-					- funções
-					- argumentos
+					- argumentos (terminar tabela)
 					- observações
 					- gráficos
 						- barras
