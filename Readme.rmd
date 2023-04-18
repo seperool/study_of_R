@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
-    number_sections: true
-  github_document: 
-  word_document: 
-    toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2116,53 +2116,55 @@ kable(grafic_pac_basic, col.names = c("Função", "Tipo de Gráfico"), align = "
 
 ```
 
+\newpage
+
 - Principais argumentos das funções de gráfico do pacote básico:\
 ```{r Argumentos funções de grafico pacote basico, echo=FALSE, message=FALSE, warning=FALSE}
 # Biblioteca
 library(knitr)
 
 # data.frame
-func_arg_graf_basic <- c("adj = ",
-                         "main = ''",
-                         "col = ",
-                         "border = ",
-                         "font = ",
-                         "cex = ",
-                         "lty = ",
-                         "lwd = ",
-                         "pch = ",
-                         "type = ",
-                         "xlim = (inicio, fim)",
-                         "ylim = (inicio, fim)",
-                         "xlab = ''",
-                         "ylab = ''",
-                         "las = ''",
-                         "xaxt ou yaxt = ''",
+func_arg_graf_basic <- c("adj=",
+                         "main=''",
+                         "col=",
+                         "border=",
+                         "font=",
+                         "cex=",
+                         "lty=",
+                         "lwd=",
+                         "pch=",
+                         "type=",
+                         "xlim=(inicio, fim)",
+                         "ylim=(inicio, fim)",
+                         "xlab=''",
+                         "ylab=''",
+                         "las=''",
+                         "xaxt ou yaxt=''",
                          "text(x,y,'texto',cex,col)",
                          "legend(x,y,legenda)",
-                         "locator(n,type = 'n',...)",
+                         "locator(n,type='n',...)",
                          "segments(x0,y0,x1,y1)")
 
-desc_arg_graf_basic <- c("",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "",
-                         "")
+desc_arg_graf_basic <- c("Controla a formatação do texto (0 formatação à esquerda; 0.5 centralizada; 1 à direita).",
+                         "Adiciona um título principal ao gráfico de acordo com texto entre aspas.",
+                         "Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,..., ou por nome como 'red', 'blue', etc (consulte nomes com o comando colors() ou sistemas como rgb(), hsv(), gray() e rainbow()). Para cor das fontes use: col.lab, col.main, col.sub",
+                         "Especifica a cor da borda de uma coluna no gráfico.",
+                         "Controla o estilo da fonte de: 0-normal, 1-itálico, 2-negrito, 3-itálico e negrito.",
+                         "Controla o tamanho da fonte de textos, o valor padrão é 1.(cex.axis, cex.lab, cex.main, cex.sub)",
+                         "Especifica o tipo de linha (1-sólida, 2-tracejadas, etc).",
+                         "Especifica a espessura da linha (1, 2, ...).",
+                         "Controla o tipo de símbolo (1 a 25 ou especificando entre aspas).",
+                         "Especifica o tipo de plotagem: 'p' (pontos); 'l' (linhas); 'b' (pontos conectados por linhas); 'o' (idem a b com pontos sobrepostos à linhas); 'h' (linhas verticais); 's' (degrau no qual o dado é representado no topo da linha vertical); 'S' (idem ao s porém o dado é representado na base da linha vertical).",
+                         "Controla os limites do eixo X.",
+                         "Controla os limites do eixo Y.",
+                         "Adiciona rótulo para o eixo X de acordo com texto entre aspas.",
+                         "Adiciona rótulo para o eixo Y de acordo com texto entre aspas.",
+                         "Controla a orientação dos rótulos dos eixos. 0 - paralelo ao eixo; 1 - horizontal; 2 - perpendicular; 3 - vertical.",
+                         "Se xaxt = 'n', o eixo X é definido porém não é desenhado; Se yaxt = 'n', o eixo Y é definido porém não é desenhado.",
+                         "Adiciona texto ao gráfico na coordenada (x,y) podendo ser diminuído o tamanho da fonte na proporção desejada em relação ao tamanho padrão 1 e com a cor especificada.",
+                         "Adiciona uma legenda no ponto (x,y) com símbolos dados no campo legenda",
+                         "Retorna as coordenadas correspondentes pedidas pelo usuário ao clicar (n vezes) no gráfico. Também desenha símbolos (type = 'p') ou linhas (type = '1') Respeitando os parâmetros do gráfico. Por padrão type = 'n'.",
+                         "Desenha segmentos de linha a partir do ponto (x0,y0) até (x1,y1).")
 
 dt_arg_graf_basic <- data.frame(func_arg_graf_basic,desc_arg_graf_basic)
 
@@ -2171,6 +2173,8 @@ kable(dt_arg_graf_basic, col.names = c("Função", "Efeito no gráfico"), align 
       caption = "Nome dos argumentos para adicionar efeito em gráficos.")
 
 ```
+
+\newpage
 
 - Gráfico de barras\
 **barplot**\

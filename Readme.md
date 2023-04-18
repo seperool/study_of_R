@@ -2238,28 +2238,28 @@ Nome das principais funções para construção de gráficos do pacote base.
 
 -   Principais argumentos das funções de gráfico do pacote básico:  
 
-|          Função           | Efeito no gráfico |
-|:-------------------------:|:-----------------:|
-|           adj =           |                   |
-|         main = ’’         |                   |
-|           col =           |                   |
-|         border =          |                   |
-|          font =           |                   |
-|           cex =           |                   |
-|           lty =           |                   |
-|           lwd =           |                   |
-|           pch =           |                   |
-|          type =           |                   |
-|   xlim = (inicio, fim)    |                   |
-|   ylim = (inicio, fim)    |                   |
-|         xlab = ’’         |                   |
-|         ylab = ’’         |                   |
-|         las = ’’          |                   |
-|     xaxt ou yaxt = ’’     |                   |
-| text(x,y,‘texto’,cex,col) |                   |
-|    legend(x,y,legenda)    |                   |
-|  locator(n,type = ‘n’,…)  |                   |
-|   segments(x0,y0,x1,y1)   |                   |
+|          Função           |                                                                                                                                                  Efeito no gráfico                                                                                                                                                  |
+|:-----:|:---------------------------------------------------------------:|
+|           adj=            |                                                                                                              Controla a formatação do texto (0 formatação à esquerda; 0.5 centralizada; 1 à direita).                                                                                                               |
+|          main=’’          |                                                                                                                      Adiciona um título principal ao gráfico de acordo com texto entre aspas.                                                                                                                       |
+|           col=            |                           Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,…, ou por nome como ‘red’, ‘blue’, etc (consulte nomes com o comando colors() ou sistemas como rgb(), hsv(), gray() e rainbow()). Para cor das fontes use: col.lab, col.main, col.sub                           |
+|          border=          |                                                                                                                                 Especifica a cor da borda de uma coluna no gráfico.                                                                                                                                 |
+|           font=           |                                                                                                                 Controla o estilo da fonte de: 0-normal, 1-itálico, 2-negrito, 3-itálico e negrito.                                                                                                                 |
+|           cex=            |                                                                                                          Controla o tamanho da fonte de textos, o valor padrão é 1.(cex.axis, cex.lab, cex.main, cex.sub)                                                                                                           |
+|           lty=            |                                                                                                                              Especifica o tipo de linha (1-sólida, 2-tracejadas, etc).                                                                                                                              |
+|           lwd=            |                                                                                                                                     Especifica a espessura da linha (1, 2, …).                                                                                                                                      |
+|           pch=            |                                                                                                                          Controla o tipo de símbolo (1 a 25 ou especificando entre aspas).                                                                                                                          |
+|           type=           | Especifica o tipo de plotagem: ‘p’ (pontos); ‘l’ (linhas); ‘b’ (pontos conectados por linhas); ‘o’ (idem a b com pontos sobrepostos à linhas); ‘h’ (linhas verticais); ‘s’ (degrau no qual o dado é representado no topo da linha vertical); ‘S’ (idem ao s porém o dado é representado na base da linha vertical). |
+|    xlim=(inicio, fim)     |                                                                                                                                           Controla os limites do eixo X.                                                                                                                                            |
+|    ylim=(inicio, fim)     |                                                                                                                                           Controla os limites do eixo Y.                                                                                                                                            |
+|          xlab=’’          |                                                                                                                           Adiciona rótulo para o eixo X de acordo com texto entre aspas.                                                                                                                            |
+|          ylab=’’          |                                                                                                                           Adiciona rótulo para o eixo Y de acordo com texto entre aspas.                                                                                                                            |
+|          las=’’           |                                                                                                 Controla a orientação dos rótulos dos eixos. 0 - paralelo ao eixo; 1 - horizontal; 2 - perpendicular; 3 - vertical.                                                                                                 |
+|      xaxt ou yaxt=’’      |                                                                                                 Se xaxt = ‘n’, o eixo X é definido porém não é desenhado; Se yaxt = ‘n’, o eixo Y é definido porém não é desenhado.                                                                                                 |
+| text(x,y,‘texto’,cex,col) |                                                                        Adiciona texto ao gráfico na coordenada (x,y) podendo ser diminuído o tamanho da fonte na proporção desejada em relação ao tamanho padrão 1 e com a cor especificada.                                                                        |
+|    legend(x,y,legenda)    |                                                                                                                       Adiciona uma legenda no ponto (x,y) com símbolos dados no campo legenda                                                                                                                       |
+|   locator(n,type=‘n’,…)   |                                                Retorna as coordenadas correspondentes pedidas pelo usuário ao clicar (n vezes) no gráfico. Também desenha símbolos (type = ‘p’) ou linhas (type = ‘1’) Respeitando os parâmetros do gráfico. Por padrão type = ‘n’.                                                 |
+|   segments(x0,y0,x1,y1)   |                                                                                                                          Desenha segmentos de linha a partir do ponto (x0,y0) até (x1,y1).                                                                                                                          |
 
 Nome dos argumentos para adicionar efeito em gráficos.
 
