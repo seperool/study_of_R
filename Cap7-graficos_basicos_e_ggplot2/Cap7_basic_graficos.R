@@ -4,7 +4,7 @@ library(readr) #leitura de dados
 library(tibble) #tipo de data.frame, "tabela"
 
 #importação de dados
-turismo <- read_csv("Documentos/Dados_uff_R/turismo.csv")
+turismo <- read_csv("/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 View(turismo) #visualizando dados, testando para ver se o read_csv deu certo
 
 #transformando data.frame em tibble
