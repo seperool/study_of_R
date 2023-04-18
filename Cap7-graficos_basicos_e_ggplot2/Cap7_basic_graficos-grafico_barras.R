@@ -5,7 +5,7 @@ library(dplyr) #manipulação de dados
 library(tibble) #tipo de data.frame, tabela
 
 #importando dados
-turismo <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+turismo <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 View(turismo)
 
 #transformando data.frame em tibble
