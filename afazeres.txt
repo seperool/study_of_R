@@ -3,7 +3,10 @@ ESCRITO EM 18/04/23
 PARA 19/04/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 7 - Visualizando dados
+				- Pacote básico
+					- observações
 Estudar:
 
 Afazeres:
@@ -21,11 +24,12 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- Pacote básico
-					- observações
 					- gráficos
-						- barras
-						- circular
-						- ...
+						- barras (barplot)
+						- circular/pizza (pie)
+						- linhas (plot lines)
+						- dispersão (plot abline)
+						- baxplot e histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
