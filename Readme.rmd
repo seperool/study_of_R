@@ -6,7 +6,8 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
@@ -15,8 +16,7 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -2134,15 +2134,17 @@ func_arg_graf_basic <- c("adj=",
                          "lwd=",
                          "pch=",
                          "type=",
-                         "xlim=(inicio, fim)",
-                         "ylim=(inicio, fim)",
+                         "xlim=(inicio,fim)",
+                         "ylim=(inicio,fim)",
                          "xlab=''",
                          "ylab=''",
                          "las=''",
                          "xaxt ou yaxt=''",
-                         "text(x,y,'texto',cex,col)",
+                         "text
+                         (x,y,'texto',cex,col)",
                          "legend(x,y,legenda)",
-                         "locator(n,type='n',...)",
+                         "locator
+                         (n,type='n',...)",
                          "segments(x0,y0,x1,y1)")
 
 desc_arg_graf_basic <- c("Controla a formatação do texto (0 formatação à esquerda; 0.5 centralizada; 1 à direita).",
@@ -2176,6 +2178,37 @@ kable(dt_arg_graf_basic, col.names = c("Função", "Efeito no gráfico"), align 
 
 \newpage
 
+- Observações sobre visulização:\
+Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica para receber vários gráficos.\
+  - Dois gráficos lado a lado.\
+  `par(mfrow=c(1,2))`\
+  - Dois gráficos, um abaixo do outro.\
+  `par(mfrow=c(2,1))`\
+  - Quatro gráficos, sendo um em cada linha.\
+  `par(mfrow=c(2,2))`\
+  - Um gráfico na janela gráfica.\
+  Basta omitir o comando.\
+  - Redefinir o número de linhas a partir das margens da janela gráfica (**default**).\
+  `par(mar=c(5,4,4,2))`\
+  Sendo na ordem: abaixo, esquerda, acima e direita.\
+  Esses valores tem impacto no espaço dos títulos dos gráficos.\
+  Mudar esses valores reajusta o gráfico.\
+  - Define a medida das margens.\
+  `par(mai=c(x1,x2,x3,x4)`\
+  Sendo na ordem: abaixo, esquerda, acima e direita.\
+  - Fecha a janela gráfica (*devices*).\
+  `dev.off()`\
+  
+\newpage
+
+### Gráfico de barras (barplot)
+### Gráfico circular/pizza (pie)
+### Gráfico de linhas (plot lines)
+### Gráfico de dispersão (plot abline)
+### boxplot e histograma (hist)
+
+\newpage
+
 - Gráfico de barras\
 **barplot**\
       
@@ -2200,6 +2233,7 @@ Para adicionar mais linhas no grafico:\
       
 - **Boxplot** (diagrama de caixa)\
       
+\newpage
 
 ## Pacote **ggplot2**
   - Constroi diversos tipos de graficos a partir da mesma estrutura de componentes:\
