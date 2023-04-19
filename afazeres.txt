@@ -1,12 +1,9 @@
-ESCRITO EM 18/04/23
+ESCRITO EM 19/04/23
 ---
-PARA 19/04/23
+PARA 20/04/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 7 - Visualizando dados
-				- Pacote básico
-					- observações
+
 Estudar:
 
 Afazeres:
