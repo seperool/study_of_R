@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2180,11 +2180,11 @@ kable(dt_arg_graf_basic, col.names = c("Função", "Efeito no gráfico"), align 
 
 - Observações sobre visulização:\
 Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica para receber vários gráficos.\
-  - Dois gráficos lado a lado.\
+  - Dois gráficos, lado a lado.\
   `par(mfrow=c(1,2))`\
   - Dois gráficos, um abaixo do outro.\
   `par(mfrow=c(2,1))`\
-  - Quatro gráficos, sendo um em cada linha.\
+  - Quatro gráficos, sendo dois em cada linha.\
   `par(mfrow=c(2,2))`\
   - Um gráfico na janela gráfica.\
   Basta omitir o comando.\

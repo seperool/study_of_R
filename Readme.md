@@ -2268,11 +2268,11 @@ Nome dos argumentos para adicionar efeito em gráficos.
 -   Observações sobre visulização:  
     Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela
     gráfica para receber vários gráficos.  
-    -   Dois gráficos lado a lado.  
+    -   Dois gráficos, lado a lado.  
         `par(mfrow=c(1,2))`  
     -   Dois gráficos, um abaixo do outro.  
         `par(mfrow=c(2,1))`  
-    -   Quatro gráficos, sendo um em cada linha.  
+    -   Quatro gráficos, sendo dois em cada linha.  
         `par(mfrow=c(2,2))`  
     -   Um gráfico na janela gráfica.  
         Basta omitir o comando.  
