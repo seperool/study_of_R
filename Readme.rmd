@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  md_document:
+    number_sections: true
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2202,6 +2202,17 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 \newpage
 
 ### Gráfico de barras (barplot)
+
+- A função `barplot()` gera um gráfico de barras.\
+- Pré-requisitos:\
+  - Necessita que os dados estejam preparados para gerar os gráfico, em formato *tabulado*.\
+  - Para preparação dos dados é necessario o uso das funções dos pacotes `magrittr`, `dplyr` (ou `data.table`), e `tidyr`.\
+  - Uma coluna com os dados **númericos** (frequencias e/ou valores).\
+  - Uma coluna com os dados **string**, ou **factor**.\ 
+
+
+\newpage
+
 ### Gráfico circular/pizza (pie)
 ### Gráfico de linhas (plot lines)
 ### Gráfico de dispersão (plot abline)

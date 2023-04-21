@@ -2290,6 +2290,16 @@ Nome dos argumentos para adicionar efeito em gráficos.
 
 ### 10.1.1 Gráfico de barras (barplot)
 
+-   A função `barplot()` gera um gráfico de barras.  
+-   Pré-requisitos:  
+    -   Necessita que os dados estejam preparados para gerar os gráfico,
+        em formato *tabulado*.  
+    -   Para preparação dos dados é necessario o uso das funções dos
+        pacotes `magrittr`, `dplyr` (ou `data.table`), e `tidyr`.  
+    -   Uma coluna com os dados **númericos** (frequencias e/ou
+        valores).  
+    -   Uma coluna com os dados **string**, ou **factor**. 
+
 ### 10.1.2 Gráfico circular/pizza (pie)
 
 ### 10.1.3 Gráfico de linhas (plot lines)
