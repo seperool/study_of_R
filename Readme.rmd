@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  odt_document: 
+  md_document:
     number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: TRUE
+  odt_document: 
+    number_sections: true
   github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  md_document:
+  word_document: 
+    toc: TRUE
     number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2209,7 +2209,27 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
   - Para preparação dos dados é necessario o uso das funções dos pacotes `magrittr`, `dplyr` (ou `data.table`), e `tidyr`.\
   - Uma coluna com os dados **númericos** (frequencias e/ou valores).\
   - Uma coluna com os dados **string**, ou **factor**.\ 
-
+- Preparando os dados:\
+  - Organização dos dados das colunas. As principais funções necesse caso são:
+    - `order`\
+    Retorna uma permutação que reorganiza seu primeiro argumento em ordem crescente ou decrescente, quebrando laços por argumentos adicionais.\
+    `x <- tabula_Estado$Estado[order(tabula_Estado$cheg_2012)]`\
+    - `sort`\
+    Ordena um vetor em ordem crescente ou decrescente.\
+    `y <- sort(tabula_Estado$cheg_2012)/1000`\
+  - Definindo parâmetros para a janela gráfica (`par`):\
+    - `mar`\
+    Vetor númerico que oferece o número de linhas a partir das margens da janela gráfica.\
+    No formato c(inferior, esquerda, superior, direita).\
+    `mar = c(9,5,4,2)`\
+    - `mai`\
+    Vetor númerico que oferece o tamanho da margem, especificado em polegadas.\
+    No formato c(inferior, esquerda, superior, direita).\
+    `mai = c(1.8,1,0.8,0.4)`\
+    - Exemplo:\
+    `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`\
+  - Plotando gráfico de barras (`barplot`):\
+  
 
 \newpage
 

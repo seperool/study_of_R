@@ -2299,6 +2299,31 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Uma coluna com os dados **númericos** (frequencias e/ou
         valores).  
     -   Uma coluna com os dados **string**, ou **factor**. 
+-   Preparando os dados:  
+    -   Organização dos dados das colunas. As principais funções necesse
+        caso são:
+        -   `order`  
+            Retorna uma permutação que reorganiza seu primeiro argumento
+            em ordem crescente ou decrescente, quebrando laços por
+            argumentos adicionais.  
+            `x <- tabula_Estado$Estado[order(tabula_Estado$cheg_2012)]`  
+        -   `sort`  
+            Ordena um vetor em ordem crescente ou decrescente.  
+            `y <- sort(tabula_Estado$cheg_2012)/1000`  
+    -   Definindo parâmetros para a janela gráfica (`par`):  
+        -   `mar`  
+            Vetor númerico que oferece o número de linhas a partir das
+            margens da janela gráfica.  
+            No formato c(inferior, esquerda, superior, direita).  
+            `mar = c(9,5,4,2)`  
+        -   `mai`  
+            Vetor númerico que oferece o tamanho da margem, especificado
+            em polegadas.  
+            No formato c(inferior, esquerda, superior, direita).  
+            `mai = c(1.8,1,0.8,0.4)`  
+        -   Exemplo:  
+            `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
+    -   Plotando gráfico de barras (`barplot`):  
 
 ### 10.1.2 Gráfico circular/pizza (pie)
 
