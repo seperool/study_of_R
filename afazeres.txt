@@ -1,6 +1,6 @@
-ESCRITO EM 19/04/23
+ESCRITO EM 24/04/23
 ---
-PARA 20/04/23
+PARA 25/04/23
 ---
 Subir github:
 
@@ -23,6 +23,7 @@ Afazeres:
 				- Pacote básico
 					- gráficos
 						- barras (barplot)
+							- plotando barplot
 						- circular/pizza (pie)
 						- linhas (plot lines)
 						- dispersão (plot abline)
