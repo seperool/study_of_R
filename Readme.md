@@ -2292,73 +2292,90 @@ Nome dos argumentos para adicionar efeito em gráficos.
 
 -   A função `barplot()` gera um gráfico de barras.  
 
--   Pré-requisitos:  
+#### 10.1.1.1 Pré-requisitos
 
-    -   Necessita que os dados estejam preparados para gerar os gráfico,
-        em formato *tabulado*.  
-    -   Para preparação dos dados é necessario o uso das funções dos
-        pacotes `magrittr`, `dplyr` (ou `data.table`), e `tidyr`.  
-    -   Uma coluna com os dados **númericos** (frequencias e/ou
-        valores).  
-    -   Uma coluna com os dados **string**, ou **factor**. 
+-   Necessita que os dados estejam preparados para gerar os gráfico, em
+    formato *tabulado*.  
+-   Para preparação dos dados é necessario o uso das funções dos pacotes
+    `magrittr`, `dplyr` (ou `data.table`), e `tidyr`.  
+-   Uma coluna com os dados **númericos** (frequencias e/ou valores).  
+-   Uma coluna com os dados **string**, ou **factor**.  
 
--   Preparando os dados:  
+#### 10.1.1.2 Preparação dos dados
 
-    -   Organização dos dados das colunas, colocando uma coluna em
-        função da outra. As principais funções necesse caso são:
-        -   `order`  
-            Retorna uma permutação que reorganiza seu primeiro argumento
-            em ordem crescente ou decrescente, quebrando laços por
-            argumentos adicionais.  
-            `x <- tabula_Estado$Estado[order(tabula_Estado$cheg_2012)]`  
-        -   `sort`  
-            Ordena um vetor em ordem crescente ou decrescente.  
-            `y <- sort(tabula_Estado$cheg_2012)/1000`  
-    -   Definindo parâmetros para a janela gráfica (`par`):  
-        -   `mar`  
-            Vetor númerico que oferece o número de linhas a partir das
-            margens da janela gráfica.  
-            No formato c(inferior, esquerda, superior, direita).  
-            `mar = c(9,5,4,2)`  
-        -   `mai`  
-            Vetor númerico que oferece o tamanho da margem, especificado
-            em polegadas.  
-            No formato c(inferior, esquerda, superior, direita).  
-            `mai = c(1.8,1,0.8,0.4)`  
-        -   Exemplo:  
-            `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
-    -   Plotando gráfico de barras (`barplot`):  
-        Principais argumentos:  
-        -   `y`  
-            Vetor do eixo Y.  
-        -   `names.arg`  
-            Vetor com os nomes das barras do eixo X.  
-        -   `main`  
-            Título principal do gráfico.  
-        -   `cex.main`  
-            Tamanho da fonte de textos (título do gráfico).  
-        -   `ylab`  
-            Rótulo do eixo Y.  
-        -   `cex.names`  
-            Tamanho da fonte de textos (nomes das barras do eixo X,
-            vetor x).  
-        -   `axisnames`  
-            Inclui os nomes das categorias no eixo x.  
-        -   `las`  
-            Controla a orientação dos rótulos dos eixos.  
-        -   Exemplo:  
+-   Organização dos dados das colunas, colocando uma coluna em função da
+    outra. As principais funções necesse caso são:
+    -   `order`  
+        Retorna uma permutação que reorganiza seu primeiro argumento em
+        ordem crescente ou decrescente, quebrando laços por argumentos
+        adicionais.  
+        `x <- tabula_Estado$Estado[order(tabula_Estado$cheg_2012)]`  
+    -   `sort`  
+        Ordena um vetor em ordem crescente ou decrescente.  
+        `y <- sort(tabula_Estado$cheg_2012)/1000`  
+-   Definindo parâmetros para a janela gráfica (`par`):  
+    -   `mar`  
+        Vetor númerico que oferece o número de linhas a partir das
+        margens da janela gráfica.  
+        No formato c(inferior, esquerda, superior, direita).  
+        `mar = c(9,5,4,2)`  
+    -   `mai`  
+        Vetor númerico que oferece o tamanho da margem, especificado em
+        polegadas.  
+        No formato c(inferior, esquerda, superior, direita).  
+        `mai = c(1.8,1,0.8,0.4)`  
+    -   Exemplo:  
+        `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
 
-        <!-- -->
+#### 10.1.1.3 Plotagem gráfico de barras (barplot)
 
-            barplot(
-            y, names.arg = x,
-            main = "Titulo do gráfico.",
-            cex.main = 1.5,
-            ylab = "Rótulo do eixo Y.",
-            cex.names = 1,
-            axisnames = T,
-            las = 2
-            )
+-   Principais argumentos:  
+    -   `y`  
+        Vetor do eixo Y.  
+    -   `names.arg`  
+        Vetor com os nomes das barras do eixo X.  
+    -   `main`  
+        Título principal do gráfico.  
+    -   `cex.main`  
+        Tamanho da fonte de textos (título do gráfico).  
+    -   `xlab`  
+        Rótulo do eixo X.  
+    -   `ylab`  
+        Rótulo do eixo Y.  
+    -   `cex.names`  
+        Tamanho da fonte de textos (nomes das barras do eixo X, vetor
+        x).  
+    -   `axisnames`  
+        Inclui os nomes das categorias no eixo x.  
+    -   `las`  
+        Controla a orientação dos rótulos dos eixos.  
+    -   `ylim`  
+        Controla os limites do eixo Y.  
+    -   `text`  
+        Neste caso, adiciona valores de Y no topo de cada barra de
+        **xbar** (variável com gráfico).  
+        Como consequência dessa função, é necessário colocar o gráfico
+        dentro de uma variável (**xbar**), se não for desejado este
+        artificio não é necessário colocar `barplot` dentro de uma
+        variável.  
+    -   Para plotar gráfico de barras na horizontal basta adicionar o
+        argumento `horizon = TRUE`.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        xbar = barplot(
+        y, names.arg = x,
+        main = "Titulo do gráfico.",
+        cex.main = 1.5,
+        xlab = "Rótulo do eixo X.",
+        ylab = "Rótulo do eixo Y.",
+        cex.names = 1,
+        axisnames = T,
+        las = 2,
+        ylim = c(0,1.2*max(y))
+        )
+        text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
 
 ### 10.1.2 Gráfico circular/pizza (pie)
 
