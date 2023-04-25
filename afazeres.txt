@@ -1,6 +1,6 @@
-ESCRITO EM 24/04/23
+ESCRITO EM 25/04/23
 ---
-PARA 25/04/23
+PARA 26/04/23
 ---
 Subir github:
 
@@ -22,8 +22,6 @@ Afazeres:
 			- Cap. 7 - Visualizando dados
 				- Pacote básico
 					- gráficos
-						- barras (barplot)
-							- plotando barplot
 						- circular/pizza (pie)
 						- linhas (plot lines)
 						- dispersão (plot abline)
