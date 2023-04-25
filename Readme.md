@@ -2291,7 +2291,9 @@ Nome dos argumentos para adicionar efeito em gráficos.
 ### 10.1.1 Gráfico de barras (barplot)
 
 -   A função `barplot()` gera um gráfico de barras.  
+
 -   Pré-requisitos:  
+
     -   Necessita que os dados estejam preparados para gerar os gráfico,
         em formato *tabulado*.  
     -   Para preparação dos dados é necessario o uso das funções dos
@@ -2299,9 +2301,11 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Uma coluna com os dados **númericos** (frequencias e/ou
         valores).  
     -   Uma coluna com os dados **string**, ou **factor**. 
+
 -   Preparando os dados:  
-    -   Organização dos dados das colunas. As principais funções necesse
-        caso são:
+
+    -   Organização dos dados das colunas, colocando uma coluna em
+        função da outra. As principais funções necesse caso são:
         -   `order`  
             Retorna uma permutação que reorganiza seu primeiro argumento
             em ordem crescente ou decrescente, quebrando laços por
@@ -2324,6 +2328,37 @@ Nome dos argumentos para adicionar efeito em gráficos.
         -   Exemplo:  
             `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
     -   Plotando gráfico de barras (`barplot`):  
+        Principais argumentos:  
+        -   `y`  
+            Vetor do eixo Y.  
+        -   `names.arg`  
+            Vetor com os nomes das barras do eixo X.  
+        -   `main`  
+            Título principal do gráfico.  
+        -   `cex.main`  
+            Tamanho da fonte de textos (título do gráfico).  
+        -   `ylab`  
+            Rótulo do eixo Y.  
+        -   `cex.names`  
+            Tamanho da fonte de textos (nomes das barras do eixo X,
+            vetor x).  
+        -   `axisnames`  
+            Inclui os nomes das categorias no eixo x.  
+        -   `las`  
+            Controla a orientação dos rótulos dos eixos.  
+        -   Exemplo:  
+
+        <!-- -->
+
+            barplot(
+            y, names.arg = x,
+            main = "Titulo do gráfico.",
+            cex.main = 1.5,
+            ylab = "Rótulo do eixo Y.",
+            cex.names = 1,
+            axisnames = T,
+            las = 2
+            )
 
 ### 10.1.2 Gráfico circular/pizza (pie)
 
