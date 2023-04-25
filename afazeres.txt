@@ -23,6 +23,9 @@ Afazeres:
 				- Pacote básico
 					- gráficos
 						- circular/pizza (pie)
+							- Pré-requisitos
+							- Preparação dos dados
+							- Plotagem gráfico circular/pizza (pie)
 						- linhas (plot lines)
 						- dispersão (plot abline)
 						- baxplot e histograma (hist)
