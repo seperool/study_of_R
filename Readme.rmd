@@ -3,9 +3,9 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
+  pdf_document: 
     number_sections: true
-    variant: markdown_github
+    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
@@ -15,9 +15,9 @@ output:
   github_document: 
   odt_document: 
     number_sections: true
-  pdf_document: 
+  md_document:
     number_sections: true
-    toc: TRUE
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2281,10 +2281,10 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
   ```
  
 
-![Grafico de barras - Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png){}
+![Gráfico de barras - Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png){}
 
 
-![Grafico de barras - Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
+![Gráfico de barras - Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 
 \newpage
 
@@ -2326,6 +2326,42 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 
 #### Plotagem gráfico circular/pizza (pie)
 
+- Principais argumentos:\
+  - `y`\
+  - `main`\
+  - `labels`\
+  - `cex.main`\
+  - `cex`\
+  - `col`\
+  - `text`\
+  - **Rotulos**\
+  - Exemplo:\
+  ```
+  #Juntando categorias com baixa proporção na categoria outros.
+  y <- c(sum(y[1:10]), y[11:15])
+  x <- c("Outros", as.character(x[11:15]))
+  
+  #Gráfico pizza
+  #Variável rótulo
+  porc = 100*round(y/sum(y),2) #calcula a %
+  rotulos = paste(x,"(",porc,"%)",sep = "") #texto para rotulo
+  
+  #plotando gráfico pizza
+  par(mar = c(4,0,2,0), mai = c(0.8,0,0.4,0))
+  pie(
+  y,
+  main = "Título do gráfico",
+  labels = rotulos,
+  cex.main = 2,
+  cex = 1.5,
+  col = gray(1:length(x)/length(x))
+)
+  text(0, -1, "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex = 1)
+  ```
+
+
+![Gráfico circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
+
 \newpage
 
 ### Gráfico de linhas (plot lines)
@@ -2333,10 +2369,7 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 ### boxplot e histograma (hist)
 
 \newpage
-      
-- Gráfico circular (pizza)\
-**pie**
-      
+
 - Gráfico de linhas\
 **plot**
 Para adicionar mais linhas no grafico:\
