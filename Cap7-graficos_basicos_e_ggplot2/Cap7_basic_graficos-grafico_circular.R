@@ -16,7 +16,7 @@ library(tidyr) #organização de dados
 library(readr) #leitura de dados
 
 #banco de dados a ser trabalhado
-dados <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+dados <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 
 #transformando data.frame em tibble para melhor trabalhar
 dados <- tibble(dados)
