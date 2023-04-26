@@ -674,8 +674,11 @@ imprimir ela na tela.
     library(knitr)
     kable(head(var_dataframe,10))
 
+<figure>
 <img src="Cap4-R_markdown/tables-1-kable.png" style="width:50.0%"
-alt="Exemplo Tabela kable" />  
+alt="Exemplo Tabela kable" />
+<figcaption aria-hidden="true">Exemplo Tabela kable</figcaption>
+</figure>
 
 ##### 7.7.3.3.2 kableExtra
 
@@ -881,8 +884,11 @@ xtable(tab,type = "html")
     **library**(**rmarkdown**)  
     **paged_table**(*var_dataframe*)  
 
+<figure>
 <img src="Cap4-R_markdown/paged_rmarkdown.png" style="width:50.0%"
-alt="Exemplo tabela paged_table" />  
+alt="Exemplo tabela paged_table" />
+<figcaption aria-hidden="true">Exemplo tabela paged_table</figcaption>
+</figure>
 
 ## 7.8 Hiperlinks e imagens
 
@@ -904,8 +910,12 @@ alt="Exemplo tabela paged_table" />
 -   Sintaxe:  
     `![Legenda](Endereço da Imagem)`  
 -   Exemplo:  
-    <img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
-    alt="Logo do R Markdown" />  
+
+<figure>
+<img src="Cap4-R_markdown/RMarkdown.png" style="width:35.0%"
+alt="Logo do R Markdown" />
+<figcaption aria-hidden="true">Logo do R Markdown</figcaption>
+</figure>
 
 ## 7.9 Fórmulas LaTeX
 
@@ -2377,16 +2387,60 @@ Nome dos argumentos para adicionar efeito em gráficos.
         )
         text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
 
+![Grafico de barras -
+Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png)
+
+![Grafico de barras -
+Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
+
 ### 10.1.2 Gráfico circular/pizza (pie)
+
+-   A função `pie` gera um gráfico circular/pizza.  
+-   Essa forma de visualização serve para analisar a frequencia de
+    variáveis categóricas.  
+
+#### 10.1.2.1 Pré-requisitos
+
+-   Utilize somente em casos de a variável possuir poucas categorias (em
+    torno de cinco).  
+-   Com quantidades diferentes entre si.  
+-   Caso não se enquadrar nos pré-requisitos o ideial é optar por
+    gráfico de barras.  
+-   Os dados devem estar organizados em formato tabular.  
+
+#### 10.1.2.2 Preparação dos dados
+
+-   Organização dos dados das colunas, colocando uma coluna em função da
+    outra. As principais funções necesse caso são:
+    -   `order`  
+        Retorna uma permutação que reorganiza seu primeiro argumento em
+        ordem crescente ou decrescente, quebrando laços por argumentos
+        adicionais.  
+        `x <- tabula_Estado$Estado[order(tabula_Estado$cheg_2012)]`  
+    -   `sort`  
+        Ordena um vetor em ordem crescente ou decrescente.  
+        `y <- sort(tabula_Estado$cheg_2012)/1000`  
+-   Definindo parâmetros para a janela gráfica (`par`):  
+    -   `mar`  
+        Vetor númerico que oferece o número de linhas a partir das
+        margens da janela gráfica.  
+        No formato c(inferior, esquerda, superior, direita).  
+        `mar = c(9,5,4,2)`  
+    -   `mai`  
+        Vetor númerico que oferece o tamanho da margem, especificado em
+        polegadas.  
+        No formato c(inferior, esquerda, superior, direita).  
+        `mai = c(1.8,1,0.8,0.4)`  
+    -   Exemplo:  
+        `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
+
+#### 10.1.2.3 Plotagem gráfico circular/pizza (pie)
 
 ### 10.1.3 Gráfico de linhas (plot lines)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
 ### 10.1.5 boxplot e histograma (hist)
-
--   Gráfico de barras  
-    **barplot**  
 
 -   Gráfico circular (pizza)  
     **pie**
