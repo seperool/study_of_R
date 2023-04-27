@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2328,20 +2328,28 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 
 - Principais argumentos:\
   - `y`\
+  O vetor do eixo Y, contendo os valores das categorias.\
   - `main`\
+  Título principal do gráfico.\
   - `labels`\
+  Rótulo com cada categoria do gráfico.\
   - `cex.main`\
+  Tamanho da fonte de textos (título do gráfico).\
   - `cex`\
+  Tamanho do texto dos rótulos (`labels`).\
   - `col`\
+  Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,..., ou por nome como 'red', 'blue', etc.\
   - `text`\
-  - **Rotulos**\
+  Adiciona texto ao final do gráfico, neste caso a fonte usada para elaboração do gráfico.\
+  - **rotulos**\
+  Variável que recebe o texto, a partir da função `paste` de concatenação de texto e valores, com os rótulos de cada categoria, contendo nome de cada categoria (**x**) e porcentagem(**porc**).\
   - Exemplo:\
   ```
   #Juntando categorias com baixa proporção na categoria outros.
   y <- c(sum(y[1:10]), y[11:15])
   x <- c("Outros", as.character(x[11:15]))
   
-  #Gráfico pizza
+  #Gráfico circular/pizza
   #Variável rótulo
   porc = 100*round(y/sum(y),2) #calcula a %
   rotulos = paste(x,"(",porc,"%)",sep = "") #texto para rotulo
@@ -2361,7 +2369,7 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 
 
 ![Gráfico circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
-
+\newpage
 \newpage
 
 ### Gráfico de linhas (plot lines)

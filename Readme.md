@@ -2387,10 +2387,10 @@ Nome dos argumentos para adicionar efeito em gráficos.
         )
         text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
 
-![Grafico de barras -
+![Gráfico de barras -
 Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png)
 
-![Grafico de barras -
+![Gráfico de barras -
 Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 
 ### 10.1.2 Gráfico circular/pizza (pie)
@@ -2436,14 +2436,61 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 
 #### 10.1.2.3 Plotagem gráfico circular/pizza (pie)
 
+-   Principais argumentos:  
+    -   `y`  
+        O vetor do eixo Y, contendo os valores das categorias.  
+    -   `main`  
+        Título principal do gráfico.  
+    -   `labels`  
+        Rótulo com cada categoria do gráfico.  
+    -   `cex.main`  
+        Tamanho da fonte de textos (título do gráfico).  
+    -   `cex`  
+        Tamanho do texto dos rótulos (`labels`).  
+    -   `col`  
+        Comando para colorir diversos itens do gráfico, pode ser valores
+        como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
+    -   `text`  
+        Adiciona texto ao final do gráfico, neste caso a fonte usada
+        para elaboração do gráfico.  
+    -   **rotulos**  
+        Variável que recebe o texto, a partir da função `paste` de
+        concatenação de texto e valores, com os rótulos de cada
+        categoria, contendo nome de cada categoria (**x**) e
+        porcentagem(**porc**).  
+    -   Exemplo:  
+
+    <!-- -->
+
+        #Juntando categorias com baixa proporção na categoria outros.
+        y <- c(sum(y[1:10]), y[11:15])
+        x <- c("Outros", as.character(x[11:15]))
+
+        #Gráfico circular/pizza
+        #Variável rótulo
+        porc = 100*round(y/sum(y),2) #calcula a %
+        rotulos = paste(x,"(",porc,"%)",sep = "") #texto para rotulo
+
+        #plotando gráfico pizza
+        par(mar = c(4,0,2,0), mai = c(0.8,0,0.4,0))
+        pie(
+        y,
+        main = "Título do gráfico",
+        labels = rotulos,
+        cex.main = 2,
+        cex = 1.5,
+        col = gray(1:length(x)/length(x))
+        )
+        text(0, -1, "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex = 1)
+
+![Gráfico
+circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
+
 ### 10.1.3 Gráfico de linhas (plot lines)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
 ### 10.1.5 boxplot e histograma (hist)
-
--   Gráfico circular (pizza)  
-    **pie**
 
 -   Gráfico de linhas  
     **plot** Para adicionar mais linhas no grafico:  
