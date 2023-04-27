@@ -1,6 +1,6 @@
-ESCRITO EM 26/04/23
+ESCRITO EM 27/04/23
 ---
-PARA 27/04/23
+PARA 28/04/23
 ---
 Subir github:
 
@@ -22,8 +22,6 @@ Afazeres:
 			- Cap. 7 - Visualizando dados
 				- Pacote básico
 					- gráficos
-						- circular/pizza (pie)
-							- Plotagem gráfico circular/pizza (pie)
 						- linhas (plot lines)
 						- dispersão (plot abline)
 						- baxplot e histograma (hist)
