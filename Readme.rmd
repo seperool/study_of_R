@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2339,8 +2339,10 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
   Tamanho do texto dos rótulos (`labels`).\
   - `col`\
   Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,..., ou por nome como 'red', 'blue', etc.\
+  Neste caso colori os pedaços do gráfico circular/pizza.\
   - `text`\
-  Adiciona texto ao final do gráfico, neste caso a fonte usada para elaboração do gráfico.\
+  Adiciona texto ao final do gráfico, neste caso o texto é a fonte usada para elaboração do gráfico.\
+  Dentro do `text` apresenta parâmetros para localizar o texto na janela gráfica, o texto e tamanho da fonte.\
   - **rotulos**\
   Variável que recebe o texto, a partir da função `paste` de concatenação de texto e valores, com os rótulos de cada categoria, contendo nome de cada categoria (**x**) e porcentagem(**porc**).\
   - Exemplo:\
@@ -2369,10 +2371,34 @@ Podemos usar o comando `par(mfrow = c(i,j))` que prepara uma janela gráfica par
 
 
 ![Gráfico circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
-\newpage
+
+
 \newpage
 
 ### Gráfico de linhas (plot lines)
+
+- O gráfico de linhas (`plot`) é utilizado para vizualizar uma ou mais variáveis númericas que podem ser plotadas ao longo do tempo (não somente tempo) no eixo x.\
+- Podemos adicionar mais linhas (variáveis) no gráfico através do comando `lines`.\
+
+#### Pré-requisitos
+
+#### Preparação dos dados
+- Definir os limites do eixo y:\
+  - **li**\
+  - **ls**\
+  - Exemplo:\
+  ```
+  li <- min(y1,y2,y3,y4)
+  ls <- max(y1,y2,y3,y4)
+  ```
+  
+#### Plotagem gráfico plot
+
+![Gráfico de linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines.png){}
+
+
+\newpage
+
 ### Gráfico de dispersão (plot abline)
 ### boxplot e histograma (hist)
 

@@ -2450,9 +2450,12 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
     -   `col`  
         Comando para colorir diversos itens do gráfico, pode ser valores
         como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
+        Neste caso colori os pedaços do gráfico circular/pizza.  
     -   `text`  
-        Adiciona texto ao final do gráfico, neste caso a fonte usada
-        para elaboração do gráfico.  
+        Adiciona texto ao final do gráfico, neste caso o texto é a fonte
+        usada para elaboração do gráfico.  
+        Dentro do `text` apresenta parâmetros para localizar o texto na
+        janela gráfica, o texto e tamanho da fonte.  
     -   **rotulos**  
         Variável que recebe o texto, a partir da função `paste` de
         concatenação de texto e valores, com os rótulos de cada
@@ -2487,6 +2490,31 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 
 ### 10.1.3 Gráfico de linhas (plot lines)
+
+-   O gráfico de linhas (`plot`) é utilizado para vizualizar uma ou mais
+    variáveis númericas que podem ser plotadas ao longo do tempo (não
+    somente tempo) no eixo x.  
+-   Podemos adicionar mais linhas (variáveis) no gráfico através do
+    comando `lines`.  
+
+#### 10.1.3.1 Pré-requisitos
+
+#### 10.1.3.2 Preparação dos dados
+
+-   Definir os limites do eixo y:  
+    -   **li**  
+    -   **ls**  
+    -   Exemplo:  
+
+    <!-- -->
+
+        li <- min(y1,y2,y3,y4)
+        ls <- max(y1,y2,y3,y4)
+
+#### 10.1.3.3 Plotagem gráfico plot
+
+![Gráfico de
+linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines.png)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
