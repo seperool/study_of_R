@@ -1,6 +1,6 @@
-ESCRITO EM 28/04/23
+ESCRITO EM 29/04/23
 ---
-PARA 29/04/23
+PARA 30/04/23
 ---
 Subir github:
 
@@ -22,10 +22,6 @@ Afazeres:
 			- Cap. 7 - Visualizando dados
 				- Pacote básico
 					- gráficos
-						- linhas (plot lines)
-							- Pré-requisitos
-							- Preparação dos dados
-							- Plotagem gráfico plot
 						- dispersão (plot abline)
 						- baxplot e histograma (hist)
 				- ggplot2

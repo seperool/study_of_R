@@ -2450,9 +2450,12 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
     -   `col`  
         Comando para colorir diversos itens do gráfico, pode ser valores
         como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
+        Neste caso colori os pedaços do gráfico circular/pizza.  
     -   `text`  
-        Adiciona texto ao final do gráfico, neste caso a fonte usada
-        para elaboração do gráfico.  
+        Adiciona texto ao final do gráfico, neste caso o texto é a fonte
+        usada para elaboração do gráfico.  
+        Dentro do `text` apresenta parâmetros para localizar o texto na
+        janela gráfica, o texto e tamanho da fonte.  
     -   **rotulos**  
         Variável que recebe o texto, a partir da função `paste` de
         concatenação de texto e valores, com os rótulos de cada
@@ -2487,6 +2490,111 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 
 ### 10.1.3 Gráfico de linhas (plot lines)
+
+-   O gráfico de linhas (`plot`) é utilizado para vizualizar uma ou mais
+    variáveis númericas que podem ser plotadas ao longo do tempo (não
+    somente tempo) no eixo x.  
+-   Podemos adicionar mais linhas (variáveis) no gráfico através do
+    comando `lines`.  
+
+#### 10.1.3.1 Pré-requisitos
+
+-   Os dados devem estar organizados em formato tabular.  
+
+<!-- -->
+
+    dados_SP <- dados %>%
+      select(Mes, Estado, cheg_2012, cheg_2013, cheg_2014, cheg_2015) %>%
+      filter(Estado == "SaoPaulo")
+    dados_SP
+
+-   Separar as colunas em vetores.  
+
+<!-- -->
+
+    # Definindo os valores dos eixos
+    x <- dados_SP$Mes
+    y1 <- dados_SP$cheg_2012/1000
+    y2 <- dados_SP$cheg_2013/1000
+    y3 <- dados_SP$cheg_2014/1000
+    y4 <- dados_SP$cheg_2015/1000
+
+#### 10.1.3.2 Preparação dos dados
+
+-   Definir os limites do eixo y:  
+    -   **li**  
+        Variável que recebe o limite inferior do eixo y, com base no
+        menor valor do eixo y dos vetores de cada coluna.  
+    -   **ls**  
+        Variável que recebe o limite superior do eixo y, com base no
+        maior valor do eixo y dos vetores de cada coluna.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        # Definindo os limites do eixo y
+        li <- min(y1,y2,y3,y4)
+        ls <- max(y1,y2,y3,y4)
+
+#### 10.1.3.3 Plotagem gráfico plot
+
+-   Principais argumentos:  
+    -   **x**  
+        Variável do tipo vetor que recebe valores de tempo.  
+    -   **y1**, **y2**, **y3** e **y4**  
+        Variáveis do tipo vetor em que cada uma representa os valores de
+        uma linha.  
+    -   `lty`  
+        Especifica o tipo de linha.  
+    -   `lwd`  
+        Especifica a espessura da linha.  
+    -   `type`  
+        Especifica o tipo de plotagem, ‘b’ (pontos conectados por
+        linhas).  
+    -   `ylim`  
+        Controla os limites do eixo Y.  
+    -   `xlab`  
+        Rótulo do eixo X.  
+        Quando diversas linhas, o rótulo deve ser inicializado e zerado
+        dentro do `plot` e adicionado seu valor definitivo no na função
+        `title`.  
+    -   `ylab`  
+        Rótulo do eixo Y.  
+        Quando diversas linhas, o rótulo deve ser inicializado e zerado
+        dentro do `plot` e adicionado seu valor definitivo no na função
+        `title`.  
+    -   `lines`  
+        Adiciona novas linhas ao gráfico de linhas, cada uma com suas
+        particularidades.  
+    -   `title`  
+        Função que adiciona títulos, rótulos e texto ao gráfico de
+        linhas.  
+    -   `main`  
+        Título principal do gráfico.  
+    -   `sub`  
+        Adiciona texto ao final do gráfico.  
+    -   `cex.sub`  
+        Tamanho da fonte do texto.  
+    -   `legend`  
+        Adiciona um quadro de legenda a janela gráfica.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        plot(x, y1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li,ls*1.2),xlab ="",
+           ylab = "")
+        lines(x, y2, lty = 2, lwd = 1, type = "b")
+        lines(x, y3, lty = 3, lwd = 2, type = "b")
+        lines(x, y4, lty = 4, lwd = 1, type = "b")
+        title(main = "Chegada de turistas em São Paulo",
+            xlab ="Mês",
+            ylab = "Chegadas por mil",
+            sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.",
+            cex.sub = 0.8)
+        legend(9,400,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5)
+
+![Gráfico de
+linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines.png)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
