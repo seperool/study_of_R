@@ -2450,7 +2450,7 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
     -   `col`  
         Comando para colorir diversos itens do gráfico, pode ser valores
         como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
-        Neste caso colori os pedaços do gráfico circular/pizza.  
+        Neste caso para colorir os pedaços do gráfico circular/pizza.  
     -   `text`  
         Adiciona texto ao final do gráfico, neste caso o texto é a fonte
         usada para elaboração do gráfico.  
@@ -2555,14 +2555,14 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
         Controla os limites do eixo Y.  
     -   `xlab`  
         Rótulo do eixo X.  
-        Quando diversas linhas, o rótulo deve ser inicializado e zerado
-        dentro do `plot` e adicionado seu valor definitivo no na função
-        `title`.  
+        Quando o gráfico apresentar diversas linhas, o rótulo deve ser
+        inicializado e zerado dentro do `plot` e adicionado seu valor
+        definitivo na função `title`.  
     -   `ylab`  
         Rótulo do eixo Y.  
-        Quando diversas linhas, o rótulo deve ser inicializado e zerado
-        dentro do `plot` e adicionado seu valor definitivo no na função
-        `title`.  
+        Quando o gráfico apresentar diversas linhas, o rótulo deve ser
+        inicializado e zerado dentro do `plot` e adicionado seu valor
+        definitivo na função `title`.  
     -   `lines`  
         Adiciona novas linhas ao gráfico de linhas, cada uma com suas
         particularidades.  
@@ -2575,6 +2575,10 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
         Adiciona texto ao final do gráfico.  
     -   `cex.sub`  
         Tamanho da fonte do texto.  
+    -   `col`  
+        Comando para colorir diversos itens do gráfico, pode ser valores
+        como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
+        Neste caso para colorir as linhas do gráfico de linhas.  
     -   `legend`  
         Adiciona um quadro de legenda a janela gráfica.  
     -   Exemplo:  
@@ -2582,19 +2586,20 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
     <!-- -->
 
         plot(x, y1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li,ls*1.2),xlab ="",
-           ylab = "")
-        lines(x, y2, lty = 2, lwd = 1, type = "b")
-        lines(x, y3, lty = 3, lwd = 2, type = "b")
-        lines(x, y4, lty = 4, lwd = 1, type = "b")
+           ylab = "", col = "red")
+        lines(x, y2, lty = 2, lwd = 1, type = "b", col = "yellow")
+        lines(x, y3, lty = 3, lwd = 2, type = "b", col = "blue")
+        lines(x, y4, lty = 4, lwd = 1, type = "b", col = "green")
         title(main = "Chegada de turistas em São Paulo",
             xlab ="Mês",
             ylab = "Chegadas por mil",
             sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.",
             cex.sub = 0.8)
-        legend(9,400,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5)
+        legend(9,400,c("2012","2013","2014","2015"), col = c("red","yellow","blue","green"),
+            lty = 1:4, cex = 0.5)
 
 ![Gráfico de
-linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines.png)
+linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
