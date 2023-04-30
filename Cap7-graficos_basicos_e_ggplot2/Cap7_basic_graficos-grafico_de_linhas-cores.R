@@ -14,7 +14,7 @@ library(dplyr) #manipulação de dados
 library(tibble) #tipo de data.frame, "tabela"
 
 #banco de dados a ser trabalhado
-dados <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+dados <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 View(dados) #vizualizando dados
 
 #transformando tabela data.frame em tibble para trabalhar
