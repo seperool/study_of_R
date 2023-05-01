@@ -20,7 +20,7 @@ library(tibble) #tipo de data.frame, "tabela"
 library(data.table)
 
 #banco de dados a ser trabalhado
-dados <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+dados <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 #View(dados) #vizualizando dados
 
 #transformando tabela data.frame em tibble para trabalhar
@@ -80,7 +80,7 @@ z4
 #preparando a janela grafica para receber dois graficos
 #par(mfrow = c(2,1)) #necessidade de configurar margens
 #par(mar = c(6,4,1,1), mai = c(0.9,0.9,0.3,0.1)) 
-layout(matrix(c(1,2), 1, 2)) #tende a funcionar melhor que mfrow
+layout(matrix(c(1,2), 1, 2)) #tende a funcionar melhor que par(mfrow())
 #numero de linhas, numero de colunas
 
 #grafico 1
