@@ -2601,13 +2601,91 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 ![Gráfico de
 linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
 
+#### 10.1.3.4 Comparando séries de gráficos de linhas
+
+##### 10.1.3.4.1 O que é comparar séries
+
+-   O intuito é plotar mais de um gráfico na mesma janela gráfica, para
+    facilitar a comparação das diferentes séries de dados.  
+-   Sendo possível preparar a janela gráfica assim como uma matriz, para
+    receber gráficos em linha, ou em coluna, ou em linhas e colunas ao
+    mesmo tempo.  
+
+##### 10.1.3.4.2 Preparação da janela gráfica
+
+-   Existem duas formas de preparar a janela gráfica para receber os
+    gráficos:  
+    -   `par(mfrow = c(nº_linhas, nº_colunas))`  
+        Prepara a janela gráfica como uma matriz, sendo definido o
+        número de linhas e colunas a receber os gráficos.  
+        Necessita ajeitar os parâmetros de margem da janela
+        gráfica(`mai` e `mar`), por conta disto não é o mais aconselhado
+        de usar.  
+    -   `layout(matrix(nº_linhas,nº_colunas), nº_linhas, nº_colunas)`  
+        Prepara a janela gráfica como uma matriz, sendo definido o
+        número de linhas e colunas a receber os gráficos.  
+        Mais recomendado a utilização.  
+
+##### 10.1.3.4.3 Plotagem de gráficos de linhas comparando séries
+
+    #script para dois graficos de linha
+    #preparando a janela grafica para receber dois graficos
+
+    #metodo 1 - não recomendado
+    #par(mfrow = c(2,1)) #necessidade de configurar margens
+    #par(mar = c(6,4,1,1), mai = c(0.9,0.9,0.3,0.1))
+
+    #Metodo 2 - Recomendado
+    layout(matrix(c(1,2), 1, 2)) #tende a funcionar melhor que par(mfrow())
+    #numero de linhas, numero de colunas
+
+    #grafico 1
+
+    #definindo os limites do eixo y
+    li1 <- min(y1,y2,y3,y4)
+    ls1 <- max(y1,y2,y3,y4)
+
+    #script para o grafico de linha
+    plot(x1, y1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li1,ls1*1.2),xlab ="",
+         ylab = "") #xlab e ylab vazios some com os rotulos x e y, para que possa colocar a no titulo (title) abaixo
+    lines(x1, y2, lty = 2, lwd = 1, type = "b") #acrescenta y2
+    lines(x1, y3, lty = 3, lwd = 2, type = "b") #acrescenta y3
+    lines(x1, y4, lty = 4, lwd = 1, type = "b") #acrescenta y4
+    #lty = especifica o tipo de linha
+    #lwd = especifica a espessura da linha
+    #type = especifica o tipo de plotagem, 'b' (pontos conectados por linhas)
+    title(main = "Chegada de turistas em São Paulo",
+          xlab ="Mês",
+          ylab = "Chegadas por mil")
+    legend(9,400,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois primeiros valores são a posição (coordenadas) da legenda no grafico
+
+    #grafico 2
+
+    #definindo os limites do eixo y
+    li2 <- min(z1,z2,z3,z4)
+    ls2 <- max(z1,z2,z3,z4)
+
+    #script para o grafico de linha
+    plot(x2, z1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li2,ls2*1.2), xlab ="",
+             ylab = "") #xlab e ylab vazios some com os rotulos x e y, para que possa colocar a no titulo (title) abaixo
+    lines(x2, z2, lty = 2, lwd = 1, type = "b") #acrescenta y2
+    lines(x2, z3, lty = 3, lwd = 2, type = "b") #acrescenta y3
+    lines(x2, z4, lty = 4, lwd = 1, type = "b") #acrescenta y4
+    #lty = especifica o tipo de linha
+    #lwd = especifica a espessura da linha
+    #type = especifica o tipo de plotagem, 'b' (pontos conectados por linhas)
+    title(main = "Chegada de turistas em Rio de Janeiro",
+          xlab ="Mês",
+          ylab = "Chegadas por mil",
+          sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex.sub = 0.8)
+    legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois primeiros valores são a posição (coordenadas) da legenda no grafico
+
+![Gráfico de linha comparando
+séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series.png)
+
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
 ### 10.1.5 boxplot e histograma (hist)
-
--   Gráfico de linhas  
-    **plot** Para adicionar mais linhas no grafico:  
-    **lines**
 
 -   Gráfico de dispersão  
 
