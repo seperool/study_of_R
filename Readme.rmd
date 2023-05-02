@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: TRUE
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
   odt_document: 
     number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -953,28 +953,28 @@ z & v \\
 $f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$\
 
 - Limites\
-`$\lim_{n \to \infty}x_n$` = $\lim_{n \to \infty}x_n$\
+`$\lim_{n \to \infty}x_n$` = $\lim_{n \to \infty}x_n$
 
 - Integral\
-`$\int_{-N}^{N} e^x\, dx$` = $\int_{-N}^{N} e^x\, dx$\
+`$\int_{-N}^{N} e^x\, dx$` = $\int_{-N}^{N} e^x\, dx$
 
 - Integral Linear\
-`$\oint_{C}x^3 \, dx + 4y^2 \, dy$` = $\oint_{C}x^3 \, dx + 4y^2 \, dy$\
+`$\oint_{C}x^3 \, dx + 4y^2 \, dy$` = $\oint_{C}x^3 \, dx + 4y^2 \, dy$
 
 - Integral Múltipla\
-`$\iiint_V \mu(u,v,w) \, du \, dv \, dw$` = $\iiint_V \mu(u,v,w) \, du \, dv \, dw$\
+`$\iiint_V \mu(u,v,w) \, du \, dv \, dw$` = $\iiint_V \mu(u,v,w) \, du \, dv \, dw$
 
 - Somatório\
-`$\sum_{k=1}^{N} k^2$` = $\sum_{k=1}^{N} k^2$\
+`$\sum_{k=1}^{N} k^2$` = $\sum_{k=1}^{N} k^2$
 
 - Somatório com dois índices\
-`$\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$` = $\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$\
+`$\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$` = $\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$
 
 - Produtório\
-`$\prod_{i=1}^{N}x_{i}$` = $\prod_{i=1}^{N}x_{i}$\
+`$\prod_{i=1}^{N}x_{i}$` = $\prod_{i=1}^{N}x_{i}$
 
 - Raiz n-ésima\
-`$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt[n]{x}$\
+`$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt[n]{x}$
 
 \newpage
 
@@ -2547,6 +2547,15 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
 \newpage
 
 ### Gráfico de dispersão (plot abline)
+
+#### Pré-requisitos
+
+#### Preparação dos dados
+
+#### Plotagem gráfico plot abline
+
+\newpage
+
 ### boxplot e histograma (hist)
 
 \newpage

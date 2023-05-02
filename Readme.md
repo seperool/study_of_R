@@ -1052,33 +1052,32 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     $f(n) = \Bigg \\{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\\\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$  
 
 -   Limites  
-    `$\lim_{n \to \infty}x_n$` =
-    lim<sub>*n* → ∞</sub>*x*<sub>*n*</sub>  
+    `$\lim_{n \to \infty}x_n$` = lim<sub>*n* → ∞</sub>*x*<sub>*n*</sub>
 
 -   Integral  
     `$\int_{-N}^{N} e^x\, dx$` =
-    ∫<sub>−*N*</sub><sup>*N*</sup>*e*<sup>*x*</sup> *d**x*  
+    ∫<sub>−*N*</sub><sup>*N*</sup>*e*<sup>*x*</sup> *d**x*
 
 -   Integral Linear  
     `$\oint_{C}x^3 \, dx + 4y^2 \, dy$` =
-    ∮<sub>*C*</sub>*x*<sup>3</sup> *d**x* + 4*y*<sup>2</sup> *d**y*  
+    ∮<sub>*C*</sub>*x*<sup>3</sup> *d**x* + 4*y*<sup>2</sup> *d**y*
 
 -   Integral Múltipla  
     `$\iiint_V \mu(u,v,w) \, du \, dv \, dw$` =
-    ∭<sub>*V*</sub>*μ*(*u*,*v*,*w*) *d**u* *d**v* *d**w*  
+    ∭<sub>*V*</sub>*μ*(*u*,*v*,*w*) *d**u* *d**v* *d**w*
 
 -   Somatório  
-    `$\sum_{k=1}^{N} k^2$` = $\sum\_{k=1}^{N} k^2$  
+    `$\sum_{k=1}^{N} k^2$` = $\sum\_{k=1}^{N} k^2$
 
 -   Somatório com dois índices  
     `$\sum_{\overset{0<i<m}{0<j<n}}k_{i,j}$` =
-    $\sum\_{\overset{0\<i\<m}{0\<j\<n}}k\_{i,j}$  
+    $\sum\_{\overset{0\<i\<m}{0\<j\<n}}k\_{i,j}$
 
 -   Produtório  
-    `$\prod_{i=1}^{N}x_{i}$` = $\prod\_{i=1}^{N}x\_{i}$  
+    `$\prod_{i=1}^{N}x_{i}$` = $\prod\_{i=1}^{N}x\_{i}$
 
 -   Raiz n-ésima  
-    `$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt\[n\]{x}$  
+    `$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt\[n\]{x}$
 
 ### 7.9.6 Sinais e setas
 
@@ -2684,6 +2683,12 @@ linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
 séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series.png)
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
+
+#### 10.1.4.1 Pré-requisitos
+
+#### 10.1.4.2 Preparação dos dados
+
+#### 10.1.4.3 Plotagem gráfico plot abline
 
 ### 10.1.5 boxplot e histograma (hist)
 
