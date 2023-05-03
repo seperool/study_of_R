@@ -2684,11 +2684,33 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 
 ### 10.1.4 Gráfico de dispersão (plot abline)
 
+-   O gráfico de dispersão é usado para observar a relação entre duas
+    variáveis quantitativas (que podem ser contadas).  
+-   O pesquisar a principio busca uma relação linear, logo a visão do
+    gráfico deve ser acompanhado do **coeficiente de correlação
+    linear**, que mede matematicamente a intensidade dessa relação.  
+-   **Coeficiente de correlação linear**:  
+    -   A relação entre duas variáveis é chamada **regressão linear
+        simples**.  
+    -   O coeficiente de **correlação linear** é uma medida que varia
+        entre 1 e -1.  
+    -   Espera-se encontrar valores próximos de -1 e 1 no caso de
+        presença de relacionamento linear.  
+    -   no caso de 1.  
+        O coeficiente é positivo ou dito crescente, uma variável cresce
+        acompanhando o crescimento da outra.  
+    -   no caso de -1.  
+        O coeficiente é negativo ou dito decrescente, uma variável
+        cresce com o decaimento da outra.  
+
 #### 10.1.4.1 Pré-requisitos
 
 #### 10.1.4.2 Preparação dos dados
 
 #### 10.1.4.3 Plotagem gráfico plot abline
+
+![Gráfico de
+dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 
 ### 10.1.5 boxplot e histograma (hist)
 

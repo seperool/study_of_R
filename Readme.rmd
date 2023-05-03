@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: TRUE
-  html_document:
+  md_document:
     number_sections: true
-    df_print: paged
-  github_document: 
+    variant: markdown_github
   odt_document: 
     number_sections: true
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2548,11 +2548,27 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
 
 ### Gráfico de dispersão (plot abline)
 
+- O gráfico de dispersão é usado para observar a relação entre duas variáveis quantitativas (que podem ser contadas).\
+- O pesquisar a principio busca uma relação linear, logo a visão do gráfico deve ser acompanhado do **coeficiente de correlação linear**, que mede matematicamente a intensidade dessa relação.\
+- **Coeficiente de correlação linear**:\
+  - A relação entre duas variáveis é chamada **regressão linear simples**.\
+  - O coeficiente de **correlação linear** é uma medida que varia entre 1 e -1.\
+  - Espera-se encontrar valores próximos de -1 e 1 no caso de presença de relacionamento linear.\
+  - no caso de 1.\
+  O coeficiente é positivo ou dito crescente, uma variável cresce acompanhando o crescimento da outra.\
+  - no caso de -1.\
+  O coeficiente é negativo ou dito decrescente, uma variável cresce com o decaimento da outra.\
+  
 #### Pré-requisitos
 
 #### Preparação dos dados
 
 #### Plotagem gráfico plot abline
+
+
+
+![Gráfico de dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png){}
+
 
 \newpage
 
