@@ -1,6 +1,6 @@
-ESCRITO EM 01/05/23
+ESCRITO EM 03/05/23
 ---
-PARA 02/05/23
+PARA 04/05/23
 ---
 Subir github:
 
@@ -23,6 +23,9 @@ Afazeres:
 				- Pacote básico
 					- gráficos
 						- dispersão (plot abline)
+							- Pré-requisitos
+							- Preparação dos dados
+							- Plotagem gráfico plot abline
 						- baxplot e histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
