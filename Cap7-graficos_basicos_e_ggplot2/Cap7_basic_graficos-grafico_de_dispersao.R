@@ -22,12 +22,12 @@ library(dplyr) #manipulação de dados
 library(tidyr) #organização de dados
 
 #importando dados a serem trabalhados
-turismo <- read_csv("Documentos/Dados_uff_R/turismo.csv")
+turismo <- read_csv("/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 #View(turismo)
 
 #trasformando tabela data.frame em tibble
 turismo<- tibble::tibble(turismo)
-is.tibble(turismo)
+is_tibble(turismo)
 
 #verificando tipo de dados da tabela
 class(turismo)
