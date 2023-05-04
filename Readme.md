@@ -2707,7 +2707,61 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 
 #### 10.1.4.2 Preparação dos dados
 
+-   Correlação:  
+-   Coeficiente de reta de regressão:  
+
 #### 10.1.4.3 Plotagem gráfico plot abline
+
+-   Funções usadas:  
+    -   `paste`  
+    -   `eval`  
+    -   `expression`  
+-   Principais argumentos do gráfico de dispersão:  
+    -   **x**  
+    -   **y**  
+    -   `main`  
+    -   `xlab`  
+    -   `ylab`  
+    -   `text`  
+    -   `abline`  
+    -   `lty`  
+    -   `lwd`  
+    -   Exemplo:  
+
+    <!-- -->
+
+        #Observando a correlação entre as chegadas de São Paulo e Rio de Janeiro
+        x <- dados_RJ$cheg_2014/1000
+        y <- dados_SP$cheg_2014/1000
+        x
+        y
+
+        #Obtendo a correlação
+        cor(x,y)
+
+        #Obtendo os coeficientes da reta de regressão
+        lm(y ~ x)$coef
+        #lm = é usado para ajustar modelos lineares. Ele pode ser usado para realizar regressão, análise de variância de estrato único e análise de covariância 
+        #coef = é uma função genérica que extrai coeficientes de modelo de objetos retornados por funções de modelagem. coeficientes é um apelido para ele.
+
+        #Gráfico de dispersão
+        plot(x, y, 
+           main = paste("Gráfico de Dispersão entre as chegadas de turistas de 2014",
+                        "\n","São Paulo x Rio de Janeiro"),
+           xlab = "Chegadas no Rio de Janeiro/1000",
+           ylab = "Chegadas em São Paulo/1000"
+           )
+        abline(lm(y ~ x), lty = 2, lwd = 2) #adiciona a reta tracejada
+        #lty = especifica o tipo de linha
+        #lwd = especifica a espessura da linha
+        text(130,230,"reta de regressão") #adiciona texto na posição (130,230)
+        text(130,210,paste("y = ",eval(expression(round(lm(y ~ x)$coef[[2]],2))), 
+                         #[[j]] seleciona a coluna j.
+                         "x + ",eval(expression(round(lm(y ~ x)$coef[[1]],2)))))
+        #adiciona equação na posição (130,210)
+        #paste = Concatenar vetores após a conversão em caractere.
+        #eval = Avalie uma expressão R em um ambiente especificado.
+        #expression = Cria ou testa objetos do modo "expressão".
 
 ![Gráfico de
 dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
