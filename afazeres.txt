@@ -3,7 +3,12 @@ ESCRITO EM 05/05/23
 PARA 06/05/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 7 - Visualizando dados
+				- Pacote básico
+					- gráficos
+						- dispersão (plot abline)
+							- Plotagem gráfico plot abline
 Estudar:
 
 Afazeres:
@@ -25,7 +30,6 @@ Afazeres:
 						- dispersão (plot abline)
 							- Pré-requisitos
 							- Preparação dos dados
-							- Plotagem gráfico plot abline
 						- baxplot e histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
