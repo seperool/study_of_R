@@ -2713,9 +2713,16 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 #### 10.1.4.3 Plotagem gráfico plot abline
 
 -   Funções usadas:  
-    -   `paste`  
-    -   `eval`  
-    -   `expression`  
+    -   `paste()`  
+        Concatena as strings e valores.  
+    -   `expression()`  
+        Salva numa variável o desenho de texto no formato
+        **expression**, ou seja, uma expressão matematica, uma
+        equação.  
+        As Expressões (**expressions**) podem ser usadas como título,
+        subtitulo e rotulos de eixos.  
+    -   `eval()`  
+        Avalia, e se possivel resolve, uma **expression**.  
 -   Principais argumentos do gráfico de dispersão:  
     -   **x**  
     -   **y**  

@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: TRUE
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2570,9 +2570,13 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
 
 #### Plotagem gráfico plot abline
 - Funções usadas:\
-  - `paste`\
-  - `eval`\
-  - `expression`\
+  - `paste()`\
+  Concatena as strings e valores.\
+  - `expression()`\
+  Salva numa variável o desenho de texto no formato **expression**, ou seja, uma expressão matematica, uma equação.\
+  As Expressões (**expressions**) podem ser usadas como título, subtitulo e rotulos de eixos.\
+  - `eval()`\
+  Avalia, e se possivel resolve, uma **expression**.\
 - Principais argumentos do gráfico de dispersão:\
   - **x**\
   - **y**\
