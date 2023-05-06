@@ -2725,14 +2725,25 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
         Avalia, e se possivel resolve, uma **expression**.  
 -   Principais argumentos do gráfico de dispersão:  
     -   **x**  
+        Vetor com variável quantitativa x.  
     -   **y**  
+        Vetor com variável quantitativa y.  
     -   `main`  
+        Título principal do gráfico.  
     -   `xlab`  
+        Rótulo do eixo x.  
     -   `ylab`  
+        Rótulo do eixo y.  
     -   `text`  
+        Adiciona texto ao gráfico.  
+        Neste caso adiciona, pela posição do texto inserido, o nome a
+        reta e a equação/expressão da reta.  
     -   `abline`  
+        Adiciona a reta tracejada.  
     -   `lty`  
+        Especifica o tipo de linha.  
     -   `lwd`  
+        Especifica a espessura da linha.  
     -   Exemplo:  
 
     <!-- -->
