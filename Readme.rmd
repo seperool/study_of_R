@@ -6,18 +6,18 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  github_document: 
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2563,8 +2563,30 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
 
 #### Preparação dos dados
 
-- Correlação:\
+- Correlação linear:\
+  - Teoria\
+  
+  - Cálculo de correlação linear:\
+  $$cor_{x,y} = \frac{n \sum x_i y_i \, \cdot \, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \, \cdot \, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+  
+  Onde,\
+  $n$ é o número de registros/linhas.\
+  $x_i$ é o vetor x.\
+  $y_i$ é o vetor y.\
+  $xy$ é x vezes y.\
+  
+  Uma forma rápida e simples de resolver o cálculo é preencher a tabela de correlação linear com as informações:\
+  
+  
+  ![Tabela de correlação linear](./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png){}
+  
+  
+  - `cor(x,y)`\
+  Função no **R** que cálcula a correlação linear das variáveis vetor x e y.\ 
+
 - Coeficiente de reta de regressão:\
+
+
 
 \newpage
 

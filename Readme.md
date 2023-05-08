@@ -2707,7 +2707,29 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 
 #### 10.1.4.2 Preparação dos dados
 
--   Correlação:  
+-   Correlação linear:  
+
+    -   Teoria  
+
+    -   Cálculo de correlação linear:  
+        $$cor\_{x,y} = \frac{n \sum x_i y_i \\, \cdot \\, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\, \cdot \\, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+
+    Onde,  
+    *n* é o número de registros/linhas.  
+    *x*<sub>*i*</sub> é o vetor x.  
+    *y*<sub>*i*</sub> é o vetor y.  
+    *x**y* é x vezes y.  
+
+    Uma forma rápida e simples de resolver o cálculo é preencher a
+    tabela de correlação linear com as informações:  
+
+    ![Tabela de correlação
+    linear](./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png)
+
+    -   `cor(x,y)`  
+        Função no **R** que cálcula a correlação linear das variáveis
+        vetor x e y. 
+
 -   Coeficiente de reta de regressão:  
 
 #### 10.1.4.3 Plotagem gráfico plot abline
