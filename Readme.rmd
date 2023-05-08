@@ -3,20 +3,20 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
   github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   word_document: 
     toc: TRUE
-    number_sections: true
-  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -2567,7 +2567,7 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
   - Teoria\
   
   - Cálculo de correlação linear:\
-  $$cor_{x,y} = \frac{n \sum x_i y_i \, \cdot \, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \, \cdot \, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+  $$cor_{x,y} = \frac{n \sum x_i y_i \, - \, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \, \cdot \, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
   
   Onde,\
   $n$ é o número de registros/linhas.\
@@ -2582,12 +2582,24 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
   
   
   - `cor(x,y)`\
-  Função no **R** que cálcula a correlação linear das variáveis vetor x e y.\ 
+  Função do **R** que cálcula a correlação linear das variáveis vetor x e y.\ 
 
 - Coeficiente de reta de regressão:\
+Tenta traçar uma reta que melhor aproxime todos os pontos dispersos.\
+$$ y = A + Bx$$
+Onde,\
+$A$ é o intercepto\
+$B$ é o coeficiente angular.\
 
+  - Coeficiente angular:\
+  $$B = \frac{ n \sum x_i y_i - \sum x_i \sum y_i}{ n \sum x_i^2 - ( \sum x_i)^2}$$
+  - Intercepto:\
+  $$A = \frac{ \sum y - B \sum x }{n}$$
 
-
+  - `lm(y ~ x)$coef`\
+  Esta função do **R** retorna os coeficientes da reta de regressão (**intercepto** e **coeficiente angular**).\
+  A parte da função `$coef` apenas retorna de maneira mais direta os coeficientes separados, assim deixando claro em cada coluna o que é **intercepto** e o que é **coeficiente angular**.\
+  
 \newpage
 
 #### Plotagem gráfico plot abline

@@ -2712,7 +2712,7 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
     -   Teoria  
 
     -   Cálculo de correlação linear:  
-        $$cor\_{x,y} = \frac{n \sum x_i y_i \\, \cdot \\, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\, \cdot \\, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+        $$cor\_{x,y} = \frac{n \sum x_i y_i \\, - \\, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\, \cdot \\, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
 
     Onde,  
     *n* é o número de registros/linhas.  
@@ -2727,10 +2727,29 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
     linear](./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png)
 
     -   `cor(x,y)`  
-        Função no **R** que cálcula a correlação linear das variáveis
+        Função do **R** que cálcula a correlação linear das variáveis
         vetor x e y. 
 
 -   Coeficiente de reta de regressão:  
+    Tenta traçar uma reta que melhor aproxime todos os pontos
+    dispersos.  
+    *y* = *A* + *B**x*
+    Onde,  
+    *A* é o intercepto  
+    *B* é o coeficiente angular.  
+
+    -   Coeficiente angular:  
+        $$B = \frac{ n \sum x_i y_i - \sum x_i \sum y_i}{ n \sum x_i^2 - ( \sum x_i)^2}$$
+
+    -   Intercepto:  
+        $$A = \frac{ \sum y - B \sum x }{n}$$
+
+    -   `lm(y ~ x)$coef`  
+        Esta função do **R** retorna os coeficientes da reta de
+        regressão (**intercepto** e **coeficiente angular**).  
+        A parte da função `$coef` apenas retorna de maneira mais direta
+        os coeficientes separados, assim deixando claro em cada coluna o
+        que é **intercepto** e o que é **coeficiente angular**.  
 
 #### 10.1.4.3 Plotagem gráfico plot abline
 
