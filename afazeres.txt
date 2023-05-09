@@ -1,6 +1,6 @@
-ESCRITO EM 08/05/23
+ESCRITO EM 09/05/23
 ---
-PARA 09/05/23
+PARA 10/05/23
 ---
 Subir github:
 
@@ -27,7 +27,6 @@ Afazeres:
 							- Preparação dos dados
 								- correlação linear
 									- teoria
-								- coeficiente de reta de regressão
 						- baxplot e histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
