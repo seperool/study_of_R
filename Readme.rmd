@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2563,9 +2563,17 @@ legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois prim
 
 #### Preparação dos dados
 
-- Correlação linear:\
+- Coeficiente de Correlação linear:\
   - Teoria\
-  
+    - O coeficiente de correlação tem o objetivo de entender como uma variável se comporta num cenario onde a outra variável variando. E se existe alguma relação entre a variabilidade de ambas as variáveis.\
+    - Os coeficientes variam de 1 a -1. Quanto mais proximo dos extremos, mais forte é a relação entre as variáveis. Quanto mais proximo do centro 0, menor é a relação entre as variáveis. Em 0 não existe relação entre as variáveis.\
+      
+    ![Correlações fortes e fracas](./Cap7-graficos_basicos_e_ggplot2/Imagens/correlacao.png)  
+    - A correlação proximo do valor 1, significa que a relação é positiva, ou seja, a reta de regressão é ascendente. Quando uma variável aumenta a outra aumenta também.\
+    - A correlação proximo do valor -1, significa que a relação é Negativa, ou seja, a reta de regressão é descendente. Quando uma variável diminui a outra aumenta.\
+      
+    ![Tipos de Correlação](./Cap7-graficos_basicos_e_ggplot2/Imagens/graficos_tipos_correlacao.png)  
+
   - Cálculo de correlação linear:\
   $$cor_{x,y} = \frac{n \sum x_i y_i \, - \, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \, \cdot \, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
   
