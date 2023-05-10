@@ -1,6 +1,6 @@
-ESCRITO EM 09/05/23
+ESCRITO EM 10/05/23
 ---
-PARA 10/05/23
+PARA 11/05/23
 ---
 Subir github:
 
@@ -24,9 +24,6 @@ Afazeres:
 					- gráficos
 						- dispersão (plot abline)
 							- Pré-requisitos
-							- Preparação dos dados
-								- correlação linear
-									- teoria
 						- baxplot e histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
