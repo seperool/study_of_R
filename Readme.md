@@ -2705,6 +2705,9 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 
 #### 10.1.4.1 Pré-requisitos
 
+-   Os dados devem estar em formato tabular, ou as variáveis em formato
+    de vetor.  
+
 #### 10.1.4.2 Preparação dos dados
 
 -   Coeficiente de Correlação linear:  
@@ -2847,21 +2850,20 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 ![Gráfico de
 dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 
-### 10.1.5 boxplot e histograma (hist)
+### 10.1.5 Diagrama de caixa (boxplot)
 
--   Gráfico de dispersão  
+#### 10.1.5.1 Pré-requisitos
 
-    -   Para obter a correlação.  
-        **cor**(x,y)  
-    -   Para obter o coeficiente da reta de regressão.  
-        **lm**(y \~x)$coef  
-    -   Adiciona a reta tracejada.  
-        **abline**  
+#### 10.1.5.2 Preparação dos dados
+
+#### 10.1.5.3 Plotagem gráfico boxplot
+
+### 10.1.6 histograma (hist)
+
+-   **Boxplot** (diagrama de caixa)  
 
 -   Histograma  
     **hist**  
-
--   **Boxplot** (diagrama de caixa)  
 
 ## 10.2 Pacote **ggplot2**
 
