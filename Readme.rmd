@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: TRUE
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
-  odt_document: 
+  github_document: 
+  html_document:
     number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2696,12 +2696,11 @@ $B$ é o coeficiente angular.\
 
 ### histograma (hist)
 
-\newpage
+#### Pré-requisitos
 
-- **Boxplot** (diagrama de caixa)\
+#### Preparação dos dados
 
-- Histograma\
-**hist**\
+#### Plotagem gráfico boxplot
 
 \newpage
 

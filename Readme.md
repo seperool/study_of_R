@@ -2860,10 +2860,11 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 
 ### 10.1.6 histograma (hist)
 
--   **Boxplot** (diagrama de caixa)  
+#### 10.1.6.1 Pré-requisitos
 
--   Histograma  
-    **hist**  
+#### 10.1.6.2 Preparação dos dados
+
+#### 10.1.6.3 Plotagem gráfico boxplot
 
 ## 10.2 Pacote **ggplot2**
 
