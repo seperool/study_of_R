@@ -2852,11 +2852,52 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 
 ### 10.1.5 Diagrama de caixa (boxplot)
 
-#### 10.1.5.1 Pré-requisitos
+-   O **Diagrama de caixa** serve para compreensão da forma e amplitude
+    dos dados.  
+-   É importante para fazer o **diagrama de caixa** conhecer a fórmula
+    das **separatrizes**.  
+-   O **diagrama de caixa** usa em sua construção os conceitos de
+    **quartis** (**Q1**, **Q2**, e **Q3**).  
 
-#### 10.1.5.2 Preparação dos dados
+#### 10.1.5.1 Separatrizes
 
-#### 10.1.5.3 Plotagem gráfico boxplot
+-   Quartis:  
+
+    -   Q1 (25%)  
+    -   Q2 (50% ou mediana)  
+    -   Q3 (75%)  
+
+-   Tabela de classes e frequências.  
+
+-   Como achar o intervalo de classe que corresponde a separatriz
+    calculada.  
+    Ex.: Se Q1 (25%), achar na tabela de classes e frequências, na
+    coluna frequência acumulada, a classe que contém o valor que
+    corresponde a 25% da frequência acumulada total.  
+    Esse intervalo de classe será a classe selecionada para aplicação da
+    fórmula.  
+
+-   Fórmula da separatriz:  
+    $$P_k = Li + \frac{k \cdot \sum f_i - F\_{anterior}}{f\_{intervalo}} \cdot h$$
+
+onde,  
+*P*<sub>*k*</sub> é o percentil (separatriz),  
+*L**i* é o limite inferior do intervalo de classe selecionada,  
+*k* é o número em fração do percentil,  
+*f*<sub>*i*</sub> é a frequência,  
+∑*f*<sub>*i*</sub> é a frequência acumulada total,  
+*F*<sub>*a**n**t**e**r**i**o**r*</sub> é a frequencia acumulada do
+intervalo de classe anterior (ao selecionado) do qual se esta
+calculando,  
+*f*<sub>*i**n**t**e**r**v**a**l**o*</sub> é a frequência do intervalo de
+classe selecionada,  
+*h* é a amplitude de classe (*L**s* − *L**i*).  
+
+#### 10.1.5.2 Pré-requisitos
+
+#### 10.1.5.3 Preparação dos dados
+
+#### 10.1.5.4 Plotagem gráfico boxplot
 
 ### 10.1.6 histograma (hist)
 
