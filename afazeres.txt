@@ -24,6 +24,7 @@ Afazeres:
 					- gráficos
 						- baxplot
 							- separatrizes
+								- tabela de classes e frequências
 							- pré-requisito
 							- preparação dos dados
 							- plotagem gráfico boxplot
