@@ -1,6 +1,6 @@
-ESCRITO EM 11/05/23
+ESCRITO EM 14/05/23
 ---
-PARA 12/05/23
+PARA 15/05/23
 ---
 Subir github:
 
@@ -23,6 +23,7 @@ Afazeres:
 				- Pacote básico
 					- gráficos
 						- baxplot
+							- separatrizes
 							- pré-requisito
 							- preparação dos dados
 							- plotagem gráfico boxplot
