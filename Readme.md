@@ -2862,12 +2862,13 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 #### 10.1.5.1 Separatrizes
 
 -   Quartis:  
-
     -   Q1 (25%)  
     -   Q2 (50% ou mediana)  
     -   Q3 (75%)  
+-   Tabela de classes e frequências:  
 
--   Tabela de classes e frequências.  
+![Exemplo de tabela de variáveis quantitativa contínua e
+frequência](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png)
 
 -   Como achar o intervalo de classe que corresponde a separatriz
     calculada.  
