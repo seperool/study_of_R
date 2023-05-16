@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
-  github_document: 
+  md_document:
+    number_sections: true
+    variant: markdown_github
   odt_document: 
     number_sections: true
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2721,6 +2721,28 @@ $F_{anterior}$ é a frequencia acumulada do intervalo de classe anterior (ao sel
 $f_{intervalo}$ é a frequência do intervalo de classe selecionada,\
 $h$ é a amplitude de classe ($Ls - Li$).\
 
+#### boxplot
+- Montando a box:\
+A box contém como limite superior $Q_3$, limite inferior $Q_1$ e linha interna a mediana ($Q_2$).\
+
+- Intervalo interquartil:\
+$$IQR = Q_3 - Q_1$$
+
+- Limites:\
+  - Máximo\
+  $$L_{máx} = Q_3 + 1,5 \cdot (IQR)$$
+  - Mínimo\
+  $$L_{mín} = Q_1 - 1,5 \cdot (IQR)$$
+
+- Outliners\
+
+- Exemplo explicativo de boxplot:\
+
+
+![Exemplo explicativo de boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg){}
+
+
+\newpage
 
 #### Pré-requisitos
 

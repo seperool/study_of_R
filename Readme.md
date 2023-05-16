@@ -2894,11 +2894,34 @@ calculando,
 classe selecionada,  
 *h* é a amplitude de classe (*L**s* − *L**i*).  
 
-#### 10.1.5.2 Pré-requisitos
+#### 10.1.5.2 boxplot
 
-#### 10.1.5.3 Preparação dos dados
+-   Montando a box:  
+    A box contém como limite superior *Q*<sub>3</sub>, limite inferior
+    *Q*<sub>1</sub> e linha interna a mediana (*Q*<sub>2</sub>).  
 
-#### 10.1.5.4 Plotagem gráfico boxplot
+-   Intervalo interquartil:  
+    *I**Q**R* = *Q*<sub>3</sub> − *Q*<sub>1</sub>
+
+-   Limites:  
+
+    -   Máximo  
+        *L*<sub>*m**á**x*</sub> = *Q*<sub>3</sub> + 1, 5 ⋅ (*I**Q**R*)
+    -   Mínimo  
+        *L*<sub>*m**í**n*</sub> = *Q*<sub>1</sub> − 1, 5 ⋅ (*I**Q**R*)
+
+-   Outliners  
+
+-   Exemplo explicativo de boxplot:  
+
+![Exemplo explicativo de
+boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg)
+
+#### 10.1.5.3 Pré-requisitos
+
+#### 10.1.5.4 Preparação dos dados
+
+#### 10.1.5.5 Plotagem gráfico boxplot
 
 ### 10.1.6 histograma (hist)
 
