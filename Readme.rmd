@@ -3,18 +3,18 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  odt_document: 
-    number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  odt_document: 
+    number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
   word_document: 
     toc: TRUE
     number_sections: true
@@ -2734,7 +2734,9 @@ $$IQR = Q_3 - Q_1$$
   - Mínimo\
   $$L_{mín} = Q_1 - 1,5 \cdot (IQR)$$
 
-- Outliners\
+- Valores discrepantes (**Outliers**):\
+  - Possíveis erros (arredondamento ou observação).\
+  - Alguma condição especial que deve ser observada separadamente.\
 
 - Exemplo explicativo de boxplot:\
 

@@ -2910,7 +2910,10 @@ classe selecionada,
     -   Mínimo  
         *L*<sub>*m**í**n*</sub> = *Q*<sub>1</sub> − 1, 5 ⋅ (*I**Q**R*)
 
--   Outliners  
+-   Valores discrepantes (**Outliers**):  
+
+    -   Possíveis erros (arredondamento ou observação).  
+    -   Alguma condição especial que deve ser observada separadamente.  
 
 -   Exemplo explicativo de boxplot:  
 
