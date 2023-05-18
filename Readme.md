@@ -2917,14 +2917,52 @@ classe selecionada,
 
 -   Exemplo explicativo de boxplot:  
 
-![Exemplo explicativo de
-boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg"
+style="width:50.0%" alt="Exemplo explicativo de boxplot" />
+<figcaption aria-hidden="true">Exemplo explicativo de
+boxplot</figcaption>
+</figure>
 
 #### 10.1.5.3 Pré-requisitos
 
+-   Os dados devem estar em formato tabular.  
+
 #### 10.1.5.4 Preparação dos dados
 
+-   A variável em formato de vetor.  
+    Ex.: `x <- turismo$cheg_2012/1000`  
+
 #### 10.1.5.5 Plotagem gráfico boxplot
+
+-   Principais argumentos do gráfico de dispersão:  
+    -   **x**  
+        Variável em formato de vetor.  
+    -   `main`  
+        Título principal do gráfico.  
+    -   `xlab`  
+        Rótulo do eixo x.  
+    -   `ylab`  
+        Rótulo do eixo y.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        #Variável x
+        x <- turismo$cheg_2012/1000
+
+        #Plotando o diagrama de caixa - boxplot
+        boxplot(x,
+              main ="Boxplot das chegadas de Turistas ao Brasil em 2012",
+              xlab ="Ano de 2012",
+              ylab ="Chegadas de turistas em 2012 por mil")
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/boxplot.png"
+style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
+<figcaption aria-hidden="true">Gráfico de caixa (boxplot)</figcaption>
+</figure>
 
 ### 10.1.6 histograma (hist)
 

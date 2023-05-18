@@ -3,18 +3,18 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
@@ -2721,6 +2721,8 @@ $F_{anterior}$ é a frequencia acumulada do intervalo de classe anterior (ao sel
 $f_{intervalo}$ é a frequência do intervalo de classe selecionada,\
 $h$ é a amplitude de classe ($Ls - Li$).\
 
+\newpage
+
 #### boxplot
 - Montando a box:\
 A box contém como limite superior $Q_3$, limite inferior $Q_1$ e linha interna a mediana ($Q_2$).\
@@ -2741,16 +2743,45 @@ $$IQR = Q_3 - Q_1$$
 - Exemplo explicativo de boxplot:\
 
 
-![Exemplo explicativo de boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg){}
+![Exemplo explicativo de boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg){ width=50% }
 
 
 \newpage
 
 #### Pré-requisitos
 
+- Os dados devem estar em formato tabular.\
+
 #### Preparação dos dados
 
+- A variável em formato de vetor.\
+Ex.: `x <- turismo$cheg_2012/1000`\
+
 #### Plotagem gráfico boxplot
+- Principais argumentos do gráfico de dispersão:\
+  - **x**\
+  Variável em formato de vetor.\
+  - `main`\
+  Título principal do gráfico.\
+  - `xlab`\
+  Rótulo do eixo x.\
+  - `ylab`\
+  Rótulo do eixo y.\
+  - Exemplo:\
+  ```
+  #Variável x
+  x <- turismo$cheg_2012/1000
+  
+  #Plotando o diagrama de caixa - boxplot
+  boxplot(x,
+        main ="Boxplot das chegadas de Turistas ao Brasil em 2012",
+        xlab ="Ano de 2012",
+        ylab ="Chegadas de turistas em 2012 por mil")
+  ```
+
+
+![Gráfico de caixa (boxplot)](./Cap7-graficos_basicos_e_ggplot2/Graficos/boxplot.png){width=80% }
+
 
 \newpage
 
