@@ -1,13 +1,9 @@
-ESCRITO EM 17/05/23
+ESCRITO EM 18/05/23
 ---
-PARA 18/05/23
+PARA 19/05/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 7 - Visualizando dados
-			- Pacote básico
-				- gráficos
-					- Plotagem gráfico boxplot
+
 Estudar:
 
 Afazeres:
