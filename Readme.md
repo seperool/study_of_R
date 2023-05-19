@@ -2865,10 +2865,10 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
     -   Q1 (25%)  
     -   Q2 (50% ou mediana)  
     -   Q3 (75%)  
--   Tabela de classes e frequências:  
+-   Tabela de distribuição de frequências:  
 
-![Exemplo de tabela de variáveis quantitativa contínua e
-frequência](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png)
+![Exemplo de tabela de distribuição de
+frequências](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png)
 
 -   Como achar o intervalo de classe que corresponde a separatriz
     calculada.  
@@ -2965,6 +2965,44 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 </figure>
 
 ### 10.1.6 histograma (hist)
+
+-   Histograma é um tipo de gráficos de barras.  
+
+-   É usado para variáveis quantitativas continuas.  
+
+-   Este tipo de gráfico é muito usado para observar:  
+
+    -   **Distribuição de frequências**  
+    -   **Simetria**  
+    -   **Desvio**  
+        Presença de valores discrepantes (Outliers).  
+    -   **Amplitude da variável**  
+
+-   A diferença entre gráficos de barras e histograma:  
+
+    -   **Gráfico de barras**  
+        É aplicado a variáveis categóricas, apenas um eixo representando
+        variável númerica e o outro eixo representando um variável
+        categórica.  
+
+    <figure>
+    <img
+    src="./Cap7-graficos_basicos_e_ggplot2/Imagens/Grafico_barras_exemplo.png"
+    style="width:40.0%" alt="Exemplo gráfico de barras" />
+    <figcaption aria-hidden="true">Exemplo gráfico de barras</figcaption>
+    </figure>
+
+    -   **Histograma**  
+        É aplicado a variáveis númericas e possui dois eixos númericos
+        (x representando a variável e y representando a frequência da
+        variável).  
+
+    <figure>
+    <img
+    src="./Cap7-graficos_basicos_e_ggplot2/Imagens/histograma_exemplo.jpg"
+    style="width:30.0%" alt="Exemplo histograma" />
+    <figcaption aria-hidden="true">Exemplo histograma</figcaption>
+    </figure>
 
 #### 10.1.6.1 Pré-requisitos
 

@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  md_document:
     number_sections: true
-    toc: TRUE
-  github_document: 
+    variant: markdown_github
   odt_document: 
     number_sections: true
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2696,10 +2696,10 @@ $B$ é o coeficiente angular.\
   - Q2 (50% ou mediana)\
   - Q3 (75%)\
   
-- Tabela de classes e frequências:\
+- Tabela de distribuição de frequências:\
 
 
-![Exemplo de tabela de variáveis quantitativa contínua e frequência](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png){}
+![Exemplo de tabela de distribuição de frequências](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png){}
 
 
 - Como achar o intervalo de classe que corresponde a separatriz calculada.\
@@ -2786,6 +2786,31 @@ Ex.: `x <- turismo$cheg_2012/1000`\
 \newpage
 
 ### histograma (hist)
+
+- Histograma é um tipo de gráficos de barras.\
+- É usado para variáveis quantitativas continuas.\
+- Este tipo de gráfico é muito usado para observar:\
+  - **Distribuição de frequências**\
+  - **Simetria**\
+  - **Desvio**\
+  Presença de valores discrepantes (Outliers).\
+  - **Amplitude da variável**\
+- A diferença entre gráficos de barras e histograma:\
+  - **Gráfico de barras**\
+  É aplicado a variáveis categóricas, apenas um eixo representando variável númerica e o outro eixo representando um variável categórica.\
+  
+  
+  ![Exemplo gráfico de barras](./Cap7-graficos_basicos_e_ggplot2/Imagens/Grafico_barras_exemplo.png){width=40%}
+  
+  
+  - **Histograma**\
+  É aplicado a variáveis númericas e possui dois eixos númericos (x representando a variável e y representando a frequência da variável).\
+  
+  
+  ![Exemplo histograma](./Cap7-graficos_basicos_e_ggplot2/Imagens/histograma_exemplo.jpg){width=30%}
+  
+  
+\newpage
 
 #### Pré-requisitos
 
