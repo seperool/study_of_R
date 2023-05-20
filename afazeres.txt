@@ -1,6 +1,6 @@
-ESCRITO EM 19/05/23
+ESCRITO EM 20/05/23
 ---
-PARA 20/05/23
+PARA 21/05/23
 ---
 Subir github:
 
@@ -25,7 +25,6 @@ Afazeres:
 						- histograma (hist)
 							- pré-requisito
 							- preparação dos dados
-							- plotagem histograma (hist)
 				- ggplot2
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
