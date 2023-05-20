@@ -25,7 +25,7 @@ library(tidyr) #organização de dados
 library(data.table) #manipulação de base de dados dataframe
 
 #importar dados
-turismo <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+turismo <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 View(turismo)
 
 #transformando dataframe em tibble
@@ -37,7 +37,7 @@ str(turismo)
 hist(turismo$cheg_2014/1000,
      col = "darkblue" , #colorir diversos itens do grafico
      main = "Histograma" , #titulo
-     xlab = "Numero de chegadas por mil" , #rotulo do eixo x
+     xlab = "Número de chegadas por mil" , #rotulo do eixo x
      ylab = "Frequencia" , #rotulo do eixo y
      sub = "Fonte: elaboração propria") #legenda
 
