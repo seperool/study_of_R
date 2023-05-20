@@ -3,21 +3,21 @@ title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2817,6 +2817,33 @@ Ex.: `x <- turismo$cheg_2012/1000`\
 #### Preparação dos dados
 
 #### Plotagem gráfico boxplot
+- Principais argumentos do histograma:\
+  - **x**\
+  Variável em formato de vetor.\
+  - `col`\
+   Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,..., ou por nome como 'red', 'blue', etc.\
+  - `main`\
+  Título principal do gráfico.\
+  - `xlab`\
+  Rótulo do eixo x.\
+  - `ylab`\
+  Rótulo do eixo y.\
+  - `sub`\
+  Adiciona texto ao final do gráfico.\
+  - Exemplo:\
+  ```
+  #Plotagem histograma
+  hist(turismo$cheg_2014/1000,
+     col = "darkblue" , #colorir diversos itens do grafico
+     main = "Histograma" , #titulo
+     xlab = "Número de chegadas por mil" , #rotulo do eixo x
+     ylab = "Frequencia" , #rotulo do eixo y
+     sub = "Fonte: elaboração propria") #legenda
+  ```
+
+
+![Histograma](./Cap7-graficos_basicos_e_ggplot2/Graficos/hist.png){}
+
 
 \newpage
 

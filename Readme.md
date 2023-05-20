@@ -3010,6 +3010,34 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 
 #### 10.1.6.3 Plotagem gráfico boxplot
 
+-   Principais argumentos do histograma:  
+    -   **x**  
+        Variável em formato de vetor.  
+    -   `col`  
+        Comando para colorir diversos itens do gráfico, pode ser valores
+        como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
+    -   `main`  
+        Título principal do gráfico.  
+    -   `xlab`  
+        Rótulo do eixo x.  
+    -   `ylab`  
+        Rótulo do eixo y.  
+    -   `sub`  
+        Adiciona texto ao final do gráfico.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        #Plotagem histograma
+        hist(turismo$cheg_2014/1000,
+           col = "darkblue" , #colorir diversos itens do grafico
+           main = "Histograma" , #titulo
+           xlab = "Número de chegadas por mil" , #rotulo do eixo x
+           ylab = "Frequencia" , #rotulo do eixo y
+           sub = "Fonte: elaboração propria") #legenda
+
+![Histograma](./Cap7-graficos_basicos_e_ggplot2/Graficos/hist.png)
+
 ## 10.2 Pacote **ggplot2**
 
 -   Constroi diversos tipos de graficos a partir da mesma estrutura de
