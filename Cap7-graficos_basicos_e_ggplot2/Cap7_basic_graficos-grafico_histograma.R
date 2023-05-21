@@ -25,7 +25,7 @@ library(tidyr) #organização de dados
 library(data.table) #manipulação de base de dados data.frame
 
 #importando dados
-turismo <- read.csv(file = "/home/serigo/Documentos/Dados_uff_R/turismo.csv")
+turismo <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
 View(turismo) #visualizando data.frame
 
 #transformando data.frame em tibble
@@ -42,7 +42,8 @@ hist(x,
      freq = T, #se T fornece a frequencia absoluta, se F fornece a frequencia relativa
      main = "Histograma das chegadas de turistas ao Brasil em 2012",
      xlab = "Chegadas de turistas em 2012 por mil",
-     ylab = "Frequencia Absoluta das chegadas")
+     ylab = "Frequencia Absoluta das chegadas",
+     sub = "Fonte: elaboração propria")
 
 #fechando dispositivo grafico
 dev.off()
