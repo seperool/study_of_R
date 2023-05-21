@@ -3,7 +3,9 @@ ESCRITO EM 21/05/23
 PARA 22/05/23
 ---
 Subir github:
-
+	- Readme.*
+		- ggplot2
+			- geom_forma e principais efeitos do ggplot2
 Estudar:
 
 Afazeres:
@@ -21,5 +23,8 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
+					- Definindo um tema para o pacote gráfico ggplot
+					- Pacote ggthemes
+					- ...
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
