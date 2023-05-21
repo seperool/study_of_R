@@ -1,6 +1,6 @@
-ESCRITO EM 20/05/23
+ESCRITO EM 21/05/23
 ---
-PARA 21/05/23
+PARA 22/05/23
 ---
 Subir github:
 
@@ -20,11 +20,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
-				- Pacote básico
-					- gráficos
-						- histograma (hist)
-							- pré-requisito
-							- preparação dos dados
 				- ggplot2
 	- Cap. 7 - Visualizando dados
 		- script - ggplot2
