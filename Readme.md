@@ -3006,13 +3006,26 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 
 #### 10.1.6.1 Pré-requisitos
 
+-   Os dados devem estar em formato tabular.  
+
 #### 10.1.6.2 Preparação dos dados
+
+-   A variável em formato de vetor.  
+    Ex.: `x <- dados$cheg_2012/1000`  
+-   A frequência é calculada automaticamente pela função `hist`
+    (histograma), basta informar a função se ela deve cálcular a
+    frequência absoluta (**T**) ou a frequência relativa (**F**).  
+    Ex.: `hist(... , freq = T | F, ...)`  
 
 #### 10.1.6.3 Plotagem gráfico boxplot
 
 -   Principais argumentos do histograma:  
     -   **x**  
         Variável em formato de vetor.  
+    -   `freq`  
+        É a frequência.  
+        Caso queira a frequência absoluta `= T`.  
+        Caso queira a frequência relativa `= F.`  
     -   `col`  
         Comando para colorir diversos itens do gráfico, pode ser valores
         como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
@@ -3028,15 +3041,23 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 
     <!-- -->
 
-        #Plotagem histograma
-        hist(turismo$cheg_2014/1000,
-           col = "darkblue" , #colorir diversos itens do grafico
-           main = "Histograma" , #titulo
-           xlab = "Número de chegadas por mil" , #rotulo do eixo x
-           ylab = "Frequencia" , #rotulo do eixo y
+        #Compreendendo a distribuição frequência de chegadas de turistas do Brasil em
+        #2012
+        x <- dados$cheg_2012/1000
+
+        #histograma
+        hist(x,
+           freq = T, #se T fornece a frequencia absoluta, se F fornece a frequencia relativa
+           main = "Histograma das chegadas de turistas ao Brasil em 2012",
+           xlab = "Chegadas de turistas em 2012 por mil",
+           ylab = "Frequencia Absoluta das chegadas",
            sub = "Fonte: elaboração propria") #legenda
 
-![Histograma](./Cap7-graficos_basicos_e_ggplot2/Graficos/hist.png)
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/hist.png"
+style="width:80.0%" alt="Histograma" />
+<figcaption aria-hidden="true">Histograma</figcaption>
+</figure>
 
 ## 10.2 Pacote **ggplot2**
 
