@@ -3061,89 +3061,121 @@ style="width:80.0%" alt="Histograma" />
 
 ## 10.2 Pacote **ggplot2**
 
--   Constroi diversos tipos de graficos a partir da mesma estrutura de
-    componentes:  
-    -   *data*: referente ao banco de dados.  
-    -   *geom_forma*: um rol de tipos possiveis de representação dos
-        dados.  
-    -   *coord_system*: referente ao sistema de coordenadas, que podem
-        ser cartesianas, polares e projeção de mapas.  
+O pacote `ggplot2` constroi diversos tipos de graficos a partir da mesma
+estrutura de componentes:  
+- `data`: referente ao banco de dados.  
+- `geom_forma`: um rol de tipos possiveis de representação dos dados.  
+- `coord_system`: referente ao sistema de coordenadas, que podem ser
+cartesianas, polares e projeção de mapas.  
 
-1.  O que precisa para fazer o grafico?  
-    A. Um nome de objeto para guardar o grafico (uma variavel).  
-    B. A base de dados que será utilizada para a plotagem.  
-    **ggplot**(*data***=***nome_da_base*)  
-    C. Descrever como as variaveis serão utilizadas na plotagem:  
-    **aes**(*x***=**…, *y***=**…, …)  
-    D. Especificar o tipo de grafico:  
-    *geom_forma*(…)  
-    E. Utilizar o operador “**+**” para adicionar camadas ao objeto
-    **ggplot** criado.  
-    F. Pacotes auxiliares como *ggthemes* e *grid*, dentre outros.  
+### 10.2.1 O que precisa para fazer o gráfico?
 
-2.  Quais formatos podemos utilizar no ggplot2 - geom_forma?  
+A. Um nome de objeto para guardar o grafico (uma variavel).  
+B. A base de dados que será utilizada para a plotagem.  
+`ggplot(data=nome_da_base)`  
+C. Descrever como as variaveis serão utilizadas na plotagem:  
+`aes(x=..., y=..., ...)`  
+D. Especificar o tipo de gráfico:  
+`geom_forma(...)`  
+E. Utilizar o operador “**+**” para adicionar camadas (*layers*) ao
+objeto `ggplot` criado.  
+F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.  
 
-| Forma                                          |                                                     Tipo de grafico |
-|:-----------------|-----------------------------------------------------:|
-| geom_area ou geom_ribbon                       | Produz um grafico para visualizar área sob a curva ou entre curvas. |
-| geom_bar ou geom_col                           |                            Produz um grafico de colunas do vetor x. |
-| geom_bar+coord_polar                           |                                 Produz um grafico circular (Pizza). |
-| geom_boxplot                                   |                                              Produz o boxplot de x. |
-| geom_curve                                     |                                         Produz um grafico em curva. |
-| geom_density                                   |                                Produz um grafico da densidade de x. |
-| geom_dotplot                                   |                                        Produz um grafico de pontos. |
-| geom_histogram                                 |                                    Produz um histograma do vetor x. |
-| geom_line, geom_abline, geom_hline, geom_vline |                                         Produz um grafico de linhas |
-| geom_point                                     |                         Produz um grafico de dispersão entre x e y. |
-| geom_qq ou geom_qq_line                        |              plota os quantis de x usando como base a curva normal. |
-| geom_tile, geom_rect ou geom_raster            |                                     Produz uma grade de retangulos. |
-| geom_violin                                    |                              Produz um grafico em forma de violino. |
+### 10.2.2 Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
 
-1.  Nome dos argumentos para adicionar efeito em graficos do pacote
-    ggplot2.
+|                     Forma                      |                           Tipo de gráfico                           |
+|:----------------------------:|:----------------------------------------:|
+|            geom_area ou geom_ribbon            | Produz um grafico para visualizar área sob a curva ou entre curvas. |
+|              geom_bar ou geom_col              |              Produz um grafico de colunas do vetor x.               |
+|              geom_bar+coord_polar              |                 Produz um grafico circular (Pizza).                 |
+|                  geom_boxplot                  |                       Produz o boxplot de x.                        |
+|                   geom_curve                   |                     Produz um grafico em curva.                     |
+|                  geom_density                  |                Produz um grafico da densidade de x.                 |
+|                  geom_dotplot                  |                    Produz um grafico de pontos.                     |
+|                 geom_histogram                 |                  Produz um histograma do vetor x.                   |
+| geom_line, geom_abline, geom_hline, geom_vline |                     Produz um grafico de linhas                     |
+|                   geom_point                   |             Produz um grafico de dispersão entre x e y.             |
+|            geom_qq ou geom_qq_line             |       plota os quantis de x usando como base a curva normal.        |
+|      geom_tile, geom_rect ou geom_raster       |                   Produz uma grade de retangulos.                   |
+|                  geom_violin                   |               Produz um grafico em forma de violino.                |
 
-| Função                                    |                                        Efeito no grafico |
-|:------------------|----------------------------------------------------:|
-| autoplot                                  |    Produz um grafico apropriado para o tipo de variavel. |
-| coord_cartesian                           |                                   Coordenada cartesiana. |
-| coord_fixed                               | Coordenada cartesiana com razão entre eixo x e y fixada. |
-| coord_flip                                |                       Inverte a posição dos eixos x e y. |
-| coord_polar                               |                                        Coordenada polar. |
-| geom_blank                                |                                        Janela em branco. |
-| geom_jitter                               |                                 Produz um efeito jitter. |
-| geom_smooth                               |                              Produz uma curva suavizada. |
-| geom_text                                 |                           Aplica texto a janela grafica. |
-| scale_fill\_(=brewer ou grey ou gradient) |                                Define a escala de cores. |
-| scale\_\*\_continuos                      |          Define parametros para o eixo x ou y continuos. |
-| scale\_\*\_discrete                       |           Define parametros para o eixo x ou y discreto. |
-| scale\_\*\_manual                         |             Define parametros para os eixos manualmente. |
+Nome das principais formas geométricas para construção de gráficos do
+pacote ggplot2
 
--   Definindo um tema para o grafico **ggplot**.  
-    -   *theme_gray*  
-        Fundo cinza e linhas grandes brancas.  
-    -   *theme_bw*  
-        O classico preto e branco. Otimo para projetor.  
-    -   *theme_linedraw*  
-        Linhas pretasde varias larguras num fundo branco. semelhante ao
-        theme_bw.  
-    -   *theme_light*  
-        Semelhante ao theme_linedraw, porem com as linhas mais cinza
-        claro, para dar atenção aos dados.  
-    -   *theme_dark*  
-        Versão escura do theme_light, com o fundo escuro, util para
-        criar linhas finas coloridas.  
-    -   *theme_minimal*  
-        Um tema minimalista sem anotações de fundo.  
-    -   *theme_classic*  
-        Tema classico, com linhas do eixo x e y, sem linhas de grade.  
-    -   *theme_void*  
-        Um tema completamente vazio.  
+### 10.2.3 Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
+
+|                  Funções                  |                    Efeitos no gráfico                    |
+|:----------------------------:|:----------------------------------------:|
+|                 autoplot                  |  Produz um grafico apropriado para o tipo de variavel.   |
+|              coord_cartesian              |                  Coordenada cartesiana.                  |
+|                coord_fixed                | Coordenada cartesiana com razão entre eixo x e y fixada. |
+|                coord_flip                 |            Inverte a posição dos eixos x e y.            |
+|                coord_polar                |                    Coordenada polar.                     |
+|                geom_blank                 |                    Janela em branco.                     |
+|                geom_jitter                |                 Produz um efeito jitter.                 |
+|                geom_smooth                |               Produz uma curva suavizada.                |
+|                 geom_text                 |              Aplica texto a janela grafica.              |
+| scale_fill\_(=brewer ou grey ou gradient) |                Define a escala de cores.                 |
+|           scale\_\*\_continuos            |     Define parametros para o eixo x ou y continuos.      |
+|            scale\_\*\_discrete            |      Define parametros para o eixo x ou y discreto.      |
+|             scale\_\*\_manual             |       Define parametros para os eixos manualmente.       |
+
+Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
+
+### 10.2.4 Definindo um tema para o grafico **ggplot**
+
+-   *theme_gray*  
+    Fundo cinza e linhas grandes brancas.  
+-   *theme_bw*  
+    O classico preto e branco. Otimo para projetor.  
+-   *theme_linedraw*  
+    Linhas pretasde varias larguras num fundo branco. semelhante ao
+    theme_bw.  
+-   *theme_light*  
+    Semelhante ao theme_linedraw, porem com as linhas mais cinza claro,
+    para dar atenção aos dados.  
+-   *theme_dark*  
+    Versão escura do theme_light, com o fundo escuro, util para criar
+    linhas finas coloridas.  
+-   *theme_minimal*  
+    Um tema minimalista sem anotações de fundo.  
+-   *theme_classic*  
+    Tema classico, com linhas do eixo x e y, sem linhas de grade.  
+-   *theme_void*  
+    Um tema completamente vazio.  
+
+### 10.2.5 Pacote ggthemes
+
+|         Tema          |                                       Semelhanças                                        |
+|:--------------:|:------------------------------------------------------:|
+|      theme_base       |                                Tema do pacote básico do R                                |
+|      theme_calc       |              Semelhante aos gráficos produzidos pelo Calc do LibreOffice B               |
+|    theme_economist    |                               Semelhante ao The Economist                                |
+| theme_economist_white |                       Semelhante ao The Economist com fundo branco                       |
+|      theme_excel      |                      Semelhante aos gráficos produzidos pelo Excel                       |
+|       theme_few       | Baseado nas regras de Stephen Few sobre regras práticas para o uso de cores nos gráficos |
+| theme_fivethirtyeight |                     Baseado nos gráficos do site fivethirtyeight.com                     |
+|   theme_foundation    |                       Tema de fundação, para produzir novos temas                        |
+|      theme_gdocs      |                          Semelhante aos gráficos do Google Docs                          |
+|       theme_hc        |                                 Baseado em Highcharts JS                                 |
+|      theme_igray      |                                   Inverte o tema gray                                    |
+|       theme_map       |                             Limpa o tema para incluir mapas                              |
+|     theme_pander      |                                 Baseado no pacote pander                                 |
+|       theme_par       |                 Baseado nos parâmetros definidos em par() do pacote base                 |
+|    theme_solarized    |                               Baseado na paleta Solarized                                |
+|   theme_solarized_2   |                               Baseado na paleta Solarized                                |
+|      theme_solid      |        Elimina todas as linhas e textos, mantendo somente os objetos geométricos         |
+|      theme_stata      |                             Semelhante aos gráficos do Stata                             |
+|      theme_tufte      |                           Baseado no designer de Edward Tufte                            |
+|       theme_wsj       |                      Semelhante aos gráficos do Wall Street Journal                      |
+
+Temas do pacote ggthemes
 
 # 11 Andamento dos Estudos
 
 ## 11.1 Assunto em andamento:
 
-Atualmente estou estudando Cap.7, gráficos do pacote básico.  
+Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
 
 # 12 Referências
 

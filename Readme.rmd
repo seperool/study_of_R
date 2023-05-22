@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   github_document: 
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: TRUE
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2863,83 +2863,187 @@ Ex.: `hist(... , freq = T | F, ...)`\
 \newpage
 
 ## Pacote **ggplot2**
-  - Constroi diversos tipos de graficos a partir da mesma estrutura de componentes:\
-    - *data*: referente ao banco de dados.\
-    - *geom_forma*: um rol de tipos possiveis de representação dos dados.\
-    - *coord_system*: referente ao sistema de coordenadas, que podem ser cartesianas, polares e projeção de mapas.\
+O pacote `ggplot2` constroi diversos tipos de graficos a partir da mesma estrutura de componentes:\
+- `data`: referente ao banco de dados.\
+- `geom_forma`: um rol de tipos possiveis de representação dos dados.\
+- `coord_system`: referente ao sistema de coordenadas, que podem ser cartesianas, polares e projeção de mapas.\
       
-  i) O que precisa para fazer o grafico?\
-    A. Um nome de objeto para guardar o grafico (uma variavel).\
-    B. A base de dados que será utilizada para a plotagem.\
-    **ggplot**(*data***=***nome_da_base*)\
-    C. Descrever como as variaveis serão utilizadas na plotagem:\
-    **aes**(*x***=**..., *y***=**..., ...)\
-    D. Especificar o tipo de grafico:\
-    *geom_forma*(...)\
-    E. Utilizar o operador "**+**" para adicionar camadas ao objeto **ggplot** criado.\
-    F. Pacotes auxiliares como *ggthemes* e *grid*, dentre outros.\
+### O que precisa para fazer o gráfico?
+A. Um nome de objeto para guardar o grafico (uma variavel).\
+B. A base de dados que será utilizada para a plotagem.\
+`ggplot(data=nome_da_base)`\
+C. Descrever como as variaveis serão utilizadas na plotagem:\
+`aes(x=..., y=..., ...)`\
+D. Especificar o tipo de gráfico:\
+`geom_forma(...)`\
+E. Utilizar o operador "**+**" para adicionar camadas (*layers*) ao objeto `ggplot` criado.\
+F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.\
       
-  ii) Quais formatos podemos utilizar no ggplot2 - geom_forma?\
-  
-  Forma   |   Tipo de grafico
-  :----   |   ---------------:
-  geom_area ou geom_ribbon    |   Produz um grafico para visualizar área sob a curva ou entre curvas.
-  geom_bar ou geom_col    |   Produz um grafico de colunas do vetor x.
-  geom_bar+coord_polar    |   Produz um grafico circular (Pizza).
-  geom_boxplot    |   Produz o boxplot de x.
-  geom_curve    |   Produz um grafico em curva.
-  geom_density    |   Produz um grafico da densidade de x.
-  geom_dotplot    |   Produz um grafico de pontos.
-  geom_histogram    |   Produz um histograma do vetor x.
-  geom_line, geom_abline, geom_hline, geom_vline    |   Produz um grafico de linhas
-  geom_point    |   Produz um grafico de dispersão entre x e y.
-  geom_qq ou geom_qq_line    |   plota os quantis de x usando como base a curva normal.
-  geom_tile, geom_rect ou geom_raster    |   Produz uma grade de retangulos.
-  geom_violin    |   Produz um grafico em forma de violino.
+### Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
 
-  iii) Nome dos argumentos para adicionar efeito em graficos do pacote ggplot2.
-  
-  Função    |   Efeito no grafico
-  :-----    |   -----------------:
-  autoplot    |   Produz um grafico apropriado para o tipo de variavel.
-  coord_cartesian    |   Coordenada cartesiana.
-  coord_fixed    |   Coordenada cartesiana com razão entre eixo x e y fixada.
-  coord_flip    |   Inverte a posição dos eixos x e y.
-  coord_polar    |   Coordenada polar.
-  geom_blank    |   Janela em branco.
-  geom_jitter    |   Produz um efeito jitter.
-  geom_smooth    |   Produz uma curva suavizada.
-  geom_text    |   Aplica texto a janela grafica.
-  scale_fill_(=brewer ou grey ou gradient)    |   Define a escala de cores.
-  scale_*_continuos    |   Define parametros para o eixo x ou y continuos.
-  scale_*_discrete    |   Define parametros para o eixo x ou y discreto.
-  scale_*_manual    |   Define parametros para os eixos manualmente.
+```{r Formatos ggplot2 geom_forma, echo=FALSE, message=FALSE, warning=FALSE}
+# Biblioteca
+library(knitr)
 
-  - Definindo um tema para o grafico **ggplot**.\
-    - *theme_gray*\
-    Fundo cinza e linhas grandes brancas.\
-    - *theme_bw*\
-    O classico preto e branco. Otimo para projetor.\
-    - *theme_linedraw*\
-    Linhas pretasde varias larguras num fundo branco. semelhante ao theme_bw.\
-    - *theme_light*\
-    Semelhante ao theme_linedraw, porem com as linhas mais cinza claro, para dar atenção aos dados.\
-    - *theme_dark*\
-    Versão escura do theme_light, com o fundo escuro, util para criar linhas finas coloridas.\
-    - *theme_minimal*\
-    Um tema minimalista sem anotações de fundo.\
-    - *theme_classic*\
-    Tema classico, com linhas do eixo x e y, sem linhas de grade.\
-    - *theme_void*\
-    Um tema completamente vazio.\
-    
+# data.frame
+form_geom_forma <- c("geom_area ou geom_ribbon",
+  "geom_bar ou geom_col",
+  "geom_bar+coord_polar",
+  "geom_boxplot",
+  "geom_curve",
+  "geom_density",
+  "geom_dotplot",
+  "geom_histogram",
+  "geom_line, geom_abline, geom_hline, geom_vline",
+  "geom_point",
+  "geom_qq ou geom_qq_line",
+  "geom_tile, geom_rect ou geom_raster",
+  "geom_violin"
+  )
+desc_tipo_grafico <- c("Produz um grafico para visualizar área sob a curva ou entre curvas.",
+  "Produz um grafico de colunas do vetor x.",
+  "Produz um grafico circular (Pizza).",
+  "Produz o boxplot de x.",
+  "Produz um grafico em curva.",
+  "Produz um grafico da densidade de x.",
+  "Produz um grafico de pontos.",
+  "Produz um histograma do vetor x.",
+  "Produz um grafico de linhas",
+  "Produz um grafico de dispersão entre x e y.",
+  "plota os quantis de x usando como base a curva normal.",
+  "Produz uma grade de retangulos.",
+  "Produz um grafico em forma de violino."
+  )
+tbl_geom_forma <- data.frame(form_geom_forma,desc_tipo_grafico)
+
+# Tabela
+kable(tbl_geom_forma, col.names = c("Forma","Tipo de gráfico"), align = "cc", 
+      caption = "Nome das principais formas geométricas para construção de gráficos do pacote ggplot2")
+```
+
+\newpage
+
+### Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
+
+```{r efeitos nos gráficos ggplot2, echo=FALSE, message=FALSE, warning=FALSE}
+# Biblioteca
+library(knitr)
+
+# data.frame
+func_efeitos_ggplot2 <- c("autoplot",
+  "coord_cartesian",
+  "coord_fixed",
+  "coord_flip",
+  "coord_polar",
+  "geom_blank",
+  "geom_jitter",
+  "geom_smooth",
+  "geom_text",
+  "scale_fill_(=brewer ou grey ou gradient)",
+  "scale_*_continuos",
+  "scale_*_discrete",
+  "scale_*_manual"
+)
+ef_ggplot2 <- c("Produz um grafico apropriado para o tipo de variavel.",
+  "Coordenada cartesiana.",
+  "Coordenada cartesiana com razão entre eixo x e y fixada.",
+  "Inverte a posição dos eixos x e y.",
+  "Coordenada polar.",
+  "Janela em branco.",
+  "Produz um efeito jitter.",
+  "Produz uma curva suavizada.",
+  "Aplica texto a janela grafica.",
+  "Define a escala de cores.",
+  "Define parametros para o eixo x ou y continuos.",
+  "Define parametros para o eixo x ou y discreto.",
+  "Define parametros para os eixos manualmente."
+)
+tbl_ef_ggplot2 <- data.frame(func_efeitos_ggplot2,ef_ggplot2)
+
+# Tabela
+kable(tbl_ef_ggplot2, col.names = c("Funções","Efeitos no gráfico"), align = "cc", caption = "Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.")
+```
+
+### Definindo um tema para o grafico **ggplot**
+- *theme_gray*\
+Fundo cinza e linhas grandes brancas.\
+- *theme_bw*\
+O classico preto e branco. Otimo para projetor.\
+- *theme_linedraw*\
+Linhas pretasde varias larguras num fundo branco. semelhante ao theme_bw.\
+- *theme_light*\
+Semelhante ao theme_linedraw, porem com as linhas mais cinza claro, para dar atenção aos dados.\
+- *theme_dark*\
+Versão escura do theme_light, com o fundo escuro, util para criar linhas finas coloridas.\
+- *theme_minimal*\
+Um tema minimalista sem anotações de fundo.\
+- *theme_classic*\
+Tema classico, com linhas do eixo x e y, sem linhas de grade.\
+- *theme_void*\
+Um tema completamente vazio.\
+
+### Pacote ggthemes
+
+```{r ggthemes, echo=FALSE, message=FALSE, warning=FALSE}
+# Bibliotecas
+library(knitr)
+
+# data.frame
+tema <- c("theme_base",
+          "theme_calc",
+          "theme_economist",
+          "theme_economist_white",
+          "theme_excel",
+          "theme_few",
+          "theme_fivethirtyeight",
+          "theme_foundation",
+          "theme_gdocs",
+          "theme_hc",
+          "theme_igray",
+          "theme_map",
+          "theme_pander",
+          "theme_par",
+          "theme_solarized",
+          "theme_solarized_2",
+          "theme_solid",
+          "theme_stata",
+          "theme_tufte",
+          "theme_wsj")
+semelhancas <- c("Tema do pacote básico do R",
+                 "Semelhante aos gráficos produzidos pelo Calc do LibreOffice B",
+                 "Semelhante ao The Economist",
+                 "Semelhante ao The Economist com fundo branco",
+                 "Semelhante aos gráficos produzidos pelo Excel",
+                 "Baseado nas regras de Stephen Few sobre regras práticas para o uso de cores nos gráficos",
+                 "Baseado nos gráficos do site fivethirtyeight.com",
+                 "Tema de fundação, para produzir novos temas",
+                 "Semelhante aos gráficos do Google Docs",
+                 "Baseado em Highcharts JS",
+                 "Inverte o tema gray",
+                 "Limpa o tema para incluir mapas",
+                 "Baseado no pacote pander",
+                 "Baseado nos parâmetros definidos em par() do pacote base",
+                 "Baseado na paleta Solarized",
+                 "Baseado na paleta Solarized",
+                 "Elimina todas as linhas e textos, mantendo somente os objetos geométricos",
+                 "Semelhante aos gráficos do Stata",
+                 "Baseado no designer de Edward Tufte",
+                 "Semelhante aos gráficos do Wall Street Journal")
+tbl_ggthemes <- data.frame(tema,semelhancas)
+
+# Tabela
+kable(tbl_ggthemes,col.names = c("Tema","Semelhanças"), align = "cc",
+      caption = "Temas do pacote ggthemes")
+
+```
+
 \newpage
 
 # Andamento dos Estudos
 
 ## Assunto em andamento:
 
-Atualmente estou estudando Cap.7, gráficos do pacote básico.\
+Atualmente estou estudando Cap.7, gráficos com **ggplot2**.\
 
 \newpage
 
