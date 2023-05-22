@@ -1,11 +1,9 @@
-ESCRITO EM 21/05/23
+ESCRITO EM 22/05/23
 ---
-PARA 22/05/23
+PARA 23/05/23
 ---
 Subir github:
-	- Readme.*
-		- ggplot2
-			- geom_forma e principais efeitos do ggplot2
+
 Estudar:
 
 Afazeres:
