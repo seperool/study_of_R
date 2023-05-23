@@ -1,6 +1,6 @@
-ESCRITO EM 22/05/23
+ESCRITO EM 23/05/23
 ---
-PARA 23/05/23
+PARA 24/05/23
 ---
 Subir github:
 
@@ -25,4 +25,6 @@ Afazeres:
 					- Pacote ggthemes
 					- ...
 	- Cap. 7 - Visualizando dados
-		- script - ggplot2
+		- script
+			- inserindo escalas ggplot2
+			- ...
