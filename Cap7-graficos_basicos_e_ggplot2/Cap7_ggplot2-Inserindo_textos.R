@@ -21,10 +21,10 @@ p <- ggplot(data = Turismo, aes(x=cheg_2012/1000,y=cheg_2013/1000)) #Salva gráf
 p +
   geom_blank() + #Produz efeito janela em branco
   labs(title = "Título", #Adiciona texto ao gráfico
-       x = "Eixo x",
-       y = "Eixo y",
-       subtitle = "Subtítulo",
-       caption = "Elaborado por ...")+ #legenda
+       x = "Eixo x", #Adiciona rótulo ao eixo x
+       y = "Eixo y", #Adiciona rótulo ao eixo y
+       subtitle = "Subtítulo", #Adiciona subtitulo ao gráfico
+       caption = "Elaborado por ...")+ #Adciona texto ao final do gráfico
   theme_bw(base_size = 18)
 
 #fechando janela gráfica
