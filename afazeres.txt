@@ -1,14 +1,9 @@
-ESCRITO EM 23/05/23
+ESCRITO EM 24/05/23
 ---
-PARA 24/05/23
+PARA 25/05/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 7 - Visualizando dados
-			- ggplot2
-				- Definindo um tema para o pacote gráfico ggplot
-				- Pacote ggthemes
-				- Inserindo texto no gráfico ggplot2
+
 Estudar:
 
 Afazeres:
