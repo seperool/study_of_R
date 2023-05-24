@@ -3171,6 +3171,90 @@ Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
 
 Temas do pacote ggthemes
 
+Exemplo:  
+
+    #Bibliotecas
+    library(ggthemes)
+
+    #Plotando gráficos
+    f <- ggplot(dados,aes(cheg_2012/1000,cheg_2013/1000)) +
+      geom_blank() +
+      labs(x="",y="")
+
+    #Tema
+    p1 <- f +
+      theme_gdocs(base_size = 18) +
+      ggtitle("theme_gdocs")
+      
+    p1
+
+### 10.2.6 Inserindo títulos, subtítulos e rótulos aos eixos de um ggplot
+
+-   Existem duas formas de inserir textos no gráfico no **ggplot2**.  
+
+#### 10.2.6.1 Primeira forma
+
+-   Podemos adicionar texto ao gráfico **ggplot2** através do comando
+    `labs()` e seus parâmetros:  
+    -   `title`  
+        Adicionar um título ao gráfico **ggplot**.  
+    -   `x`  
+        Adiciona um rótulo ao eixo x no gráfico **ggplot**.  
+    -   `y`  
+        Adiciona um rótulo ao eixo y no gráfico **ggplot**.  
+    -   `subtitle`  
+        Adicionar um subtítulo ao gráfico **ggplot**.  
+    -   `caption`  
+        Adiciona texto ao final do gráfico **ggplot**.  
+-   Exemplo:  
+
+<!-- -->
+
+    #Plotando gráfico
+    p <- ggplot(data = Turismo, aes(x=cheg_2012/1000,y=cheg_2013/1000)) #Salva gráfico em variável
+
+    #Aplicando elementos de texto na forma janela em branco
+    p +
+      geom_blank() + #Produz efeito janela em branco
+      labs(title = "Título", #Adiciona texto ao gráfico
+           x = "Eixo x", #Adiciona rótulo ao eixo x
+           y = "Eixo y", #Adiciona rótulo ao eixo y
+           subtitle = "Subtítulo", #Adiciona subtitulo ao gráfico
+           caption = "Elaborado por ...")+ #Adciona texto ao final do gráfico
+      theme_bw(base_size = 18)
+
+#### 10.2.6.2 Segunda forma
+
+-   Podemos adicionar texto ao **ggplot2** atraves dos comandos:  
+    -   `ggtitle("",subtitle = "")`  
+        O comando `ggtitle` adiciona título ao gráfico **ggplot**.  
+        Podemos adicionar o parâmetro `subtitle` para adicionar um
+        subtítulo ao gráfico **ggplot**.  
+    -   `xlab("")`  
+        Adiciona um rótulo ao eixo x no gráfico **ggplot**.  
+    -   `ylab("")`  
+        Adiciona um rótulo ao eixo y no gráfico **ggplot**.  
+    -   `labs(caption = "")`  
+        O comando `labs()` acompanhado do parâmetro `caption`, adiciona
+        texto ao final do gráfico **ggplot**.  
+-   Exemplo:  
+
+<!-- -->
+
+    #Plotando gráfico
+    p <- ggplot(data = Turismo, aes(x=cheg_2012/1000,y=cheg_2013/1000)) #Salva gráfico em variável
+
+    #Aplicando elementos de texto na forma janela em branco
+    p +
+      geom_blank() + #Produz efeito janela em branco
+      ggtitle("Título",subtitle = "Subtítulo") + #Adiciona título e subtitulo ao gráfico
+      xlab("Eixo x") + #Adiciona rótulo ao eixo x
+      ylab("Eixo y") + #Adiciona rótulo ao eixo y
+      labs(caption = "Elaborado por ...") + #Adciona texto ao final do gráfico
+      theme_bw(base_size = 18)
+
+### 10.2.7 Escalas no **ggplot2**
+
 # 11 Andamento dos Estudos
 
 ## 11.1 Assunto em andamento:
