@@ -9,15 +9,15 @@ output:
   pdf_document: 
     number_sections: true
     toc: TRUE
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3124,6 +3124,47 @@ p +
 \newpage
 
 ### Escalas no **ggplot2**
+
+- Podemos definir a escala dos eixos utilizando uma camada especifica para esse fim:\
+`scale_x_discrete()` ou `scale_y_discrete()`\
+
+- Principais argumentos das funções `scale_x_discrete()` e `scale_y_discrete()`:\
+  - `drop`\
+  `T` omite do gráfico os níveis de um fator que não aparecem nos dados; `F` usa todos os níveis de um fator.\
+  - `na.translate`\
+  `F` remove valores faltantes da escala.\
+  - `labels`\
+  `NULL` (nenhum nome **ticks**) ou um vetor com nome (caracteres) dos **ticks**.\
+  `labels = c("One Hundred Fifty","Three Hundred","Four Hundred Fifity")`\
+  - `limits`\
+  Vetor de caracteres, ou números, com os possíveis limites dos valores de escala e sua ordem.\
+  `limits = c("caracter_1","caracter_2")`\
+  `limits = c(0,600)`\
+  - `name`\
+  Nome da escala que aparece na legenda (rótulos de x).\
+  - `breaks`\
+  O argumento `breaks` nos permite especifica onde os **ticks** aparecem.\
+  Podemos dar nomes aos **ticks** especificados para aparecerem, usando o argumento `labels`.\
+  `breaks = c(150,300,450),`\
+  `labels = c("One Hundred Fifty","Three Hundred","Four Hundred Fifity")`\
+  - `position`\
+  Posição da escala no eixo x (*top* ou *bottom*) e no eixo y (*left* ou *right*).\
+  `position = 'top'`\
+  - Exemplo:\
+  ```
+  #Plotando gráfico
+  p = ggplot(data = Turismo, aes(x=Estado, y=cheg_2012))
+  p+
+  geom_blank()+
+  labs(title = "Título",
+       x = "Eixo x",
+       y = "Eixo y",
+       subtitle = "Subtítulo",
+       caption = "Elaborado por ...")+
+  theme_bw(base_size = 18)+ #Tema
+  scale_x_discrete(limits=c("Amazonas","RioJaneiro"))
+  #Vetor de caracteres com os possíveis valores de escala e sua ordem.
+  ```
 
 \newpage
 
