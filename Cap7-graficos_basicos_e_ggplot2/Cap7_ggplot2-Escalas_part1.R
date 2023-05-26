@@ -1,5 +1,6 @@
 #ggplot2
-#Escalas
+#Escalas parte 1
+#limites
 
 #Biblioteca
 library(ggplot2) #Elaboração de gráficos
