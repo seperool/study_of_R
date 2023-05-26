@@ -6,18 +6,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: TRUE
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
-  odt_document: 
+  github_document: 
+  html_document:
     number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: TRUE
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3136,6 +3136,8 @@ p +
   - `labels`\
   `NULL` (nenhum nome **ticks**) ou um vetor com nome (caracteres) dos **ticks**.\
   `labels = c("One Hundred Fifty","Three Hundred","Four Hundred Fifity")`\
+  O comando `abbreviate`, abrevia o nome dos vetores nos **ticks**.\
+  `labels = abbreviate`\
   - `limits`\
   Vetor de caracteres, ou números, com os possíveis limites dos valores de escala e sua ordem.\
   `limits = c("caracter_1","caracter_2")`\

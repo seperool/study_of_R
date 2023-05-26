@@ -3271,6 +3271,9 @@ Exemplo:
         `NULL` (nenhum nome **ticks**) ou um vetor com nome (caracteres)
         dos **ticks**.  
         `labels = c("One Hundred Fifty","Three Hundred","Four Hundred Fifity")`  
+        O comando `abbreviate`, abrevia o nome dos vetores nos
+        **ticks**.  
+        `labels = abbreviate`  
     -   `limits`  
         Vetor de caracteres, ou números, com os possíveis limites dos
         valores de escala e sua ordem.  
