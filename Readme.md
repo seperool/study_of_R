@@ -3257,11 +3257,13 @@ Exemplo:
 
 -   Podemos definir a escala dos eixos utilizando uma camada especifica
     para esse fim:  
-    `scale_x_discrete()` ou `scale_y_discrete()`  
-
--   Principais argumentos das funções `scale_x_discrete()` e
-    `scale_y_discrete()`:  
-
+    -   Variáveis Discretas  
+        `scale_x_discrete()` ou `scale_y_discrete()`  
+    -   Variáveis Continuas  
+        `scale_x_continuous()` ou `scale_y_continuous()`  
+-   Principais argumentos das funções `scale_x_discrete()`,
+    `scale_y_discrete()`, `scale_x_continuous()` e
+    `scale_y_continuous()`:  
     -   `drop`  
         `T` omite do gráfico os níveis de um fator que não aparecem nos
         dados; `F` usa todos os níveis de um fator.  
@@ -3288,6 +3290,13 @@ Exemplo:
         usando o argumento `labels`.  
         `breaks = c(150,300,450),`  
         `labels = c("One Hundred Fifty","Three Hundred","Four Hundred Fifity")`  
+    -   `expand`  
+        Expande a escala por adição de x aos limites da escala.  
+        `expand = expand_scale(add = x)` ou
+        `expand = expansion(add = x)`  
+        Expande a escala por multiplicação de x aos limites da escala.  
+        `expand = expand_scale(mult = x)` ou
+        `expand = expansion(mult = x)`  
     -   `position`  
         Posição da escala no eixo x (*top* ou *bottom*) e no eixo y
         (*left* ou *right*).  
