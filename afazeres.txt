@@ -1,9 +1,13 @@
-ESCRITO EM 26/05/23
+ESCRITO EM 27/05/23
 ---
-PARA 27/05/23
+PARA 28/05/23
 ---
 Subir github:
-
+	Readme.*
+		- Cap. 7 - Visualizando dados
+				- ggplot2
+					- Escalas no ggplot2
+						- trans
 Estudar:
 
 Afazeres:
@@ -21,7 +25,7 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
-					- Escalas no ggplot2
+					- Cores nos gráficos ggplot2
 					- ...
 	- Cap. 7 - Visualizando dados
 		- script
