@@ -1,13 +1,9 @@
-ESCRITO EM 27/05/23
+ESCRITO EM 28/05/23
 ---
-PARA 28/05/23
+PARA 29/05/23
 ---
 Subir github:
-	Readme.*
-		- Cap. 7 - Visualizando dados
-				- ggplot2
-					- Escalas no ggplot2
-						- trans
+
 Estudar:
 
 Afazeres:
