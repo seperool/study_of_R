@@ -3261,9 +3261,8 @@ Exemplo:
         `scale_x_discrete()` ou `scale_y_discrete()`  
     -   Variáveis Continuas  
         `scale_x_continuous()` ou `scale_y_continuous()`  
--   Principais argumentos das funções `scale_x_discrete()`,
-    `scale_y_discrete()`, `scale_x_continuous()` e
-    `scale_y_continuous()`:  
+-   Principais argumentos das funções `scale_(x|y)_discrete()` e
+    `scale_(x|y)_continuous()`:  
     -   `drop`  
         `T` omite do gráfico os níveis de um fator que não aparecem nos
         dados; `F` usa todos os níveis de um fator.  
@@ -3301,22 +3300,72 @@ Exemplo:
         Posição da escala no eixo x (*top* ou *bottom*) e no eixo y
         (*left* ou *right*).  
         `position = 'top'`  
-    -   Exemplo:  
+    -   `trans`  
+        Transforma a escala continua.  
+        `trans = "reverse"`  
+        Principais transformações:  
+        -   ans  
+        -   atanh  
+        -   boxcox  
+        -   date  
+        -   exp  
+        -   hms  
+        -   identity  
+        -   log  
+        -   log10  
+        -   log1p  
+        -   log2  
+        -   logit  
+        -   modulus  
+        -   probability  
+        -   probit  
+        -   pseudo_log  
+        -   reciproval  
+        -   reverse  
+        -   sqrt  
+        -   time  
 
-    <!-- -->
+-   Exemplos:  
 
-        #Plotando gráfico
-        p = ggplot(data = Turismo, aes(x=Estado, y=cheg_2012))
-        p+
-        geom_blank()+
-        labs(title = "Título",
-             x = "Eixo x",
-             y = "Eixo y",
-             subtitle = "Subtítulo",
-             caption = "Elaborado por ...")+
-        theme_bw(base_size = 18)+ #Tema
-        scale_x_discrete(limits=c("Amazonas","RioJaneiro"))
-        #Vetor de caracteres com os possíveis valores de escala e sua ordem.
+<!-- -->
+
+    #Plotando gráfico
+    p = ggplot(data = Turismo, aes(x=Estado, y=cheg_2012))
+    p+
+    geom_blank()+
+    labs(title = "Título",
+         x = "Eixo x",
+         y = "Eixo y",
+         subtitle = "Subtítulo",
+         caption = "Elaborado por ...")+
+    theme_bw(base_size = 18)+ #Tema
+    scale_x_discrete(limits=c("Amazonas","RioJaneiro"))
+    #Vetor de caracteres com os possíveis valores de escala e sua ordem.
+
+![Exemplo 1 -
+scale_x\_discrete](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_x_discrete.png)
+
+    #Plotando gráfico
+    p = ggplot(data = Turismo, aes(x=cheg_2012/1000, y=cheg_2013/1000))
+    p+
+      geom_blank()+
+      labs(title = "Título",
+           x = "Eixo x",
+           y = "Eixo y",
+           subtitle = "Subtítulo",
+           caption = "Elaborado por ...")+
+      theme_bw(base_size = 18)+ #Tema
+      scale_y_continuous(
+        breaks = c(75,150,225),
+        labels = c("75 mil","150 mil","225 mil"), #nome dos ticks do eixo y
+        position = "right",
+        trans = "reverse")+
+      scale_x_continuous( limits = c(50,150)) #limites do eixo x
+
+![Exemplo 2 -
+scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_continuous.png)
+
+### 10.2.8 Cores nos gráficos ggplot2
 
 # 11 Andamento dos Estudos
 
