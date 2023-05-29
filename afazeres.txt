@@ -1,6 +1,6 @@
-ESCRITO EM 28/05/23
+ESCRITO EM 29/05/23
 ---
-PARA 29/05/23
+PARA 30/05/23
 ---
 Subir github:
 
@@ -22,8 +22,21 @@ Afazeres:
 			- Cap. 7 - Visualizando dados
 				- ggplot2
 					- Cores nos gráficos ggplot2
-					- ...
+					-  Ajustando parâmetros de textos de um ggplot2
+					- Vários gráficos em uma janela
+					- Gráficos ggplot2
+						- Gráfico de barras no ggplot2
+						- boxplot no ggplot2
+						- Histograma no ggplot2
+							- Efeito jitter
+							- Facetas
+						- Gráfico circular no ggplot2
+						- Gráfico de pontos no ggplot2
+						- Gráfico de linhas no ggplot2
+							- Efeito de suavização smooth
+						- Gráfico de dispersão com linha de tendência no ggplot2
+					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- inserindo escalas ggplot2
+			- Cores nos gráficos ggplot2
 			- ...
