@@ -21,6 +21,9 @@ install.packages("foreign") # Leitura de arquivos com extensão minitab, Octave,
 install.packages("ggthemes") # Temas adicionais para graficos
 install.packages("grid") #
 
+# Pacote com paleta de cores
+install.packages("RColorBrewer")
+
 # Conectores com banco de dados
 install.packages("DBI")
 install.packages("odbc")
