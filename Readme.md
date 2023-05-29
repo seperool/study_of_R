@@ -3367,6 +3367,36 @@ scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_co
 
 ### 10.2.8 Cores nos gráficos ggplot2
 
+-   As cores podem ser aplicadas em diversos elementos do gráfico:  
+    -   Linhas  
+    -   Preenchimentos da forma gráfica  
+    -   Texto  
+-   Principais parâmetros:  
+    -   `fill`  
+        Controla o preenchimento de um gráfico.  
+    -   `colour` ou `color`  
+        Cor de linha ou contorno do gráfico.  
+    -   `alpha`  
+        Controla o grau de transparância da cor, valores entre 0 e 1 (0
+        sendo muito transparênte e 1 sendo opaco).  
+        Ex.: `alpha <- 1`  
+-   Método para obter cores em **R**:  
+    -   Pelo número  
+        `col = x`, sendo algum número. `x = 1, 2, ...`  
+    -   Pelo nome  
+        Há 657 nomes de cores disponiveis no **R**.  
+        Através da função `colors()` diretamente na linha de comando
+        será exibido o nome das 657 cores. Ademais se colocar
+        `colors()[x]` será exibido o nome na posição x.  
+        Ex.: `colors()[657]` = “grey”.  
+    -   Pelo sistema **RGB** (*Red*, *Green*, *Blue*)  
+        `rgb(0,0,0)`  
+    -   Pelo sistema hexa decimal  
+        `#ff0000`  
+-   Principais pacotes de paletas de cores do **R**:  
+    -   **R** básico  
+    -   Pacote **RColorBrewer**  
+
 # 11 Andamento dos Estudos
 
 ## 11.1 Assunto em andamento:
