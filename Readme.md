@@ -1,4 +1,4 @@
-# 1 Objetivo
+# 1 OBJETIVO
 
 Estudo dirigido de linguagem R.  
 
@@ -7,7 +7,7 @@ Estudo dirigido de linguagem R.
 Utilizando a Linguagem R.  
 Editora: ALTA BOOKS EDITORA  
 
-# 3 Cap 1 - Instalação do R e Rstudio 
+# 3 CAP. 1 - INSTALAÇÃO DO **R** E **RSTUDIO**
 
 -   Download da linguagem R:  
     <https://www.r-project.org/>  
@@ -15,7 +15,7 @@ Editora: ALTA BOOKS EDITORA
 -   Download Rstudio IDE:  
     <https://posit.co/downloads/>  
 
-# 4 Cap 2 - Pacote base e funções estatísticas básicas 
+# 4 CAP. 2 - PACOTE BASE E FUNÇÕES ESTATÍSTICAS BÁSICAS
 
 ## 4.1 Operações matematicas basicas
 
@@ -208,7 +208,7 @@ Operações básicas do R
 | var(x,y)                  | Calcula a covariância entre x e y.                                                                                       |
 | View(D)                   | Mostra o dataframe em janela separada.                                                                                   |
 
-# 5 Cap 3 - Principais pacotes 
+# 5 CAP. 3 - PRINCIPAIS PACOTES
 
 ## 5.1 Instalação de pacotes 
 
@@ -289,7 +289,7 @@ através dos comandos:
 1. `package?nome_pacote`  
 2. `help(package = "nome_pacote")`  
 
-# 6 Sites para uso Remote do R
+# 6 SITES PARA USO REMOTO DO **R**
 
 -   Alguns sites que possibilitam utilizar o R básico, sem que seja
     necessário instala-lo no computador.  
@@ -305,7 +305,7 @@ através dos comandos:
 7.  <http://rextester.com/l/r_online_compiler>
 8.  <http://rnotebook.io>
 
-# 7 Cap 4 - R Markdown 
+# 7 CAP. 4 - **R MARKDOWN**
 
 ## 7.1 Preâmbulo
 
@@ -1182,7 +1182,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Exemplo:  
     `# titulo {.tabset}`  
 
-# 8 Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
+# 8 CAP. 5 - PACOTES DO TIDYVERSE E IDENTIFICANDO/MUDANDO TIPOS DE VARIÁVEIS
 
 ## 8.1 Identificando/mudando tipos de variáveis
 
@@ -2060,7 +2060,7 @@ Tabela em formato larga dieta de pacientes
     -   Exemplo:  
         `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`  
 
-# 9 Cap 6 - Pacote data.table 
+# 9 CAP. 6 - PACOTE **DATA.TABLE**
 
 ## 9.1 Teoria
 
@@ -2211,7 +2211,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 
 Funções set para modificação de dados no formato data.table
 
-# 10 Cap 7 - Gráficos pacote básico e pacote ggplot2
+# 10 CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
 
 -   Objetivo é obter o grafico ideal, com o qual se consiga visualizar
     os dados e analiza-los.  
@@ -3397,13 +3397,13 @@ scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_co
     -   **R** básico  
     -   Pacote **RColorBrewer**  
 
-# 11 Andamento dos Estudos
+# 11 ANDAMENTO DOS ESTUDOS
 
 ## 11.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
 
-# 12 Referências
+# 12 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de

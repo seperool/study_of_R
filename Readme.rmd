@@ -2,19 +2,22 @@
 title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
+lof: true
+lot: true
+toc-title: SUMÁRIO
 output:
-  html_document:
+  md_document:
     number_sections: true
-    df_print: paged
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: TRUE
   odt_document: 
     number_sections: true
   github_document: 
-  md_document:
+  html_document:
     number_sections: true
-    variant: markdown_github
+    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
@@ -24,7 +27,7 @@ csl: Cap4-R_markdown/abnt.csl
 
 \newpage
 
-# Objetivo
+# OBJETIVO
 
 Estudo dirigido de linguagem R.\
 
@@ -46,7 +49,7 @@ Editora: ALTA BOOKS EDITORA\
 
 \newpage
 
-# Cap 1 - Instalação do R e Rstudio\
+# CAP. 1 - INSTALAÇÃO DO **R** E **RSTUDIO**
 
 - Download da linguagem R:\
 <https://www.r-project.org/>\
@@ -56,7 +59,7 @@ Editora: ALTA BOOKS EDITORA\
 
 \newpage
 
-# Cap 2 - Pacote base e funções estatísticas básicas\
+# CAP. 2 - PACOTE BASE E FUNÇÕES ESTATÍSTICAS BÁSICAS
 
 ## Operações matematicas basicas
 
@@ -229,7 +232,7 @@ View(D)    |   Mostra o dataframe em janela separada.
 
 \newpage
 
-# Cap 3 - Principais pacotes\
+# CAP. 3 - PRINCIPAIS PACOTES
 
 ## Instalação de pacotes\
  - sintaxe de instalação:\
@@ -299,7 +302,7 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
 
 \newpage
 
-# Sites para uso Remote do R
+# SITES PARA USO REMOTO DO **R**
 - Alguns sites que possibilitam utilizar o R básico, sem que seja necessário instala-lo no computador.\
 - Uma otima saída quando necessario utilizar em algum computador público (lan houses, hotéis, laboratórios, ...)\
 1. <http://rstudio.cloud/>
@@ -313,7 +316,7 @@ Duas formas de se conseguir informações sobre determinado pacote é através d
 
 \newpage
 
-# Cap 4 - R Markdown\
+# CAP. 4 - **R MARKDOWN**
 
 ## Preâmbulo
 ### **Titulo**
@@ -1075,7 +1078,7 @@ $\Delta$ = `$\Delta$`\
 
 \newpage
 
-# Cap 5 - Pacotes do Tidyverse e identificando/mudando tipos de variáveis
+# CAP. 5 - PACOTES DO TIDYVERSE E IDENTIFICANDO/MUDANDO TIPOS DE VARIÁVEIS
 
 ## Identificando/mudando tipos de variáveis
 i. Principais tipos de variáveis:\
@@ -1903,7 +1906,7 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
   
 \newpage
 
-# Cap 6 - Pacote data.table\
+# CAP. 6 - PACOTE **DATA.TABLE**
 ## Teoria
 - Manipula dados, porém usa uma filosofia diferente de **tidyverse**.\
 - Chega nos mesmo resultados que **tidyverse**.\
@@ -2069,7 +2072,7 @@ kable(dt_set, col.names = c("Funções set","Descrição", "Fórmula"), align = 
 
 \newpage
 
-# Cap 7 - Gráficos pacote básico e pacote ggplot2
+# CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
 - Objetivo é obter o grafico ideal, com o qual se consiga visualizar os dados e analiza-los.\
 
 - Os principais passos:\
@@ -3269,7 +3272,7 @@ p+
 
 \newpage
 
-# Andamento dos Estudos
+# ANDAMENTO DOS ESTUDOS
 
 ## Assunto em andamento:
 
@@ -3277,4 +3280,4 @@ Atualmente estou estudando Cap.7, gráficos com **ggplot2**.\
 
 \newpage
 
-# Referências
+# REFERÊNCIAS
