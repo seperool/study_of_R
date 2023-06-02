@@ -2,9 +2,9 @@
 title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-lof: true
-lot: true
-toc-title: SUMÁRIO
+lof: true #adiciona lista de figuras
+lot: true #adiciona lista de tabelas
+toc-title: SUMÁRIO #nome do sumário
 output:
   md_document:
     number_sections: true
@@ -12,24 +12,23 @@ output:
   pdf_document: 
     number_sections: true
     toc: TRUE
-  odt_document: 
-    number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+header-includes:
+  - \pagenumbering{roman} #adiciona letras romanas minusculas ao cabeçalho
+  - \renewcommand{\listfigurename}{LISTA DE FIGURAS} #nome lista de figuras
+  - \renewcommand{\listtablename}{LISTA DE TABELAS} #nome lista de tabelas
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
 
-\newpage
-
-# OBJETIVO
-
-Estudo dirigido de linguagem R.\
 
 ```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
 library(knitr)
@@ -42,11 +41,14 @@ library(tidyr)
 library(data.table)
 ```
 
-# Livro de referência
 
-Utilizando a Linguagem R.\
-Editora: ALTA BOOKS EDITORA\
+\newpage
 
+# OBJETIVO
+
+Estudo dirigido de linguagem R.\
+
+\pagenumbering{arabic}
 \newpage
 
 # CAP. 1 - INSTALAÇÃO DO **R** E **RSTUDIO**

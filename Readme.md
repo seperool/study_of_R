@@ -2,12 +2,7 @@
 
 Estudo dirigido de linguagem R.  
 
-# 2 Livro de referência
-
-Utilizando a Linguagem R.  
-Editora: ALTA BOOKS EDITORA  
-
-# 3 CAP. 1 - INSTALAÇÃO DO **R** E **RSTUDIO**
+# 2 CAP. 1 - INSTALAÇÃO DO **R** E **RSTUDIO**
 
 -   Download da linguagem R:  
     <https://www.r-project.org/>  
@@ -15,9 +10,9 @@ Editora: ALTA BOOKS EDITORA
 -   Download Rstudio IDE:  
     <https://posit.co/downloads/>  
 
-# 4 CAP. 2 - PACOTE BASE E FUNÇÕES ESTATÍSTICAS BÁSICAS
+# 3 CAP. 2 - PACOTE BASE E FUNÇÕES ESTATÍSTICAS BÁSICAS
 
-## 4.1 Operações matematicas basicas
+## 3.1 Operações matematicas basicas
 
 | Nome da operação                | Operação  | Resultado |
 |:--------------------------------|:---------:|----------:|
@@ -35,7 +30,7 @@ Editora: ALTA BOOKS EDITORA
 
 Operações básicas do R
 
-## 4.2 Vetor
+## 3.2 Vetor
 
 -   Para criar um vetor usamos a função *c*().  
 -   Os argumentos são separados por virgula dentro do parênteses.  
@@ -45,9 +40,9 @@ Operações básicas do R
 -   Armazenando vetores em um objeto:  
     Ex.: *obj_qualquer* \<- *c*(1,2,3)  
 
-## 4.3 Tabela de dados (**data.frame**) e **matrizes**
+## 3.3 Tabela de dados (**data.frame**) e **matrizes**
 
-### 4.3.1 **data.frame**
+### 3.3.1 **data.frame**
 
 -   Uma tabela onde cada coluna é um vetor.  
 -   Como cada coluna é um vetor, cada coluna pode ser de um tipo
@@ -59,7 +54,7 @@ Operações básicas do R
     **View**().  
     Ex.: `View(nome_data.frame)`  
 
-### 4.3.2 **Matrizes**
+### 3.3.2 **Matrizes**
 
 -   A diferença entre **matrizes** e **data.frames**, é que no caso das
     matrizes todas as colunas e linhas devem ser do mesmo tipo. Enquanto
@@ -75,9 +70,9 @@ Operações básicas do R
     matriz, ela converte todos os dados para um único tipo. A principio
     *string* (*chr*).  
 
-## 4.4 Acessando valores em posições especificadas dos objetos - **vetor**, **matriz** e **data.frame**
+## 3.4 Acessando valores em posições especificadas dos objetos - **vetor**, **matriz** e **data.frame**
 
-### 4.4.1 Caso **vetor** e **matriz**
+### 3.4.1 Caso **vetor** e **matriz**
 
 -   Podemos acessar os valores do objeto tipo **vetor** e **matriz**,
     informando a posição entre colchetes \[\].  
@@ -100,7 +95,7 @@ Operações básicas do R
     determinar a *coluna* e deixar a *linha* em branco.  
     Ex.: `Mc[,2]`  
 
-### 4.4.2 Caso **data.frame**
+### 3.4.2 Caso **data.frame**
 
 -   No caso do **data.frame** podemos acessar os valores das colunas
     informando, “nome do **data.frame**” “$” “nome da coluna”.  
@@ -110,9 +105,9 @@ Operações básicas do R
 -   O **data.frame** também aceita as mesmas formas de acessar posições
     que as **matrizes**.  
 
-## 4.5 Visualizando dados
+## 3.5 Visualizando dados
 
-### 4.5.1 **View**() - visualização de dados
+### 3.5.1 **View**() - visualização de dados
 
 -   Podemos visualizar dados de duas formas:  
     -   Escrevendo o nome da variável  
@@ -122,7 +117,7 @@ Operações básicas do R
         queremos ver, será exibido uma nova janela com o valor da
         variável numa tabela.  
 
-### 4.5.2 **str**() - estrutura de objetos
+### 3.5.2 **str**() - estrutura de objetos
 
 -   A função “**str**()” retorna a estrutura do objeto do argumento.  
 -   Retorna diversos dados, entre eles:  
@@ -132,7 +127,7 @@ Operações básicas do R
 -   Sintaxe:  
     `str(argumento)`  
 
-### 4.5.3 **summary**() - resumo de variáveis
+### 3.5.3 **summary**() - resumo de variáveis
 
 -   A função **summary**() retorna o resumo de variaveis.  
 -   O retorno depende do argumento (se for um vetor, uma lista, um
@@ -150,7 +145,7 @@ Operações básicas do R
 -   Sintaxe:  
     `summary(nome_variavel)`  
 
-### 4.5.4 **class**() - classe de objetos
+### 3.5.4 **class**() - classe de objetos
 
 -   A função “**class**()” retorna a que classe do objeto do argemunto
     pertence.  
@@ -159,7 +154,7 @@ Operações básicas do R
 -   Sintaxe:  
     `class(argumento)`  
 
-## 4.6 Funções estatísticas básicas
+## 3.6 Funções estatísticas básicas
 
 | Função                    | Descrição                                                                                                                |
 |:-----------------------------|:-----------------------------------------|
@@ -208,9 +203,9 @@ Operações básicas do R
 | var(x,y)                  | Calcula a covariância entre x e y.                                                                                       |
 | View(D)                   | Mostra o dataframe em janela separada.                                                                                   |
 
-# 5 CAP. 3 - PRINCIPAIS PACOTES
+# 4 CAP. 3 - PRINCIPAIS PACOTES
 
-## 5.1 Instalação de pacotes 
+## 4.1 Instalação de pacotes 
 
 -   sintaxe de instalação:  
     **install.packages**(“*nome do pacote*”)  
@@ -218,7 +213,7 @@ Operações básicas do R
     **install.packages**(c(“*nome do pacote*”,“*nome do pacote*”,…),
     dependencies = **TRUE**)  
 
-## 5.2 Pacotes
+## 4.2 Pacotes
 
 1.  Principais pacotes:  
 
@@ -269,7 +264,7 @@ Operações básicas do R
 -   **ggthemes**  
 -   **grid**  
 
-## 5.3 Carregamento de pacotes
+## 4.3 Carregamento de pacotes
 
 -   Para poder utilizar o conjunto de funções de um determinado pacote,
     não basta apenas instalar o pacote, é preciso carrega-lo no
@@ -282,14 +277,14 @@ Operações básicas do R
     ela pertence.  
     `nome_pacote::função`.  
 
-## 5.4 Obter ajuda (informações) sobre pacotes
+## 4.4 Obter ajuda (informações) sobre pacotes
 
 Duas formas de se conseguir informações sobre determinado pacote é
 através dos comandos:  
 1. `package?nome_pacote`  
 2. `help(package = "nome_pacote")`  
 
-# 6 SITES PARA USO REMOTO DO **R**
+# 5 SITES PARA USO REMOTO DO **R**
 
 -   Alguns sites que possibilitam utilizar o R básico, sem que seja
     necessário instala-lo no computador.  
@@ -305,15 +300,15 @@ através dos comandos:
 7.  <http://rextester.com/l/r_online_compiler>
 8.  <http://rnotebook.io>
 
-# 7 CAP. 4 - **R MARKDOWN**
+# 6 CAP. 4 - **R MARKDOWN**
 
-## 7.1 Preâmbulo
+## 6.1 Preâmbulo
 
-### 7.1.1 **Titulo**
+### 6.1.1 **Titulo**
 
 *title*: “Titulo desejado”  
 
-### 7.1.2 **Autor**
+### 6.1.2 **Autor**
 
 -   Para inserir um autor:  
     *author*: “Nome do autor”  
@@ -322,7 +317,7 @@ através dos comandos:
     -   autor_1^\[instituto\]  
     -   autor_2^\[instituto\]  
 
-### 7.1.3 **Data**
+### 6.1.3 **Data**
 
 -   O comando “*date*:”, adiciona uma data ao documento.  
 -   Podemos adicionar uma data qualquer para o documento no formato
@@ -338,7 +333,7 @@ através dos comandos:
     *date*: “r format(Sys.time(), ‘%d %B %Y’)”  
     Obs.: *chunk* deve ser colocado entre acentos graves.  
 
-### 7.1.4 **Tipo do Documento** (*output*)
+### 6.1.4 **Tipo do Documento** (*output*)
 
 -   *output*: o tipo de saida, podem ser:  
     -   Documentos:  
@@ -356,25 +351,25 @@ através dos comandos:
         -   *flexdashboard::flex_dashboard*  
         -   *github_document*  
 
-### 7.1.5 **Sumário**
+### 6.1.5 **Sumário**
 
 -   Para inserir o sumário no documento, basta colocar o comando “*doc*:
     *yes*” indentado dentro do tipo de saída.  
 -   O comando **number_sections: true** adiciona numeração aos capítulos
     do sumário.  
 
-### 7.1.6 Formatação desejada
+### 6.1.6 Formatação desejada
 
 Para determinar a formatação desejada, basta salvar um arquivo com o
 nome *estilo*.*docx*, que contenha a formatação e referenciar o arquivo,
 indentado dentro do tipo de arquivo, através do comando
 “*reference_docx*: caminho/…/estilo.docx”.  
 
-### 7.1.7 **Abstract**
+### 6.1.7 **Abstract**
 
 *Abstract*: “Texto de abstract”.  
 
-### 7.1.8 **Bibliografia**
+### 6.1.8 **Bibliografia**
 
 -   Ter um arquivo \*.bib com as referencias.  
 -   Adicionar o arquivo \*.bib no preâmbulo do **R Markdown**, atravês
@@ -404,9 +399,9 @@ indentado dentro do tipo de arquivo, através do comando
         Exemplo do comando: \[@ chave_da_referencia_1, @
         chave_da_referencia_2\]  
 
-## 7.2 *Chunks* (códigos embutidos)
+## 6.2 *Chunks* (códigos embutidos)
 
-### 7.2.1 Códigos embutidos no texto
+### 6.2.1 Códigos embutidos no texto
 
 -   Podemos embutir códigos ao longo do texto.  
 
@@ -424,7 +419,7 @@ indentado dentro do tipo de arquivo, através do comando
     O resultado do comando 1:3 é criar uma sequencia com os valores 1,
     2, 3. A soma destes valores é 6.  
 
-### 7.2.2 Chunk
+### 6.2.2 Chunk
 
 -   Códigos em R, ou em outras linguagens, podem ser inseriodos nos
     documentos através de *chunks*.  
@@ -476,7 +471,7 @@ indentado dentro do tipo de arquivo, através do comando
     carrega bibliotecas (**library**) no *chunk*, evita que as mensagens
     do carregamento apareçam.  
 
-### 7.2.3 Configurando imagens e tabelas dentro do *chunk*
+### 6.2.3 Configurando imagens e tabelas dentro do *chunk*
 
 -   Os comandos de configuração de imagem no *chunk* são inseridos no
     cabeçalho do *chunk*.  
@@ -497,7 +492,7 @@ indentado dentro do tipo de arquivo, através do comando
     -   **out.width ou out.height** =  
         Porcentagem do tamanho original da imagem.  
 
-### 7.2.4 Global *Chunk*
+### 6.2.4 Global *Chunk*
 
 -   Para definir as opções globais que se aplicam a cada parte do seu
     arquivo, chame `knitr::opts_chunk$set` em uma parte do código.  
@@ -505,7 +500,7 @@ indentado dentro do tipo de arquivo, através do comando
     `knitr::opts_chunk$set` como um padrão global que pode ser
     substituído em cabeçalhos de blocos individuais.  
 
-## 7.3 Titulos e subtitulos
+## 6.3 Titulos e subtitulos
 
 -   Ao utilizar o comando \# e em seguencia um texo, geramos um
     titulo.  
@@ -513,16 +508,16 @@ indentado dentro do tipo de arquivo, através do comando
 -   A cada \# que adicionamos, diminuimos uma camada de subtitulos.  
     \## Subtitulo  
 
-## 7.4 Pular linha
+## 6.4 Pular linha
 
 -   Para que duas frases fiquem em linhas separadas, dê dois espaços
     entre elas.  
 -   Os dois espaços funcionam também para deixar uma linha em branco.  
 -   Outra forma é adicinal “\\”, tem o mesmo efeito.  
 
-## 7.5 Listas
+## 6.5 Listas
 
-### 7.5.1 Listas numeradas
+### 6.5.1 Listas numeradas
 
 -   Basta inserir o número seguido de ponto e espaço.  
     `1. Tópico da lista numerada`  
@@ -539,7 +534,7 @@ indentado dentro do tipo de arquivo, através do comando
 -   Para inserir uma lista dentro de uma outra lista, é necessario
     indentar os tópicos.  
 
-### 7.5.2 Listas não numeradas
+### 6.5.2 Listas não numeradas
 
 -   Os principais simbolos (na ordem de utilização) da lista não
     númerada:  
@@ -549,7 +544,7 @@ indentado dentro do tipo de arquivo, através do comando
 -   Para inserir uma lista dentro de uma outra lista, é necessario
     indentar os tópicos.  
 
-## 7.6 Notas de rodapé (clicáveis)
+## 6.6 Notas de rodapé (clicáveis)
 
 -   Há duas opções para criar uma nota de rodapé:  
 
@@ -573,9 +568,9 @@ indentado dentro do tipo de arquivo, através do comando
     descritas detalhadamente no livro R Markdown: The Definitive Guide
     [1].  
 
-## 7.7 Inserir tabelas
+## 6.7 Inserir tabelas
 
-### 7.7.1 Formato de tabela padrão
+### 6.7.1 Formato de tabela padrão
 
 -   A tabela mais simples é atraves do padrão:  
     -   Primeira linha:  
@@ -594,19 +589,19 @@ indentado dentro do tipo de arquivo, através do comando
         Cada dado de linha em uma linha, com os dados de cada coluna
         separado por barras verticais.  
 
-### 7.7.2 Criador de tabelas online para R Markdown
+### 6.7.2 Criador de tabelas online para R Markdown
 
 Site que ajuda a construir tabelas para **R Markdown**:  
 <https://tablesgenerator.com/markdown_tables>
 
-### 7.7.3 Tabelas provenientes de banco de dados
+### 6.7.3 Tabelas provenientes de banco de dados
 
-#### 7.7.3.1 Mostrar todos os dados
+#### 6.7.3.1 Mostrar todos os dados
 
 Dentro do *chunk* chamar a variável que contém um **dataframe**, para
 imprimir ela na tela.  
 
-#### 7.7.3.2 Mostrar apenas os primeiros dados
+#### 6.7.3.2 Mostrar apenas os primeiros dados
 
 -   Dentro do *chunk* chamar a variável que contém um **dataframe**, e
     usar a função **head**() que mostra as 5 primeiras linhas. Podemos
@@ -616,9 +611,9 @@ imprimir ela na tela.
 -   Exemplo:  
     **head**(*var_dataframe*, *n_linha*)  
 
-#### 7.7.3.3 Bibliotecas para criação de Tabelas
+#### 6.7.3.3 Bibliotecas para criação de Tabelas
 
-##### 7.7.3.3.1 **kable**
+##### 6.7.3.3.1 **kable**
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **knitr**, e usar a
     função **kable**() onde podemos chamar como argumento a variável
@@ -680,7 +675,7 @@ alt="Exemplo Tabela kable" />
 <figcaption aria-hidden="true">Exemplo Tabela kable</figcaption>
 </figure>
 
-##### 7.7.3.3.2 kableExtra
+##### 6.7.3.3.2 kableExtra
 
 -   Para mais opções de formatação do `knitr::kable`, temos o pacote
     `kableExtra`.  
@@ -775,7 +770,7 @@ alt="Exemplo Tabela kable" />
         kable(iris3[, 1:4], booktabs = TRUE) %>% 
           pack_rows(index = c("setosa" = 2, "versicolor" = 4, "virginica" = 3))
 
-##### 7.7.3.3.3 **xtable**
+##### 6.7.3.3.3 **xtable**
 
 -   A biblioteca **xtable** converte um objeto R em um objeto
     **xtable**, que pode ser expresso como uma tabela **LaTeX** ou
@@ -798,7 +793,7 @@ xtable(tab,type = "latex")
 xtable(tab,type = "html")
 ```
 
-##### 7.7.3.3.4 **pander**
+##### 6.7.3.3.4 **pander**
 
 -   O principal objetivo do pacote **pander** R é oferecer uma
     ferramenta de fácil renderização de objetos R no markdown do
@@ -871,7 +866,7 @@ xtable(tab,type = "html")
     `library(pander)`  
     `pandoc.table(dataframe, justify = "center", caption = "Exemplo de tabela")`  
 
-#### 7.7.3.4 Tabela para paginas web
+#### 6.7.3.4 Tabela para paginas web
 
 -   Dentro do *chunk*, podemos chamar a biblioteca **rmarkdown**, e usar
     a função **paged_table**(), onde podemos chamar como argumento a
@@ -890,16 +885,16 @@ alt="Exemplo tabela paged_table" />
 <figcaption aria-hidden="true">Exemplo tabela paged_table</figcaption>
 </figure>
 
-## 7.8 Hiperlinks e imagens
+## 6.8 Hiperlinks e imagens
 
-### 7.8.1 Hiperlinks 
+### 6.8.1 Hiperlinks 
 
 -   Sintaxe:  
     `[Nome do Link](Endereço do Link)`  
 -   Exemplo:  
     [Canal do YouTube](https://www.youtube.com/)  
 
-### 7.8.2 Imagens 
+### 6.8.2 Imagens 
 
 -   Existem duas formas de pegar uma imagem são elas:  
     -   Pegar a imagem de um endereço da web (igual a hiperlink).  
@@ -917,9 +912,9 @@ alt="Logo do R Markdown" />
 <figcaption aria-hidden="true">Logo do R Markdown</figcaption>
 </figure>
 
-## 7.9 Fórmulas LaTeX
+## 6.9 Fórmulas LaTeX
 
-### 7.9.1 Equações
+### 6.9.1 Equações
 
 -   As equações no **R Markdown** são escritas com a linguagem
     **LaTeX**.  
@@ -931,7 +926,7 @@ alt="Logo do R Markdown" />
     colocada entre quatro cifrões:  
     `$$equação$$`  
 
-### 7.9.2 Superescrito e subscritos
+### 6.9.2 Superescrito e subscritos
 
 -   Superescrito `$a^2$` = *a*<sup>2</sup>  
 -   Subscrito `$a_2$` = *a*<sub>2</sub>  
@@ -941,7 +936,7 @@ alt="Logo do R Markdown" />
     *a*<sub>2</sub><sup>3</sup>  
 -   Derivadas `$x'$` = *x*′  
 
-### 7.9.3 Sublinhados, sobrelinhas e vetores
+### 6.9.3 Sublinhados, sobrelinhas e vetores
 
 | Fórmula                  |        Símbolo         |
 |:-------------------------|:----------------------:|
@@ -953,7 +948,7 @@ alt="Logo do R Markdown" />
 | `$\overline{g h i}$`     |   $\overline{g h i}$   |
 | `$\underline{j k l}$`    |  $\underline{j k l}$   |
 
-### 7.9.4 Frações, matrizes e chavetas
+### 6.9.4 Frações, matrizes e chavetas
 
 -   Fração:  
     `$\frac{1}{2}$` = $\frac{1}{2}$  
@@ -1025,7 +1020,7 @@ $\begin{Vmatrix} x & y \\\\ z & v \\\\ \end{Vmatrix}$
 
 $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$  
 
-### 7.9.5 Expressões
+### 6.9.5 Expressões
 
 -   Combinação  
     `${n \choose k}$` = ${n \choose k}$  
@@ -1079,7 +1074,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Raiz n-ésima  
     `$f(x)\approx\sqrt[n]{x}$` = $f(x)\approx\sqrt\[n\]{x}$
 
-### 7.9.6 Sinais e setas
+### 6.9.6 Sinais e setas
 
 -   Principais sinais e setas:  
 
@@ -1112,7 +1107,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     <a href="http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX"
     class="uri">http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX</a>
 
-## 7.10 Letras gregas
+## 6.10 Letras gregas
 
 -   Expressões matemáticas, ou letras gregas, devem vir entre símbolos
     de $.  
@@ -1154,7 +1149,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
     *δ* = `$\delta$`  
     *Δ* = `$\Delta$`  
 
-## 7.11 Formatação (Fontes)
+## 6.11 Formatação (Fontes)
 
 -   Para deixar uma palavra em **negrito**, coloque-a entre quatro
     asteriscos: `**negrito**`.  
@@ -1174,7 +1169,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Para criar uma citação (quote), escreva o texto após um sinal de
     maior: `> Citação`.  
 
-## 7.12 Abas
+## 6.12 Abas
 
 -   Aplica a um `#titulo` um comando (`{.tabset}`) que transforma em
     abas os `##subtitulo` com os graficos e tabelas contidos neles.  
@@ -1182,9 +1177,9 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 -   Exemplo:  
     `# titulo {.tabset}`  
 
-# 8 CAP. 5 - PACOTES DO TIDYVERSE E IDENTIFICANDO/MUDANDO TIPOS DE VARIÁVEIS
+# 7 CAP. 5 - PACOTES DO TIDYVERSE E IDENTIFICANDO/MUDANDO TIPOS DE VARIÁVEIS
 
-## 8.1 Identificando/mudando tipos de variáveis
+## 7.1 Identificando/mudando tipos de variáveis
 
 1.  Principais tipos de variáveis:  
 
@@ -1227,7 +1222,7 @@ Principais tipos de dados
             [TRUE]
             as.character(variavel)
 
-## 8.2 Pacotes do Tidyverse
+## 7.2 Pacotes do Tidyverse
 
 -   **readr**  
     Leitura de dados.  
@@ -1247,7 +1242,7 @@ Principais tipos de dados
 -   **ggplot2**  
     Elaboração de gráficos.  
 
-## 8.3 Leitura de dados (readr)
+## 7.3 Leitura de dados (readr)
 
 -   Os principais formatos de importação de dados são:  
     -   *csv*  
@@ -1261,7 +1256,7 @@ Principais tipos de dados
 -   Entre os princiais formatos de importação de dados o mais usado é o
     *csv*.  
 
-### 8.3.1 Importação de dados via **RStudio**
+### 7.3.1 Importação de dados via **RStudio**
 
 -   No “**Environment**” tem a opção “**Import Dataset**”, que pode ser
     usada para importação de dados “*.csv*”.  
@@ -1286,7 +1281,7 @@ Principais tipos de dados
     -   **Import**  
         Botão para concluir a operação da importação dos dados.  
 
-### 8.3.2 Importação de dados via biblioteca **readr**
+### 7.3.2 Importação de dados via biblioteca **readr**
 
 -   As principais funções de importação de arquivo *.csv* são:  
     -   `read.csv`  
@@ -1399,7 +1394,7 @@ Principais tipos de dados
     para importar dados em formato *csv* no brasil a melhor escolha é o
     pacote `readr::read_csv2`.  
 
-### 8.3.3 Sincronização com banco de dados
+### 7.3.3 Sincronização com banco de dados
 
 -   Drives **ODBC** é um conector com banco de dados.  
 
@@ -1463,9 +1458,9 @@ Principais tipos de dados
 -   Referência:  
     <http://db.rstudio.com/>  
 
-## 8.4 **tibble**
+## 7.4 **tibble**
 
-### 8.4.1 Visualização de tabelas tipo **tibble**
+### 7.4.1 Visualização de tabelas tipo **tibble**
 
 -   *tibble* é um tipo especial de tabela equivalente ao *data.frame*,
     porem mais compacta e com mais informações.  
@@ -1493,7 +1488,7 @@ Principais tipos de dados
 -   Caso necessite ver mais linhas basta especificar.  
     `print(dt, n=15)`  
 
-### 8.4.2 Criação de tabela tipo **tibble**
+### 7.4.2 Criação de tabela tipo **tibble**
 
 -   Primeiramente é necessario chamar a biblioteca **tibble**  
     `library(tibble)`  
@@ -1502,7 +1497,7 @@ Principais tipos de dados
     **tibble**.  
     `x = tibble(coluna1 = c(...), coluna2 = c(...), ...)`  
 
-### 8.4.3 Funções **tibble**
+### 7.4.3 Funções **tibble**
 
 -   `as_tibble()`  
     -   Transforma um **data.frame** em tipo **tibble**, através da
@@ -1543,7 +1538,7 @@ Principais tipos de dados
         desconto_perc = 0, quinzena = 1,
         .before = 1)
 
-## 8.5 Operador **pipe**
+## 7.5 Operador **pipe**
 
 -   Esta contido do pacote `magrittr`.  
 -   Funciona como uma função composta, tornando a leitura das linhas de
@@ -1562,9 +1557,9 @@ Principais tipos de dados
     select(filial,quinzena) %>%
     filter(quinzena == 1)
 
-## 8.6 Manipulando dados com o **dplyr**
+## 7.6 Manipulando dados com o **dplyr**
 
-### 8.6.1 munipulação de dados:
+### 7.6.1 munipulação de dados:
 
 -   `select()`  
     -   Seleciona e retorna as colunas selecionadas da tabela.  
@@ -1761,7 +1756,7 @@ Principais funções de summarise
         dados1 %>% 
         rename(x1 = coluna1, x2 = coluna2, ...)
 
-### 8.6.2 combinando tabelas de dados: 
+### 7.6.2 combinando tabelas de dados: 
 
 -   `bind_cols()`  
 
@@ -1917,7 +1912,7 @@ Principais funções de summarise
     -   Sintaxe:  
         `setequal(tabela_1,tabela_2)`  
 
-## 8.7 Organizando dados com o **tidyr**
+## 7.7 Organizando dados com o **tidyr**
 
 -   `pivot_longer()` ou `gather()`  
     -   Converte a tabela de dados do formato larga para o formato
@@ -2060,9 +2055,9 @@ Tabela em formato larga dieta de pacientes
     -   Exemplo:  
         `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`  
 
-# 9 CAP. 6 - PACOTE **DATA.TABLE**
+# 8 CAP. 6 - PACOTE **DATA.TABLE**
 
-## 9.1 Teoria
+## 8.1 Teoria
 
 -   Manipula dados, porém usa uma filosofia diferente de
     **tidyverse**.  
@@ -2071,7 +2066,7 @@ Tabela em formato larga dieta de pacientes
     **tidyverse**.  
 -   Não necessita de tantos pacotes para executar as tarefas.  
 
-## 9.2 Estrutura
+## 8.2 Estrutura
 
 -   A estrutura básica do `data.table`:  
     -   Sintaxe:  
@@ -2098,7 +2093,7 @@ Tabela em formato larga dieta de pacientes
     -   Exemplo:  
         `DT[c(1,7,9)][order(-valor_compra)]`  
 
-## 9.3 Transformando **data.frame** em **data.table**
+## 8.3 Transformando **data.frame** em **data.table**
 
 -   Para transformar `data.frame` em `data.table` aplicamos a função
     `data.table()`.  
@@ -2112,9 +2107,9 @@ Tabela em formato larga dieta de pacientes
     # Transformando data.frame dados em data.table dt
     dt <- data.table(dados)
 
-## 9.4 **data.table**
+## 8.4 **data.table**
 
-### 9.4.1 Manipulando linhas
+### 8.4.1 Manipulando linhas
 
 |                      Comando                       |                                                                         O que faz?                                                                          |
 |:-----------------:|:---------------------------------------------------:|
@@ -2126,7 +2121,7 @@ Tabela em formato larga dieta de pacientes
 
 5 formas de manipulação de linhas no data.table
 
-### 9.4.2 Manipulando colunas
+### 8.4.2 Manipulando colunas
 
 |                              Comando                               |                            O que faz?                            |
 |:-----------------------------------:|:---------------------------------:|
@@ -2141,7 +2136,7 @@ Tabela em formato larga dieta de pacientes
 
 8 formas de manipulação de colunas no data.table
 
-### 9.4.3 Sumarizando dados
+### 8.4.3 Sumarizando dados
 
 -   Realiza operações para apuração de valores sobre linhas de um
     `data.table`.  
@@ -2156,7 +2151,7 @@ Tabela em formato larga dieta de pacientes
 
 Argumentos para operações em um DT aplicados a uma ou mais colunas
 
-### 9.4.4 Operando um subconjunto de dados
+### 8.4.4 Operando um subconjunto de dados
 
 -   O pacote possui um símbolo especial denotado por `.SD` para realizar
     operações em um subconjunto de dados do `data.table` **DT**, de
@@ -2197,7 +2192,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
     -   Agrupando os dados (`by`) entorno das colunas selecionadas
         coluna_3 e coluna_4.  
 
-### 9.4.5 Modificando dados com **set**
+### 8.4.5 Modificando dados com **set**
 
 -   As funções **set** são para modificação de dados do `data.table`.  
 -   São as principais funções **set**:  
@@ -2211,7 +2206,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 
 Funções set para modificação de dados no formato data.table
 
-# 10 CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
+# 9 CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
 
 -   Objetivo é obter o grafico ideal, com o qual se consiga visualizar
     os dados e analiza-los.  
@@ -2223,7 +2218,7 @@ Funções set para modificação de dados no formato data.table
     -   Ajustes.  
     -   Refinamento.  
 
-## 10.1 Gráficos com o pacote básico
+## 9.1 Gráficos com o pacote básico
 
 -   Principais funções de gráfico do pacote básico:  
 
@@ -2297,11 +2292,11 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Fecha a janela gráfica (*devices*).  
         `dev.off()`  
 
-### 10.1.1 Gráfico de barras (barplot)
+### 9.1.1 Gráfico de barras (barplot)
 
 -   A função `barplot()` gera um gráfico de barras.  
 
-#### 10.1.1.1 Pré-requisitos
+#### 9.1.1.1 Pré-requisitos
 
 -   Necessita que os dados estejam preparados para gerar os gráfico, em
     formato *tabulado*.  
@@ -2310,7 +2305,7 @@ Nome dos argumentos para adicionar efeito em gráficos.
 -   Uma coluna com os dados **númericos** (frequencias e/ou valores).  
 -   Uma coluna com os dados **string**, ou **factor**.  
 
-#### 10.1.1.2 Preparação dos dados
+#### 9.1.1.2 Preparação dos dados
 
 -   Organização dos dados das colunas, colocando uma coluna em função da
     outra. As principais funções necesse caso são:
@@ -2336,7 +2331,7 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Exemplo:  
         `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
 
-#### 10.1.1.3 Plotagem gráfico de barras (barplot)
+#### 9.1.1.3 Plotagem gráfico de barras (barplot)
 
 -   Principais argumentos:  
     -   `y`  
@@ -2392,13 +2387,13 @@ Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png)
 ![Gráfico de barras -
 Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 
-### 10.1.2 Gráfico circular/pizza (pie)
+### 9.1.2 Gráfico circular/pizza (pie)
 
 -   A função `pie` gera um gráfico circular/pizza.  
 -   Essa forma de visualização serve para analisar a frequencia de
     variáveis categóricas.  
 
-#### 10.1.2.1 Pré-requisitos
+#### 9.1.2.1 Pré-requisitos
 
 -   Utilize somente em casos de a variável possuir poucas categorias (em
     torno de cinco).  
@@ -2407,7 +2402,7 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
     gráfico de barras.  
 -   Os dados devem estar organizados em formato tabular.  
 
-#### 10.1.2.2 Preparação dos dados
+#### 9.1.2.2 Preparação dos dados
 
 -   Organização dos dados das colunas, colocando uma coluna em função da
     outra. As principais funções necesse caso são:
@@ -2433,7 +2428,7 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
     -   Exemplo:  
         `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
 
-#### 10.1.2.3 Plotagem gráfico circular/pizza (pie)
+#### 9.1.2.3 Plotagem gráfico circular/pizza (pie)
 
 -   Principais argumentos:  
     -   `y`  
@@ -2488,7 +2483,7 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
 ![Gráfico
 circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 
-### 10.1.3 Gráfico de linhas (plot lines)
+### 9.1.3 Gráfico de linhas (plot lines)
 
 -   O gráfico de linhas (`plot`) é utilizado para vizualizar uma ou mais
     variáveis númericas que podem ser plotadas ao longo do tempo (não
@@ -2496,7 +2491,7 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 -   Podemos adicionar mais linhas (variáveis) no gráfico através do
     comando `lines`.  
 
-#### 10.1.3.1 Pré-requisitos
+#### 9.1.3.1 Pré-requisitos
 
 -   Os dados devem estar organizados em formato tabular.  
 
@@ -2518,7 +2513,7 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
     y3 <- dados_SP$cheg_2014/1000
     y4 <- dados_SP$cheg_2015/1000
 
-#### 10.1.3.2 Preparação dos dados
+#### 9.1.3.2 Preparação dos dados
 
 -   Definir os limites do eixo y:  
     -   **li**  
@@ -2535,7 +2530,7 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
         li <- min(y1,y2,y3,y4)
         ls <- max(y1,y2,y3,y4)
 
-#### 10.1.3.3 Plotagem gráfico plot
+#### 9.1.3.3 Plotagem gráfico plot
 
 -   Principais argumentos:  
     -   **x**  
@@ -2600,9 +2595,9 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
 ![Gráfico de
 linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
 
-#### 10.1.3.4 Comparando séries de gráficos de linhas
+#### 9.1.3.4 Comparando séries de gráficos de linhas
 
-##### 10.1.3.4.1 O que é comparar séries
+##### 9.1.3.4.1 O que é comparar séries
 
 -   O intuito é plotar mais de um gráfico na mesma janela gráfica, para
     facilitar a comparação das diferentes séries de dados.  
@@ -2610,7 +2605,7 @@ linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
     receber gráficos em linha, ou em coluna, ou em linhas e colunas ao
     mesmo tempo.  
 
-##### 10.1.3.4.2 Preparação da janela gráfica
+##### 9.1.3.4.2 Preparação da janela gráfica
 
 -   Existem duas formas de preparar a janela gráfica para receber os
     gráficos:  
@@ -2625,7 +2620,7 @@ linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
         número de linhas e colunas a receber os gráficos.  
         Mais recomendado a utilização.  
 
-##### 10.1.3.4.3 Plotagem de gráficos de linhas comparando séries
+##### 9.1.3.4.3 Plotagem de gráficos de linhas comparando séries
 
     #script para dois graficos de linha
     #preparando a janela grafica para receber dois graficos
@@ -2682,7 +2677,7 @@ linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
 ![Gráfico de linha comparando
 séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series.png)
 
-### 10.1.4 Gráfico de dispersão (plot abline)
+### 9.1.4 Gráfico de dispersão (plot abline)
 
 -   O gráfico de dispersão é usado para observar a relação entre duas
     variáveis quantitativas (que podem ser contadas).  
@@ -2703,12 +2698,12 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
         O coeficiente é negativo ou dito decrescente, uma variável
         cresce com o decaimento da outra.  
 
-#### 10.1.4.1 Pré-requisitos
+#### 9.1.4.1 Pré-requisitos
 
 -   Os dados devem estar em formato tabular, ou as variáveis em formato
     de vetor.  
 
-#### 10.1.4.2 Preparação dos dados
+#### 9.1.4.2 Preparação dos dados
 
 -   Coeficiente de Correlação linear:  
 
@@ -2776,7 +2771,7 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
         os coeficientes separados, assim deixando claro em cada coluna o
         que é **intercepto** e o que é **coeficiente angular**.  
 
-#### 10.1.4.3 Plotagem gráfico plot abline
+#### 9.1.4.3 Plotagem gráfico plot abline
 
 -   Funções usadas:  
     -   `paste()`  
@@ -2850,7 +2845,7 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 ![Gráfico de
 dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 
-### 10.1.5 Diagrama de caixa (boxplot)
+### 9.1.5 Diagrama de caixa (boxplot)
 
 -   O **Diagrama de caixa** serve para compreensão da forma e amplitude
     dos dados.  
@@ -2859,7 +2854,7 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
 -   O **diagrama de caixa** usa em sua construção os conceitos de
     **quartis** (**Q1**, **Q2**, e **Q3**).  
 
-#### 10.1.5.1 Separatrizes
+#### 9.1.5.1 Separatrizes
 
 -   Quartis:  
     -   Q1 (25%)  
@@ -2894,7 +2889,7 @@ calculando,
 classe selecionada,  
 *h* é a amplitude de classe (*L**s* − *L**i*).  
 
-#### 10.1.5.2 boxplot
+#### 9.1.5.2 boxplot
 
 -   Montando a box:  
     A box contém como limite superior *Q*<sub>3</sub>, limite inferior
@@ -2925,16 +2920,16 @@ style="width:50.0%" alt="Exemplo explicativo de boxplot" />
 boxplot</figcaption>
 </figure>
 
-#### 10.1.5.3 Pré-requisitos
+#### 9.1.5.3 Pré-requisitos
 
 -   Os dados devem estar em formato tabular.  
 
-#### 10.1.5.4 Preparação dos dados
+#### 9.1.5.4 Preparação dos dados
 
 -   A variável em formato de vetor.  
     Ex.: `x <- turismo$cheg_2012/1000`  
 
-#### 10.1.5.5 Plotagem gráfico boxplot
+#### 9.1.5.5 Plotagem gráfico boxplot
 
 -   Principais argumentos do gráfico de dispersão:  
     -   **x**  
@@ -2964,7 +2959,7 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 <figcaption aria-hidden="true">Gráfico de caixa (boxplot)</figcaption>
 </figure>
 
-### 10.1.6 histograma (hist)
+### 9.1.6 histograma (hist)
 
 -   Histograma é um tipo de gráficos de barras.  
 
@@ -3004,11 +2999,11 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
     <figcaption aria-hidden="true">Exemplo histograma</figcaption>
     </figure>
 
-#### 10.1.6.1 Pré-requisitos
+#### 9.1.6.1 Pré-requisitos
 
 -   Os dados devem estar em formato tabular.  
 
-#### 10.1.6.2 Preparação dos dados
+#### 9.1.6.2 Preparação dos dados
 
 -   A variável em formato de vetor.  
     Ex.: `x <- dados$cheg_2012/1000`  
@@ -3017,7 +3012,7 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
     frequência absoluta (**T**) ou a frequência relativa (**F**).  
     Ex.: `hist(... , freq = T | F, ...)`  
 
-#### 10.1.6.3 Plotagem gráfico boxplot
+#### 9.1.6.3 Plotagem gráfico boxplot
 
 -   Principais argumentos do histograma:  
     -   **x**  
@@ -3059,7 +3054,7 @@ style="width:80.0%" alt="Histograma" />
 <figcaption aria-hidden="true">Histograma</figcaption>
 </figure>
 
-## 10.2 Pacote **ggplot2**
+## 9.2 Pacote **ggplot2**
 
 O pacote `ggplot2` constroi diversos tipos de graficos a partir da mesma
 estrutura de componentes:  
@@ -3068,7 +3063,7 @@ estrutura de componentes:
 - `coord_system`: referente ao sistema de coordenadas, que podem ser
 cartesianas, polares e projeção de mapas.  
 
-### 10.2.1 O que precisa para fazer o gráfico?
+### 9.2.1 O que precisa para fazer o gráfico?
 
 A. Um nome de objeto para guardar o grafico (uma variavel).  
 B. A base de dados que será utilizada para a plotagem.  
@@ -3081,7 +3076,7 @@ E. Utilizar o operador “**+**” para adicionar camadas (*layers*) ao
 objeto `ggplot` criado.  
 F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.  
 
-### 10.2.2 Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
+### 9.2.2 Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
 
 |                     Forma                      |                           Tipo de gráfico                           |
 |:----------------------------:|:----------------------------------------:|
@@ -3102,7 +3097,7 @@ F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.
 Nome das principais formas geométricas para construção de gráficos do
 pacote ggplot2
 
-### 10.2.3 Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
+### 9.2.3 Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
 
 |                  Funções                  |                    Efeitos no gráfico                    |
 |:----------------------------:|:----------------------------------------:|
@@ -3122,7 +3117,7 @@ pacote ggplot2
 
 Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
 
-### 10.2.4 Definindo um tema para o grafico **ggplot**
+### 9.2.4 Definindo um tema para o grafico **ggplot**
 
 -   *theme_gray*  
     Fundo cinza e linhas grandes brancas.  
@@ -3144,7 +3139,7 @@ Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
 -   *theme_void*  
     Um tema completamente vazio.  
 
-### 10.2.5 Pacote ggthemes
+### 9.2.5 Pacote ggthemes
 
 |         Tema          |                                       Semelhanças                                        |
 |:--------------:|:------------------------------------------------------:|
@@ -3188,11 +3183,11 @@ Exemplo:
       
     p1
 
-### 10.2.6 Inserindo títulos, subtítulos e rótulos aos eixos de um ggplot
+### 9.2.6 Inserindo títulos, subtítulos e rótulos aos eixos de um ggplot
 
 -   Existem duas formas de inserir textos no gráfico no **ggplot2**.  
 
-#### 10.2.6.1 Primeira forma
+#### 9.2.6.1 Primeira forma
 
 -   Podemos adicionar texto ao gráfico **ggplot2** através do comando
     `labs()` e seus parâmetros:  
@@ -3223,7 +3218,7 @@ Exemplo:
            caption = "Elaborado por ...")+ #Adciona texto ao final do gráfico
       theme_bw(base_size = 18)
 
-#### 10.2.6.2 Segunda forma
+#### 9.2.6.2 Segunda forma
 
 -   Podemos adicionar texto ao **ggplot2** atraves dos comandos:  
     -   `ggtitle("",subtitle = "")`  
@@ -3253,7 +3248,7 @@ Exemplo:
       labs(caption = "Elaborado por ...") + #Adciona texto ao final do gráfico
       theme_bw(base_size = 18)
 
-### 10.2.7 Escalas no **ggplot2**
+### 9.2.7 Escalas no **ggplot2**
 
 -   Podemos definir a escala dos eixos utilizando uma camada especifica
     para esse fim:  
@@ -3365,7 +3360,7 @@ scale_x\_discrete](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_x_discrete.p
 ![Exemplo 2 -
 scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_continuous.png)
 
-### 10.2.8 Cores nos gráficos ggplot2
+### 9.2.8 Cores nos gráficos ggplot2
 
 -   As cores podem ser aplicadas em diversos elementos do gráfico:  
     -   Linhas  
@@ -3397,13 +3392,13 @@ scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_co
     -   **R** básico  
     -   Pacote **RColorBrewer**  
 
-# 11 ANDAMENTO DOS ESTUDOS
+# 10 ANDAMENTO DOS ESTUDOS
 
-## 11.1 Assunto em andamento:
+## 10.1 Assunto em andamento:
 
 Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
 
-# 12 REFERÊNCIAS
+# 11 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de
