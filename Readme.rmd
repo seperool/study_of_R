@@ -2,33 +2,55 @@
 title: "R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
-lof: true #adiciona lista de figuras
-lot: true #adiciona lista de tabelas
-toc-title: SUMÁRIO #nome do sumário
+#lof: true #adiciona lista de figuras
+#lot: true #adiciona lista de tabelas
+#toc-title: SUMÁRIO #nome do sumário
 output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: TRUE
   html_document:
     number_sections: true
     df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-header-includes:
-  - \pagenumbering{roman} #adiciona letras romanas minusculas ao cabeçalho
-  - \renewcommand{\listfigurename}{LISTA DE FIGURAS} #nome lista de figuras
-  - \renewcommand{\listtablename}{LISTA DE TABELAS} #nome lista de tabelas
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: false
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
 
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{roman}
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{SUMÁRIO}
+\tableofcontents
+```
+
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listfigurename}{LISTA DE FIGURAS}
+\listoffigures
+```
+
+\newpage
+
+```{=latex}
+\setcounter{tocdepth}{4}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+\listoftables
+```
 
 ```{r Pacotes, message=FALSE, warning=FALSE, echo=FALSE}
 library(knitr)
@@ -40,7 +62,6 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 ```
-
 
 \newpage
 

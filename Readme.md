@@ -962,7 +962,7 @@ alt="Logo do R Markdown" />
     z & v \\
     \end{pmatrix}$
 
-$\begin{pmatrix} x & y \\\\ z & v \\\\ \end{pmatrix}$  
+$\begin{pmatrix} x & y \\ z & v \\ \end{pmatrix}$  
 
 -   bmatrix:  
 
@@ -974,7 +974,7 @@ $\begin{pmatrix} x & y \\\\ z & v \\\\ \end{pmatrix}$
     0 & \cdots & 0 \\
     \end{bmatrix}$
 
-$\begin{bmatrix} 0 & \cdots & 0 \\\\ \vdots & \ddots & \vdots \\\\ 0 & \cdots & 0 \\\\ \end{bmatrix}$  
+$\begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \\ \end{bmatrix}$  
 
 -   Bmatrix:  
 
@@ -985,7 +985,7 @@ $\begin{bmatrix} 0 & \cdots & 0 \\\\ \vdots & \ddots & \vdots \\\\ 0 & \cdots & 
     z & v \\
     \end{Bmatrix}$
 
-$\begin{Bmatrix} x & y \\\\ z & v \\\\ \end{Bmatrix}$  
+$\begin{Bmatrix} x & y \\ z & v \\ \end{Bmatrix}$  
 
 -   vmatrix:  
 
@@ -996,7 +996,7 @@ $\begin{Bmatrix} x & y \\\\ z & v \\\\ \end{Bmatrix}$
     z & v \\
     \end{vmatrix}$ 
 
-$\begin{vmatrix} x & y \\\\ z & v \\\\ \end{vmatrix}$  
+$\begin{vmatrix} x & y \\ z & v \\ \end{vmatrix}$  
 
 -   Vmatrix:  
 
@@ -1007,7 +1007,7 @@ $\begin{vmatrix} x & y \\\\ z & v \\\\ \end{vmatrix}$
     z & v \\
     \end{Vmatrix}$ 
 
-$\begin{Vmatrix} x & y \\\\ z & v \\\\ \end{Vmatrix}$  
+$\begin{Vmatrix} x & y \\ z & v \\ \end{Vmatrix}$  
 
 -   matrix:  
 
@@ -1018,7 +1018,7 @@ $\begin{Vmatrix} x & y \\\\ z & v \\\\ \end{Vmatrix}$
     z & v \\
     \end{matrix}$ 
 
-$\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$  
+$\begin{matrix} x & y \\ z & v \\ \end{matrix}$  
 
 ### 6.9.5 Expressões
 
@@ -1033,18 +1033,17 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 
 -   Sobrechaves  
     `$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$`
-    =
-    $\begin{matrix} 5050 \\\\ \overbrace{1+2+\cdots+100} \end{matrix}$  
+    = $\begin{matrix} 5050 \\ \overbrace{1+2+\cdots+100} \end{matrix}$  
 
 -   Sobchaves  
     `$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$`
     =
-    $\begin{matrix} \underbrace{1+2+\cdots+100} \\\\ 5050 \end{matrix}$  
+    $\begin{matrix} \underbrace{1+2+\cdots+100} \\ 5050 \end{matrix}$  
 
 -   Função por partes  
     `$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$`
     =  
-    $f(n) = \Bigg \\{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\\\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$  
+    $f(n) = \Bigg \\ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$  
 
 -   Limites  
     `$\lim_{n \to \infty}x_n$` = lim<sub>*n* → ∞</sub>*x*<sub>*n*</sub>
@@ -1104,8 +1103,7 @@ $\begin{matrix} x & y \\\\ z & v \\\\ \end{matrix}$
 | `$\updownarrow$`    |    ↕    |
 
 -   Guia de fórmulas:  
-    <a href="http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX"
-    class="uri">http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX</a>
+    <http://pt.wikipedia.org/wiki/Ajuda:Guia_de_edição/Fórmulas_TeX>
 
 ## 6.10 Letras gregas
 
@@ -2226,7 +2224,7 @@ Funções set para modificação de dados no formato data.table
 |:------------:|:--------------------------------------------------------:|
 |    barplot(x)    |                        Produz um gráfico de colunas do vetor x.                         |
 |    boxplot(x)    |                                 Produz o boxplot de x.                                  |
-| coplot(y\~x\|z)  |             Produz um gráfico de dispersão entre x e y condicionado por z.              |
+|  coplot(y~x\|z)  |             Produz um gráfico de dispersão entre x e y condicionado por z.              |
 | curve(expressão) |              Produz um gráfico a partir da expressão de certa função de x.              |
 |    dotplot(x)    |                              Produz um gráfico de pontos.                               |
 |     hist(x)      |                            Produz um histograma do vetor x.                             |
@@ -2381,11 +2379,20 @@ Nome dos argumentos para adicionar efeito em gráficos.
         )
         text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
 
-![Gráfico de barras -
-Vertical](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png"
+alt="Gráfico de barras - Vertical" />
+<figcaption aria-hidden="true">Gráfico de barras - Vertical</figcaption>
+</figure>
 
-![Gráfico de barras -
-Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png"
+alt="Gráfico de barras - Horizontal" />
+<figcaption aria-hidden="true">Gráfico de barras -
+Horizontal</figcaption>
+</figure>
 
 ### 9.1.2 Gráfico circular/pizza (pie)
 
@@ -2480,8 +2487,11 @@ Horizontal](./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png)
         )
         text(0, -1, "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex = 1)
 
-![Gráfico
-circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png"
+alt="Gráfico circular/pizza" />
+<figcaption aria-hidden="true">Gráfico circular/pizza</figcaption>
+</figure>
 
 ### 9.1.3 Gráfico de linhas (plot lines)
 
@@ -2592,8 +2602,12 @@ circular/pizza](./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png)
         legend(9,400,c("2012","2013","2014","2015"), col = c("red","yellow","blue","green"),
             lty = 1:4, cex = 0.5)
 
-![Gráfico de
-linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png"
+alt="Gráfico de linhas" />
+<figcaption aria-hidden="true">Gráfico de linhas</figcaption>
+</figure>
 
 #### 9.1.3.4 Comparando séries de gráficos de linhas
 
@@ -2674,8 +2688,13 @@ linhas](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png)
           sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex.sub = 0.8)
     legend(9,300,c("2012","2013","2014","2015"), lty = 1:4, cex = 0.5) #os dois primeiros valores são a posição (coordenadas) da legenda no grafico
 
-![Gráfico de linha comparando
-séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series.png"
+alt="Gráfico de linha comparando séries" />
+<figcaption aria-hidden="true">Gráfico de linha comparando
+séries</figcaption>
+</figure>
 
 ### 9.1.4 Gráfico de dispersão (plot abline)
 
@@ -2708,7 +2727,6 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
 -   Coeficiente de Correlação linear:  
 
     -   Teoria  
-
         -   O coeficiente de correlação tem o objetivo de entender como
             uma variável se comporta num cenario onde a outra variável
             variando. E se existe alguma relação entre a variabilidade
@@ -2718,8 +2736,11 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
             mais proximo do centro 0, menor é a relação entre as
             variáveis. Em 0 não existe relação entre as variáveis.  
 
-        ![Correlações fortes e
-        fracas](./Cap7-graficos_basicos_e_ggplot2/Imagens/correlacao.png)
+        <figure>
+        <img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/correlacao.png"
+        alt="Correlações fortes e fracas" />
+        <figcaption aria-hidden="true">Correlações fortes e fracas</figcaption>
+        </figure>
 
         -   A correlação proximo do valor 1, significa que a relação é
             positiva, ou seja, a reta de regressão é ascendente. Quando
@@ -2728,11 +2749,14 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
             Negativa, ou seja, a reta de regressão é descendente. Quando
             uma variável diminui a outra aumenta.  
 
-        ![Tipos de
-        Correlação](./Cap7-graficos_basicos_e_ggplot2/Imagens/graficos_tipos_correlacao.png)
-
+        <figure>
+        <img
+        src="./Cap7-graficos_basicos_e_ggplot2/Imagens/graficos_tipos_correlacao.png"
+        alt="Tipos de Correlação" />
+        <figcaption aria-hidden="true">Tipos de Correlação</figcaption>
+        </figure>
     -   Cálculo de correlação linear:  
-        $$cor\_{x,y} = \frac{n \sum x_i y_i \\, - \\, \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\, \cdot \\, \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+        $$cor\_{x,y} = \frac{n \sum x_i y_i \\ - \\ \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\ \cdot \\ \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
 
     Onde,  
     *n* é o número de registros/linhas.  
@@ -2743,8 +2767,12 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
     Uma forma rápida e simples de resolver o cálculo é preencher a
     tabela de correlação linear com as informações:  
 
-    ![Tabela de correlação
-    linear](./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png)
+    <figure>
+    <img
+    src="./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png"
+    alt="Tabela de correlação linear" />
+    <figcaption aria-hidden="true">Tabela de correlação linear</figcaption>
+    </figure>
 
     -   `cor(x,y)`  
         Função do **R** que cálcula a correlação linear das variáveis
@@ -2842,8 +2870,11 @@ séries](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_comparando_series
         #eval = Avalie uma expressão R em um ambiente especificado.
         #expression = Cria ou testa objetos do modo "expressão".
 
-![Gráfico de
-dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png"
+alt="Gráfico de dispersão" />
+<figcaption aria-hidden="true">Gráfico de dispersão</figcaption>
+</figure>
 
 ### 9.1.5 Diagrama de caixa (boxplot)
 
@@ -2862,8 +2893,13 @@ dispersão](./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png)
     -   Q3 (75%)  
 -   Tabela de distribuição de frequências:  
 
-![Exemplo de tabela de distribuição de
-frequências](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png"
+alt="Exemplo de tabela de distribuição de frequências" />
+<figcaption aria-hidden="true">Exemplo de tabela de distribuição de
+frequências</figcaption>
+</figure>
 
 -   Como achar o intervalo de classe que corresponde a separatriz
     calculada.  
@@ -2962,19 +2998,14 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 ### 9.1.6 histograma (hist)
 
 -   Histograma é um tipo de gráficos de barras.  
-
 -   É usado para variáveis quantitativas continuas.  
-
 -   Este tipo de gráfico é muito usado para observar:  
-
     -   **Distribuição de frequências**  
     -   **Simetria**  
     -   **Desvio**  
         Presença de valores discrepantes (Outliers).  
     -   **Amplitude da variável**  
-
 -   A diferença entre gráficos de barras e histograma:  
-
     -   **Gráfico de barras**  
         É aplicado a variáveis categóricas, apenas um eixo representando
         variável númerica e o outro eixo representando um variável
@@ -3337,8 +3368,12 @@ Exemplo:
     scale_x_discrete(limits=c("Amazonas","RioJaneiro"))
     #Vetor de caracteres com os possíveis valores de escala e sua ordem.
 
-![Exemplo 1 -
-scale_x\_discrete](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_x_discrete.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_x_discrete.png"
+alt="Exemplo 1 - scale_x_discrete" />
+<figcaption aria-hidden="true">Exemplo 1 - scale_x_discrete</figcaption>
+</figure>
 
     #Plotando gráfico
     p = ggplot(data = Turismo, aes(x=cheg_2012/1000, y=cheg_2013/1000))
@@ -3357,8 +3392,13 @@ scale_x\_discrete](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_x_discrete.p
         trans = "reverse")+
       scale_x_continuous( limits = c(50,150)) #limites do eixo x
 
-![Exemplo 2 -
-scale\_(x\|y)\_continuous](./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_continuous.png)
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/scale_y_continuous.png"
+alt="Exemplo 2 - scale_(x|y)_continuous" />
+<figcaption aria-hidden="true">Exemplo 2 -
+scale_(x|y)_continuous</figcaption>
+</figure>
 
 ### 9.2.8 Cores nos gráficos ggplot2
 
