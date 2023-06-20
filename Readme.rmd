@@ -9,18 +9,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
   github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -969,14 +969,16 @@ z & v \\
 `$\lceil x \rceil$` = $\lceil x \rceil$\
 
 - Sobrechaves\
-`$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$` = $\begin{matrix} 5050 \\ \overbrace{1+2+\cdots+100} \end{matrix}$\
+`$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$` = \
+$\begin{matrix} 5050 \\ \overbrace{1 + 2 + \cdots + 100} \end{matrix}$
 
 - Sobchaves\
-`$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$` = $\begin{matrix} \underbrace{1+2+\cdots+100}  \\ 5050 \end{matrix}$\
+`$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$` = \
+$\begin{matrix} \underbrace{1 + 2 + \cdots + 100}  \\ 5050 \end{matrix}$
 
 - Função por partes\
 `$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$` =\
-$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$\
+$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$
 
 - Limites\
 `$\lim_{n \to \infty}x_n$` = $\lim_{n \to \infty}x_n$
@@ -3308,12 +3310,18 @@ p+
   - *qualitativa*\
   Não possui um ordenamento nas variações das cores.\
 
-- 5 funções básicas do **R** que geram paletas de cores:\
+- 5 funções básicas do **R** que geram paletas de cores sequenciais:\
   - `rainbow(n,alpha)`\
   - `heat.colors(n,alpha)`\
   - `terrain.colors(n,alpha)`\
   - `topo.colors(n,alpha)`\
   - `cm.colors(n,alpha)`\
+
+- **RColorBrewer** paletas de cores disponíveis:\
+  - *sequencial*\
+  - *divergente*\
+  - *qualitativa*\
+
 
 \newpage
 

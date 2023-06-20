@@ -1033,17 +1033,18 @@ $\begin{matrix} x & y \\ z & v \\ \end{matrix}$
 
 -   Sobrechaves  
     `$\begin{matrix} 5050 \\ \overbrace{ 1+2+\cdots+100 } \end{matrix}$`
-    = $\begin{matrix} 5050 \\ \overbrace{1+2+\cdots+100} \end{matrix}$  
+    =  
+    $\begin{matrix} 5050 \\ \overbrace{1 + 2 + \cdots + 100} \end{matrix}$
 
 -   Sobchaves  
     `$\begin{matrix} \underbrace{ 1+2+\cdots+100 } \\ 5050 \end{matrix}$`
-    =
-    $\begin{matrix} \underbrace{1+2+\cdots+100} \\ 5050 \end{matrix}$  
+    =  
+    $\begin{matrix} \underbrace{1 + 2 + \cdots + 100} \\ 5050 \end{matrix}$
 
 -   Função por partes  
     `$f(n) = \Bigg \{ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$`
     =  
-    $f(n) = \Bigg \\ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$  
+    $f(n) = \Bigg \\ \begin{matrix} n/2, & \mbox{se }n\mbox{ é par} \\ 3n+1, & \mbox{se }n\mbox{ é impar} \end{matrix}$
 
 -   Limites  
     `$\lim_{n \to \infty}x_n$` = lim<sub>*n* → ∞</sub>*x*<sub>*n*</sub>
@@ -3448,12 +3449,16 @@ nomes.</figcaption>
         ambas as direções.  
     -   *qualitativa*  
         Não possui um ordenamento nas variações das cores.  
--   5 funções básicas do **R** que geram paletas de cores:  
+-   5 funções básicas do **R** que geram paletas de cores sequenciais:  
     -   `rainbow(n,alpha)`  
     -   `heat.colors(n,alpha)`  
     -   `terrain.colors(n,alpha)`  
     -   `topo.colors(n,alpha)`  
     -   `cm.colors(n,alpha)`  
+-   **RColorBrewer** paletas de cores disponíveis:  
+    -   *sequencial*  
+    -   *divergente*  
+    -   *qualitativa*  
 
 # 10 ANDAMENTO DOS ESTUDOS
 
