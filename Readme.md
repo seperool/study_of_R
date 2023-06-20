@@ -3415,6 +3415,7 @@ scale_(x|y)_continuous</figcaption>
         Controla o grau de transparância da cor, valores entre 0 e 1 (0
         sendo muito transparênte e 1 sendo opaco).  
         Ex.: `alpha <- 1`  
+
 -   Método para obter cores em **R**:  
     -   Pelo número  
         `col = x`, sendo algum número. `x = 1, 2, ...`  
@@ -3428,9 +3429,31 @@ scale_(x|y)_continuous</figcaption>
         `rgb(0,0,0)`  
     -   Pelo sistema hexa decimal  
         `#ff0000`  
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/657_cores.png"
+alt="657 cores e seus repectivos nomes." />
+<figcaption aria-hidden="true">657 cores e seus repectivos
+nomes.</figcaption>
+</figure>
+
 -   Principais pacotes de paletas de cores do **R**:  
     -   **R** básico  
     -   Pacote **RColorBrewer**  
+-   Tipos de paletas de cores:  
+    -   *sequencial*  
+        Cores que variam em sequência da mais clara para mais escura.  
+    -   *divergente*  
+        O centro da paleta é mais claro e os extremos mais escuros em
+        ambas as direções.  
+    -   *qualitativa*  
+        Não possui um ordenamento nas variações das cores.  
+-   5 funções básicas do **R** que geram paletas de cores:  
+    -   `rainbow(n,alpha)`  
+    -   `heat.colors(n,alpha)`  
+    -   `terrain.colors(n,alpha)`  
+    -   `topo.colors(n,alpha)`  
+    -   `cm.colors(n,alpha)`  
 
 # 10 ANDAMENTO DOS ESTUDOS
 
