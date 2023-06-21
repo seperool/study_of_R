@@ -3417,19 +3417,20 @@ scale_(x|y)_continuous</figcaption>
         sendo muito transparênte e 1 sendo opaco).  
         Ex.: `alpha <- 1`  
 
--   Método para obter cores em **R**:  
-    -   Pelo número  
-        `col = x`, sendo algum número. `x = 1, 2, ...`  
-    -   Pelo nome  
-        Há 657 nomes de cores disponiveis no **R**.  
-        Através da função `colors()` diretamente na linha de comando
-        será exibido o nome das 657 cores. Ademais se colocar
-        `colors()[x]` será exibido o nome na posição x.  
-        Ex.: `colors()[657]` = “grey”.  
-    -   Pelo sistema **RGB** (*Red*, *Green*, *Blue*)  
-        `rgb(0,0,0)`  
-    -   Pelo sistema hexa decimal  
-        `#ff0000`  
+#### 9.2.8.1 Método para obter cores em **R**
+
+-   Pelo número  
+    `col = x`, sendo algum número. `x = 1, 2, ...`  
+-   Pelo nome  
+    Há 657 nomes de cores disponiveis no **R**.  
+    Através da função `colors()` diretamente na linha de comando será
+    exibido o nome das 657 cores. Ademais se colocar `colors()[x]` será
+    exibido o nome na posição x.  
+    Ex.: `colors()[657]` = “grey”.  
+-   Pelo sistema **RGB** (*Red*, *Green*, *Blue*)  
+    `rgb(0,0,0)`  
+-   Pelo sistema hexa decimal  
+    `#ff0000`  
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/657_cores.png"
@@ -3438,27 +3439,93 @@ alt="657 cores e seus repectivos nomes." />
 nomes.</figcaption>
 </figure>
 
--   Principais pacotes de paletas de cores do **R**:  
-    -   **R** básico  
-    -   Pacote **RColorBrewer**  
--   Tipos de paletas de cores:  
-    -   *sequencial*  
-        Cores que variam em sequência da mais clara para mais escura.  
-    -   *divergente*  
-        O centro da paleta é mais claro e os extremos mais escuros em
-        ambas as direções.  
-    -   *qualitativa*  
-        Não possui um ordenamento nas variações das cores.  
--   5 funções básicas do **R** que geram paletas de cores sequenciais:  
-    -   `rainbow(n,alpha)`  
-    -   `heat.colors(n,alpha)`  
-    -   `terrain.colors(n,alpha)`  
-    -   `topo.colors(n,alpha)`  
-    -   `cm.colors(n,alpha)`  
--   **RColorBrewer** paletas de cores disponíveis:  
-    -   *sequencial*  
-    -   *divergente*  
-    -   *qualitativa*  
+#### 9.2.8.2 Principais pacotes de paletas de cores do **R**
+
+-   **R** básico  
+-   Pacote **RColorBrewer**  
+
+#### 9.2.8.3 Tipos de paletas de cores
+
+-   *sequencial*  
+    Cores que variam em sequência da mais clara para mais escura.  
+-   *divergente*  
+    O centro da paleta é mais claro e os extremos mais escuros em ambas
+    as direções.  
+-   *qualitativa*  
+    Não possui um ordenamento nas variações das cores.  
+
+#### 9.2.8.4 5 funções básicas do **R** que geram paletas de cores sequenciais
+
+-   `rainbow(n,alpha)`  
+-   `heat.colors(n,alpha)`  
+-   `terrain.colors(n,alpha)`  
+-   `topo.colors(n,alpha)`  
+-   `cm.colors(n,alpha)`  
+
+#### 9.2.8.5 **RColorBrewer** paletas de cores disponíveis
+
+-   *sequencial*  
+
+| Nome das paletas |
+|:----------------:|
+|      Blues       |
+|       BuGn       |
+|       BuPu       |
+|       GnBu       |
+|      Greens      |
+|      Greys       |
+|     Oranges      |
+|       OrRd       |
+|       PuBu       |
+|      PuBuGn      |
+|       PuRd       |
+|     Purples      |
+|       RdPu       |
+|       Reds       |
+|       YlGn       |
+|      YlGnBu      |
+|      YlOrBr      |
+|      YlOrRd      |
+
+**Pacote RColorBrewer**: Nome das paletas sequencial.
+
+As variações de cores vão de três a nove valores possíveis em cada
+paleta.  
+
+-   *divergente*  
+
+| Nome das paletas |
+|:----------------:|
+|       BrBG       |
+|       PiYG       |
+|       PRGn       |
+|       PuOr       |
+|       RdBu       |
+|       RdGy       |
+|      RdYlBu      |
+|      RdYlGn      |
+|     Spectral     |
+
+**Pacote RColorBrewer**: Nome das paletas divergente.
+
+As variações de cores vão de três a onze valores possíveis em cada
+paleta.  
+
+-   *qualitativa*  
+
+| Nome das paletas | Número de cores |
+|:----------------:|:---------------:|
+|      Accent      |        8        |
+|      Dark2       |        8        |
+|      Paired      |       12        |
+|     Pastel1      |        9        |
+|     Pastel2      |        8        |
+|       Set1       |        9        |
+|       Set2       |        8        |
+|       Set3       |       12        |
+
+**Pacote RColorBrewer**: Nome das paletas qualitativas e número de cores
+possiveis em cada paleta.
 
 # 10 ANDAMENTO DOS ESTUDOS
 

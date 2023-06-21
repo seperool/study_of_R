@@ -9,18 +9,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  odt_document: 
+    number_sections: true
   github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3281,46 +3281,132 @@ p+
 
 \newpage
 
-- Método para obter cores em **R**:\
-  - Pelo número\
-  `col = x`, sendo algum número. `x = 1, 2, ...`\
-  - Pelo nome\
-  Há 657 nomes de cores disponiveis no **R**.\
-  Através da função `colors()` diretamente na linha de comando será exibido o nome das 657 cores. Ademais se colocar `colors()[x]` será exibido o nome na posição x.\
-  Ex.: `colors()[657]` = "grey".\
-  - Pelo sistema **RGB** (*Red*, *Green*, *Blue*)\
-  `rgb(0,0,0)`\
-  - Pelo sistema hexa decimal\
-  `#ff0000`\
+#### Método para obter cores em **R**
+
+- Pelo número\
+`col = x`, sendo algum número. `x = 1, 2, ...`\
+- Pelo nome\
+Há 657 nomes de cores disponiveis no **R**.\
+Através da função `colors()` diretamente na linha de comando será exibido o nome das 657 cores. Ademais se colocar `colors()[x]` será exibido o nome na posição x.\
+Ex.: `colors()[657]` = "grey".\
+- Pelo sistema **RGB** (*Red*, *Green*, *Blue*)\
+`rgb(0,0,0)`\
+- Pelo sistema hexa decimal\
+`#ff0000`\
 
 ![657 cores e seus repectivos nomes.](./Cap7-graficos_basicos_e_ggplot2/Imagens/657_cores.png){}
 
 
 \newpage
 
-- Principais pacotes de paletas de cores do **R**:\
-  - **R** básico\
-  - Pacote **RColorBrewer**\
+#### Principais pacotes de paletas de cores do **R**
+- **R** básico\
+- Pacote **RColorBrewer**\
 
-- Tipos de paletas de cores:\
-  - *sequencial*\
-  Cores que variam em sequência da mais clara para mais escura.\
-  - *divergente*\
-  O centro da paleta é mais claro e os extremos mais escuros em ambas as direções.\
-  - *qualitativa*\
-  Não possui um ordenamento nas variações das cores.\
+#### Tipos de paletas de cores
+- *sequencial*\
+Cores que variam em sequência da mais clara para mais escura.\
+- *divergente*\
+O centro da paleta é mais claro e os extremos mais escuros em ambas as direções.\
+- *qualitativa*\
+Não possui um ordenamento nas variações das cores.\
 
-- 5 funções básicas do **R** que geram paletas de cores sequenciais:\
-  - `rainbow(n,alpha)`\
-  - `heat.colors(n,alpha)`\
-  - `terrain.colors(n,alpha)`\
-  - `topo.colors(n,alpha)`\
-  - `cm.colors(n,alpha)`\
+#### 5 funções básicas do **R** que geram paletas de cores sequenciais
+- `rainbow(n,alpha)`\
+- `heat.colors(n,alpha)`\
+- `terrain.colors(n,alpha)`\
+- `topo.colors(n,alpha)`\
+- `cm.colors(n,alpha)`\
 
-- **RColorBrewer** paletas de cores disponíveis:\
-  - *sequencial*\
-  - *divergente*\
-  - *qualitativa*\
+\newpage
+
+#### **RColorBrewer** paletas de cores disponíveis
+- *sequencial*\
+  
+```{r Sequencial Brewer, echo=FALSE, message=FALSE, warning=FALSE}
+
+#data.frame
+nome_sq_brewer <- c(
+  "Blues",
+  "BuGn",
+  "BuPu",
+  "GnBu",
+  "Greens",
+  "Greys",
+  "Oranges",
+  "OrRd",
+  "PuBu",
+  "PuBuGn",
+  "PuRd",
+  "Purples",
+  "RdPu",
+  "Reds",
+  "YlGn",
+  "YlGnBu",
+  "YlOrBr",
+  "YlOrRd"
+)
+tbl_sq_RColor <- data.frame(nome_sq_brewer)
+
+#Tabela
+kable(tbl_sq_RColor, col.names = c("Nome das paletas"),
+      align = "c",
+      caption = "**Pacote RColorBrewer**: Nome das paletas sequencial.")
+```
+
+As variações de cores vão de três a nove valores possíveis em cada paleta.\
+
+- *divergente*\
+  
+```{r divergente Brewer, echo=FALSE, message=FALSE, warning=FALSE}
+
+#data.frame
+nome_div_brewer <- c(
+  "BrBG",
+  "PiYG",
+  "PRGn",
+  "PuOr",
+  "RdBu",
+  "RdGy",
+  "RdYlBu",
+  "RdYlGn",
+  "Spectral"
+)
+tbl_div_RColor <- data.frame(nome_div_brewer)
+
+#Tabela
+kable(tbl_div_RColor, col.names = c("Nome das paletas"),
+      align = "c",
+      caption = "**Pacote RColorBrewer**: Nome das paletas divergente.")
+```
+
+As variações de cores vão de três a onze valores possíveis em cada paleta.\
+
+\newpage
+
+- *qualitativa*\
+  
+```{r Qualitativa Brewer, echo=FALSE, message=FALSE, warning=FALSE}
+
+#data.frame
+nome_quali_brewer <- c(
+  "Accent",
+  "Dark2",
+  "Paired",
+  "Pastel1",
+  "Pastel2",
+  "Set1",
+  "Set2",
+  "Set3"
+)
+num_quali_brewer <- c(8,8,12,9,8,9,8,12)
+tbl_qual_RColor <- data.frame(nome_quali_brewer,num_quali_brewer)
+
+#Tabela
+kable(tbl_qual_RColor, col.names = c("Nome das paletas", "Número de cores"),
+      align = "cc",
+      caption = "**Pacote RColorBrewer**: Nome das paletas qualitativas e número de cores possiveis em cada paleta.")
+```
 
 
 \newpage
