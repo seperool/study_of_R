@@ -1,6 +1,6 @@
-ESCRITO EM 02/06/23
+ESCRITO EM 24/06/23
 ---
-PARA 03/06/23
+PARA 25/06/23
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
-					- Cores nos gráficos ggplot2
 					-  Ajustando parâmetros de textos de um ggplot2
 					- Vários gráficos em uma janela
 					- Gráficos ggplot2
@@ -38,5 +37,4 @@ Afazeres:
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- Cores nos gráficos ggplot2
 			- ...
