@@ -3527,6 +3527,17 @@ paleta.
 **Pacote RColorBrewer**: Nome das paletas qualitativas e número de cores
 possiveis em cada paleta.
 
+#### 9.2.8.6 Aplicando escala de cinza ao gráfico
+
+-   `scale_fill_grey(..., start = x, end = x)`  
+    x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.  
+    Aplica-se a gráficos que possuem preenchimento interno na forma
+    como: **boxplot**, **histograma**, **violino** e **barras**.  
+
+-   `scale_color_grey(..., start = x, end = x)`  
+    x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.  
+    Aplica-se a gráficos como **dispersão** ou **linhas**.  
+
 # 10 ANDAMENTO DOS ESTUDOS
 
 ## 10.1 Assunto em andamento:

@@ -1,5 +1,6 @@
 ---
 title: "R"
+subtitle: "Estudo dirigido de linguagem R"
 author: "Sergio Pedro R Oliveira"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 #lof: true #adiciona lista de figuras
@@ -9,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3408,6 +3409,18 @@ kable(tbl_qual_RColor, col.names = c("Nome das paletas", "Número de cores"),
       caption = "**Pacote RColorBrewer**: Nome das paletas qualitativas e número de cores possiveis em cada paleta.")
 ```
 
+
+\newpage
+
+#### Aplicando escala de cinza ao gráfico
+
+- `scale_fill_grey(..., start = x, end = x)`\
+x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.\
+Aplica-se a gráficos que possuem preenchimento interno na forma como: **boxplot**, **histograma**, **violino** e **barras**.\
+
+- `scale_color_grey(..., start = x, end = x)`\
+x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.\
+Aplica-se a gráficos como **dispersão** ou **linhas**.\
 
 \newpage
 
