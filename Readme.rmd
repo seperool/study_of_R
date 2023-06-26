@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3421,6 +3421,12 @@ Aplica-se a gráficos que possuem preenchimento interno na forma como: **boxplot
 - `scale_color_grey(..., start = x, end = x)`\
 x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.\
 Aplica-se a gráficos como **dispersão** ou **linhas**.\
+
+\newpage
+
+### Ajustando parâmetro de textos de um **ggplot**
+
+
 
 \newpage
 

@@ -3538,6 +3538,8 @@ possiveis em cada paleta.
     x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.  
     Aplica-se a gráficos como **dispersão** ou **linhas**.  
 
+### 9.2.9 Ajustando parâmetro de textos de um **ggplot**
+
 # 10 ANDAMENTO DOS ESTUDOS
 
 ## 10.1 Assunto em andamento:
