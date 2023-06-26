@@ -1,6 +1,6 @@
-ESCRITO EM 24/06/23
+ESCRITO EM 26/06/23
 ---
-PARA 25/06/23
+PARA 27/06/23
 ---
 Subir github:
 
@@ -37,4 +37,5 @@ Afazeres:
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- ...
+			- Ajustando parâmetro de textos de um ggplot
+			...
