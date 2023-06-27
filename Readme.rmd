@@ -13,15 +13,15 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: false
-  github_document: 
   odt_document: 
     number_sections: true
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3479,6 +3479,8 @@ p+
 #fechando dispositivo gráfico
 dev.off()
 ```
+
+![Gráfico com ajustes de texto.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-ajuste_textos.png){}
 
 \newpage
 

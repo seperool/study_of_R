@@ -3605,6 +3605,14 @@ possiveis em cada paleta.
     #fechando dispositivo gráfico
     dev.off()
 
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-ajuste_textos.png"
+alt="Gráfico com ajustes de texto." />
+<figcaption aria-hidden="true">Gráfico com ajustes de
+texto.</figcaption>
+</figure>
+
 ### 9.2.10 Vários gráficos em uma janela
 
 # 10 ANDAMENTO DOS ESTUDOS
