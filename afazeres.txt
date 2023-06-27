@@ -1,6 +1,6 @@
-ESCRITO EM 26/06/23
+ESCRITO EM 27/06/23
 ---
-PARA 27/06/23
+PARA 28/06/23
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
-					-  Ajustando parâmetros de textos de um ggplot2
 					- Vários gráficos em uma janela
 					- Gráficos ggplot2
 						- Gráfico de barras no ggplot2
@@ -37,5 +36,16 @@ Afazeres:
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- Ajustando parâmetro de textos de um ggplot
-			...
+			- Vários gráficos em uma janela
+			- Gráficos ggplot2
+				- Gráfico de barras no ggplot2
+				- boxplot no ggplot2
+				- Histograma no ggplot2
+					- Efeito jitter
+					- Facetas
+				- Gráfico circular no ggplot2
+				- Gráfico de pontos no ggplot2
+				- Gráfico de linhas no ggplot2
+					- Efeito de suavização smooth
+				- Gráfico de dispersão com linha de tendência no ggplot2
+			- Assistentes para ggplot2
