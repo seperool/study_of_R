@@ -3540,9 +3540,76 @@ possiveis em cada paleta.
 
 ### 9.2.9 Ajustando parâmetro de textos de um **ggplot**
 
+-   Os temas possuem formatações padronizadas para todos os elementos
+    textuais de um gráfico como título, subtítulo ou rótulos dos
+    eixos.  
+-   É possível realizar ajustes através da camada `theme()`,
+    utilizando-se dos argumentos de `element_text()`.  
+-   Em `element_text()` podemos ajustar os seguintes parâmetros:  
+    -   `family`  
+        Tipo de fonte, o padrão é “sans”. No sistema **Windows** é
+        possível consultar as famílias disponíveis através do comando
+        `windowsFonts()`. Para mais opções de fontes utilize o pacote
+        *extrafont* ou *showtext*.  
+    -   `face`  
+        **plain**, **italic**, **bold**, **bold.italic** para ajustar a
+        fonte em **plana**, **itálico**, **negrito** ou
+        **negrito**-**itálico** respectivamente.  
+    -   `colour`  
+        Cor da linha.  
+    -   `size`  
+        Tamanho do texto em pontos. Pode usar um valor ou proporcional
+        ao padrão, fazendo `rel(1.5)` para o aumento de 50% ou
+        `rel(0.5)` para diminuir 50%.  
+    -   `hjust`  
+        Alinhamento horizontal entre \[0,1\], hjust = 0,5 centraliza.  
+    -   `vjust`  
+        Alinhamento vertical entre \[0,1\], vjust = 0,5 centraliza.  
+    -   `angle`  
+        De 0 a 360.  
+    -   `lineheight`  
+        Altura da linha.  
+-   Podemos aplicar os elementos de texto de forma global ou
+    especificando o elemento que pode ser só o título, só um dos eixos,
+    etc.  
+-   Para maiores detalhes utilize o comando `??theme`.  
+
+-   Exemplo:  
+
+<!-- -->
+
+    #Plot
+    p = ggplot(data = dados, aes(x = cheg_2012/1000, y = cheg_2013/1000))
+
+    #ajustando parâmetros de texto
+    p+
+      geom_blank()+
+      labs(title = "Título",
+           x = "Eixo x",
+           y = "Eixo y",
+           subtitle = "Subtítulo")+
+      theme_bw(base_size = 18)+
+      theme(text = element_text(family = "mono"))+ 
+      #Altera a fonte de todos os textos
+      theme(axis.text.x = element_text(size = rel(1.2)))+ 
+      #Aumenta a fonte só do eixo x em 20%
+      theme(axis.text.y = element_text(angle = 45))+ 
+      #Muda o angulo do texto do eixo y em 45 graus
+      theme(axis.title.y = element_text(face = "bold.italic"))+ 
+      #Muda o rótulo do eixo y para negrito-itálico
+      theme(plot.title = element_text(hjust = 0.5))+ 
+      #Centraliza o título
+      theme(plot.subtitle = element_text(hjust = 1)) 
+      #Subtítulo a direita
+
+    #fechando dispositivo gráfico
+    dev.off()
+
+### 9.2.10 Vários gráficos em uma janela
+
 # 10 ANDAMENTO DOS ESTUDOS
 
-## 10.1 Assunto em andamento:
+Assunto em andamento:  
 
 Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
 
