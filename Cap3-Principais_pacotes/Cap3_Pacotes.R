@@ -9,7 +9,7 @@ install.packages("data.table") # Manipulação de base de dados DataFrame
 install.packages("janitor") # Limpeza de dados
 install.packages("DescTools") #
 install.packages("tidyverse") # Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
-#ggplot2 (elaboração de graficos)
+#ggplot2 (elaboração de gráficos)
 #tibble (estruturação de data.frame) 
 #tidyr (organização de dados)
 #readr (leitura de dados)
@@ -21,9 +21,9 @@ install.packages("foreign") # Leitura de arquivos com extensão minitab, Octave,
 #Pacotes auxiliares ggplot2
 install.packages("ggthemes") # Temas adicionais para graficos
 install.packages("grid") #
-
-# Pacote com paleta de cores
-install.packages("RColorBrewer")
+install.packages("RColorBrewer") # Pacote com paleta de cores
+install.packages("extrafont") # Opções de fontes
+install.packages("showtext")
 
 # Conectores com banco de dados
 install.packages("DBI")
