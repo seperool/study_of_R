@@ -3615,6 +3615,22 @@ texto.</figcaption>
 
 ### 9.2.10 Vários gráficos em uma janela
 
+#### 9.2.10.1 Principais pacotes
+
+-   `grid`  
+    O pacote `grid` implementa funções gráficas no sistema de plotagem
+    `ggplot2` e também é um pacote gráfico independente, apesar de ser
+    pouco usada essa última função.  
+    O pacote `grid` oferece uma ampla variedade de funções que
+    personalizam elementos de plotagem do `ggplot2`, como:  
+    -   Temas  
+    -   Cores  
+    -   Grafos (pequenos e multiplos)  
+    -   Incluir anotações matemáticas em objetos `ggplot`  
+        <https://github.com/tidyverse/ggplot2/wiki/Plotmath>
+    -   Alterar sistemas de coordenadas  
+-   `patchwork`
+
 # 10 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  

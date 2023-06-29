@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  odt_document: 
+    number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3485,6 +3485,20 @@ dev.off()
 \newpage
 
 ### Vários gráficos em uma janela
+
+#### Principais pacotes
+
+- `grid`\
+O pacote `grid` implementa funções gráficas no sistema de plotagem `ggplot2` e também é um pacote gráfico independente, apesar de ser pouco usada essa última função.\
+O pacote `grid` oferece uma ampla variedade de funções que personalizam elementos de plotagem do `ggplot2`, como:\
+  - Temas\
+  - Cores\
+  - Grafos (pequenos e multiplos)\
+  - Incluir anotações matemáticas em objetos `ggplot`\
+  <https://github.com/tidyverse/ggplot2/wiki/Plotmath>
+  - Alterar sistemas de coordenadas\
+  
+- `patchwork`
 
 \newpage
 
