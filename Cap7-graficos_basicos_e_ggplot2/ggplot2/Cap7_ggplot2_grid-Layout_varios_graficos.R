@@ -1,4 +1,4 @@
-#Layout com vários gráficos
+#Layout com vários gráficos usando pacote grid
 
 #Bibliotecas
 library(magrittr) #Operador pipe %>%, concatena linhas de comando
