@@ -3613,15 +3613,19 @@ alt="Gráfico com ajustes de texto." />
 texto.</figcaption>
 </figure>
 
-### 9.2.10 Vários gráficos em uma janela
+### 9.2.10 Layout da janela gráfica e plotagem de vários gráficos em uma janela
 
-#### 9.2.10.1 Principais pacotes
+#### 9.2.10.1 Principais pacotes para configurar layout da janela gráfica
 
 -   `grid`  
-    O pacote `grid` implementa funções gráficas no sistema de plotagem
+-   `patchwork`  
+
+#### 9.2.10.2 Pacote grid
+
+-   O pacote `grid` implementa funções gráficas no sistema de plotagem
     `ggplot2` e também é um pacote gráfico independente, apesar de ser
     pouco usada essa última função.  
-    O pacote `grid` oferece uma ampla variedade de funções que
+-   O pacote `grid` oferece uma ampla variedade de funções que
     personalizam elementos de plotagem do `ggplot2`, como:  
     -   Temas  
     -   Cores  
@@ -3629,7 +3633,53 @@ texto.</figcaption>
     -   Incluir anotações matemáticas em objetos `ggplot`  
         <https://github.com/tidyverse/ggplot2/wiki/Plotmath>
     -   Alterar sistemas de coordenadas  
--   `patchwork`
+    -   *Layout* da janela gráfica  
+-   Sobre o *layout* da janela gráfica, podemos configurar para
+    adicionar vários gráficos numa mesma janela gráfica. O passo a
+    passo:  
+    -   Criar e configurar os gráficos.  
+    -   Definir quais gráficos devem aparecer e configuração do *layout*
+        da janela gráfica (em tabela).  
+    -   *Print* dos gráficos em suas devidas posições no *layout* (em
+        tabela) na janela gráfica.  
+-   Exemplo:  
+
+<!-- -->
+
+    #ggplot
+    p = ggplot(data = dados, aes(x = cheg_2012/1000,y = cheg_2013/1000))
+
+    #Gráfico 1
+    g1 <- p+
+      geom_blank()+
+      theme_bw(base_size = 18)
+
+    #Gráfico 2
+    g2 <- p+
+      geom_point()+
+      theme_minimal(base_size = 18)
+
+    #Layout para 1 linha e 2 colunas (g1 ao lado de g2)
+    pushViewport(viewport(layout = grid.layout(1,2)))
+
+    #Atribuindo g1
+    print(g1, vp=viewport(layout.pos.row = 1, layout.pos.col = 1))
+
+    #Atribuindo g2
+    print(g2, vp=viewport(layout.pos.row = 1, layout.pos.col = 2))
+
+    #fechando dispositivo grafico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2_grid-Layout.png"
+alt="Layout da janela gráfica com dois gráficos." />
+<figcaption aria-hidden="true"><em>Layout</em> da janela gráfica com
+dois gráficos.</figcaption>
+</figure>
+
+#### 9.2.10.3 Pacote patchwork
 
 # 10 ANDAMENTO DOS ESTUDOS
 
