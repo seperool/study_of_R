@@ -1,6 +1,6 @@
-ESCRITO EM 27/06/23
+ESCRITO EM 30/06/23
 ---
-PARA 28/06/23
+PARA 01/07/23
 ---
 Subir github:
 
@@ -36,7 +36,6 @@ Afazeres:
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- Vários gráficos em uma janela
 			- Gráficos ggplot2
 				- Gráfico de barras no ggplot2
 				- boxplot no ggplot2
