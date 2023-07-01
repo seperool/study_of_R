@@ -3674,12 +3674,99 @@ texto.</figcaption>
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2_grid-Layout.png"
-alt="Layout da janela gráfica com dois gráficos." />
+alt="Layout da janela gráfica com dois gráficos, usando biblioteca grid do R." />
 <figcaption aria-hidden="true"><em>Layout</em> da janela gráfica com
-dois gráficos.</figcaption>
+dois gráficos, usando biblioteca grid do
+<strong>R</strong>.</figcaption>
 </figure>
 
 #### 9.2.10.3 Pacote patchwork
+
+-   O objetivo do `patchwork` é tornar simples juntar `ggplot` separados
+    no mesmo gráfico.  
+-   O `patchwork` usa uma API que incita a exploração, iteração e escala
+    para *layout* arbitrariamente complexos.  
+-   Formas de agrupar gráficos num *layout* usando `patchwork`:  
+    -   `g1 + g2`  
+        Agrupa em linha.  
+    -   `(g1|g2|g3)/g4`  
+        Agrupa em linhas e colunas.  
+-   Exemplo:  
+
+<!-- -->
+
+    #ggplot
+    p = ggplot(data = dados, aes(x = cheg_2012/1000,y = cheg_2013/1000))
+
+    #Gráfico 1
+    g1 <- p+
+      geom_blank()+
+      theme_bw(base_size = 18)
+
+    #Gráfico 2
+    g2 <- p+
+      geom_point()+
+      theme_minimal(base_size = 18)
+
+    #Gráfico 3
+    g3 <- p+
+      geom_boxplot()+
+      theme_grey(base_size = 18)
+
+    #Gráfico 4
+    g4 <- p+
+      geom_point()+
+      theme_minimal(base_size = 18)
+
+    #Layout 1 para 1 linha e 2 colunas (g1 ao lado de g2)
+    g1 + g2 + plot_layout(ncol = 2) + plot_annotation(title = "Dois gráficos com patchwork",
+                                                      tag_levels = "1") 
+                                                      #Título geral e número em cada gráfico
+
+    #fechando dispositivo grafico
+    dev.off()
+
+    #Layout 2
+    (g1 | g2 | g3) / g4
+
+    #fechando dispositivo grafico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2_patchwork-Layout.png"
+alt="Layout 1 da janela gráfica com dois gráficos, usando biblioteca patchwork do R." />
+<figcaption aria-hidden="true"><em>Layout</em> 1 da janela gráfica com
+dois gráficos, usando biblioteca patchwork do
+<strong>R</strong>.</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2_patchwork-Layout_complex.png"
+alt="Layout 2 da janela gráfica com quatro gráficos, usando biblioteca patchwork do R." />
+<figcaption aria-hidden="true"><em>Layout</em> 2 da janela gráfica com
+quatro gráficos, usando biblioteca patchwork do
+<strong>R</strong>.</figcaption>
+</figure>
+
+### 9.2.11 Gráficos usando pacote ggplot2
+
+#### 9.2.11.1 Gráfico de barras com ggplot2
+
+#### 9.2.11.2 boxplot com ggplot2
+
+#### 9.2.11.3 Histograma com ggplot2
+
+#### 9.2.11.4 Gráfico circular com ggplot2
+
+#### 9.2.11.5 Gráfico de pontos com ggplot2
+
+#### 9.2.11.6 Gráfico de linhas com ggplot2
+
+#### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
+
+### 9.2.12 Assistentes para ggplot2
 
 # 10 ANDAMENTO DOS ESTUDOS
 
