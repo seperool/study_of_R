@@ -1,6 +1,6 @@
-ESCRITO EM 30/06/23
+ESCRITO EM 01/07/23
 ---
-PARA 01/07/23
+PARA 02/07/23
 ---
 Subir github:
 
@@ -21,7 +21,6 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
-					- Vários gráficos em uma janela
 					- Gráficos ggplot2
 						- Gráfico de barras no ggplot2
 						- boxplot no ggplot2
