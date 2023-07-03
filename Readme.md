@@ -3754,6 +3754,32 @@ quatro gráficos, usando biblioteca patchwork do
 
 #### 9.2.11.1 Gráfico de barras com ggplot2
 
+-   Exemplo:  
+
+<!-- -->
+
+    #Plotando gráfico de barras (geom_bar)
+    p <- ggplot(data = dt, aes(x = reorder(Estado,y), y))+ #Mapeamento das variáveis
+      geom_bar(stat = "identity")+ #Forma de barras
+      labs(title = "Chegada de Turistas ao Brasil em 2013", #Título
+           x = "Estados", #Texto do eixo x
+           y = "Número de chegadas por mil")+ #Texto do eixo y
+      geom_text(aes(label = round(y,2)), hjust=0.5, vjust=0)+ #Insere valores sobre as barras
+      theme_bw(base_size = 18)+ #Define o tema
+      theme(plot.title = element_text(hjust = 0.5))+ #Centraliza o texto do título
+      theme(axis.text.x = element_text(angle = 90)) #Muda o ângulo do texto do eixo x em 90 graus
+    p
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_barra_geom_bar.png"
+alt="Gráfico de barras(geom_bar)" />
+<figcaption aria-hidden="true">Gráfico de barras(geom_bar)</figcaption>
+</figure>
+
 #### 9.2.11.2 boxplot com ggplot2
 
 #### 9.2.11.3 Histograma com ggplot2

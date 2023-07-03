@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3601,6 +3601,31 @@ dev.off()
 ### Gráficos usando pacote ggplot2
 
 #### Gráfico de barras com ggplot2
+
+- Exemplo:\
+```
+#Plotando gráfico de barras (geom_bar)
+p <- ggplot(data = dt, aes(x = reorder(Estado,y), y))+ #Mapeamento das variáveis
+  geom_bar(stat = "identity")+ #Forma de barras
+  labs(title = "Chegada de Turistas ao Brasil em 2013", #Título
+       x = "Estados", #Texto do eixo x
+       y = "Número de chegadas por mil")+ #Texto do eixo y
+  geom_text(aes(label = round(y,2)), hjust=0.5, vjust=0)+ #Insere valores sobre as barras
+  theme_bw(base_size = 18)+ #Define o tema
+  theme(plot.title = element_text(hjust = 0.5))+ #Centraliza o texto do título
+  theme(axis.text.x = element_text(angle = 90)) #Muda o ângulo do texto do eixo x em 90 graus
+p
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+
+![Gráfico de barras(geom_bar)](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_barra_geom_bar.png)
+
+
+\newpage
+
 #### boxplot com ggplot2
 #### Histograma com ggplot2
 #### Gráfico circular com ggplot2
