@@ -1,6 +1,6 @@
-ESCRITO EM 03/07/23
+ESCRITO EM 04/07/23
 ---
-PARA 04/07/23
+PARA 05/07/23
 ---
 Subir github:
 
@@ -36,7 +36,7 @@ Afazeres:
 	- Cap. 7 - Visualizando dados
 		- script
 			- Gráficos ggplot2
-				- Gráfico de barras no ggplot2
+				- Gráfico de barras no ggplot2 (Add comentários)
 				- boxplot no ggplot2
 				- Histograma no ggplot2
 					- Efeito jitter
