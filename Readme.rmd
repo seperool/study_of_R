@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  odt_document: 
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3602,7 +3602,11 @@ dev.off()
 
 #### Gráfico de barras com ggplot2
 
-- Exemplo:\
+
+
+\newpage
+
+- Exemplo 1 - Gráfico de Barras:\
 ```
 #Plotando gráfico de barras (geom_bar)
 p <- ggplot(data = dt, aes(x = reorder(Estado,y), y))+ #Mapeamento das variáveis
@@ -3621,7 +3625,81 @@ dev.off()
 ```
 
 
-![Gráfico de barras(geom_bar)](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_barra_geom_bar.png)
+![Gráfico de barras (geom_bar)](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_barra_geom_bar.png)
+
+
+\newpage
+
+- Exemplo 2 - Gráfico de Barras com mais de uma categoria e *layout* com dois gráficos:\
+
+```
+#Preparação dos dados
+dt <- dados %>% 
+  filter(Estado == "SaoPaulo" | Estado == "RioJaneiro") %>% 
+  rename('2012' = cheg_2012, '2013' = cheg_2013, '2014' = cheg_2014, '2015' = cheg_2015) %>% 
+  gather(ano, chegada, '2012':'2015') %>% 
+  select(Estado, ano, chegada) %>% 
+  group_by(Estado,ano) %>% 
+  summarize(chegada=sum(chegada)) %>% 
+  ungroup()
+
+#Convertendo ano para fator
+dt$ano = factor(dt$ano)
+
+#Visualizando dados
+dt
+View(dt)
+
+#Plotagem gráfico de barras com duas ou mais categorias
+p = ggplot(dt)+
+  aes(x=reorder(Estado,chegada), y=chegada/1000, fill = ano)+
+  geom_bar(stat = "identity",position = "dodge")+
+  geom_text(aes(label = round(chegada/1000,2)), 
+            position = position_dodge(width = 0.9), 
+            vjust=-0.25)
+
+#Adicionando camadas a p
+p1 = p +
+  labs(title = "Chegada de Turistas ao Brasil - Versão barras lado a lado",
+       x = "Estados",
+       y = "Número de chegadas por mil")+
+  theme_bw(base_size = 18)+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_fill_grey(start = 0, end = 0.9)
+
+p1
+
+#Plotando versão barras empilhadas
+p = ggplot(dt)+
+  aes(x=reorder(Estado,chegada), y=chegada/1000, fill = ano)+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label = round(chegada/1000,2)), 
+            position = position_stack(vjust=1))
+
+#Adicionando camadas a p
+p2 = p+
+  labs(title = "Chegada de Turistas ao Brasil - Versão barras empilhadas",
+       x = "Estados",
+       y = "Número de chegadas por mil")+
+  theme_bw(base_size = 18)+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_fill_grey(start = 0.4, end = 1)
+
+p2
+
+#Layout (patchwork)
+pp = p1 + p2 + plot_layout(ncol = 1) +
+  plot_annotation(title = "Gráfico de Barras com duas ou mais categorias",
+                  tag_levels = "1")
+
+pp
+
+#Fechando dispositivo gráfico
+dev.off()
+
+```
+
+![Gráfico de Barras (geom_bar) com duas ou mais categorias e *layout* com dois gráficos.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_barra_geom_bar-layout_categorias.png)
 
 
 \newpage
