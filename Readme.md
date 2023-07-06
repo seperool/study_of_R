@@ -3752,7 +3752,57 @@ quatro gráficos, usando biblioteca patchwork do
 
 ### 9.2.11 Gráficos usando pacote ggplot2
 
-#### 9.2.11.1 Gráfico de barras com ggplot2
+-   Passo a passo (principais pacotes):  
+    -   Importa dados  
+        `readr`  
+    -   Organizar os dados  
+        `tidyr`  
+        `dplyr`  
+        `magrittr`  
+    -   Preparar gráfico  
+        `ggplot2`  
+    -   Adicionar camadas ao gráfico  
+        `grid`  
+        `ggthemes`  
+        `RColorBrewer`  
+        `extrafont`  
+        `showtext`  
+    -   Plotar gráfico e definir layout  
+        `grid`  
+        `patchwork`  
+
+#### 9.2.11.1 Gráfico de barras (geom_bar) com ggplot2
+
+-   Tipos de gráficos de barras do ggplot2:  
+    -   `geom_bar`  
+        Para plotar um gráfico de barras no ggplot2, definimos o tipo de
+        gráfico `geom_bar`.  
+        A altura das barras é proporcional ao número de casos em cada
+        grupo.  
+    -   `geom_col`  
+        Outra forma de gerar gráficos de barras no ggplot2 é o tipo de
+        gráfico `geom_col`.  
+        A altura das barras representão os valores dos dados.  
+-   Observações:  
+    -   A função `reorder` serve para reordenar uma variável em função
+        de outra. Muito útil para organizar as barras em formato
+        crescente, ou decrescente, dos grupos.  
+    -   Quando temos mais de uma variável númerica associada a variável
+        categorica (grupo) podemos ter no gráfico de barras com barras
+        lado a lado ou empilhadas.(Ver exemplo 2)  
+        -   `fill = variável`  
+            Categorias secundarias agrupadas.  
+            Gera legenda automática na lateral.  
+        -   `geom_bar(stat = "identity", position = "dodge")`  
+            barras agrupadas da mesma categoria ficam lado a lado.  
+        -   `geom_bar(stat = "identity")`  
+            Sem `position = "dodge"`, por default é barras agrupadas da
+            mesma categoria na forma empilhadas.  
+-   Os argumentos:  
+    -   `stat = identity`  
+        Não altera o gráfico de barras.  
+    -   `stat = count`  
+        Conta o número de casos em cada posição x.  
 
 -   Exemplo 1 - Gráfico de Barras:  
 
