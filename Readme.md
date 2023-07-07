@@ -3907,7 +3907,35 @@ alt="Gráfico de Barras (geom_bar) com duas ou mais categorias e layout com dois
 mais categorias e <em>layout</em> com dois gráficos.</figcaption>
 </figure>
 
-#### 9.2.11.2 boxplot com ggplot2
+#### 9.2.11.2 boxplot (diagrama de caixa) com ggplot2
+
+-   Exemplo - boxplot com eixos invertidos no ggplot2:  
+
+<!-- -->
+
+    #Plotagem
+    p <- dados %>% 
+      ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+    #Adição de camadas
+    p +
+      geom_boxplot() +
+      labs(title = "Visualizando a variabilidade de chegadas de turistas ao Brasil no ano de 2012",
+           x= "Mês",
+           y="Número de chegadas") +
+      theme_bw(base_size = 18) + #Adiciona tema "black and white"
+      coord_flip() #Inverte posição do eixo x
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-boxplot.png"
+alt="boxplot (diagrama de caixa) com eixos invertidos." />
+<figcaption aria-hidden="true">boxplot (diagrama de caixa) com eixos
+invertidos.</figcaption>
+</figure>
 
 #### 9.2.11.3 Histograma com ggplot2
 

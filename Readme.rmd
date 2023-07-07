@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
   html_document:
     number_sections: true
     df_print: paged
   github_document: 
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3747,7 +3747,35 @@ dev.off()
 
 \newpage
 
-#### boxplot com ggplot2
+#### boxplot (diagrama de caixa) com ggplot2
+
+\newpage
+
+- Exemplo - boxplot com eixos invertidos no ggplot2:\
+
+```
+#Plotagem
+p <- dados %>% 
+  ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+#Adição de camadas
+p +
+  geom_boxplot() +
+  labs(title = "Visualizando a variabilidade de chegadas de turistas ao Brasil no ano de 2012",
+       x= "Mês",
+       y="Número de chegadas") +
+  theme_bw(base_size = 18) + #Adiciona tema "black and white"
+  coord_flip() #Inverte posição do eixo x
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![boxplot (diagrama de caixa) com eixos invertidos.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-boxplot.png)
+
+
+\newpage
+
 #### Histograma com ggplot2
 #### Gráfico circular com ggplot2
 #### Gráfico de pontos com ggplot2
