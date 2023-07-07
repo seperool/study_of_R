@@ -1,6 +1,6 @@
-ESCRITO EM 06/07/23
+ESCRITO EM 07/07/23
 ---
-PARA 07/07/23
+PARA 08/07/23
 ---
 Subir github:
 
@@ -35,7 +35,7 @@ Afazeres:
 	- Cap. 7 - Visualizando dados
 		- script
 			- Gráficos ggplot2
-				- boxplot no ggplot2
+				- boxplot no ggplot2(jitter e facetas)
 				- Histograma no ggplot2
 					- Efeito jitter
 					- Facetas
