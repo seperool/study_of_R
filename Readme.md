@@ -2996,7 +2996,7 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
 <figcaption aria-hidden="true">Gráfico de caixa (boxplot)</figcaption>
 </figure>
 
-### 9.1.6 histograma (hist)
+### 9.1.6 Histograma (hist)
 
 -   Histograma é um tipo de gráficos de barras.  
 -   É usado para variáveis quantitativas continuas.  
@@ -3909,9 +3909,80 @@ mais categorias e <em>layout</em> com dois gráficos.</figcaption>
 
 #### 9.2.11.2 Histograma com ggplot2
 
+##### 9.2.11.2.1 Teoria histograma
+
+-   Histograma é um tipo de gráficos de barras.  
+-   É usado para variáveis quantitativas continuas.  
+-   Para elaborar um histograma é necessário uma variável
+    quantitativa.  
+-   No eixo x teremos os valores da variável e no eixo y sua frequência
+    que pode ser absoluta ou relativa.  
+-   Este tipo de gráfico é muito usado para observar:  
+    -   **Distribuição de frequências**  
+    -   **Simetria**  
+    -   **Desvio**  
+        Presença de valores discrepantes (Outliers).  
+    -   **Amplitude da variável**  
+-   A diferença entre gráficos de barras e histograma:  
+    -   **Gráfico de barras**  
+        É aplicado a variáveis categóricas, apenas um eixo representando
+        variável númerica e o outro eixo representando um variável
+        categórica.  
+
+    <figure>
+    <img
+    src="./Cap7-graficos_basicos_e_ggplot2/Imagens/Grafico_barras_exemplo.png"
+    style="width:30.0%" alt="Exemplo gráfico de barras" />
+    <figcaption aria-hidden="true">Exemplo gráfico de barras</figcaption>
+    </figure>
+
+    -   **Histograma**  
+        É aplicado a variáveis númericas e possui dois eixos númericos
+        (x representando a variável e y representando a frequência da
+        variável).  
+
+    <figure>
+    <img
+    src="./Cap7-graficos_basicos_e_ggplot2/Imagens/histograma_exemplo.jpg"
+    style="width:30.0%" alt="Exemplo histograma" />
+    <figcaption aria-hidden="true">Exemplo histograma</figcaption>
+    </figure>
+
+##### 9.2.11.2.2 Histograma
+
+-   Exemplo - Histograma com eixo x logarítmo no ggplot2:  
+
+<!-- -->
+
+    #Plotagem
+    p = ggplot(dados,aes(x=cheg_2013/1000))
+
+    #Adição de camadas
+    p+
+      geom_histogram(aes(y= ..count.., fill=factor(Regiao)),
+                     position = "identity", alpha = 0.6,binwidth = 0.1)+
+      scale_x_log10()+
+      labs(x = "Chegadas em escala logarítmica",
+           y = "Frequência Absoluta",
+           title = "Histograma do número de chegadas de turistas ao Brasil \nAno de 2013")+
+      theme_bw(base_size = 18)+
+      scale_fill_discrete(name = "Região")+
+      scale_fill_grey(start = 0.2,end = 0.8)
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-Histograma_geom_histogram.png"
+alt="Histograma (geom_histogram) com eixo x logarítmo." />
+<figcaption aria-hidden="true">Histograma (geom_histogram) com eixo x
+logarítmo.</figcaption>
+</figure>
+
 #### 9.2.11.3 boxplot (diagrama de caixa) com ggplot2
 
-##### 9.2.11.3.1 Teoria
+##### 9.2.11.3.1 Teoria boxplot
 
 -   O **Diagrama de caixa** serve para compreensão da forma e amplitude
     dos dados.  
