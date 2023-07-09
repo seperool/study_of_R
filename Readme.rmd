@@ -12,13 +12,13 @@ output:
     variant: markdown_github
   odt_document: 
     number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
@@ -3747,7 +3747,75 @@ dev.off()
 
 \newpage
 
+#### Histograma com ggplot2
+
+\newpage
+
 #### boxplot (diagrama de caixa) com ggplot2
+
+##### Teoria
+
+- O **Diagrama de caixa** serve para compreensão da forma e amplitude dos dados.\
+- Para elaborar um boxplot é necessário pelo menos uma variável quantitativa.\
+- Se a variável pode ser agrupada por fatores(factor), temos um boxplot comparativo y ~ x, isto é, a variável númerica y agrupada pelas categorias da variável do tipo fator x.\
+- É importante para fazer o **diagrama de caixa** conhecer a fórmula das **separatrizes**.\
+- O **diagrama de caixa** usa em sua construção os conceitos de **quartis** (**Q1**, **Q2**, e **Q3**).\
+
+##### Separatrizes
+- Quartis:\
+  - Q1 (25%)\
+  - Q2 (50% ou mediana)\
+  - Q3 (75%)\
+  
+- Tabela de distribuição de frequências:\
+
+
+![Exemplo de tabela de distribuição de frequências](./Cap7-graficos_basicos_e_ggplot2/Imagens/ex_tabela_class_f.png){}
+
+
+- Como achar o intervalo de classe que corresponde a separatriz calculada.\
+Ex.: Se Q1 (25%), achar na tabela de classes e frequências, na coluna frequência acumulada, a classe que contém o valor que corresponde a 25% da frequência acumulada total.\
+Esse intervalo de classe será a classe selecionada para aplicação da fórmula.\
+
+- Fórmula da separatriz:\
+$$P_k = Li + \frac{k \cdot \sum f_i - F_{anterior}}{f_{intervalo}} \cdot h$$
+
+onde,\
+$P_k$ é o percentil (separatriz),\
+$Li$ é o limite inferior do intervalo de classe selecionada,\
+$k$ é o número em fração do percentil,\
+$f_i$ é a frequência,\
+$\sum f_i$ é a frequência acumulada total,\
+$F_{anterior}$ é a frequencia acumulada do intervalo de classe anterior (ao selecionado) do qual se esta calculando,\
+$f_{intervalo}$ é a frequência do intervalo de classe selecionada,\
+$h$ é a amplitude de classe ($Ls - Li$).\
+
+\newpage
+
+##### boxplot
+
+- Montando a box:\
+A box contém como limite superior $Q_3$, limite inferior $Q_1$ e linha interna a mediana ($Q_2$).\
+
+- Intervalo interquartil:\
+$$IQR = Q_3 - Q_1$$
+
+- Limites:\
+  - Máximo\
+  $$L_{máx} = Q_3 + 1,5 \cdot (IQR)$$
+  - Mínimo\
+  $$L_{mín} = Q_1 - 1,5 \cdot (IQR)$$
+
+- Valores discrepantes (**Outliers**):\
+  - Possíveis erros (arredondamento ou observação).\
+  - Alguma condição especial que deve ser observada separadamente.\
+
+- Exemplo explicativo de boxplot:\
+
+
+![Exemplo explicativo de boxplot](./Cap7-graficos_basicos_e_ggplot2/Imagens/explicando_boxplot.jpg){ width=50% }
+
+
 
 \newpage
 
@@ -3776,7 +3844,14 @@ dev.off()
 
 \newpage
 
-#### Histograma com ggplot2
+##### O efeito jitter
+
+\newpage
+
+##### Facetas
+
+\newpage
+
 #### Gráfico circular com ggplot2
 #### Gráfico de pontos com ggplot2
 #### Gráfico de linhas com ggplot2
