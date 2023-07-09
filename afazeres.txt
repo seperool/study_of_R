@@ -1,6 +1,6 @@
-ESCRITO EM 08/07/23
+ESCRITO EM 09/07/23
 ---
-PARA 09/07/23
+PARA 10/07/23
 ---
 Subir github:
 
@@ -23,9 +23,11 @@ Afazeres:
 				- ggplot2
 					- Gráficos ggplot2
 						- boxplot no ggplot2
-						- Histograma no ggplot2
 							- Efeito jitter
 							- Facetas
+						- Histograma no ggplot2
+							- ggplot2 histograma (geom_histogram)
+							- Código comentado (exemplo)
 						- Gráfico circular no ggplot2
 						- Gráfico de pontos no ggplot2
 						- Gráfico de linhas no ggplot2
@@ -36,7 +38,8 @@ Afazeres:
 		- script
 			- Gráficos ggplot2
 				- boxplot no ggplot2(jitter e facetas)
-				- Histograma no ggplot2
+				- Histograma no ggplot2 
+					- Comentar
 				- Gráfico circular no ggplot2
 				- Gráfico de pontos no ggplot2
 				- Gráfico de linhas no ggplot2
