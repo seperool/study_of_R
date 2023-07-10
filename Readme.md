@@ -3950,6 +3950,31 @@ mais categorias e <em>layout</em> com dois gráficos.</figcaption>
 
 ##### 9.2.11.2.2 Histograma
 
+-   Principais argumentos da função `geom_histogram()`:  
+    -   `binwidth`  
+        A largura das caixas (barras).  
+    -   `color = "nome_cor", fill = "nome_cor"`  
+        Altera a cor da linha e do preenchimento.  
+    -   `color = variável_factor, fill = variável_factor`  
+        Controla a variação de cor em função da variável
+        **fator**(**factor**) do histograma.  
+    -   `linetype="dashed"`  
+        Altera o tipo da linha de contorno das caixas (barras) para
+        pontilhado.  
+    -   `position="identity"`  
+        Histogramas sobrepostos.  
+    -   `position="dodge"`  
+        Histogramas intercaladas.  
+        -`alpha=0.6`  
+        Controlar transparencia da cor do preenchimento.  
+-   Alterar a posição da legenda:  
+    -   `theme(legend.position="top")`  
+        Legenda posicionada na parte superior da janela gráfica.  
+    -   `theme(legend.position="bottom")`  
+        Legenda posicionada na parte inferior da janela gráfica.  
+    -   `theme(legend.position="none")`  
+        Remove a legenda.  
+
 -   Exemplo - Histograma com eixo x logarítmo no ggplot2:  
 
 <!-- -->
@@ -3959,15 +3984,17 @@ mais categorias e <em>layout</em> com dois gráficos.</figcaption>
 
     #Adição de camadas
     p+
-      geom_histogram(aes(y= ..count.., fill=factor(Regiao)),
-                     position = "identity", alpha = 0.6,binwidth = 0.1)+
-      scale_x_log10()+
+      geom_histogram(aes(y= ..count.., fill = factor(Regiao)), #fill = variável factor
+                     position = "identity", #Histogramas sobrepostos
+                     alpha = 0.6, #Densidade das cores
+                     binwidth = 0.1)+ #Largura das caixas (barras)
+      scale_x_log10()+ #Eixo x em escala logarítmica
       labs(x = "Chegadas em escala logarítmica",
            y = "Frequência Absoluta",
            title = "Histograma do número de chegadas de turistas ao Brasil \nAno de 2013")+
-      theme_bw(base_size = 18)+
-      scale_fill_discrete(name = "Região")+
-      scale_fill_grey(start = 0.2,end = 0.8)
+      theme_bw(base_size = 18)+ #Tipo de tema
+      scale_fill_discrete(name = "Região")+ #Escala de cores dos dados discretos
+      scale_fill_grey(start = 0.2,end = 0.8) #Escala de cinza
 
     #Fechando dispositivo gráfico
     dev.off()
@@ -4098,6 +4125,8 @@ invertidos.</figcaption>
 ##### 9.2.11.3.4 O efeito jitter
 
 ##### 9.2.11.3.5 Facetas
+
+-   Divide o gráfico em vários painéis.  
 
 #### 9.2.11.4 Gráfico circular com ggplot2
 
