@@ -23,18 +23,20 @@ Afazeres:
 				- ggplot2
 					- Gráficos ggplot2
 						- boxplot no ggplot2
-							- Efeito jitter
 							- Facetas
 						- Gráfico circular no ggplot2
 						- Gráfico de pontos no ggplot2
 						- Gráfico de linhas no ggplot2
 							- Efeito de suavização smooth
 						- Gráfico de dispersão com linha de tendência no ggplot2
+						- Efeitos
+							- Facetas
+							- Suavização smooth
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
 			- Gráficos ggplot2
-				- boxplot no ggplot2(jitter e facetas)
+				- boxplot no ggplot2(Facetas)
 				- Gráfico circular no ggplot2
 				- Gráfico de pontos no ggplot2
 				- Gráfico de linhas no ggplot2
