@@ -4122,11 +4122,32 @@ alt="boxplot (diagrama de caixa) com eixos invertidos." />
 invertidos.</figcaption>
 </figure>
 
-##### 9.2.11.3.4 O efeito jitter
+-   Exemplo - boxplot com efeito jitter:  
 
-##### 9.2.11.3.5 Facetas
+<!-- -->
 
--   Divide o gráfico em vários painéis.  
+    #Plotagem
+    p <- dados %>% 
+      ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+    #Adição de camadas
+    p +
+      geom_boxplot() +
+      geom_jitter()+ #Adiciona o feito jitter
+      labs(title = "Efeito jitter",
+           x= "Mês",
+           y="Número de chegadas") +
+      theme_bw(base_size = 18) #Adiciona tema "black and white"
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-boxplot_efeito_jitter.png"
+alt="Boxplot com efeito jitter." />
+<figcaption aria-hidden="true">Boxplot com efeito jitter.</figcaption>
+</figure>
 
 #### 9.2.11.4 Gráfico circular com ggplot2
 
@@ -4135,6 +4156,37 @@ invertidos.</figcaption>
 #### 9.2.11.6 Gráfico de linhas com ggplot2
 
 #### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
+
+#### 9.2.11.8 Efeitos
+
+##### 9.2.11.8.1 O efeito jitter
+
+-   No gráfico de pontos ou dispersão, quando diversas observações
+    apresentam o mesmo valor , na visualização convencional não é
+    possivel perceber esse fato.  
+-   O feito jitter estabelece uma forma de evidenciar essas repetições.
+    É um efeito que mostra os pontos sobrepostos num resultado de
+    espalhamento em torno do ponto de sobreposição, permitindo que se
+    visualize melhor a quantidade de ocorrências.  
+-   Adiciona uma pequena váriação aleatória à localização de cada ponto,
+    é uma maneira útil de lidar com overplotting causada pela
+    discrêpancia em conjuntos de dados menores.  
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/sem_jitter.png"
+style="width:50.0%" alt="Gráfico sem efeito jitter." />
+<figcaption aria-hidden="true">Gráfico sem efeito jitter.</figcaption>
+</figure>
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/com_jitter.png"
+style="width:50.0%" alt="Gráfico com feito jitter." />
+<figcaption aria-hidden="true">Gráfico com feito jitter.</figcaption>
+</figure>
+
+##### 9.2.11.8.2 Facetas
+
+-   Divide o gráfico em vários painéis.  
 
 ### 9.2.12 Assistentes para ggplot2
 

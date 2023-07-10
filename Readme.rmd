@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
   html_document:
     number_sections: true
     df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -3926,7 +3926,50 @@ dev.off()
 
 \newpage
 
+- Exemplo - boxplot com efeito jitter:\
+
+```
+#Plotagem
+p <- dados %>% 
+  ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+#Adição de camadas
+p +
+  geom_boxplot() +
+  geom_jitter()+ #Adiciona o feito jitter
+  labs(title = "Efeito jitter",
+       x= "Mês",
+       y="Número de chegadas") +
+  theme_bw(base_size = 18) #Adiciona tema "black and white"
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![Boxplot com efeito jitter.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-boxplot_efeito_jitter.png)
+
+
+\newpage
+
+#### Gráfico circular com ggplot2
+#### Gráfico de pontos com ggplot2
+#### Gráfico de linhas com ggplot2
+#### Gráfico de dispersão com linha de tendência usando ggplot2
+
+\newpage
+
+#### Efeitos
 ##### O efeito jitter
+
+- No gráfico de pontos ou dispersão, quando diversas observações apresentam o mesmo valor , na visualização convencional não é possivel perceber esse fato.\
+- O feito jitter estabelece uma forma de evidenciar essas repetições. É um efeito que mostra os pontos sobrepostos num resultado de espalhamento em torno do ponto de sobreposição, permitindo que se visualize melhor a quantidade de ocorrências.\
+- Adiciona uma pequena váriação aleatória à localização de cada ponto, é uma maneira útil de lidar com overplotting causada pela discrêpancia em conjuntos de dados menores.\
+
+![Gráfico sem efeito jitter.](./Cap7-graficos_basicos_e_ggplot2/Imagens/sem_jitter.png){ width=50% }
+
+
+![Gráfico com feito jitter.](./Cap7-graficos_basicos_e_ggplot2/Imagens/com_jitter.png){ width=50% }
+
 
 \newpage
 
@@ -3935,11 +3978,6 @@ dev.off()
 - Divide o gráfico em vários painéis.\
 
 \newpage
-
-#### Gráfico circular com ggplot2
-#### Gráfico de pontos com ggplot2
-#### Gráfico de linhas com ggplot2
-#### Gráfico de dispersão com linha de tendência usando ggplot2
 
 ### Assistentes para ggplot2
 
