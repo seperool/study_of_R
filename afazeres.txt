@@ -28,8 +28,6 @@ Afazeres:
 							- Efeito de suavização smooth
 						- Gráfico de dispersão com linha de tendência no ggplot2
 						- Efeitos
-							- Facetas
-								- warp
 							- Suavização smooth
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
