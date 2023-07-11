@@ -4149,7 +4149,8 @@ alt="Boxplot com efeito jitter." />
 <figcaption aria-hidden="true">Boxplot com efeito jitter.</figcaption>
 </figure>
 
--   Exemplo - boxplot dividindo gráfico por facetas:  
+-   Exemplos - boxplot dividindo gráfico por facetas (`facet_grid()` e
+    `facet_wrap()`):  
 
 <!-- -->
 
@@ -4176,9 +4177,37 @@ alt="Boxplot com efeito jitter." />
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas.png"
-alt="boxplot divido por facetas das regiões norte e nordeste." />
+alt="boxplot divido por facetas das regiões norte e nordeste, usando facet_grid()." />
 <figcaption aria-hidden="true">boxplot divido por facetas das regiões
-norte e nordeste.</figcaption>
+norte e nordeste, usando <code>facet_grid()</code>.</figcaption>
+</figure>
+
+    #Organizando dados
+    dt = dados %>% 
+      filter(Regiao != "Variados")
+
+    #Plotagem
+    p <- dt %>% 
+      ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+    #Adição de camadas
+    p +
+      geom_boxplot() +
+      labs(title = "Chegada de turistas ao Brasil em 2012 por Regiões",
+           x= "Mês",
+           y="Número de chegadas") +
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white"
+      facet_wrap(~Regiao, scale = "free_y", nrow=2)
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas_wrap.png"
+alt="Gráfico dividido por facetas das regiões, usando facet_wrap()." />
+<figcaption aria-hidden="true">Gráfico dividido por facetas das regiões,
+usando <code>facet_wrap()</code>.</figcaption>
 </figure>
 
 #### 9.2.11.4 Gráfico circular (pizza) com ggplot2
@@ -4224,14 +4253,14 @@ style="width:50.0%" alt="Gráfico com feito jitter." />
 -   É mais útil quando se tem duas variáveis discretas e todas as
     combinações das variáveis existem nos dados.  
 -   Caso tenha apenas uma variável com muitos niveis, vale tentar
-    `facet_warp()`.  
+    `facet_wrap()`.  
 
 <figure>
 <img
-src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facets-grid_warp.png"
-alt="Diferença entre facet_grid() e facet_warp()." />
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facets-grid_wrap.png"
+alt="Diferença entre facet_grid() e facet_wrap()." />
 <figcaption aria-hidden="true">Diferença entre <code>facet_grid()</code>
-e <code>facet_warp()</code>.</figcaption>
+e <code>facet_wrap()</code>.</figcaption>
 </figure>
 
 -   Principais argumentos do `facet_grid()`:  
@@ -4246,7 +4275,7 @@ e <code>facet_warp()</code>.</figcaption>
         lapidação nessa dimensão.  
         Exemplo: `Regiao ~ .`  
     -   `nrow` ou `ncol`  
-        Funciona para o `facet_warp()`, controla como a feixa de opções
+        Funciona para o `facet_wrap()`, controla como a feixa de opções
         é agrupada em uma grade, ou seja, controla o número de colunas e
         linhas, assim o como as facetas estão dispostas numa tabela. 
         Exemplo: `nrow = 3`  

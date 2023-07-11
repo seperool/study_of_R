@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  md_document:
     number_sections: true
-  github_document: 
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
   odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -3951,7 +3951,7 @@ dev.off()
 
 \newpage
 
-- Exemplo - boxplot dividindo gráfico por facetas:\
+- Exemplos - boxplot dividindo gráfico por facetas (`facet_grid()` e `facet_wrap()`):\
 
 ```
 #Organizando dados
@@ -3975,7 +3975,34 @@ p +
 dev.off()
 ```
 
-![boxplot divido por facetas das regiões norte e nordeste.](./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas.png)
+![boxplot divido por facetas das regiões norte e nordeste, usando `facet_grid()`.](./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas.png)
+
+
+\newpage
+
+```
+#Organizando dados
+dt = dados %>% 
+  filter(Regiao != "Variados")
+
+#Plotagem
+p <- dt %>% 
+  ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+#Adição de camadas
+p +
+  geom_boxplot() +
+  labs(title = "Chegada de turistas ao Brasil em 2012 por Regiões",
+       x= "Mês",
+       y="Número de chegadas") +
+  theme_bw(base_size = 18)+ #Adiciona tema "black and white"
+  facet_wrap(~Regiao, scale = "free_y", nrow=2)
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![Gráfico dividido por facetas das regiões, usando `facet_wrap()`.](./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas_wrap.png)
 
 
 \newpage
@@ -4007,9 +4034,9 @@ dev.off()
 - Divide o gráfico em vários painéis.\
 - O `facet_grid()` forma uma matriz de painéis definidos por variáveis de facetação de linha e coluna.\
 - É mais útil quando se tem duas variáveis discretas e todas as combinações das variáveis existem nos dados.\
-- Caso tenha apenas uma variável com muitos niveis, vale tentar `facet_warp()`.\
+- Caso tenha apenas uma variável com muitos niveis, vale tentar `facet_wrap()`.\
 
-![Diferença entre `facet_grid()` e `facet_warp()`.](./Cap7-graficos_basicos_e_ggplot2/Imagens/facets-grid_warp.png)
+![Diferença entre `facet_grid()` e `facet_wrap()`.](./Cap7-graficos_basicos_e_ggplot2/Imagens/facets-grid_wrap.png)
 
 
 \newpage
@@ -4021,7 +4048,7 @@ dev.off()
   Outra forma de escrever é através da expressão `variável_linha ~ variável_coluna`, onde qualquer variável pode ser substituida por ponto (`variável_linha ~ .` ou `. ~ variável_coluna`), que é usado para indicar não haver lapidação nessa dimensão.\
   Exemplo: `Regiao ~ .`\
   - `nrow` ou `ncol`\
-  Funciona para o `facet_warp()`, controla como a feixa de opções é agrupada em uma grade, ou seja, controla o número de colunas e linhas, assim o como as facetas estão dispostas numa tabela.\ 
+  Funciona para o `facet_wrap()`, controla como a feixa de opções é agrupada em uma grade, ou seja, controla o número de colunas e linhas, assim o como as facetas estão dispostas numa tabela.\ 
   Exemplo: `nrow = 3`\
   - `scale`\
   Por padrão, todos os painéis tem as mesmas escalas (`scale = "fixed"`). Eles podem se tornar independente, definindo as escalas como `free_x` (variando no eixo x), `free_y` (variando no eixo y) ou `free` (variando em ambos os eixos).\
@@ -4053,6 +4080,7 @@ dev.off()
 
 
 ![Gráfico por facetas com rótulos com nome da variável. `facet_grid(labeller = label_both)`](./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-labeller_label_both.png){ width=50% }
+
 
 \newpage
 
