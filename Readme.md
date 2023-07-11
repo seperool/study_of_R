@@ -4149,6 +4149,38 @@ alt="Boxplot com efeito jitter." />
 <figcaption aria-hidden="true">Boxplot com efeito jitter.</figcaption>
 </figure>
 
+-   Exemplo - boxplot dividindo gráfico por facetas:  
+
+<!-- -->
+
+    #Organizando dados
+    dt = dados %>% 
+      filter(Regiao == "Norte" | Regiao == "Nordeste")
+
+    #Plotagem
+    p <- dt %>% 
+      ggplot(aes(x=as.factor(Mes),y=cheg_2012/1000))
+
+    #Adição de camadas
+    p +
+      geom_boxplot() +
+      labs(title = "Chegada de turistas ao Brasil em 2012: Regiões Norte e Nordeste",
+           x= "Mês",
+           y="Número de chegadas") +
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white"
+      facet_grid(Regiao ~.,scales = "free_y", space = "free")
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/Cap7_ggplot2-boxplot-Facetas.png"
+alt="boxplot divido por facetas das regiões norte e nordeste." />
+<figcaption aria-hidden="true">boxplot divido por facetas das regiões
+norte e nordeste.</figcaption>
+</figure>
+
 #### 9.2.11.4 Gráfico circular com ggplot2
 
 #### 9.2.11.5 Gráfico de pontos com ggplot2
@@ -4187,6 +4219,67 @@ style="width:50.0%" alt="Gráfico com feito jitter." />
 ##### 9.2.11.8.2 Facetas
 
 -   Divide o gráfico em vários painéis.  
+-   O `facet_grid()` forma uma matriz de painéis definidos por variáveis
+    de facetação de linha e coluna.  
+-   É mais útil quando se tem duas variáveis discretas e todas as
+    combinações das variáveis existem nos dados.  
+-   Caso tenha apenas uma variável com muitos niveis, vale tentar
+    `facet_warp()`.  
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facets-grid_warp.png"
+alt="Diferença entre facet_grid() e facet_warp()." />
+<figcaption aria-hidden="true">Diferença entre <code>facet_grid()</code>
+e <code>facet_warp()</code>.</figcaption>
+</figure>
+
+-   Principais argumentos do `facet_grid()`:  
+    -   `rows` ou `cols`  
+        O conjunto de variáveis `var()`. Definição de grupo de facetas
+        na dimensão de linhas e colunas.  
+        Exemplo: `row = var(variável_de_agrupamento)`  
+        Outra forma de escrever é através da expressão
+        `variável_linha ~ variável_coluna`, onde qualquer variável pode
+        ser substituida por ponto (`variável_linha ~ .` ou
+        `. ~ variável_coluna`), que é usado para indicar não haver
+        lapidação nessa dimensão.  
+        Exemplo: `Regiao ~ .`  
+    -   `nrow` ou `ncol`  
+        Funciona para o `facet_warp()`, controla como a feixa de opções
+        é agrupada em uma grade, ou seja, controla o número de colunas e
+        linhas, assim o como as facetas estão dispostas numa tabela. 
+        Exemplo: `nrow = 3`  
+    -   `scale`  
+        Por padrão, todos os painéis tem as mesmas escalas
+        (`scale = "fixed"`). Eles podem se tornar independente,
+        definindo as escalas como `free_x` (variando no eixo x),
+        `free_y` (variando no eixo y) ou `free` (variando em ambos os
+        eixos).  
+        Exemplo: `scale = "free"`  
+    -   `space`  
+        Se `fixed`, o padrão, todos os painéis tem o mesmo tamanho.  
+        Se `free_y` sua altura será proporcional ao comprimento da
+        escala y.  
+        Se `free_x` sua largura será proporcional ao comprimento da
+        escala x.  
+        Ou se `free` tanto a altura quanto a largura vão variar em
+        função das escalas x e y.  
+        Exemplo: `space = "free"`  
+    -   `labeller`  
+        O argumento `labeller` pode ser usado para controlar o rótulo
+        dos painéis.  
+        Exemplo: `labeller=label_both`  
+        Adiciona o nome das variáveis nos rótulos, não somente os
+        valores.  
+
+-   Exemplo:  
+
+-   Exemplo:  
+
+-   Exemplo:  
+
+-   Exemplo:  
 
 ### 9.2.12 Assistentes para ggplot2
 
