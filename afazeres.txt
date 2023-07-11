@@ -1,6 +1,6 @@
-ESCRITO EM 10/07/23
+ESCRITO EM 11/07/23
 ---
-PARA 11/07/23
+PARA 12/07/23
 ---
 Subir github:
 
@@ -22,22 +22,20 @@ Afazeres:
 			- Cap. 7 - Visualizando dados
 				- ggplot2
 					- Gráficos ggplot2
-						- boxplot no ggplot2
-							- Facetas
-						- Gráfico circular no ggplot2
+						- Gráfico circular (pizza) no ggplot2
 						- Gráfico de pontos no ggplot2
 						- Gráfico de linhas no ggplot2
 							- Efeito de suavização smooth
 						- Gráfico de dispersão com linha de tendência no ggplot2
 						- Efeitos
 							- Facetas
+								- warp
 							- Suavização smooth
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
 			- Gráficos ggplot2
-				- boxplot no ggplot2(Facetas)
-				- Gráfico circular no ggplot2
+				- Gráfico circular (pizza) no ggplot2
 				- Gráfico de pontos no ggplot2
 				- Gráfico de linhas no ggplot2
 					- Efeito de suavização smooth
