@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
   word_document: 
     toc: TRUE
+    number_sections: true
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: false
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -3980,7 +3980,7 @@ dev.off()
 
 \newpage
 
-#### Gráfico circular com ggplot2
+#### Gráfico circular (pizza) com ggplot2
 #### Gráfico de pontos com ggplot2
 #### Gráfico de linhas com ggplot2
 #### Gráfico de dispersão com linha de tendência usando ggplot2
@@ -4039,15 +4039,20 @@ dev.off()
   
 \newpage
 
-- Exemplo:\
+- Exemplos - `facet_grid()` alterando parâmetros:\
 
-- Exemplo:\
-
-- Exemplo:\
-
-- Exemplo:\
+![Gráfico por facetas com `facet_grid(rows = variável)` ou `facet_grid(variável ~.)`.](./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-rows.png){ width=50% }
 
 
+![Gráfico por facetas com `facet_grid(cols = variável)` ou `facet_grid(.~ variável)`.](./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-cols.png){ width=50% }
+
+
+\newpage
+
+![Gráfico por facetas com escala do eixo y livre. `facet_grid(scale = "free_y")`](./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-scale_free.png){ width=50% }
+
+
+![Gráfico por facetas com rótulos com nome da variável. `facet_grid(labeller = label_both)`](./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-labeller_label_both.png){ width=50% }
 
 \newpage
 

@@ -4181,7 +4181,7 @@ alt="boxplot divido por facetas das regiões norte e nordeste." />
 norte e nordeste.</figcaption>
 </figure>
 
-#### 9.2.11.4 Gráfico circular com ggplot2
+#### 9.2.11.4 Gráfico circular (pizza) com ggplot2
 
 #### 9.2.11.5 Gráfico de pontos com ggplot2
 
@@ -4273,13 +4273,43 @@ e <code>facet_warp()</code>.</figcaption>
         Adiciona o nome das variáveis nos rótulos, não somente os
         valores.  
 
--   Exemplo:  
+-   Exemplos - `facet_grid()` alterando parâmetros:  
 
--   Exemplo:  
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-rows.png"
+style="width:50.0%"
+alt="Gráfico por facetas com facet_grid(rows = variável) ou facet_grid(variável ~.)." />
+<figcaption aria-hidden="true">Gráfico por facetas com
+<code>facet_grid(rows = variável)</code> ou
+<code>facet_grid(variável ~.)</code>.</figcaption>
+</figure>
 
--   Exemplo:  
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-cols.png"
+style="width:50.0%"
+alt="Gráfico por facetas com facet_grid(cols = variável) ou facet_grid(.~ variável)." />
+<figcaption aria-hidden="true">Gráfico por facetas com
+<code>facet_grid(cols = variável)</code> ou
+<code>facet_grid(.~ variável)</code>.</figcaption>
+</figure>
 
--   Exemplo:  
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-scale_free.png"
+style="width:50.0%"
+alt="Gráfico por facetas com escala do eixo y livre. facet_grid(scale = &quot;free_y&quot;)" />
+<figcaption aria-hidden="true">Gráfico por facetas com escala do eixo y
+livre. <code>facet_grid(scale = "free_y")</code></figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/facet_grid-labeller_label_both.png"
+style="width:50.0%"
+alt="Gráfico por facetas com rótulos com nome da variável. facet_grid(labeller = label_both)" />
+<figcaption aria-hidden="true">Gráfico por facetas com rótulos com nome
+da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
+</figure>
 
 ### 9.2.12 Assistentes para ggplot2
 
