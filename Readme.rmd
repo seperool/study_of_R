@@ -10,18 +10,18 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  md_document:
+  odt_document: 
     number_sections: true
-    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: false
   github_document: 
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4008,6 +4008,69 @@ dev.off()
 \newpage
 
 #### Gráfico circular (pizza) com ggplot2
+
+- O gráfico circular é montado a partir do gráfico de barras.\
+- O gráfico circular é produzido a partir do gráfico de barras (`geom_bar()`), com uma única coluna e empilhado, e a variável y transforma em coordenada polar (`coord_polar()`).\
+`geom_bar(aes(x=1,weight=variável_y,fill=variável_de_agrupamento))+coord_polar(theta="y")`
+- Passo a passo:\
+  - Produzir um gráfico de barras.\
+  `geom_bar()`\
+  - As barras devem ser em formato empilhado, com uma única coluna.\
+  `aes(x = 1, weight = variável_y, fill = variável_de_agrupamento)`\
+  - Aplicar coordenadas polar para transformar as barras em formato circular.\
+  `coord_polar(theta = "y")`\
+  - Adicionar textos.\
+  `geom_text(x = 1.3, aes(y = Calculo_porcentagem, label = paste0(), "%"))`\
+  `label` adiciona texto as fatias do gráfico circular.\
+  `paste0` concatena texto.\
+  - Adicionar camadas:\
+    - Retirar escalas\
+    `scale_x_continuous(breaks = NULL)`\
+    `scale_y_continuous(breaks = NULL)`\
+    - Adicionar título e rótulos.\
+    `labs(title = "Título", x = "", y = "Rótulo de y")`\
+    x não recebe rótulo no gráfico circular.\
+    - Atribuir tema e tamanho de fonte.\
+    `theme_bw(base_size = 18)`\
+    - Retirar grades.\
+    `theme(panel.grid = element_blank())`\
+
+\newpage
+
+- Exemplo - Gráfico circular (pizza):\
+
+```
+#Organizando dados
+d <- data.frame(orcamento = c(10,20,30,40),
+                Empresa = c(paste("E",1:4)))
+
+#Plotando gráficio
+d %>% 
+  ggplot(aes(x = 1, weight = orcamento, 
+             fill = Empresa))+ #Gráfico de barras empilhado e coluna única, com variável de agrupamento.
+  geom_bar(color = "black")+
+  coord_polar(theta = "y")+ #Transforma variável y em polar e o gráfico de barras em circular.
+  geom_text(x = 1.3,
+            aes(y = cumsum(orcamento[4:1]) - orcamento[4:1]/2, 
+                label = paste0(100*round(orcamento[4:1]/sum(orcamento[4:1]),3), "%")))+
+  scale_x_continuous(breaks = NULL)+ #Retirar a escala x
+  scale_y_continuous(breaks = NULL)+ #Retirar a escala y
+  labs(title = "Gráfico circular com ggplot2",
+       x = "",
+       y = "Fatia do orçamento a ser pago")+
+  theme_bw(base_size = 18)+ #Tema e tamanho da fonte base.
+  theme(panel.grid = element_blank())+ #Não atribui nenhum valor as grades (sem desenho).
+  scale_fill_grey(start = 0.6, end = 1) #Escala de cores cinza.
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![Gráfico circular por ggplot2, construido a partir das funções gráficas `geom_bar()` + `coord_polar()`.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_circular-geom_bar_coord_polar.png)
+
+
+\newpage
+
 #### Gráfico de pontos com ggplot2
 #### Gráfico de linhas com ggplot2
 #### Gráfico de dispersão com linha de tendência usando ggplot2
