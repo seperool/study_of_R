@@ -1,17 +1,8 @@
-ESCRITO EM 11/07/23
+ESCRITO EM 12/07/23
 ---
-PARA 12/07/23
+PARA 13/07/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 7 - Visualizando dados
-			- ggplot2
-				- Gráficos ggplot2
-					- Gráfico circular (pizza) no ggplot2
-	- Cap. 7 - Visualizando dados
-		- script
-			- Gráficos ggplot2
-				- Gráfico circular (pizza) no ggplot2
 
 Estudar:
 
