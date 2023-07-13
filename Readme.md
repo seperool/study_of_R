@@ -4282,6 +4282,63 @@ a partir das funções gráficas <code>geom_bar()</code> +
 
 #### 9.2.11.5 Gráfico de pontos com ggplot2
 
+-   No gráfico de pontos temos dois eixos númericos produzindo um
+    gráfico de dispersão.  
+-   Comando para aplicar gráfico de pontos:  
+    `geom_point()`  
+-   É possivel agrupar os pontos por grupos e atribuir cores e formas
+    distintas.  
+-   Principais argumentos:  
+    -   `subset`  
+        Subconjunto de dados de um `data.frame`, aplica um filtragem nos
+        dados.  
+        `subset(data, variável %in% c(valor1,valor2,...))`  
+    -   `shape`  
+        Altera as formas de determinados grupos a partir de variável.  
+    -   `color`  
+        Altera as cores de determinados grupos a partir de variável.  
+    -   `scale_x_continuous`  
+        Configuração do eixo x (para dados númericos).  
+        -   `limits`  
+            Define os limites do eixo x.  
+            `limits = c(limite_inferior, limite_superior)`  
+        -   `breaks`  
+            Define o espaçamento da escala do eixo x.  
+            `breaks = seq(limite_inferior, limite_superior, valor_espaçamento)`  
+    -   `geom_point(size = valor)`  
+        `size` altera o tamanho dos ícones do gráfico (os pontos).  
+
+-   Exemplo - Gráfico de pontos (`geom_point()`) com subgrupos:  
+
+<!-- -->
+
+    #Plotagem
+    ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+           #O comando filtra dos dados do data.frame
+           aes(x = Mes, y = cheg_2013/1000, 
+               shape = Estado, #Alterar formas desse grupo de variáveis
+               color = Regiao))+ #Diferencia os grupos das variáveis regiao por cor
+      scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                         breaks = seq(1,12,1))+ #Espaçamento do eixo x
+      geom_point(size = 3)+ #Tamanho dos ícones (pontos)
+      labs(title = "Gráfico de Dispersão: Mês x chegadas em 2013",
+           x = "Meses",
+           y = "Chegadas por mil")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_pontos-geom_point.png"
+alt="Gráfico de pontos, construido a partir da biblioteca ggplot2 usando a função geom_point()." />
+<figcaption aria-hidden="true">Gráfico de pontos, construido a partir da
+biblioteca <code>ggplot2</code> usando a função
+<code>geom_point()</code>.</figcaption>
+</figure>
+
 #### 9.2.11.6 Gráfico de linhas com ggplot2
 
 #### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
@@ -4291,15 +4348,21 @@ a partir das funções gráficas <code>geom_bar()</code> +
 ##### 9.2.11.8.1 O efeito jitter
 
 -   No gráfico de pontos ou dispersão, quando diversas observações
-    apresentam o mesmo valor , na visualização convencional não é
-    possivel perceber esse fato.  
+    (pontos) apresentam o mesmo valor, na visualização convencional, não
+    é possivel perceber esse fato.  
 -   O feito jitter estabelece uma forma de evidenciar essas repetições.
     É um efeito que mostra os pontos sobrepostos num resultado de
     espalhamento em torno do ponto de sobreposição, permitindo que se
     visualize melhor a quantidade de ocorrências.  
 -   Adiciona uma pequena váriação aleatória à localização de cada ponto,
-    é uma maneira útil de lidar com overplotting causada pela
+    é uma maneira útil de lidar com *overplotting* causada pela
     discrêpancia em conjuntos de dados menores.  
+-   *Overplotting* é quando os dados ou rótulos em uma visualização de
+    dados se sobrepõem, dificultando a visualização de pontos de dados
+    individuais em uma visualização de dados.  
+-   Comando para adicionar o efeito jitter no gráfico, usando a
+    biblioteca **ggplot2**:  
+    `geom_jitter()`  
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/sem_jitter.png"
