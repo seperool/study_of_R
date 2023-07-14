@@ -4341,6 +4341,39 @@ biblioteca <code>ggplot2</code> usando a função
 
 #### 9.2.11.6 Gráfico de linhas com ggplot2
 
+-   Exemplo - Gráfico de linhas (`geom_point()+geom_line()`):  
+
+<!-- -->
+
+    #Plotagem
+    ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+           #O comando filtra dos dados do data.frame
+           aes(x = Mes,
+               y = cheg_2013/1000, 
+               shape = Estado, #Alterar formas desse grupo de variáveis
+               color = Regiao))+ #Diferencia os grupos das variáveis regiao por cor
+      scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                         breaks = seq(1,12,1))+ #Espaçamento do eixo x
+      geom_point(size = 3)+ #Tamanho dos ícones (pontos)
+      geom_line(size = 1.0)+ #Espessura da linha
+      labs(title = "Gráfico de Linhas: Mês x chegadas em 2013",
+           x = "Meses",
+           y = "Chegadas por mil")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      scale_color_grey() #Aplica escalas de cinza
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_linhas-geom_point_geom_line.png"
+alt="Gráfico de linhas, construido a partir da biblioteca ggplot2 usando as funções geom_point() + geom_line()." />
+<figcaption aria-hidden="true">Gráfico de linhas, construido a partir da
+biblioteca <code>ggplot2</code> usando as funções
+<code>geom_point() + geom_line()</code>.</figcaption>
+</figure>
+
 #### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
 
 #### 9.2.11.8 Efeitos

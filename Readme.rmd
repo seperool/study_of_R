@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4126,6 +4126,38 @@ dev.off()
 \newpage
 
 #### Gráfico de linhas com ggplot2
+
+\newpage
+
+- Exemplo - Gráfico de linhas (`geom_point()+geom_line()`):\
+
+```
+#Plotagem
+ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+       #O comando filtra dos dados do data.frame
+       aes(x = Mes,
+           y = cheg_2013/1000, 
+           shape = Estado, #Alterar formas desse grupo de variáveis
+           color = Regiao))+ #Diferencia os grupos das variáveis regiao por cor
+  scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                     breaks = seq(1,12,1))+ #Espaçamento do eixo x
+  geom_point(size = 3)+ #Tamanho dos ícones (pontos)
+  geom_line(size = 1.0)+ #Espessura da linha
+  labs(title = "Gráfico de Linhas: Mês x chegadas em 2013",
+       x = "Meses",
+       y = "Chegadas por mil")+
+  theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+  scale_color_grey() #Aplica escalas de cinza
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![Gráfico de linhas, construido a partir da biblioteca `ggplot2` usando as funções `geom_point() + geom_line()`.](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_linhas-geom_point_geom_line.png)
+
+
+\newpage
+
 #### Gráfico de dispersão com linha de tendência usando ggplot2
 
 \newpage
