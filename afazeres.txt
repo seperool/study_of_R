@@ -1,6 +1,6 @@
-ESCRITO EM 14/07/23
+ESCRITO EM 15/07/23
 ---
-PARA 15/07/23
+PARA 16/07/23
 ---
 Subir github:
 
@@ -23,7 +23,6 @@ Afazeres:
 				- ggplot2
 					- Gráficos ggplot2
 						- Gráfico de linhas no ggplot2
-							- Teoria
 							- Efeito de suavização smooth
 						- Gráfico de dispersão com linha de tendência no ggplot2
 						- Efeitos
