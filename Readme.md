@@ -4341,6 +4341,61 @@ biblioteca <code>ggplot2</code> usando a função
 
 #### 9.2.11.6 Gráfico de linhas com ggplot2
 
+-   No gráfico de linhas temos dois eixos numéricos.  
+-   O gráfico de linhas é produzido ligando os pontos do gráfico de
+    pontos por linhas. Na biblioteca `ggplot2` o gráfico de linhas é
+    construido atráves das funções `geom_point()+geom_line()`.  
+-   É o gráfico adequado para representar séries de valores no tempo.  
+-   Principais argumentos do gráfico de linhas na biblioteca
+    `ggplot2`:  
+    -   `ggplot()`  
+        Essa função recebe um `data.frame` e cria a camada básica do
+        gráfico.  
+        -   `subset(data, variavel_grupos %in% c(valor_1, valor_2, ...))`  
+            Subconjunto de dados de um data.frame.  
+            O comando filtra dos dados do data.frame.  
+            Ex.: `subset(dt, Regiao %in% c("Suldeste", "Sul"))`  
+        -   `aes()`  
+            A função `aes()` mapeia os apectos visuais do gráfico.  
+            -   `x`  
+                Define qual vai ser a variável e por consequência os
+                valores do eixo x.  
+            -   `y`  
+                Define qual vai ser a variável e por consequência os
+                valores do eixo y.  
+            -   `color`  
+                Adiciona diferentes cores aos diversos grupos da
+                variável selecionada.  
+                `color = variável_agrupamento`  
+            -   `shape`  
+                Adicionar diferentes formatos aos pontos dos diversos
+                grupos da variável selecionada.  
+                `shape = variável_agrupamento`  
+    -   `scale_x_continuous()`  
+        Configuração do eixo x (para dados númericos).  
+        -   `limits`  
+            Define os limites do eixo x.  
+            `limits = c(limite_inferior, limite_superior)`  
+        -   `breaks`  
+            Define o espaçamento da escala do eixo x.  
+            `breaks = seq(limite_inferior, limite_superior, valor_espaçamento)`  
+    -   `geom_point()`  
+        Adiciona a camada de gráfico de pontos (os pontos).  
+        -   `size`  
+            `geom_point(size = número)` altera o tamanho dos ícones do
+            gráfico (os pontos).  
+    -   `geom_line()`  
+        Adiciona a camada do gráfico de linhas (as linhas que liga os
+        pontos).  
+        -   `size`  
+            `goem_line(size = número)` altera a espessura das linhas.  
+    -   `theme_bw()`  
+        Adiciona o tema “black and white”.  
+        -   `base_size`  
+            Define o tamanho da fonte dos texto do gráfico.  
+    -   `scale_color_gray()`  
+        Aplica escalas de cinza.  
+
 -   Exemplo - Gráfico de linhas (`geom_point()+geom_line()`):  
 
 <!-- -->
