@@ -1,6 +1,6 @@
-ESCRITO EM 15/07/23
+ESCRITO EM 16/07/23
 ---
-PARA 16/07/23
+PARA 17/07/23
 ---
 Subir github:
 
@@ -31,7 +31,5 @@ Afazeres:
 	- Cap. 7 - Visualizando dados
 		- script
 			- Gráficos ggplot2
-				- Gráfico de linhas no ggplot2
-					- Efeito de suavização smooth
 				- Gráfico de dispersão com linha de tendência no ggplot2
 			- Assistentes para ggplot2
