@@ -4429,6 +4429,17 @@ biblioteca <code>ggplot2</code> usando as funções
 <code>geom_point() + geom_line()</code>.</figcaption>
 </figure>
 
+-   Exemplo - Gráfico de linhas com efeito de suavização
+    smooth(`geom_smooth()`):  
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_linhas-geom_point_geom_smooth.png"
+alt="Gráfico de linha com ajuste por curva suavizada (geom_point()+geom_smooth())." />
+<figcaption aria-hidden="true">Gráfico de linha com ajuste por curva
+suavizada (<code>geom_point()+geom_smooth()</code>).</figcaption>
+</figure>
+
 #### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
 
 #### 9.2.11.8 Efeitos
@@ -4557,6 +4568,81 @@ style="width:50.0%"
 alt="Gráfico por facetas com rótulos com nome da variável. facet_grid(labeller = label_both)" />
 <figcaption aria-hidden="true">Gráfico por facetas com rótulos com nome
 da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
+</figure>
+
+##### 9.2.11.8.3 O efeito de suavização smooth
+
+-   Trata-se de um ajuste de curva de tendência entre duas variáveis
+    numéricas.  
+-   Usa o modelo de regressão local para gerar uma curva suavizada que
+    melhor se ajuste aos pontos.  
+-   Na regressão local, estima-se uma função na vizinhança de cada ponto
+    de interesse.  
+-   O efeito de suavização smooth é gerado na biblioteca `ggplot2` pelas
+    funções (`geom_point()+geom_smooth()`) com alguma semelhança ao
+    gráfico de linhas, porém ao inves de ligar os pontos gera uma curve
+    que se ajuste de maneira aproximada aos pontos.  
+-   A suavização de smooth descreve uma tendência (uma variabilidade),
+    apresentando maior ou menor confiabilidade (área cinza do gráfico)
+    da estimativa de tendência, dependendo da quantidade de pontos no
+    local.  
+-   Podemos adicionar outros métodos de modelagem para uma curva de
+    suvização, atráves do argumento `method`. Um método comum de se
+    utiliza é a **regressão linear** (`lm`).  
+    Ex.: `geom_smooth(method = lm, se = FALSE)`  
+-   Principais argumentos da função `geom_smooth()`:  
+    -   `orientation`  
+        Define a orientação, define se o ajuste deve ser feito ao longo
+        do eixo y ao invés do eixo x.  
+        Ex: `orientation = "y"`  
+    -   `span`  
+        Use `span` para controlar a “ondulação”.  
+        Números pequenos fazem a curva mais sinuosa (0 \> *x* \> 1),
+        enquanto números maiores ( ∼ 1) fazem a curva mais suave.  
+        Ex.: `span = 0.3`  
+        -`method`  
+        Adiciona uma função de modelagem.  
+        Uma comum usada é de regressão linear `lm`.  
+        Ex.: `method = lm, se = FALSE`  
+
+-   Exemplos - Gráficos de tendência usando a função de efeito de
+    suavização smooth (`geom_point()+geom_smooth()`):  
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/geom_smooth-exemplo.png"
+style="width:50.0%"
+alt="Gráfico de tendência com curva suavizada smooth, área cinza indicador de confiabilidade." />
+<figcaption aria-hidden="true">Gráfico de tendência com curva suavizada
+smooth, área cinza indicador de confiabilidade.</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/geom_smooth-exemplo_y.png"
+style="width:50.0%"
+alt="Gráfico de tendência com curva suavizada smooth, orientada no eixo y orientation = &quot;y&quot;." />
+<figcaption aria-hidden="true">Gráfico de tendência com curva suavizada
+smooth, orientada no eixo y <code>orientation = "y"</code>.</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/geom_smooth-span.png"
+style="width:50.0%"
+alt="Gráfico de tendência com curva suavizada smooth, com span = 0.3 (mais sinuoso)." />
+<figcaption aria-hidden="true">Gráfico de tendência com curva suavizada
+smooth, com <code>span = 0.3</code> (mais sinuoso).</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/geom_smooth-regressao_linear.png"
+style="width:50.0%"
+alt="Gráfico de tendência com curva suavizada smooth, com method = lm, se = FALSE (regressão linear)." />
+<figcaption aria-hidden="true">Gráfico de tendência com curva suavizada
+smooth, com <code>method = lm, se = FALSE</code> (<strong>regressão
+linear</strong>).</figcaption>
 </figure>
 
 ### 9.2.12 Assistentes para ggplot2
