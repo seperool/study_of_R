@@ -4440,11 +4440,76 @@ alt="Gráfico de linha com ajuste por curva suavizada (geom_point()+geom_smooth(
 suavizada (<code>geom_point()+geom_smooth()</code>).</figcaption>
 </figure>
 
-#### 9.2.11.7 Gráfico de dispersão com linha de tendência usando ggplot2
+#### 9.2.11.7 Gráfico de pontos com ajuste por curva de tendência com ggplot2
 
-#### 9.2.11.8 Efeitos
+-   Trata-se de um ajuste por curva de tendência entre duas variáveis
+    numéricas.  
+-   Usa a função `geom_smooth()` em conjunto com a função
+    `geom_point()`, ambas da biblioteca `ggplot2`, para traçar uma curva
+    suavizada que melhor se ajuste aos pontos, criada através do modelo
+    de **regressão local**.  
+    `geom_point()+geom_smooth()`  
+-   A função `geom_smooth()` aceita outros métodos para geração de
+    tendência, através do argumento `method`.  
+    Ex.: `geom_smooth(method = lm)`  
+-   A suavização de smooth descreve uma tendência (uma variabilidade),
+    apresentando maior ou menor confiabilidade (área cinza do gráfico,
+    argumento `se` da função `geom_smooth()`) da estimativa de
+    tendência, dependendo da quantidade de pontos no local.  
+    Ex.: `geom_smooth(se = FALSE)`  
+-   O argumento `span` controla a “ondulação”. Números pequenos fazem a
+    curva mais sinuosa (0 \> *x* \> 1), enquanto números maiores ( ∼ 1)
+    fazem a curva mais suave.  
+    Ex.: `span = 0.3`  
+-   Gráfico de linha x gráfico de tendência:  
+    -   Os gráficos se assemelham ao passo que são gerados a partir do
+        gráfico de pontos (`geom_point`).  
+        `geom_point()+geom_line()`  
+        `geom_point()+geom_smooth()`  
+    -   Diferente do gráfico de linhas, o gráfico de tendência não liga
+        os pontos. O gráfico de tendência gera uma curva suavizada que
+        melhor se ajuste aos pontos.  
 
-##### 9.2.11.8.1 O efeito jitter
+-   Exemplo - Gráfico de pontos com ajuste por curva de tendência por
+    `ggplot2` (`geom_point()+geom_smooth`):  
+
+<!-- -->
+
+    #Plotagem
+    ggplot(subset(dados, Estado %in% c("SaoPaulo")), #Subconjunto de dados de um data.frame
+           #O comando filtra dos dados do data.frame
+           aes(x = cheg_2012/1000,
+               y = cheg_2013/1000, 
+               color = Estado))+ #Diferencia os grupos das variáveis regiao por cor
+      scale_x_continuous(limits = c(140,230), #Limites do eixo x
+                         breaks = seq(140,230,10))+ #Espaçamento do eixo x
+      geom_point(size = 1.5)+ #Tamanho dos ícones (pontos)
+      geom_smooth(size = 1.0, span = 0.7, se = TRUE)+ 
+      #Espessura da curva (size = 1.0)
+      #Curva mais suave (span = 0.7)
+      #Apresenta confiabilidade estimada (se = TRUE)
+      labs(title = "Gráfico com ajuste de curva de tendência: 2012 x 2013",
+           x = "Chegadas por mil em 2012",
+           y = "Chegadas por mil em 2013")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      scale_color_grey() #Aplica escalas de cinza
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_tendencia-geom_point_geom_smooth.png"
+alt="Gráfico de pontos com ajuste com curva de tendência suavizada smooth, com span = 0.7." />
+<figcaption aria-hidden="true">Gráfico de pontos com ajuste com curva de
+tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
+</figure>
+
+#### 9.2.11.8 Gráfico de dispersão com linha de tendência com ggplot2
+
+#### 9.2.11.9 Efeitos
+
+##### 9.2.11.9.1 O efeito jitter
 
 -   No gráfico de pontos ou dispersão, quando diversas observações
     (pontos) apresentam o mesmo valor, na visualização convencional, não
@@ -4475,7 +4540,7 @@ style="width:50.0%" alt="Gráfico com feito jitter." />
 <figcaption aria-hidden="true">Gráfico com feito jitter.</figcaption>
 </figure>
 
-##### 9.2.11.8.2 Facetas
+##### 9.2.11.9.2 Facetas
 
 -   Divide o gráfico em vários painéis.  
 -   O `facet_grid()` forma uma matriz de painéis definidos por variáveis
@@ -4570,7 +4635,7 @@ alt="Gráfico por facetas com rótulos com nome da variável. facet_grid(labelle
 da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
 </figure>
 
-##### 9.2.11.8.3 O efeito de suavização smooth
+##### 9.2.11.9.3 O efeito de suavização smooth
 
 -   Trata-se de um ajuste de curva de tendência entre duas variáveis
     numéricas.  
@@ -4583,9 +4648,9 @@ da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
     gráfico de linhas, porém ao inves de ligar os pontos gera uma curve
     que se ajuste de maneira aproximada aos pontos.  
 -   A suavização de smooth descreve uma tendência (uma variabilidade),
-    apresentando maior ou menor confiabilidade (área cinza do gráfico)
-    da estimativa de tendência, dependendo da quantidade de pontos no
-    local.  
+    apresentando maior ou menor confiabilidade (área cinza do gráfico,
+    argumento `se` da função `geom_smooth()`) da estimativa de
+    tendência, dependendo da quantidade de pontos no local.  
 -   Podemos adicionar outros métodos de modelagem para uma curva de
     suvização, atráves do argumento `method`. Um método comum de se
     utiliza é a **regressão linear** (`lm`).  
@@ -4604,6 +4669,12 @@ da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
         Adiciona uma função de modelagem.  
         Uma comum usada é de regressão linear `lm`.  
         Ex.: `method = lm, se = FALSE`  
+    -   `se`  
+        Especifica se mostra uma área de confiança em torno da linha
+        suave (área cinza).  
+        Por default é `True`, mostrando a área.  
+        Caso `False`, omite a área.  
+        Ex.: `se = FALSE`  
 
 -   Exemplos - Gráficos de tendência usando a função de efeito de
     suavização smooth (`geom_point()+geom_smooth()`):  
@@ -4639,10 +4710,10 @@ smooth, com <code>span = 0.3</code> (mais sinuoso).</figcaption>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Imagens/geom_smooth-regressao_linear.png"
 style="width:50.0%"
-alt="Gráfico de tendência com curva suavizada smooth, com method = lm, se = FALSE (regressão linear)." />
+alt="Gráfico de tendência com curva suavizada smooth, com method = lm, se = FALSE (regressão linear com área de confiança omitida)." />
 <figcaption aria-hidden="true">Gráfico de tendência com curva suavizada
 smooth, com <code>method = lm, se = FALSE</code> (<strong>regressão
-linear</strong>).</figcaption>
+linear</strong> com área de confiança omitida).</figcaption>
 </figure>
 
 ### 9.2.12 Assistentes para ggplot2
