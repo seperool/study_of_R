@@ -4432,6 +4432,27 @@ biblioteca <code>ggplot2</code> usando as funções
 -   Exemplo - Gráfico de linhas com efeito de suavização
     smooth(`geom_smooth()`):  
 
+<!-- -->
+
+    #Plotagem
+    ggplot(subset(dados, Estado %in% c("SaoPaulo")), #Subconjunto de dados de um data.frame
+           #O comando filtra dos dados do data.frame
+           aes(x = cheg_2012/1000,
+               y = cheg_2013/1000, 
+               color = Estado))+ #Diferencia os grupos das variáveis regiao por cor
+      scale_x_continuous(limits = c(140,230), #Limites do eixo x
+                         breaks = seq(140,230,10))+ #Espaçamento do eixo x
+      geom_point(size = 1.5)+ #Tamanho dos ícones (pontos)
+      geom_smooth(size = 1.0)+ #Espessura da curva
+      labs(title = "Gráfico com ajuste de curva de tendência: 2012 x 2013",
+           x = "Chegadas por mil em 2012",
+           y = "Chegadas por mil em 2013")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      scale_color_grey() #Aplica escalas de cinza
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_linhas-geom_point_geom_smooth.png"

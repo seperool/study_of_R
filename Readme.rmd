@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4205,6 +4205,27 @@ dev.off()
 
 - Exemplo - Gráfico de linhas com efeito de suavização smooth(`geom_smooth()`):\
 
+```
+#Plotagem
+ggplot(subset(dados, Estado %in% c("SaoPaulo")), #Subconjunto de dados de um data.frame
+       #O comando filtra dos dados do data.frame
+       aes(x = cheg_2012/1000,
+           y = cheg_2013/1000, 
+           color = Estado))+ #Diferencia os grupos das variáveis regiao por cor
+  scale_x_continuous(limits = c(140,230), #Limites do eixo x
+                     breaks = seq(140,230,10))+ #Espaçamento do eixo x
+  geom_point(size = 1.5)+ #Tamanho dos ícones (pontos)
+  geom_smooth(size = 1.0)+ #Espessura da curva
+  labs(title = "Gráfico com ajuste de curva de tendência: 2012 x 2013",
+       x = "Chegadas por mil em 2012",
+       y = "Chegadas por mil em 2013")+
+  theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+  scale_color_grey() #Aplica escalas de cinza
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
 ![Gráfico de linha com ajuste por curva suavizada (`geom_point()+geom_smooth()`).](./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_linhas-geom_point_geom_smooth.png)
 
 \newpage
@@ -4260,6 +4281,8 @@ dev.off()
 \newpage
 
 #### Gráfico de dispersão com linha de tendência com ggplot2
+
+
 
 \newpage
 
