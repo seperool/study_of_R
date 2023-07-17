@@ -30,7 +30,7 @@ ggplot(subset(dados, Estado %in% c("SaoPaulo")), #Subconjunto de dados de um dat
   scale_x_continuous(limits = c(140,230), #Limites do eixo x
                      breaks = seq(140,230,10))+ #Espaçamento do eixo x
   geom_point(size = 1.5)+ #Tamanho dos ícones (pontos)
-  geom_smooth(size = 1.0)+ #Espessura da curva
+  geom_smooth(size = 1.0, span = 0.3)+ #Espessura da curva
   labs(title = "Gráfico com ajuste de curva de tendência: 2012 x 2013",
        x = "Chegadas por mil em 2012",
        y = "Chegadas por mil em 2013")+
