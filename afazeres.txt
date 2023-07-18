@@ -1,6 +1,6 @@
-ESCRITO EM 17/07/23
+ESCRITO EM 18/07/23
 ---
-PARA 18/07/23
+PARA 19/07/23
 ---
 Subir github:
 
@@ -23,6 +23,7 @@ Afazeres:
 				- ggplot2
 					- Gráficos ggplot2
 						- Gráfico de dispersão com linha de tendência no ggplot2
+							- Teoria
 						- Efeitos
 							- Suavização smooth
 					- Assistentes para ggplot2
@@ -30,4 +31,5 @@ Afazeres:
 		- script
 			- Gráficos ggplot2
 				- Gráfico de dispersão com linha de tendência no ggplot2
+					- Comentários
 			- Assistentes para ggplot2
