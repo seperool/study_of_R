@@ -28,10 +28,11 @@ ggplot(df, aes(x, y, color = ""))+
   geom_point()+
   geom_smooth(method = "lm")+ #Método lm, Regressão linear
   labs(title = 
-         sprintf("Regressão linear\nR-quadrado = %1.3f\nEquação: %1.2fX+%1.2f",
-                 summary(model)$r.squared,
+         sprintf("Regressão linear\nR-quadrado = %1.3f\nEquação: %1.2fX+%1.2f\nCoeficiente de correlação linear = %1.3f",
+                 summary(model)$r.squared, #R-quadrado
                  summary(model)$coefficients[2], #coeficiente A de Y=AX+B
-                 summary(model)$coefficients[1]), #coeficiente B de Y=AX+B
+                 summary(model)$coefficients[1], #coeficiente B de Y=AX+B
+                 cor(y,x)),#Coeficiente de correlação linear
        color = #legenda color (reta)
          sprintf("Equação: %1.2fX+%1.2f",
                  summary(model)$coefficients[2], #coeficiente A de Y=AX+B
