@@ -4543,6 +4543,134 @@ tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
 
 -   A regressão linear calcula uma equação que minimiza a distância
     entre a linha ajustada e todos os pontos dos dados.  
+-   Quando realizamos um ajuste por regressão linear observamos o
+    gráfico de dispersão, o coeficiente de correlação e o valor de
+    *R*<sup>2</sup> (coeficiente de determinação).  
+
+##### 9.2.11.8.1 Coeficiente de reta de regressão
+
+-   Regressão linear tenta traçar uma reta que melhor aproxime todos os
+    pontos dispersos.  
+    *y* = *A* + *B**x*
+    Onde,  
+    *A* é o intercepto  
+    *B* é o coeficiente angular.  
+
+-   Coeficiente angular:  
+    $$B = \frac{ n \sum x_i y_i - \sum x_i \sum y_i}{ n \sum x_i^2 - ( \sum x_i)^2}$$
+
+-   Intercepto:  
+    $$A = \frac{ \sum y - B \sum x }{n}$$
+
+-   `lm(y ~ x)$coef`  
+    Esta função do **R** retorna os coeficientes da reta de regressão
+    (**intercepto** e **coeficiente angular**).  
+    A parte da função `$coef` apenas retorna de maneira mais direta os
+    coeficientes separados, assim deixando claro em cada coluna o que é
+    **intercepto** e o que é **coeficiente angular**.  
+
+##### 9.2.11.8.2 Coeficiente de Correlação linear
+
+-   O coeficiente de correlação tem o objetivo de entender como uma
+    variável se comporta num cenario onde a outra variável variando. E
+    se existe alguma relação entre a variabilidade de ambas as
+    variáveis.  
+-   Os coeficientes variam de 1 a -1. Quanto mais proximo dos extremos,
+    mais forte é a relação entre as variáveis. Quanto mais proximo do
+    centro 0, menor é a relação entre as variáveis. Em 0 não existe
+    relação entre as variáveis.  
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/correlacao.png"
+alt="Correlações fortes e fracas" />
+<figcaption aria-hidden="true">Correlações fortes e fracas</figcaption>
+</figure>
+
+-   A correlação proximo do valor 1, significa que a relação é positiva,
+    ou seja, a reta de regressão é ascendente. Quando uma variável
+    aumenta a outra aumenta também.  
+-   A correlação proximo do valor -1, significa que a relação é
+    Negativa, ou seja, a reta de regressão é descendente. Quando uma
+    variável diminui a outra aumenta.  
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/graficos_tipos_correlacao.png"
+alt="Tipos de Correlação" />
+<figcaption aria-hidden="true">Tipos de Correlação</figcaption>
+</figure>
+
+-   Cálculo de correlação linear:  
+    $$cor\_{x,y} = \frac{n \sum x_i y_i \\ - \\ \sum x_i \sum y_i}{ \sqrt{ n \sum x_i^2  - ( \sum x_i)^2} \\ \cdot \\ \sqrt{ n \sum y_i^2  - ( \sum y_i)^2}}$$
+
+Onde,  
+*n* é o número de registros/linhas.  
+*x*<sub>*i*</sub> é o vetor x.  
+*y*<sub>*i*</sub> é o vetor y.  
+*x**y* é x vezes y.  
+
+Uma forma rápida e simples de resolver o cálculo é preencher a tabela de
+correlação linear com as informações:  
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Imagens/tabela_correlacao_linear.png"
+alt="Tabela de correlação linear" />
+<figcaption aria-hidden="true">Tabela de correlação linear</figcaption>
+</figure>
+
+-   `cor(x,y)`  
+    Função do **R** que cálcula a correlação linear das variáveis vetor
+    x e y. 
+
+##### 9.2.11.8.3 Coeficiente de determinação (R²)
+
+-   O *R*<sup>2</sup> (coeficiente de determinação) é um indicador da
+    qualidade do ajuste, que varia de \[0,1\], e indica a porcentagem da
+    variabilidade de y é explicada pela variabilidade de x.  
+    -   0%  
+        Indica que o modelo não explica nada da variabilidade dos dados
+        de resposta ao redor de sua média.  
+    -   100%  
+        Indica que o modelo explica toda variabilidade dos dados de
+        resposta ao redor de sua média.  
+        Teoricamente se um modelo pudesse explicar 100% da variância, os
+        valores ajustados seriam sempre iguais aos valores observados e,
+        portanto, todos os pontos de dados cairiam na linha de regressão
+        ajustada.  
+-   Valores baixos de *R*<sup>2</sup> não são necessariamente ruins, em
+    algumas áreas é esperado que seus valores sejam baixos.  
+    Ex.: Áreas de previsão de comportamento humano, normalmente
+    *R*<sup>2</sup> \< 50%.  
+
+##### 9.2.11.8.4 Gráfico de dispersão com linha de tendência
+
+-   Principais argumentos do gráfico de dispersão com linhas de
+    tendência:  
+    -   `geom_point()`  
+        Adiciona a camada de gráfico de pontos (os pontos).  
+    -   `geom_smooth()`  
+        -   `method = lm`  
+            Adiciona uma função de modelagem.  
+            Uma comum usada é de regressão linear `lm`.  
+    -   `sprintf()`  
+        Chama uma função de **C** `printf()`, que retorna um vetor de
+        caracteres, contendo uma combinação formatada de texto e valores
+        de variáveis.  
+    -   `summary(model)`  
+        Retorna resumos matemáticos da classe do argumento.  
+        -   `summary(model)$coefficients[2]`  
+            Retorna o **intercepto** (*A*) da reta de regressão linear
+            (*y* = *A* + *B**x*).  
+        -   `summary(model)$coefficients[1]`  
+            Retorna o **coeficiente angular** (*B*) da reta de regressão
+            linear (*y* = *A* + *B**x*).  
+        -   `summary(model)$r.squared`  
+            Retorna o **coeficiente de determinação** (*R*<sup>2</sup>)
+            da regressão linear.  
+        -   `cor(y,x)`  
+            Retorna o **coeficiente de correlação** da regressão
+            linear.  
 
 -   Exemplo - Gráfico de dispersão com linha de tendência (**regressão
     linear**) por `ggplot2` (`geom_point()+geom_smooth(method="lm")`):  
