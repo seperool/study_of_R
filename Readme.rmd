@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  pdf_document: 
+    number_sections: true
+    toc: false
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
   word_document: 
     toc: TRUE
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
