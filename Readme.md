@@ -2332,7 +2332,7 @@ Nome dos argumentos para adicionar efeito em gráficos.
 
 #### 9.1.1.3 Plotagem gráfico de barras (barplot)
 
--   Principais argumentos:  
+-   Principais argumentos do gráfico de barras (`barplot()`):  
     -   `y`  
         Vetor do eixo Y.  
     -   `names.arg`  
@@ -2363,36 +2363,38 @@ Nome dos argumentos para adicionar efeito em gráficos.
         variável.  
     -   Para plotar gráfico de barras na horizontal basta adicionar o
         argumento `horizon = TRUE`.  
-    -   Exemplo:  
 
-    <!-- -->
+-   Exemplo - Gráfico de barras (`barplot()`):  
 
-        xbar = barplot(
-        y, names.arg = x,
-        main = "Titulo do gráfico.",
-        cex.main = 1.5,
-        xlab = "Rótulo do eixo X.",
-        ylab = "Rótulo do eixo Y.",
-        cex.names = 1,
-        axisnames = T,
-        las = 2,
-        ylim = c(0,1.2*max(y))
-        )
-        text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
+<!-- -->
+
+    xbar = barplot(
+      y, names.arg = x,
+      main = "Titulo do gráfico.",
+      cex.main = 1.5,
+      xlab = "Rótulo do eixo X.",
+      ylab = "Rótulo do eixo Y.",
+      cex.names = 1,
+      axisnames = T,
+      las = 2,
+      ylim = c(0,1.2*max(y))
+    )
+    text(xbar, y, label = round(y,2), pos = 3, cex = 0.8, col = "black")
 
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot2_vertical.png"
-alt="Gráfico de barras - Vertical" />
-<figcaption aria-hidden="true">Gráfico de barras - Vertical</figcaption>
+alt="Gráfico de barras - Vertical (barplot())." />
+<figcaption aria-hidden="true">Gráfico de barras - Vertical
+(<code>barplot()</code>).</figcaption>
 </figure>
 
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/barplot_horizontal.png"
-alt="Gráfico de barras - Horizontal" />
-<figcaption aria-hidden="true">Gráfico de barras -
-Horizontal</figcaption>
+alt="Gráfico de barras - Horizontal (barplot(horizon = TRUE))." />
+<figcaption aria-hidden="true">Gráfico de barras - Horizontal
+(<code>barplot(horizon = TRUE</code>)).</figcaption>
 </figure>
 
 ### 9.1.2 Gráfico circular/pizza (pie)
@@ -2463,35 +2465,37 @@ Horizontal</figcaption>
         concatenação de texto e valores, com os rótulos de cada
         categoria, contendo nome de cada categoria (**x**) e
         porcentagem(**porc**).  
-    -   Exemplo:  
 
-    <!-- -->
+-   Exemplo - Gráfico circular “pizza” (`pie()`):  
 
-        #Juntando categorias com baixa proporção na categoria outros.
-        y <- c(sum(y[1:10]), y[11:15])
-        x <- c("Outros", as.character(x[11:15]))
+<!-- -->
 
-        #Gráfico circular/pizza
-        #Variável rótulo
-        porc = 100*round(y/sum(y),2) #calcula a %
-        rotulos = paste(x,"(",porc,"%)",sep = "") #texto para rotulo
-
-        #plotando gráfico pizza
-        par(mar = c(4,0,2,0), mai = c(0.8,0,0.4,0))
-        pie(
-        y,
-        main = "Título do gráfico",
-        labels = rotulos,
-        cex.main = 2,
-        cex = 1.5,
-        col = gray(1:length(x)/length(x))
-        )
-        text(0, -1, "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex = 1)
+    #Juntando categorias com baixa proporção na categoria outros.
+    y <- c(sum(y[1:10]), y[11:15])
+    x <- c("Outros", as.character(x[11:15]))
+      
+    #Gráfico circular/pizza
+    #Variável rótulo
+    porc = 100*round(y/sum(y),2) #calcula a %
+    rotulos = paste(x,"(",porc,"%)",sep = "") #texto para rotulo
+      
+    #plotando gráfico pizza
+    par(mar = c(4,0,2,0), mai = c(0.8,0,0.4,0))
+    pie(
+      y,
+      main = "Título do gráfico",
+      labels = rotulos,
+      cex.main = 2,
+      cex = 1.5,
+      col = gray(1:length(x)/length(x))
+    )
+    text(0, -1, "Fonte: Elaborado com pacote graphics version 3.6.1 do R.", cex = 1)
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/pie.png"
-alt="Gráfico circular/pizza" />
-<figcaption aria-hidden="true">Gráfico circular/pizza</figcaption>
+alt="Gráfico circular “pizza” (pie())." />
+<figcaption aria-hidden="true">Gráfico circular “pizza”
+(<code>pie()</code>).</figcaption>
 </figure>
 
 ### 9.1.3 Gráfico de linhas (plot lines)
@@ -2585,29 +2589,31 @@ alt="Gráfico circular/pizza" />
         como 1,2,…, ou por nome como ‘red’, ‘blue’, etc.  
         Neste caso para colorir as linhas do gráfico de linhas.  
     -   `legend`  
-        Adiciona um quadro de legenda a janela gráfica.  
-    -   Exemplo:  
+        Adiciona um quadro de legenda a janela gráfica.
 
-    <!-- -->
+-   Exemplo - Gráfico de linhas (`plot() lines()`):  
 
-        plot(x, y1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li,ls*1.2),xlab ="",
-           ylab = "", col = "red")
-        lines(x, y2, lty = 2, lwd = 1, type = "b", col = "yellow")
-        lines(x, y3, lty = 3, lwd = 2, type = "b", col = "blue")
-        lines(x, y4, lty = 4, lwd = 1, type = "b", col = "green")
-        title(main = "Chegada de turistas em São Paulo",
-            xlab ="Mês",
-            ylab = "Chegadas por mil",
-            sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.",
-            cex.sub = 0.8)
-        legend(9,400,c("2012","2013","2014","2015"), col = c("red","yellow","blue","green"),
-            lty = 1:4, cex = 0.5)
+<!-- -->
+
+    plot(x, y1, lty = 1, lwd = 1, type = "b", ylim = c(0.8*li,ls*1.2),xlab ="",
+         ylab = "", col = "red")
+    lines(x, y2, lty = 2, lwd = 1, type = "b", col = "yellow")
+    lines(x, y3, lty = 3, lwd = 2, type = "b", col = "blue")
+    lines(x, y4, lty = 4, lwd = 1, type = "b", col = "green")
+    title(main = "Chegada de turistas em São Paulo",
+          xlab ="Mês",
+          ylab = "Chegadas por mil",
+          sub = "Fonte: Elaborado com pacote graphics version 3.6.1 do R.",
+          cex.sub = 0.8)
+    legend(9,400,c("2012","2013","2014","2015"), col = c("red","yellow","blue","green"),
+          lty = 1:4, cex = 0.5)
 
 <figure>
 <img
 src="./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_lines_cores.png"
-alt="Gráfico de linhas" />
-<figcaption aria-hidden="true">Gráfico de linhas</figcaption>
+alt="Gráfico de linhas (plot() lines())." />
+<figcaption aria-hidden="true">Gráfico de linhas
+(<code>plot() lines()</code>).</figcaption>
 </figure>
 
 #### 9.1.3.4 Comparando séries de gráficos de linhas
@@ -2834,47 +2840,50 @@ séries</figcaption>
         Especifica o tipo de linha.  
     -   `lwd`  
         Especifica a espessura da linha.  
-    -   Exemplo:  
 
-    <!-- -->
+-   Exemplo - Gráfico de dispersão “plot abline”(`plot() abline()`):  
 
-        #Observando a correlação entre as chegadas de São Paulo e Rio de Janeiro
-        x <- dados_RJ$cheg_2014/1000
-        y <- dados_SP$cheg_2014/1000
-        x
-        y
+<!-- -->
 
-        #Obtendo a correlação
-        cor(x,y)
+    #Observando a correlação entre as chegadas de São Paulo e Rio de Janeiro
+    x <- dados_RJ$cheg_2014/1000
+    y <- dados_SP$cheg_2014/1000
+    x
+    y
 
-        #Obtendo os coeficientes da reta de regressão
-        lm(y ~ x)$coef
-        #lm = é usado para ajustar modelos lineares. Ele pode ser usado para realizar regressão, análise de variância de estrato único e análise de covariância 
-        #coef = é uma função genérica que extrai coeficientes de modelo de objetos retornados por funções de modelagem. coeficientes é um apelido para ele.
+    #Obtendo a correlação
+    cor(x,y)
 
-        #Gráfico de dispersão
-        plot(x, y, 
-           main = paste("Gráfico de Dispersão entre as chegadas de turistas de 2014",
-                        "\n","São Paulo x Rio de Janeiro"),
-           xlab = "Chegadas no Rio de Janeiro/1000",
-           ylab = "Chegadas em São Paulo/1000"
-           )
-        abline(lm(y ~ x), lty = 2, lwd = 2) #adiciona a reta tracejada
-        #lty = especifica o tipo de linha
-        #lwd = especifica a espessura da linha
-        text(130,230,"reta de regressão") #adiciona texto na posição (130,230)
-        text(130,210,paste("y = ",eval(expression(round(lm(y ~ x)$coef[[2]],2))), 
-                         #[[j]] seleciona a coluna j.
-                         "x + ",eval(expression(round(lm(y ~ x)$coef[[1]],2)))))
-        #adiciona equação na posição (130,210)
-        #paste = Concatenar vetores após a conversão em caractere.
-        #eval = Avalie uma expressão R em um ambiente especificado.
-        #expression = Cria ou testa objetos do modo "expressão".
+    #Obtendo os coeficientes da reta de regressão
+    lm(y ~ x)$coef
+    #lm = é usado para ajustar modelos lineares. Ele pode ser usado para realizar regressão, análise de variância de estrato único e análise de covariância 
+    #coef = é uma função genérica que extrai coeficientes de modelo de objetos retornados por funções de modelagem. coeficientes é um apelido para ele.
+
+    #Gráfico de dispersão
+    plot(x, y, 
+         main = paste("Gráfico de Dispersão entre as chegadas de turistas de 2014",
+                      "\n","São Paulo x Rio de Janeiro"),
+         xlab = "Chegadas no Rio de Janeiro/1000",
+         ylab = "Chegadas em São Paulo/1000"
+         )
+    abline(lm(y ~ x), lty = 2, lwd = 2) #adiciona a reta tracejada
+    #lty = especifica o tipo de linha
+    #lwd = especifica a espessura da linha
+    text(130,230,"reta de regressão") #adiciona texto na posição (130,230)
+    text(130,210,paste("y = ",eval(expression(round(lm(y ~ x)$coef[[2]],2))), 
+                       #[[j]] seleciona a coluna j.
+                       "x + ",eval(expression(round(lm(y ~ x)$coef[[1]],2)))))
+    #adiciona equação na posição (130,210)
+    #paste = Concatenar vetores após a conversão em caractere.
+    #eval = Avalie uma expressão R em um ambiente especificado.
+    #expression = Cria ou testa objetos do modo "expressão".
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/plot_abline.png"
-alt="Gráfico de dispersão" />
-<figcaption aria-hidden="true">Gráfico de dispersão</figcaption>
+style="width:80.0%"
+alt="Gráfico de dispersão “plot abline” (plot() abline())." />
+<figcaption aria-hidden="true">Gráfico de dispersão “plot abline”
+(<code>plot() abline()</code>).</figcaption>
 </figure>
 
 ### 9.1.5 Diagrama de caixa (boxplot)
@@ -2977,23 +2986,25 @@ boxplot</figcaption>
         Rótulo do eixo x.  
     -   `ylab`  
         Rótulo do eixo y.  
-    -   Exemplo:  
 
-    <!-- -->
+-   Exemplo - Diagrama de caixa “boxplot” (`boxplot()`):  
 
-        #Variável x
-        x <- turismo$cheg_2012/1000
+<!-- -->
 
-        #Plotando o diagrama de caixa - boxplot
-        boxplot(x,
-              main ="Boxplot das chegadas de Turistas ao Brasil em 2012",
-              xlab ="Ano de 2012",
-              ylab ="Chegadas de turistas em 2012 por mil")
+    #Variável x
+    x <- turismo$cheg_2012/1000
+
+    #Plotando o diagrama de caixa - boxplot
+    boxplot(x,
+          main ="Boxplot das chegadas de Turistas ao Brasil em 2012",
+          xlab ="Ano de 2012",
+          ylab ="Chegadas de turistas em 2012 por mil")
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/boxplot.png"
-style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
-<figcaption aria-hidden="true">Gráfico de caixa (boxplot)</figcaption>
+style="width:80.0%" alt="Gráfico de caixa (boxplot())" />
+<figcaption aria-hidden="true">Gráfico de caixa
+(<code>boxplot()</code>)</figcaption>
 </figure>
 
 ### 9.1.6 Histograma (hist)
@@ -3044,9 +3055,9 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
     frequência absoluta (**T**) ou a frequência relativa (**F**).  
     Ex.: `hist(... , freq = T | F, ...)`  
 
-#### 9.1.6.3 Plotagem gráfico boxplot
+#### 9.1.6.3 Plotagem histograma
 
--   Principais argumentos do histograma:  
+-   Principais argumentos da função histograma (`hist()`):  
     -   **x**  
         Variável em formato de vetor.  
     -   `freq`  
@@ -3064,26 +3075,28 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot)" />
         Rótulo do eixo y.  
     -   `sub`  
         Adiciona texto ao final do gráfico.  
-    -   Exemplo:  
 
-    <!-- -->
+-   Exemplo - Histograma:  
 
-        #Compreendendo a distribuição frequência de chegadas de turistas do Brasil em
-        #2012
-        x <- dados$cheg_2012/1000
+<!-- -->
 
-        #histograma
-        hist(x,
-           freq = T, #se T fornece a frequencia absoluta, se F fornece a frequencia relativa
-           main = "Histograma das chegadas de turistas ao Brasil em 2012",
-           xlab = "Chegadas de turistas em 2012 por mil",
-           ylab = "Frequencia Absoluta das chegadas",
-           sub = "Fonte: elaboração propria") #legenda
+    #Compreendendo a distribuição frequência de chegadas de turistas do Brasil em
+    #2012
+    x <- dados$cheg_2012/1000
+
+    #histograma
+    hist(x,
+         freq = T, #se T fornece a frequencia absoluta, se F fornece a frequencia relativa
+         main = "Histograma das chegadas de turistas ao Brasil em 2012",
+         xlab = "Chegadas de turistas em 2012 por mil",
+         ylab = "Frequencia Absoluta das chegadas",
+         sub = "Fonte: elaboração propria") #legenda
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Graficos/hist.png"
-style="width:80.0%" alt="Histograma" />
-<figcaption aria-hidden="true">Histograma</figcaption>
+style="width:80.0%" alt="Histograma (hist())" />
+<figcaption aria-hidden="true">Histograma
+(<code>hist()</code>)</figcaption>
 </figure>
 
 ## 9.2 Pacote **ggplot2**
@@ -4528,32 +4541,24 @@ tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
 
 #### 9.2.11.8 Gráfico de dispersão com linha de tendência com ggplot2
 
+-   A regressão linear calcula uma equação que minimiza a distância
+    entre a linha ajustada e todos os pontos dos dados.  
+
 -   Exemplo - Gráfico de dispersão com linha de tendência (**regressão
     linear**) por `ggplot2` (`geom_point()+geom_smooth(method="lm")`):  
 
 <!-- -->
-
-    #Organizando os dados
-    set.seed(240517) #Semente de gerador de número pseudo-aleatório
-    x <- runif(30) #Valores aleatórios de uma distribuição uniforme
-                   #Vetor com 30 valores
-    y <- 2*(x+rnorm(30,0,0.1))+7 #rnorm() gera valores aleatórios de uma distribuição normal,
-                                 #vetor com 30 valores, 0 média, 0.1 desvio-padrão.
-    z <-rep(c("a","b"),c(15,15)) #Cria um vetor com os valores "a", "b" 
-                                 #repetidos 15 vezes cada um.
-    df <- data.frame(x,y,z)
-    model <- lm(y ~ x, df) #lm = Regressão linear, (y ~ x, data)
-    dfm <- data.frame(x,ym=predict(model))
 
     #Plotagem
     ggplot(df, aes(x, y, color = ""))+
       geom_point()+
       geom_smooth(method = "lm")+ #Método lm, Regressão linear
       labs(title = 
-             sprintf("Regressão linear\nR-quadrado = %1.3f\nEquação: %1.2fX+%1.2f",
-                     summary(model)$r.squared,
+             sprintf("Regressão linear\nR-quadrado = %1.3f\nEquação: %1.2fX+%1.2f\nCoeficiente de correlação linear = %1.3f",
+                     summary(model)$r.squared, #R-quadrado
                      summary(model)$coefficients[2], #coeficiente A de Y=AX+B
-                     summary(model)$coefficients[1]), #coeficiente B de Y=AX+B
+                     summary(model)$coefficients[1], #coeficiente B de Y=AX+B
+                     cor(y,x)),#Coeficiente de correlação linear
            color = #legenda color (reta)
              sprintf("Equação: %1.2fX+%1.2f",
                      summary(model)$coefficients[2], #coeficiente A de Y=AX+B
