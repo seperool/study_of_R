@@ -1,6 +1,6 @@
-ESCRITO EM 18/07/23
+ESCRITO EM 19/07/23
 ---
-PARA 19/07/23
+PARA 20/07/23
 ---
 Subir github:
 
@@ -21,15 +21,11 @@ Afazeres:
 							- No banco de dados
 			- Cap. 7 - Visualizando dados
 				- ggplot2
-					- Gráficos ggplot2
-						- Gráfico de dispersão com linha de tendência no ggplot2
-							- Teoria
-						- Efeitos
-							- Suavização smooth
 					- Assistentes para ggplot2
 	- Cap. 7 - Visualizando dados
 		- script
-			- Gráficos ggplot2
-				- Gráfico de dispersão com linha de tendência no ggplot2
-					- Comentários
-			- Assistentes para ggplot2
+			- Exercícios
+				- 1
+				- 2
+				- 3
+				- 4
