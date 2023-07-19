@@ -1,6 +1,15 @@
 #Gráfico de dispersão com linha de tendência
 #geom_point + geom_smooth
 
+#Modelo de regressão linear (geom_smooth(method = lm))
+#Calculando:
+#Reta de regressão linear y=A+Bx
+#"A" interceptor, summary(model)$coefficients[2]
+#"B" Coeficiente angular, summary(model)$coefficients[1]
+#Coeficiente de correlação, cor(y,x)
+#Coeficiente de determinação (R^2), summary(model)$r.squared
+
+
 #Bibliotecas
 library(readr) #Leitura de dados
 library(magrittr) #Operador pipe %>%, concatena linhas de comando
