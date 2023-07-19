@@ -38,7 +38,7 @@ ggplot(df, aes(x, y, color = ""))+
                  summary(model)$coefficients[2], #coeficiente A de Y=AX+B
                  summary(model)$coefficients[1]))+ #coeficiente B de Y=AX+B
          #Função de C printf, que retorna um vetor de caracteres,
-         #contendo uma combinação de formatada de texto e valores de variáveis
+         #contendo uma combinação formatada de texto e valores de variáveis
          #"\n" = Próxima linha
          #"%1.2f" = "%" imprimir argumentos,
                     #"1" tamanho minimo do campo,
