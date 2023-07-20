@@ -3,6 +3,10 @@ ESCRITO EM 20/07/23
 PARA 21/07/23
 ---
 Subir github:
+- Cap. 7 - Visualizando dados
+		- script
+			- Exercícios
+				- 1
 
 Estudar:
 
@@ -23,7 +27,6 @@ Afazeres:
 	- Cap. 7 - Visualizando dados
 		- script
 			- Exercícios
-				- 1
 				- 2
 				- 3
 				- 4
