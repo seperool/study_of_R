@@ -27,8 +27,8 @@ install.packages("RColorBrewer") #Pacote com paleta de cores para gráficos
 install.packages("extrafont") #Opções de fontes de texto para gráficos
 install.packages("showtext")
 install.packages("ggThemeAssist") #Interface gráfica (Addins) para editar elementos do tema 'ggplot2'
-install.packages("hrbrthemes")
-install.packages("esquisse")
+install.packages("hrbrthemes") #Uma compilação de temas, escalas e utilitarios extras de `ggplot2`
+install.packages("esquisse") #Pacote para criação de gráficos (`ggplot2`) de maneira point and click
 
 #Conectores com banco de dados
 install.packages("DBI")
