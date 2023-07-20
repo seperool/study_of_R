@@ -6,14 +6,13 @@ library(patchwork) #Layout, juntar ggplot no mesmo gráfico
 library(dplyr) #Manipulação de dados
 library(tibble) #Estruturação de data.frame
 library(tidyr) #Organização de dados
-library(ggThemeAssist)
 library(ggthemes)
 library(esquisse)
+library(ggThemeAssist)
 
 #Importando dados
 dados <- read.csv(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/turismo.csv")
-dados <- data(dados)
-View(dados)
-summary(dados)
-dados
-
+dt <- data.frame(dados)
+summary(dt)
+class(dt)
+str(dt)
