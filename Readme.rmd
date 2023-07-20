@@ -10,15 +10,15 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  odt_document: 
-    number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
@@ -4544,6 +4544,16 @@ Ex.: `geom_smooth(method = lm, se = FALSE)`\
 \newpage
 
 ### Assistentes para ggplot2
+- Modelos do pacote `ggplot2`:\
+<https://exts.ggplot2.tidyverse.org/gallery/>
+
+- Pacotes auxiliares ao ggplot:\
+  - `ggThemeAssist`\
+  Fornece uma interface gráfica (Addins) para editar os elementos do tema `ggplot2`.\
+  - `esquisse`\
+  Pacote para criação de gráficos (`ggplot2`) de maneira *point and click*.\
+  
+![Pacotes auxiliares (`ggThemeAssist` e `esquisse`) de construção de gráfico - ggplot2 builder](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse.png)
 
 \newpage
 

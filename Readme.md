@@ -4925,6 +4925,26 @@ linear</strong> com área de confiança omitida).</figcaption>
 
 ### 9.2.12 Assistentes para ggplot2
 
+-   Modelos do pacote `ggplot2`:  
+    <https://exts.ggplot2.tidyverse.org/gallery/>
+
+-   Pacotes auxiliares ao ggplot:  
+
+    -   `ggThemeAssist`  
+        Fornece uma interface gráfica (Addins) para editar os elementos
+        do tema `ggplot2`.  
+    -   `esquisse`  
+        Pacote para criação de gráficos (`ggplot2`) de maneira *point
+        and click*.  
+
+<figure>
+<img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse.png"
+alt="Pacotes auxiliares (ggThemeAssist e esquisse) de construção de gráfico - ggplot2 builder" />
+<figcaption aria-hidden="true">Pacotes auxiliares
+(<code>ggThemeAssist</code> e <code>esquisse</code>) de construção de
+gráfico - ggplot2 builder</figcaption>
+</figure>
+
 # 10 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
