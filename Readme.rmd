@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4552,8 +4552,17 @@ Ex.: `geom_smooth(method = lm, se = FALSE)`\
   Fornece uma interface gráfica (Addins) para editar os elementos do tema `ggplot2`.\
   - `esquisse`\
   Pacote para criação de gráficos (`ggplot2`) de maneira *point and click*.\
+  - `hrbrthemes`\
+  Uma compilação de temas, escalas e utilitarios extras de `ggplot2`, incluindo uma função de verificação ortográfica para campos de rôtulos de plotagem.\
+  - `ggthemes`\
+  Temas adicionais para gráficos `ggplot2`.\
   
 ![Pacotes auxiliares (`ggThemeAssist` e `esquisse`) de construção de gráfico - ggplot2 builder](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse.png)
+
+
+\newpage
+
+# CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
 
 \newpage
 

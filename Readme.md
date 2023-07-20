@@ -4936,6 +4936,12 @@ linear</strong> com área de confiança omitida).</figcaption>
     -   `esquisse`  
         Pacote para criação de gráficos (`ggplot2`) de maneira *point
         and click*.  
+    -   `hrbrthemes`  
+        Uma compilação de temas, escalas e utilitarios extras de
+        `ggplot2`, incluindo uma função de verificação ortográfica para
+        campos de rôtulos de plotagem.  
+    -   `ggthemes`  
+        Temas adicionais para gráficos `ggplot2`.  
 
 <figure>
 <img src="./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse.png"
@@ -4945,13 +4951,15 @@ alt="Pacotes auxiliares (ggThemeAssist e esquisse) de construção de gráfico -
 gráfico - ggplot2 builder</figcaption>
 </figure>
 
-# 10 ANDAMENTO DOS ESTUDOS
+# 10 CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
+
+# 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
 
 Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
 
-# 11 REFERÊNCIAS
+# 12 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de
