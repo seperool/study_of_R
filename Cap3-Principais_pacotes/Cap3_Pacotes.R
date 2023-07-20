@@ -26,6 +26,9 @@ install.packages("patchwork") #Layout, juntar ggplot no mesmo gráfico
 install.packages("RColorBrewer") #Pacote com paleta de cores para gráficos
 install.packages("extrafont") #Opções de fontes de texto para gráficos
 install.packages("showtext")
+install.packages("ggThemeAssist") #Interface gráfica (Addins) para editar elementos do tema 'ggplot2'
+install.packages("hrbrthemes")
+install.packages("esquisse")
 
 #Conectores com banco de dados
 install.packages("DBI")
