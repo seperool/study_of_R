@@ -1,6 +1,6 @@
-ESCRITO EM 19/07/23
+ESCRITO EM 20/07/23
 ---
-PARA 20/07/23
+PARA 21/07/23
 ---
 Subir github:
 
@@ -19,9 +19,7 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-			- Cap. 7 - Visualizando dados
-				- ggplot2
-					- Assistentes para ggplot2
+			- Cap. 8 - Limpeza rápida nos dados
 	- Cap. 7 - Visualizando dados
 		- script
 			- Exercícios
