@@ -1,12 +1,8 @@
-ESCRITO EM 20/07/23
+ESCRITO EM 21/07/23
 ---
-PARA 21/07/23
+PARA 22/07/23
 ---
 Subir github:
-- Cap. 7 - Visualizando dados
-		- script
-			- Exercícios
-				- 1
 
 Estudar:
 
@@ -24,9 +20,16 @@ Afazeres:
 							- No R
 							- No banco de dados
 			- Cap. 8 - Limpeza rápida nos dados
+				- Limpando nomes do data.frame
+				- Remova colunas ou linhas inútes
+				- Substitua valores perdidos
+				- Produzindo tabelas de frequência para uma variável
+				- Tabulação cruzada
+				- Teste qui-quadrado para tabelas cruzadas
+				- Caça aos registros com valores duplicados
+				- Conte os níveis dos fatores - escala de Likert
 	- Cap. 7 - Visualizando dados
 		- script
 			- Exercícios
-				- 2
 				- 3
 				- 4
