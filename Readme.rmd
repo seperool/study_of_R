@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4564,13 +4564,22 @@ Ex.: `geom_smooth(method = lm, se = FALSE)`\
 
 # CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
 
+## Pactoes
+- `janitor`\
+Projetado para inspeção e limpeza de dados "sujos".\
+
+## Dados "sujos"
+- Dados que podem apresentam diversos problemas ao utilizar dados abertos ou quando várias pessoas digitaram os dados.\
+- Registros que necessitam de ajustes antes de sua análise.\
+
+
 \newpage
 
 # ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:\
 
-Atualmente estou estudando Cap.7, gráficos com **ggplot2**.\
+Atualmente estou estudando Cap.8, Limpeza rápida nos dados.\
 
 \newpage
 

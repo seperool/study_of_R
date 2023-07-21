@@ -4953,11 +4953,22 @@ gráfico - ggplot2 builder</figcaption>
 
 # 10 CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
 
+## 10.1 Pactoes
+
+-   `janitor`  
+    Projetado para inspeção e limpeza de dados “sujos”.  
+
+## 10.2 Dados “sujos”
+
+-   Dados que podem apresentam diversos problemas ao utilizar dados
+    abertos ou quando várias pessoas digitaram os dados.  
+-   Registros que necessitam de ajustes antes de sua análise.  
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
 
-Atualmente estou estudando Cap.7, gráficos com **ggplot2**.  
+Atualmente estou estudando Cap.8, Limpeza rápida nos dados.  
 
 # 12 REFERÊNCIAS
 
