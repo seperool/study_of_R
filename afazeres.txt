@@ -3,6 +3,11 @@ ESCRITO EM 21/07/23
 PARA 22/07/23
 ---
 Subir github:
+	- Cap. 7 - Visualizando dados
+		- script
+			- Exercícios
+				- 3
+				- 4
 
 Estudar:
 
@@ -28,8 +33,5 @@ Afazeres:
 				- Teste qui-quadrado para tabelas cruzadas
 				- Caça aos registros com valores duplicados
 				- Conte os níveis dos fatores - escala de Likert
-	- Cap. 7 - Visualizando dados
+	- Cap. 8 - Limpeza rápida nos dados
 		- script
-			- Exercícios
-				- 3
-				- 4
