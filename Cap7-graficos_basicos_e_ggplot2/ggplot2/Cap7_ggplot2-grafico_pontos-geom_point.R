@@ -29,6 +29,7 @@ ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de 
        x = "Meses",
        y = "Chegadas por mil")+
   theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+  theme(plot.title = element_text(hjust = 0.5))+ #Título centralizado
   scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
 
 #Fechando dispositivo gráfico
