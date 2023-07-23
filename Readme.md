@@ -4338,6 +4338,7 @@ a partir das funções gráficas <code>geom_bar()</code> +
            x = "Meses",
            y = "Chegadas por mil")+
       theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      theme(plot.title = element_text(hjust = 0.5))+ #Título centralizado
       scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
 
     #Fechando dispositivo gráfico
@@ -4350,6 +4351,96 @@ alt="Gráfico de pontos, construido a partir da biblioteca ggplot2 usando a fun�
 <figcaption aria-hidden="true">Gráfico de pontos, construido a partir da
 biblioteca <code>ggplot2</code> usando a função
 <code>geom_point()</code>.</figcaption>
+</figure>
+
+-   Exemplo - Gráfico de pontos com efeito jitter (`geom_jitter()`):  
+
+<!-- -->
+
+    #Plotagem
+    ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+           #O comando filtra dos dados do data.frame
+           aes(x = Mes, y = cheg_2013/1000, 
+               shape = Regiao))+ #Diferencia os grupos das variáveis regiao por forma
+      scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                         breaks = seq(1,12,1))+ #Espaçamento do eixo x
+      geom_jitter(size = 3, #Tamanho dos ícones (pontos)
+                  aes(colour = Estado), #Camada color ao agrupamento por Estado (legenda)
+                  width = 0.25)+ #Controla a largura do espalhamento jitter
+      labs(title = "Gráfico de Dispersão com efeito jitter (espalhamento)",
+           subtitle = "Mês x chegadas em 2013",
+           x = "Meses",
+           y = "Chegadas por mil")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      theme(plot.title = element_text(hjust = 0.5))+ #Título centralizado
+      theme(plot.subtitle = element_text(hjust = 0.5))+ #Subtítulo centralizado
+      scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_pontos_com_jitter-geom_jitter.png"
+alt="Gráfico de pontos com efeito jitter, substitui geom_point() por geom_jitter()." />
+<figcaption aria-hidden="true">Gráfico de pontos com efeito jitter,
+substitui <code>geom_point()</code> por
+<code>geom_jitter()</code>.</figcaption>
+</figure>
+
+-   Exemplo - Gráficos de pontos com e sem efeito jitter (`geom_point()`
+    e `geom_jitter()`):  
+
+<!-- -->
+
+    #Gráfico 1
+    g1 <- ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+                 #O comando filtra dos dados do data.frame
+                 aes(x = Mes, y = cheg_2013/1000, 
+                     shape = Estado, #Alterar formas desse grupo de variáveis
+                     color = Regiao))+ #Diferencia os grupos das variáveis regiao por cor
+      scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                         breaks = seq(1,12,1))+ #Espaçamento do eixo x
+      geom_point(size = 3)+ #Tamanho dos ícones (pontos)
+      labs(title = "Gráfico de Dispersão: Mês x chegadas em 2013",
+           x = "Meses",
+           y = "Chegadas por mil")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      theme(plot.title = element_text(hjust = 0.5))+ #Título centralizado
+      scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
+
+    #Gráfico 2
+    g2 <- ggplot(subset(dados, Regiao %in% c("Sul", "Sudeste")), #Subconjunto de dados de um data.frame
+                 #O comando filtra dos dados do data.frame
+                 aes(x = Mes, y = cheg_2013/1000, 
+                     shape = Estado))+ #Diferencia os grupos das variáveis regiao por forma
+      scale_x_continuous(limits = c(1,12), #Limites do eixo x
+                         breaks = seq(1,12,1))+ #Espaçamento do eixo x
+      geom_jitter(size = 3, #Tamanho dos ícones (pontos)
+                  aes(colour = Regiao), #Camada color ao agrupamento por Estado (legenda)
+                  width = 0.25)+ #Controla a largura do espalhamento jitter
+      labs(title = "Gráfico de Dispersão com efeito jitter (espalhamento)",
+           subtitle = "Mês x chegadas em 2013",
+           x = "Meses",
+           y = "Chegadas por mil")+
+      theme_bw(base_size = 18)+ #Adiciona tema "black and white" e tamanho da fonte
+      theme(plot.title = element_text(hjust = 0.5))+ #Título centralizado
+      theme(plot.subtitle = element_text(hjust = 0.5))+ #Subtítulo centralizado
+      scale_color_grey(start = 0.8, end = 0.2) #Aplica escalas de cinza
+
+    #Layout
+    g1 / g2
+
+    #fechando dispositivo grafico
+    dev.off()
+
+<figure>
+<img
+src="./Cap7-graficos_basicos_e_ggplot2/Graficos/ggplot2-grafico_pontos_com_e_sem_jitter.png"
+alt="Gráfico de pontos comparando sem efeito jitter (geom_point()) e com efeito jitter (geom_jitter())." />
+<figcaption aria-hidden="true">Gráfico de pontos comparando sem efeito
+jitter (<code>geom_point()</code>) e com efeito jitter
+(<code>geom_jitter()</code>).</figcaption>
 </figure>
 
 #### 9.2.11.6 Gráfico de linhas com ggplot2
