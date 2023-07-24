@@ -10,8 +10,9 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
+  html_document:
     number_sections: true
+    df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
@@ -19,9 +20,8 @@ output:
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
+  odt_document: 
     number_sections: true
-    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4656,6 +4656,8 @@ Projetado para inspeção e limpeza de dados "sujos".\
 - Dados que podem apresentam diversos problemas ao utilizar dados abertos ou quando várias pessoas digitaram os dados.\
 - Registros que necessitam de ajustes antes de sua análise.\
 
+\newpage
+
 ## Principais funções `janitor`
 
 ### Limpando nomes do `data.frame`
@@ -4667,6 +4669,10 @@ Projetado para inspeção e limpeza de dados "sujos".\
   - Manipula caracteres especiais e espaços.\
   - Inclui números para nomes duplicados.\
   - Converte o símbolo "%" para "percent" preservando o sentido.\
+
+- Existe um função no pacote básico do R que também faz limpeza de nomes (corrige nomes) `make.names()`. Porém ela é muito básica, não sendo assim a solução ideal:\
+  - Elimina espaços e substitui por pontos.\
+  - Substitui símbolos por pontos.\
 
 - Exemplo - Limpando nomes do `data.frame`:\
 ```
@@ -4686,7 +4692,17 @@ dfp
 clean_names(dfp)
 #ori_gem repete repete_2 percent_de_acertos  r  x
 #1      NA     NA       NA                 NA NA NA
+
+#Comparando com a função básica do R make.names
+make.names(names(dfp))
+#[1] "OriGem"        "REPETE"        "REPETE"        "X..de.acertos"
+#[5] "R......"       "X"  
 ```
+
+\newpage
+
+### Remova colunas ou linhas inútes
+
 
 \newpage
 

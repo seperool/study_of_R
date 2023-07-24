@@ -5069,6 +5069,13 @@ gráfico - ggplot2 builder</figcaption>
     -   Inclui números para nomes duplicados.  
     -   Converte o símbolo “%” para “percent” preservando o sentido.  
 
+-   Existe um função no pacote básico do R que também faz limpeza de
+    nomes (corrige nomes) `make.names()`. Porém ela é muito básica, não
+    sendo assim a solução ideal:  
+
+    -   Elimina espaços e substitui por pontos.  
+    -   Substitui símbolos por pontos.  
+
 -   Exemplo - Limpando nomes do `data.frame`:  
 
 <!-- -->
@@ -5089,6 +5096,13 @@ gráfico - ggplot2 builder</figcaption>
     clean_names(dfp)
     #ori_gem repete repete_2 percent_de_acertos  r  x
     #1      NA     NA       NA                 NA NA NA
+
+    #Comparando com a função básica do R make.names
+    make.names(names(dfp))
+    #[1] "OriGem"        "REPETE"        "REPETE"        "X..de.acertos"
+    #[5] "R......"       "X"  
+
+### 10.3.2 Remova colunas ou linhas inútes
 
 # 11 ANDAMENTO DOS ESTUDOS
 
