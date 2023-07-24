@@ -5055,6 +5055,41 @@ gráfico - ggplot2 builder</figcaption>
     abertos ou quando várias pessoas digitaram os dados.  
 -   Registros que necessitam de ajustes antes de sua análise.  
 
+## 10.3 Principais funções `janitor`
+
+### 10.3.1 Limpando nomes do `data.frame`
+
+-   Manipulação de nomes problematicos de variáveis (`clean_names()`).  
+
+-   O que a função `clean.names()` faz?  
+
+    -   Retorna nomes somente com letras em caixa baixa e com “\_” como
+        separador.  
+    -   Manipula caracteres especiais e espaços.  
+    -   Inclui números para nomes duplicados.  
+    -   Converte o símbolo “%” para “percent” preservando o sentido.  
+
+-   Exemplo - Limpando nomes do `data.frame`:  
+
+<!-- -->
+
+    #Dados
+    dfp <- as.data.frame(matrix(ncol = 6))
+    names(dfp) <- c("OriGem",
+                    "REPETE",
+                    "REPETE",
+                    "% de acertos",
+                    "R!$@$&*",
+                    "")
+    dfp
+    #OriGem REPETE REPETE % de acertos R!$@$&*   
+    #1     NA     NA     NA           NA      NA NA
+
+    #Limpando nomes
+    clean_names(dfp)
+    #ori_gem repete repete_2 percent_de_acertos  r  x
+    #1      NA     NA       NA                 NA NA NA
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  

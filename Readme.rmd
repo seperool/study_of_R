@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
   odt_document: 
     number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4656,6 +4656,37 @@ Projetado para inspeção e limpeza de dados "sujos".\
 - Dados que podem apresentam diversos problemas ao utilizar dados abertos ou quando várias pessoas digitaram os dados.\
 - Registros que necessitam de ajustes antes de sua análise.\
 
+## Principais funções `janitor`
+
+### Limpando nomes do `data.frame`
+
+- Manipulação de nomes problematicos de variáveis (`clean_names()`).\
+
+- O que a função `clean.names()` faz?\
+  - Retorna nomes somente com letras em caixa baixa e com "_" como separador.\
+  - Manipula caracteres especiais e espaços.\
+  - Inclui números para nomes duplicados.\
+  - Converte o símbolo "%" para "percent" preservando o sentido.\
+
+- Exemplo - Limpando nomes do `data.frame`:\
+```
+#Dados
+dfp <- as.data.frame(matrix(ncol = 6))
+names(dfp) <- c("OriGem",
+                "REPETE",
+                "REPETE",
+                "% de acertos",
+                "R!$@$&*",
+                "")
+dfp
+#OriGem REPETE REPETE % de acertos R!$@$&*   
+#1     NA     NA     NA           NA      NA NA
+
+#Limpando nomes
+clean_names(dfp)
+#ori_gem repete repete_2 percent_de_acertos  r  x
+#1      NA     NA       NA                 NA NA NA
+```
 
 \newpage
 
