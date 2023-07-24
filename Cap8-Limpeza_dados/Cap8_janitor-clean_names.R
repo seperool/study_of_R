@@ -21,3 +21,8 @@ dfp
 
 #Limpando nomes
 clean_names(dfp)
+
+#Comparando com a função básica do R make.names()
+#Substitui espeços e símbolos por pontos.
+make.names(names(dfp))
+#Não é uma solução ideial.
