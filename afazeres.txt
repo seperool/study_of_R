@@ -1,6 +1,6 @@
-ESCRITO EM 22/07/23
+ESCRITO EM 24/07/23
 ---
-PARA 23/07/23
+PARA 25/07/23
 ---
 Subir github:
 
@@ -21,6 +21,7 @@ Afazeres:
 							- No banco de dados
 			- Cap. 8 - Limpeza rápida nos dados
 				- Limpando nomes do data.frame
+					- make.names()
 				- Remova colunas ou linhas inútes
 				- Substitua valores perdidos
 				- Produzindo tabelas de frequência para uma variável
@@ -30,3 +31,5 @@ Afazeres:
 				- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
+			- Limpando nomes do data.frame
+					- make.names()
