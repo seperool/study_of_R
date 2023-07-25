@@ -1,6 +1,6 @@
-ESCRITO EM 24/07/23
+ESCRITO EM 25/07/23
 ---
-PARA 25/07/23
+PARA 26/07/23
 ---
 Subir github:
 
@@ -20,7 +20,6 @@ Afazeres:
 							- No R
 							- No banco de dados
 			- Cap. 8 - Limpeza rápida nos dados
-				- Remova colunas ou linhas inútes
 				- Substitua valores perdidos
 				- Produzindo tabelas de frequência para uma variável
 				- Tabulação cruzada
