@@ -5104,6 +5104,56 @@ gráfico - ggplot2 builder</figcaption>
 
 ### 10.3.2 Remova colunas ou linhas inútes
 
+-   Funções:  
+    -   `remove_constant()`  
+        A função `remove_constant()` remove as colunas constantes.  
+    -   `remove_empty()`  
+        A função `remove_empty()` remove as linhas vazias (*NA*).  
+-   Exemplo:  
+
+<!-- -->
+
+    #Dados
+    x <- c("b","a","b","c","c",NA,"a","a",NA,"a")
+    y <- rep("Brasil",10)
+    z <- c(NA,1:7,NA,NA)
+    vazia <- rep(NA,10)
+
+    #Criando dataframe
+    dt <- data.frame(x,y,z,vazia)
+    dt
+
+    #Elimina coluna com valores constantes - remove_constant()
+    #Remove colunas y e vazia
+    dt_clean1 <- remove_constant(dt)
+    dt_clean1
+          x  z
+    1     b NA
+    2     a  1
+    3     b  2
+    4     c  3
+    5     c  4
+    6  <NA>  5
+    7     a  6
+    8     a  7
+    9  <NA> NA
+    10    a NA
+
+    #Eliminando as linhas vazias - remove_empty()
+    #Remove linha 9, sem valores
+    dt_clean2 <- remove_empty(dt_clean1)
+    dt_clean2
+          x  z
+    1     b NA
+    2     a  1
+    3     b  2
+    4     c  3
+    5     c  4
+    6  <NA>  5
+    7     a  6
+    8     a  7
+    10    a NA
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
