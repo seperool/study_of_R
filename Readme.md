@@ -5154,6 +5154,17 @@ gráfico - ggplot2 builder</figcaption>
     8     a  7
     10    a NA
 
+### 10.3.3 Substitua valores perdidos
+
+-   Apesar do `janitor` auxilia a eliminar linhas e colunas com valores
+    perdidas, caso necessite substituir tais valores, o pacote `mice`
+    ajuda nessa tarefas, usando técnica de imputação de valores
+    (*Multivariate Imputation by Chained Equations*), que levam em conta
+    o tipo de variável, produzindo a substituição dos valores pedidos.  
+    `install.packages("mice")`  
+
+-   Exemplo - Substituição de valores perdidos (`complete(mice())`):  
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
