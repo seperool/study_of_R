@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
+  odt_document: 
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4660,7 +4660,7 @@ Projetado para inspeção e limpeza de dados "sujos".\
 
 ## Principais funções `janitor`
 
-### Limpando nomes do `data.frame`
+### Limpando nomes do `data.frame` - `clean_names()`
 
 - Manipulação de nomes problematicos de variáveis (`clean_names()`).\
 
@@ -4754,12 +4754,28 @@ dt_clean2
 
 \newpage
 
-### Substitua valores perdidos
+### Substitua valores perdidos - `mice()`
 
 - Apesar do `janitor` auxilia a eliminar linhas e colunas com valores perdidas, caso necessite substituir tais valores, o pacote `mice` ajuda nessa tarefas, usando técnica de imputação de valores (*Multivariate Imputation by Chained Equations*), que levam em conta o tipo de variável, produzindo a substituição dos valores pedidos.\
 `install.packages("mice")`\
 
 - Exemplo - Substituição de valores perdidos (`complete(mice())`):\
+
+\newpage
+
+### Produzindo tabelas de frequência para uma variável - `taby()`
+
+- A função `taby()`, do pacote `janitor`, é uma versão melhorada da função `table()`, do pacote base do R.\
+- Diferenças:\
+  - Retorna dataframe que pode ser melhorado e impresso com `kable()`, do pacote `knitr`.\
+  - Calcula porcentagens automaticamente (porcentagem total e porcentagem valida, sem **NA**).\
+  - Pode opcionalmente exibir valores **NA**.\
+  - Quando **NA** ocorre, uma coluna adicional `valid_percent` (porcentagem valida) é adicionada.\
+  - Pode opcionalmente ordernar as contagens (frequência).\
+  - Pode ser usado com operador pipe `%>%`, do pacote `magrittr`.\
+  - Quando a variável for do tipo categórica, os valores perdidos são contabilizados na tabela.\
+
+- Exemplo:\
 
 \newpage
 

@@ -5057,7 +5057,7 @@ gráfico - ggplot2 builder</figcaption>
 
 ## 10.3 Principais funções `janitor`
 
-### 10.3.1 Limpando nomes do `data.frame`
+### 10.3.1 Limpando nomes do `data.frame` - `clean_names()`
 
 -   Manipulação de nomes problematicos de variáveis (`clean_names()`).  
 
@@ -5154,7 +5154,7 @@ gráfico - ggplot2 builder</figcaption>
     8     a  7
     10    a NA
 
-### 10.3.3 Substitua valores perdidos
+### 10.3.3 Substitua valores perdidos - `mice()`
 
 -   Apesar do `janitor` auxilia a eliminar linhas e colunas com valores
     perdidas, caso necessite substituir tais valores, o pacote `mice`
@@ -5164,6 +5164,24 @@ gráfico - ggplot2 builder</figcaption>
     `install.packages("mice")`  
 
 -   Exemplo - Substituição de valores perdidos (`complete(mice())`):  
+
+### 10.3.4 Produzindo tabelas de frequência para uma variável - `taby()`
+
+-   A função `taby()`, do pacote `janitor`, é uma versão melhorada da
+    função `table()`, do pacote base do R.  
+-   Diferenças:  
+    -   Retorna dataframe que pode ser melhorado e impresso com
+        `kable()`, do pacote `knitr`.  
+    -   Calcula porcentagens automaticamente (porcentagem total e
+        porcentagem valida, sem **NA**).  
+    -   Pode opcionalmente exibir valores **NA**.  
+    -   Quando **NA** ocorre, uma coluna adicional `valid_percent`
+        (porcentagem valida) é adicionada.  
+    -   Pode opcionalmente ordernar as contagens (frequência).  
+    -   Pode ser usado com operador pipe `%>%`, do pacote `magrittr`.  
+    -   Quando a variável for do tipo categórica, os valores perdidos
+        são contabilizados na tabela.  
+-   Exemplo:  
 
 # 11 ANDAMENTO DOS ESTUDOS
 
