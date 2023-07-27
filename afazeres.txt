@@ -1,6 +1,6 @@
-ESCRITO EM 25/07/23
+ESCRITO EM 27/07/23
 ---
-PARA 26/07/23
+PARA 28/07/23
 ---
 Subir github:
 
@@ -28,3 +28,5 @@ Afazeres:
 				- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
+			- Substitua valores perdidos
+			- Produzindo tabelas de frequência para uma variável
