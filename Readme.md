@@ -5183,6 +5183,30 @@ gráfico - ggplot2 builder</figcaption>
         são contabilizados na tabela.  
 -   Exemplo:  
 
+<!-- -->
+
+    #Dados
+    x <- c("b","a","b","c","c",NA,"a","a",NA,"a")
+    y <- rep("Brasil",10)
+    z <- c(NA,1:7,NA,NA)
+    vazia <- rep(NA,10)
+
+    #Tabela de frequência da variável x
+    tabyl(x, sort = TRUE)
+    x n percent valid_percent
+    a 4     0.4          0.50
+    b 2     0.2          0.25
+    c 2     0.2          0.25
+    <NA> 2     0.2            NA
+
+    tabyl(x) %>% 
+      select(x, valid_percent)
+    x valid_percent
+    a          0.50
+    b          0.25
+    c          0.25
+    <NA>            NA
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
