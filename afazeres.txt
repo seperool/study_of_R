@@ -1,6 +1,6 @@
-ESCRITO EM 27/07/23
+ESCRITO EM 28/07/23
 ---
-PARA 28/07/23
+PARA 29/07/23
 ---
 Subir github:
 
@@ -30,3 +30,4 @@ Afazeres:
 		- script
 			- Substitua valores perdidos
 			- Produzindo tabelas de frequência para uma variável
+				- comentários
