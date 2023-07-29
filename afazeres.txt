@@ -1,6 +1,6 @@
-ESCRITO EM 28/07/23
+ESCRITO EM 29/07/23
 ---
-PARA 29/07/23
+PARA 30/07/23
 ---
 Subir github:
 
@@ -29,5 +29,3 @@ Afazeres:
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
-			- Produzindo tabelas de frequência para uma variável
-				- comentários
