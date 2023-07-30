@@ -5207,6 +5207,41 @@ gráfico - ggplot2 builder</figcaption>
     c          0.25
     <NA>            NA
 
+### 10.3.5 Tabulação cruzada - `tabyl()`
+
+#### 10.3.5.1 Tabulação cruzada
+
+-   As tabelas de tabulação cruzada (tabelas de contigência) exibem o
+    relacionamento entre duas variáveis categóricas (nominais ou
+    ordinais). O tamanho da tabela é determinado pelo número de valores
+    distintos para cada variável, com cada célula na tabela
+    representando uma combinação exclusiva de valores.  
+-   Exemplo didático:  
+    Numa tabela onde temos duas colunas (x e y), a tabulação cruzada é a
+    incidência (frequência) de ocorrências de x em y.  
+    Logo, para tornar uma tabela em tabulação cruzada o **x** mantém-se
+    coluna e os valores de **y** passam a ser colunas, os valores da
+    tabulação cruzada são as frequências das combinações.  
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/tabulacao_cruzada.jpg"
+alt="Exemplo de tabulação cruzada" />
+<figcaption aria-hidden="true">Exemplo de tabulação cruzada</figcaption>
+</figure>
+
+#### 10.3.5.2 Função `tabyl()` para tabulação cruzada
+
+-   Uma tabulação cruzada é gerada com a função `tabyl()`.  
+-   Propriedades:  
+    -   Retorna um `dataframe`.  
+    -   Calcula frequências absolutas, mas é possível incluir
+        frequências relativas por linha ou coluna.  
+    -   Pode (opcionalmente) mostrar os valores **NA**.  
+-   A função `tabyl()`, do pacote `janitor`, produz resultado que só
+    seria possível através de um conjunto de funções do sistema
+    `tidyverse` (`dplyr` e `tidyr`).  
+    Ex.: `goup_by %>% summarise %>% mutate %>% spread`  
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
