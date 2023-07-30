@@ -1,6 +1,6 @@
-ESCRITO EM 29/07/23
+ESCRITO EM 30/07/23
 ---
-PARA 30/07/23
+PARA 31/07/23
 ---
 Subir github:
 
@@ -29,3 +29,4 @@ Afazeres:
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
+			- Tabulação cruzada
