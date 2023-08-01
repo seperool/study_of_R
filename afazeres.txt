@@ -3,7 +3,10 @@ ESCRITO EM 01/08/23
 PARA 02/08/23
 ---
 Subir github:
-
+	- Readme.*
+		- Cap. 8 - Limpeza rápida nos dados
+			- Tabulação cruzada
+				- Exemplos
 Estudar:
 
 Afazeres:
@@ -19,14 +22,14 @@ Afazeres:
 						- Manipulação de tabelas
 							- No R
 							- No banco de dados
-			- Cap. 8 - Limpeza rápida nos dados
-				- Substitua valores perdidos
-				- Produzindo tabelas de frequência para uma variável
-				- Tabulação cruzada
-					- Exemplos
-				- Teste qui-quadrado para tabelas cruzadas
-				- Caça aos registros com valores duplicados
-				- Conte os níveis dos fatores - escala de Likert
+	- Readme.*
+		- Cap. 8 - Limpeza rápida nos dados
+			- Substitua valores perdidos
+			- Produzindo tabelas de frequência para uma variável 
+				- Revisar
+			- Teste qui-quadrado para tabelas cruzadas
+			- Caça aos registros com valores duplicados
+			- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
