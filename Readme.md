@@ -5236,11 +5236,48 @@ alt="Exemplo de tabulação cruzada" />
     -   Retorna um `dataframe`.  
     -   Calcula frequências absolutas, mas é possível incluir
         frequências relativas por linha ou coluna.  
-    -   Pode (opcionalmente) mostrar os valores **NA**.  
+    -   Pode (opcionalmente) mostrar os valores **NA** (“`show_na = F`”
+        exclui **NA**).  
+        Ex.:`tabyl(dt,x,y, show_na = F)`  
 -   A função `tabyl()`, do pacote `janitor`, produz resultado que só
     seria possível através de um conjunto de funções do sistema
     `tidyverse` (`dplyr` e `tidyr`).  
     Ex.: `goup_by %>% summarise %>% mutate %>% spread`  
+
+-   O pacote `janitor` tem um conjunto de funções para *adornar* a
+    tabulação:  
+    -   `adorn_total`  
+        Adiciona o total por linha ou coluna ou por ambos.  
+    -   `adorn_percentages`  
+        Calcula porcentagens com base nos totais de linha, de coluna ou
+        sobre o total geral da tabela.  
+    -   `adorn_pct_formatting`  
+        Formata as porcentagens, controlando o número de dígitos a serem
+        exibidos e incluindo o simbolo de “%”.  
+    -   `adorn_rounding`  
+        Produz arredondamento nos números da tabela, não deve ser usado
+        em conjunto com `adorn_pct_formatting`.  
+        Ex.: `adorn_rounding(digits = 0, rounding = "half up")`  
+        Métodos de arredondamento (`rounding`):  
+        -   `half up`  
+            Arredonda para cima.  
+            Ex.: 10.5 -\> 11  
+        -   `half to even`  
+            Arredonda para baixo.  
+            Ex.: 10.5 -\> 10  
+    -   `adorn_ns`  
+        Adiciona as contagens (frequência absoluta).  
+    -   `adorn_title`  
+        Adiciona título a tabela, podendo ser no topo da tabela ou
+        combinado na primeira linha/coluna.  
+        A opção “top” adiciona o nome da coluna numa linha vazia
+        (dificulta manipulação posterior). Outra opção é “combined”
+        anexando a variável de nome na linha já presente.  
+        Ex.:
+        `adorn_title("combined", row_name = "Cor de selo", col_name = "Categorias")`
+
+-   Exemplos - Pacote `janitor`, função `tabyl()` para tabulação cruzada
+    com adornos:  
 
 # 11 ANDAMENTO DOS ESTUDOS
 
