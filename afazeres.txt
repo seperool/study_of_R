@@ -1,6 +1,6 @@
-ESCRITO EM 30/07/23
+ESCRITO EM 01/08/23
 ---
-PARA 31/07/23
+PARA 02/08/23
 ---
 Subir github:
 
@@ -23,6 +23,7 @@ Afazeres:
 				- Substitua valores perdidos
 				- Produzindo tabelas de frequência para uma variável
 				- Tabulação cruzada
+					- Exemplos
 				- Teste qui-quadrado para tabelas cruzadas
 				- Caça aos registros com valores duplicados
 				- Conte os níveis dos fatores - escala de Likert
@@ -30,3 +31,4 @@ Afazeres:
 		- script
 			- Substitua valores perdidos
 			- Tabulação cruzada
+				- Descrição
