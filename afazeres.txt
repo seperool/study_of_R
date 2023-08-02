@@ -1,12 +1,9 @@
-ESCRITO EM 01/08/23
+ESCRITO EM 02/08/23
 ---
-PARA 02/08/23
+PARA 03/08/23
 ---
 Subir github:
-	- Readme.*
-		- Cap. 8 - Limpeza rápida nos dados
-			- Tabulação cruzada
-				- Exemplos
+
 Estudar:
 
 Afazeres:
@@ -33,5 +30,3 @@ Afazeres:
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
-			- Tabulação cruzada
-				- Descrição
