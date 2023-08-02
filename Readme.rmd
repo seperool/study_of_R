@@ -12,13 +12,13 @@ output:
     variant: markdown_github
   odt_document: 
     number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
@@ -4855,6 +4855,93 @@ Ex.: `goup_by %>% summarise %>% mutate %>% spread`\
 
 - Exemplos - Pacote `janitor`, função `tabyl()` para tabulação cruzada com adornos:\
 
+```
+#Tabulação cruzada entre x e y
+#frequência de y em x
+tabyl(dt,x,y)
+        x A B C NA_
+     azul 2 0 0   1
+    preto 1 2 0   1
+ vermelho 1 1 1   0
+     <NA> 0 0 1   0
+
+#Tabulação cruzada entre x e y com adornos
+tabyl(dt,x,y) %>% 
+  adorn_percentages("row") %>% #Inclui porcentagens com base na linha
+  adorn_pct_formatting() #Formata para %
+        x     A     B      C   NA_
+     azul 66.7%  0.0%   0.0% 33.3%
+    preto 25.0% 50.0%   0.0% 25.0%
+ vermelho 33.3% 33.3%  33.3%  0.0%
+     <NA>  0.0%  0.0% 100.0%  0.0%
+
+tabyl(dt,x,y) %>% 
+  adorn_percentages("col") %>% #Inclui porcentagens com base na coluna
+  adorn_pct_formatting() #Formata para %
+        x     A     B     C   NA_
+     azul 50.0%  0.0%  0.0% 50.0%
+    preto 25.0% 66.7%  0.0% 50.0%
+ vermelho 25.0% 33.3% 50.0%  0.0%
+     <NA>  0.0%  0.0% 50.0%  0.0%
+
+tabyl(dt,x,y) %>% 
+  adorn_percentages("all") %>% #Inclui porcentagens com base no total geral
+  adorn_pct_formatting() #Formata para %
+        x     A     B    C  NA_
+     azul 18.2%  0.0% 0.0% 9.1%
+    preto  9.1% 18.2% 0.0% 9.1%
+ vermelho  9.1%  9.1% 9.1% 0.0%
+     <NA>  0.0%  0.0% 9.1% 0.0%
+```
+
+\newpage
+
+- Exemplos - Pacote `janitor`, função `tabyl()` para tabulação cruzada com adorno `adorn_title` para títulos e exclusão de **NA**:\
+
+```
+
+tabyl(dt,x,y, show_na = F) %>%  #Exclui NA
+  adorn_percentages("all") %>% #Inclui porcentagens com base no total geral
+  adorn_rounding(2) %>% #Arredonda com 2 casas decimais
+  adorn_ns() %>% #Inclui contagens
+  adorn_title("combined", 
+              row_name = "Cor de selo",
+              col_name = "Categorias") #Adiciona títulos
+              
+ Cor de selo/Categorias        A        B        C
+                   azul 0.25 (2) 0.00 (0) 0.00 (0)
+                  preto 0.12 (1) 0.25 (2) 0.00 (0)
+               vermelho 0.12 (1) 0.12 (1) 0.12 (1)
+```
+
+\newpage
+
+- Exemplos - Pacote `janitor`, função `tabyl()` para tabulação cruzada com adorno `adorn_rounding` para arredondamentos:\
+
+```
+#Arredondamentos
+#half up - arredonda para cima
+dt %>% 
+  tabyl(x,y) %>% 
+  adorn_percentages() %>% 
+  adorn_rounding(digits = 0,rounding = "half up")
+        x A B C NA_
+     azul 1 0 0   0
+    preto 0 1 0   0
+ vermelho 0 0 0   0
+     <NA> 0 0 1   0
+
+#half to even - arredonda para baixo
+dt %>% 
+  tabyl(x,y) %>% 
+  adorn_percentages() %>% 
+  adorn_rounding(digits = 0,rounding = "half to even")
+        x A B C NA_
+     azul 1 0 0   0
+    preto 0 0 0   0
+ vermelho 0 0 0   0
+     <NA> 0 0 1   0
+```
 \newpage
 
 # ANDAMENTO DOS ESTUDOS
