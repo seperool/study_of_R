@@ -5236,6 +5236,8 @@ alt="Exemplo de tabulação cruzada" />
     -   Retorna um `dataframe`.  
     -   Calcula frequências absolutas, mas é possível incluir
         frequências relativas por linha ou coluna.  
+    -   Também é possível incluir as frequências em forma de
+        porcentagem.  
     -   Pode (opcionalmente) mostrar os valores **NA** (“`show_na = F`”
         exclui **NA**).  
         Ex.:`tabyl(dt,x,y, show_na = F)`  
@@ -5249,8 +5251,9 @@ alt="Exemplo de tabulação cruzada" />
     -   `adorn_total`  
         Adiciona o total por linha ou coluna ou por ambos.  
     -   `adorn_percentages`  
-        Calcula porcentagens com base nos totais de linha, de coluna ou
-        sobre o total geral da tabela.  
+        Calcula porcentagens com base nos totais de linha (“`row`”), de
+        coluna (“`col`”) ou sobre o total geral da tabela (“`all`”).  
+        Ex.: `adorn_percentages("row")`  
     -   `adorn_pct_formatting`  
         Formata as porcentagens, controlando o número de dígitos a serem
         exibidos e incluindo o simbolo de “%”.  
@@ -5261,10 +5264,10 @@ alt="Exemplo de tabulação cruzada" />
         Métodos de arredondamento (`rounding`):  
         -   `half up`  
             Arredonda para cima.  
-            Ex.: 10.5 -\> 11  
+            Ex.: 10.5 → 11  
         -   `half to even`  
             Arredonda para baixo.  
-            Ex.: 10.5 -\> 10  
+            Ex.: 10.5 → 10  
     -   `adorn_ns`  
         Adiciona as contagens (frequência absoluta).  
     -   `adorn_title`  
@@ -5364,6 +5367,8 @@ alt="Exemplo de tabulação cruzada" />
         preto 0 0 0   0
      vermelho 0 0 0   0
          <NA> 0 0 1   0
+
+### 10.3.6 Teste qui-quadrado para tabela cruzada
 
 # 11 ANDAMENTO DOS ESTUDOS
 
