@@ -1,6 +1,6 @@
-ESCRITO EM 02/08/23
+ESCRITO EM 03/08/23
 ---
-PARA 03/08/23
+PARA 04/08/23
 ---
 Subir github:
 
@@ -25,8 +25,11 @@ Afazeres:
 			- Produzindo tabelas de frequência para uma variável 
 				- Revisar
 			- Teste qui-quadrado para tabelas cruzadas
+				- Teoria
+				- Exemplos
 			- Caça aos registros com valores duplicados
 			- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
+			- Teste qui-quadrado para tabelas cruzadas
