@@ -5370,6 +5370,20 @@ alt="Exemplo de tabulação cruzada" />
 
 ### 10.3.6 Teste qui-quadrado para tabela cruzada
 
+-   O teste qui-quadrado pode ser aplicado em dados tabelados de forma
+    cruzada.  
+-   O teste qui-quadrado é um teste não paramétrico.  
+-   O objetivo é testar as hipoteses:  
+    -   *H*<sub>0</sub>:  
+        A variável linha é independente da variável coluna, ou seja, a
+        proporção no total das linhas deve ser a mesma quando
+        considerada em cada categoria da variável linha.  
+    -   *H*<sub>1</sub>:  
+        A variável linha é dependente da variável coluna, ou seja, a
+        proporção no total das linhas é diferente da proporção em cada
+        categoria da variável linha.  
+-   As variáveis devem ser categóricas.  
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  

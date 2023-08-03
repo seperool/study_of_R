@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
-  md_document:
-    number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4949,7 +4949,14 @@ dt %>%
 
 ### Teste qui-quadrado para tabela cruzada
 
-
+- O teste qui-quadrado pode ser aplicado em dados tabelados de forma cruzada.\
+- O teste qui-quadrado é um teste não paramétrico.\
+- O objetivo é testar as hipoteses:\
+  - $H_0$:\
+  A variável linha é independente da variável coluna, ou seja, a proporção no total das linhas deve ser a mesma quando considerada em cada categoria da variável linha.\
+  - $H_1$:\
+  A variável linha é dependente da variável coluna, ou seja, a proporção no total das linhas é diferente da proporção em cada categoria da variável linha.\
+- As variáveis devem ser categóricas.\
 
 \newpage
 
