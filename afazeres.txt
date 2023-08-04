@@ -1,6 +1,6 @@
-ESCRITO EM 03/08/23
+ESCRITO EM 04/08/23
 ---
-PARA 04/08/23
+PARA 05/08/23
 ---
 Subir github:
 
@@ -33,3 +33,5 @@ Afazeres:
 		- script
 			- Substitua valores perdidos
 			- Teste qui-quadrado para tabelas cruzadas
+				- parte 1
+				- parte 2
