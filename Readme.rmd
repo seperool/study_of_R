@@ -10,11 +10,11 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
-    number_sections: true
   github_document: 
   pdf_document: 
     number_sections: true
@@ -4957,6 +4957,12 @@ dt %>%
   - $H_1$:\
   A variável linha é dependente da variável coluna, ou seja, a proporção no total das linhas é diferente da proporção em cada categoria da variável linha.\
 - As variáveis devem ser categóricas.\
+- Para concluir o teste, observamos o resultado do `p-valor` e comparamos com o nível de significância adotado na pesquisa, que em geral costuma ser de $0,05$ ou $5\%$.\
+  - Se `p-valor` $> 0,05 = H_1$\
+  Rejeitamos a hipotese conhecida como nula ($H_0$).\
+  Concluímos que as variáveis são dependentes ao nível de significância de $5\%$.\
+  - Se `p-valor` $\le 0,05 = H_0$\
+  Concluímos que as variáveis não são dependentes, são independentes, ao nível de significância de $5\%$.\
 
 \newpage
 

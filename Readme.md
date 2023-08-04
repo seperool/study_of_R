@@ -5383,6 +5383,16 @@ alt="Exemplo de tabulação cruzada" />
         proporção no total das linhas é diferente da proporção em cada
         categoria da variável linha.  
 -   As variáveis devem ser categóricas.  
+-   Para concluir o teste, observamos o resultado do `p-valor` e
+    comparamos com o nível de significância adotado na pesquisa, que em
+    geral costuma ser de 0, 05 ou 5%.  
+    -   Se `p-valor`  \> 0, 05 = *H*<sub>1</sub>  
+        Rejeitamos a hipotese conhecida como nula (*H*<sub>0</sub>).  
+        Concluímos que as variáveis são dependentes ao nível de
+        significância de 5%.  
+    -   Se `p-valor`  ≤ 0, 05 = *H*<sub>0</sub>  
+        Concluímos que as variáveis não são dependentes, são
+        independentes, ao nível de significância de 5%.  
 
 # 11 ANDAMENTO DOS ESTUDOS
 
