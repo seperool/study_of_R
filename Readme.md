@@ -5394,6 +5394,54 @@ alt="Exemplo de tabulação cruzada" />
         Concluímos que as variáveis não são dependentes, são
         independentes, ao nível de significância de 5%.  
 
+-   Exemplo 1:  
+
+<!-- -->
+
+    #Suponha dois grupos que receberam tratamento
+    grupo <- c(rep("A",15),rep("B",15))
+    set.seed(20)
+    resposta <- c(sample(0:1,16,replace = T),rep(1,14))
+    dt = data.frame(grupo,resposta)
+
+    tab = tabyl(dt, grupo, resposta, show_na= F)
+    tab
+     grupo 0  1
+         A 9  6
+         B 1 14
+
+    #Aplicando o teste qui-quadrado
+    chisq.test(tab)
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+    data:  tab
+    X-squared = 7.35, df = 1, p-value = 0.006706
+
+-   Exemplo 2:  
+
+<!-- -->
+
+    #Suponha dois grupos que receberam tratamento
+    grupo <- c(rep("A",15),rep("B",15))
+    set.seed(20)
+    resposta <- c(sample(0:1,25,replace = T),rep(1,5))
+    dt = data.frame(grupo,resposta)
+
+    tab = tabyl(dt, grupo, resposta, show_na= F)
+    tab
+     grupo 0 1
+         A 9 6
+         B 6 9
+
+    #Aplicando o teste qui-quadrado
+    chisq.test(tab)
+
+        Pearson's Chi-squared test with Yates' continuity correction
+
+    data:  tab
+    X-squared = 0.53333, df = 1, p-value = 0.4652
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
