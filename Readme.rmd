@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
-  word_document: 
-    toc: TRUE
+  pdf_document: 
     number_sections: true
-  github_document: 
+    toc: false
   odt_document: 
     number_sections: true
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4951,22 +4951,23 @@ dt %>%
 
 - O teste qui-quadrado pode ser aplicado em dados tabelados de forma cruzada.\
 - O teste qui-quadrado é um teste não paramétrico.\
-- O objetivo é testar as hipoteses:\
+- O objetivo é testar as hipóteses:\
   - $H_0$:\
   A variável linha é independente da variável coluna, ou seja, a proporção no total das linhas deve ser a mesma quando considerada em cada categoria da variável linha.\
   - $H_1$:\
   A variável linha é dependente da variável coluna, ou seja, a proporção no total das linhas é diferente da proporção em cada categoria da variável linha.\
 - As variáveis devem ser categóricas.\
-- Para concluir o teste, observamos o resultado do `p-valor` e comparamos com o nível de significância adotado na pesquisa, que em geral costuma ser de $0,05$ ou $5\%$.\
-  - Se `p-valor` $> 0,05 = H_1$\
+- Para concluir o teste, observamos o resultado do `p-valor` e comparamos com o nível de significância ($\alpha$) adotado na pesquisa, que em geral costuma ser de $0,05$(ou seja, $5\%$).\
+  - Se `p-valor` $> 0,05 = H_0$\
+  Não é possível rejeitar a hipotese nula ($H_0$).\
+  Concluímos que as variáveis não são dependentes, são independentes, ao nível de significância de $5\%$.\
+  - Se `p-valor` $\le 0,05 = H_1$\
   Rejeitamos a hipotese conhecida como nula ($H_0$).\
   Concluímos que as variáveis são dependentes ao nível de significância de $5\%$.\
-  - Se `p-valor` $\le 0,05 = H_0$\
-  Concluímos que as variáveis não são dependentes, são independentes, ao nível de significância de $5\%$.\
 
 \newpage
 
-- Exemplo 1:\
+- Exemplo 1 - Hipótese $H_1$:\
 ```
 #Suponha dois grupos que receberam tratamento
 grupo <- c(rep("A",15),rep("B",15))
@@ -4987,11 +4988,18 @@ chisq.test(tab)
 
 data:  tab
 X-squared = 7.35, df = 1, p-value = 0.006706
+
+#Conclusão
+##p-value = 0.006706
+##Logo, p-value (0.006706) <= alpha (0.05)
+##Assim, rejeitamos a hipótese nula (H_0),
+##há uma associação estatisticamente significativa entre as variáveis.
+##É a hipótese H_1.
 ```
 
 \newpage
 
-- Exemplo 2:\
+- Exemplo 2 - Hipótese $H_0$:\
 ```
 #Suponha dois grupos que receberam tratamento
 grupo <- c(rep("A",15),rep("B",15))
@@ -5012,6 +5020,13 @@ chisq.test(tab)
 
 data:  tab
 X-squared = 0.53333, df = 1, p-value = 0.4652
+
+#Conclusão
+##p-value = 0.4652
+##Logo, p-value (0.4652) > alpha (0.05)
+##Assim, não podemos rejeitar a hipótese nula (H_0),
+##Não há evidências suficientes para concluir que as variáveis estão associadas.
+##É a hipótese H_0.
 ```
 
 \newpage

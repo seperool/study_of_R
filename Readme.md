@@ -5373,7 +5373,7 @@ alt="Exemplo de tabulação cruzada" />
 -   O teste qui-quadrado pode ser aplicado em dados tabelados de forma
     cruzada.  
 -   O teste qui-quadrado é um teste não paramétrico.  
--   O objetivo é testar as hipoteses:  
+-   O objetivo é testar as hipóteses:  
     -   *H*<sub>0</sub>:  
         A variável linha é independente da variável coluna, ou seja, a
         proporção no total das linhas deve ser a mesma quando
@@ -5384,17 +5384,18 @@ alt="Exemplo de tabulação cruzada" />
         categoria da variável linha.  
 -   As variáveis devem ser categóricas.  
 -   Para concluir o teste, observamos o resultado do `p-valor` e
-    comparamos com o nível de significância adotado na pesquisa, que em
-    geral costuma ser de 0, 05 ou 5%.  
-    -   Se `p-valor`  \> 0, 05 = *H*<sub>1</sub>  
+    comparamos com o nível de significância (*α*) adotado na pesquisa,
+    que em geral costuma ser de 0, 05(ou seja, 5%).  
+    -   Se `p-valor`  \> 0, 05 = *H*<sub>0</sub>  
+        Não é possível rejeitar a hipotese nula (*H*<sub>0</sub>).  
+        Concluímos que as variáveis não são dependentes, são
+        independentes, ao nível de significância de 5%.  
+    -   Se `p-valor`  ≤ 0, 05 = *H*<sub>1</sub>  
         Rejeitamos a hipotese conhecida como nula (*H*<sub>0</sub>).  
         Concluímos que as variáveis são dependentes ao nível de
         significância de 5%.  
-    -   Se `p-valor`  ≤ 0, 05 = *H*<sub>0</sub>  
-        Concluímos que as variáveis não são dependentes, são
-        independentes, ao nível de significância de 5%.  
 
--   Exemplo 1:  
+-   Exemplo 1 - Hipótese *H*<sub>1</sub>:  
 
 <!-- -->
 
@@ -5418,7 +5419,14 @@ alt="Exemplo de tabulação cruzada" />
     data:  tab
     X-squared = 7.35, df = 1, p-value = 0.006706
 
--   Exemplo 2:  
+    #Conclusão
+    ##p-value = 0.006706
+    ##Logo, p-value (0.006706) <= alpha (0.05)
+    ##Assim, rejeitamos a hipótese nula (H_0),
+    ##há uma associação estatisticamente significativa entre as variáveis.
+    ##É a hipótese H_1.
+
+-   Exemplo 2 - Hipótese *H*<sub>0</sub>:  
 
 <!-- -->
 
@@ -5441,6 +5449,13 @@ alt="Exemplo de tabulação cruzada" />
 
     data:  tab
     X-squared = 0.53333, df = 1, p-value = 0.4652
+
+    #Conclusão
+    ##p-value = 0.4652
+    ##Logo, p-value (0.4652) > alpha (0.05)
+    ##Assim, não podemos rejeitar a hipótese nula (H_0),
+    ##Não há evidências suficientes para concluir que as variáveis estão associadas.
+    ##É a hipótese H_0.
 
 # 11 ANDAMENTO DOS ESTUDOS
 
