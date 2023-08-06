@@ -1,6 +1,6 @@
-ESCRITO EM 05/08/23
+ESCRITO EM 06/08/23
 ---
-PARA 06/08/23
+PARA 07/08/23
 ---
 Subir github:
 
@@ -26,12 +26,8 @@ Afazeres:
 				- Revisar
 			- Teste qui-quadrado para tabelas cruzadas
 				- Teoria
-				- Exemplos (Comentários)
 			- Caça aos registros com valores duplicados
 			- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
-			- Teste qui-quadrado para tabelas cruzadas (Descrição e comentários)
-				- parte 1
-				- parte 2
