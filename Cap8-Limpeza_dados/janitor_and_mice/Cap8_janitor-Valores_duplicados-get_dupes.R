@@ -2,8 +2,8 @@
 ##Identifica registros duplicados
 
 #Bibliotecas
-library(magrittr)
-library(janitor)
+library(magrittr) #Operador pipe "%>%", concatena linhas de comando
+library(janitor) #Limpeza de dados
 
 #data.frame
 df = data.frame(ID = c(1000,1001,1000,1002),
