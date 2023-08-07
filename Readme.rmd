@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
-    number_sections: true
   github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4947,7 +4947,7 @@ dt %>%
 
 \newpage
 
-### Teste qui-quadrado para tabela cruzada
+### Teste qui-quadrado para tabela cruzada - `chisq.test()`
 
 - O teste qui-quadrado pode ser aplicado em dados tabelados de forma cruzada.\
 - O teste qui-quadrado é um teste não paramétrico.\
@@ -5027,6 +5027,37 @@ X-squared = 0.53333, df = 1, p-value = 0.4652
 ##Assim, não podemos rejeitar a hipótese nula (H_0),
 ##Não há evidências suficientes para concluir que as variáveis estão associadas.
 ##É a hipótese H_0.
+```
+
+\newpage
+
+### Caça aos registros com valores duplicados - `get_dupes()`
+
+- A função `get_dupes()`, do pacote `janitor`, realiza a tarefa de retornar os registros duplicados do conjunto de dados em análise (exibe uma coluna com a contagem de duplicatas), para que seja possível detectar os casos problemáticos.\
+- É uma função útil para casos em que não deveriam aparecer registros duplicados.\
+Ex.: ID, registros de notas fiscais, conjuntos únicos (ID, registro de faturamento),...\
+- Exemplo - Uso da função `get_dupes()`, do pacote `janitor`, para identificar registros duplicados:\
+```
+#data.frame
+df = data.frame(ID = c(1000,1001,1000,1002),
+                FAT = c(2098.60,345.00,2098.60,1332.44),
+                ANO = c(2016,2016,2016,2017))
+
+#Identificando registros duplicados - get_dupes()
+##Metódo 1
+get_dupes(df, ID, FAT)
+
+    ID    FAT dupe_count  ANO
+1 1000 2098.6          2 2016
+2 1000 2098.6          2 2016
+
+##Metódo 2 - com uso de magrittr
+df %>% 
+  get_dupes(ID,FAT)
+
+    ID    FAT dupe_count  ANO
+1 1000 2098.6          2 2016
+2 1000 2098.6          2 2016
 ```
 
 \newpage

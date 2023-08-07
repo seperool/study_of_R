@@ -5368,7 +5368,7 @@ alt="Exemplo de tabulação cruzada" />
      vermelho 0 0 0   0
          <NA> 0 0 1   0
 
-### 10.3.6 Teste qui-quadrado para tabela cruzada
+### 10.3.6 Teste qui-quadrado para tabela cruzada - `chisq.test()`
 
 -   O teste qui-quadrado pode ser aplicado em dados tabelados de forma
     cruzada.  
@@ -5456,6 +5456,42 @@ alt="Exemplo de tabulação cruzada" />
     ##Assim, não podemos rejeitar a hipótese nula (H_0),
     ##Não há evidências suficientes para concluir que as variáveis estão associadas.
     ##É a hipótese H_0.
+
+### 10.3.7 Caça aos registros com valores duplicados - `get_dupes()`
+
+-   A função `get_dupes()`, do pacote `janitor`, realiza a tarefa de
+    retornar os registros duplicados do conjunto de dados em análise
+    (exibe uma coluna com a contagem de duplicatas), para que seja
+    possível detectar os casos problemáticos.  
+-   É uma função útil para casos em que não deveriam aparecer registros
+    duplicados.  
+    Ex.: ID, registros de notas fiscais, conjuntos únicos (ID, registro
+    de faturamento),…  
+-   Exemplo - Uso da função `get_dupes()`, do pacote `janitor`, para
+    identificar registros duplicados:  
+
+<!-- -->
+
+    #data.frame
+    df = data.frame(ID = c(1000,1001,1000,1002),
+                    FAT = c(2098.60,345.00,2098.60,1332.44),
+                    ANO = c(2016,2016,2016,2017))
+
+    #Identificando registros duplicados - get_dupes()
+    ##Metódo 1
+    get_dupes(df, ID, FAT)
+
+        ID    FAT dupe_count  ANO
+    1 1000 2098.6          2 2016
+    2 1000 2098.6          2 2016
+
+    ##Metódo 2 - com uso de magrittr
+    df %>% 
+      get_dupes(ID,FAT)
+
+        ID    FAT dupe_count  ANO
+    1 1000 2098.6          2 2016
+    2 1000 2098.6          2 2016
 
 # 11 ANDAMENTO DOS ESTUDOS
 
