@@ -1,6 +1,6 @@
-ESCRITO EM 07/08/23
+ESCRITO EM 08/08/23
 ---
-PARA 08/08/23
+PARA 09/08/23
 ---
 Subir github:
 
@@ -26,7 +26,6 @@ Afazeres:
 				- Revisar
 			- Teste qui-quadrado para tabelas cruzadas
 				- Teoria
-			- Corrija número para data com excel_numeric_to_date()
 			- Conte os níveis dos fatores - escala de Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
