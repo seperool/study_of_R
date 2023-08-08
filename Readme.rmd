@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -5058,6 +5058,30 @@ df %>%
     ID    FAT dupe_count  ANO
 1 1000 2098.6          2 2016
 2 1000 2098.6          2 2016
+```
+
+\newpage
+
+### Corrija número para data com a função `excel_numeric_to_date()`
+
+- A função `excel_numeric_to_date()`, do pacote `janitor`, é para consertar data em uma arquivo importado de *Excel*, se uma data veio em formato número ao invés de data.\
+- A função `excel_numeric_to_date()` converte número para a classe *Date*.\
+- Exemplo - Conversão de número para data, usando a função `excel_numeric_to_date()` de um arquivo importado do excel:\
+```
+#Aplicação da função excel_numeric_to_date
+#Metódo 1
+excel_numeric_to_date(51503)
+[1] "2041-01-02"
+
+#Metódo 2 - MAC
+excel_numeric_to_date(51503, date_system = "mac pre-2011")
+[1] "2045-01-03"
+
+#Metódo 3 - com magrittr
+dt <- 51503
+dt %>% 
+  excel_numeric_to_date()
+[1] "2041-01-02"
 ```
 
 \newpage

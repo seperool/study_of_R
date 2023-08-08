@@ -5493,6 +5493,33 @@ alt="Exemplo de tabulação cruzada" />
     1 1000 2098.6          2 2016
     2 1000 2098.6          2 2016
 
+### 10.3.8 Corrija número para data com a função `excel_numeric_to_date()`
+
+-   A função `excel_numeric_to_date()`, do pacote `janitor`, é para
+    consertar data em uma arquivo importado de *Excel*, se uma data veio
+    em formato número ao invés de data.  
+-   A função `excel_numeric_to_date()` converte número para a classe
+    *Date*.  
+-   Exemplo - Conversão de número para data, usando a função
+    `excel_numeric_to_date()` de um arquivo importado do excel:  
+
+<!-- -->
+
+    #Aplicação da função excel_numeric_to_date
+    #Metódo 1
+    excel_numeric_to_date(51503)
+    [1] "2041-01-02"
+
+    #Metódo 2 - MAC
+    excel_numeric_to_date(51503, date_system = "mac pre-2011")
+    [1] "2045-01-03"
+
+    #Metódo 3 - com magrittr
+    dt <- 51503
+    dt %>% 
+      excel_numeric_to_date()
+    [1] "2041-01-02"
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
