@@ -30,6 +30,7 @@ install.packages("showtext")
 install.packages("ggThemeAssist") #Interface gráfica (Addins) para editar elementos do tema 'ggplot2'
 install.packages("hrbrthemes") #Uma compilação de temas, escalas e utilitarios extras de `ggplot2`
 install.packages("esquisse") #Pacote para criação de gráficos (`ggplot2`) de maneira point and click
+install.packages("likert") #Opções de figuras no ggplot para itens com escala likert
 
 #Conectores com banco de dados
 install.packages("DBI")
