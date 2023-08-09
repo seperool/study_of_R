@@ -5520,6 +5520,77 @@ alt="Exemplo de tabulação cruzada" />
       excel_numeric_to_date()
     [1] "2041-01-02"
 
+### 10.3.9 Conte os níveis dos fatores - escala de Likert
+
+#### 10.3.9.1 Escala Likert
+
+-   A escala Likert é utilizada para mensurar sentimentos numa escala
+    que pode variar entre um e cinco níveis (a mais usada é de cinco
+    níveis).  
+-   Sendo um o menor nível e cinco o maior nível de concordância ou
+    discordância sobre uma pergunta ou afirmação.  
+-   Os níveis dos fatores geralmente se apresentam como:  
+    -   Concordo totalmente  
+    -   Concordo parcialmente  
+    -   Neutro  
+    -   Discordo parcialmente  
+    -   Discordo totalmente  
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/likert_ex.png"
+alt="Exemplo de escala Likert." />
+<figcaption aria-hidden="true">Exemplo de escala Likert.</figcaption>
+</figure>
+
+-   A função `top_levels()`, do pacote `janitor`, realiza a contagem dos
+    níveis da escala do tipo Likert.  
+-   A função `top_levels()` fornece uma tabela com as contagens e
+    percentuais dos níveis agrupados em três grupos:  
+    -   Alto  
+    -   Médio  
+    -   Baixo  
+-   O argumento `n` da função estabelece quantos níveis serão incluidos
+    no grupo alto e baixo da escala.  
+    -   `n = 1`  
+        Um nível no grupo alto, três níveis no grupo médio e um nível no
+        grupo baixo.  
+    -   `n = 2`  
+        Dois níveis no grupo alto, um nível no grupo médio e dois níveis
+        no grupo baixo.  
+-   Exemplo:  
+
+#### 10.3.9.2 Plotagem de escala Likert
+
+-   Podemos utilizar o pacote `likert`, para obter um resumo e formas de
+    visualização da análise de respostas na escala Likert.  
+    `install.packages("likert")`  
+-   O pacote `likert` é usado em conjunto com os pacotes gráficos
+    (`ggplot2` por exemplo).  
+-   Exemplo - Visualização de respostas na escala Likert:  
+
+-   Exemplos de modelos de visualização da escala Likert:  
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex1.png"
+style="width:50.0%" alt="Modelo 1 de visualização de escala Likert." />
+<figcaption aria-hidden="true">Modelo 1 de visualização de escala
+Likert.</figcaption>
+</figure>
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex2.png"
+style="width:50.0%" alt="Modelo 2 de visualização de escala Likert." />
+<figcaption aria-hidden="true">Modelo 2 de visualização de escala
+Likert.</figcaption>
+</figure>
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex3.png"
+style="width:50.0%" alt="Modelo 3 de visualização de escala Likert." />
+<figcaption aria-hidden="true">Modelo 3 de visualização de escala
+Likert.</figcaption>
+</figure>
+
 # 11 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
