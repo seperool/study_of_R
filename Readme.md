@@ -5520,11 +5520,11 @@ alt="Exemplo de tabulação cruzada" />
       excel_numeric_to_date()
     [1] "2041-01-02"
 
-### 10.3.9 Conte os níveis dos fatores - escala de Likert
+### 10.3.9 Conte os níveis dos fatores - escala de *Likert*
 
-#### 10.3.9.1 Escala Likert
+#### 10.3.9.1 Escala *Likert*
 
--   A escala Likert é utilizada para mensurar sentimentos numa escala
+-   A escala *Likert* é utilizada para mensurar sentimentos numa escala
     que pode variar entre um e cinco níveis (a mais usada é de cinco
     níveis).  
 -   Sendo um o menor nível e cinco o maior nível de concordância ou
@@ -5539,11 +5539,14 @@ alt="Exemplo de tabulação cruzada" />
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/likert_ex.png"
 alt="Exemplo de escala Likert." />
-<figcaption aria-hidden="true">Exemplo de escala Likert.</figcaption>
+<figcaption aria-hidden="true">Exemplo de escala
+<em>Likert</em>.</figcaption>
 </figure>
 
+#### 10.3.9.2 A função `top_levels()`
+
 -   A função `top_levels()`, do pacote `janitor`, realiza a contagem dos
-    níveis da escala do tipo Likert.  
+    níveis da escala do tipo *Likert*.  
 -   A função `top_levels()` fornece uma tabela com as contagens e
     percentuais dos níveis agrupados em três grupos:  
     -   Alto  
@@ -5557,38 +5560,88 @@ alt="Exemplo de escala Likert." />
     -   `n = 2`  
         Dois níveis no grupo alto, um nível no grupo médio e dois níveis
         no grupo baixo.  
--   Exemplo:  
+-   As caracteristicas da variável para ser avaliada pela função
+    `top_levels()`:  
+    -   Deve ser um fator (classe `factor`)  
+    -   Conter as respostas e os níveis (`levels`)  
+    -   Respostas que não correspondem aos níveis (`levels`) são
+        ignoradas.  
+    -   Exemplo:  
 
-#### 10.3.9.2 Plotagem de escala Likert
+    <!-- -->
+
+        f <- factor(c("neutro","concordo parcialmente",
+                    "discordo parcialmente","concordo",
+                    "concordo","concordo totalmente",
+                    "concordo totalmente","concordo","discordo totalmente"),
+                  levels = c("concordo totalmente",
+                             "concordo parcialmente",
+                             "neutro",
+                             "discordo parcialmente",
+                             "discordo totalmente"))
+
+-   Exemplo - Contagem dos níveis da escala do tipo *Likert*, usando a
+    função `top_levels()`:  
+
+<!-- -->
+
+    #Variável
+    f <- factor(c("neutro","concordo parcialmente",
+                  "discordo parcialmente","concordo",
+                  "concordo","concordo totalmente",
+                  "concordo totalmente","concordo","discordo totalmente"),
+                levels = c("concordo totalmente",
+                           "concordo parcialmente",
+                           "neutro",
+                           "discordo parcialmente",
+                           "discordo totalmente"))
+
+    #Contagem levels
+    #n = nº de niveis no grupo alto e baixo
+    top_levels(f,n=1)
+    #Um nível no grupo alto, três níveis no grupo médio e um nível no grupo baixo.
+                                       f n   percent
+                     concordo totalmente 2 0.3333333
+     <<< Middle Group (3 categories) >>> 3 0.5000000
+                     discordo totalmente 1 0.1666667
+
+    top_levels(f,n=2)
+    #Dois níveis no grupo alto, um nível no grupo médio e dois níveis no grupo baixo.
+                                  f n   percent
+     concordo totalmente, concor... 3 0.5000000
+                             neutro 1 0.1666667
+     discordo parcialmente, disc... 2 0.3333333
+
+#### 10.3.9.3 Plotagem de escala *Likert*
 
 -   Podemos utilizar o pacote `likert`, para obter um resumo e formas de
-    visualização da análise de respostas na escala Likert.  
+    visualização da análise de respostas na escala *Likert*.  
     `install.packages("likert")`  
 -   O pacote `likert` é usado em conjunto com os pacotes gráficos
     (`ggplot2` por exemplo).  
--   Exemplo - Visualização de respostas na escala Likert:  
+-   Exemplo - Visualização de respostas na escala *Likert*:  
 
--   Exemplos de modelos de visualização da escala Likert:  
+-   Exemplos de modelos de visualização da escala *Likert*:  
 
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex1.png"
 style="width:50.0%" alt="Modelo 1 de visualização de escala Likert." />
 <figcaption aria-hidden="true">Modelo 1 de visualização de escala
-Likert.</figcaption>
+<em>Likert</em>.</figcaption>
 </figure>
 
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex2.png"
 style="width:50.0%" alt="Modelo 2 de visualização de escala Likert." />
 <figcaption aria-hidden="true">Modelo 2 de visualização de escala
-Likert.</figcaption>
+<em>Likert</em>.</figcaption>
 </figure>
 
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex3.png"
 style="width:50.0%" alt="Modelo 3 de visualização de escala Likert." />
 <figcaption aria-hidden="true">Modelo 3 de visualização de escala
-Likert.</figcaption>
+<em>Likert</em>.</figcaption>
 </figure>
 
 # 11 ANDAMENTO DOS ESTUDOS
