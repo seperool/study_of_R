@@ -7,19 +7,19 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
   github_document: 
-  pdf_document: 
+  md_document:
     number_sections: true
-    toc: false
+    variant: markdown_github
   odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
@@ -5170,6 +5170,52 @@ top_levels(f,n=2)
 `install.packages("likert")`\
 - O pacote `likert` é usado em conjunto com os pacotes gráficos (`ggplot2` por exemplo).\
 - Exemplo - Visualização de respostas na escala *Likert*:\
+```
+#Bibliotecas
+library(janitor) #Limpeza de dados
+library(ggplot2) #Elaboração de gráficos
+library(likert) #Opções de figuras no ggplot para itens com escala likert
+library(RColorBrewer) #Pacote com paleta de cores para gráficos
+
+#Criando uma base de dados simulada com 3 questões
+niveis <- c("concordo totalmente",
+           "concordo parcialmente",
+           "neutro",
+           "discordo parcialmente",
+           "discordo totalmente")
+
+#Cria variáveis com 40 valores semialeatórios de 5 fatores
+set.seed(30); q1 = factor(sample(1:5,40,replace = T))
+levels(q1) = niveis #Substitui os 5 levels de q1 pelos 5 levels da variável niveis
+set.seed(31); q2 = factor(sample(1:5,40,replace = T))
+levels(q2) = niveis #Substitui os 5 levels de q2 pelos 5 levels da variável niveis
+set.seed(32); q3 = factor(sample(1:5,40,replace = T))
+levels(q3) = niveis #Substitui os 5 levels de q3 pelos 5 levels da variável niveis
+
+#As respostas na escala de Likert
+respostas <- data.frame(q1,q2,q3)
+
+#Preparo para plotagem
+tb_likert <- likert(respostas) #Transforma data.frame na classe likert
+
+#Resumo das respostas
+summary(tb_likert)
+
+#Gráfico das respostas em escala de Likert
+plot(tb_likert,
+     colors = c("gray30","gray65","gray95","gray75","gray55"))+
+  ggtitle("Gráfico das respostas em escala de Likert")+ #Título
+  labs(x = NULL,
+       y = "Porcentagem de respostas")+ #Rótulos dos eixos
+  theme(plot.title = element_text(hjust = 0.5)) #Centraliza o título
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+\newpage
+
+![Gráfico das respostas em escala de *Likert*](./Cap8-Limpeza_dados/Imagens/plot_likert.png)
 
 
 \newpage
