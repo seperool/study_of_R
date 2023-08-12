@@ -1,6 +1,6 @@
-ESCRITO EM 11/08/23
+ESCRITO EM 12/08/23
 ---
-PARA 12/08/23
+PARA 13/08/23
 ---
 Subir github:
 
@@ -26,8 +26,6 @@ Afazeres:
 				- Revisar
 			- Teste qui-quadrado para tabelas cruzadas
 				- Teoria
-			- Conte os níveis dos fatores - escala de Likert
-				- Plotagem de escala Likert
 	- Cap. 8 - Limpeza rápida nos dados
 		- script
 			- Substitua valores perdidos
