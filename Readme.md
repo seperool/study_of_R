@@ -5671,7 +5671,64 @@ alt="Gráfico das respostas em escala de Likert" />
 <em>Likert</em></figcaption>
 </figure>
 
+-   Exemplo - Visualização de respostas na escala *Likert* no formato
+    `type = heat`:  
+
+<!-- -->
+
+    #Bibliotecas
+    library(janitor) #Limpeza de dados
+    library(ggplot2) #Elaboração de gráficos
+    library(likert) #Opções de figuras no ggplot para itens com escala likert
+    library(RColorBrewer) #Pacote com paleta de cores para gráficos
+
+    #Criando uma base de dados simulada com 3 questões
+    niveis <- c("concordo totalmente",
+               "concordo parcialmente",
+               "neutro",
+               "discordo parcialmente",
+               "discordo totalmente")
+
+    #Cria variáveis com 40 valores semialeatórios de 5 fatores
+    set.seed(30); q1 = factor(sample(1:5,40,replace = T))
+    levels(q1) = niveis #Substitui os 5 levels de q1 pelos 5 levels da variável niveis
+    set.seed(31); q2 = factor(sample(1:5,40,replace = T))
+    levels(q2) = niveis #Substitui os 5 levels de q2 pelos 5 levels da variável niveis
+    set.seed(32); q3 = factor(sample(1:5,40,replace = T))
+    levels(q3) = niveis #Substitui os 5 levels de q3 pelos 5 levels da variável niveis
+
+    #As respostas na escala de Likert
+    respostas <- data.frame(q1,q2,q3)
+
+    #Resumo das respostas
+    tb_likert <- likert(respostas) #Transforma data.frame na classe likert, prepara para plotagem
+    summary(tb_likert)
+
+    #Gráfico das respostas em escala de Likert
+    plot(tb_likert,
+         colors = c("gray30","gray65","gray95","gray75","gray55"), 
+         type = "heat")+
+      ggtitle("Gráfico das respostas em escala de Likert")+ #Título
+      labs(x = NULL,
+           y = "Porcentagem de respostas")+ #Rótulos dos eixos
+      theme(plot.title = element_text(hjust = 0.5)) #Centraliza o título
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/likert_ex_type-heat.png"
+alt="Gráfico das respostas em escala de Likert - type = &quot;heat&quot;." />
+<figcaption aria-hidden="true">Gráfico das respostas em escala de
+<em>Likert</em> - <code>type = "heat"</code>.</figcaption>
+</figure>
+
 -   Exemplos de modelos de visualização da escala *Likert*:  
+
+<!-- -->
+
+    p1 = likert(items = pptqc, nlevels = 3)
+    plot(p1)
 
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex1.png"
@@ -5680,18 +5737,25 @@ style="width:50.0%" alt="Modelo 1 de visualização de escala Likert." />
 <em>Likert</em>.</figcaption>
 </figure>
 
+    plot(p1, type = "heat")
+
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex2.png"
-style="width:50.0%" alt="Modelo 2 de visualização de escala Likert." />
+style="width:50.0%"
+alt="Modelo 2 de visualização de escala Likert - type = &quot;heat&quot;." />
 <figcaption aria-hidden="true">Modelo 2 de visualização de escala
-<em>Likert</em>.</figcaption>
+<em>Likert</em> - <code>type = "heat"</code>.</figcaption>
 </figure>
+
+    lik2 <- likert(as.data.frame(bd[ , 3:5]), grouping = bd$categ)
+    plot(lik2, wrap = 60, text.size=3) + theme(axis.text.y = element_text(size="6"))
 
 <figure>
 <img src="./Cap8-Limpeza_dados/Imagens/plot_likert_ex3.png"
-style="width:50.0%" alt="Modelo 3 de visualização de escala Likert." />
+style="width:50.0%"
+alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 <figcaption aria-hidden="true">Modelo 3 de visualização de escala
-<em>Likert</em>.</figcaption>
+<em>Likert</em> - <code>grouping = bd$categ</code>.</figcaption>
 </figure>
 
 # 11 ANDAMENTO DOS ESTUDOS
