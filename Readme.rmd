@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  odt_document: 
-    number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4706,8 +4706,14 @@ make.names(names(dfp))
   - `remove_constant()`\
   A função `remove_constant()` remove as colunas constantes.\
   - `remove_empty()`\
-  A função `remove_empty()` remove as linhas vazias (*NA*).\
-- Exemplo:\
+  A função `remove_empty()` remove valores vazios (*NA*), tanto colunas quanto linhas.\
+  Sem especificar remove colunas e linhas.\
+    - `which = "rows"`\
+    remover linhas vazias.\
+    - `which = "cols"`\
+    remover colunas vazias.\
+
+- Exemplos - Eliminando colunas e/ou linhas com `remove_constant()` e `remove_empty()`:\
 
 ```
 #Dados

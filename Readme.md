@@ -5108,8 +5108,15 @@ gráfico - ggplot2 builder</figcaption>
     -   `remove_constant()`  
         A função `remove_constant()` remove as colunas constantes.  
     -   `remove_empty()`  
-        A função `remove_empty()` remove as linhas vazias (*NA*).  
--   Exemplo:  
+        A função `remove_empty()` remove valores vazios (*NA*), tanto
+        colunas quanto linhas.  
+        Sem especificar remove colunas e linhas.  
+        -   `which = "rows"`  
+            remover linhas vazias.  
+        -   `which = "cols"`  
+            remover colunas vazias.  
+-   Exemplos - Eliminando colunas e/ou linhas com `remove_constant()` e
+    `remove_empty()`:  
 
 <!-- -->
 
