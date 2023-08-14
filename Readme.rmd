@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
   github_document: 
   odt_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
+  md_document:
     number_sections: true
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4712,6 +4712,8 @@ make.names(names(dfp))
     remover linhas vazias.\
     - `which = "cols"`\
     remover colunas vazias.\
+
+\newpage
 
 - Exemplos - Eliminando colunas e/ou linhas com `remove_constant()` e `remove_empty()`:\
 

@@ -5115,6 +5115,7 @@ gráfico - ggplot2 builder</figcaption>
             remover linhas vazias.  
         -   `which = "cols"`  
             remover colunas vazias.  
+
 -   Exemplos - Eliminando colunas e/ou linhas com `remove_constant()` e
     `remove_empty()`:  
 
