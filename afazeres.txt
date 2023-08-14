@@ -1,6 +1,6 @@
-ESCRITO EM 12/08/23
+ESCRITO EM 13/08/23
 ---
-PARA 13/08/23
+PARA 14/08/23
 ---
 Subir github:
 
@@ -22,8 +22,6 @@ Afazeres:
 	- Readme.*
 		- Cap. 8 - Limpeza rápida nos dados
 			- Substitua valores perdidos
-			- Produzindo tabelas de frequência para uma variável 
-				- Revisar
 			- Teste qui-quadrado para tabelas cruzadas
 				- Teoria
 	- Cap. 8 - Limpeza rápida nos dados
