@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: false
   word_document: 
     toc: TRUE
+    number_sections: true
+  odt_document: 
     number_sections: true
   github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4767,7 +4767,7 @@ dt_clean2
 
 - A função `taby()`, do pacote `janitor`, é uma versão melhorada da função `table()`, do pacote base do R.\
 - Diferenças:\
-  - Retorna dataframe que pode ser melhorado e impresso com `kable()`, do pacote `knitr`.\
+  - Retorna `data.frame` que pode ser melhorado e impresso com `kable()`, do pacote `knitr`.\
   - Calcula porcentagens automaticamente (porcentagem total e porcentagem valida, sem **NA**).\
   - Pode opcionalmente exibir valores **NA**.\
   - Quando **NA** ocorre, uma coluna adicional `valid_percent` (porcentagem valida) é adicionada.\
@@ -4775,7 +4775,12 @@ dt_clean2
   - Pode ser usado com operador pipe `%>%`, do pacote `magrittr`.\
   - Quando a variável for do tipo categórica, os valores perdidos são contabilizados na tabela.\
 
-- Exemplo:\
+![Exemplo tabela de frequência de uma variável.](./Cap8-Limpeza_dados/Imagens/freq_uma_variavel.png){ width=50% }
+
+
+\newpage
+
+- Exemplo - Produzindo tabelas de frequência para uma variável (`taby()`):\
 
 ```
 #Dados

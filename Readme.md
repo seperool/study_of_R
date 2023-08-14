@@ -5170,7 +5170,7 @@ gráfico - ggplot2 builder</figcaption>
 -   A função `taby()`, do pacote `janitor`, é uma versão melhorada da
     função `table()`, do pacote base do R.  
 -   Diferenças:  
-    -   Retorna dataframe que pode ser melhorado e impresso com
+    -   Retorna `data.frame` que pode ser melhorado e impresso com
         `kable()`, do pacote `knitr`.  
     -   Calcula porcentagens automaticamente (porcentagem total e
         porcentagem valida, sem **NA**).  
@@ -5181,7 +5181,17 @@ gráfico - ggplot2 builder</figcaption>
     -   Pode ser usado com operador pipe `%>%`, do pacote `magrittr`.  
     -   Quando a variável for do tipo categórica, os valores perdidos
         são contabilizados na tabela.  
--   Exemplo:  
+
+<figure>
+<img src="./Cap8-Limpeza_dados/Imagens/freq_uma_variavel.png"
+style="width:50.0%"
+alt="Exemplo tabela de frequência de uma variável." />
+<figcaption aria-hidden="true">Exemplo tabela de frequência de uma
+variável.</figcaption>
+</figure>
+
+-   Exemplo - Produzindo tabelas de frequência para uma variável
+    (`taby()`):  
 
 <!-- -->
 
