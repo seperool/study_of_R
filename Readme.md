@@ -5266,8 +5266,10 @@ alt="Exemplo de tabulação cruzada" />
 
 -   O pacote `janitor` tem um conjunto de funções para *adornar* a
     tabulação:  
-    -   `adorn_total`  
-        Adiciona o total por linha ou coluna ou por ambos.  
+    -   `adorn_totals`  
+        Adiciona o total por linha (`where = "row"`) ou coluna
+        (`where = "col"`) ou por ambos.  
+        Ex.: `tabyl(dt,col1,col2) %>% adorn_totals(.)`  
     -   `adorn_percentages`  
         Calcula porcentagens com base nos totais de linha (“`row`”), de
         coluna (“`col`”) ou sobre o total geral da tabela (“`all`”).  

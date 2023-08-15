@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4842,8 +4842,9 @@ Ex.: `goup_by %>% summarise %>% mutate %>% spread`\
 \newpage
 
 - O pacote `janitor` tem um conjunto de funções para *adornar* a tabulação:\
-  - `adorn_total`\
-  Adiciona o total por linha ou coluna ou por ambos.\
+  - `adorn_totals`\
+  Adiciona o total por linha (`where = "row"`) ou coluna (`where = "col"`) ou por ambos.\
+  Ex.: `tabyl(dt,col1,col2) %>% adorn_totals(.)`\
   - `adorn_percentages`\
   Calcula porcentagens com base nos totais de linha ("`row`"), de coluna ("`col`") ou sobre o total geral da tabela ("`all`").\
   Ex.: `adorn_percentages("row")`\
