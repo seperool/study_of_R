@@ -1,6 +1,6 @@
-ESCRITO EM 15/08/23
+ESCRITO EM 16/08/23
 ---
-PARA 16/08/23
+PARA 17/08/23
 ---
 Subir github:
 
@@ -21,15 +21,6 @@ Afazeres:
 							- No banco de dados
 	- Readme.*
 		- Cap. 8 - Limpeza rápida nos dados
-			- Substitua valores perdidos
+			- Substitua valores perdidos (Biblioteca "mice" quebrada)
 			- Teste qui-quadrado para tabelas cruzadas
 				- Teoria
-	- Cap. 8 - Limpeza rápida nos dados
-		- script
-			- Substitua valores perdidos
-			- Exercicio
-				- 3
-				- 4
-				- 6
-				- 7
-				- 8
