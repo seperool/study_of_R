@@ -20,7 +20,5 @@ Afazeres:
 							- No R
 							- No banco de dados
 	- Readme.*
-		- Cap. 8 - Limpeza rápida nos dados
-			- Substitua valores perdidos (Biblioteca "mice" quebrada)
-			- Teste qui-quadrado para tabelas cruzadas
-				- Teoria
+		- Cap. 9 - Análise descritiva dos dados
+	- script cap. 9
