@@ -5171,6 +5171,8 @@ gráfico - ggplot2 builder</figcaption>
     o tipo de variável, produzindo a substituição dos valores pedidos.  
     `install.packages("mice")`  
 
+-   Problema (erro) no pacote `mice` para versão do `R 4.3.1`.  
+
 -   Exemplo - Substituição de valores perdidos (`complete(mice())`):  
 
 ### 10.3.4 Produzindo tabelas de frequência para uma variável - `taby()`
@@ -5392,7 +5394,9 @@ alt="Exemplo de tabulação cruzada" />
 
 -   O teste qui-quadrado pode ser aplicado em dados tabelados de forma
     cruzada.  
--   O teste qui-quadrado é um teste não paramétrico.  
+-   O teste qui-quadrado é um teste não paramétrico, não depende de
+    parâmetros populacionais (média e variância).  
+-   É aplicado em variáveis qualitativas nominais, categóricas.  
 -   O objetivo é testar as hipóteses:  
     -   *H*<sub>0</sub>:  
         A variável linha é independente da variável coluna, ou seja, a
@@ -5778,13 +5782,15 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 <em>Likert</em> - <code>grouping = bd$categ</code>.</figcaption>
 </figure>
 
-# 11 ANDAMENTO DOS ESTUDOS
+# 11 CAP. 9 - Análise descritiva dos dados
+
+# 12 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
 
-Atualmente estou estudando Cap.8, Limpeza rápida nos dados.  
+Atualmente estou estudando Cap. 9 - Análise descritiva dos dados.  
 
-# 12 REFERÊNCIAS
+# 13 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de
