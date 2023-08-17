@@ -5784,6 +5784,54 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 
 # 11 CAP. 9 - Análise descritiva dos dados
 
+## 11.1 Teoria
+
+-   Objetivo do capitulo é fazer uma análise descritiva dos dados
+    através da tabulação das variáveis e cálculo de medidas descrititvas
+    (média, desvio-padrão, etc).  
+-   Análise descritiva dos dados (Informações preliminares):  
+    -   Contagem dos resultados observados em cada variável do conjunto
+        de dados.  
+    -   Natureza descritiva dos dados, tipo de variáveis (categórica ou
+        numérica).  
+    -   Três objetivos principais:  
+        -   Verificar erros e anomalias.  
+        -   Compreender a distribuição de cada uma das variáveis
+            isoladamente.  
+        -   Compreender a natureza e a força das relações entre as
+            variáveis.  
+-   Após essas etapas, estabelecer um modelo estatístico formal e
+    relatar suas conclusões.  
+
+## 11.2 Tipos de variáveis
+
+-   Variável numérica:  
+    -   Continua  
+        Se seus valores pertencer ao conjunto dos números reais.  
+        Ex.: Temperatura corporal, saldo em caixa, peso da carga de um
+        caminhão, etc.  
+    -   Discreta  
+        Se seus valores pertencer ao conjunto dos números inteiros.  
+        Ex.: Número de pessoas com febre, número de empresas, número de
+        caminhões, etc.  
+-   Variável categórica:  
+    -   Ordinal  
+        Se seus valores podem ser ordenados do menor para o maior.  
+        Ex.: Temperatura (baixa, média ou alta), saldo em caixa
+        (negativo, nulo ou positivo), etc.  
+    -   Nominal  
+        Quando não for possível estabeler ordenamento.  
+        Ex.: Sexo do individuo, atividade fim da empresa, marca/modelo
+        do caminhão, etc.  
+
+## 11.3 Tabulação dos dados
+
+## 11.4 Estatística descritiva com o pacote `DescTools`
+
+## 11.5 Dados faltantes
+
+## 11.6 Analisando datas com o pacote `DescTools`
+
 # 12 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  

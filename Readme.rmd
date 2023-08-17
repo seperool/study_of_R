@@ -10,17 +10,17 @@ output:
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
+  md_document:
     number_sections: true
+    variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
   github_document: 
-  md_document:
-    number_sections: true
-    variant: markdown_github
   word_document: 
     toc: TRUE
+    number_sections: true
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -5316,6 +5316,41 @@ plot(lik2, wrap = 60, text.size=3) + theme(axis.text.y = element_text(size="6"))
 \newpage
 
 # CAP. 9 - Análise descritiva dos dados
+
+## Teoria
+- Objetivo do capitulo é fazer uma análise descritiva dos dados através da tabulação das variáveis e cálculo de medidas descrititvas (média, desvio-padrão, etc).\
+- Análise descritiva dos dados (Informações preliminares):\
+  - Contagem dos resultados observados em cada variável do conjunto de dados.\
+  - Natureza descritiva dos dados, tipo de variáveis (categórica ou numérica).\
+  - Três objetivos principais:\
+    - Verificar erros e anomalias.\
+    - Compreender a distribuição de cada uma das variáveis isoladamente.\
+    - Compreender a natureza e a força das relações entre as variáveis.\
+- Após essas etapas, estabelecer um modelo estatístico formal e relatar suas conclusões.\
+
+## Tipos de variáveis
+
+- Variável numérica:\
+  - Continua\
+  Se seus valores pertencer ao conjunto dos números reais.\
+  Ex.: Temperatura corporal, saldo em caixa, peso da carga de um caminhão, etc.\
+  - Discreta\
+  Se seus valores pertencer ao conjunto dos números inteiros.\
+  Ex.: Número de pessoas com febre, número de empresas, número de caminhões, etc.\
+- Variável categórica:\
+  - Ordinal\
+  Se seus valores podem ser ordenados do menor para o maior.\
+  Ex.: Temperatura (baixa, média ou alta), saldo em caixa (negativo, nulo ou positivo), etc.\
+  - Nominal\
+  Quando não for possível estabeler ordenamento.\
+  Ex.: Sexo do individuo, atividade fim da empresa, marca/modelo do caminhão, etc.\
+
+\newpage
+
+## Tabulação dos dados
+## Estatística descritiva com o pacote `DescTools`
+## Dados faltantes
+## Analisando datas com o pacote `DescTools`
 
 \newpage
 
