@@ -1,6 +1,6 @@
-ESCRITO EM 17/08/23
+ESCRITO EM 18/08/23
 ---
-PARA 18/08/23
+PARA 19/08/23
 ---
 Subir github:
 
@@ -22,6 +22,10 @@ Afazeres:
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Tabulação dos dados
+				- cut
+					- nclass.Sturges
+					- right = FALSE
+					- Entrando com os intervalos de classe
 			- Estatística descritiva com o pacote desctools
 			- Dados faltantes
 			- Analisando datas com o pacote desctools
