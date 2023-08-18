@@ -5823,8 +5823,178 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
         Quando não for possível estabeler ordenamento.  
         Ex.: Sexo do individuo, atividade fim da empresa, marca/modelo
         do caminhão, etc.  
+-   Podemos usar, no **R**, a função `str()` (structure) para conhecer o
+    tipo dos dados.  
+    Ex.: `str(variavel)`  
 
 ## 11.3 Tabulação dos dados
+
+-   Na etapa de tabulação, o pesquisador prepara as tabelas de
+    frequência com o intuito de entender o comportamento das
+    variáveis.  
+-   Para construir as tabelas de frequência utilizamos o pacote
+    `janitor`, a função `tabyl()` e os argumentos `adorn_`.  
+
+-   Tabela de frequência para variável categórica:  
+
+<!-- -->
+
+    #Análise descritiva dos dados
+    #Tabulação dos dados - variável categórica
+
+    #Bibliotecas
+    library(knitr) #Interpretação e compilação do documento rmd, formato tabela kable
+    library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+    library(readr) #Leitura de dados
+    library(janitor) #Limpeza de dados
+
+    #Leitura da base de dados
+    dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+    dados <- data.frame(dados)
+
+    #Exibindo as 6 primeiras linhas da base de dados
+    head(dados)
+
+      cupom filial valor_compra n_itens desconto_perc quinzena
+    1   101      A       100.22       5             2        1
+    2   102      A        80.89      20             0        1
+    3   103      A        75.44       7             0        1
+    4   104      A       305.33       3            10        2
+    5   105      A       120.99       1             2        2
+    6   106      A        27.89       1             0        2
+
+    #Exibindo a estrutura dos dados
+    #Tipo das variáveis
+    str(dados)
+
+    'data.frame':   23 obs. of  6 variables:
+     $ cupom        : int  101 102 103 104 105 106 201 202 203 204 ...
+     $ filial       : chr  "A" "A" "A" "A" ...
+     $ valor_compra : num  100.2 80.9 75.4 305.3 121 ...
+     $ n_itens      : int  5 20 7 3 1 1 20 30 17 14 ...
+     $ desconto_perc: int  2 0 0 10 2 0 0 12 10 0 ...
+     $ quinzena     : int  1 1 1 2 2 2 2 2 2 1 ...
+
+    #Tabela de frequência variável categórica
+    tb_filial <- tabyl(dados,filial) %>% 
+      adorn_totals() %>% 
+      adorn_rounding(2)
+
+    tb_filial
+
+     filial  n percent
+          A  6    0.26
+          B 12    0.52
+          C  5    0.22
+      Total 23    1.00
+
+    #Plotar tabela
+    kable(tb_filial, caption = "Tabela de frequência para variável categórica",align = "ccc")
+
+| filial |  n  | percent |
+|:------:|:---:|:-------:|
+|   A    |  6  |  0.26   |
+|   B    | 12  |  0.52   |
+|   C    |  5  |  0.22   |
+| Total  | 23  |  1.00   |
+
+Tabela de frequência para variável categórica
+
+-   Tabela de frequência para variável numérica (continua):  
+
+<!-- -->
+
+    #Análise descritiva dos dados
+    #Tabulação dos dados - Variável numérica (continua)
+
+    #Bibliotecas
+    library(knitr) #Interpretação e compilação do documento rmd, formato tabela kable
+    library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+    library(readr) #Leitura de dados
+    library(janitor) #Limpeza de dados
+
+    #Leitura da base de dados
+    dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+    dados <- data.frame(dados)
+
+    #Exibindo as 6 primeiras linhas da base de dados
+    head(dados)
+
+      cupom filial valor_compra n_itens desconto_perc quinzena
+    1   101      A       100.22       5             2        1
+    2   102      A        80.89      20             0        1
+    3   103      A        75.44       7             0        1
+    4   104      A       305.33       3            10        2
+    5   105      A       120.99       1             2        2
+    6   106      A        27.89       1             0        2
+
+    #Exibindo a estrutura dos dados
+    #Tipo das variáveis
+    str(dados)
+
+    'data.frame':   23 obs. of  6 variables:
+     $ cupom        : int  101 102 103 104 105 106 201 202 203 204 ...
+     $ filial       : chr  "A" "A" "A" "A" ...
+     $ valor_compra : num  100.2 80.9 75.4 305.3 121 ...
+     $ n_itens      : int  5 20 7 3 1 1 20 30 17 14 ...
+     $ desconto_perc: int  2 0 0 10 2 0 0 12 10 0 ...
+     $ quinzena     : int  1 1 1 2 2 2 2 2 2 1 ...
+
+    #Cut para categorizar valor_compra em b intervalos
+    #Usar o metodo cut(dados, nclass.Sturges()) para separar as classes
+    intervalo = (cut(dados$valor_compra, b = nclass.Sturges(dados$valor_compra)))
+    intervalo
+
+     [1] (11.4,153] (11.4,153] (11.4,153] (294,434]  (11.4,153] (11.4,153]
+     [7] (11.4,153] (434,575]  (153,294]  (11.4,153] (11.4,153] (715,857] 
+    [13] (11.4,153] (153,294]  (434,575]  (11.4,153] (11.4,153] (153,294] 
+    [19] (11.4,153] (153,294]  (11.4,153] (294,434]  (715,857] 
+    Levels: (11.4,153] (153,294] (294,434] (434,575] (575,715] (715,857]
+
+    #Tabela de frequência da variável valor_compra
+    #Tabela frequência da uma variável numérica continua
+    tb_valor = tabyl(intervalo) %>% 
+      adorn_totals() %>% 
+      adorn_rounding(2)
+
+    tb_valor
+
+      intervalo  n percent
+     (11.4,153] 13    0.57
+      (153,294]  4    0.17
+      (294,434]  2    0.09
+      (434,575]  2    0.09
+      (575,715]  0    0.00
+      (715,857]  2    0.09
+          Total 23    1.00
+
+    #Plotar tabela
+    kable(tb_valor, align = "ccc",
+          caption = "Tabela de frequência para variável numérica continua")
+
+    Table: Tabela de frequência para variável numérica continua
+
+    | intervalo  | n  | percent |
+    |:----------:|:--:|:-------:|
+    | (11.4,153] | 13 |  0.57   |
+    | (153,294]  | 4  |  0.17   |
+    | (294,434]  | 2  |  0.09   |
+    | (434,575]  | 2  |  0.09   |
+    | (575,715]  | 0  |  0.00   |
+    | (715,857]  | 2  |  0.09   |
+    |   Total    | 23 |  1.00   |
+
+|  intervalo  |  n  | percent |
+|:-----------:|:---:|:-------:|
+| (11.4,153\] | 13  |  0.57   |
+| (153,294\]  |  4  |  0.17   |
+| (294,434\]  |  2  |  0.09   |
+| (434,575\]  |  2  |  0.09   |
+| (575,715\]  |  0  |  0.00   |
+| (715,857\]  |  2  |  0.09   |
+|    Total    | 23  |  1.00   |
+
+Tabela de frequência para variável numérica continua
 
 ## 11.4 Estatística descritiva com o pacote `DescTools`
 
