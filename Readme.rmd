@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  github_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -5355,10 +5355,19 @@ Ex.: `str(variavel)`\
 
 - Na etapa de tabulação, o pesquisador prepara as tabelas de frequência com o intuito de entender o comportamento das variáveis.\
 - Para construir as tabelas de frequência utilizamos o pacote `janitor`, a função `tabyl()` e os argumentos `adorn_`.\
+- Variáveis numéricas contínuas:\
+  - No caso de variáveis numéricas contínuas, para dividir o intervalo de classes podemos usar a função `cut()`, junto com o argumento `b = nclass.Sturges(coluna)`.\
+  Ex.:`intervalo=(cut(dados$valor_compra,b=nclass.Sturges(dados$valor_compra)))`\
+  - Por *default* os intervalos de classe da função `cut()`, com argumento `b = nclass.Sturges(coluna)`, as classes são formadas aberta na esquerda e fechada na direita.\
+  Ex.: (11.4,153]\
+  - Podemos adicionar o argumento `right = FALSE` para inverter a forma das classes, ficando fechada na esquerda e aberta na direita.\
+  Ex.: [11.4,153)\
+  - Outra forma de formar os intervalos de classe é inserindo os valores manualmente dos intervalos de classe, na função `cut()`, no argumento `b = c(valores_do_intervalo)`.\
+  Ex.:`intervalo3 = (cut(dados$valor_compra, b = c(12,182,352,522,692,862)))`\
 
 \newpage
 
-- Tabela de frequência para variável categórica:\
+- Exemplo - Tabela de frequência para variável categórica:\
 ```
 #Análise descritiva dos dados
 #Tabulação dos dados - variável categórica
@@ -5426,7 +5435,7 @@ library(readr) #Leitura de dados
 library(janitor) #Limpeza de dados
 
 #Leitura da base de dados
-dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+dados <- read.csv2(file = "./Dados/Dados_de_importacao/vendas.csv")
 dados <- data.frame(dados)
 
 #Tabela de frequência variável categórica
@@ -5435,12 +5444,12 @@ tb_filial <- tabyl(dados,filial) %>%
   adorn_rounding(2)
 
 #Plotar tabela
-kable(tb_filial, caption = "Tabela de frequência para variável categórica", align = "ccc")
+kable(tb_filial, col.names = c("Filial","n","Porcentagem") , caption = "Tabela de frequência para variável categórica", align = "ccc")
 ```
 
 \newpage
 
-- Tabela de frequência para variável numérica (continua):\
+- Exemplo - Tabela de frequência para variável numérica (contínua), usando o método de separação de classes `nclass.Sturges()`:\
 ```
 #Análise descritiva dos dados
 #Tabulação dos dados - Variável numérica (continua)
@@ -5508,9 +5517,9 @@ tb_valor
 
 #Plotar tabela
 kable(tb_valor, align = "ccc",
-      caption = "Tabela de frequência para variável numérica continua")
+      caption = "Tabela de frequência para variável numérica contínua")
 
-Table: Tabela de frequência para variável numérica continua
+Table: Tabela de frequência para variável numérica contínua
 
 | intervalo  | n  | percent |
 |:----------:|:--:|:-------:|
@@ -5536,7 +5545,7 @@ library(readr) #Leitura de dados
 library(janitor) #Limpeza de dados
 
 #Leitura da base de dados
-dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+dados <- read.csv2(file = "./Dados/Dados_de_importacao/vendas.csv")
 dados <- data.frame(dados)
 
 #Cut para categorizar valor_compra em b intervalos
@@ -5550,8 +5559,94 @@ tb_valor = tabyl(intervalo) %>%
   adorn_rounding(2)
 
 #Plotar tabela
+kable(tb_valor, col.names = c("Intervalo","n","Porcentagem"),
+      align = "ccc",
+      caption = "Tabela de frequência para variável numérica contínua, usando o método de separação de classes `nclass.Sturges()`")
+```
+
+\newpage
+
+- Exemplo - Tabela de frequência para variável numérica (contínua), com separação de classes inserido manualmente e limites com aberturas invertidas usando `right = FALSE`:\
+
+```
+#Cut para categorizar valor_compra em b intervalos
+#Entrando com os intervalos de classe
+#O comando "right = FALSE", inverte o intervalo de classe, esquerdo fechado e direito aberto [,).
+intervalo = (cut(dados$valor_compra, b = c(12,182,352,522,692,862),
+                  right = FALSE))
+intervalo
+
+ [1] [12,182)  [12,182)  [12,182)  [182,352) [12,182)  [12,182)  [12,182) 
+ [8] [352,522) [182,352) [12,182)  [12,182)  [692,862) [12,182)  [182,352)
+[15] [352,522) [12,182)  [12,182)  [182,352) [12,182)  [182,352) [12,182) 
+[22] [352,522) [692,862)
+Levels: [12,182) [182,352) [352,522) [522,692) [692,862)
+
+#Tabela de frequência da variável valor_compra
+#Tabela frequência da uma variável numérica continua
+tb_valor = tabyl(intervalo) %>% 
+  adorn_totals() %>% 
+  adorn_rounding(2)
+
+tb_valor
+
+ intervalo  n percent
+   [12,182) 13    0.57
+  [182,352)  5    0.22
+  [352,522)  3    0.13
+  [522,692)  0    0.00
+  [692,862)  2    0.09
+      Total 23    1.00
+
+#Plotar tabela
 kable(tb_valor, align = "ccc",
       caption = "Tabela de frequência para variável numérica continua")
+      
+Table: Tabela de frequência para variável numérica continua
+
+| intervalo | n  | percent |
+|:----------:|:--:|:-------:|
+|  [12,182)  | 13 |  0.57   |
+| [182,352)  | 5  |  0.22   |
+| [352,522)  | 3  |  0.13   |
+| [522,692)  | 0  |  0.00   |
+| [692,862)  | 2  |  0.09   |
+|   Total    | 23 |  1.00   |
+```
+\newpage
+
+```{r tab freq num cont intervalo manual, echo=FALSE, message=FALSE, warning=FALSE}
+#Análise descritiva dos dados
+#Tabulação dos dados - Variável numérica (continua)
+#Intervalo de classe inserido manualmente
+
+#Bibliotecas
+library(knitr) #Interpretação e compilação do documento rmd, formato tabela kable
+library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+library(readr) #Leitura de dados
+library(janitor) #Limpeza de dados
+
+#Leitura da base de dados
+dados <- read.csv2(file = "./Dados/Dados_de_importacao/vendas.csv")
+dados <- data.frame(dados)
+
+#Cut para categorizar valor_compra em b intervalos
+#Entrando com os intervalos de classe
+#O comando "right = FALSE", inverte o intervalo de classe, esquerdo fechado e direito aberto [,).
+intervalo3 = (cut(dados$valor_compra, b = c(12,182,352,522,692,862),
+                  right = FALSE))
+
+#Tabela de frequência da variável valor_compra
+#Tabela frequência da uma variável numérica continua
+tb_valor3 = tabyl(intervalo3) %>% 
+  adorn_totals() %>% 
+  adorn_rounding(2)
+
+#Plotar tabela
+kable(tb_valor3, 
+      col.names = c("Intervalo","n","Porcentagem"),
+      align = "ccc",
+      caption = "Tabela de frequência para variável numérica continua, com separação de classes inserido manualmente e limites com aberturas invertidas usando `right = FALSE` ")
 ```
 
 \newpage

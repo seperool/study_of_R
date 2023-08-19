@@ -5834,8 +5834,25 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
     variáveis.  
 -   Para construir as tabelas de frequência utilizamos o pacote
     `janitor`, a função `tabyl()` e os argumentos `adorn_`.  
+-   Variáveis numéricas contínuas:  
+    -   No caso de variáveis numéricas contínuas, para dividir o
+        intervalo de classes podemos usar a função `cut()`, junto com o
+        argumento `b = nclass.Sturges(coluna)`.  
+        Ex.:`intervalo=(cut(dados$valor_compra,b=nclass.Sturges(dados$valor_compra)))`  
+    -   Por *default* os intervalos de classe da função `cut()`, com
+        argumento `b = nclass.Sturges(coluna)`, as classes são formadas
+        aberta na esquerda e fechada na direita.  
+        Ex.: (11.4,153\]  
+    -   Podemos adicionar o argumento `right = FALSE` para inverter a
+        forma das classes, ficando fechada na esquerda e aberta na
+        direita.  
+        Ex.: \[11.4,153)  
+    -   Outra forma de formar os intervalos de classe é inserindo os
+        valores manualmente dos intervalos de classe, na função `cut()`,
+        no argumento `b = c(valores_do_intervalo)`.  
+        Ex.:`intervalo3 = (cut(dados$valor_compra, b = c(12,182,352,522,692,862)))`  
 
--   Tabela de frequência para variável categórica:  
+-   Exemplo - Tabela de frequência para variável categórica:  
 
 <!-- -->
 
@@ -5891,16 +5908,17 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
     #Plotar tabela
     kable(tb_filial, caption = "Tabela de frequência para variável categórica",align = "ccc")
 
-| filial |  n  | percent |
-|:------:|:---:|:-------:|
-|   A    |  6  |  0.26   |
-|   B    | 12  |  0.52   |
-|   C    |  5  |  0.22   |
-| Total  | 23  |  1.00   |
+| Filial |  n  | Porcentagem |
+|:------:|:---:|:-----------:|
+|   A    |  6  |    0.26     |
+|   B    | 12  |    0.52     |
+|   C    |  5  |    0.22     |
+| Total  | 23  |    1.00     |
 
 Tabela de frequência para variável categórica
 
--   Tabela de frequência para variável numérica (continua):  
+-   Exemplo - Tabela de frequência para variável numérica (contínua),
+    usando o método de separação de classes `nclass.Sturges()`:  
 
 <!-- -->
 
@@ -5970,9 +5988,9 @@ Tabela de frequência para variável categórica
 
     #Plotar tabela
     kable(tb_valor, align = "ccc",
-          caption = "Tabela de frequência para variável numérica continua")
+          caption = "Tabela de frequência para variável numérica contínua")
 
-    Table: Tabela de frequência para variável numérica continua
+    Table: Tabela de frequência para variável numérica contínua
 
     | intervalo  | n  | percent |
     |:----------:|:--:|:-------:|
@@ -5984,17 +6002,81 @@ Tabela de frequência para variável categórica
     | (715,857]  | 2  |  0.09   |
     |   Total    | 23 |  1.00   |
 
-|  intervalo  |  n  | percent |
-|:-----------:|:---:|:-------:|
-| (11.4,153\] | 13  |  0.57   |
-| (153,294\]  |  4  |  0.17   |
-| (294,434\]  |  2  |  0.09   |
-| (434,575\]  |  2  |  0.09   |
-| (575,715\]  |  0  |  0.00   |
-| (715,857\]  |  2  |  0.09   |
-|    Total    | 23  |  1.00   |
+|  Intervalo  |  n  | Porcentagem |
+|:-----------:|:---:|:-----------:|
+| (11.4,153\] | 13  |    0.57     |
+| (153,294\]  |  4  |    0.17     |
+| (294,434\]  |  2  |    0.09     |
+| (434,575\]  |  2  |    0.09     |
+| (575,715\]  |  0  |    0.00     |
+| (715,857\]  |  2  |    0.09     |
+|    Total    | 23  |    1.00     |
 
-Tabela de frequência para variável numérica continua
+Tabela de frequência para variável numérica contínua, usando o método de
+separação de classes `nclass.Sturges()`
+
+-   Exemplo - Tabela de frequência para variável numérica (contínua),
+    com separação de classes inserido manualmente e limites com
+    aberturas invertidas usando `right = FALSE`:  
+
+<!-- -->
+
+    #Cut para categorizar valor_compra em b intervalos
+    #Entrando com os intervalos de classe
+    #O comando "right = FALSE", inverte o intervalo de classe, esquerdo fechado e direito aberto [,).
+    intervalo = (cut(dados$valor_compra, b = c(12,182,352,522,692,862),
+                      right = FALSE))
+    intervalo
+
+     [1] [12,182)  [12,182)  [12,182)  [182,352) [12,182)  [12,182)  [12,182) 
+     [8] [352,522) [182,352) [12,182)  [12,182)  [692,862) [12,182)  [182,352)
+    [15] [352,522) [12,182)  [12,182)  [182,352) [12,182)  [182,352) [12,182) 
+    [22] [352,522) [692,862)
+    Levels: [12,182) [182,352) [352,522) [522,692) [692,862)
+
+    #Tabela de frequência da variável valor_compra
+    #Tabela frequência da uma variável numérica continua
+    tb_valor = tabyl(intervalo) %>% 
+      adorn_totals() %>% 
+      adorn_rounding(2)
+
+    tb_valor
+
+     intervalo  n percent
+       [12,182) 13    0.57
+      [182,352)  5    0.22
+      [352,522)  3    0.13
+      [522,692)  0    0.00
+      [692,862)  2    0.09
+          Total 23    1.00
+
+    #Plotar tabela
+    kable(tb_valor, align = "ccc",
+          caption = "Tabela de frequência para variável numérica continua")
+          
+    Table: Tabela de frequência para variável numérica continua
+
+    | intervalo | n  | percent |
+    |:----------:|:--:|:-------:|
+    |  [12,182)  | 13 |  0.57   |
+    | [182,352)  | 5  |  0.22   |
+    | [352,522)  | 3  |  0.13   |
+    | [522,692)  | 0  |  0.00   |
+    | [692,862)  | 2  |  0.09   |
+    |   Total    | 23 |  1.00   |
+
+| Intervalo  |  n  | Porcentagem |
+|:----------:|:---:|:-----------:|
+| \[12,182)  | 13  |    0.57     |
+| \[182,352) |  5  |    0.22     |
+| \[352,522) |  3  |    0.13     |
+| \[522,692) |  0  |    0.00     |
+| \[692,862) |  2  |    0.09     |
+|   Total    | 23  |    1.00     |
+
+Tabela de frequência para variável numérica continua, com separação de
+classes inserido manualmente e limites com aberturas invertidas usando
+`right = FALSE`
 
 ## 11.4 Estatística descritiva com o pacote `DescTools`
 
