@@ -1,6 +1,6 @@
-ESCRITO EM 19/08/23
+ESCRITO EM 20/08/23
 ---
-PARA 20/08/23
+PARA 21/08/23
 ---
 Subir github:
 
@@ -24,4 +24,4 @@ Afazeres:
 			- Estatística descritiva com o pacote desctools
 			- Dados faltantes
 			- Analisando datas com o pacote desctools
-	- script cap. 9
+	- script cap. 9 - Análise descritiva dos dados
