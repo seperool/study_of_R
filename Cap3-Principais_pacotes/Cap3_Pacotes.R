@@ -8,7 +8,7 @@ install.packages("xtable") #Ajuda a fazer tabela
 install.packages("data.table") #Manipulação de base de dados DataFrame
 install.packages("janitor") #Limpeza de dados
 install.packages("mice") #Substituir valores perdidos
-install.packages("DescTools") #
+install.packages("DescTools") #Análise descritiva de forma rápida e completa
 install.packages("devtools")
 install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
 #ggplot2 (Elaboração de gráficos)
