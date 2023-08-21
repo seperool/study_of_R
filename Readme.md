@@ -6080,6 +6080,66 @@ classes inserido manualmente e limites com aberturas invertidas usando
 
 ## 11.4 Estatística descritiva com o pacote `DescTools`
 
+-   O pacote `DescTools` foi desenvolvido com o objetivo de fornecer uma
+    análise descritiva de forma rápida e completa.  
+-   A principal função do pacote é `Desc()`, descreve as variáveis de
+    acordo com sua natureza, produzindo medidas estatísticas descritivas
+    e uma representação gráfica adequada.  
+-   Tipos de variáveis:  
+    -   Lógicas  
+    -   Fatores (ordenados e não ordenados)  
+    -   Inteiros  
+    -   Numéricos  
+    -   Datas  
+    -   Tabelas  
+    -   Matrizes  
+-   Principais saidas da função `Desc()`:  
+
+| Saídas da função Desc |                                        Descrição                                         |
+|:--------------:|:------------------------------------------------------:|
+|        length         |                                 O comprimento do vetor.                                  |
+|           n           |                             O número de observações validas.                             |
+|          NAs          |                            O número de observações faltantes.                            |
+|        unique         |                       O número de observações distintas entre si.                        |
+|          0s           |                             O número total de valores nulos.                             |
+|         mean          |                               A média aritmética do vetor.                               |
+|        meanSE         | Fornece um intervalo de 95% de confiança para a média, com base no erro padrão da média. |
+|      .05, …, .95      |               Percentil de x, iniciando em 5%, 10%, 1 quartil, mediana, …                |
+|         range         |                                 A amplitude do vetor x.                                  |
+|          sd           |                               O desvio-padrão do vetor x.                                |
+|         vcoef         |                             O coeficiente de variação de x.                              |
+|          mad          |                                 O desvio médio absoluto.                                 |
+|          IQR          |              A amplitude interquartil, definida por 3 quartil - 1 quartil.               |
+|         skew          |                         O coeficiente de assimetria do vetor x.                          |
+|         kurt          |                           O coeficiente de curtose do vetor x.                           |
+|        lowest         |                           Os cinco menores valores do vetor x.                           |
+|        highest        |                           Os cinco maiores valores do vetor x.                           |
+
+Prinpipais saídas da função Desc para variáveis numéricas.
+
+-   Principais parâmetros da função `Desc()`:  
+
+    -   `plotit = F`  
+        Omitir os gráficos.  
+        Ex.: `Desc(dados, plotit = F)`  
+
+-   Mapeamento de dados faltantes:  
+    `PlotMiss(dados, main="Dados Faltantes", clust = TRUE`  
+    ![Exemplo da função `PlotMiss()` para mapemaento de dados
+    faltantes.](./Cap9-Analise_descritiva_dos_dados/Imagens/Ex_PlotMiss.png)
+
+-   Customizar os gráficos:  
+
+<!-- -->
+
+    plot(Desc(dados$coluna),main= NULL, 
+    maxlablen = 25,
+    type = c("bar", "dot"),
+    col = NULL,
+    border = NULL,
+    xlim = NULL,
+    ecdf = TRUE)
+
 ## 11.5 Dados faltantes
 
 ## 11.6 Analisando datas com o pacote `DescTools`
