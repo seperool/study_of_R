@@ -1,6 +1,6 @@
-ESCRITO EM 20/08/23
+ESCRITO EM 21/08/23
 ---
-PARA 21/08/23
+PARA 22/08/23
 ---
 Subir github:
 
@@ -22,6 +22,13 @@ Afazeres:
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
+				- Customizar gráficos (plot(Desc()))
+				- Exemplo
+				- Interpretar os coeficientes na análise descritiva
+				- Visualização gráfica para cada tipo de variável
+					- Numérico (continua)
+					- Inteiro (Discreta)
+					- Categórica (qualitativa)
 			- Dados faltantes
 			- Analisando datas com o pacote desctools
 	- script cap. 9 - Análise descritiva dos dados
