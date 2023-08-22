@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
   odt_document: 
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -5718,12 +5718,42 @@ kable(tb_retornos, col.names = c("Saídas da função Desc", "Descrição"),
   - `plotit = F`\
   Omitir os gráficos.\
   Ex.: `Desc(dados, plotit = F)`\
+
 - Mapeamento de dados faltantes:\
-`PlotMiss(dados, main="Dados Faltantes", clust = TRUE`\
+`PlotMiss(dados, main="Dados Faltantes", clust = TRUE)`\
+
 ![Exemplo da função `PlotMiss()` para mapemaento de dados faltantes.](./Cap9-Analise_descritiva_dos_dados/Imagens/Ex_PlotMiss.png){}
 
 
+\newpage
+
 - Customizar os gráficos:\
+  - É possível plotar determinada coluna a partir da função plot() e Desc(), obtendo assim as principais informações da variável envolvida.\
+  - Os gráficos plotados (pode ser mais de um), vão depender do tipo da variável envolvida:\
+    - Numérica\
+    **Histograma** sobreposto com curva de densidade;\
+    **Boxplot**;\
+    **Frequência acumulada** para cada intervalo da variável.\
+    - Inteira\
+    - Categórica\
+    **Dicotômica** (ate dois niveis), intervalos deconfiança de 90, 95, 99% (assemelha-se a um boxplot).\
+    **Politômica** (mais de dois niveis), gráfico de barras tanto para frequência absoluta quando para frequência relativa.\
+  - Principais argumentos da função `plot()`:\
+    - `Desc(dados$coluna)`\
+    Coluna/variável da qual serão plotados os gráficos, a partir de suas principais medidas estatísticas descritivas.\
+    - `main = "Título"/NULL`\
+    Insere um título ao gráfico.\
+    - `maxlablen = 25`\
+    Controla o número de caracteres máximo m impresso nos rótulos do gráfico.\
+    - `type = c("bar", "dot")`\
+    Customização do tipo de plotagem.\
+    - `col = "red"/NULL`\
+    Adiciona cor aos pontos.\
+    - `xlim = c(150,200)/NULL`\
+    Limites do eixo x.\
+    - `ecdf = TRUE`\
+    Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do gráfico de barras.\ 
+    - Exemplo:\
 ```
 plot(Desc(dados$coluna),main= NULL, 
 maxlablen = 25,
@@ -5733,6 +5763,23 @@ border = NULL,
 xlim = NULL,
 ecdf = TRUE)
 ```
+\newpage
+
+![Gráficos de variável quantitativa conitínua (numérica) a partir de medidas estatística descritiva. `plot(Desc(dados$variavel_numerica))`](./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_quantitativo_continua-DescTools.png){width=55%}
+
+
+![Gráfico de variável quantitativa discreta (inteiro), dicotômica (dois niveis), a partir de medidas estatística descritiva. `plot(Desc(dados$variavel_inteiro))`](./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_quantitativo_discreta_dicotomica-DescTools.png){width=55%}
+
+
+![Gráficos de variável qualitativa (categórica), politômica (mais de dois niveis), a partir de medidas estatística descritiva. `plot(Desc(dados$variavel_categorica))`](./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_qualitativa_categorica_politomica-DescTools.png){width=55%}
+
+
+\newpage
+
+- Interpretação os coeficientes:\
+  - *CV*/`vcoef` (Coeficiente de variação)\
+  - *shew* (Coeficiente de assimetria)\
+  - *kurt* (Coeficiente de Curtose)\
 
 \newpage
 

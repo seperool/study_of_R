@@ -6118,27 +6118,101 @@ classes inserido manualmente e limites com aberturas invertidas usando
 Prinpipais saídas da função Desc para variáveis numéricas.
 
 -   Principais parâmetros da função `Desc()`:  
-
     -   `plotit = F`  
         Omitir os gráficos.  
         Ex.: `Desc(dados, plotit = F)`  
-
 -   Mapeamento de dados faltantes:  
-    `PlotMiss(dados, main="Dados Faltantes", clust = TRUE`  
-    ![Exemplo da função `PlotMiss()` para mapemaento de dados
-    faltantes.](./Cap9-Analise_descritiva_dos_dados/Imagens/Ex_PlotMiss.png)
+    `PlotMiss(dados, main="Dados Faltantes", clust = TRUE)`  
+
+<figure>
+<img src="./Cap9-Analise_descritiva_dos_dados/Imagens/Ex_PlotMiss.png"
+alt="Exemplo da função PlotMiss() para mapemaento de dados faltantes." />
+<figcaption aria-hidden="true">Exemplo da função <code>PlotMiss()</code>
+para mapemaento de dados faltantes.</figcaption>
+</figure>
 
 -   Customizar os gráficos:  
+    -   É possível plotar determinada coluna a partir da função plot() e
+        Desc(), obtendo assim as principais informações da variável
+        envolvida.  
+    -   Os gráficos plotados (pode ser mais de um), vão depender do tipo
+        da variável envolvida:  
+        -   Numérica  
+            **Histograma** sobreposto com curva de densidade;  
+            **Boxplot**;  
+            **Frequência acumulada** para cada intervalo da variável.  
+        -   Inteira  
+        -   Categórica  
+            **Dicotômica** (ate dois niveis), intervalos deconfiança de
+            90, 95, 99% (assemelha-se a um boxplot).  
+            **Politômica** (mais de dois niveis), gráfico de barras
+            tanto para frequência absoluta quando para frequência
+            relativa.  
+    -   Principais argumentos da função `plot()`:  
+        -   `Desc(dados$coluna)`  
+            Coluna/variável da qual serão plotados os gráficos, a partir
+            de suas principais medidas estatísticas descritivas.  
+        -   `main = "Título"/NULL`  
+            Insere um título ao gráfico.  
+        -   `maxlablen = 25`  
+            Controla o número de caracteres máximo m impresso nos
+            rótulos do gráfico.  
+        -   `type = c("bar", "dot")`  
+            Customização do tipo de plotagem.  
+        -   `col = "red"/NULL`  
+            Adiciona cor aos pontos.  
+        -   `xlim = c(150,200)/NULL`  
+            Limites do eixo x.  
+        -   `ecdf = TRUE`  
+            Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do
+            gráfico de barras. 
+        -   Exemplo:  
 
-<!-- -->
+        <!-- -->
 
-    plot(Desc(dados$coluna),main= NULL, 
-    maxlablen = 25,
-    type = c("bar", "dot"),
-    col = NULL,
-    border = NULL,
-    xlim = NULL,
-    ecdf = TRUE)
+            plot(Desc(dados$coluna),main= NULL, 
+            maxlablen = 25,
+            type = c("bar", "dot"),
+            col = NULL,
+            border = NULL,
+            xlim = NULL,
+            ecdf = TRUE)
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_quantitativo_continua-DescTools.png"
+style="width:55.0%"
+alt="Gráficos de variável quantitativa conitínua (numérica) a partir de medidas estatística descritiva. plot(Desc(dados$variavel_numerica))" />
+<figcaption aria-hidden="true">Gráficos de variável quantitativa
+conitínua (numérica) a partir de medidas estatística descritiva.
+<code>plot(Desc(dados$variavel_numerica))</code></figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_quantitativo_discreta_dicotomica-DescTools.png"
+style="width:55.0%"
+alt="Gráfico de variável quantitativa discreta (inteiro), dicotômica (dois niveis), a partir de medidas estatística descritiva. plot(Desc(dados$variavel_inteiro))" />
+<figcaption aria-hidden="true">Gráfico de variável quantitativa discreta
+(inteiro), dicotômica (dois niveis), a partir de medidas estatística
+descritiva. <code>plot(Desc(dados$variavel_inteiro))</code></figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/Grafico_qualitativa_categorica_politomica-DescTools.png"
+style="width:55.0%"
+alt="Gráficos de variável qualitativa (categórica), politômica (mais de dois niveis), a partir de medidas estatística descritiva. plot(Desc(dados$variavel_categorica))" />
+<figcaption aria-hidden="true">Gráficos de variável qualitativa
+(categórica), politômica (mais de dois niveis), a partir de medidas
+estatística descritiva.
+<code>plot(Desc(dados$variavel_categorica))</code></figcaption>
+</figure>
+
+-   Interpretação os coeficientes:  
+    -   *CV*/`vcoef` (Coeficiente de variação)  
+    -   *shew* (Coeficiente de assimetria)  
+    -   *kurt* (Coeficiente de Curtose)  
 
 ## 11.5 Dados faltantes
 
