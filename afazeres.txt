@@ -1,6 +1,6 @@
-ESCRITO EM 22/08/23
+ESCRITO EM 23/08/23
 ---
-PARA 23/08/23
+PARA 24/08/23
 ---
 Subir github:
 
@@ -23,6 +23,7 @@ Afazeres:
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
 				- Interpretar os coeficientes na análise descritiva
+					- coeficiente de curtose (kurt)
 				- Visualização gráfica para cada tipo de variável
 					- Numérico (continua)
 					- Inteiro (discreta)
