@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  odt_document: 
+    number_sections: true
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -5653,6 +5653,8 @@ kable(tb_valor3,
 
 ## Estatística descritiva com o pacote `DescTools`
 
+### Teoria
+
 - O pacote `DescTools` foi desenvolvido com o objetivo de fornecer uma análise descritiva de forma rápida e completa.\
 - A principal função do pacote é `Desc()`, descreve as variáveis de acordo com sua natureza, produzindo medidas estatísticas descritivas e uma representação gráfica adequada.\
 - Tipos de variáveis:\
@@ -5727,33 +5729,33 @@ kable(tb_retornos, col.names = c("Saídas da função Desc", "Descrição"),
 
 \newpage
 
-- Customizar os gráficos:\
-  - É possível plotar determinada coluna a partir da função plot() e Desc(), obtendo assim as principais informações da variável envolvida.\
-  - Os gráficos plotados (pode ser mais de um), vão depender do tipo da variável envolvida:\
-    - Numérica\
-    **Histograma** sobreposto com curva de densidade;\
-    **Boxplot**;\
-    **Frequência acumulada** para cada intervalo da variável.\
-    - Inteira\
-    - Categórica\
-    **Dicotômica** (ate dois niveis), intervalos deconfiança de 90, 95, 99% (assemelha-se a um boxplot).\
-    **Politômica** (mais de dois niveis), gráfico de barras tanto para frequência absoluta quando para frequência relativa.\
-  - Principais argumentos da função `plot()`:\
-    - `Desc(dados$coluna)`\
-    Coluna/variável da qual serão plotados os gráficos, a partir de suas principais medidas estatísticas descritivas.\
-    - `main = "Título"/NULL`\
-    Insere um título ao gráfico.\
-    - `maxlablen = 25`\
-    Controla o número de caracteres máximo m impresso nos rótulos do gráfico.\
-    - `type = c("bar", "dot")`\
-    Customização do tipo de plotagem.\
-    - `col = "red"/NULL`\
-    Adiciona cor aos pontos.\
-    - `xlim = c(150,200)/NULL`\
-    Limites do eixo x.\
-    - `ecdf = TRUE`\
-    Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do gráfico de barras.\ 
-    - Exemplo:\
+### Customizar os gráficos
+- É possível plotar determinada coluna a partir da função plot() e Desc(), obtendo assim as principais informações da variável envolvida.\
+- Os gráficos plotados (pode ser mais de um), vão depender do tipo da variável envolvida:\
+  - Numérica\
+  **Histograma** sobreposto com curva de densidade;\
+  **Boxplot**;\
+  **Frequência acumulada** para cada intervalo da variável.\
+  - Inteira\
+  - Categórica\
+  **Dicotômica** (ate dois niveis), intervalos deconfiança de 90, 95, 99% (assemelha-se a um boxplot).\
+  **Politômica** (mais de dois niveis), gráfico de barras tanto para frequência absoluta quando para frequência relativa.\
+- Principais argumentos da função `plot()`:\
+  - `Desc(dados$coluna)`\
+  Coluna/variável da qual serão plotados os gráficos, a partir de suas principais medidas estatísticas descritivas.\
+  - `main = "Título"/NULL`\
+  Insere um título ao gráfico.\
+  - `maxlablen = 25`\
+  Controla o número de caracteres máximo m impresso nos rótulos do gráfico.\
+  - `type = c("bar", "dot")`\
+  Customização do tipo de plotagem.\
+  - `col = "red"/NULL`\
+  Adiciona cor aos pontos.\
+  - `xlim = c(150,200)/NULL`\
+  Limites do eixo x.\
+  - `ecdf = TRUE`\
+  Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do gráfico de barras.\ 
+  - Exemplo:\
 ```
 plot(Desc(dados$coluna),main= NULL, 
 maxlablen = 25,
@@ -5776,10 +5778,50 @@ ecdf = TRUE)
 
 \newpage
 
-- Interpretação os coeficientes:\
-  - *CV*/`vcoef` (Coeficiente de variação)\
-  - *shew* (Coeficiente de assimetria)\
-  - *kurt* (Coeficiente de Curtose)\
+### Interpretar os coeficientes
+- $CV$ | `vcoef` (Coeficiente de variação)\
+  - O coeficiente de variação é uma medida de dispersão, quanto menor a porcentagem mais próximos os dados estão da média.\
+  - Calculando Coeficiente de variação $CV$:\
+  $$CV = \frac{dp}{\bar{x}} \times 100$$
+  onde,\
+  $$Média (\bar{x}) = \frac{\sum_{i=1}^{n} x_i}{n}$$
+  $$Desvio (dm) = \sum_{i=1}^{n} (|x_i - \bar{x}|)$$
+  $$Variância (var) =  \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}$$
+  $$Desvio-padrão (dp) = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+  - Análise do coeficiente de variação:\
+    - $CV \leqslant 15 \%$\
+    Baixa dispersão.\
+    - $15 \% < CV \leqslant 30 \%$\
+    Média dispersão.\
+    - $CV > 30 \%$\
+    Alta dispersão.\
+
+\newpage
+  
+- $As$ | `shew` (Coeficiente de assimetria)\
+  - Ajuda a definir assimetria dos dados.\
+  - Casos:\
+    - Simetrica: $\bar{x} = md = m_o$.\
+    - Assimetrica a esquerda: $\bar{x} - md = negativo$.\
+    - Assimetrica a direita: $\bar{x} - md = positivo$.\
+  - Calculando coeficiente de assimetria:\
+  $$As = \frac{3 \times (\bar{x} - md)}{dp}$$
+  Onde,\
+  $\bar{x}$ é média;\
+  $md$ é a mediana;\
+  $m_o$ é a moda;\
+  $dp$ é o desvio-padrão.\
+  - Análise do coeficiente de assimetria:\
+    - $|skew| \leqslant 0.15$\
+    Distribuição praticamente simétrica ($\bar{x} = md = m_o$).\
+    - $0.15 < |skew| \leqslant 1$\
+    Assimetria moderada.\
+    - $|skew| > 1$\
+    Assimetria Forte.\
+
+\newpage
+ 
+- `kurt` (Coeficiente de Curtose)\
 
 \newpage
 

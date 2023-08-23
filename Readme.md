@@ -6080,6 +6080,8 @@ classes inserido manualmente e limites com aberturas invertidas usando
 
 ## 11.4 Estatística descritiva com o pacote `DescTools`
 
+### 11.4.1 Teoria
+
 -   O pacote `DescTools` foi desenvolvido com o objetivo de fornecer uma
     análise descritiva de forma rápida e completa.  
 -   A principal função do pacote é `Desc()`, descreve as variáveis de
@@ -6131,52 +6133,52 @@ alt="Exemplo da função PlotMiss() para mapemaento de dados faltantes." />
 para mapemaento de dados faltantes.</figcaption>
 </figure>
 
--   Customizar os gráficos:  
-    -   É possível plotar determinada coluna a partir da função plot() e
-        Desc(), obtendo assim as principais informações da variável
-        envolvida.  
-    -   Os gráficos plotados (pode ser mais de um), vão depender do tipo
-        da variável envolvida:  
-        -   Numérica  
-            **Histograma** sobreposto com curva de densidade;  
-            **Boxplot**;  
-            **Frequência acumulada** para cada intervalo da variável.  
-        -   Inteira  
-        -   Categórica  
-            **Dicotômica** (ate dois niveis), intervalos deconfiança de
-            90, 95, 99% (assemelha-se a um boxplot).  
-            **Politômica** (mais de dois niveis), gráfico de barras
-            tanto para frequência absoluta quando para frequência
-            relativa.  
-    -   Principais argumentos da função `plot()`:  
-        -   `Desc(dados$coluna)`  
-            Coluna/variável da qual serão plotados os gráficos, a partir
-            de suas principais medidas estatísticas descritivas.  
-        -   `main = "Título"/NULL`  
-            Insere um título ao gráfico.  
-        -   `maxlablen = 25`  
-            Controla o número de caracteres máximo m impresso nos
-            rótulos do gráfico.  
-        -   `type = c("bar", "dot")`  
-            Customização do tipo de plotagem.  
-        -   `col = "red"/NULL`  
-            Adiciona cor aos pontos.  
-        -   `xlim = c(150,200)/NULL`  
-            Limites do eixo x.  
-        -   `ecdf = TRUE`  
-            Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do
-            gráfico de barras. 
-        -   Exemplo:  
+### 11.4.2 Customizar os gráficos
 
-        <!-- -->
+-   É possível plotar determinada coluna a partir da função plot() e
+    Desc(), obtendo assim as principais informações da variável
+    envolvida.  
+-   Os gráficos plotados (pode ser mais de um), vão depender do tipo da
+    variável envolvida:  
+    -   Numérica  
+        **Histograma** sobreposto com curva de densidade;  
+        **Boxplot**;  
+        **Frequência acumulada** para cada intervalo da variável.  
+    -   Inteira  
+    -   Categórica  
+        **Dicotômica** (ate dois niveis), intervalos deconfiança de 90,
+        95, 99% (assemelha-se a um boxplot).  
+        **Politômica** (mais de dois niveis), gráfico de barras tanto
+        para frequência absoluta quando para frequência relativa.  
+-   Principais argumentos da função `plot()`:  
+    -   `Desc(dados$coluna)`  
+        Coluna/variável da qual serão plotados os gráficos, a partir de
+        suas principais medidas estatísticas descritivas.  
+    -   `main = "Título"/NULL`  
+        Insere um título ao gráfico.  
+    -   `maxlablen = 25`  
+        Controla o número de caracteres máximo m impresso nos rótulos do
+        gráfico.  
+    -   `type = c("bar", "dot")`  
+        Customização do tipo de plotagem.  
+    -   `col = "red"/NULL`  
+        Adiciona cor aos pontos.  
+    -   `xlim = c(150,200)/NULL`  
+        Limites do eixo x.  
+    -   `ecdf = TRUE`  
+        Exibe (`TRUE`), ou não (`FALSE`), as barras acumuladas do
+        gráfico de barras. 
+    -   Exemplo:  
 
-            plot(Desc(dados$coluna),main= NULL, 
-            maxlablen = 25,
-            type = c("bar", "dot"),
-            col = NULL,
-            border = NULL,
-            xlim = NULL,
-            ecdf = TRUE)
+    <!-- -->
+
+        plot(Desc(dados$coluna),main= NULL, 
+        maxlablen = 25,
+        type = c("bar", "dot"),
+        col = NULL,
+        border = NULL,
+        xlim = NULL,
+        ecdf = TRUE)
 
 <figure>
 <img
@@ -6209,10 +6211,51 @@ estatística descritiva.
 <code>plot(Desc(dados$variavel_categorica))</code></figcaption>
 </figure>
 
--   Interpretação os coeficientes:  
-    -   *CV*/`vcoef` (Coeficiente de variação)  
-    -   *shew* (Coeficiente de assimetria)  
-    -   *kurt* (Coeficiente de Curtose)  
+### 11.4.3 Interpretar os coeficientes
+
+-   *C**V* \| `vcoef` (Coeficiente de variação)  
+    -   O coeficiente de variação é uma medida de dispersão, quanto
+        menor a porcentagem mais próximos os dados estão da média.  
+    -   Calculando Coeficiente de variação *C**V*:  
+        $$CV = \frac{dp}{\bar{x}} \times 100$$
+        onde,  
+        $$Média (\bar{x}) = \frac{\sum\_{i=1}^{n} x_i}{n}$$
+        $$Desvio (dm) = \sum\_{i=1}^{n} (\|x_i - \bar{x}\|)$$
+        $$Variância (var) =  \frac{\sum\_{i=1}^{n} (x_i - \bar{x})^2}{n}$$
+        $$Desvio-padrão (dp) = \sqrt{\frac{\sum\_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+    -   Análise do coeficiente de variação:  
+        -   *C**V* ≤ 15%  
+            Baixa dispersão.  
+        -   15% \< *C**V* ≤ 30%  
+            Média dispersão.  
+        -   *C**V* \> 30%  
+            Alta dispersão.  
+
+-   *A**s* \| `shew` (Coeficiente de assimetria)  
+    -   Ajuda a definir assimetria dos dados.  
+    -   Casos:  
+        -   Simetrica: *x̄* = *m**d* = *m*<sub>*o*</sub>.  
+        -   Assimetrica a esquerda:
+            *x̄* − *m**d* = *n**e**g**a**t**i**v**o*.  
+        -   Assimetrica a direita:
+            *x̄* − *m**d* = *p**o**s**i**t**i**v**o*.  
+    -   Calculando coeficiente de assimetria:  
+        $$As = \frac{3 \times (\bar{x} - md)}{dp}$$
+        Onde,  
+        *x̄* é média;  
+        *m**d* é a mediana;  
+        *m*<sub>*o*</sub> é a moda;  
+        *d**p* é o desvio-padrão.  
+    -   Análise do coeficiente de assimetria:  
+        -   \|*s**k**e**w*\| ≤ 0.15  
+            Distribuição praticamente simétrica
+            (*x̄* = *m**d* = *m*<sub>*o*</sub>).  
+        -   0.15 \< \|*s**k**e**w*\| ≤ 1  
+            Assimetria moderada.  
+        -   \|*s**k**e**w*\| \> 1  
+            Assimetria Forte.  
+
+-   `kurt` (Coeficiente de Curtose)  
 
 ## 11.5 Dados faltantes
 
