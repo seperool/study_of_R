@@ -6211,7 +6211,7 @@ estatística descritiva.
 <code>plot(Desc(dados$variavel_categorica))</code></figcaption>
 </figure>
 
-### 11.4.3 Interpretar os coeficientes
+### 11.4.3 Interpretação dos coeficientes
 
 -   *C**V* \| `vcoef` (Coeficiente de variação)  
     -   O coeficiente de variação é uma medida de dispersão, quanto
@@ -6254,8 +6254,41 @@ estatística descritiva.
             Assimetria moderada.  
         -   \|*s**k**e**w*\| \> 1  
             Assimetria Forte.  
+    -   Casos de assimetria:  
 
--   `kurt` (Coeficiente de Curtose)  
+    <figure>
+    <img src="./Cap9-Analise_descritiva_dos_dados/Imagens/assimetria.png"
+    style="width:50.0%" alt="Casos de assimetria." />
+    <figcaption aria-hidden="true">Casos de assimetria.</figcaption>
+    </figure>
+
+-   *C* \| `kurt` (Coeficiente de Curtose)  
+    -   Curtose é o grau de achatamento (ou afilamento) de uma
+        distribuição em comparação com a curva normal.  
+    -   Calculando o coeficiente de Curtose:  
+        $$C = \frac{Q_3 - Q_1}{2 \times (P\_{90} - P\_{10})}$$
+        $$\* = L_i + \frac{k \cdot \sum f_i - F\_{anterior}}{f\_{intervalo}} \times h$$
+        $$P\_{k} = L_i + \frac{\frac{k}{100} \cdot \sum f_i - F\_{anterior}}{f\_{intervalo}} \times h$$
+        Onde,  
+        *Q*<sub>3</sub> é o terceiro quartil;  
+        *Q*<sub>1</sub> é o primeiro quartil;  
+        *P*<sub>90</sub> é o percentil 90;  
+        *P*<sub>10</sub> é o percentil 10.  
+    -   Análisando o coeficiente de Curtose:  
+        -   *C* ≅ 0.263  
+            A distribuição é mesocúrtica.  
+        -   *C* \< 0.263  
+            A distribuição é leptocúrtica (em cume).  
+        -   *C* \> 0.263  
+            A distribuição é platicúrtica (plana).  
+    -   Tipos de achatamento da curva de distribuição:  
+
+    <figure>
+    <img src="./Cap9-Analise_descritiva_dos_dados/Imagens/curtose.png"
+    style="width:50.0%" alt="Tipos de distribuição normal." />
+    <figcaption aria-hidden="true">Tipos de distribuição
+    normal.</figcaption>
+    </figure>
 
 ## 11.5 Dados faltantes
 

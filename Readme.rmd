@@ -10,15 +10,15 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  md_document:
-    number_sections: true
-    variant: markdown_github
   odt_document: 
     number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
+  md_document:
+    number_sections: true
+    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: false
@@ -5778,7 +5778,7 @@ ecdf = TRUE)
 
 \newpage
 
-### Interpretar os coeficientes
+### Interpretação dos coeficientes
 - $CV$ | `vcoef` (Coeficiente de variação)\
   - O coeficiente de variação é uma medida de dispersão, quanto menor a porcentagem mais próximos os dados estão da média.\
   - Calculando Coeficiente de variação $CV$:\
@@ -5818,11 +5818,36 @@ ecdf = TRUE)
     Assimetria moderada.\
     - $|skew| > 1$\
     Assimetria Forte.\
-
+  - Casos de assimetria:\
+  
+  ![Casos de assimetria.](./Cap9-Analise_descritiva_dos_dados/Imagens/assimetria.png){width=50%}
+  
+  
 \newpage
  
-- `kurt` (Coeficiente de Curtose)\
-
+- $C$ | `kurt` (Coeficiente de Curtose)\
+  - Curtose é o grau de achatamento (ou afilamento) de uma distribuição em comparação com a curva normal.\
+  - Calculando o coeficiente de Curtose:\
+  $$C = \frac{Q_3 - Q_1}{2 \times (P_{90} - P_{10})}$$
+  $$* = L_i + \frac{k \cdot \sum f_i - F_{anterior}}{f_{intervalo}} \times h$$
+  $$P_{k} = L_i + \frac{\frac{k}{100} \cdot \sum f_i - F_{anterior}}{f_{intervalo}} \times h$$
+  Onde,\
+  $Q_3$ é o terceiro quartil;\
+  $Q_1$ é o primeiro quartil;\
+  $P_{90}$ é o percentil 90;\
+  $P_{10}$ é o percentil 10.\
+  - Análisando o coeficiente de Curtose:\
+    - $C \cong 0.263$\
+    A distribuição é mesocúrtica.\
+    - $C < 0.263$\
+    A distribuição é leptocúrtica (em cume).\
+    - $C > 0.263$\
+    A distribuição é platicúrtica (plana).\
+  - Tipos de achatamento da curva de distribuição:\
+  
+  ![Tipos de distribuição normal.](./Cap9-Analise_descritiva_dos_dados/Imagens/curtose.png){width=50%}
+  
+  
 \newpage
 
 ## Dados faltantes
