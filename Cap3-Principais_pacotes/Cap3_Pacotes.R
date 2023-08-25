@@ -35,6 +35,6 @@ install.packages("likert") #Opções de figuras no ggplot para itens com escala 
 #Conectores com banco de dados
 install.packages("DBI")
 install.packages("odbc")
-install.packages("RPostgres") # quebrado!
-install.packages("RPostgreSQL") # RPostgres alternativo, quebrado!
+install.packages("RPostgres")
+install.packages("RPostgreSQL")
 install.packages("dbplyr")
