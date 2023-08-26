@@ -1,6 +1,6 @@
-ESCRITO EM 24/08/23
+ESCRITO EM 26/08/23
 ---
-PARA 25/08/23
+PARA 27/08/23
 ---
 Subir github:
 
@@ -14,11 +14,17 @@ Afazeres:
 			- Cap. 5 - O sistema tidyverse
 				- Leitura de dados
 					- Sincronização com banco de dados
+						- Pacote DBI
+						- Pacote obdc
+						- Pacote RSQLite
+						- Pacote RMySQL
 						- Pacote RPostgres
 						- Importação de tabelas
 						- Manipulação de tabelas
 							- No R
+								- sqldf
 							- No banco de dados
+								- dbplyr
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
