@@ -1,5 +1,5 @@
 install.packages("stringr") #Pacote para trabalhar com strings, texto
-install.packages("Rmarkdown") #Pacote para fazer relatorio, rmd
+install.packages("rmarkdown") #Pacote para fazer relatorio, rmd
 install.packages("distill") #Autor: url, affiliation e affiliation_url
 install.packages("knitr") #Interpretação e compilação do documento rmd, formato tabela kable
 install.packages("kableExtra") #Mais opções de formatação de tabelas kable
@@ -33,8 +33,12 @@ install.packages("esquisse") #Pacote para criação de gráficos (`ggplot2`) de 
 install.packages("likert") #Opções de figuras no ggplot para itens com escala likert
 
 #Conectores com banco de dados
-install.packages("DBI")
-install.packages("odbc")
-install.packages("RPostgres")
-install.packages("RPostgreSQL")
-install.packages("dbplyr")
+install.packages("DBI") #Conecta R ao sistema de gerenciamento de banco de dados (SGBD)
+install.packages("odbc") #Componentes de conexão/interação com bancos de dados
+install.packages("RSQLite") #Conexão com SQLite
+install.packages("RMySQL") #Conexão com MySQL e MariaDB
+install.packages("RPostgres") #Conexão com Postgres
+install.packages("RPostgreSQL") #Alternativo Conexão com PostgreSQL
+install.packages("bigrquery") #Conexão Google’s BigQuery
+install.packages("dbplyr") #Tradução de dplyr em dbplyr (SQL)
+install.packages("sqldf") #Permite manipular data.frame em R com instruções SQL
