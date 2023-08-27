@@ -10,18 +10,18 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  md_document:
-    number_sections: true
-    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: false
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1284,65 +1284,6 @@ dt <- read_csv2(file = "~/caminho/arquivo.csv",
 
 \newpage
 
-### Sincronização com banco de dados
-
-- Drives **ODBC** é um conector com banco de dados.\
-  - instalando **ODBC** no linux/Ubuntu:\
-  `sudo apt-get install unixodbc unixodbc-dev --install-suggests`\
-  - Instalação de cada ODBC separadamente:\
-    - SQL Server ODBC Drivers (Free TDS)\
-    `sudo apt-get install tdsodbc`\
-    - PostgreSQL ODBC ODBC Drivers\
-    `sudo apt-get install odbc-postgresql`\
-    - MySQL ODBC Drivers\
-    `sudo apt-get install libmyodbc`\
-    - SQLite ODBC Drivers\
-    `sudo apt-get install libsqliteodbc`\
-  - É necessário configurar dois arquivos `odbcinst.ini` e `odbc.ini`.\
-    
-    
-    - `odbcinst.ini`\
-    ```
-    [PostgreSQL Driver]
-    Driver          = caminho/psqlodbcw.so
-    [SQLite Driver]
-    Driver          = caminho/libsqlite3odbc.dylib
-    ```
-    
-    
-    - `odbc.ini`\
-    ```
-    [PostgreSQL]
-    Driver      = PostgreSQL Driver
-    Database    = test_db
-    Servername  = localhost
-    UserName    = postgres
-    Password    = password
-    Port        = 5432
-    
-    [SQLite]
-    Driver      = SQLite Driver
-    Database    =/tmp/testing
-    ```
-    
-- O pacote **DBI** ajuda a conectar o **R** aos sistemas de gerenciamento de banco de dados (DBMS).\
-
-- Conectando com banco de dados **Postgres**:\
-```
-con <- DBI::dbConnect(odbc::odbc(),
-                      Driver   = "PostgreSQL Driver",
-                      Server   = "localhost",
-                      Database = "name_database",
-                      UID      = rstudioapi::askForPassword("Database user"),
-                      PWD      = rstudioapi::askForPassword("Database password"),
-                      Port     = 5432)
-```
-    
-- Referência:\
-<http://db.rstudio.com/> \
-
-\newpage
-
 ## **tibble**
 
 ### Visualização de tabelas tipo **tibble**
@@ -1931,6 +1872,99 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
   - Exemplo:\
   `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`\
   
+\newpage
+
+# SINCRONIZAÇÃO COM BANCO DE DADOS
+
+## Pacotes de banco de dados
+- Sincronização com banco de dados:\
+  - `DBI`\
+  Conecta R ao sistema de gerenciamento de banco de dados (SGBD).\
+  - `odbc`\
+  Componentes de conexão/interação com bancos de dados.\
+  - `RSQLite`\
+  Conexão com SQLite.\
+  - `RMySQL`\
+  Conexão com MySQL e MariaDB.\
+  - `RPostgres`\
+  Conexão com Postgres.\
+  - `RPostgreSQL`\
+  Alternativo Conexão com PostgreSQL.\
+  - `bigrquery`\
+  Conexão Google’s BigQuery.\
+- Manipulação de dados:\
+  - `dbplyr`\
+  Tradução de dplyr em dbplyr (SQL).\
+  - `sqldf`\
+  Permite manipular data.frame em R com instruções SQL.\
+
+\newpage
+
+## Sincronização com banco de dados
+
+- Referência para estudo de pacotes R de banco de dados:\
+<http://db.rstudio.com/> \
+
+- Drives **ODBC** é um conector com banco de dados.\
+  - instalando **ODBC** no linux/Ubuntu:\
+  `sudo apt-get install unixodbc unixodbc-dev --install-suggests`\
+  - Instalação de cada ODBC separadamente:\
+    - SQL Server ODBC Drivers (Free TDS)\
+    `sudo apt-get install tdsodbc`\
+    - PostgreSQL ODBC ODBC Drivers\
+    `sudo apt-get install odbc-postgresql`\
+    - MySQL ODBC Drivers\
+    `sudo apt-get install libmyodbc`\
+    - SQLite ODBC Drivers\
+    `sudo apt-get install libsqliteodbc`\
+  - É necessário configurar dois arquivos `odbcinst.ini` e `odbc.ini`.\
+    
+    
+    - `odbcinst.ini`\
+    ```
+    [PostgreSQL Driver]
+    Driver          = caminho/psqlodbcw.so
+    [SQLite Driver]
+    Driver          = caminho/libsqlite3odbc.dylib
+    ```
+    
+    
+    - `odbc.ini`\
+    ```
+    [PostgreSQL]
+    Driver      = PostgreSQL Driver
+    Database    = test_db
+    Servername  = localhost
+    UserName    = postgres
+    Password    = password
+    Port        = 5432
+    
+    [SQLite]
+    Driver      = SQLite Driver
+    Database    =/tmp/testing
+    ```
+    
+- O pacote **DBI** ajuda a conectar o **R** aos sistemas de gerenciamento de banco de dados (DBMS).\
+
+- Conectando com banco de dados **Postgres**:\
+```
+con <- DBI::dbConnect(odbc::odbc(),
+                      Driver   = "PostgreSQL Driver",
+                      Server   = "localhost",
+                      Database = "name_database",
+                      UID      = rstudioapi::askForPassword("Database user"),
+                      PWD      = rstudioapi::askForPassword("Database password"),
+                      Port     = 5432)
+```
+
+\newpage
+
+## Importação de tabelas
+
+\newpage
+
+## Manipulação de tabelas
+
 \newpage
 
 # CAP. 6 - PACOTE **DATA.TABLE**
@@ -5851,6 +5885,12 @@ ecdf = TRUE)
 \newpage
 
 ## Dados faltantes
+
+- Análisando a base de dados:\
+  - Como estão distribuidos os dados faltantes?
+
+\newpage
+
 ## Analisando datas com o pacote `DescTools`
 
 \newpage

@@ -1393,70 +1393,6 @@ Principais tipos de dados
     para importar dados em formato *csv* no brasil a melhor escolha é o
     pacote `readr::read_csv2`.  
 
-### 7.3.3 Sincronização com banco de dados
-
--   Drives **ODBC** é um conector com banco de dados.  
-
-    -   instalando **ODBC** no linux/Ubuntu:  
-        `sudo apt-get install unixodbc unixodbc-dev --install-suggests`  
-
-    -   Instalação de cada ODBC separadamente:  
-
-        -   SQL Server ODBC Drivers (Free TDS)  
-            `sudo apt-get install tdsodbc`  
-        -   PostgreSQL ODBC ODBC Drivers  
-            `sudo apt-get install odbc-postgresql`  
-        -   MySQL ODBC Drivers  
-            `sudo apt-get install libmyodbc`  
-        -   SQLite ODBC Drivers  
-            `sudo apt-get install libsqliteodbc`  
-
-    -   É necessário configurar dois arquivos `odbcinst.ini` e
-        `odbc.ini`.  
-
-        -   `odbcinst.ini`  
-
-        <!-- -->
-
-            [PostgreSQL Driver]
-            Driver          = caminho/psqlodbcw.so
-            [SQLite Driver]
-            Driver          = caminho/libsqlite3odbc.dylib
-
-        -   `odbc.ini`  
-
-        <!-- -->
-
-            [PostgreSQL]
-            Driver      = PostgreSQL Driver
-            Database    = test_db
-            Servername  = localhost
-            UserName    = postgres
-            Password    = password
-            Port        = 5432
-
-            [SQLite]
-            Driver      = SQLite Driver
-            Database    =/tmp/testing
-
--   O pacote **DBI** ajuda a conectar o **R** aos sistemas de
-    gerenciamento de banco de dados (DBMS).  
-
--   Conectando com banco de dados **Postgres**:  
-
-<!-- -->
-
-    con <- DBI::dbConnect(odbc::odbc(),
-                          Driver   = "PostgreSQL Driver",
-                          Server   = "localhost",
-                          Database = "name_database",
-                          UID      = rstudioapi::askForPassword("Database user"),
-                          PWD      = rstudioapi::askForPassword("Database password"),
-                          Port     = 5432)
-
--   Referência:  
-    <http://db.rstudio.com/>  
-
 ## 7.4 **tibble**
 
 ### 7.4.1 Visualização de tabelas tipo **tibble**
@@ -2054,9 +1990,103 @@ Tabela em formato larga dieta de pacientes
     -   Exemplo:  
         `dados %>% replace_na(list(paciente = "ausente", antes = 0, depois = 0))`  
 
-# 8 CAP. 6 - PACOTE **DATA.TABLE**
+# 8 SINCRONIZAÇÃO COM BANCO DE DADOS
 
-## 8.1 Teoria
+## 8.1 Pacotes de banco de dados
+
+-   Sincronização com banco de dados:  
+    -   `DBI`  
+        Conecta R ao sistema de gerenciamento de banco de dados
+        (SGBD).  
+    -   `odbc`  
+        Componentes de conexão/interação com bancos de dados.  
+    -   `RSQLite`  
+        Conexão com SQLite.  
+    -   `RMySQL`  
+        Conexão com MySQL e MariaDB.  
+    -   `RPostgres`  
+        Conexão com Postgres.  
+    -   `RPostgreSQL`  
+        Alternativo Conexão com PostgreSQL.  
+    -   `bigrquery`  
+        Conexão Google’s BigQuery.  
+-   Manipulação de dados:  
+    -   `dbplyr`  
+        Tradução de dplyr em dbplyr (SQL).  
+    -   `sqldf`  
+        Permite manipular data.frame em R com instruções SQL.  
+
+## 8.2 Sincronização com banco de dados
+
+-   Referência para estudo de pacotes R de banco de dados:  
+    <http://db.rstudio.com/>  
+
+-   Drives **ODBC** é um conector com banco de dados.  
+
+    -   instalando **ODBC** no linux/Ubuntu:  
+        `sudo apt-get install unixodbc unixodbc-dev --install-suggests`  
+
+    -   Instalação de cada ODBC separadamente:  
+
+        -   SQL Server ODBC Drivers (Free TDS)  
+            `sudo apt-get install tdsodbc`  
+        -   PostgreSQL ODBC ODBC Drivers  
+            `sudo apt-get install odbc-postgresql`  
+        -   MySQL ODBC Drivers  
+            `sudo apt-get install libmyodbc`  
+        -   SQLite ODBC Drivers  
+            `sudo apt-get install libsqliteodbc`  
+
+    -   É necessário configurar dois arquivos `odbcinst.ini` e
+        `odbc.ini`.  
+
+        -   `odbcinst.ini`  
+
+        <!-- -->
+
+            [PostgreSQL Driver]
+            Driver          = caminho/psqlodbcw.so
+            [SQLite Driver]
+            Driver          = caminho/libsqlite3odbc.dylib
+
+        -   `odbc.ini`  
+
+        <!-- -->
+
+            [PostgreSQL]
+            Driver      = PostgreSQL Driver
+            Database    = test_db
+            Servername  = localhost
+            UserName    = postgres
+            Password    = password
+            Port        = 5432
+
+            [SQLite]
+            Driver      = SQLite Driver
+            Database    =/tmp/testing
+
+-   O pacote **DBI** ajuda a conectar o **R** aos sistemas de
+    gerenciamento de banco de dados (DBMS).  
+
+-   Conectando com banco de dados **Postgres**:  
+
+<!-- -->
+
+    con <- DBI::dbConnect(odbc::odbc(),
+                          Driver   = "PostgreSQL Driver",
+                          Server   = "localhost",
+                          Database = "name_database",
+                          UID      = rstudioapi::askForPassword("Database user"),
+                          PWD      = rstudioapi::askForPassword("Database password"),
+                          Port     = 5432)
+
+## 8.3 Importação de tabelas
+
+## 8.4 Manipulação de tabelas
+
+# 9 CAP. 6 - PACOTE **DATA.TABLE**
+
+## 9.1 Teoria
 
 -   Manipula dados, porém usa uma filosofia diferente de
     **tidyverse**.  
@@ -2065,7 +2095,7 @@ Tabela em formato larga dieta de pacientes
     **tidyverse**.  
 -   Não necessita de tantos pacotes para executar as tarefas.  
 
-## 8.2 Estrutura
+## 9.2 Estrutura
 
 -   A estrutura básica do `data.table`:  
     -   Sintaxe:  
@@ -2092,7 +2122,7 @@ Tabela em formato larga dieta de pacientes
     -   Exemplo:  
         `DT[c(1,7,9)][order(-valor_compra)]`  
 
-## 8.3 Transformando **data.frame** em **data.table**
+## 9.3 Transformando **data.frame** em **data.table**
 
 -   Para transformar `data.frame` em `data.table` aplicamos a função
     `data.table()`.  
@@ -2106,9 +2136,9 @@ Tabela em formato larga dieta de pacientes
     # Transformando data.frame dados em data.table dt
     dt <- data.table(dados)
 
-## 8.4 **data.table**
+## 9.4 **data.table**
 
-### 8.4.1 Manipulando linhas
+### 9.4.1 Manipulando linhas
 
 |                      Comando                       |                                                                         O que faz?                                                                          |
 |:-----------------:|:---------------------------------------------------:|
@@ -2120,7 +2150,7 @@ Tabela em formato larga dieta de pacientes
 
 5 formas de manipulação de linhas no data.table
 
-### 8.4.2 Manipulando colunas
+### 9.4.2 Manipulando colunas
 
 |                              Comando                               |                            O que faz?                            |
 |:-----------------------------------:|:---------------------------------:|
@@ -2135,7 +2165,7 @@ Tabela em formato larga dieta de pacientes
 
 8 formas de manipulação de colunas no data.table
 
-### 8.4.3 Sumarizando dados
+### 9.4.3 Sumarizando dados
 
 -   Realiza operações para apuração de valores sobre linhas de um
     `data.table`.  
@@ -2150,7 +2180,7 @@ Tabela em formato larga dieta de pacientes
 
 Argumentos para operações em um DT aplicados a uma ou mais colunas
 
-### 8.4.4 Operando um subconjunto de dados
+### 9.4.4 Operando um subconjunto de dados
 
 -   O pacote possui um símbolo especial denotado por `.SD` para realizar
     operações em um subconjunto de dados do `data.table` **DT**, de
@@ -2191,7 +2221,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
     -   Agrupando os dados (`by`) entorno das colunas selecionadas
         coluna_3 e coluna_4.  
 
-### 8.4.5 Modificando dados com **set**
+### 9.4.5 Modificando dados com **set**
 
 -   As funções **set** são para modificação de dados do `data.table`.  
 -   São as principais funções **set**:  
@@ -2205,7 +2235,7 @@ Argumentos para operações em um DT aplicados a uma ou mais colunas
 
 Funções set para modificação de dados no formato data.table
 
-# 9 CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
+# 10 CAP. 7 - GRÁFICOS PACOTE BÁSICO E PACOTE **ggplot2**
 
 -   Objetivo é obter o grafico ideal, com o qual se consiga visualizar
     os dados e analiza-los.  
@@ -2217,7 +2247,7 @@ Funções set para modificação de dados no formato data.table
     -   Ajustes.  
     -   Refinamento.  
 
-## 9.1 Gráficos com o pacote básico
+## 10.1 Gráficos com o pacote básico
 
 -   Principais funções de gráfico do pacote básico:  
 
@@ -2291,11 +2321,11 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Fecha a janela gráfica (*devices*).  
         `dev.off()`  
 
-### 9.1.1 Gráfico de barras (barplot)
+### 10.1.1 Gráfico de barras (barplot)
 
 -   A função `barplot()` gera um gráfico de barras.  
 
-#### 9.1.1.1 Pré-requisitos
+#### 10.1.1.1 Pré-requisitos
 
 -   Necessita que os dados estejam preparados para gerar os gráfico, em
     formato *tabulado*.  
@@ -2304,7 +2334,7 @@ Nome dos argumentos para adicionar efeito em gráficos.
 -   Uma coluna com os dados **númericos** (frequencias e/ou valores).  
 -   Uma coluna com os dados **string**, ou **factor**.  
 
-#### 9.1.1.2 Preparação dos dados
+#### 10.1.1.2 Preparação dos dados
 
 -   Organização dos dados das colunas, colocando uma coluna em função da
     outra. As principais funções necesse caso são:
@@ -2330,7 +2360,7 @@ Nome dos argumentos para adicionar efeito em gráficos.
     -   Exemplo:  
         `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
 
-#### 9.1.1.3 Plotagem gráfico de barras (barplot)
+#### 10.1.1.3 Plotagem gráfico de barras (barplot)
 
 -   Principais argumentos do gráfico de barras (`barplot()`):  
     -   `y`  
@@ -2397,13 +2427,13 @@ alt="Gráfico de barras - Horizontal (barplot(horizon = TRUE))." />
 (<code>barplot(horizon = TRUE</code>)).</figcaption>
 </figure>
 
-### 9.1.2 Gráfico circular/pizza (pie)
+### 10.1.2 Gráfico circular/pizza (pie)
 
 -   A função `pie` gera um gráfico circular/pizza.  
 -   Essa forma de visualização serve para analisar a frequencia de
     variáveis categóricas.  
 
-#### 9.1.2.1 Pré-requisitos
+#### 10.1.2.1 Pré-requisitos
 
 -   Utilize somente em casos de a variável possuir poucas categorias (em
     torno de cinco).  
@@ -2412,7 +2442,7 @@ alt="Gráfico de barras - Horizontal (barplot(horizon = TRUE))." />
     gráfico de barras.  
 -   Os dados devem estar organizados em formato tabular.  
 
-#### 9.1.2.2 Preparação dos dados
+#### 10.1.2.2 Preparação dos dados
 
 -   Organização dos dados das colunas, colocando uma coluna em função da
     outra. As principais funções necesse caso são:
@@ -2438,7 +2468,7 @@ alt="Gráfico de barras - Horizontal (barplot(horizon = TRUE))." />
     -   Exemplo:  
         `par(mar = c(9,5,4,2),mai = c(1.8,1,0.8,0.4))`  
 
-#### 9.1.2.3 Plotagem gráfico circular/pizza (pie)
+#### 10.1.2.3 Plotagem gráfico circular/pizza (pie)
 
 -   Principais argumentos:  
     -   `y`  
@@ -2498,7 +2528,7 @@ alt="Gráfico circular “pizza” (pie())." />
 (<code>pie()</code>).</figcaption>
 </figure>
 
-### 9.1.3 Gráfico de linhas (plot lines)
+### 10.1.3 Gráfico de linhas (plot lines)
 
 -   O gráfico de linhas (`plot`) é utilizado para vizualizar uma ou mais
     variáveis númericas que podem ser plotadas ao longo do tempo (não
@@ -2506,7 +2536,7 @@ alt="Gráfico circular “pizza” (pie())." />
 -   Podemos adicionar mais linhas (variáveis) no gráfico através do
     comando `lines`.  
 
-#### 9.1.3.1 Pré-requisitos
+#### 10.1.3.1 Pré-requisitos
 
 -   Os dados devem estar organizados em formato tabular.  
 
@@ -2528,7 +2558,7 @@ alt="Gráfico circular “pizza” (pie())." />
     y3 <- dados_SP$cheg_2014/1000
     y4 <- dados_SP$cheg_2015/1000
 
-#### 9.1.3.2 Preparação dos dados
+#### 10.1.3.2 Preparação dos dados
 
 -   Definir os limites do eixo y:  
     -   **li**  
@@ -2545,7 +2575,7 @@ alt="Gráfico circular “pizza” (pie())." />
         li <- min(y1,y2,y3,y4)
         ls <- max(y1,y2,y3,y4)
 
-#### 9.1.3.3 Plotagem gráfico plot
+#### 10.1.3.3 Plotagem gráfico plot
 
 -   Principais argumentos:  
     -   **x**  
@@ -2616,9 +2646,9 @@ alt="Gráfico de linhas (plot() lines())." />
 (<code>plot() lines()</code>).</figcaption>
 </figure>
 
-#### 9.1.3.4 Comparando séries de gráficos de linhas
+#### 10.1.3.4 Comparando séries de gráficos de linhas
 
-##### 9.1.3.4.1 O que é comparar séries
+##### 10.1.3.4.1 O que é comparar séries
 
 -   O intuito é plotar mais de um gráfico na mesma janela gráfica, para
     facilitar a comparação das diferentes séries de dados.  
@@ -2626,7 +2656,7 @@ alt="Gráfico de linhas (plot() lines())." />
     receber gráficos em linha, ou em coluna, ou em linhas e colunas ao
     mesmo tempo.  
 
-##### 9.1.3.4.2 Preparação da janela gráfica
+##### 10.1.3.4.2 Preparação da janela gráfica
 
 -   Existem duas formas de preparar a janela gráfica para receber os
     gráficos:  
@@ -2641,7 +2671,7 @@ alt="Gráfico de linhas (plot() lines())." />
         número de linhas e colunas a receber os gráficos.  
         Mais recomendado a utilização.  
 
-##### 9.1.3.4.3 Plotagem de gráficos de linhas comparando séries
+##### 10.1.3.4.3 Plotagem de gráficos de linhas comparando séries
 
     #script para dois graficos de linha
     #preparando a janela grafica para receber dois graficos
@@ -2703,7 +2733,7 @@ alt="Gráfico de linha comparando séries" />
 séries</figcaption>
 </figure>
 
-### 9.1.4 Gráfico de dispersão (plot abline)
+### 10.1.4 Gráfico de dispersão (plot abline)
 
 -   O gráfico de dispersão é usado para observar a relação entre duas
     variáveis quantitativas (que podem ser contadas).  
@@ -2724,12 +2754,12 @@ séries</figcaption>
         O coeficiente é negativo ou dito decrescente, uma variável
         cresce com o decaimento da outra.  
 
-#### 9.1.4.1 Pré-requisitos
+#### 10.1.4.1 Pré-requisitos
 
 -   Os dados devem estar em formato tabular, ou as variáveis em formato
     de vetor.  
 
-#### 9.1.4.2 Preparação dos dados
+#### 10.1.4.2 Preparação dos dados
 
 -   Coeficiente de Correlação linear:  
 
@@ -2806,7 +2836,7 @@ séries</figcaption>
         os coeficientes separados, assim deixando claro em cada coluna o
         que é **intercepto** e o que é **coeficiente angular**.  
 
-#### 9.1.4.3 Plotagem gráfico plot abline
+#### 10.1.4.3 Plotagem gráfico plot abline
 
 -   Funções usadas:  
     -   `paste()`  
@@ -2886,7 +2916,7 @@ alt="Gráfico de dispersão “plot abline” (plot() abline())." />
 (<code>plot() abline()</code>).</figcaption>
 </figure>
 
-### 9.1.5 Diagrama de caixa (boxplot)
+### 10.1.5 Diagrama de caixa (boxplot)
 
 -   O **Diagrama de caixa** serve para compreensão da forma e amplitude
     dos dados.  
@@ -2895,7 +2925,7 @@ alt="Gráfico de dispersão “plot abline” (plot() abline())." />
 -   O **diagrama de caixa** usa em sua construção os conceitos de
     **quartis** (**Q1**, **Q2**, e **Q3**).  
 
-#### 9.1.5.1 Separatrizes
+#### 10.1.5.1 Separatrizes
 
 -   Quartis:  
     -   Q1 (25%)  
@@ -2935,7 +2965,7 @@ calculando,
 classe selecionada,  
 *h* é a amplitude de classe (*L**s* − *L**i*).  
 
-#### 9.1.5.2 boxplot
+#### 10.1.5.2 boxplot
 
 -   Montando a box:  
     A box contém como limite superior *Q*<sub>3</sub>, limite inferior
@@ -2966,16 +2996,16 @@ style="width:50.0%" alt="Exemplo explicativo de boxplot" />
 boxplot</figcaption>
 </figure>
 
-#### 9.1.5.3 Pré-requisitos
+#### 10.1.5.3 Pré-requisitos
 
 -   Os dados devem estar em formato tabular.  
 
-#### 9.1.5.4 Preparação dos dados
+#### 10.1.5.4 Preparação dos dados
 
 -   A variável em formato de vetor.  
     Ex.: `x <- turismo$cheg_2012/1000`  
 
-#### 9.1.5.5 Plotagem gráfico boxplot
+#### 10.1.5.5 Plotagem gráfico boxplot
 
 -   Principais argumentos do gráfico de dispersão:  
     -   **x**  
@@ -3007,7 +3037,7 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot())" />
 (<code>boxplot()</code>)</figcaption>
 </figure>
 
-### 9.1.6 Histograma (hist)
+### 10.1.6 Histograma (hist)
 
 -   Histograma é um tipo de gráficos de barras.  
 -   É usado para variáveis quantitativas continuas.  
@@ -3042,11 +3072,11 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot())" />
     <figcaption aria-hidden="true">Exemplo histograma</figcaption>
     </figure>
 
-#### 9.1.6.1 Pré-requisitos
+#### 10.1.6.1 Pré-requisitos
 
 -   Os dados devem estar em formato tabular.  
 
-#### 9.1.6.2 Preparação dos dados
+#### 10.1.6.2 Preparação dos dados
 
 -   A variável em formato de vetor.  
     Ex.: `x <- dados$cheg_2012/1000`  
@@ -3055,7 +3085,7 @@ style="width:80.0%" alt="Gráfico de caixa (boxplot())" />
     frequência absoluta (**T**) ou a frequência relativa (**F**).  
     Ex.: `hist(... , freq = T | F, ...)`  
 
-#### 9.1.6.3 Plotagem histograma
+#### 10.1.6.3 Plotagem histograma
 
 -   Principais argumentos da função histograma (`hist()`):  
     -   **x**  
@@ -3099,7 +3129,7 @@ style="width:80.0%" alt="Histograma (hist())" />
 (<code>hist()</code>)</figcaption>
 </figure>
 
-## 9.2 Pacote **ggplot2**
+## 10.2 Pacote **ggplot2**
 
 O pacote `ggplot2` constroi diversos tipos de graficos a partir da mesma
 estrutura de componentes:  
@@ -3108,7 +3138,7 @@ estrutura de componentes:
 - `coord_system`: referente ao sistema de coordenadas, que podem ser
 cartesianas, polares e projeção de mapas.  
 
-### 9.2.1 O que precisa para fazer o gráfico?
+### 10.2.1 O que precisa para fazer o gráfico?
 
 A. Um nome de objeto para guardar o grafico (uma variavel).  
 B. A base de dados que será utilizada para a plotagem.  
@@ -3121,7 +3151,7 @@ E. Utilizar o operador “**+**” para adicionar camadas (*layers*) ao
 objeto `ggplot` criado.  
 F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.  
 
-### 9.2.2 Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
+### 10.2.2 Quais formatos podemos utilizar no **ggplot2** (*geom_forma*)?
 
 |                     Forma                      |                           Tipo de gráfico                           |
 |:----------------------------:|:----------------------------------------:|
@@ -3142,7 +3172,7 @@ F. Pacotes auxiliares como `ggthemes` e `grid`, dentre outros.
 Nome das principais formas geométricas para construção de gráficos do
 pacote ggplot2
 
-### 9.2.3 Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
+### 10.2.3 Nome dos argumentos para adicionar efeito em gráficos do pacote **ggplot2**
 
 |                  Funções                  |                    Efeitos no gráfico                    |
 |:----------------------------:|:----------------------------------------:|
@@ -3162,7 +3192,7 @@ pacote ggplot2
 
 Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
 
-### 9.2.4 Definindo um tema para o grafico **ggplot**
+### 10.2.4 Definindo um tema para o grafico **ggplot**
 
 -   *theme_gray*  
     Fundo cinza e linhas grandes brancas.  
@@ -3184,7 +3214,7 @@ Nome dos argumentos para adicionar efeito em gráficos do pacote ggplot2.
 -   *theme_void*  
     Um tema completamente vazio.  
 
-### 9.2.5 Pacote ggthemes
+### 10.2.5 Pacote ggthemes
 
 |         Tema          |                                       Semelhanças                                        |
 |:--------------:|:------------------------------------------------------:|
@@ -3228,11 +3258,11 @@ Exemplo:
       
     p1
 
-### 9.2.6 Inserindo títulos, subtítulos e rótulos aos eixos de um ggplot
+### 10.2.6 Inserindo títulos, subtítulos e rótulos aos eixos de um ggplot
 
 -   Existem duas formas de inserir textos no gráfico no **ggplot2**.  
 
-#### 9.2.6.1 Primeira forma
+#### 10.2.6.1 Primeira forma
 
 -   Podemos adicionar texto ao gráfico **ggplot2** através do comando
     `labs()` e seus parâmetros:  
@@ -3263,7 +3293,7 @@ Exemplo:
            caption = "Elaborado por ...")+ #Adciona texto ao final do gráfico
       theme_bw(base_size = 18)
 
-#### 9.2.6.2 Segunda forma
+#### 10.2.6.2 Segunda forma
 
 -   Podemos adicionar texto ao **ggplot2** atraves dos comandos:  
     -   `ggtitle("",subtitle = "")`  
@@ -3293,7 +3323,7 @@ Exemplo:
       labs(caption = "Elaborado por ...") + #Adciona texto ao final do gráfico
       theme_bw(base_size = 18)
 
-### 9.2.7 Escalas no **ggplot2**
+### 10.2.7 Escalas no **ggplot2**
 
 -   Podemos definir a escala dos eixos utilizando uma camada especifica
     para esse fim:  
@@ -3414,7 +3444,7 @@ alt="Exemplo 2 - scale_(x|y)_continuous" />
 scale_(x|y)_continuous</figcaption>
 </figure>
 
-### 9.2.8 Cores nos gráficos ggplot2
+### 10.2.8 Cores nos gráficos ggplot2
 
 -   As cores podem ser aplicadas em diversos elementos do gráfico:  
     -   Linhas  
@@ -3430,7 +3460,7 @@ scale_(x|y)_continuous</figcaption>
         sendo muito transparênte e 1 sendo opaco).  
         Ex.: `alpha <- 1`  
 
-#### 9.2.8.1 Método para obter cores em **R**
+#### 10.2.8.1 Método para obter cores em **R**
 
 -   Pelo número  
     `col = x`, sendo algum número. `x = 1, 2, ...`  
@@ -3452,12 +3482,12 @@ alt="657 cores e seus repectivos nomes." />
 nomes.</figcaption>
 </figure>
 
-#### 9.2.8.2 Principais pacotes de paletas de cores do **R**
+#### 10.2.8.2 Principais pacotes de paletas de cores do **R**
 
 -   **R** básico  
 -   Pacote **RColorBrewer**  
 
-#### 9.2.8.3 Tipos de paletas de cores
+#### 10.2.8.3 Tipos de paletas de cores
 
 -   *sequencial*  
     Cores que variam em sequência da mais clara para mais escura.  
@@ -3467,7 +3497,7 @@ nomes.</figcaption>
 -   *qualitativa*  
     Não possui um ordenamento nas variações das cores.  
 
-#### 9.2.8.4 5 funções básicas do **R** que geram paletas de cores sequenciais
+#### 10.2.8.4 5 funções básicas do **R** que geram paletas de cores sequenciais
 
 -   `rainbow(n,alpha)`  
 -   `heat.colors(n,alpha)`  
@@ -3475,7 +3505,7 @@ nomes.</figcaption>
 -   `topo.colors(n,alpha)`  
 -   `cm.colors(n,alpha)`  
 
-#### 9.2.8.5 **RColorBrewer** paletas de cores disponíveis
+#### 10.2.8.5 **RColorBrewer** paletas de cores disponíveis
 
 -   *sequencial*  
 
@@ -3540,7 +3570,7 @@ paleta.
 **Pacote RColorBrewer**: Nome das paletas qualitativas e número de cores
 possiveis em cada paleta.
 
-#### 9.2.8.6 Aplicando escala de cinza ao gráfico
+#### 10.2.8.6 Aplicando escala de cinza ao gráfico
 
 -   `scale_fill_grey(..., start = x, end = x)`  
     x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.  
@@ -3551,7 +3581,7 @@ possiveis em cada paleta.
     x é um valor entre 0 e 1, sendo 0 mais escuro e 1 mais claro.  
     Aplica-se a gráficos como **dispersão** ou **linhas**.  
 
-### 9.2.9 Ajustando parâmetro de textos de um **ggplot**
+### 10.2.9 Ajustando parâmetro de textos de um **ggplot**
 
 -   Os temas possuem formatações padronizadas para todos os elementos
     textuais de um gráfico como título, subtítulo ou rótulos dos
@@ -3626,14 +3656,14 @@ alt="Gráfico com ajustes de texto." />
 texto.</figcaption>
 </figure>
 
-### 9.2.10 Layout da janela gráfica e plotagem de vários gráficos em uma janela
+### 10.2.10 Layout da janela gráfica e plotagem de vários gráficos em uma janela
 
-#### 9.2.10.1 Principais pacotes para configurar layout da janela gráfica
+#### 10.2.10.1 Principais pacotes para configurar layout da janela gráfica
 
 -   `grid`  
 -   `patchwork`  
 
-#### 9.2.10.2 Pacote grid
+#### 10.2.10.2 Pacote grid
 
 -   O pacote `grid` implementa funções gráficas no sistema de plotagem
     `ggplot2` e também é um pacote gráfico independente, apesar de ser
@@ -3693,7 +3723,7 @@ dois gráficos, usando biblioteca grid do
 <strong>R</strong>.</figcaption>
 </figure>
 
-#### 9.2.10.3 Pacote patchwork
+#### 10.2.10.3 Pacote patchwork
 
 -   O objetivo do `patchwork` é tornar simples juntar `ggplot` separados
     no mesmo gráfico.  
@@ -3763,7 +3793,7 @@ quatro gráficos, usando biblioteca patchwork do
 <strong>R</strong>.</figcaption>
 </figure>
 
-### 9.2.11 Gráficos usando pacote ggplot2
+### 10.2.11 Gráficos usando pacote ggplot2
 
 -   Passo a passo (principais pacotes):  
     -   Importa dados  
@@ -3784,7 +3814,7 @@ quatro gráficos, usando biblioteca patchwork do
         `grid`  
         `patchwork`  
 
-#### 9.2.11.1 Gráfico de barras (geom_bar) com ggplot2
+#### 10.2.11.1 Gráfico de barras (geom_bar) com ggplot2
 
 -   Tipos de gráficos de barras do ggplot2:  
     -   `geom_bar`  
@@ -3920,9 +3950,9 @@ alt="Gráfico de Barras (geom_bar) com duas ou mais categorias e layout com dois
 mais categorias e <em>layout</em> com dois gráficos.</figcaption>
 </figure>
 
-#### 9.2.11.2 Histograma com ggplot2
+#### 10.2.11.2 Histograma com ggplot2
 
-##### 9.2.11.2.1 Teoria histograma
+##### 10.2.11.2.1 Teoria histograma
 
 -   Histograma é um tipo de gráficos de barras.  
 -   É usado para variáveis quantitativas continuas.  
@@ -3961,7 +3991,7 @@ mais categorias e <em>layout</em> com dois gráficos.</figcaption>
     <figcaption aria-hidden="true">Exemplo histograma</figcaption>
     </figure>
 
-##### 9.2.11.2.2 Histograma
+##### 10.2.11.2.2 Histograma
 
 -   Principais argumentos da função `geom_histogram()`:  
     -   `binwidth`  
@@ -4020,9 +4050,9 @@ alt="Histograma (geom_histogram) com eixo x logarítmo." />
 logarítmo.</figcaption>
 </figure>
 
-#### 9.2.11.3 boxplot (diagrama de caixa) com ggplot2
+#### 10.2.11.3 boxplot (diagrama de caixa) com ggplot2
 
-##### 9.2.11.3.1 Teoria boxplot
+##### 10.2.11.3.1 Teoria boxplot
 
 -   O **Diagrama de caixa** serve para compreensão da forma e amplitude
     dos dados.  
@@ -4036,7 +4066,7 @@ logarítmo.</figcaption>
 -   O **diagrama de caixa** usa em sua construção os conceitos de
     **quartis** (**Q1**, **Q2**, e **Q3**).  
 
-##### 9.2.11.3.2 Separatrizes
+##### 10.2.11.3.2 Separatrizes
 
 -   Quartis:  
     -   Q1 (25%)  
@@ -4076,7 +4106,7 @@ calculando,
 classe selecionada,  
 *h* é a amplitude de classe (*L**s* − *L**i*).  
 
-##### 9.2.11.3.3 boxplot
+##### 10.2.11.3.3 boxplot
 
 -   Montando a box:  
     A box contém como limite superior *Q*<sub>3</sub>, limite inferior
@@ -4223,7 +4253,7 @@ alt="Gráfico dividido por facetas das regiões, usando facet_wrap()." />
 usando <code>facet_wrap()</code>.</figcaption>
 </figure>
 
-#### 9.2.11.4 Gráfico circular (pizza) com ggplot2
+#### 10.2.11.4 Gráfico circular (pizza) com ggplot2
 
 -   O gráfico circular é montado a partir do gráfico de barras.  
 -   O gráfico circular é produzido a partir do gráfico de barras
@@ -4293,7 +4323,7 @@ a partir das funções gráficas <code>geom_bar()</code> +
 <code>coord_polar()</code>.</figcaption>
 </figure>
 
-#### 9.2.11.5 Gráfico de pontos com ggplot2
+#### 10.2.11.5 Gráfico de pontos com ggplot2
 
 -   No gráfico de pontos temos dois eixos númericos produzindo um
     gráfico de dispersão.  
@@ -4443,7 +4473,7 @@ jitter (<code>geom_point()</code>) e com efeito jitter
 (<code>geom_jitter()</code>).</figcaption>
 </figure>
 
-#### 9.2.11.6 Gráfico de linhas com ggplot2
+#### 10.2.11.6 Gráfico de linhas com ggplot2
 
 -   No gráfico de linhas temos dois eixos numéricos.  
 -   O gráfico de linhas é produzido ligando os pontos do gráfico de
@@ -4565,7 +4595,7 @@ alt="Gráfico de linha com ajuste por curva suavizada (geom_point()+geom_smooth(
 suavizada (<code>geom_point()+geom_smooth()</code>).</figcaption>
 </figure>
 
-#### 9.2.11.7 Gráfico de pontos com ajuste por curva de tendência com ggplot2
+#### 10.2.11.7 Gráfico de pontos com ajuste por curva de tendência com ggplot2
 
 -   Trata-se de um ajuste por curva de tendência entre duas variáveis
     numéricas.  
@@ -4630,7 +4660,7 @@ alt="Gráfico de pontos com ajuste com curva de tendência suavizada smooth, com
 tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
 </figure>
 
-#### 9.2.11.8 Gráfico de dispersão com linha de tendência com ggplot2
+#### 10.2.11.8 Gráfico de dispersão com linha de tendência com ggplot2
 
 -   A regressão linear calcula uma equação que minimiza a distância
     entre a linha ajustada e todos os pontos dos dados.  
@@ -4638,7 +4668,7 @@ tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
     gráfico de dispersão, o coeficiente de correlação e o valor de
     *R*<sup>2</sup> (coeficiente de determinação).  
 
-##### 9.2.11.8.1 Coeficiente de reta de regressão
+##### 10.2.11.8.1 Coeficiente de reta de regressão
 
 -   Regressão linear tenta traçar uma reta que melhor aproxime todos os
     pontos dispersos.  
@@ -4660,7 +4690,7 @@ tendência suavizada smooth, com <code>span = 0.7</code>.</figcaption>
     coeficientes separados, assim deixando claro em cada coluna o que é
     **intercepto** e o que é **coeficiente angular**.  
 
-##### 9.2.11.8.2 Coeficiente de Correlação linear
+##### 10.2.11.8.2 Coeficiente de Correlação linear
 
 -   O coeficiente de correlação tem o objetivo de entender como uma
     variável se comporta num cenario onde a outra variável variando. E
@@ -4714,7 +4744,7 @@ alt="Tabela de correlação linear" />
     Função do **R** que cálcula a correlação linear das variáveis vetor
     x e y. 
 
-##### 9.2.11.8.3 Coeficiente de determinação (R²)
+##### 10.2.11.8.3 Coeficiente de determinação (R²)
 
 -   O *R*<sup>2</sup> (coeficiente de determinação) é um indicador da
     qualidade do ajuste, que varia de \[0,1\], e indica a porcentagem da
@@ -4734,7 +4764,7 @@ alt="Tabela de correlação linear" />
     Ex.: Áreas de previsão de comportamento humano, normalmente
     *R*<sup>2</sup> \< 50%.  
 
-##### 9.2.11.8.4 Gráfico de dispersão com linha de tendência
+##### 10.2.11.8.4 Gráfico de dispersão com linha de tendência
 
 -   Principais argumentos do gráfico de dispersão com linhas de
     tendência:  
@@ -4805,9 +4835,9 @@ alt="Gráfico de dispersão com linha de tendência (regressão linear)." />
 tendência (<strong>regressão linear</strong>).</figcaption>
 </figure>
 
-#### 9.2.11.9 Efeitos
+#### 10.2.11.9 Efeitos
 
-##### 9.2.11.9.1 O efeito jitter
+##### 10.2.11.9.1 O efeito jitter
 
 -   No gráfico de pontos ou dispersão, quando diversas observações
     (pontos) apresentam o mesmo valor, na visualização convencional, não
@@ -4838,7 +4868,7 @@ style="width:50.0%" alt="Gráfico com feito jitter." />
 <figcaption aria-hidden="true">Gráfico com feito jitter.</figcaption>
 </figure>
 
-##### 9.2.11.9.2 Facetas
+##### 10.2.11.9.2 Facetas
 
 -   Divide o gráfico em vários painéis.  
 -   O `facet_grid()` forma uma matriz de painéis definidos por variáveis
@@ -4933,7 +4963,7 @@ alt="Gráfico por facetas com rótulos com nome da variável. facet_grid(labelle
 da variável. <code>facet_grid(labeller = label_both)</code></figcaption>
 </figure>
 
-##### 9.2.11.9.3 O efeito de suavização smooth
+##### 10.2.11.9.3 O efeito de suavização smooth
 
 -   Trata-se de um ajuste de curva de tendência entre duas variáveis
     numéricas.  
@@ -5014,7 +5044,7 @@ smooth, com <code>method = lm, se = FALSE</code> (<strong>regressão
 linear</strong> com área de confiança omitida).</figcaption>
 </figure>
 
-### 9.2.12 Assistentes para ggplot2
+### 10.2.12 Assistentes para ggplot2
 
 -   Modelos do pacote `ggplot2`:  
     <https://exts.ggplot2.tidyverse.org/gallery/>
@@ -5042,22 +5072,22 @@ alt="Pacotes auxiliares (ggThemeAssist e esquisse) de construção de gráfico -
 gráfico - ggplot2 builder</figcaption>
 </figure>
 
-# 10 CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
+# 11 CAP. 8 - LIMPEZA RÁPIDA NOS DADOS
 
-## 10.1 Pactoes
+## 11.1 Pactoes
 
 -   `janitor`  
     Projetado para inspeção e limpeza de dados “sujos”.  
 
-## 10.2 Dados “sujos”
+## 11.2 Dados “sujos”
 
 -   Dados que podem apresentam diversos problemas ao utilizar dados
     abertos ou quando várias pessoas digitaram os dados.  
 -   Registros que necessitam de ajustes antes de sua análise.  
 
-## 10.3 Principais funções `janitor`
+## 11.3 Principais funções `janitor`
 
-### 10.3.1 Limpando nomes do `data.frame` - `clean_names()`
+### 11.3.1 Limpando nomes do `data.frame` - `clean_names()`
 
 -   Manipulação de nomes problematicos de variáveis (`clean_names()`).  
 
@@ -5102,7 +5132,7 @@ gráfico - ggplot2 builder</figcaption>
     #[1] "OriGem"        "REPETE"        "REPETE"        "X..de.acertos"
     #[5] "R......"       "X"  
 
-### 10.3.2 Remova colunas ou linhas inútes
+### 11.3.2 Remova colunas ou linhas inútes
 
 -   Funções:  
     -   `remove_constant()`  
@@ -5162,7 +5192,7 @@ gráfico - ggplot2 builder</figcaption>
     8     a  7
     10    a NA
 
-### 10.3.3 Substitua valores perdidos - `mice()`
+### 11.3.3 Substitua valores perdidos - `mice()`
 
 -   Apesar do `janitor` auxilia a eliminar linhas e colunas com valores
     perdidas, caso necessite substituir tais valores, o pacote `mice`
@@ -5175,7 +5205,7 @@ gráfico - ggplot2 builder</figcaption>
 
 -   Exemplo - Substituição de valores perdidos (`complete(mice())`):  
 
-### 10.3.4 Produzindo tabelas de frequência para uma variável - `taby()`
+### 11.3.4 Produzindo tabelas de frequência para uma variável - `taby()`
 
 -   A função `taby()`, do pacote `janitor`, é uma versão melhorada da
     função `table()`, do pacote base do R.  
@@ -5227,9 +5257,9 @@ variável.</figcaption>
     c          0.25
     <NA>            NA
 
-### 10.3.5 Tabulação cruzada - `tabyl()`
+### 11.3.5 Tabulação cruzada - `tabyl()`
 
-#### 10.3.5.1 Tabulação cruzada
+#### 11.3.5.1 Tabulação cruzada
 
 -   As tabelas de tabulação cruzada (tabelas de contigência) exibem o
     relacionamento entre duas variáveis categóricas (nominais ou
@@ -5249,7 +5279,7 @@ alt="Exemplo de tabulação cruzada" />
 <figcaption aria-hidden="true">Exemplo de tabulação cruzada</figcaption>
 </figure>
 
-#### 10.3.5.2 Função `tabyl()` para tabulação cruzada
+#### 11.3.5.2 Função `tabyl()` para tabulação cruzada
 
 -   Uma tabulação cruzada é gerada com a função `tabyl()`.  
 -   Propriedades:  
@@ -5390,7 +5420,7 @@ alt="Exemplo de tabulação cruzada" />
      vermelho 0 0 0   0
          <NA> 0 0 1   0
 
-### 10.3.6 Teste qui-quadrado para tabela cruzada - `chisq.test()`
+### 11.3.6 Teste qui-quadrado para tabela cruzada - `chisq.test()`
 
 -   O teste qui-quadrado pode ser aplicado em dados tabelados de forma
     cruzada.  
@@ -5481,7 +5511,7 @@ alt="Exemplo de tabulação cruzada" />
     ##Não há evidências suficientes para concluir que as variáveis estão associadas.
     ##É a hipótese H_0.
 
-### 10.3.7 Caça aos registros com valores duplicados - `get_dupes()`
+### 11.3.7 Caça aos registros com valores duplicados - `get_dupes()`
 
 -   A função `get_dupes()`, do pacote `janitor`, realiza a tarefa de
     retornar os registros duplicados do conjunto de dados em análise
@@ -5517,7 +5547,7 @@ alt="Exemplo de tabulação cruzada" />
     1 1000 2098.6          2 2016
     2 1000 2098.6          2 2016
 
-### 10.3.8 Corrija número para data com a função `excel_numeric_to_date()`
+### 11.3.8 Corrija número para data com a função `excel_numeric_to_date()`
 
 -   A função `excel_numeric_to_date()`, do pacote `janitor`, é para
     consertar data em uma arquivo importado de *Excel*, se uma data veio
@@ -5544,9 +5574,9 @@ alt="Exemplo de tabulação cruzada" />
       excel_numeric_to_date()
     [1] "2041-01-02"
 
-### 10.3.9 Conte os níveis dos fatores - escala de *Likert*
+### 11.3.9 Conte os níveis dos fatores - escala de *Likert*
 
-#### 10.3.9.1 Escala *Likert*
+#### 11.3.9.1 Escala *Likert*
 
 -   A escala *Likert* é utilizada para mensurar sentimentos numa escala
     que pode variar entre um e cinco níveis (a mais usada é de cinco
@@ -5567,7 +5597,7 @@ alt="Exemplo de escala Likert." />
 <em>Likert</em>.</figcaption>
 </figure>
 
-#### 10.3.9.2 A função `top_levels()`
+#### 11.3.9.2 A função `top_levels()`
 
 -   A função `top_levels()`, do pacote `janitor`, realiza a contagem dos
     níveis da escala do tipo *Likert*.  
@@ -5636,7 +5666,7 @@ alt="Exemplo de escala Likert." />
                              neutro 1 0.1666667
      discordo parcialmente, disc... 2 0.3333333
 
-#### 10.3.9.3 Plotagem de escala *Likert*
+#### 11.3.9.3 Plotagem de escala *Likert*
 
 -   Podemos utilizar o pacote `likert`, para obter um resumo e formas de
     visualização da análise de respostas na escala *Likert*.  
@@ -5782,9 +5812,9 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 <em>Likert</em> - <code>grouping = bd$categ</code>.</figcaption>
 </figure>
 
-# 11 CAP. 9 - Análise descritiva dos dados
+# 12 CAP. 9 - Análise descritiva dos dados
 
-## 11.1 Teoria
+## 12.1 Teoria
 
 -   Objetivo do capitulo é fazer uma análise descritiva dos dados
     através da tabulação das variáveis e cálculo de medidas descrititvas
@@ -5803,7 +5833,7 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 -   Após essas etapas, estabelecer um modelo estatístico formal e
     relatar suas conclusões.  
 
-## 11.2 Tipos de variáveis
+## 12.2 Tipos de variáveis
 
 -   Variável numérica:  
     -   Continua  
@@ -5827,7 +5857,7 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
     tipo dos dados.  
     Ex.: `str(variavel)`  
 
-## 11.3 Tabulação dos dados
+## 12.3 Tabulação dos dados
 
 -   Na etapa de tabulação, o pesquisador prepara as tabelas de
     frequência com o intuito de entender o comportamento das
@@ -6078,9 +6108,9 @@ Tabela de frequência para variável numérica continua, com separação de
 classes inserido manualmente e limites com aberturas invertidas usando
 `right = FALSE`
 
-## 11.4 Estatística descritiva com o pacote `DescTools`
+## 12.4 Estatística descritiva com o pacote `DescTools`
 
-### 11.4.1 Teoria
+### 12.4.1 Teoria
 
 -   O pacote `DescTools` foi desenvolvido com o objetivo de fornecer uma
     análise descritiva de forma rápida e completa.  
@@ -6133,7 +6163,7 @@ alt="Exemplo da função PlotMiss() para mapemaento de dados faltantes." />
 para mapemaento de dados faltantes.</figcaption>
 </figure>
 
-### 11.4.2 Customizar os gráficos
+### 12.4.2 Customizar os gráficos
 
 -   É possível plotar determinada coluna a partir da função plot() e
     Desc(), obtendo assim as principais informações da variável
@@ -6211,7 +6241,7 @@ estatística descritiva.
 <code>plot(Desc(dados$variavel_categorica))</code></figcaption>
 </figure>
 
-### 11.4.3 Interpretação dos coeficientes
+### 12.4.3 Interpretação dos coeficientes
 
 -   *C**V* \| `vcoef` (Coeficiente de variação)  
     -   O coeficiente de variação é uma medida de dispersão, quanto
@@ -6290,17 +6320,20 @@ estatística descritiva.
     normal.</figcaption>
     </figure>
 
-## 11.5 Dados faltantes
+## 12.5 Dados faltantes
 
-## 11.6 Analisando datas com o pacote `DescTools`
+-   Análisando a base de dados:  
+    -   Como estão distribuidos os dados faltantes?
 
-# 12 ANDAMENTO DOS ESTUDOS
+## 12.6 Analisando datas com o pacote `DescTools`
+
+# 13 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
 
 Atualmente estou estudando Cap. 9 - Análise descritiva dos dados.  
 
-# 13 REFERÊNCIAS
+# 14 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de
