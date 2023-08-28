@@ -2021,7 +2021,7 @@ Tabela em formato larga dieta de pacientes
 -   Referência para estudo de pacotes R de banco de dados:  
     <http://db.rstudio.com/>  
 
-### 8.2.1 DBI
+### 8.2.1 `DBI`
 
 -   O pacote `DBI` ajuda a conectar R a sistemas de gerenciamento de
     banco de dados (SGBD).  
@@ -2067,7 +2067,7 @@ Tabela em formato larga dieta de pacientes
     -   `dbDisconnect(con)`  
         Desconecta do banco de dados.  
 
-### 8.2.2 odbc
+### 8.2.2 `odbc`
 
 -   Drives **ODBC** é um conector com banco de dados.  
 
@@ -2128,9 +2128,19 @@ Tabela em formato larga dieta de pacientes
                           PWD      = rstudioapi::askForPassword("Database password"),
                           Port     = 5432)
 
+### 8.2.3 `RSQLite`
+
+### 8.2.4 `RMySQL` ou `RMariaDB`
+
+### 8.2.5 `RPostgres`
+
 ## 8.3 Importação de tabelas
 
 ## 8.4 Manipulação de tabelas
+
+### 8.4.1 `dbplyr`
+
+### 8.4.2 `sqldf`
 
 # 9 CAP. 6 - PACOTE **DATA.TABLE**
 

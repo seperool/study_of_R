@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  odt_document: 
+    number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -1905,7 +1905,7 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
 - Referência para estudo de pacotes R de banco de dados:\
 <http://db.rstudio.com/> \
 
-### DBI
+### `DBI`
 
 - O pacote `DBI` ajuda a conectar R a sistemas de gerenciamento de banco de dados (SGBD).\
 - Ele suporta as seguintes operações:\
@@ -1951,7 +1951,7 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
 
 \newpage
 
-### odbc
+### `odbc`
 
 - Drives **ODBC** é um conector com banco de dados.\
   - instalando **ODBC** no linux/Ubuntu:\
@@ -2007,11 +2007,19 @@ con <- DBI::dbConnect(odbc::odbc(),
 
 \newpage
 
+### `RSQLite`
+### `RMySQL` ou `RMariaDB`
+### `RPostgres`
+
+\newpage
+
 ## Importação de tabelas
 
 \newpage
 
 ## Manipulação de tabelas
+### `dbplyr`
+### `sqldf`
 
 \newpage
 
