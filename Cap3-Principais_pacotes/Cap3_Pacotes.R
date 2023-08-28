@@ -37,6 +37,7 @@ install.packages("DBI") #Conecta R ao sistema de gerenciamento de banco de dados
 install.packages("odbc") #Componentes de conexão/interação com bancos de dados
 install.packages("RSQLite") #Conexão com SQLite
 install.packages("RMySQL") #Conexão com MySQL e MariaDB
+install.packages("RMariaDB") #Conexão com MySQL e MariaDB
 install.packages("RPostgres") #Conexão com Postgres
 install.packages("RPostgreSQL") #Alternativo Conexão com PostgreSQL
 install.packages("bigrquery") #Conexão Google’s BigQuery
