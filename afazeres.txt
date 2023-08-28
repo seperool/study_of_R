@@ -1,6 +1,6 @@
-ESCRITO EM 27/08/23
+ESCRITO EM 28/08/23
 ---
-PARA 28/08/23
+PARA 29/08/23
 ---
 Subir github:
 
@@ -13,7 +13,6 @@ Afazeres:
 			- Revisar fórmulas
 			- Sincronização com banco de dados
 				- Sincronização com banco de dados
-					- DBI
 					- obdc
 					- RSQLite
 					- RMySQL
