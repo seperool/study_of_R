@@ -2021,6 +2021,54 @@ Tabela em formato larga dieta de pacientes
 -   Referência para estudo de pacotes R de banco de dados:  
     <http://db.rstudio.com/>  
 
+### 8.2.1 DBI
+
+-   O pacote `DBI` ajuda a conectar R a sistemas de gerenciamento de
+    banco de dados (SGBD).  
+-   Ele suporta as seguintes operações:  
+    -   Conectar/desconectar do SGBD.  
+    -   Criar e executar instruções no SGBD.  
+    -   Extrair resultados de declarações.  
+    -   Tratamento de erros e exceções.  
+    -   Informações (metadados) de objetos de banco de dados.  
+    -   Gerenciamento de transação.  
+-   Ele é instalado automaticamente quando instalado um dos *backends*
+    do banco de dados:  
+    -   `odbc`  
+    -   `RSQLite`  
+    -   `RMariaDB` ou `RMySQL`  
+    -   `RPostgres`  
+    -   `bigrquery`  
+    -   …  
+-   Principais funções:  
+    -   `dbConnect(backends::SGBD(), dbname = "nome_banco_de_dados")`  
+        Conecta a determinado banco de dados.  
+        Ex.: `con <- dbConnect(RSQLite::SQLite(), dbname = "memory")`  
+    -   `dbListTables(con)`  
+        Lista as tabelas.  
+    -   `dbWriteTable(con, "nome_tabela", valores)`  
+        Cria uma tabela.  
+        Ex.:`dbWriteTable(con, "mtcars", mtcars)`  
+    -   `dbListFields(con, "nome_tabela")`  
+        Lista os campos de uma tabela.  
+        Ex.: `dbListFields(con, "mtcars")`  
+    -   `dbReadTable(con, "nome_tabela")`  
+        Mostra determinada tabela contida no banco de dados.  
+        Ex.:`dbReadTable(con, "mtcars")`  
+    -   `dbSendQuery(con, "query")`  
+        Salva uma query (SQL) numa variável (não executa).  
+        Ex.:`res <- dbSendQuery(con, "SELECT * FROM mtcars WHERE cyl = 4")`  
+    -   `dbFetch(variável)`  
+        Executa determinada query (SQL) salva numa variável.  
+        Ex.:`dbFetch(res)`  
+    -   `dbClearResult(variável)`  
+        Limpa determinada variável que contém uma query.  
+        Ex.:`dbClearResult(res)`  
+    -   `dbDisconnect(con)`  
+        Desconecta do banco de dados.  
+
+### 8.2.2 odbc
+
 -   Drives **ODBC** é um conector com banco de dados.  
 
     -   instalando **ODBC** no linux/Ubuntu:  
