@@ -2023,7 +2023,7 @@ Tabela em formato larga dieta de pacientes
 
 ### 8.2.1 `DBI`
 
--   O pacote `DBI` ajuda a conectar R a sistemas de gerenciamento de
+-   O pacote `DBI` ajuda a conectar **R** a sistemas de gerenciamento de
     banco de dados (SGBD).  
 -   Ele suporta as seguintes operações:  
     -   Conectar/desconectar do SGBD.  
@@ -2069,64 +2069,69 @@ Tabela em formato larga dieta de pacientes
 
 ### 8.2.2 `odbc`
 
--   Drives **ODBC** é um conector com banco de dados.  
+-   O pacote `odbc` oferece uma interface compativel com `DBI` para
+    *drives* *open database connectivity* (ODBC).  
+-   Permite de uma maneira fácil e eficiente de configurar a conexão com
+    banco de dados usando um drive ODBC, incluindo:  
+    -   SQLite  
+    -   MySQL  
+    -   PostgreSQL  
+    -   SQL Server  
+    -   Oracle  
+    -   …  
+-   Os pacotes dos *drives* podem ser baixados separamente. 
+-   O pacote `odbc` funciona com em uso conjunto com o pacote `DBI`.  
 
-    -   instalando **ODBC** no linux/Ubuntu:  
-        `sudo apt-get install unixodbc unixodbc-dev --install-suggests`  
+-   Principais funções:  
+    -   Explorando objetos e colunas da banco de dados:  
+        -   `odbcListObjects(con)`  
+            Lista objetos.  
+        -   `odbcListObjects(con, catalog="mydb", schema="dbo")`  
+            Tabelas em determinado schema.  
+        -   `odbcListColumns(con, catalog="mydb", schema="dbo", table="cars")`  
+            colunas em uma tabela.  
+        -   `odbcListObjectTypes(con)`  
+            Estruturas de objetos contidas num banco de dados.  
+    -   Dados do sistema:  
+        -   `odbcListDrivers()`  
+            Todos os *drives* do sistema.  
+        -   `odbcListDataSources()`  
+            Todas as fontes do sistema.  
+    -   Queries (consultas) e declarações:  
+        -   `dbGetQuery(con, "SELECT speed, dist FROM cars")`  
+            Para enviar consultar interativas. Envia uma consulta e
+            busca os resultados.  
+            Faz as duas coisas “consultar” e “buscar” o resultado, é
+            equivalente ao `dbSendQuery()` + `dbFetch()`  
+        -   `dbSendQuery(con, "SELECT speed, dist FROM cars")`  
+            Salva uma query (SQL) numa variável (não executa).  
+            Ex.:`query <- dbSendQuery(con, "SELECT speed, dist FROM cars")`  
+        -   `dbFetch(query, n = 10)`  
+            Executa determinada query (SQL) salva numa variável.  
+            `n = valor` limita o resultado (resultado parcial).  
+            Ex.:`dbFetch(query)`  
+        -   `dbClearResult(variável)`  
+            Limpa determinada variável que contém uma query.  
+            Ex.:`dbClearResult(query)`  
+        -   `dbExecute(con, "INSERT INTO cars (speed, dist) VALUES (88, 30)")`  
+            Força uma instrução SQL direta.  
 
-    -   Instalação de cada ODBC separadamente:  
-
-        -   SQL Server ODBC Drivers (Free TDS)  
-            `sudo apt-get install tdsodbc`  
-        -   PostgreSQL ODBC ODBC Drivers  
-            `sudo apt-get install odbc-postgresql`  
-        -   MySQL ODBC Drivers  
-            `sudo apt-get install libmyodbc`  
-        -   SQLite ODBC Drivers  
-            `sudo apt-get install libsqliteodbc`  
-
-    -   É necessário configurar dois arquivos `odbcinst.ini` e
-        `odbc.ini`.  
-
-        -   `odbcinst.ini`  
-
-        <!-- -->
-
-            [PostgreSQL Driver]
-            Driver          = caminho/psqlodbcw.so
-            [SQLite Driver]
-            Driver          = caminho/libsqlite3odbc.dylib
-
-        -   `odbc.ini`  
-
-        <!-- -->
-
-            [PostgreSQL]
-            Driver      = PostgreSQL Driver
-            Database    = test_db
-            Servername  = localhost
-            UserName    = postgres
-            Password    = password
-            Port        = 5432
-
-            [SQLite]
-            Driver      = SQLite Driver
-            Database    =/tmp/testing
-
--   O pacote **DBI** ajuda a conectar o **R** aos sistemas de
-    gerenciamento de banco de dados (DBMS).  
-
--   Conectando com banco de dados **Postgres**:  
+-   Conexão com banco de dado usando pacotes `DBI` + `odbc` (modelo):  
 
 <!-- -->
 
-    con <- DBI::dbConnect(odbc::odbc(),
-                          Driver   = "PostgreSQL Driver",
-                          Server   = "localhost",
-                          Database = "name_database",
-                          UID      = rstudioapi::askForPassword("Database user"),
-                          PWD      = rstudioapi::askForPassword("Database password"),
-                          Port     = 5432)
+    #Bibliotecas
+    library(DBI)
+    library(odbc)
+
+    #Conexão com banco de dado
+    con <- dbConnect(odbc::odbc(),
+      driver = "PostgreSQL Driver",
+      database = "test_db",
+      uid = "postgres",
+      pwd = "password",
+      host = "localhost",
+      port = 5432)
 
 ### 8.2.3 `RSQLite`
 
