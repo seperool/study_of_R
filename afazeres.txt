@@ -1,6 +1,6 @@
-ESCRITO EM 29/08/23
+ESCRITO EM 30/08/23
 ---
-PARA 30/08/23
+PARA 31/08/23
 ---
 Subir github:
 
@@ -13,7 +13,6 @@ Afazeres:
 			- Revisar fórmulas
 			- Sincronização com banco de dados
 				- Sincronização com banco de dados
-					- RSQLite
 					- RMySQL
 					- RPostgres
 				- Importação de tabelas
