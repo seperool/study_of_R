@@ -2133,11 +2133,32 @@ Tabela em formato larga dieta de pacientes
       host = "localhost",
       port = 5432)
 
-### 8.2.3 `RSQLite`
+### 8.2.3 Drives
 
-### 8.2.4 `RMySQL` ou `RMariaDB`
+#### 8.2.3.1 `RSQLite`
 
-### 8.2.5 `RPostgres`
+-   Pacote `RSQLite` incorpora o mecanismo de banco de dados **SQLite**
+    em **R** (`RSQLite`), fornece uma interface compatível com `DBI`.  
+
+-   Por *default* as extensões SQLite3 estão habilitadas.  
+
+-   Conectar ao banco de dados **SQLite**:  
+    `con <- dbConnect(RSQLite::SQLite(), dbname = "nome_database")`  
+
+-   Criar um nova *database* no **SQLite** pelo **R**:  
+    `con <- dbConnect(RSQLite::SQLite(), "my-db.sqlite")`  
+
+-   Criar um nova *database* temporaria no **SQLite** pelo **R**:  
+    `con <- dbConnect(RSQLite::SQLite(), ":memory:")`  
+    Este banco de dados será excluído automaticamente quando for
+    desconectado.  
+
+-   Desconectar do banco de dados **SQLite**:  
+    `dbDisconnect(con)`  
+
+#### 8.2.3.2 `RMySQL` ou `RMariaDB`
+
+#### 8.2.3.3 `RPostgres`
 
 ## 8.3 Importação de tabelas
 

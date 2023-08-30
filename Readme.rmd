@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   pdf_document: 
     number_sections: true
     toc: false
   word_document: 
     toc: TRUE
     number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
+  github_document: 
   odt_document: 
     number_sections: true
+  md_document:
+    number_sections: true
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2017,10 +2017,29 @@ con <- dbConnect(odbc::odbc(),
 ```
 
 \newpage
+### Drives
 
-### `RSQLite`
-### `RMySQL` ou `RMariaDB`
-### `RPostgres`
+#### `RSQLite`
+
+- Pacote `RSQLite` incorpora o mecanismo de banco de dados **SQLite** em **R** (`RSQLite`), fornece uma interface compatível com `DBI`.\
+- Por *default* as extensões SQLite3 estão habilitadas.\
+- Conectar ao banco de dados **SQLite**:\
+`con <- dbConnect(RSQLite::SQLite(), dbname = "nome_database")`\
+
+- Criar um nova *database* no **SQLite** pelo **R**:\
+`con <- dbConnect(RSQLite::SQLite(), "my-db.sqlite")`\
+
+- Criar um nova *database* temporaria no **SQLite** pelo **R**:\
+`con <- dbConnect(RSQLite::SQLite(), ":memory:")`\
+Este banco de dados será excluído automaticamente quando for desconectado.\
+
+- Desconectar do banco de dados **SQLite**:\
+`dbDisconnect(con)`\
+
+\newpage
+
+#### `RMySQL` ou `RMariaDB`
+#### `RPostgres`
 
 \newpage
 
