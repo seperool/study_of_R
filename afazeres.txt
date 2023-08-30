@@ -11,6 +11,9 @@ Afazeres:
 		- Readme.*
 			- Revisar tabelas
 			- Revisar fórmulas
+			- Cap. 7 - Gráficos pacote básico e pacote ggplot2
+				- Pacote ggplot2
+					- Assistentes para ggplot2
 			- Sincronização com banco de dados
 				- Sincronização com banco de dados
 					- RMySQL
@@ -21,6 +24,9 @@ Afazeres:
 						- sqldf
 					- No banco de dados
 						- dbplyr
+			- Cap.8 - Limpeza rápida nos dados
+				- Principais funções janitor
+					- Substitua valores perdidos - mice()
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
