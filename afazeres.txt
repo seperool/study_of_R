@@ -1,6 +1,6 @@
-ESCRITO EM 30/08/23
+ESCRITO EM 31/08/23
 ---
-PARA 31/08/23
+PARA 01/09/23
 ---
 Subir github:
 
@@ -16,7 +16,6 @@ Afazeres:
 					- Assistentes para ggplot2
 			- Sincronização com banco de dados
 				- Sincronização com banco de dados
-					- RMySQL
 					- RPostgres
 				- Importação de tabelas
 				- Manipulação de tabelas
