@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2000,7 +2000,7 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
 
 \newpage
 
-- Conexão com banco de dado usando pacotes `DBI` + `odbc` (modelo):\
+- Conexão com banco de dados usando pacotes `DBI` + `odbc` (modelo):\
 ```
 #Bibliotecas
 library(DBI)
@@ -2017,6 +2017,7 @@ con <- dbConnect(odbc::odbc(),
 ```
 
 \newpage
+
 ### Drives
 
 #### `RSQLite`
@@ -2039,6 +2040,33 @@ Este banco de dados será excluído automaticamente quando for desconectado.\
 \newpage
 
 #### `RMySQL` ou `RMariaDB`
+
+- O pacote `odbc`, em combinação com um drive (`RMySQL` e/ou `RMariaDB`), fornece suporte ao `DBI` e uma conexão ODBC.\
+- Configurações de conexão pelo pacote `RMySQL`:\
+  - `dbname`\
+  Nome da *database* que deseja se conectar dentro do **MySQL**.\
+  - `host`\
+  "localhost".\
+  - `port`\
+  Para o **MySQL** é 3306.\
+  - `user`\
+  Login de usuário para se conectar ao **MySQL**.\
+  Normalmente é "root".\
+  - `password`\
+  Senha para loggar no banco de dados **MySQL**.\
+
+- Conexão com banco de dados **MySQL** usando pacotes `DBI` + `odbc` + `RMySQL` (modelo):\
+```
+con = dbConnect(RMySQL::MySQL(),
+                dbname='Database name',
+                host='localhost',
+                port=3306,
+                user='Database user',
+                password='Database password')
+```
+
+\newpage
+
 #### `RPostgres`
 
 \newpage

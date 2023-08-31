@@ -2116,7 +2116,7 @@ Tabela em formato larga dieta de pacientes
         -   `dbExecute(con, "INSERT INTO cars (speed, dist) VALUES (88, 30)")`  
             Força uma instrução SQL direta.  
 
--   Conexão com banco de dado usando pacotes `DBI` + `odbc` (modelo):  
+-   Conexão com banco de dados usando pacotes `DBI` + `odbc` (modelo):  
 
 <!-- -->
 
@@ -2157,6 +2157,32 @@ Tabela em formato larga dieta de pacientes
     `dbDisconnect(con)`  
 
 #### 8.2.3.2 `RMySQL` ou `RMariaDB`
+
+-   O pacote `odbc`, em combinação com um drive (`RMySQL` e/ou
+    `RMariaDB`), fornece suporte ao `DBI` e uma conexão ODBC.  
+-   Configurações de conexão pelo pacote `RMySQL`:  
+    -   `dbname`  
+        Nome da *database* que deseja se conectar dentro do **MySQL**.  
+    -   `host`  
+        “localhost”.  
+    -   `port`  
+        Para o **MySQL** é 3306.  
+    -   `user`  
+        Login de usuário para se conectar ao **MySQL**.  
+        Normalmente é “root”.  
+    -   `password`  
+        Senha para loggar no banco de dados **MySQL**.  
+-   Conexão com banco de dados **MySQL** usando pacotes `DBI` + `odbc` +
+    `RMySQL` (modelo):  
+
+<!-- -->
+
+    con = dbConnect(RMySQL::MySQL(),
+                    dbname='Database name',
+                    host='localhost',
+                    port=3306,
+                    user='Database user',
+                    password='Database password')
 
 #### 8.2.3.3 `RPostgres`
 
