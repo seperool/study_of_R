@@ -2186,6 +2186,46 @@ Tabela em formato larga dieta de pacientes
 
 #### 8.2.3.3 `RPostgres`
 
+-   O pacote `odbc`, em combinação com um drive (`RPostgres`), fornece
+    suporte ao `DBI` e uma conexão ODBC.  
+
+-   Configurações de conexão pelo pacote `RPostgres`:  
+
+    -   `dbname`  
+        Nome da *database* que deseja se conectar dentro do
+        **PostgreSQL**.  
+    -   `host`  
+        “localhost”.  
+    -   `port`  
+        Para o **PostgreSQL** é 5432.  
+    -   `user`  
+        Login de usuário para se conectar ao **PostgreSQL**.  
+        Normalmente é “postgres”.  
+    -   `password`  
+        Senha para loggar no banco de dados **PostgreSQL**.  
+
+-   Conexão com banco de dados **PostgreSQL** usando pacotes `DBI` +
+    `odbc` + `RPostgres` (modelo):  
+
+<!-- -->
+
+    con <- dbConnect(RPostgres::Postgres(),
+                     dbname = 'Database name', 
+                     host = 'localhost',
+                     port = 5432,
+                     user = 'Database user',
+                     password = 'Database password')
+
+ou,  
+
+    con <- DBI::dbConnect(odbc::odbc(),
+                          Driver = "PostgreSQL Driver", 
+                          Server = "localhost", 
+                          Database = "Database name", 
+                          UID = "rstudioapi::askForPassword("Database user")", 
+                          PWD = "rstudioapi::askForPassword("Database password")",
+                          Port = 5432)
+
 ## 8.3 Importação de tabelas
 
 ## 8.4 Manipulação de tabelas

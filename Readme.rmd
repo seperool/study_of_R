@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  html_document:
-    number_sections: true
-    df_print: paged
-  odt_document: 
-    number_sections: true
-  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -2068,6 +2068,42 @@ con = dbConnect(RMySQL::MySQL(),
 \newpage
 
 #### `RPostgres`
+
+- O pacote `odbc`, em combinação com um drive (`RPostgres`), fornece suporte ao `DBI` e uma conexão ODBC.\
+
+- Configurações de conexão pelo pacote `RPostgres`:\
+  - `dbname`\
+  Nome da *database* que deseja se conectar dentro do **PostgreSQL**.\
+  - `host`\
+  "localhost".\
+  - `port`\
+  Para o **PostgreSQL** é 5432.\
+  - `user`\
+  Login de usuário para se conectar ao **PostgreSQL**.\
+  Normalmente é "postgres".\
+  - `password`\
+  Senha para loggar no banco de dados **PostgreSQL**.\
+
+- Conexão com banco de dados **PostgreSQL** usando pacotes `DBI` + `odbc` + `RPostgres` (modelo):\
+```
+con <- dbConnect(RPostgres::Postgres(),
+                 dbname = 'Database name', 
+                 host = 'localhost',
+                 port = 5432,
+                 user = 'Database user',
+                 password = 'Database password')
+```
+ou,\
+```
+con <- DBI::dbConnect(odbc::odbc(),
+                      Driver = "PostgreSQL Driver", 
+                      Server = "localhost", 
+                      Database = "Database name", 
+                      UID = "rstudioapi::askForPassword("Database user")", 
+                      PWD = "rstudioapi::askForPassword("Database password")",
+                      Port = 5432)
+```
+
 
 \newpage
 
