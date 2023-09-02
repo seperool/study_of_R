@@ -2228,6 +2228,52 @@ ou,
 
 ## 8.3 Importação de tabelas
 
+### 8.3.1 Remoto
+
+-   Os principais pacotes para importar tabelas do banco de dados são
+    `DBI` em conjunto com `dplyr` (do `tidyrverse`).  
+
+-   A partir dos pacotes `DBI` e `dplyr` é disponibilizado a função
+    `tbl()` que possibilita a importação de determinada tabela do banco
+    de dados para o **R**, via remota.  
+    Ex.:`nome_tabela_no_R <- tbl(con, "nome_tabela_db")`  
+
+-   A tabela ainda se encontra remota, locada dentro do banco de dados,
+    ou seja, as manipulações são instruções enviadas para o banco de
+    dados executar.  
+
+### 8.3.2 Local
+
+-   É importante observer que apesar da importação da tabela para o
+    **R**, a tabela ainda se encontra remota, ou seja, estamos
+    manipulando ela no banco de dados.  
+
+#### 8.3.2.1 Remoto para local - `collect()`
+
+-   Para passar a tabela de remoto para local (para um `data.frame` de
+    variável dentro do **R**) é necessário usar a função `collect()`.  
+    Ex.:`tabela_local <- tabela_remoto %>% collect()`  
+
+#### 8.3.2.2 Local para remoto - `copy_to()`
+
+-   A função `copy_to()` é o oposta da função `collect()`, pega um
+    `data.frame` local e o carrega para a fonte remota.  
+    Ex.:
+    `copy_to(dest, df, name = deparse(substitute(df)), overwrite = FALSE)`  
+
+-   Principais argumentos da função `copy_to()`:  
+
+    -   `dest`  
+        Fonte de dados remota (con).  
+    -   `df`  
+        `data.frame` local.  
+    -   `name`  
+        Nome para a nova tabela remota.  
+    -   `overwrite`  
+        Caso `TRUE`, substituirá uma tabela existente com o mesmo
+        nome.  
+        Caso `FALSO`, gerará um erro se o nome já existir.  
+
 ## 8.4 Manipulação de tabelas
 
 ### 8.4.1 `dbplyr`
