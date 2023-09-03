@@ -2254,7 +2254,7 @@ ou,
     variável dentro do **R**) é necessário usar a função `collect()`.  
     Ex.:`tabela_local <- tabela_remoto %>% collect()`  
 
-#### 8.3.2.2 Local para remoto - `copy_to()`
+#### 8.3.2.2 Local para remoto (exportar dados para o banco de dados)- `copy_to()`
 
 -   A função `copy_to()` é o oposta da função `collect()`, pega um
     `data.frame` local e o carrega para a fonte remota.  
@@ -2276,9 +2276,85 @@ ou,
 
 ## 8.4 Manipulação de tabelas
 
-### 8.4.1 `dbplyr`
+### 8.4.1 Manipular dados direto no banco de dados com **R** - `dbplyr`
 
-### 8.4.2 `sqldf`
+-   Para usar `dplyr` (manipulação de dados) direto no banco de dados
+    (remotamente) é necessário instalar o pacote `dbplyr`.  
+
+-   Existem duas situações em que é util manipular dados remotamente
+    pelo **R**:  
+
+    -   Os dados já estão num banco de dados.  
+    -   São tantos dados que não cabem na memória simultaneamente.  
+
+-   Caso os dados caibam na memória, vale a pena trabalhar com eles
+    localmente (importar para o **R**). Trabalhar com dados de forma
+    remota deixa o processo mais lento.  
+
+-   O pacote `dbplyr` funciona em conjunto com os pacotes `DBI`, `odbc`,
+    pacote do backend especifico do banco de dados (`SQLite` ou `RMySQL`
+    ou `RPostgreSQL` ou …) e `dplyr` (do pacote `tidyverse`).  
+
+-   O objetivo do `dbplyr` é gerar instruções **SELECT** do **SQL** a
+    partir do `dplyr`, para que não seja necessário usar o **SQL**.  
+
+-   Funcionamento do `dbplyr`:  
+
+    -   Traduz os comando `dplyr` para **SQL**.  
+    -   Executa a instrução **SQL** no banco de dados.  
+    -   Reune tudo que foi solicitado e envia tudo em uma única etapa
+        para ser executado no banco de dados.  
+
+-   Para visualizar o código da instrução **SQL** que esta sendo gerada
+    a partir do `dplyr` usamos a função `show_query()` em conjunto da
+    variável salva com as instruções em `dplyr`.  
+    Ex.: `Consulta_resultado_remoto %>% show_query()`  
+
+-   Exemplo consulta usando `dplyr` (`dbplyr`):  
+
+<!-- -->
+
+    # Importando a tabela
+    db_funcionarios <- tbl(con, "funcionarios")
+
+    #Consulta remota (dplyr tidyverse) enviar para banco de dados
+    Consulta_resultado_remoto <- db_funcionarios %>% 
+      select(idfuncionario, nome, sexo) %>% 
+      filter(sexo == "Masculino")
+    Consulta_resultado_remoto
+
+\# Source: SQL \[?? x 3\]  
+\# Database: postgres \[<postgres@localhost>:5432/data_science\]  
+idfuncionario nome sexo  
+\<int\> \<chr\> \<chr\>  
+1 2 Armstrong Masculino  
+2 3 Carr Masculino  
+3 6 Phillips Masculino  
+4 7 Williamson Masculino  
+5 9 James Masculino  
+6 10 Sanchez Masculino  
+7 12 Black Masculino  
+8 13 Schmidt Masculino  
+9 18 Nguyen Masculino  
+10 19 Day Masculino  
+\# **i** more rows  
+\# **i** Use `print(n = ...)` to see more rows  
+
+    #Mostrando a query gerada a partir do tidyverse
+    Consulta_resultado_remoto %>% 
+      show_query()
+
+\<SQL\>  
+SELECT “idfuncionario”, “nome”, “sexo”  
+FROM “funcionarios”  
+WHERE (“sexo” = ‘Masculino’)  
+
+    #Extraindo resultado remoto para local - R
+    Consulta_resultado_local <- Consulta_resultado_remoto %>% 
+      collect()
+    Consulta_resultado_local
+
+### 8.4.2 Manipular dados localmente com **SQL** - `sqldf`
 
 # 9 CAP. 6 - PACOTE **DATA.TABLE**
 
