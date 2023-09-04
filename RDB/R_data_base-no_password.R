@@ -4,7 +4,8 @@ library(odbc) #Componentes de conexão/interação com bancos de dados
 library(RPostgres) #Conexão com Postgres
 library(RMySQL) #Conexão com RMySQL
 library(dbplyr) #Tradução de dplyr em dbplyr (SQL)
-library(tidyverse) #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
+library(dplyr) #Manipulação de dados
+library(readr) #Leitura de dados
 library(sqldf) #Permite manipular data.frame em R com instruções SQL
 
 # Conectando ao banco de dados
@@ -63,8 +64,12 @@ dbDisconnect(con)
 
 #-------------------------------------------------------------------------------
 #Manipulação data.frame local usando sqldf - instruções SQL
-sql_inst = "
-SELECT *
-FROM Consulta_resultado_local;
-"
-sqldf(sql_inst)
+#Importação de dados
+dados <- read_csv2(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/vendas_NA.csv")
+dados <- data.frame(dados) #Colocando no formato data.frame
+dados
+
+#Manipulando data.frame através de instruções SQL
+sql_inst = "SELECT cupom, filial FROM dados;"
+df <- sqldf(sql_inst)
+df
