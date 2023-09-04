@@ -1,6 +1,6 @@
-ESCRITO EM 03/09/23
+ESCRITO EM 04/09/23
 ---
-PARA 04/09/23
+PARA 05/09/23
 ---
 Subir github:
 
@@ -14,10 +14,6 @@ Afazeres:
 			- Cap. 7 - Gráficos pacote básico e pacote ggplot2
 				- Pacote ggplot2
 					- Assistentes para ggplot2
-			- Sincronização com banco de dados
-				- Manipulação de tabelas
-					- No R
-						- sqldf
 			- Cap.8 - Limpeza rápida nos dados
 				- Principais funções janitor
 					- Substitua valores perdidos - mice()
