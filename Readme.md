@@ -2040,6 +2040,7 @@ Tabela em formato larga dieta de pacientes
     -   `RPostgres`  
     -   `bigrquery`  
     -   …  
+
 -   Principais funções:  
     -   `dbConnect(backends::SGBD(), dbname = "nome_banco_de_dados")`  
         Conecta a determinado banco de dados.  
@@ -2254,7 +2255,7 @@ ou,
     variável dentro do **R**) é necessário usar a função `collect()`.  
     Ex.:`tabela_local <- tabela_remoto %>% collect()`  
 
-#### 8.3.2.2 Local para remoto (exportar dados para o banco de dados)- `copy_to()`
+#### 8.3.2.2 Local para remoto (exportar dados para o banco de dados) - `copy_to()`
 
 -   A função `copy_to()` é o oposta da função `collect()`, pega um
     `data.frame` local e o carrega para a fonte remota.  
@@ -2324,7 +2325,7 @@ ou,
     Consulta_resultado_remoto
 
 \# Source: SQL \[?? x 3\]  
-\# Database: postgres \[<postgres@localhost>:5432/data_science\]  
+\# Database: postgres \[postgres@localhost:5432/data_science\]  
 idfuncionario nome sexo  
 \<int\> \<chr\> \<chr\>  
 1 2 Armstrong Masculino  
@@ -2355,6 +2356,36 @@ WHERE (“sexo” = ‘Masculino’)
     Consulta_resultado_local
 
 ### 8.4.2 Manipular dados localmente com **SQL** - `sqldf`
+
+-   O pacote `sqldf` permite manipular objetos `data.frame` de **R**
+    através de instruções **SQL** simples.  
+
+-   Usamos a função `sqldf()` para passar a instrução **SQL**.  
+    Sintaxe: `sqldf("SELECT * FROM nome_data.frame;")`  
+    O nome das tabelas são os nomes de objetos `data.frame`.  
+
+-   Outra forma de executar a função, é passar a instrução **SQL** como
+    texto para uma variável e executar a variável com da função
+    `sqldf()`.  
+
+<!-- -->
+
+    sql_inst = "SELECT * FROM dados;"
+    sqldf(sql_inst)
+
+-   Exemplo - Manipulação de dados usando instruções **SQL**, com o
+    pacote `sqldf`:  
+
+<!-- -->
+
+    dados <- read_csv2(file = "/home/...")
+    dados <- data.frame(dados) #Colocando no formato data.frame
+    dados
+
+    #Manipulando data.frame através de instruções SQL
+    sql_instruction = "SELECT cupom, filial FROM dados;"
+    df <- sqldf(sql_instruction)
+    df
 
 # 9 CAP. 6 - PACOTE **DATA.TABLE**
 

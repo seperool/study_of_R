@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: false
-  odt_document: 
-    number_sections: true
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
   word_document: 
     toc: TRUE
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: false
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -1922,6 +1922,9 @@ kable(dadosdieta_larga, col.names = c("Pacientes", "Tempo", "Sexo", "Antes", "De
   - `RPostgres`\
   - `bigrquery`\
   - ...\
+
+\newpage
+
 - Principais funções:\
   - `dbConnect(backends::SGBD(), dbname = "nome_banco_de_dados")`\
   Conecta a determinado banco de dados.\
@@ -2127,7 +2130,7 @@ Ex.:`nome_tabela_no_R <- tbl(con, "nome_tabela_db")`\
 - Para passar a tabela de remoto para local (para um `data.frame` de variável dentro do **R**) é necessário usar a função `collect()`.\
 Ex.:`tabela_local <- tabela_remoto %>% collect()`\
 
-#### Local para remoto (exportar dados para o banco de dados)- `copy_to()`
+#### Local para remoto (exportar dados para o banco de dados) - `copy_to()`
 
 - A função `copy_to()` é o oposta da função `collect()`, pega um `data.frame` local e o carrega para a fonte remota.\
 Ex.: `copy_to(dest, df, name = deparse(substitute(df)), overwrite = FALSE)`\
@@ -2186,7 +2189,7 @@ Consulta_resultado_remoto
 
 
 \# Source:   SQL [\?\? x 3]\
-\# Database: postgres  [postgres@localhost:5432/data_science]\
+\# Database: postgres  [postgres\@localhost:5432/data_science]\
    idfuncionario nome       sexo     \
            \<int\> \<chr\>      \<chr\>    \
  1             2 Armstrong  Masculino\
@@ -2225,6 +2228,30 @@ Consulta_resultado_local
 \newpage
 
 ### Manipular dados localmente com **SQL** - `sqldf`
+
+- O pacote `sqldf` permite manipular objetos `data.frame` de **R** através de instruções **SQL** simples.\
+
+- Usamos a função `sqldf()` para passar a instrução **SQL**.\
+Sintaxe: `sqldf("SELECT * FROM nome_data.frame;")`\
+O nome das tabelas são os nomes de objetos `data.frame`.\
+
+- Outra forma de executar a função, é passar a instrução **SQL** como texto para uma variável e executar a variável com da função `sqldf()`.\
+```
+sql_inst = "SELECT * FROM dados;"
+sqldf(sql_inst)
+```
+
+- Exemplo - Manipulação de dados usando instruções **SQL**, com o pacote `sqldf`:\
+```
+dados <- read_csv2(file = "/home/...")
+dados <- data.frame(dados) #Colocando no formato data.frame
+dados
+
+#Manipulando data.frame através de instruções SQL
+sql_instruction = "SELECT cupom, filial FROM dados;"
+df <- sqldf(sql_instruction)
+df
+```
 
 \newpage
 
