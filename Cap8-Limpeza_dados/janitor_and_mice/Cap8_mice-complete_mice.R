@@ -25,9 +25,15 @@ dt_clean1
 #Eliminando as linhas vazias - remove_empty()
 #Remove linha 9, sem valores
 dt_clean2 <- remove_empty(dt_clean1)
+dt_clean2$x <- as.factor(dt_clean2$x)
+str(dt_clean2)
 dt_clean2
 
 #mice substitui valores perdidos
+#Analise estatística
 summary(dt_clean2)
-dt_ajustado <- complete(mice(dt_clean2))
+#Substituindo valores perdidos com mice
+dt_ajustado = complete(mice(dt_clean2))
+dt_ajustado
+#Nova analise estatística
 summary(dt_ajustado)
