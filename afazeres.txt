@@ -1,6 +1,6 @@
-ESCRITO EM 04/09/23
+ESCRITO EM 05/09/23
 ---
-PARA 05/09/23
+PARA 06/09/23
 ---
 Subir github:
 
@@ -14,9 +14,6 @@ Afazeres:
 			- Cap. 7 - Gráficos pacote básico e pacote ggplot2
 				- Pacote ggplot2
 					- Assistentes para ggplot2
-			- Cap.8 - Limpeza rápida nos dados
-				- Principais funções janitor
-					- Substitua valores perdidos - mice()
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
