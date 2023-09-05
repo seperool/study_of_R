@@ -5495,18 +5495,53 @@ gráfico - ggplot2 builder</figcaption>
     8     a  7
     10    a NA
 
-### 11.3.3 Substitua valores perdidos - `mice()`
+### 11.3.3 Substitua valores perdidos/faltantes - `mice()`
 
--   Apesar do `janitor` auxilia a eliminar linhas e colunas com valores
+-   Apesar do `janitor` auxiliar a eliminar linhas e colunas com valores
     perdidas, caso necessite substituir tais valores, o pacote `mice`
     ajuda nessa tarefas, usando técnica de imputação de valores
-    (*Multivariate Imputation by Chained Equations*), que levam em conta
-    o tipo de variável, produzindo a substituição dos valores pedidos.  
+    (*Multivariate Imputation by Chained Equations*).  
     `install.packages("mice")`  
 
--   Problema (erro) no pacote `mice` para versão do `R 4.3.1`.  
+-   A técnica `complete(mice())`, para substituição de valores, levam em
+    conta o tipo de variável, produzindo a substituição dos valores
+    pedidos.  
+    `complete(mice(data.frame))`  
 
--   Exemplo - Substituição de valores perdidos (`complete(mice())`):  
+-   Boas práticas ao aplicar substituição de valores perdidos/faltantes
+    (`complete(mice())`):  
+
+    -   Antes aplicar a técnica de substituição de valores perdidos, é
+        interessante fazer uma analise do `data.frame` para entender
+        profundamente a situação:  
+        -   `str()`  
+            Para entender a estrutura dos dados envolvidos (tipos de
+            dados).  
+        -   `summary()`  
+            Obter um resumo estatístico para conhecer de modo geral
+            melhor o `data.frame`.  
+    -   Ao final da aplicação das funções `complete(mice())`, outra boa
+        prática é obter o resumo estatístico (`summary()`) para observar
+        e comparar a extensão dos impactos das substituições dos valores
+        perdidos/faltantes para o conjuto dos dados.  
+
+-   Exemplo - Substituição de valores perdidos/faltantes
+    (`complete(mice())`):  
+
+<!-- -->
+
+    #mice para substituição de valores perdidos/faltantes
+    #Analise estatística
+    dt
+    str(dt)
+    summary(dt)
+
+    #Substituindo valores perdidos com mice
+    dt_ajustado = complete(mice(dt))
+    dt_ajustado
+
+    #Nova analise estatística
+    summary(dt_ajustado)
 
 ### 11.3.4 Produzindo tabelas de frequência para uma variável - `taby()`
 

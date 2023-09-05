@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  html_document:
+    number_sections: true
+    df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: false
+  odt_document: 
+    number_sections: true
+  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
   word_document: 
     toc: TRUE
-    number_sections: true
-  html_document:
-    number_sections: true
-    df_print: paged
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: false
-  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -5085,14 +5085,37 @@ dt_clean2
 
 \newpage
 
-### Substitua valores perdidos - `mice()`
+### Substitua valores perdidos/faltantes - `mice()`
 
-- Apesar do `janitor` auxilia a eliminar linhas e colunas com valores perdidas, caso necessite substituir tais valores, o pacote `mice` ajuda nessa tarefas, usando técnica de imputação de valores (*Multivariate Imputation by Chained Equations*), que levam em conta o tipo de variável, produzindo a substituição dos valores pedidos.\
+- Apesar do `janitor` auxiliar a eliminar linhas e colunas com valores perdidas, caso necessite substituir tais valores, o pacote `mice` ajuda nessa tarefas, usando técnica de imputação de valores (*Multivariate Imputation by Chained Equations*).\
 `install.packages("mice")`\
 
-- Problema (erro) no pacote `mice` para versão do `R 4.3.1`.\
+- A técnica `complete(mice())`, para substituição de valores, levam em conta o tipo de variável, produzindo a substituição dos valores pedidos.\
+`complete(mice(data.frame))`\
 
-- Exemplo - Substituição de valores perdidos (`complete(mice())`):\
+- Boas práticas ao aplicar substituição de valores perdidos/faltantes (`complete(mice())`):\
+  - Antes aplicar a técnica de substituição de valores perdidos, é interessante fazer uma analise do `data.frame` para entender profundamente a situação:\
+    - `str()`\
+    Para entender a estrutura dos dados envolvidos (tipos de dados).\
+    - `summary()`\
+    Obter um resumo estatístico para conhecer de modo geral melhor o `data.frame`.\
+  - Ao final da aplicação das funções `complete(mice())`, outra boa prática é obter o resumo estatístico (`summary()`) para observar e comparar a extensão dos impactos das substituições dos valores perdidos/faltantes para o conjuto dos dados.\
+
+- Exemplo - Substituição de valores perdidos/faltantes (`complete(mice())`):\
+```
+#mice para substituição de valores perdidos/faltantes
+#Analise estatística
+dt
+str(dt)
+summary(dt)
+
+#Substituindo valores perdidos com mice
+dt_ajustado = complete(mice(dt))
+dt_ajustado
+
+#Nova analise estatística
+summary(dt_ajustado)
+```
 
 \newpage
 
