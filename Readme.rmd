@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: false
-  odt_document: 
-    number_sections: true
-  github_document: 
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -5092,6 +5092,8 @@ dt_clean2
 
 - A técnica `complete(mice())`, para substituição de valores, levam em conta o tipo de variável, produzindo a substituição dos valores pedidos.\
 `complete(mice(data.frame))`\
+  - O tipo de valores `character` não são apropriados para serem substituidos. O ideal, se possível, é passar as variáveis `character` para `factor`.\
+  - Os tipos de valores mais apropriados para serem substituidos são `numeric` e `factor`.\
 
 - Boas práticas ao aplicar substituição de valores perdidos/faltantes (`complete(mice())`):\
   - Antes aplicar a técnica de substituição de valores perdidos, é interessante fazer uma analise do `data.frame` para entender profundamente a situação:\

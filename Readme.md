@@ -5508,6 +5508,12 @@ gráfico - ggplot2 builder</figcaption>
     pedidos.  
     `complete(mice(data.frame))`  
 
+    -   O tipo de valores `character` não são apropriados para serem
+        substituidos. O ideal, se possível, é passar as variáveis
+        `character` para `factor`.  
+    -   Os tipos de valores mais apropriados para serem substituidos são
+        `numeric` e `factor`.  
+
 -   Boas práticas ao aplicar substituição de valores perdidos/faltantes
     (`complete(mice())`):  
 
