@@ -1,6 +1,6 @@
-ESCRITO EM 07/09/23
+ESCRITO EM 08/09/23
 ---
-PARA 08/09/23
+PARA 09/09/23
 ---
 Subir github:
 
@@ -11,10 +11,6 @@ Afazeres:
 		- Readme.*
 			- Revisar tabelas
 			- Revisar fórmulas
-			- Cap. 7 - Gráficos pacote básico e pacote ggplot2
-				- Pacote ggplot2
-					- Assistentes para ggplot2
-						- Assistente gráfico esquisse (texto)
 	- Readme.*
 		- Cap. 9 - Análise descritiva dos dados
 			- Estatística descritiva com o pacote desctools
