@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
-  word_document: 
-    toc: TRUE
-    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  github_document: 
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -4950,21 +4950,90 @@ Ex.: `geom_smooth(method = lm, se = FALSE)`\
 
 \newpage
 
-### Assistentes para ggplot2
-- Modelos do pacote `ggplot2`:\
-<https://exts.ggplot2.tidyverse.org/gallery/>
+### Assistentes para ggplot2 - `esquisse`
 
-- Pacotes auxiliares ao ggplot:\
-  - `ggThemeAssist`\
-  Fornece uma interface gráfica (Addins) para editar os elementos do tema `ggplot2`.\
-  - `esquisse`\
-  Pacote para criação de gráficos (`ggplot2`) de maneira *point and click*.\
-  - `hrbrthemes`\
-  Uma compilação de temas, escalas e utilitarios extras de `ggplot2`, incluindo uma função de verificação ortográfica para campos de rôtulos de plotagem.\
-  - `ggthemes`\
-  Temas adicionais para gráficos `ggplot2`.\
+#### Pacotes auxiliares ao `ggplot2`
+
+- `ggThemeAssist`\
+Fornece uma interface gráfica (Addins) para editar os elementos do tema `ggplot2`.\
+
+- `esquisse`\
+  - Pacote para criação de gráficos (`ggplot2`) de maneira *point and click*.\
+  - Assistente gráfico, para criação de gráficos rápidos e simples.\
+  - Não tem todo o poderio do `ggplot2`, porém apresenta facilidades.\
+
+- `hrbrthemes`\
+Uma compilação de temas, escalas e utilitarios extras de `ggplot2`, incluindo uma função de verificação ortográfica para campos de rôtulos de plotagem.\
+
+- `ggthemes`\
+Temas adicionais para gráficos `ggplot2`.\
   
 ![Pacotes auxiliares (`ggThemeAssist` e `esquisse`) de construção de gráfico - ggplot2 builder](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse.png)
+
+
+#### Referências e modelos de assistente gráfico
+
+Modelos do pacote `ggplot2`:\
+<https://exts.ggplot2.tidyverse.org/gallery/>
+
+\newpage
+
+#### Funções do assistente de gráficos `ggplot2` - `esquisse`
+
+- Abrir assistente gráfico:\
+  - `esquisse()`\
+  Chama o assistente gráfico, abre no menu do **RStudio**.\
+  - `esquisse(viewer = "browser")`\
+  Abrir no browser.\
+  - `esquisse(viewer = "pane")`\
+  Abrir no viewer.\
+
+- `esquisse(dados)`\
+Passa dados para o assistente gráfico.\
+Mesmo sem passar os dados para o assistente gráfico, o programa pega os dados na memória do sistema.\
+
+\newpage
+
+#### Assistente gráfico `esquisse`
+
+- Ao instalar o pacote `esquisse`, ele fica disponível no addins do **RStudio**.\
+
+
+![Abrir o `esquisse` a partir do addins no **RStudio**.](./Cap7-graficos_basicos_e_ggplot2/Imagens/addins-esquisse.png){ width=80% }
+
+
+- Dentro do assistente gráfico `esquisse`, a primeira aba é relativa a inserir textos no gráfico (título, subtítulo, legenda e rótulos).\
+
+
+![No `esquisse`, aba para editar textos do gráfico (título, subtítulo, legenda e rótulos). ](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse-textos.png){ width=80% }
+
+
+\newpage
+
+- A segunda aba são opções de personalização do gráfico, variando de gráfico para gráfico (número de linhas).\
+
+
+![No `esquisse`, aba para editar opções do gráfico.](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse-opcao_grafico.png){ width=80% }
+
+
+- Na aba appearance podemos mudar os temas e cores do gráfico.\
+
+
+![No `esquisse`, aba para editar aparência do gráfico.](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse-aparencia.png){ width=80% }
+
+
+\newpage
+
+- Na aba *data*, podemos aplicar filtros no *dataset*.\
+
+
+![No `esquisse`, aba para exportar o gráfico (seja o código ou o .png).](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse-data.png){ width=80% }
+
+
+- Por fim, na aba *code*, podemos exportar o gráfico, tanto o código de criação dele para replicar num *script*, ou o .png.\
+
+
+![No `esquisse`, aba para exportar o gráfico (seja o código ou o .png).](./Cap7-graficos_basicos_e_ggplot2/Imagens/esquisse-exportar.png){ width=80% }
 
 
 \newpage
