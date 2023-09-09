@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
+  odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
   html_document:
     number_sections: true
     df_print: paged
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  github_document: 
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6266,10 +6266,30 @@ ecdf = TRUE)
   
 \newpage
 
-## Dados faltantes
+## Mapeamento de dados faltantes - `PlotMiss()`
 
-- Análisando a base de dados:\
-  - Como estão distribuidos os dados faltantes?
+- Ao análisar a base de dados com dados faltantes, devemos observar como estão distribuidos os dados faltantes.\
+- Ao aplicarmos o comando `PlotMiss()` podemos analisar a distribuição dos dados faltantes, identificando quais variáveis apresentam o maior número de dados faltantes.\
+- Através do mapeamento de dados faltantes, podemos observar quais variáveis apresentam perda de dados e as variáveis, que pela maior ausência de dados, exigem maior atenção.\
+- A partir do mapeamento podemos tomar duas decisões em relação as variáveis que apresentam ausência de dados:\
+  - Realizar limpeza dos dados faltantes.\
+    - Procurar/remover colunas ou linhas inúteis.\
+    `remove_empty()`\
+    - Registros duplicados.\
+    `get_dupes()`\
+  - Aplicar um algoritmo de imputação para esses dados.\
+  `complete(mice())`\
+- Exemplo - Mapeamento de dados faltantes:\
+```
+#Análise de distribuição de dados faltantes
+PlotMiss(dados, col = colorRampPalette(c("gray10","gray90"))(1))
+
+#Fechando dispositivo gráfico
+dev.off()
+```
+
+![Mapeamento de dados faltantes - `PlotMiss()`](./Cap9-Analise_descritiva_dos_dados/Imagens/PlotMiss.png){}
+
 
 \newpage
 

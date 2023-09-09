@@ -6757,10 +6757,41 @@ estatística descritiva.
     normal.</figcaption>
     </figure>
 
-## 12.5 Dados faltantes
+## 12.5 Mapeamento de dados faltantes - `PlotMiss()`
 
--   Análisando a base de dados:  
-    -   Como estão distribuidos os dados faltantes?
+-   Ao análisar a base de dados com dados faltantes, devemos observar
+    como estão distribuidos os dados faltantes.  
+-   Ao aplicarmos o comando `PlotMiss()` podemos analisar a distribuição
+    dos dados faltantes, identificando quais variáveis apresentam o
+    maior número de dados faltantes.  
+-   Através do mapeamento de dados faltantes, podemos observar quais
+    variáveis apresentam perda de dados e as variáveis, que pela maior
+    ausência de dados, exigem maior atenção.  
+-   A partir do mapeamento podemos tomar duas decisões em relação as
+    variáveis que apresentam ausência de dados:  
+    -   Realizar limpeza dos dados faltantes.  
+        -   Procurar/remover colunas ou linhas inúteis.  
+            `remove_empty()`  
+        -   Registros duplicados.  
+            `get_dupes()`  
+    -   Aplicar um algoritmo de imputação para esses dados.  
+        `complete(mice())`  
+-   Exemplo - Mapeamento de dados faltantes:  
+
+<!-- -->
+
+    #Análise de distribuição de dados faltantes
+    PlotMiss(dados, col = colorRampPalette(c("gray10","gray90"))(1))
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img src="./Cap9-Analise_descritiva_dos_dados/Imagens/PlotMiss.png"
+alt="Mapeamento de dados faltantes - PlotMiss()" />
+<figcaption aria-hidden="true">Mapeamento de dados faltantes -
+<code>PlotMiss()</code></figcaption>
+</figure>
 
 ## 12.6 Analisando datas com o pacote `DescTools`
 
