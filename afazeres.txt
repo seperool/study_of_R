@@ -1,6 +1,6 @@
-ESCRITO EM 08/09/23
+ESCRITO EM 09/09/23
 ---
-PARA 09/09/23
+PARA 10/09/23
 ---
 Subir github:
 
@@ -18,6 +18,17 @@ Afazeres:
 					- Numérico (continua)
 					- Inteiro (discreta)
 					- Categórica (qualitativa)
-			- Dados faltantes
 			- Analisando datas com o pacote desctools
 	- script cap. 9 - Análise descritiva dos dados
+		- Analisando datas com o pacote desctools
+		- Exercicios
+			- 1
+			- 2
+			- 3
+			- 4
+			- 5
+			- 6
+			- 7
+			- 8
+			- 9
+			- 10
