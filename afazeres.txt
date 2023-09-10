@@ -1,6 +1,6 @@
-ESCRITO EM 09/09/23
+ESCRITO EM 10/09/23
 ---
-PARA 10/09/23
+PARA 11/09/23
 ---
 Subir github:
 
@@ -19,6 +19,9 @@ Afazeres:
 					- Inteiro (discreta)
 					- Categórica (qualitativa)
 			- Analisando datas com o pacote desctools
+				- Converter classes para date
+				- Formatos de data
+				- Extrair componentes da classe date
 	- script cap. 9 - Análise descritiva dos dados
 		- Analisando datas com o pacote desctools
 		- Exercicios
