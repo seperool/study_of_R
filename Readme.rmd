@@ -10,15 +10,15 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
@@ -6294,6 +6294,63 @@ dev.off()
 \newpage
 
 ## Analisando datas com o pacote `DescTools`
+
+- Na análise descritiva de datas (`Desc(variável_data)`) é feito uma análise das frequências (frequência, porcentagem da frequência, frequência acumulada e porcentagem da frequência acumulada).\
+- O pacote `lubridate` adiciona a classe `date` e funções para trabalhar com datas.\
+- Principais funções da classe `date`:\
+  - Converter classes para `date`:\
+    - `date(variável_chr)`\
+    Converte variável em tipo `date`.\
+    - `as_date(variável_chr)`\
+  - Formatos de data:\
+    - `dmy(variável_chr)`\
+    Converte variável no formato `date` (ano, mês e dia).\
+    Ex. formato: `2015-10-21`.\
+  - Extrair componentes da classe `date`:\
+- A análise foca em três componentes:\
+  - Semana\
+  Frequências distribuidas nos dias da semana.\
+  - Mês\
+  Frequências distribuidas pelos meses.\
+  - Dia\
+  Frequências distribuidas pelos dias.\
+- É possível fazer analise de data, com e sem gráfico:\
+  - `Desc(data, plotit = F)`\
+  Sem gráficos.\
+  - `Desc(data)`\
+  Com gráficos.\
+- Exemplo - analise descritiva de data com gráficos:\
+
+```
+#Transformando a coluna dados$data no formato data ano, mês e dia
+str(dados$data)
+x <- dmy(as.character(dados$data))
+
+#Analisando a variável data sem gráficos
+Desc(x, plotit = F)
+#Analise descritiva de datas, leva em consideração três componentes
+## semana
+## mês
+## dia
+
+#Analise descritiva de datas com gráficos
+Desc(x)
+# Plota três gráficos
+## semana
+## mês
+## dia
+```
+
+![Analise de data, gráfico de dias.](./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-dia.png){}
+
+
+\newpage
+
+![Analise de data, gráfico de meses.](./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-mes.png){}
+
+
+![Analise de data, gráfico de dias da semana.](./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-semana.png){}
+
 
 \newpage
 

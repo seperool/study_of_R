@@ -6795,6 +6795,79 @@ alt="Mapeamento de dados faltantes - PlotMiss()" />
 
 ## 12.6 Analisando datas com o pacote `DescTools`
 
+-   Na análise descritiva de datas (`Desc(variável_data)`) é feito uma
+    análise das frequências (frequência, porcentagem da frequência,
+    frequência acumulada e porcentagem da frequência acumulada).  
+-   O pacote `lubridate` adiciona a classe `date` e funções para
+    trabalhar com datas.  
+-   Principais funções da classe `date`:  
+    -   Converter classes para `date`:  
+        -   `date(variável_chr)`  
+            Converte variável em tipo `date`.  
+        -   `as_date(variável_chr)`  
+    -   Formatos de <a href="data:\" class="uri">data:\</a>
+        -   `dmy(variável_chr)`  
+            Converte variável no formato `date` (ano, mês e dia).  
+            Ex. formato: `2015-10-21`.  
+    -   Extrair componentes da classe `date`:  
+-   A análise foca em três componentes:  
+    -   Semana  
+        Frequências distribuidas nos dias da semana.  
+    -   Mês  
+        Frequências distribuidas pelos meses.  
+    -   Dia  
+        Frequências distribuidas pelos dias.  
+-   É possível fazer analise de data, com e sem gráfico:  
+    -   `Desc(data, plotit = F)`  
+        Sem gráficos.  
+    -   `Desc(data)`  
+        Com gráficos.  
+-   Exemplo - analise descritiva de data com gráficos:  
+
+<!-- -->
+
+    #Transformando a coluna dados$data no formato data ano, mês e dia
+    str(dados$data)
+    x <- dmy(as.character(dados$data))
+
+    #Analisando a variável data sem gráficos
+    Desc(x, plotit = F)
+    #Analise descritiva de datas, leva em consideração três componentes
+    ## semana
+    ## mês
+    ## dia
+
+    #Analise descritiva de datas com gráficos
+    Desc(x)
+    # Plota três gráficos
+    ## semana
+    ## mês
+    ## dia
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-dia.png"
+alt="Analise de data, gráfico de dias." />
+<figcaption aria-hidden="true">Analise de data, gráfico de
+dias.</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-mes.png"
+alt="Analise de data, gráfico de meses." />
+<figcaption aria-hidden="true">Analise de data, gráfico de
+meses.</figcaption>
+</figure>
+
+<figure>
+<img
+src="./Cap9-Analise_descritiva_dos_dados/Imagens/analise_descritiva-datas-semana.png"
+alt="Analise de data, gráfico de dias da semana." />
+<figcaption aria-hidden="true">Analise de data, gráfico de dias da
+semana.</figcaption>
+</figure>
+
 # 13 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
