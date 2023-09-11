@@ -6798,18 +6798,61 @@ alt="Mapeamento de dados faltantes - PlotMiss()" />
 -   Na análise descritiva de datas (`Desc(variável_data)`) é feito uma
     análise das frequências (frequência, porcentagem da frequência,
     frequência acumulada e porcentagem da frequência acumulada).  
+
 -   O pacote `lubridate` adiciona a classe `date` e funções para
     trabalhar com datas.  
--   Principais funções da classe `date`:  
-    -   Converter classes para `date`:  
-        -   `date(variável_chr)`  
-            Converte variável em tipo `date`.  
-        -   `as_date(variável_chr)`  
-    -   Formatos de <a href="data:\" class="uri">data:\</a>
-        -   `dmy(variável_chr)`  
-            Converte variável no formato `date` (ano, mês e dia).  
-            Ex. formato: `2015-10-21`.  
-    -   Extrair componentes da classe `date`:  
+
+### 12.6.1 Principais funções (`date`) do pacote `lubridate`
+
+-   Converter classes para `date`:  
+    -   `date(variável_chr)`  
+        Converte variável do tipo `chr` em tipo `date`.  
+        Ex.: `data_date <- date(data_string)`  
+    -   `as_date(variável_chr)`  
+    -   `as.Date(variável_chr)`  
+        Função da base do **R** para converter variável do tipo `chr` em
+        tipo `date`.  
+-   Formatos de data:  
+    -   `dmy(variável_chr)`  
+        Converte variável `chr` no formato `date` (dia, mês e ano).  
+        Ex. formato: `21-10-2015`.  
+    -   `mdy(variável_chr)`  
+        Converte variável `chr` no formato `date` (mês, dia e ano).  
+        Ex. formato: `10-21-2015`.  
+    -   `myd(variável_chr)`  
+        Converte variável `chr` no formato `date` (mês, ano e dia).  
+        Ex. formato: `10-2015-21`.  
+    -   `ymd(variável_chr)`  
+        Converte variável `chr` no formato `date` (ano, mês e dia).  
+        Ex. formato: `2015-10-21`.  
+    -   `ydm(variável_chr)`  
+        Converte variável `chr` no formato `date` (ano, dia e mês).  
+        Ex. formato: `2015-21-10`.  
+
+-   Extrair componentes da classe `date`:  
+    -   `second()`  
+        Extrai os segundos.  
+    -   `minute()`  
+        Extrai os minutos.  
+    -   `hour()`  
+        Extrai a hora.  
+    -   `wday()`  
+        Extrai o dia da semana.  
+    -   `mday`  
+        Extrai o dia do mês.  
+    -   `month()`  
+        Extrai mês.  
+    -   `year()`  
+        Extrai ano.  
+-   Fusos horários:  
+
+### 12.6.2 Operações com datas
+
+-   Intervalos:  
+-   Aritmética com datas:  
+
+### 12.6.3 Análise DescTools com datas
+
 -   A análise foca em três componentes:  
     -   Semana  
         Frequências distribuidas nos dias da semana.  
@@ -6822,7 +6865,8 @@ alt="Mapeamento de dados faltantes - PlotMiss()" />
         Sem gráficos.  
     -   `Desc(data)`  
         Com gráficos.  
--   Exemplo - analise descritiva de data com gráficos:  
+
+-   Exemplo - Análise descritiva de data com gráficos:  
 
 <!-- -->
 
