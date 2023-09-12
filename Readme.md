@@ -6844,12 +6844,92 @@ alt="Mapeamento de dados faltantes - PlotMiss()" />
         Extrai mês.  
     -   `year()`  
         Extrai ano.  
+    -   `today()`  
+        Extrai o dia em que foi feita a ultima execução.  
+    -   `now()`  
+        Extrai o dia em que foi feita a ultima execução, data
+        completa.  
+
 -   Fusos horários:  
+    O argumento `tz` ou `tzone` define o fuso.  
+    -   `with_tz(data, tzone = "novo_fuso")`  
+        Retorna qual seria a data em outro fuso.  
+    -   `force_tz(data, tzone = "novo_fuso")`  
+        Altera o fuso sem mudar a hora.  
+    -   Exemplo:  
+
+    <!-- -->
+
+        estreia_GoT <- ymd_hms("2017-07-16 22:00:00", tz = "America/Sao_Paulo")
+        estreia_GoT
+        ## [1] "2017-07-16 22:00:00 -03"
+
+        # Devolve qual seria a data em outro fuso
+
+        with_tz(estreia_GoT, tzone = "GMT")
+        ## [1] "2017-07-17 01:00:00 GMT"
+        with_tz(estreia_GoT, tzone = "US/Alaska")  
+        ## [1] "2017-07-16 17:00:00 AKDT"
+
+        # Altera o fuso sem mudar a hora
+
+        force_tz(estreia_GoT, tzone = "GMT")
+        ## [1] "2017-07-16 22:00:00 GMT"
 
 ### 12.6.2 Operações com datas
 
 -   Intervalos:  
+    -   Intervalos podem ser salvos em objetos da classe `interval`.  
+
+    <!-- -->
+
+        inicio <- dmy("01-04-1991")
+        evento <- dmy("31-10-1993")
+
+        sobrev <- interval(inicio, evento)
+        sobrev
+        ## [1] 1991-04-01 UTC--1993-10-31 UTC
+        class(sobrev)
+        ## [1] "Interval"
+
+    -   Outra forma de definir um intervalo é usar o operador `%--%`.  
+
+    -   Verificar se dois intervalos tem intersecção entre si, usando a
+        função `int_overlaps()`.  
+
+    <!-- -->
+
+        intervalo_1 <- dmy("01-02-2003") %--% dmy("02-03-2005")
+        intervalo_2 <- dmy("04-05-2004") %--% dmy("12-03-2012")
+        int_overlaps(intervalo_1, intervalo_2)
+        ## [1] TRUE
 -   Aritmética com datas:  
+    -   Somando datas:  
+        -   `data + dday(1)`  
+            Adiciona um dia a variável da classe `date`.  
+        -   `data + dyear(1)`  
+            Adiciona um ano a variável da classe `date`.  
+    -   Criando datas recorrentes:  
+        Cria um evento que se repete no mesmo dia da semana, durante 1
+        (evento inivial) + 10 semanas.  
+
+    <!-- -->
+
+        reuniao <- dmy("18-03-2017")
+        reunioes <- reuniao + weeks(0:10)
+        reunioes
+        ##  [1] "2017-03-18" "2017-03-25" "2017-04-01" "2017-04-08" "2017-04-15"
+        ##  [6] "2017-04-22" "2017-04-29" "2017-05-06" "2017-05-13" "2017-05-20"
+        ## [11] "2017-05-27"
+
+    -   Duração de intervalos:  
+        `intervalo <- dmy("01-03-2003") %--% dmy("31-03-2003")`  
+        -   `intervalo / ddays(1)`  
+            Retorna o número de dias.  
+        -   `intervalo / dminutes(1)`  
+            Retorna o número de minutos.  
+        -   `as.period(intervalo)`  
+            Retorna o tempo do intervalo.  
 
 ### 12.6.3 Análise DescTools com datas
 
