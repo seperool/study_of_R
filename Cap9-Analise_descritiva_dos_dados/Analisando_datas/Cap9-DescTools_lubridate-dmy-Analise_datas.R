@@ -23,9 +23,15 @@ Desc(x, plotit = F)
 ## mês
 ## dia
 
+#Fechando dispositivo gráfico
+dev.off()
+
 #Analise descritiva de datas com gráficos
 Desc(x)
 # Plota três gráficos
 ## semana
 ## mês
 ## dia
+
+#Fechando dispositivo gráfico
+dev.off()
