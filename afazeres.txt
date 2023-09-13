@@ -3,7 +3,10 @@ ESCRITO EM 13/09/23
 PARA 14/09/23
 ---
 Subir github:
-
+		- script cap. 9 - Análise descritiva dos dados
+			- Exercicios
+				- 9
+				- 10
 Estudar:
 
 Afazeres:
@@ -18,10 +21,8 @@ Afazeres:
 					- Numérico (continua)
 					- Inteiro (discreta)
 					- Categórica (qualitativa)
+		- Cap. 10 - Distribuições de probabilidade
 	- script cap. 9 - Análise descritiva dos dados
-		- Analisando datas com o pacote desctools
 		- Exercicios
 			- 7
 			- 8
-			- 9
-			- 10
