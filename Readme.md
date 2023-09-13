@@ -6249,7 +6249,7 @@ alt="Modelo 3 de visualização de escala Likert - grouping = bd$categ." />
 <em>Likert</em> - <code>grouping = bd$categ</code>.</figcaption>
 </figure>
 
-# 12 CAP. 9 - Análise descritiva dos dados
+# 12 CAP. 9 - ANÁLISE DESCRITIVA DOS DADOS
 
 ## 12.1 Teoria
 
@@ -6992,13 +6992,15 @@ alt="Analise de data, gráfico de dias da semana." />
 semana.</figcaption>
 </figure>
 
-# 13 ANDAMENTO DOS ESTUDOS
+# 13 CAP. 10 - DISTRIBUIÇÕES DE PROBABILIDADES
+
+# 14 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  
 
-Atualmente estou estudando Cap. 9 - Análise descritiva dos dados.  
+Atualmente estou estudando Cap. 10 - Distribuições de probabilidade.  
 
-# 14 REFERÊNCIAS
+# 15 REFERÊNCIAS
 
 ALCOFORADO, L. F. **[UTILIZANDO A LINGUAGEM R: conceitos, manipulação,
 visualização, modelagem e elaboração de

@@ -10,17 +10,17 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
   github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -5732,7 +5732,7 @@ plot(lik2, wrap = 60, text.size=3) + theme(axis.text.y = element_text(size="6"))
 
 \newpage
 
-# CAP. 9 - Análise descritiva dos dados
+# CAP. 9 - ANÁLISE DESCRITIVA DOS DADOS
 
 ## Teoria
 - Objetivo do capitulo é fazer uma análise descritiva dos dados através da tabulação das variáveis e cálculo de medidas descrititvas (média, desvio-padrão, etc).\
@@ -6485,11 +6485,15 @@ Desc(x)
 
 \newpage
 
+# CAP. 10 - DISTRIBUIÇÕES DE PROBABILIDADES
+
+\newpage
+
 # ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:\
 
-Atualmente estou estudando Cap. 9 - Análise descritiva dos dados.\
+Atualmente estou estudando Cap. 10 - Distribuições de probabilidade.\
 
 \newpage
 
