@@ -1,12 +1,9 @@
-ESCRITO EM 13/09/23
+ESCRITO EM 14/09/23
 ---
-PARA 14/09/23
+PARA 15/09/23
 ---
 Subir github:
-		- script cap. 9 - Análise descritiva dos dados
-			- Exercicios
-				- 9
-				- 10
+
 Estudar:
 
 Afazeres:
