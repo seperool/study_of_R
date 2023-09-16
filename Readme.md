@@ -6602,8 +6602,8 @@ para mapemaento de dados faltantes.</figcaption>
 
 ### 12.4.2 Customizar os gráficos
 
--   É possível plotar determinada coluna a partir da função plot() e
-    Desc(), obtendo assim as principais informações da variável
+-   É possível plotar determinada coluna a partir da função `plot()` e
+    `Desc()`, obtendo assim as principais informações da variável
     envolvida.  
 -   Os gráficos plotados (pode ser mais de um), vão depender do tipo da
     variável envolvida:  
@@ -6993,6 +6993,69 @@ semana.</figcaption>
 </figure>
 
 # 13 CAP. 10 - DISTRIBUIÇÕES DE PROBABILIDADES
+
+## 13.1 Teoria e introdução
+
+-   É possível realizar comparações gráficas com uma distribuição
+    teórica de probabilidades.  
+-   As distribuições de probabilidade descrevem o comportamento de uma
+    variável aleatória que pode ser **discreta** ou **contínua**.  
+-   Principais distribuições:  
+    -   Variável discreta  
+        -   Binomial  
+        -   Binomial negativa  
+        -   Geométrica  
+        -   Hipergeométrica  
+        -   Poisson  
+    -   Variável contínua  
+        -   Beta  
+        -   Cauchy  
+        -   Exponencial  
+        -   F de Snedecor  
+        -   Gama  
+        -   Lognormal  
+        -   Normal  
+        -   Qui-quadrada  
+        -   T de Student  
+        -   Uniforme  
+        -   Weibull  
+
+| Distribuição de probabilidade | Nome da função no R |
+|:-----------------------------:|:-------------------:|
+|             Beta              |        beta         |
+|           Binominal           |        binom        |
+|      Binominal negativa       |       nbinom        |
+|            Cauchy             |       cauchy        |
+|         Qui-quadrada          |        chisq        |
+|          Exponencial          |         exp         |
+|          F Snedecor           |          f          |
+|             Gamma             |        gamma        |
+|          Geométrica           |        geom         |
+|          Log-normal           |        lnorm        |
+|           Logística           |        logis        |
+|            Normal             |        norm         |
+|            Poisson            |         poi         |
+|           T Student           |          t          |
+|            Weibull            |       weibull       |
+
+Nome das funções correspondetes às principais distribuições de
+probabilidade
+
+## 13.2 Distribuição normal
+
+## 13.3 Aderência da distribuição normal
+
+## 13.4 As hipóteses de um teste estatístico
+
+## 13.5 Erros possíveis no teste de hipótese
+
+## 13.6 Regra de decisão para todos os testes de hipóteses
+
+## 13.7 Teste de normalidade
+
+## 13.8 Análise gráfica
+
+## 13.9 E quando os dados não são normais?
 
 # 14 ANDAMENTO DOS ESTUDOS
 
