@@ -1,6 +1,6 @@
-ESCRITO EM 15/09/23
+ESCRITO EM 16/09/23
 ---
-PARA 16/09/23
+PARA 17/09/23
 ---
 Subir github:
 
@@ -12,10 +12,18 @@ Afazeres:
 			- Revisar tabelas
 			- Revisar fórmulas
 	- Readme.*
-		- Cap. 9 - Análise descritiva dos dados
-			- Estatística descritiva com o pacote desctools
-				- Visualização gráfica para cada tipo de variável
-					- Numérico (continua)
-					- Inteiro (discreta)
-					- Categórica (qualitativa)
 		- Cap. 10 - Distribuições de probabilidade
+			- Teoria
+				- Tipos de variáveis
+					- discretas
+					- contínuas
+				- Modelos
+				- Pesquisa
+			- Distribuição normal
+			- Aderência da distribuição normal
+			- As hipóteses de um teste estatístico
+			- Erros possíveis no teste de hipótese
+			- Regra de decisão para todos os testes de hipóteses
+			- Teste de normalidade
+			- Análise gráfica
+			- E quando os dados não são normais?
