@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
-  github_document: 
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
+  github_document: 
+  pdf_document: 
+    number_sections: true
+    toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6490,7 +6490,9 @@ Desc(x)
 ## Teoria e introdução
 
 - É possível realizar comparações gráficas com uma distribuição teórica de probabilidades.\
+
 - As distribuições de probabilidade descrevem o comportamento de uma variável aleatória que pode ser **discreta** ou **contínua**.\
+
 - Principais distribuições:\
   - Variável discreta\
     - Binomial\
@@ -6540,6 +6542,14 @@ tb_disb_prob <- data.frame(dist_prob,func_prob_R)
 kable(tb_disb_prob, col.names = c("Distribuição de probabilidade", "Nome da função no R"),
       align = "cc", caption = "Nome das funções correspondetes às principais distribuições de probabilidade")
 ```
+
+\newpage
+
+- Modelos:\
+  - Em situações práticas, o pesquisador possiu uma série de observações da variável de interesse, obtidas através de um processo de amostragem, e deseja ajustar uma distribuição de probabilidades que reproduza o comportamento geral dessa variável.\
+  - É importante conhecer diversos modelos teóricos para que se possa selecionar o mais adequado que reproduza o comportamento da variável em questão.\
+  - O pesquisador precisará estimar os valores dos parâmetros do modelo que ele identifica como adequado (ajustar parêmetros).\
+  - Ao final verificar a qualidade de ajuste.\
 
 \newpage
 

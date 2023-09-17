@@ -6998,9 +6998,12 @@ semana.</figcaption>
 
 -   É possível realizar comparações gráficas com uma distribuição
     teórica de probabilidades.  
+
 -   As distribuições de probabilidade descrevem o comportamento de uma
     variável aleatória que pode ser **discreta** ou **contínua**.  
+
 -   Principais distribuições:  
+
     -   Variável discreta  
         -   Binomial  
         -   Binomial negativa  
@@ -7040,6 +7043,19 @@ semana.</figcaption>
 
 Nome das funções correspondetes às principais distribuições de
 probabilidade
+
+-   Modelos:  
+    -   Em situações práticas, o pesquisador possiu uma série de
+        observações da variável de interesse, obtidas através de um
+        processo de amostragem, e deseja ajustar uma distribuição de
+        probabilidades que reproduza o comportamento geral dessa
+        variável.  
+    -   É importante conhecer diversos modelos teóricos para que se
+        possa selecionar o mais adequado que reproduza o comportamento
+        da variável em questão.  
+    -   O pesquisador precisará estimar os valores dos parâmetros do
+        modelo que ele identifica como adequado (ajustar parêmetros).  
+    -   Ao final verificar a qualidade de ajuste.  
 
 ## 13.2 Distribuição normal
 
