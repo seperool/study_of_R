@@ -7063,7 +7063,8 @@ probabilidade
     -   Cada um desses prefixos **d**, **p**, **q** e **r**, associados
         ao nome da função de distribuição, produz informações sobre essa
         função. (prefixo + função)  
-        Ex.: `pnorm`  
+        Sintaxe:`ddist(x, parâmetros)`  
+        Ex.: `pnorm(x, parâmetros)`  
     -   Para saber quais argumentos e a ordem com que devem ser
         especificados no argumento das funções, utilize o comando
         `?ddist`, substituindo `dist` pelo nome da função no **R**.  

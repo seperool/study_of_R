@@ -7,17 +7,17 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
+  odt_document: 
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
   word_document: 
     toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
     number_sections: true
   html_document:
     number_sections: true
@@ -6554,7 +6554,8 @@ kable(tb_disb_prob, col.names = c("Distribuição de probabilidade", "Nome da fu
 - Comandos sobre as distribuições de probabilidade e pesquisa:\
   - Em relação aos comandos sobre as distribuições de probabilidade, é possivel avaliar a densidade (**d**), a probabilidade (**p**), os percentis (**q**) e gerar números aleatórios (**r**).\
   - Cada um desses prefixos **d**, **p**, **q** e **r**, associados ao nome da função de distribuição, produz informações sobre essa função. (prefixo + função)\
-  Ex.: `pnorm`\
+  Sintaxe:`ddist(x, parâmetros)`\
+  Ex.: `pnorm(x, parâmetros)`\
   - Para saber quais argumentos e a ordem com que devem ser especificados no argumento das funções, utilize o comando `?ddist`, substituindo `dist` pelo nome da função no **R**.\
   Ex.: `?dnorm`\
 
