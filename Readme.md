@@ -7056,6 +7056,18 @@ probabilidade
     -   O pesquisador precisará estimar os valores dos parâmetros do
         modelo que ele identifica como adequado (ajustar parêmetros).  
     -   Ao final verificar a qualidade de ajuste.  
+-   Comandos sobre as distribuições de probabilidade e pesquisa:  
+    -   Em relação aos comandos sobre as distribuições de probabilidade,
+        é possivel avaliar a densidade (**d**), a probabilidade (**p**),
+        os percentis (**q**) e gerar números aleatórios (**r**).  
+    -   Cada um desses prefixos **d**, **p**, **q** e **r**, associados
+        ao nome da função de distribuição, produz informações sobre essa
+        função. (prefixo + função)  
+        Ex.: `pnorm`  
+    -   Para saber quais argumentos e a ordem com que devem ser
+        especificados no argumento das funções, utilize o comando
+        `?ddist`, substituindo `dist` pelo nome da função no **R**.  
+        Ex.: `?dnorm`  
 
 ## 13.2 Distribuição normal
 
