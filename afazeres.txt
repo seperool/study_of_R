@@ -1,6 +1,6 @@
-ESCRITO EM 17/09/23
+ESCRITO EM 19/09/23
 ---
-PARA 18/09/23
+PARA 20/09/23
 ---
 Subir github:
 
@@ -17,7 +17,6 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
-				- Pesquisa
 			- Distribuição normal
 			- Aderência da distribuição normal
 			- As hipóteses de um teste estatístico
