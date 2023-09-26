@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
   github_document: 
   word_document: 
     toc: TRUE
     number_sections: true
-  html_document:
+  pdf_document: 
     number_sections: true
-    df_print: paged
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6562,6 +6562,31 @@ kable(tb_disb_prob, col.names = c("Distribuição de probabilidade", "Nome da fu
 \newpage
 
 ## Distribuição normal
+
+- A distribuição normal esta entre uma das mais importantes e conhecidas distribuições de probabilidade pela sua enorme aplicabilidade em diversas áreas do conhecimento representando o comportamento de diversas variáveis aleatórias, em especial, quando se trata de descrever o comportamento da média amostral.\
+- A função de densidade de probabilidade de uma variável $X$ dessa natureza é dada por:\
+$$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e - \frac{(x - \mu)^{2}}{2 \sigma^{2}} x \in R$$
+- Notação: $X \sim N (\mu,\sigma)$ que dizer que a variável aleatória $X$ tem distribuição normal com os parâmetros especificados entre parênteses.\
+- Os parâmetros dessa distribuição são:\
+  - $\mu$\
+  Representa a média da variável.\
+  - $\sigma$\
+  Representa o desvio padrão da variável.\
+  - $f(x)$\
+  Representa a função densidade de probabilidade no ponto $x$.\
+- No caso contínua, avalia-se a probabilidade para intervalos de valores da variável $X$, que é dada pela área sob a curva da função de densidade restrita aos limites do intervalo. Em notação matemática representamos a probabilidade de $X$ pertencer ao intervalo $[a,b]$ da seguinte forma:\
+$$P(a \leq X \leq b) \int^{b}_{a} f(x)dx$$
+
+- Funções `norm()`:\
+  - Avaliamos a função de densidade de probabilidade no ponto $x$ usando a função $dnorm(x,\mu,\sigma)$.\
+  - Para avaliar a probabilidade acumulada no ponto $x$, isto é, $P(X \leq x)$, usamos a função $pnorm(x,\mu,\sigma)$.\
+  - Para obter o percentil de ordem $k$ da distribuição usamos $qnorm(k,\mu,\sigma)$.\
+  - Para gerar $k$ números aleatórios usamos $rnorm(k,\mu,\sigma)$.\
+- O gráfico da distribuição normal é simétrico em relação ao parâmetro $\mu$, em forma de sino e sua escala depende do parâmetro $\sigma$, quanto menor o valor de $\sigma$, maior será a área em torno de $\mu$.\
+- A distribuição normal é dita padronizada quando $\mu = 0$, e $\sigma = 1$.\
+
+\newpage
+
 ## Aderência da distribuição normal
 ## As hipóteses de um teste estatístico
 ## Erros possíveis no teste de hipótese

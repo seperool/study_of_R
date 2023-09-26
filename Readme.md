@@ -7072,6 +7072,54 @@ probabilidade
 
 ## 13.2 Distribuição normal
 
+-   A distribuição normal esta entre uma das mais importantes e
+    conhecidas distribuições de probabilidade pela sua enorme
+    aplicabilidade em diversas áreas do conhecimento representando o
+    comportamento de diversas variáveis aleatórias, em especial, quando
+    se trata de descrever o comportamento da média amostral.  
+
+-   A função de densidade de probabilidade de uma variável *X* dessa
+    natureza é dada por:  
+    $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e - \frac{(x - \mu)^{2}}{2 \sigma^{2}} x \in R$$
+
+-   Notação: *X* ∼ *N*(*μ*,*σ*) que dizer que a variável aleatória *X*
+    tem distribuição normal com os parâmetros especificados entre
+    parênteses.  
+
+-   Os parâmetros dessa distribuição são:  
+
+    -   *μ*  
+        Representa a média da variável.  
+    -   *σ*  
+        Representa o desvio padrão da variável.  
+    -   *f*(*x*)  
+        Representa a função densidade de probabilidade no ponto *x*.  
+
+-   No caso contínua, avalia-se a probabilidade para intervalos de
+    valores da variável *X*, que é dada pela área sob a curva da função
+    de densidade restrita aos limites do intervalo. Em notação
+    matemática representamos a probabilidade de *X* pertencer ao
+    intervalo \[*a*,*b*\] da seguinte forma:  
+    *P*(*a*≤*X*≤*b*)∫<sub>*a*</sub><sup>*b*</sup>*f*(*x*)*d**x*
+
+-   Funções `norm()`:  
+
+    -   Avaliamos a função de densidade de probabilidade no ponto *x*
+        usando a função *d**n**o**r**m*(*x*,*μ*,*σ*).  
+    -   Para avaliar a probabilidade acumulada no ponto *x*, isto é,
+        *P*(*X*≤*x*), usamos a função *p**n**o**r**m*(*x*,*μ*,*σ*).  
+    -   Para obter o percentil de ordem *k* da distribuição usamos
+        *q**n**o**r**m*(*k*,*μ*,*σ*).  
+    -   Para gerar *k* números aleatórios usamos
+        *r**n**o**r**m*(*k*,*μ*,*σ*).  
+
+-   O gráfico da distribuição normal é simétrico em relação ao parâmetro
+    *μ*, em forma de sino e sua escala depende do parâmetro *σ*, quanto
+    menor o valor de *σ*, maior será a área em torno de *μ*.  
+
+-   A distribuição normal é dita padronizada quando *μ* = 0, e
+    *σ* = 1.  
+
 ## 13.3 Aderência da distribuição normal
 
 ## 13.4 As hipóteses de um teste estatístico
