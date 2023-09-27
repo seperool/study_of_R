@@ -17,6 +17,7 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
+			- Aderência da distribuição normal (análise dos gráficos)
 			- As hipóteses de um teste estatístico
 			- Erros possíveis no teste de hipótese
 			- Regra de decisão para todos os testes de hipóteses
