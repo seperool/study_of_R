@@ -7122,6 +7122,87 @@ probabilidade
 
 ## 13.3 Aderência da distribuição normal
 
+-   Grande parte das ferramentas de inferência estatística passa pelo
+    teste de aderência quanto a normalidade dos dados, isto é,
+    analisa-se a partir da distribuição de densidade empírica da amostra
+    se ela pode ser considerada proveniente de uma população com
+    distribuição normal.  
+
+-   O início dessa análise parte do princípio de que os dados seguem a
+    distribuição normal e após análise gráficas (histograma, boxplot,
+    densidade empírica) e testes de aderência (teste de shapiro, teste
+    Kolmogorov-Smirnov, entre outros), conclui-se por aceitar, ou não, a
+    distribuição normal dos dados.  
+
+    -   Análise gráfica:  
+        -   Histograma  
+        -   Boxplot  
+        -   Densidade empírica  
+    -   Testes de aderência:  
+        -   Teste de shapiro  
+        -   Teste de Kolmogorov-Smirnov  
+        -   …  
+
+-   A função `PlotFdist()` do pacote `DescTools` fornece uma
+    representação gráfica univariada para um vetor numérico mostrando
+    num único gráfico um histograma, a curva de densidade, um boxplot e
+    uma distribuição acumulada empírica, sendo que a curva normal
+    estimada pode ser sobreposta a esses gráficos baseados na amostra.  
+
+-   Desse modo, para análise de qualidade de aproximação da distribuição
+    estimada da variável com a distribuição normal, usamos a função
+    `PlotFdist()` do pacote `DescTools`.  
+
+    -   No primeiro argumento informamos o nome do vetor que contém os
+        dados da variável.  
+    -   No segundo argumento os dados da distribuição teórica
+        (distribuição normal) e seus argumentos respectivos como média e
+        desvio-padrão.  
+    -   Para omitir o gráfico boxplot e a distribuição acumulada,
+        acrescente:  
+        `arg.boxplot = NA`  
+        `args.ecdf = NA`  
+
+-   Exemplo - Aderência de distribuição normal:  
+
+<!-- -->
+
+    #Importação de dados
+    dados = read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+    dados
+    str(dados)
+    summary(dados)
+
+    #Ajuste da distribuição normal para vetor y
+    y <- dados$valor_compra
+    PlotFdist(y,
+              args.curve = list(expr = "dnorm(x, mean(y), sd(y))",
+              col = "Black"),
+              args.dens = list(col = "gray"),
+              #args.boxplot = NA,
+              args.ecdf = NA,
+              xlim = c(-500, 1000))
+
+    #Organizando a legenda
+    legend(x = "topright",
+           legend = c("kernel density", #Legenda 1
+                      expression(X%~%N(mu==31.75, sigma==7.94))), 
+           #Legenda 2 - Expressão matemática
+           fill = c("gray80","black"),
+           text.width = 0.2) #Tamanho da caixa de legenda
+
+    #Fechando dispositivo gráfico
+    dev.off()
+
+<figure>
+<img
+src="./Cap10-Distribuicoes_de_probabilidade/Imagens/Aderencia_distribuicao_normal-Analise_grafica-variavel_continua.png"
+alt="Análise gráfica (histograma, boxplot, densidade empírica) através da função PlotFdist(), do pacote DescTools." />
+<figcaption aria-hidden="true">Análise gráfica (histograma, boxplot,
+densidade empírica) através da função <code>PlotFdist()</code>, do
+pacote <code>DescTools</code>.</figcaption>
+</figure>
+
 ## 13.4 As hipóteses de um teste estatístico
 
 ## 13.5 Erros possíveis no teste de hipótese
