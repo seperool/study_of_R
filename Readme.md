@@ -7080,7 +7080,7 @@ probabilidade
 
 -   A função de densidade de probabilidade de uma variável *X* dessa
     natureza é dada por:  
-    $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e - \frac{(x - \mu)^{2}}{2 \sigma^{2}} x \in R$$
+    $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}} x \in R$$
 
 -   Notação: *X* ∼ *N*(*μ*,*σ*) que dizer que a variável aleatória *X*
     tem distribuição normal com os parâmetros especificados entre
