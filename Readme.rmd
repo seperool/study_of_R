@@ -10,14 +10,14 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
+  word_document: 
+    toc: TRUE
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
-    number_sections: true
   github_document: 
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
   html_document:
     number_sections: true
@@ -6644,6 +6644,12 @@ dev.off()
 ```
 
 ![Análise gráfica (histograma, boxplot, densidade empírica) através da função `PlotFdist()`, do pacote `DescTools`.](./Cap10-Distribuicoes_de_probabilidade/Imagens/Aderencia_distribuicao_normal-Analise_grafica-variavel_continua.png){}
+
+\newpage
+
+Ao observar o gráfico, percebe-se que não é adequado a aproximação entre as curvas, a distribuição teórica esta abaixo da distribuição empírica (kernel density) na maior parte do intervalo de valores do eixo x, há uma forte assimetria à direita, assim como presença de de *outliers*, de acordo com o que vemos no boxplot.\
+
+A partir dessa análise gráfica da aproximação entre curvas de densidade, o próximo passo é realizar um teste de aderência da normalidade, como o teste Shapiro. Se o teste confirmar a aderência, torna-se possível avaliar probabilidades para essa variável, gerar números aleatórios simulando a obtenção de amostras dessa população bem como avaliar percentis para a variável, com base na distribuição normal.\
 
 \newpage
 

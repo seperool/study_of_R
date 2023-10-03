@@ -7203,6 +7203,19 @@ densidade empírica) através da função <code>PlotFdist()</code>, do
 pacote <code>DescTools</code>.</figcaption>
 </figure>
 
+Ao observar o gráfico, percebe-se que não é adequado a aproximação entre
+as curvas, a distribuição teórica esta abaixo da distribuição empírica
+(kernel density) na maior parte do intervalo de valores do eixo x, há
+uma forte assimetria à direita, assim como presença de de *outliers*, de
+acordo com o que vemos no boxplot.  
+
+A partir dessa análise gráfica da aproximação entre curvas de densidade,
+o próximo passo é realizar um teste de aderência da normalidade, como o
+teste Shapiro. Se o teste confirmar a aderência, torna-se possível
+avaliar probabilidades para essa variável, gerar números aleatórios
+simulando a obtenção de amostras dessa população bem como avaliar
+percentis para a variável, com base na distribuição normal.  
+
 ## 13.4 As hipóteses de um teste estatístico
 
 ## 13.5 Erros possíveis no teste de hipótese
