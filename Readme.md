@@ -7218,6 +7218,27 @@ percentis para a variável, com base na distribuição normal.
 
 ## 13.4 As hipóteses de um teste estatístico
 
+-   Um teste estatístico é composto de duas hipóteses sobre parâmetros
+    populacionais relacionados à pergunta da pesquisa:  
+    -   *H*<sub>0</sub>:  
+        Hipótese nula, afirma valores para os parâmetros.  
+    -   *H*<sub>1</sub>:  
+        Hipótese alternativa, naga o valor do parâmetro afirmado em
+        *H*<sub>0</sub>.  
+-   Em geral, a hipótese nula é normalmente a negação do que o
+    pesquisador deseja provar.
+-   Exemplos:  
+
+1.  O contrato de uma empresa estabelece queo precentual de certa
+    substância num produto não pode ultrapassar certo valor, 1%. Há
+    suspeitas de que esse item do contrato não esteja sendo cumprido,
+    logo o pesquisador que provar que a proporção é maior do que 1%. O
+    parâmetro a ser testado é a proporção *p* da substância no
+    produto.  
+    Nesta situação a formulação do teste é:  
+    *H*<sub>0</sub>: *p* = 0.01;  
+    *H*<sub>1</sub>: *p* \> 0.01;  
+
 ## 13.5 Erros possíveis no teste de hipótese
 
 ## 13.6 Regra de decisão para todos os testes de hipóteses
