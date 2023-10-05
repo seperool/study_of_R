@@ -7239,6 +7239,18 @@ percentis para a variável, com base na distribuição normal.
     *H*<sub>0</sub>: *p* = 0.01;  
     *H*<sub>1</sub>: *p* \> 0.01;  
 
+2.  Caso o contrato estabeleça que o percentual de certa substância deva
+    ser igual a (ou em torno de) certo valor, digamos, 1%, a formulação
+    do teste é:  
+    *H*<sub>0</sub>: *p* = 0.01;  
+    *H*<sub>1</sub>: *p* ≠ 0.01;  
+
+3.  Caso o contrato estabeleça que o percentual de certa substância deva
+    ser maior do que, digamos, 1% e que haja suspeita de que o contrato
+    não esteja sendo cumprido, a formulação do teste é:  
+    *H*<sub>0</sub>: *p* = 0.01;  
+    *H*<sub>1</sub>: *p* \< 0.01;  
+
 ## 13.5 Erros possíveis no teste de hipótese
 
 ## 13.6 Regra de decisão para todos os testes de hipóteses

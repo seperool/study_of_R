@@ -7,20 +7,20 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
-  pdf_document: 
-    number_sections: true
-    toc: false
   html_document:
     number_sections: true
     df_print: paged
+  pdf_document: 
+    number_sections: true
+    toc: false
+  md_document:
+    number_sections: true
+    variant: markdown_github
   github_document: 
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
-    number_sections: true
-  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -6666,6 +6666,15 @@ A partir dessa análise gráfica da aproximação entre curvas de densidade, o p
 Nesta situação a formulação do teste é:\
 $H_0$: $p = 0.01$;\
 $H_1$: $p > 0.01$;\
+
+
+2. Caso o contrato estabeleça que o percentual de certa substância deva ser igual a (ou em torno de) certo valor, digamos, 1%, a formulação do teste é:\
+$H_0$: $p = 0.01$;\
+$H_1$: $p \neq 0.01$;\
+
+3. Caso o contrato estabeleça que o percentual de certa substância deva ser maior do que, digamos, 1% e que haja suspeita de que o contrato não esteja sendo cumprido, a formulação do teste é:\
+$H_0$: $p = 0.01$;\
+$H_1$: $p < 0.01$;\
 
 \newpage
 
