@@ -7251,6 +7251,29 @@ percentis para a variável, com base na distribuição normal.
     *H*<sub>0</sub>: *p* = 0.01;  
     *H*<sub>1</sub>: *p* \< 0.01;  
 
+-   Análise do caso 3:  
+    A hipótese nula vai de encontro à afirmativa do contrato e a
+    hipótese alternativa retrata a suspeita do pesquisador.  
+    É usual que *H*<sub>0</sub> se apresente em termos de igualdade de
+    parâmetros populacionais enquanto que *H*<sub>1</sub> em termos de
+    desigualdade conforme os exemplos dos casos 1, 2 e 3.  
+    O procedimento de um teste de hipótese faz uso de amostras da
+    população de forma que uma das hipóteses será validade à luz das
+    estatísticas estabelecidas pela amostra selecionada.  
+    Assim, as informações de uma amostra aleatória da população de
+    interesse é que servem de base para decisão de qual hipótese é a
+    mais provável de ser verdadeira. Se a informação for consistente com
+    a hipótese nula, então podemos concluir que ela é verdadeira; Caso
+    contrário, concluímos que a hipótese é falsa.  
+    Para testar uma hipótese, devemos extrair uma amostra aleatória,
+    calcular uma estatística de teste apropriada, obter o *p-valor*
+    dessa estatística e então tomar a decisão.  
+    Podemos pensar este *p-valor* como a probabilidade que dá
+    sustentação à manutenção da hipótese nula como verdadeira. Assim, se
+    *p-valor* for muito pequeno, próximo de zero, não teremos motivos
+    para acreditar que a hipótese nula é a verdadeira. Neste caso,
+    rejeitamos a hipótese nula.  
+
 ## 13.5 Erros possíveis no teste de hipótese
 
 ## 13.6 Regra de decisão para todos os testes de hipóteses

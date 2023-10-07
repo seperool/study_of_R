@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   html_document:
     number_sections: true
     df_print: paged
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  github_document: 
   pdf_document: 
     number_sections: true
     toc: false
   md_document:
     number_sections: true
     variant: markdown_github
-  github_document: 
-  odt_document: 
-    number_sections: true
-  word_document: 
-    toc: TRUE
-    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6667,7 +6667,6 @@ Nesta situação a formulação do teste é:\
 $H_0$: $p = 0.01$;\
 $H_1$: $p > 0.01$;\
 
-
 2. Caso o contrato estabeleça que o percentual de certa substância deva ser igual a (ou em torno de) certo valor, digamos, 1%, a formulação do teste é:\
 $H_0$: $p = 0.01$;\
 $H_1$: $p \neq 0.01$;\
@@ -6675,6 +6674,16 @@ $H_1$: $p \neq 0.01$;\
 3. Caso o contrato estabeleça que o percentual de certa substância deva ser maior do que, digamos, 1% e que haja suspeita de que o contrato não esteja sendo cumprido, a formulação do teste é:\
 $H_0$: $p = 0.01$;\
 $H_1$: $p < 0.01$;\
+
+\newpage
+
+- Análise do caso 3:\
+A hipótese nula vai de encontro à afirmativa do contrato e a hipótese alternativa retrata a suspeita do pesquisador.\
+É usual que $H_0$ se apresente em termos de igualdade de parâmetros populacionais enquanto que $H_1$ em termos de desigualdade conforme os exemplos dos casos 1, 2 e 3.\
+O procedimento de um teste de hipótese faz uso de amostras da população de forma que uma das hipóteses será validade à luz das estatísticas estabelecidas pela amostra selecionada.\
+Assim, as informações de uma amostra aleatória da população de interesse é que servem de base para decisão de qual hipótese é a mais provável de ser verdadeira. Se a informação for consistente com a hipótese nula, então podemos concluir que ela é verdadeira; Caso contrário, concluímos que a hipótese é falsa.\
+Para testar uma hipótese, devemos extrair uma amostra aleatória, calcular uma estatística de teste apropriada, obter o *p-valor* dessa estatística e então tomar a decisão.\
+Podemos pensar este *p-valor* como a probabilidade que dá sustentação à manutenção da hipótese nula como verdadeira. Assim, se *p-valor* for muito pequeno, próximo de zero, não teremos motivos para acreditar que a hipótese nula é a verdadeira. Neste caso, rejeitamos a hipótese nula.\
 
 \newpage
 
