@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  md_document:
+    number_sections: true
+    variant: markdown_github
   odt_document: 
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
   html_document:
     number_sections: true
     df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
-  github_document: 
-  pdf_document: 
-    number_sections: true
-    toc: false
-  md_document:
-    number_sections: true
-    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6688,6 +6688,19 @@ Podemos pensar este *p-valor* como a probabilidade que dá sustentação à manu
 \newpage
 
 ## Erros possíveis no teste de hipótese
+
+- Quando se toma uma decisão usando a informação de uma amostra aleatória, estamos sujeitos a **ERROS**.\
+- Os erros recebem convencionalmente os seguintes nomes:\
+  - Erro tipo I: rejeitar $H_0$ quando $H_0$ é verdadeira.\
+  - Erro tipo II: aceitar $H_0$ quando $H_0$ é falsa.\
+- Argumentos:\
+  - $\alpha$\
+  - $\alpha-1$\
+  - $\beta$\
+  - $1 - \beta$\
+
+\newpage
+
 ## Regra de decisão para todos os testes de hipóteses
 ## Teste de normalidade
 ## Análise gráfica

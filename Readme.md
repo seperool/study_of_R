@@ -7276,6 +7276,19 @@ percentis para a variável, com base na distribuição normal.
 
 ## 13.5 Erros possíveis no teste de hipótese
 
+-   Quando se toma uma decisão usando a informação de uma amostra
+    aleatória, estamos sujeitos a **ERROS**.  
+-   Os erros recebem convencionalmente os seguintes nomes:  
+    -   Erro tipo I: rejeitar *H*<sub>0</sub> quando *H*<sub>0</sub> é
+        verdadeira.  
+    -   Erro tipo II: aceitar *H*<sub>0</sub> quando *H*<sub>0</sub> é
+        falsa.  
+-   Argumentos:  
+    -   *α*  
+    -   *α* − 1  
+    -   *β*  
+    -   1 − *β*  
+
 ## 13.6 Regra de decisão para todos os testes de hipóteses
 
 ## 13.7 Teste de normalidade
