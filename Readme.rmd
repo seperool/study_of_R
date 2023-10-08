@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  github_document: 
-  html_document:
-    number_sections: true
-    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
+  github_document: 
+  odt_document: 
+    number_sections: true
+  html_document:
+    number_sections: true
+    df_print: paged
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6693,11 +6693,11 @@ Podemos pensar este *p-valor* como a probabilidade que dá sustentação à manu
 - Os erros recebem convencionalmente os seguintes nomes:\
   - Erro tipo I: rejeitar $H_0$ quando $H_0$ é verdadeira.\
   - Erro tipo II: aceitar $H_0$ quando $H_0$ é falsa.\
-- Argumentos:\
-  - $\alpha$\
-  - $\alpha-1$\
-  - $\beta$\
-  - $1 - \beta$\
+- Análise dos erros:\
+  - $\alpha$ é o **nível de significância do teste**, é a probabilidade do erro tipo I, em geral o valor adotado é de 5%.\
+  - $1 - \alpha$ é o **nível de confiança do teste** (é a probabilidade de aceitar $H_0$ quando de fato essa hipótese é verdadeira), em geral seu valor é de 95%.\
+  - $\beta$ é a **probabilidade do erro tipo II**, seu valor não é fixado já que essa probabilidade depende do valor do parâmetro em $H_1$, o qual pode assumir infinitas possibilidades.\
+  - $1 - \beta$ é conhecida como **poder do teste** (é a probabilidade de rejeitar $H_0$ quando de fato essa hipótese é falsa).\
 
 \newpage
 

@@ -7283,11 +7283,19 @@ percentis para a variável, com base na distribuição normal.
         verdadeira.  
     -   Erro tipo II: aceitar *H*<sub>0</sub> quando *H*<sub>0</sub> é
         falsa.  
--   Argumentos:  
-    -   *α*  
-    -   *α* − 1  
-    -   *β*  
-    -   1 − *β*  
+-   Análise dos erros:  
+    -   *α* é o **nível de significância do teste**, é a probabilidade
+        do erro tipo I, em geral o valor adotado é de 5%.  
+    -   1 − *α* é o **nível de confiança do teste** (é a probabilidade
+        de aceitar *H*<sub>0</sub> quando de fato essa hipótese é
+        verdadeira), em geral seu valor é de 95%.  
+    -   *β* é a **probabilidade do erro tipo II**, seu valor não é
+        fixado já que essa probabilidade depende do valor do parâmetro
+        em *H*<sub>1</sub>, o qual pode assumir infinitas
+        possibilidades.  
+    -   1 − *β* é conhecida como **poder do teste** (é a probabilidade
+        de rejeitar *H*<sub>0</sub> quando de fato essa hipótese é
+        falsa).  
 
 ## 13.6 Regra de decisão para todos os testes de hipóteses
 
