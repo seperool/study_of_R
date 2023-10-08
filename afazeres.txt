@@ -1,6 +1,6 @@
-ESCRITO EM 06/10/23
+ESCRITO EM 08/10/23
 ---
-PARA 07/10/23
+PARA 09/10/23
 ---
 Subir github:
 
@@ -17,7 +17,6 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
-			- Erros possíveis no teste de hipótese
 			- Regra de decisão para todos os testes de hipóteses
 			- Teste de normalidade
 			- Análise gráfica
