@@ -18,6 +18,7 @@ Afazeres:
 					- discretas
 					- contínuas
 			- Regra de decisão para todos os testes de hipóteses
+				- Tabela
 			- Teste de normalidade
 			- Análise gráfica
 			- E quando os dados não são normais?
