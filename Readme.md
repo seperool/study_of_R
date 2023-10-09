@@ -7299,6 +7299,52 @@ percentis para a variável, com base na distribuição normal.
 
 ## 13.6 Regra de decisão para todos os testes de hipóteses
 
+-   A regra de decisão de um teste de hipóteses leva em conta o nível de
+    significância adotado pelo pesquisador, o *α*, e o *p-valor*
+    associado à estatística do teste.  
+    -   *p-valor*  ≥ *α*  
+        Implica em aceitar *H*<sub>0</sub> como verdadeira.  
+    -   *p-valor*  \< *α*  
+        Implica em rejeitar *H*<sub>0</sub> como verdadeira e
+        consequentemente aceitar *H*<sub>1</sub> como verdadeira.  
+-   Exemplo:  
+    Considere que o teste seja formado sobre as hipóteses,
+    *H*<sub>0</sub>:*p* = 0.20 e *H*<sub>1</sub>:*p* \> 0.20 com nível
+    de significância *α* = 0.05; Após a seleção da amostra e sua análise
+    estatística, obteve-se hipoteticamente *p-valor*  = 0.39, a
+    conclusão do teste é de que não há evidência suficiente para afirmar
+    que *p* \> 0.20, ou seja o teste leva a aceitar *H*<sub>0</sub> como
+    verdadeira.  
+    Caso, hipoteticamente *p-valor*  = 0.001. Logo, a conclusão do teste
+    é de que não há evidência suficiente para afirmar que *p* = 0.20, ou
+    seja o teste leva a rejeitar *H*<sub>0</sub> como verdadeira e
+    aceitar *H*<sub>1</sub>:*p* \> 0.20.  
+
+-   Os principais testes estatísticos estão disponíveis no pacote base.
+    A tabela a seguir mostra as funções para realização de diversos
+    testes de hipóteses:  
+
+| Função | O que faz                                                                                                                            |
+|:---:|:------------------------------------------------------------------|
+|        | Teste de Ansari-Bradley compara a diferença de escala em duas amostras.                                                              |
+|        | Teste de Bartlett compara se a variância entre os grupos são iguais.                                                                 |
+|        | Teste Binomial exato, testa a probabilidade de sucesso em um experimento binomial.                                                   |
+|        | Box-Pierce ou Ljung-Box teste para examinar a independência de uma série temporal.                                                   |
+|        | Teste Qui-quadrado para tabelas de contingência ou avaliar a qualidade do ajuste de duas distribuições.                              |
+|        | Teste para associação entre amostras pareadas usando o métodos de Pearson, Kendall ou Spearman.                                      |
+|        | Teste exato de Fisher para tabelas de contingência.                                                                                  |
+|        | Teste de Fligner-Killeen da igualdade de variâncias.                                                                                 |
+|        | Teste de Friedman para a soma de postos com dados em blocos não duplicados.                                                          |
+|        | Teste de Kruskal-Wallis para a soma de postos.                                                                                       |
+|        | Teste de Kolmogorov-Smirnov para comparação de duas ou mais distribuições.                                                           |
+|        | Teste Qui-quadrado de Cochran-Mantel-Haenszel para verificar a independência condicional em cada estrato de duas variáveis nominais. |
+
+Lista de funções para realização de teste de hipóteses do pacote
+`stats`.
+
+-   Obs: O pacote `stats` (pacote de funções estatísticas do **R**) é um
+    pacote básico e não precisa ser atualizado.  
+
 ## 13.7 Teste de normalidade
 
 ## 13.8 Análise gráfica
