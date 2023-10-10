@@ -1,6 +1,6 @@
-ESCRITO EM 09/10/23
+ESCRITO EM 10/10/23
 ---
-PARA 10/10/23
+PARA 11/10/23
 ---
 Subir github:
 
@@ -20,7 +20,6 @@ Afazeres:
 			- Regra de decisão para todos os testes de hipóteses
 				- Tabela
 					- Funções
-					- O que faz (metade)
 			- Teste de normalidade
 			- Análise gráfica
 			- E quando os dados não são normais?
