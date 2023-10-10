@@ -7338,6 +7338,26 @@ percentis para a variável, com base na distribuição normal.
 |        | Teste de Kruskal-Wallis para a soma de postos.                                                                                       |
 |        | Teste de Kolmogorov-Smirnov para comparação de duas ou mais distribuições.                                                           |
 |        | Teste Qui-quadrado de Cochran-Mantel-Haenszel para verificar a independência condicional em cada estrato de duas variáveis nominais. |
+|        | Teste de esfericidade de Mauchlys.                                                                                                   |
+|        | Teste Qui-quadrado de Mcnemar para tabela de contingência.                                                                           |
+|        | Teste de Mood da igualdade de variâncias.                                                                                            |
+|        | Teste de igualdade da média entre duas ou mais variáveis.                                                                            |
+|        | Teste de igualdade entre pares de proporção.                                                                                         |
+|        | Teste t para igualdade entre pares de média de grupos com níveis.                                                                    |
+|        | Teste de Wilcoxon para igualdade entre pares de média de grupos com níveis.                                                          |
+|        | Teste de Poisson para a taxa média ou para igualdade entre duas taxas médias de distribuição de Poisson.                             |
+|        | Calcula o poder do teste anova.                                                                                                      |
+|        | Calcula o poder do teste de proporção.                                                                                               |
+|        | Calcula o poder do teste t.                                                                                                          |
+|        | Teste Phillips-Perron para raízes unitárias.                                                                                         |
+|        | Teste para a proporção de sucessos em vários grupos.                                                                                 |
+|        | Teste Qui-quadrado para a tendência da proporção.                                                                                    |
+|        | Teste Quade para dados em blocos não duplicados.                                                                                     |
+|        | Teste de Shapiro-Wilk para verificar a normalidade da variável.                                                                      |
+|        | Teste t para comparação da média de uma amostra ou duas amostras (pareadas ou independentes).                                        |
+|        | Teste de Tukey para comparar par a par a diferença entre médias.                                                                     |
+|        | Teste F para comparação de igualdade de variâncias.                                                                                  |
+|        | Teste de Wilcoxon para o posto de sinais. Também conhecido como Teste de Mann-Whitney.                                               |
 
 Lista de funções para realização de teste de hipóteses do pacote
 `stats`.

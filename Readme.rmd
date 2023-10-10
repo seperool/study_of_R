@@ -10,18 +10,18 @@ output:
   md_document:
     number_sections: true
     variant: markdown_github
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  odt_document: 
-    number_sections: true
-  github_document: 
   html_document:
     number_sections: true
     df_print: paged
   pdf_document: 
     number_sections: true
     toc: false
+  github_document: 
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6730,7 +6730,27 @@ OQF_test_est <- c("Teste de Ansari-Bradley compara a diferença de escala em dua
                   "Teste de Friedman para a soma de postos com dados em blocos não duplicados.",
                   "Teste de Kruskal-Wallis para a soma de postos.",
                   "Teste de Kolmogorov-Smirnov para comparação de duas ou mais distribuições.",
-                  "Teste Qui-quadrado de Cochran-Mantel-Haenszel para verificar a independência condicional em cada estrato de duas variáveis nominais.")
+                  "Teste Qui-quadrado de Cochran-Mantel-Haenszel para verificar a independência condicional em cada estrato de duas variáveis nominais.",
+                  "Teste de esfericidade de Mauchlys.",
+                  "Teste Qui-quadrado de Mcnemar para tabela de contingência.",
+                  "Teste de Mood da igualdade de variâncias.",
+                  "Teste de igualdade da média entre duas ou mais variáveis.",
+                  "Teste de igualdade entre pares de proporção.",
+                  "Teste t para igualdade entre pares de média de grupos com níveis.",
+                  "Teste de Wilcoxon para igualdade entre pares de média de grupos com níveis.",
+                  "Teste de Poisson para a taxa média ou para igualdade entre duas taxas médias de distribuição de Poisson.",
+                  "Calcula o poder do teste anova.",
+                  "Calcula o poder do teste de proporção.",
+                  "Calcula o poder do teste t.",
+                  "Teste Phillips-Perron para raízes unitárias.",
+                  "Teste para a proporção de sucessos em vários grupos.",
+                  "Teste Qui-quadrado para a tendência da proporção.",
+                  "Teste Quade para dados em blocos não duplicados.",
+                  "Teste de Shapiro-Wilk para verificar a normalidade da variável.",
+                  "Teste t para comparação da média de uma amostra ou duas amostras (pareadas ou independentes).",
+                  "Teste de Tukey para comparar par a par a diferença entre médias.",
+                  "Teste F para comparação de igualdade de variâncias.",
+                  "Teste de Wilcoxon para o posto de sinais. Também conhecido como Teste de Mann-Whitney.")
 
 dt_test_est <- data.frame(func_test_est,OQF_test_est)
 
