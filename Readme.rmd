@@ -7,15 +7,15 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  pdf_document: 
+    number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
-    number_sections: true
-    toc: false
   github_document: 
   word_document: 
     toc: TRUE
@@ -6718,7 +6718,39 @@ Caso, hipoteticamente *p-valor* $= 0.001$. Logo, a conclusão do teste é de que
 ```{r Testes de hipóteses, echo=FALSE, message=FALSE, warning=FALSE}
 
 #data.frame
-func_test_est <- c("")
+func_test_est <- c("ansari.test(x, y, alternative = c('two.sided','less','greater'), exact = NULL, conf.int = FALSE, conf.level = 0.95)",
+                   "bartlett.test(x,y)",
+                   "binom.test(x, n, p = 0.5, alternative = c('two.sided','less','greater'), conf.level = 0.95)",
+                   "Box.test(x, lag = 1, type = c('Box-Pierce','Ljung-Box'), fitdf = 0)",
+                   "chisq.test(x, y = NULL, correct = TRUE, p = rep(1/length(x), length(x)), rescale.p = False, simulate.p.value = FALSE, B = 2000)",
+                   "cor.test(x, y, alternative = c('two.sided','less','greater'), method = c('pearson','kendall','spearman'), exact = NULL, conf.level = 0.95, continuity = FALSE, ...)",
+                   "fisher.test(x, y = NULL, workspace = 200000, hybrid = FALSE, control = list(), or = 1, alternative = 'two.sided', conf.int = TRUE, conf.level = 0.95, simulate.p.value = FALSE, B = 2000)",
+                   "fligner.test(x, ...)",
+                   "friedman.test(y, ...)",
+                   "kruskal.test(x, ...)",
+                   "ks.test(x, y, alternative = c('two.sided','less','greater'), exact = NULL)",
+                   "mantelhaen.test(x, y = NULL, z = NULL, alternative = c('two.sided','less','greater'), correct = TRUE, exact = FALSE, conf.level = 0.95)",
+                   "mauchly.test(objeto de classe mlm, ...)",
+                   "mcnemar.test(x, y = NULL, correct = TRUE)",
+                   "mood.test(x, ...)",
+                   "oneway.test(formula, data, subset, na.action, var.equal = FALSE)",
+                   "pairwise.prop.test(x, n, p.adjust.method = p.adjust.methods)",
+                   "pairwise.t.test(x, g, p.adjust.method = p.adjust.methods, pool.sd = !paired, paired = FALSE, alternative = c('two.sided','less','greater'))",
+                   "pairwise.wilcox.test(x, g, p.adjust.method = p.adjust.methods, paired = FALSE, alternative = c('two.sided','less','greater'))",
+                   "poisson.test(x, T = 1, r = 1, alternative = c('two.sided','less','greater'), conf.level = 0.95)",
+                   "power.anova.test(groups = NULL, n = NULL, between.var = NULL, within.var = NULL, sig.level = 0.05, power = NULL)",
+                   "power.prop.test()",
+                   "power.t.test()",
+                   "PP.test()",
+                   "prop.test()",
+                   "prop.trend.test()",
+                   "quade.test()",
+                   "shapiro.test()",
+                   "t.test()",
+                   "TukeyHSD()",
+                   "var.test()",
+                   "wilcox.test()")
+
 OQF_test_est <- c("Teste de Ansari-Bradley compara a diferença de escala em duas amostras.",
                   "Teste de Bartlett compara se a variância entre os grupos são iguais. ",
                   "Teste Binomial exato, testa a probabilidade de sucesso em um experimento binomial.",
@@ -6756,7 +6788,7 @@ dt_test_est <- data.frame(func_test_est,OQF_test_est)
 
 #Tabela
 kable(dt_test_est, col.names = c("Função","O que faz"),
-      align = "cl",
+      align = "cc",
       caption = "Lista de funções para realização de teste de hipóteses do pacote `stats`.")
 ```
 
