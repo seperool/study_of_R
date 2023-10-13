@@ -1,6 +1,6 @@
-ESCRITO EM 11/10/23
+ESCRITO EM 13/10/23
 ---
-PARA 12/10/23
+PARA 14/10/23
 ---
 Subir github:
 
@@ -17,9 +17,6 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
-			- Regra de decisão para todos os testes de hipóteses
-				- Tabela
-					- Funções
 			- Teste de normalidade
 			- Análise gráfica
 			- E quando os dados não são normais?
