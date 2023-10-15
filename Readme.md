@@ -7366,6 +7366,46 @@ Lista de funções para realização de teste de hipóteses do pacote
 
 ## 13.7 Teste de normalidade
 
+-   Os principais testes estatísticos têm como suposição a normalidade
+    dos dados, que deve ser verificada antes da realização das análises
+    principais.  
+
+-   Um teste de normalidade pressupõe duas hipóteses estatísticas sobre
+    a distribuição de probabilidade de uma variável aleatória X:  
+
+    -   *H*<sub>0</sub>  
+        A distribuição de probabilidade de X é normal.  
+    -   *H*<sub>1</sub>  
+        A distribuição de probabilidade de X não é normal.  
+
+-   O teste de Shapiro-Wilk é um teste indicado para essa finalidade e
+    sua aplicação no R é muito simples:  
+
+<!-- -->
+
+    x <- dados$valor_compra
+
+    #Teste de Shapiro-Wilk
+    shapiro.test(x)
+
+    #   Shapiro-Wilk normality test
+    #
+    #data:  x
+    #W = 0.79892, p-value = 0.0003682
+
+-   Analisando *p-value*:  
+    -   Como *p-value*  \< 0.05, conclui-se que pela rejeição de
+        *H*<sub>0</sub> ao nível de significância de 5%, logo, assume-se
+        que a distribuição de probabilidade da variável *valor_compra*
+        não segue um modelo normal.  
+    -   Caso *p-value* seja maior ou igual a 0.05, conclui-se pela
+        aceitação de *H*<sub>0</sub> ao nível de significância de 5%.  
+    -   Desse modo, ao aplicar o teste de Shapiro-Wilk, deve-se
+        verificar se *p-value*  \> 0.05, nesse caso, aceita-se
+        *H*<sub>0</sub>; Caso contrário, rejeita-se *H*<sub>0</sub>.  
+        -   Se *p-value*  \> 0.05: *H*<sub>0</sub>;  
+        -   Se *p-value*  ≤ 0.05: *H*<sub>1</sub>;  
+
 ## 13.8 Análise gráfica
 
 ## 13.9 E quando os dados não são normais?

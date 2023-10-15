@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
+  pdf_document: 
     number_sections: true
-    variant: markdown_github
+    toc: false
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
-    number_sections: true
-  odt_document: 
     number_sections: true
   github_document: 
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  md_document:
     number_sections: true
-    toc: false
+    variant: markdown_github
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6797,6 +6797,36 @@ kable(dt_test_est, col.names = c("Função","O que faz"),
 \newpage
 
 ## Teste de normalidade
+
+- Os principais testes estatísticos têm como suposição a normalidade dos dados, que deve ser verificada antes da realização das análises principais.\
+
+- Um teste de normalidade pressupõe duas hipóteses estatísticas sobre a distribuição de probabilidade de uma variável aleatória X:\
+  - $H_0$\
+  A distribuição de probabilidade de X é normal.\
+  - $H_1$\
+  A distribuição de probabilidade de X não é normal.\
+
+- O teste de Shapiro-Wilk é um teste indicado para essa finalidade e sua aplicação no R é muito simples:\
+```
+x <- dados$valor_compra
+
+#Teste de Shapiro-Wilk
+shapiro.test(x)
+
+#	Shapiro-Wilk normality test
+#
+#data:  x
+#W = 0.79892, p-value = 0.0003682
+```
+- Analisando *p-value*:\
+  - Como *p-value* $< 0.05$, conclui-se que pela rejeição de $H_0$ ao nível de significância de $5 \%$, logo, assume-se que a distribuição de probabilidade da variável *valor_compra* não segue um modelo normal.\
+  - Caso *p-value* seja maior ou igual a $0.05$, conclui-se pela aceitação de $H_0$ ao nível de significância de $5 \%$.\
+  - Desse modo, ao aplicar o teste de Shapiro-Wilk, deve-se verificar se *p-value* $> 0.05$, nesse caso, aceita-se $H_0$; Caso contrário, rejeita-se $H_0$.\
+    - Se *p-value* $> 0.05$: $H_0$;\
+    - Se *p-value* $\leqslant 0.05$: $H_1$;\
+
+\newpage
+
 ## Análise gráfica
 ## E quando os dados não são normais?
 
