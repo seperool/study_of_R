@@ -7408,6 +7408,75 @@ Lista de funções para realização de teste de hipóteses do pacote
 
 ## 13.8 Análise gráfica
 
+-   Juntamente com o teste de Shapiro, é importante realizar a inspeção
+    gráfica através do histograma da variável que pode ser produzido de
+    diversas formas e com diferentes pacotes:  
+    1.  Pacote básico:  
+        `hist(x)`  
+
+    <figure>
+    <img
+    src="./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-pacote_basico.png"
+    style="width:80.0%"
+    alt="Histograma para análise de normalidade dos dados - pacote básico." />
+    <figcaption aria-hidden="true">Histograma para análise de normalidade
+    dos dados - pacote básico.</figcaption>
+    </figure>
+
+    1.  Pacote `ggplot2`:  
+
+    <!-- -->
+
+        dados %>% 
+        ggplot(aes(x))+
+        geom_histogram(position = "identity", bins = 5)+
+        theme_bw()
+
+    <figure>
+    <img
+    src="./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-pacote_ggplot2.png"
+    style="width:80.0%"
+    alt="Histograma para análise de normalidade dos dados - pacote ggplot2." />
+    <figcaption aria-hidden="true">Histograma para análise de normalidade
+    dos dados - pacote <code>ggplot2</code>.</figcaption>
+    </figure>
+
+-   O gráfico `qqplot` produz uma análise de comparação entre percentil
+    da amostra e percentil teórico da distribuição normal. Os pontos
+    devem estar próximos da reta, indicando que os dados seguem a mesma
+    distribuição normal.  
+    1.  `qqplot` com `ggplot2`:  
+
+    <!-- -->
+
+        ggplot(dados, aes(sample = valor_compra))+
+        stat_qq()+
+        stat_qq_line()+
+        theme_bw()
+
+    <figure>
+    <img
+    src="./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-percentil_amostra_teorico-pacote_ggplot2.png"
+    style="width:80.0%"
+    alt="qqplot para análise da normalidade dos dados - pacote ggplot2." />
+    <figcaption aria-hidden="true"><code>qqplot</code> para análise da
+    normalidade dos dados - pacote <code>ggplot2</code>.</figcaption>
+    </figure>
+
+    1.  `qqplot` com `DescTools`:  
+        `PlotQQ(x, args.cband = list(col = SetAlpha("grey", 0.25)))`  
+
+    <figure>
+    <img
+    src="./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-percentil_amostra_teorico-pacote_DescTools.png"
+    style="width:80.0%"
+    alt="qqplot para análise da normalidade dos dados - pacote DescTools." />
+    <figcaption aria-hidden="true"><code>qqplot</code> para análise da
+    normalidade dos dados - pacote <code>DescTools</code>.</figcaption>
+    </figure>
+-   Pode-se ainda usar a função `PlotFDist` para comparar as curvas
+    teóricas e empíricas dos dados, observando a aderência das curvas.  
+
 ## 13.9 E quando os dados não são normais?
 
 # 14 ANDAMENTO DOS ESTUDOS

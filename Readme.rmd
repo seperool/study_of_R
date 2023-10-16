@@ -10,15 +10,15 @@ output:
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
+  html_document:
     number_sections: true
+    df_print: paged
   word_document: 
     toc: TRUE
     number_sections: true
   github_document: 
-  html_document:
+  odt_document: 
     number_sections: true
-    df_print: paged
   md_document:
     number_sections: true
     variant: markdown_github
@@ -6828,6 +6828,49 @@ shapiro.test(x)
 \newpage
 
 ## Análise gráfica
+
+- Juntamente com o teste de Shapiro, é importante realizar a inspeção gráfica através do histograma da variável que pode ser produzido de diversas formas e com diferentes pacotes:\
+  1. Pacote básico:\
+  `hist(x)`\
+  
+  ![Histograma para análise de normalidade dos dados - pacote básico.](./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-pacote_basico.png){width=80%}
+  
+  
+  2. Pacote `ggplot2`:\
+  ```
+  dados %>% 
+  ggplot(aes(x))+
+  geom_histogram(position = "identity", bins = 5)+
+  theme_bw()
+  ```
+
+  ![Histograma para análise de normalidade dos dados - pacote `ggplot2`.](./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-pacote_ggplot2.png){width=80%}
+  
+  
+\newpage
+
+- O gráfico `qqplot` produz uma análise de comparação entre percentil da amostra e percentil teórico da distribuição normal. Os pontos devem estar próximos da reta, indicando que os dados seguem a mesma distribuição normal.\
+  1. `qqplot` com `ggplot2`:\
+  ```
+  ggplot(dados, aes(sample = valor_compra))+
+  stat_qq()+
+  stat_qq_line()+
+  theme_bw()
+  ```
+  
+  ![`qqplot` para análise da normalidade dos dados - pacote `ggplot2`.](./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-percentil_amostra_teorico-pacote_ggplot2.png){width=80%}
+  
+  
+  2. `qqplot` com `DescTools`:\
+  `PlotQQ(x, args.cband = list(col = SetAlpha("grey", 0.25)))`\
+  
+  ![`qqplot` para análise da normalidade dos dados - pacote `DescTools`.](./Cap10-Distribuicoes_de_probabilidade/Imagens/Analise_grafica-teste_normalidade-percentil_amostra_teorico-pacote_DescTools.png){width=80%}
+  
+  
+- Pode-se ainda usar a função `PlotFDist` para comparar as curvas teóricas e empíricas dos dados, observando a aderência das curvas.\
+
+\newpage
+
 ## E quando os dados não são normais?
 
 \newpage
