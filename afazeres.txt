@@ -1,6 +1,6 @@
-ESCRITO EM 15/10/23
+ESCRITO EM 16/10/23
 ---
-PARA 16/10/23
+PARA 17/10/23
 ---
 Subir github:
 
@@ -17,5 +17,4 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
-			- Análise gráfica
 			- E quando os dados não são normais?
