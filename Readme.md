@@ -7479,6 +7479,28 @@ Lista de funções para realização de teste de hipóteses do pacote
 
 ## 13.9 E quando os dados não são normais?
 
+### 13.9.1 O que são dados normais/normalizados?
+
+### 13.9.2 Normalização de dados
+
+-   Dizemos que os dados não são normais quando eles não apresentam uma
+    distribuição compatível com as características de uma distribuição
+    normal.  
+
+-   A normalidade dos dados é importante para atender os pressupostos de
+    muitos testes de hipóteses, especialmente os testes conhecidos na
+    estatística clássica como testes paramétricos.  
+
+-   Quando o pessuposto da normalidade não é atendido, o analista pode
+    tentaruma transformação da variável original como, por exemplo,
+    aplicar uma tranformação logarítmica ou transformação polinomial, ou
+    ainda técnicas consagradas como é o caso da transformação
+    **Box-Cox**.  
+
+    -   Transformação logarítmica:  
+    -   Transformação raiz quadrada:  
+    -   Transformação Box-Cox:  
+
 # 14 ANDAMENTO DOS ESTUDOS
 
 Assunto em andamento:  

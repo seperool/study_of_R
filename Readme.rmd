@@ -7,21 +7,21 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
-  html_document:
-    number_sections: true
-    df_print: paged
-  word_document: 
-    toc: TRUE
-    number_sections: true
-  github_document: 
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
+  word_document: 
+    toc: TRUE
+    number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
+  github_document: 
+  html_document:
+    number_sections: true
+    df_print: paged
+  odt_document: 
+    number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6872,6 +6872,16 @@ shapiro.test(x)
 \newpage
 
 ## E quando os dados não são normais?
+### O que são dados normais/normalizados?
+### Normalização de dados
+- Dizemos que os dados não são normais quando eles não apresentam uma distribuição compatível com as características de uma distribuição normal.\
+
+- A normalidade dos dados é importante para atender os pressupostos de muitos testes de hipóteses, especialmente os testes conhecidos na estatística clássica como testes paramétricos.\
+
+- Quando o pessuposto da normalidade não é atendido, o analista pode tentaruma transformação da variável original como, por exemplo, aplicar uma tranformação logarítmica ou transformação polinomial, ou ainda técnicas consagradas como é o caso da transformação **Box-Cox**.\
+  - Transformação logarítmica:\
+  - Transformação raiz quadrada:\
+  - Transformação Box-Cox:\
 
 \newpage
 
