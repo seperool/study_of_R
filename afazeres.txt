@@ -1,6 +1,6 @@
-ESCRITO EM 16/10/23
+ESCRITO EM 17/10/23
 ---
-PARA 17/10/23
+PARA 18/10/23
 ---
 Subir github:
 
@@ -17,4 +17,13 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
-			- E quando os dados não são normais?
+			- E quando os dados não são normais? (Normalização de dados)
+				- O que são dados nomais/normalizados?
+				- Normalização de dados
+					- Transformação logarítmica
+					- Transformação raiz quadrada
+					- Transformação Box-Cox
+	- script (Normalização de dados)
+		- Transformação logarítmica
+		- Transformação raiz quadrada
+		- Transformação Box-Cox
