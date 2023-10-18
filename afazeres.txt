@@ -1,6 +1,6 @@
-ESCRITO EM 17/10/23
+ESCRITO EM 18/10/23
 ---
-PARA 18/10/23
+PARA 19/10/23
 ---
 Subir github:
 
@@ -19,11 +19,11 @@ Afazeres:
 					- contínuas
 			- E quando os dados não são normais? (Normalização de dados)
 				- O que são dados nomais/normalizados?
-				- Normalização de dados
+				- Normalização de dados (Inserir chunk)
 					- Transformação logarítmica
 					- Transformação raiz quadrada
 					- Transformação Box-Cox
-	- script (Normalização de dados)
+	- script (Normalização de dados) - Comentar
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
