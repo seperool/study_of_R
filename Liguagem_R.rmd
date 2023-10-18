@@ -7,15 +7,15 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  md_document:
-    number_sections: true
-    variant: markdown_github
   word_document: 
     toc: TRUE
     number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  md_document:
+    number_sections: true
+    variant: markdown_github
   github_document: 
   html_document:
     number_sections: true
@@ -6880,8 +6880,14 @@ shapiro.test(x)
 
 - Quando o pessuposto da normalidade não é atendido, o analista pode tentaruma transformação da variável original como, por exemplo, aplicar uma tranformação logarítmica ou transformação polinomial, ou ainda técnicas consagradas como é o caso da transformação **Box-Cox**.\
   - Transformação logarítmica:\
+  Ao aplicarmos a transformação logarítmica aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que o logaritmo do valor da compra possui distribuição normal.\  
   - Transformação raiz quadrada:\
+  Ao aplicarmos a transformação raiz quadrada aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que a raiz quadrada do valor da compra possui distribuição normal.\
   - Transformação Box-Cox:\
+  A transformação BoxCox consiste em transformar os dados de acordo com a expressão:\
+  $$transx = \frac{x^{\lambda}-1}{\lambda}, \lambda \neq 0$$
+  Onde, $\lambda$ é um parâmetro a ser estimado pelos dados.\
+  Se $\lambda = 0$ a equação acima se reduz a $transx = \log{x}$. 
 
 \newpage
 
