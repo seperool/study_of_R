@@ -7,12 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -20,8 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6879,15 +6879,137 @@ shapiro.test(x)
 - A normalidade dos dados é importante para atender os pressupostos de muitos testes de hipóteses, especialmente os testes conhecidos na estatística clássica como testes paramétricos.\
 
 - Quando o pessuposto da normalidade não é atendido, o analista pode tentaruma transformação da variável original como, por exemplo, aplicar uma tranformação logarítmica ou transformação polinomial, ou ainda técnicas consagradas como é o caso da transformação **Box-Cox**.\
-  - Transformação logarítmica:\
-  Ao aplicarmos a transformação logarítmica aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que o logaritmo do valor da compra possui distribuição normal.\  
-  - Transformação raiz quadrada:\
-  Ao aplicarmos a transformação raiz quadrada aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que a raiz quadrada do valor da compra possui distribuição normal.\
-  - Transformação Box-Cox:\
-  A transformação BoxCox consiste em transformar os dados de acordo com a expressão:\
-  $$transx = \frac{x^{\lambda}-1}{\lambda}, \lambda \neq 0$$
-  Onde, $\lambda$ é um parâmetro a ser estimado pelos dados.\
-  Se $\lambda = 0$ a equação acima se reduz a $transx = \log{x}$. 
+
+\newpage
+
+#### Transformação logarítmica
+
+```
+#Bibliotecas
+library(readr) #Leitura de dados
+library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+library(DescTools) #Análise descritiva de forma rápida e completa
+
+#Importação de dados
+dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+head(dados)
+str(dados)
+summary(dados)
+
+#Tratamento de dados
+dados$filial <- as.factor(dados$filial)
+str(dados)
+
+#Separação valor compra
+x <- dados$valor_compra
+head(x)
+
+#Aplicando a transformação logarítmica
+transx <- log(x)
+head(transx)
+#[1] 4.607368 4.393090 4.323338 5.721393 4.795708 3.328268
+
+#Testando a normalidade após a transformação
+shapiro.test(transx)
+
+#Shapiro-Wilk normality test
+#
+#data:  transx
+#W = 0.9739, p-value = 0.7811
+```
+  
+Ao aplicarmos a transformação logarítmica aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que o logaritmo do valor da compra possui distribuição normal.\
+
+\newpage
+
+#### Transformação raiz quadrada
+
+```
+#Bibliotecas
+library(readr) #Leitura de dados
+library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+library(DescTools) #Análise descritiva de forma rápida e completa
+
+#Importação de dados
+dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+head(dados)
+str(dados)
+summary(dados)
+
+#Tratamento de dados
+dados$filial <- as.factor(dados$filial)
+str(dados)
+
+#Separação valor compra
+x <- dados$valor_compra
+head(x)
+
+#Aplicando a transformação raiz quadrada
+transx <- sqrt(x)
+head(transx)
+#[1] 10.010994  8.993887  8.685620 17.473695 10.999545  5.281098
+
+#Testando a normalidade após a transformação
+shapiro.test(transx)
+
+#Shapiro-Wilk normality test
+#
+#data:  transx
+#W = 0.92395, p-value = 0.08097
+```
+  
+Ao aplicarmos a transformação raiz quadrada aos dados de valor de compra, obtivemos um *p-valor* $> 0.05$, o que nos leva a concluir que a raiz quadrada do valor da compra possui distribuição normal.\
+
+\newpage
+
+#### Transformação Box-Cox
+
+- A transformação `BoxCox` consiste em transformar os dados de acordo com a expressão:\
+$$transx = \frac{x^{\lambda}-1}{\lambda}, \lambda \neq 0$$
+Onde, $\lambda$ é um parâmetro a ser estimado pelos dados.\
+Se $\lambda = 0$ a equação acima se reduz a $transx = \log{x}$.\
+  
+```
+#Bibliotecas
+library(readr) #Leitura de dados
+library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
+library(DescTools) #Análise descritiva de forma rápida e completa
+
+#Importação de dados
+dados <- read.csv2(file = "~/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+head(dados)
+str(dados)
+summary(dados)
+
+#Tratamento de dados
+dados$filial <- as.factor(dados$filial)
+str(dados)
+
+#Separação valor compra
+x <- dados$valor_compra
+head(x)
+
+#Lambda ótimo da transformação BoxCox
+lambda <- BoxCoxLambda(x)
+lambda
+#[1] -0.05260669
+
+#Aplicando a transformação ao vetor
+transx <- BoxCox(x, lambda)
+head(transx)
+#[1] 4.091510 3.922403 3.866941 4.940628 4.238582 3.053183
+
+#Testando a normalidade após a transformação
+shapiro.test(transx)
+
+#Shapiro-Wilk normality test
+#
+#data:  transx
+#W = 0.96909, p-value = 0.6672
+```
+  
+- Neste exemplo o valor do parâmetro *lambda* foi obtido pela função `BoxCoxLambda` do pacote `DescTools` que produz uma seleção automática para o parâmetro através do método de Guerrero. Para obter os detalhes dos métodos utilizados na obtenção do parâmetro consultar documentação (`?BoxCoxLambda`).\
+- Após a transformação BoxCox com $\lambda = -0.0526$ a variável valor de compra transformada apresenta distribuição normal com *p-value* $= 0.6672$.\
 
 \newpage
 
