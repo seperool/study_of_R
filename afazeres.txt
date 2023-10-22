@@ -1,6 +1,6 @@
-ESCRITO EM 21/10/23
+ESCRITO EM 22/10/23
 ---
-PARA 22/10/23
+PARA 23/10/23
 ---
 Subir github:
 
@@ -23,3 +23,7 @@ Afazeres:
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
+	- Livro - Estatística básica
+		- Cap 5
+		- Cap 6
+		- Cap 7
