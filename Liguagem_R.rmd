@@ -7,11 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -19,9 +20,8 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6873,6 +6873,9 @@ shapiro.test(x)
 
 ## E quando os dados não são normais?
 ### O que são dados normais/normalizados?
+
+
+
 ### Normalização de dados
 - Dizemos que os dados não são normais quando eles não apresentam uma distribuição compatível com as características de uma distribuição normal.\
 
@@ -7010,6 +7013,10 @@ shapiro.test(transx)
   
 - Neste exemplo o valor do parâmetro *lambda* foi obtido pela função `BoxCoxLambda` do pacote `DescTools` que produz uma seleção automática para o parâmetro através do método de Guerrero. Para obter os detalhes dos métodos utilizados na obtenção do parâmetro consultar documentação (`?BoxCoxLambda`).\
 - Após a transformação BoxCox com $\lambda = -0.0526$ a variável valor de compra transformada apresenta distribuição normal com *p-value* $= 0.6672$.\
+
+\newpage
+
+# CAP. 11 - MODELANDO A RELAÇÃO ENTRE DUAS VARIÁVEIS
 
 \newpage
 
