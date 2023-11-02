@@ -1,11 +1,17 @@
-ESCRITO EM 22/10/23
+ESCRITO EM 02/11/23
 ---
-PARA 23/10/23
+PARA 03/11/23
 ---
 Subir github:
 
 Estudar:
-
+	- Livro - Estatística básica
+		- Cap 5
+		- Cap 6
+		- Cap 7
+	- Videoaulas
+		- 124 a 141
+		
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
@@ -19,11 +25,8 @@ Afazeres:
 					- contínuas
 			- E quando os dados não são normais? (Normalização de dados)
 				- O que são dados nomais/normalizados?
+		- Cap. 11 - Modelando a relação entre duas variáveis
 	- script (Normalização de dados) - Comentar
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
-	- Livro - Estatística básica
-		- Cap 5
-		- Cap 6
-		- Cap 7
