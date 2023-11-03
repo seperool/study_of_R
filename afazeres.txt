@@ -1,17 +1,16 @@
-ESCRITO EM 02/11/23
+ESCRITO EM 03/11/23
 ---
-PARA 03/11/23
+PARA 04/11/23
 ---
 Subir github:
 
 Estudar:
+	- Videoaulas
+		- 124 a 141
 	- Livro - Estatística básica
 		- Cap 5
 		- Cap 6
 		- Cap 7
-	- Videoaulas
-		- 124 a 141
-		
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
