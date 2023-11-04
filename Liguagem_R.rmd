@@ -7,12 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
-  pdf_document: 
-    number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -20,8 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6575,7 +6575,8 @@ $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}} 
   - $f(x)$\
   Representa a função densidade de probabilidade no ponto $x$.\
 - No caso contínua, avalia-se a probabilidade para intervalos de valores da variável $X$, que é dada pela área sob a curva da função de densidade restrita aos limites do intervalo. Em notação matemática representamos a probabilidade de $X$ pertencer ao intervalo $[a,b]$ da seguinte forma:\
-$$P(a \leq X \leq b) \int^{b}_{a} f(x)dx$$
+$$P(a \leq X \leq b) = \int^{b}_{a} f(x)dx$$
+$$P(a \leq X \leq b) = \int^{b}_{a} \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}}dx$$
 
 - Funções `norm()`:\
   - Avaliamos a função de densidade de probabilidade no ponto $x$ usando a função $dnorm(x,\mu,\sigma)$.\
@@ -6647,7 +6648,7 @@ dev.off()
 
 \newpage
 
-Ao observar o gráfico, percebe-se que não é adequado a aproximação entre as curvas, a distribuição teórica esta abaixo da distribuição empírica (kernel density) na maior parte do intervalo de valores do eixo x, há uma forte assimetria à direita, assim como presença de de *outliers*, de acordo com o que vemos no boxplot.\
+Ao observar o gráfico, percebe-se que não é adequado a aproximação entre as curvas, a distribuição teórica esta abaixo da distribuição empírica (kernel density) na maior parte do intervalo de valores do eixo x, há uma forte assimetria à direita, assim como presença de *outliers*, de acordo com o que vemos no boxplot.\
 
 A partir dessa análise gráfica da aproximação entre curvas de densidade, o próximo passo é realizar um teste de aderência da normalidade, como o teste Shapiro. Se o teste confirmar a aderência, torna-se possível avaliar probabilidades para essa variável, gerar números aleatórios simulando a obtenção de amostras dessa população bem como avaliar percentis para a variável, com base na distribuição normal.\
 
@@ -6882,6 +6883,25 @@ shapiro.test(x)
 - A normalidade dos dados é importante para atender os pressupostos de muitos testes de hipóteses, especialmente os testes conhecidos na estatística clássica como testes paramétricos.\
 
 - Quando o pessuposto da normalidade não é atendido, o analista pode tentaruma transformação da variável original como, por exemplo, aplicar uma tranformação logarítmica ou transformação polinomial, ou ainda técnicas consagradas como é o caso da transformação **Box-Cox**.\
+
+\newpage
+
+#### Distribuição normal padronizada
+
+- A distribuição normal padronizada é a distribuição normal sempre com os mesmos parâmetros, que são $\mu = 0$ e $\sigma^2 = 1$.\
+
+- Para transformar uma normal qualquer $X \sim N(\mu,\sigma^2)$ em uma normal padrão $X \sim N(\mu = 0, \sigma^2 = 1)$, basta seguir a seguinte forma:\
+  - Como passar uma normal com $\mu = 10$ (média) em $0$:\
+  Basta pegar todos os valores de $X$ e subtrair $10$.\
+  $$X - \mu$$
+  - Para o desvio-padrão($\sigma$) se tornar 1:\
+  Seja qual for o valor de $\sigma$, basta dividir por ele mesmo.\
+  - Assim qualquer distribuição normal pode ser padronizada, de forma que no processo de padronização dos valores da variável aleatória ($X$) os parâmetros se tornem $\mu = 0, \sigma^2 = 1$. Essa abordagem é dada pela definição de uma nova variável aleatória $Z$, chamada de **variável aleatória normal padronizada**, dada pela função linaer $Z$:\
+$$Z = \frac{X - \mu}{\sigma}$$
+
+
+![Distribuição normal padronizada, $X \sim N(\mu = 0, \sigma^2 = 1)$](./Cap10-Distribuicoes_de_probabilidade/Imagens/norm_padronizada.png){}
+
 
 \newpage
 
