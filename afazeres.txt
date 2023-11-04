@@ -1,6 +1,6 @@
-ESCRITO EM 03/11/23
+ESCRITO EM 04/11/23
 ---
-PARA 04/11/23
+PARA 05/11/23
 ---
 Subir github:
 
@@ -22,8 +22,10 @@ Afazeres:
 				- Tipos de variáveis
 					- discretas
 					- contínuas
+			- Distribuição normal
 			- E quando os dados não são normais? (Normalização de dados)
 				- O que são dados nomais/normalizados?
+				- Distribuição normal padronizada (exemplo)
 		- Cap. 11 - Modelando a relação entre duas variáveis
 	- script (Normalização de dados) - Comentar
 		- Transformação logarítmica
