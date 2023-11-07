@@ -7,10 +7,10 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
   odt_document: 
+    number_sections: true
+  word_document: 
+    toc: TRUE
     number_sections: true
   md_document:
     number_sections: true
@@ -19,9 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7046,6 +7046,30 @@ shapiro.test(transx)
   
 - Neste exemplo o valor do parâmetro *lambda* foi obtido pela função `BoxCoxLambda` do pacote `DescTools` que produz uma seleção automática para o parâmetro através do método de Guerrero. Para obter os detalhes dos métodos utilizados na obtenção do parâmetro consultar documentação (`?BoxCoxLambda`).\
 - Após a transformação BoxCox com $\lambda = -0.0526$ a variável valor de compra transformada apresenta distribuição normal com *p-value* $= 0.6672$.\
+
+\newpage
+
+## Plot dois gráficos ou mais
+
+- Para plotar dois ou gráficos ou mais ao mesmo tempo podemos usar a função `par(mfrow = c(l,c))`, onde os parametros l é referente ao número de linhas e o c ao número de colunas.\
+
+- Os gráficos devem ficar logo na sequência do comando `par`:\
+```
+#Layout
+par(mfrow = c(1,2))
+
+#mu = 50, sigma = 2 (plot 1,1)
+curve(dnorm(x,50,2), 
+      xlim = c(20,80), 
+      main = "Gráfico 1")
+
+#mu = 50, sigma = 2 (plot 1,2)
+curve(dnorm(x,50,2),
+      xlim = c(20,80),
+      main = "Gráfico 2")
+```
+
+![Plotando dois ou mais gráficos de distribuição de probabilidade ao mesmo tempo, usando a função `par(mfrow = c(1,2))`](./Cap10-Distribuicoes_de_probabilidade/Imagens/plot_par_plot.png){width=80%}
 
 \newpage
 
