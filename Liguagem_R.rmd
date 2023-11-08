@@ -9,9 +9,9 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   odt_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
+  pdf_document: 
     number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -19,9 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -6594,6 +6594,11 @@ $$P(a \leq X \leq b) = \int^{b}_{a} \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x 
 - Funções `norm()`:\
   - Avaliamos a função de densidade de probabilidade no ponto $x$ usando a função $dnorm(x,\mu,\sigma)$.\
   - Para avaliar a probabilidade acumulada no ponto $x$, isto é, $P(X \leq x)$, usamos a função $pnorm(x,\mu,\sigma)$.\
+  - Probabilidade acumulada num intervalo:\
+  $$pnorm(final,\mu,\sigma) - pnorm(inicial,\mu,\sigma)$$
+  Ex.: $P(40 < X < 55)$, sendo $X \sim N(50,1)$\
+  `pnorm(55,50,1) - pnorm(40,50,1)`\
+  `[1] 0.9999997`\
   - Para obter o percentil de ordem $k$ da distribuição usamos $qnorm(k,\mu,\sigma)$.\
   - Para gerar $k$ números aleatórios usamos $rnorm(k,\mu,\sigma)$.\
 - O gráfico da distribuição normal é simétrico em relação ao parâmetro $\mu$, em forma de sino e sua escala depende do parâmetro $\sigma$, quanto menor o valor de $\sigma$, maior será a área em torno de $\mu$.\
