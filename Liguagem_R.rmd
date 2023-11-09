@@ -6555,7 +6555,7 @@ kable(tb_disb_prob, col.names = c("Distribuição de probabilidade", "Nome da fu
   - Em relação aos comandos sobre as distribuições de probabilidade, é possivel avaliar a densidade (**d**), a probabilidade (**p**), os percentis (**q**) e gerar números aleatórios (**r**).\
   - Cada um desses prefixos **d**, **p**, **q** e **r**, associados ao nome da função de distribuição, produz informações sobre essa função. (prefixo + função)\
   Sintaxe:`ddist(x, parâmetros)`\
-  Ex.: `pnorm(x, parâmetros)`\
+  Ex.: `pnorm(x, media, variancia)`\
   - Para saber quais argumentos e a ordem com que devem ser especificados no argumento das funções, utilize o comando `?ddist`, substituindo `dist` pelo nome da função no **R**.\
   Ex.: `?dnorm`\
 
@@ -6574,7 +6574,7 @@ $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}} 
   Representa o desvio padrão da variável.\
   $$\sigma = \sqrt{\sigma^2}$$
   - $\sigma^2$\
-  Representa a variância da variável.\
+  Representa a variância da variável (grau de dispersão).\
     - Variância populacional:\
     $$\sigma^2 = \frac{\sum^{n}_{i=1} (x_i-\mu)^2}{n}$$
     - Variância amostral:\
@@ -6582,8 +6582,12 @@ $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}} 
   - $f(x)$\
   Representa a função densidade de probabilidade no ponto $x$.\
 - No caso contínua, avalia-se a probabilidade para intervalos de valores da variável $X$, que é dada pela área sob a curva da função de densidade restrita aos limites do intervalo. Em notação matemática representamos a probabilidade de $X$ pertencer ao intervalo $[a,b]$ da seguinte forma:\
+
 $$P(a \leq X \leq b) = \int^{b}_{a} f(x)dx$$
+
 $$P(a \leq X \leq b) = \int^{b}_{a} \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}}dx$$
+
+Seja a área sob a curva no intervalo $[a,b]$ a probabilidade de algo ocorrer entre os valores de $a$ até $b$. É importante salientar que o valor da densidade, ou seja os valores de $f_X(x)$ representam as densidades, enquanto que a área sob essas densidades é a probabilidade.\
 
 \newpage
 
@@ -6594,7 +6598,7 @@ $$P(a \leq X \leq b) = \int^{b}_{a} \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x 
 - Funções `norm()`:\
   - Avaliamos a função de densidade de probabilidade no ponto $x$ usando a função $dnorm(x,\mu,\sigma)$.\
   - Para avaliar a probabilidade acumulada no ponto $x$, isto é, $P(X \leq x)$, usamos a função $pnorm(x,\mu,\sigma)$.\
-  - Probabilidade acumulada num intervalo:\
+  - Probabilidade acumulada num intervalo ($P(a < X < b)$):\
   $$pnorm(final,\mu,\sigma) - pnorm(inicial,\mu,\sigma)$$
   Ex.: $P(40 < X < 55)$, sendo $X \sim N(50,1)$\
   `pnorm(55,50,1) - pnorm(40,50,1)`\
