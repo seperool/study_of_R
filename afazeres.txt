@@ -1,6 +1,6 @@
-ESCRITO EM 08/11/23
+ESCRITO EM 09/11/23
 ---
-PARA 09/11/23
+PARA 10/11/23
 ---
 Subir github:
 
@@ -18,10 +18,6 @@ Afazeres:
 			- Revisar fórmulas
 	- Readme.*
 		- Cap. 10 - Distribuições de probabilidade
-			- Teoria
-				- Tipos de variáveis
-					- discretas
-					- contínuas
 			- Distribuição normal
 			- E quando os dados não são normais? (Normalização de dados)
 				- O que são dados nomais/normalizados?
