@@ -7,11 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  odt_document: 
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -6553,9 +6553,10 @@ kable(tb_disb_prob, col.names = c("Distribuição de probabilidade", "Nome da fu
 
 - Comandos sobre as distribuições de probabilidade e pesquisa:\
   - Em relação aos comandos sobre as distribuições de probabilidade, é possivel avaliar a densidade (**d**), a probabilidade (**p**), os percentis (**q**) e gerar números aleatórios (**r**).\
-  - Cada um desses prefixos **d**, **p**, **q** e **r**, associados ao nome da função de distribuição, produz informações sobre essa função. (prefixo + função)\
-  Sintaxe:`ddist(x, parâmetros)`\
-  Ex.: `pnorm(x, media, variancia)`\
+  - Cada um desses prefixos **d**, **p**, **q** e **r**, associados ao nome da função de distribuição, produz informações sobre essa função (prefixo + função).\
+  Os paramêtros da função `norm` são a **média** (`mean`, símbolo $\mu$) e o **desvio-padrão** (`sd`, símbolo $\sigma$).\
+  Sintaxe: `ddist(x, parâmetros)`\
+  Ex.: `pnorm(x, media, desvio-padrão)`\
   - Para saber quais argumentos e a ordem com que devem ser especificados no argumento das funções, utilize o comando `?ddist`, substituindo `dist` pelo nome da função no **R**.\
   Ex.: `?dnorm`\
 
@@ -6571,7 +6572,7 @@ $$f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^{2}}{2 \sigma^{2}}} 
   - $\mu$\
   Representa a média da variável.\
   - $\sigma$\
-  Representa o desvio padrão da variável.\
+  Representa o desvio-padrão da variável.\
   $$\sigma = \sqrt{\sigma^2}$$
   - $\sigma^2$\
   Representa a variância da variável (grau de dispersão).\
@@ -6604,6 +6605,9 @@ Seja a área sob a curva no intervalo $[a,b]$ a probabilidade de algo ocorrer en
   `pnorm(55,50,1) - pnorm(40,50,1)`\
   `[1] 0.9999997`\
   - Para obter o percentil de ordem $k$ da distribuição usamos $qnorm(k,\mu,\sigma)$.\
+  Ex.: Percentil $97,5$ de uma distribuição normal padronizada ($X \sim N(0,1)$)\
+  `qnorm(0.975,0,1)`\
+  `[1] 1.959964`\
   - Para gerar $k$ números aleatórios usamos $rnorm(k,\mu,\sigma)$.\
 - O gráfico da distribuição normal é simétrico em relação ao parâmetro $\mu$, em forma de sino e sua escala depende do parâmetro $\sigma$, quanto menor o valor de $\sigma$, maior será a área em torno de $\mu$.\
 - A distribuição normal é dita padronizada quando $\mu = 0$, e $\sigma = 1$.\
