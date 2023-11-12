@@ -1,6 +1,6 @@
-ESCRITO EM 11/11/23
+ESCRITO EM 12/11/23
 ---
-PARA 12/11/23
+PARA 13/11/23
 ---
 Subir github:
 
@@ -18,16 +18,13 @@ Afazeres:
 			- Revisar fórmulas
 	- Readme.*
 		- Cap. 10 - Distribuições de probabilidade
-			- Distribuição normal
-			- E quando os dados não são normais? (Normalização de dados)
-				- O que são dados nomais/normalizados?
-				- Distribuição normal padronizada (exemplo)
+			- E quando os dados não são normais?
+				- Normalização de dados
+					- Distribuição normal padronizada (exemplo)
 		- Cap. 11 - Modelando a relação entre duas variáveis
 	- script (Normalização de dados) - Comentar
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
 		- Exercicios:
-			- 6 (Comentar)
-			- 7
 			- 8
