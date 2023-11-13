@@ -1,6 +1,6 @@
-ESCRITO EM 12/11/23
+ESCRITO EM 13/11/23
 ---
-PARA 13/11/23
+PARA 14/11/23
 ---
 Subir github:
 
@@ -26,5 +26,3 @@ Afazeres:
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
-		- Exercicios:
-			- 8
