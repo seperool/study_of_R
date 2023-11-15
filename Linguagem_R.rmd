@@ -7,11 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -19,8 +20,7 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -6949,8 +6949,41 @@ shapiro.test(x)
   - Assim qualquer distribuição normal pode ser padronizada, de forma que no processo de padronização dos valores da variável aleatória ($X$) os parâmetros se tornem $\mu = 0, \sigma^2 = 1$. Essa abordagem é dada pela definição de uma nova variável aleatória $Z$, chamada de **variável aleatória normal padronizada**, dada pela função linaer $Z$:\
 $$Z = \frac{X - \mu}{\sigma}$$
 
+\newpage
 
-![Distribuição normal padronizada, $X \sim N(\mu = 0, \sigma^2 = 1)$](./Cap10-Distribuicoes_de_probabilidade/Imagens/norm_padronizada.png){}
+- Exemplo - Distribuição normal padronizada:\
+
+```
+#Distribuição normal
+#Layout
+par(mfrow = c(1,2))
+
+x <- rnorm(50,100,5)
+x
+
+#mu = 100, sigma^2 = 25 (ou seja, sigma = 5) (plot 1,1)
+curve(dnorm(x,100,5), 
+      xlim = c(80,120), 
+      main = "Gráfico 1")
+
+#Padronizando a distribuição normal
+transx <- (x - 100)/5
+transx
+
+#mu = 0, sigma = 1 (plot 1,2)
+PlotFdist(transx, #vetor dados da variável
+          args.curve = list(expr = "dnorm(x,mean(transx),sd(transx))", #dados da distribuição normal
+                            col = "black"), #Distribuição normal em preto
+          args.rug = NA,
+          args.dens = NA, #grafico densidade em cinza
+          args.boxplot = NA, #Omitir boxplot
+          args.ecdf = NA, #Omitir distribuição acumulada
+          xlim = c(-4, 4),
+          main = "Gráfico 2")
+```
+
+
+![Distribuição normal padronizada, $X \sim N(\mu = 0, \sigma^2 = 1)$](./Cap10-Distribuicoes_de_probabilidade/Imagens/norm_padronizada.png){width=60%}
 
 
 \newpage
