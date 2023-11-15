@@ -1,28 +1,19 @@
-ESCRITO EM 13/11/23
+ESCRITO EM 15/11/23
 ---
-PARA 14/11/23
+PARA 16/11/23
 ---
 Subir github:
 
 Estudar:
-	- Videoaulas
-		- 124 a 141
-	- Livro - Estatística básica
-		- Cap 5
-		- Cap 6
-		- Cap 7
+
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
 			- Revisar tabelas
 			- Revisar fórmulas
 	- Readme.*
-		- Cap. 10 - Distribuições de probabilidade
-			- E quando os dados não são normais?
-				- Normalização de dados
-					- Distribuição normal padronizada (exemplo)
 		- Cap. 11 - Modelando a relação entre duas variáveis
-	- script (Normalização de dados) - Comentar
+	- script Cap. 10 (Normalização de dados) - Comentar
 		- Transformação logarítmica
 		- Transformação raiz quadrada
 		- Transformação Box-Cox
