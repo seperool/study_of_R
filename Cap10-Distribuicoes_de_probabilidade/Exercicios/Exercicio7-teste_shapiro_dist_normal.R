@@ -26,4 +26,4 @@ x
 #Teste Shapiro-Wilk, para saber se é uma distribuição de probabilidade normal.
 shapiro.test(x)
 #p-value = 5.048e-06
-#Logo, p-valor <= 0.05, ou seja, , a distribuição de probabilidade da variável x não é normal.
+#Logo, p-valor <= 0.05, ou seja, a distribuição de probabilidade da variável x não é normal.
