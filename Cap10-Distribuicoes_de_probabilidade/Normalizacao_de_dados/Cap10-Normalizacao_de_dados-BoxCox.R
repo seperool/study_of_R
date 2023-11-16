@@ -1,5 +1,10 @@
 #Normalização de dados
 #Normalização BoxCox
+#Teste de Shapiro-Wilk
+
+#Verifica se uma variável aleatória é uma distribuição normal ou não.
+#Se p-valor > 0.05, H0, ou seja, a distribuição de probabilidade da variável x é normal.
+#Se p-valor <= 0.05, H1, ou seja, a distribuição de probabilidade da variável x não é normal.
 
 #Bibliotecas
 library(readr) #Leitura de dados
@@ -19,6 +24,9 @@ str(dados)
 #Separação valor compra
 x <- dados$valor_compra
 head(x)
+shapiro.test(x)
+#p-value = 0.0003682
+#Logo, p-valor <= 0.05, ou seja, a distribuição de probabilidade da variável x não é normal.
 
 #Lambda ótimo da transformação BoxCox
 lambda <- BoxCoxLambda(x)
@@ -30,3 +38,6 @@ head(transx)
 
 #Testando a normalidade após a transformação
 shapiro.test(transx)
+#p-value = 0.6672
+#Logo, p-valor > 0.05, ou seja,
+#a distribuição de probabilidade da variável x transformada pelo BoxCox é normal.
