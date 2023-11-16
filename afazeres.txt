@@ -13,7 +13,3 @@ Afazeres:
 			- Revisar fórmulas
 	- Readme.*
 		- Cap. 11 - Modelando a relação entre duas variáveis
-	- script Cap. 10 (Normalização de dados) - Comentar
-		- Transformação logarítmica
-		- Transformação raiz quadrada
-		- Transformação Box-Cox
