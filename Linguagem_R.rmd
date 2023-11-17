@@ -7,9 +7,8 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
@@ -20,8 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7144,6 +7144,37 @@ curve(dnorm(x,50,2),
 \newpage
 
 # CAP. 11 - MODELANDO A RELAÇÃO ENTRE DUAS VARIÁVEIS
+## Modelando a relação entre duas variáveis
+
+- Modelos de relação entre duas variáveis e combinações possíveis de relação dada a natureza da variável, seja numérica ou categórica.\
+"Existe relação ou associação entre duas variáveis do conjunto de dados em análise?"\
+
+- Processo:\
+  - Definição das variáveis (qualitativa/quantitativa)\
+  - Exploração das variáveis individualmente\
+  - **Processo de cruzamento das variáveis**\
+  Procura-se estabelecer padrões de comportamento das variáveis correlacionadas e iniciar com as modelagens possíveis para cada caso.\
+
+## Elaboração do modelo (casual)
+
+- A primeira etapa é estabelecer um modelo casual, isto é, determinar qual das variáveis é tida como resposta (**Y**) e qual é tida como explicação (**X**).\
+  - **Y** é a variável resposta.\
+  - **X** é a variável explicação.\
+- Notação que usamos para representar a relação entre X e Y é $Y \sim X$.\
+- Combinações de entre as relações das variáveis:\
+  - Categórica com categórica;\
+  - Numérica com categórica;\
+  - Categórica com numérica;\
+  - Numérica com numérica.\
+
+\newpage
+
+## Relações das variáveis
+### Numérica $\sim$ categórica
+### Categórica $\sim$ numérica
+### Categórica $\sim$ categórica
+### Numérica $\sim$ numérica
+
 
 \newpage
 
@@ -7151,7 +7182,7 @@ curve(dnorm(x,50,2),
 
 Assunto em andamento:\
 
-Atualmente estou estudando Cap. 10 - Distribuições de probabilidade.\
+Atualmente estou estudando Cap. 11 - Modelando a relação entre duas variáveis.\
 
 \newpage
 
