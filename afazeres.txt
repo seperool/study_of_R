@@ -1,6 +1,6 @@
-ESCRITO EM 17/11/23
+ESCRITO EM 18/11/23
 ---
-PARA 18/11/23
+PARA 19/11/23
 ---
 Subir github:
 
@@ -18,3 +18,5 @@ Afazeres:
 				- Categórica ~ numérica
 				- Categórica ~ categórica
 				- Numérica ~ numérica
+	- script
+		- Numérica ~ categórica
