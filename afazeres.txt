@@ -1,6 +1,6 @@
-ESCRITO EM 18/11/23
+ESCRITO EM 20/11/23
 ---
-PARA 19/11/23
+PARA 21/11/23
 ---
 Subir github:
 
@@ -20,3 +20,4 @@ Afazeres:
 				- Numérica ~ numérica
 	- script
 		- Numérica ~ categórica
+			- Comparando gráficamente a distribuição de densidade de uma variável numérica condicionada a categorias de outra variável
