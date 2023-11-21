@@ -74,3 +74,32 @@ Desc(desconto_perc ~ quinzena, dados,
 
 #Fechando dispositivo gráfico
 dev.off()
+
+#-------------------------------------------------------------------------------
+#Comparando gráficamente a distribuição de densidade de uma variável numérica
+#condicionada a categórias de outra variável.
+
+#Análise variáveis
+Desc(dados$desconto_perc, plotit = F) #Análise variável numérica
+Desc(dados$quinzena, plotit = F) #Análise variável categórica
+
+#Gráficos densidade
+curve(dnorm(x, mean(dados$desconto_perc), sd(dados$desconto_perc)),
+      xlim = c(-20,20),
+      main = "Gráfico densidade desconto percentual")
+
+#Gráficos de densidade do desconto percentual sobrepostos
+#para cada grupamento da quinzena
+PlotMultiDens(desconto_perc ~ quinzena, dados,
+              xlab = "Percentual de desconto",
+              main = "Percentual de desconto ~ quinzena",
+              panel.first = grid(),
+              col = c("black", SetAlpha("gray",0.95), lwd = 2))
+
+#Fechando dispositivo gráfico
+dev.off()
+
+#Teste de Shapiro-Wilk
+shapiro.test(dados$desconto_perc)
+#Não há normalidade
+#p-value = 7.375e-05 < 0.05
