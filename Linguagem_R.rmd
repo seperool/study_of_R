@@ -7170,7 +7170,118 @@ curve(dnorm(x,50,2),
 \newpage
 
 ## Relações das variáveis
+
 ### Numérica $\sim$ categórica
+#### Passos da criação do modelo
+- Definir o que é a variável resposta($Y$) do que é variável explicação($X$) ($Y \sim X$):\
+Variável resposta (numérica);\
+Variável explicação (categórica).\
+- Definir o **nível de significância**.\
+Normalmente é igual a $0.05$ (ou seja, $5\%$).\
+- Análise rápida (função `Desc()`, do pacote `DescTools`)para formulação de modelos entre duas variáveis.\
+  - Informações relevantes:\
+    - Número de grupos\
+    - Número de pares\
+    - Número de valores perdidos\
+    - Média\
+    - Mediana\
+    - Desvio-padrão\
+    - Amplitude\
+    - Interquartil\
+    - Quantidade\
+    - Porcentagem\
+  - Sobre o gráfico, é gerado **boxplot** para cada categória e gráfico de comparação entre as médias.\
+  - Exemplo:\
+  ```
+  Desc(Y ~ X, data, #Variáveis 
+  digits = 1,  #Digitos significativos
+  plotit = F, #Plotar gráfico TRUE(T) ou FALSE(F)
+  test = kruskal.test) #Teste impregado na análise (Kruskal-Wallis ou Friedman)
+  ```
+
+\newpage
+
+- Definir o teste que será trabalhado (**Kruskal-Wallis** ou **Friedman**) e as Hipótese $H_0$ (afirmação) e $H_1$ (negação).\
+  - **Kruskal-Wallis**\
+    - Teste não parametrico para avaliar a diferença entre $k$ grupos.\
+    - $k \geqslant 2$\
+    - Neste teste comparamos se a **mediana** da variável resposta ($Y$) é igual ou não em cada grupo.\
+    - Amostra aleatória simples.\
+    - Os grupos devem ser independentes.\
+    - Variável resposta($Y$) deve ser numérica.\
+    - Exemplo:\
+    `Desc(..., test = kruskal.test)`\
+  - **Friedman**\
+    - Para o caso em que se tem amostras pareadas, isto é, amostras cujas unidades foram avaliadas em dois momentos distintos, formam pares de valores para os mesmos elementos, deve-se utilizar o teste **Friedman**.\
+    - Exemplo:\
+    `Desc(..., test = friedman.test)`\
+
+\newpage
+
+- Exemplo - Análise relação entre duas variáveis numérico ~ categórica:\
+
+```
+#A localidade de um estabelecimento fornece resposta quanto ao valor médio de 
+#compra dos clientes?
+
+#Resposta (Y): valor_compra
+#Explicação (X): filial
+#Nível de significância: 0.05
+
+#Hipóteses:
+#H0: O valor de compra médio é igual em todas as filiais do estabelecimento.
+#H1: O valor da compra média não é igual em todas as filiais do esbelecimento.
+
+#Importando dados
+dados <- read.csv2(file = "/home/sergio/Programacao/R/Dados/Dados_de_importacao/vendas.csv")
+head(dados)
+str(dados)
+
+#Tratando os dados
+dados$filial <- as.factor(dados$filial) #Transformando dados filial em tipo fator
+dados$quinzena <- as.factor(dados$quinzena) #Transformando dados quinzena em tipo fator
+str(dados)
+
+#Análise rápida dos dados
+Desc(valor_compra ~ filial, dados,
+     digits = 1,
+     plotit = TRUE, 
+     test = kruskal.test) #Teste de Kruskal-Wallis
+----------------------------------------------------------------------------- 
+valor_compra ~ filial (dados)
+
+Summary: 
+n pairs: 23, valid: 23 (100.0%), missings: 0 (0.0%), groups: 3
+
+                           
+            A      B      C
+mean    118.5  254.0  280.8
+median   90.6  159.5  188.0
+sd       96.7  248.7  281.2
+IQR      39.0  241.0  236.4
+n           6     12      5
+np      26.1%  52.2%  21.7%
+NAs         0      0      0
+0s          0      0      0
+
+Kruskal-Wallis rank sum test:
+  Kruskal-Wallis chi-squared = 1.1822, df = 2, p-value = 0.5537
+----------------------------------------------------------------------------- 
+#Pelo teste de Kruskal-Wallis: p-value = 0.5537 > 0.05 (nível de significância),
+#logo, aceitamos a hipotese H0 como verdadeira.
+#H0: O valor de compra médio é igual em todas as filiais do estabelecimento.
+```
+
+\newpage
+
+![Gráfico referente ao teste de hipóteses variável numérica ~ variável categórica, do pacote `DescTools`.](/home/sergio/Programacao/R/Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_numerica_categorica.png){}
+
+\newpage
+
+#### Comparando gráficamente a distribuição de densidade de uma variável numérica condicionada a categorias de outra variável
+
+\newpage
+
 ### Categórica $\sim$ numérica
 ### Categórica $\sim$ categórica
 ### Numérica $\sim$ numérica
