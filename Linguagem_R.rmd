@@ -7,11 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -19,9 +20,8 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7280,12 +7280,103 @@ Kruskal-Wallis rank sum test:
 
 #### Comparando gráficamente a distribuição de densidade de uma variável numérica condicionada a categorias de outra variável
 
+- Uma forma de ver claramente a diferença de distribuição da variável numérica agrupada em cada categória é a plotagem do gráfico de distribuição de desidade com as categórias sobrepostas, usando a função `PlotMultiDens()` do pacote `DescTools`.\
+```
+PlotMultiDens(desconto_perc ~ quinzena, dados,
+              xlab = "Percentual de desconto",
+              main = "Percentual de desconto ~ quinzena",
+              panel.first = grid(),
+              col = c("black", SetAlpha("gray",0.95), lwd = 2))
+```
+- Principais parâmetros:\
+  - $Y \sim X$\
+  - `data`\
+  Base de dados de origem dos vetores (variáveis).\
+  - `xlab`\
+  Adiciona rótulo para o eixo X de acordo com o texto entre aspas.\
+  - `main`\
+  Adiciona um título principal ao gráfico de acordo com o texto entre aspas.\
+  - `panel.first = grid()`\
+  Adiciona grid ao gráfico.\
+  - `col`\
+  Comando para colorir diversos itens do gráfico, pode ser valores como 1,2,... , ou por nome como ‘red’, ‘blue’, etc (consulte nomes com o comando colors() ou sistemas como rgb(), hsv(), gray() e rainbow()). Para cor das fontes use: col.lab, col.main, col.sub.\
+  - `lwd`\
+  Especifica a espessura da linha (1,2,3,...).\
+
+\newpage
+
+- Exemplo - Comparação entre as distribuições de densidade de uma variável numérica entre categorias ($Y \sim X$):\
+
+```
+#Comparando gráficamente a distribuição de densidade de uma variável numérica
+#condicionada a categórias de outra variável.
+
+#Análise variáveis
+Desc(dados$desconto_perc, plotit = F) #Análise variável numérica
+------------------------------------------------------------------------------ 
+dados$desconto_perc (integer)
+
+  length       n    NAs  unique     0s   mean  meanCI'
+      23      23      0       5     10   4.39    2.07
+          100.0%   0.0%          43.5%           6.71
+                                                     
+     .05     .10    .25  median    .75    .90     .95
+    0.00    0.00   0.00    2.00  10.00  12.00   12.00
+                                                     
+   range      sd  vcoef     mad    IQR   skew    kurt
+   15.00    5.37   1.22    2.97  10.00   0.65   -1.40
+
+   value  freq   perc  cumfreq  cumperc
+1      0    10  43.5%       10    43.5%
+2      2     5  21.7%       15    65.2%
+3     10     4  17.4%       19    82.6%
+4     12     3  13.0%       22    95.7%
+5     15     1   4.3%       23   100.0%
+
+' 95%-CI (classic)
+------------------------------------------------------------------------------
+
+Desc(dados$quinzena, plotit = F) #Análise variável categórica
+------------------------------------------------------------------------------ 
+dados$quinzena (factor - dichotomous)
+
+  length      n    NAs unique
+      23     23      0      2
+         100.0%   0.0%       
+
+   freq   perc  lci.95  uci.95'
+1    11  47.8%   29.2%   67.0%
+2    12  52.2%   33.0%   70.8%
+
+' 95%-CI (Wilson)
+------------------------------------------------------------------------------
+
+#Gráficos de densidade do desconto percentual sobrepostos
+#para cada grupamento da quinzena
+PlotMultiDens(desconto_perc ~ quinzena, dados,
+              xlab = "Percentual de desconto",
+              main = "Percentual de desconto ~ quinzena",
+              panel.first = grid(),
+              col = c("black", SetAlpha("gray",0.95), lwd = 2))
+```
+
+![Gráfico referente a comparação da distribuição de densidade de uma variável numérica, pacote `DescTools`.](~/Programacao/R/Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_dist_densidade-numerica_categorica.png){}
+Podemos observar claramente a diferença de distribuição da variável compra quando consideramos a primeira quinzena (vários picos) e a segunda quinzena (um único pico e grande dispersão).\
+Os dados mostram não haver uma normalidade na distribuição do percentual de desconto (variável numérica) em cada quinzena (variável categórica). O teste de Shapiro pode levar a comprovação dessa hipótese.\
+
+```
+#Teste de Shapiro-Wilk
+shapiro.test(dados$desconto_perc)
+#Não há normalidade
+#p-value = 7.375e-05 < 0.05
+```
+
+
 \newpage
 
 ### Categórica $\sim$ numérica
 ### Categórica $\sim$ categórica
 ### Numérica $\sim$ numérica
-
 
 \newpage
 
