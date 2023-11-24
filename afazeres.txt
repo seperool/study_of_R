@@ -1,6 +1,6 @@
-ESCRITO EM 23/11/23
+ESCRITO EM 24/11/23
 ---
-PARA 24/11/23
+PARA 25/11/23
 ---
 Subir github:
 
@@ -14,8 +14,6 @@ Afazeres:
 	- Readme.*
 		- Cap. 11 - Modelando a relação entre duas variáveis
 			- Relações entre variáveis
-				- Numérica ~ categórica
-					- Comparação graficamente a distribuição de densidade de uma variável numérica condicionada a categorias de outra variável 
 				- Categórica ~ numérica
 				- Categórica ~ categórica
 				- Numérica ~ numérica
