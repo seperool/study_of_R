@@ -1,6 +1,6 @@
-ESCRITO EM 24/11/23
+ESCRITO EM 25/11/23
 ---
-PARA 25/11/23
+PARA 26/11/23
 ---
 Subir github:
 
@@ -15,6 +15,9 @@ Afazeres:
 		- Cap. 11 - Modelando a relação entre duas variáveis
 			- Relações entre variáveis
 				- Categórica ~ numérica
+					- Passos da criação do modelo categórica ~ numérica 
+					- Avaliando a significância dos parâmetros
+					- Avaliando a acurácia do modelo
 				- Categórica ~ categórica
 				- Numérica ~ numérica
 	- script
