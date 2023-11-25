@@ -7,12 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -7172,7 +7172,7 @@ curve(dnorm(x,50,2),
 ## Relações das variáveis
 
 ### Numérica $\sim$ categórica
-#### Passos da criação do modelo
+#### Passos da criação do modelo numérica $\sim$ categórica
 - Definir o que é a variável resposta($Y$) do que é variável explicação($X$) ($Y \sim X$):\
 Variável resposta (numérica);\
 Variável explicação (categórica).\
@@ -7371,10 +7371,15 @@ shapiro.test(dados$desconto_perc)
 #p-value = 7.375e-05 < 0.05
 ```
 
-
 \newpage
 
 ### Categórica $\sim$ numérica
+#### Passos da criação do modelo categórica $\sim$ numérica 
+#### Avaliando a significância dos parâmetros
+#### Avaliando a acurácia do modelo
+
+\newpage
+
 ### Categórica $\sim$ categórica
 ### Numérica $\sim$ numérica
 
