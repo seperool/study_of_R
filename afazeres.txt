@@ -1,6 +1,6 @@
-ESCRITO EM 25/11/23
+ESCRITO EM 26/11/23
 ---
-PARA 26/11/23
+PARA 27/11/23
 ---
 Subir github:
 
@@ -15,12 +15,19 @@ Afazeres:
 		- Cap. 11 - Modelando a relação entre duas variáveis
 			- Relações entre variáveis
 				- Categórica ~ numérica
-					- Passos da criação do modelo categórica ~ numérica 
+					- Passos da criação do modelo categórica ~ numérica
+						- O que é regressão logística?
+						- Tipos de regressão logística
+						- Modelo de regressão logística
+						- A razão de chance ou Odds Ratio (OR)
+						- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
 					- Avaliando a acurácia do modelo
 				- Categórica ~ categórica
 				- Numérica ~ numérica
 	- script
 		- Categórica ~ numérica
+			- Avaliando a significância dos parâmetros
+			- Avaliando a acurácia do modelo
 		- Categórica ~ categórica
 		- Numérica ~ numérica
