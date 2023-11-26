@@ -7,9 +7,8 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
@@ -20,8 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7139,7 +7139,7 @@ curve(dnorm(x,50,2),
       main = "Gráfico 2")
 ```
 
-![Plotando dois ou mais gráficos de distribuição de probabilidade ao mesmo tempo, usando a função `par(mfrow = c(1,2))`](./Cap10-Distribuicoes_de_probabilidade/Imagens/plot_par_plot.png){width=80%}
+![Plotando dois ou mais gráficos de distribuição de probabilidade ao mesmo tempo, usando a função `par(mfrow = c(1,2))`](Cap10-Distribuicoes_de_probabilidade/Imagens/plot_par_plot.png){width=80%}
 
 \newpage
 
@@ -7274,7 +7274,7 @@ Kruskal-Wallis rank sum test:
 
 \newpage
 
-![Gráfico referente ao teste de hipóteses variável numérica ~ variável categórica, do pacote `DescTools`.](/home/sergio/Programacao/R/Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_numerica_categorica.png){}
+![Gráfico referente ao teste de hipóteses variável numérica ~ variável categórica, do pacote `DescTools`.](Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_numerica_categorica.png){}
 
 \newpage
 
@@ -7360,7 +7360,7 @@ PlotMultiDens(desconto_perc ~ quinzena, dados,
               col = c("black", SetAlpha("gray",0.95), lwd = 2))
 ```
 
-![Gráfico referente a comparação da distribuição de densidade de uma variável numérica, pacote `DescTools`.](~/Programacao/R/Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_dist_densidade-numerica_categorica.png){}
+![Gráfico referente a comparação da distribuição de densidade de uma variável numérica, pacote `DescTools`.](Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/DescTools-grafico_dist_densidade-numerica_categorica.png){}
 Podemos observar claramente a diferença de distribuição da variável compra quando consideramos a primeira quinzena (vários picos) e a segunda quinzena (um único pico e grande dispersão).\
 Os dados mostram não haver uma normalidade na distribuição do percentual de desconto (variável numérica) em cada quinzena (variável categórica). O teste de Shapiro pode levar a comprovação dessa hipótese.\
 
@@ -7375,6 +7375,21 @@ shapiro.test(dados$desconto_perc)
 
 ### Categórica $\sim$ numérica
 #### Passos da criação do modelo categórica $\sim$ numérica 
+- Pacote `nnet` fornece modelo de regressão logística.\
+- No Pacote `nnet`, a função `multinom()` é usada para obtenção dos coeficientes do modelo.\
+- Modelos de regressão logística:\
+  - Para duas categóricas:\
+    - Binária\
+    - Binomial\
+  - Para mais de duas categórias:\
+    - Politômica\
+    - Multinomial\
+
+##### O que é regressão logística?
+##### Tipos de regressão logística
+##### Modelo de regressão logística
+##### A razão de chance ou Odds Ratio (**OR**)
+##### Prevendo as probabilidades
 #### Avaliando a significância dos parâmetros
 #### Avaliando a acurácia do modelo
 
