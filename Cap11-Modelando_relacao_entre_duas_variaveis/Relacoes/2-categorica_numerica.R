@@ -66,6 +66,10 @@ exp(coef(modelo))
 #P(B)/P(A) = 1.31+1.126^x
 #P(C)/P(A)) = 0.54+1.130^x
 
+#Exemplo
+#Para um desconto de 0 (x=0), P(B)/P(A) = 2.31, ou seja,
+#a filial B tem 2.31 vezes mais chance de não obter (0%) desconto que a filial A. 
+
 #Prevendo a probabilidade de cada filial face aos descontos
 valor <- data.frame(desconto_perc = seq(0,20,5))
 p <- predict(modelo,newdata = valor,type = "prob")
@@ -84,6 +88,22 @@ tabela
 
 #-------------------------------------------------------------------------------
 #Avaliando a significancia dos parâmetros
+#Padronizando os coeficientes do modelo
+z <- summary(modelo)$coefficients / summary(modelo)$standard.errors
+z
+#   (Intercept) desconto_perc
+#B   0.4383698     1.0278743
+#C  -0.8025002     0.9329645
 
+#Obtendo o p-valor dos parâmetros
+pval <- (1 - pnorm(abs(z),0,1))*2
+pval
+#   (Intercept) desconto_perc
+#B   0.6611183     0.3040089
+#C   0.4222637     0.3508383
+
+#Logo,
+#Em todos os parâmetros como p-valor > 0.05,
+#os coeficientes estimados são significantes.
 #-------------------------------------------------------------------------------
 #Avaliando a acurácia do modelo
