@@ -1,11 +1,11 @@
-ESCRITO EM 29/11/23
+ESCRITO EM 30/11/23
 ---
-PARA 30/11/23
+PARA 01/12/23
 ---
 Subir github:
 
 Estudar:
-
+	- Regressão Logística
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
