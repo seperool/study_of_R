@@ -12,6 +12,7 @@
 #H1: há relação entre local de compra e desconto na compra.
 
 #Bibliotecas
+library(knitr) #Interpretação e compilação do documento rmd, formato tabela kable
 library(readr) #Leitura de dados
 library(magrittr) #Operador pipe " %>% ", concatena linhas de comando
 library(dplyr) #Manipulação dados
@@ -107,3 +108,27 @@ pval
 #os coeficientes estimados são significantes.
 #-------------------------------------------------------------------------------
 #Avaliando a acurácia do modelo
+
+#Acurácia é a proporção de predições corretas do modelo.
+#Gerar uma matriz de confusão do modelo de análise.
+#Acurácia = total de acertos / total de dados
+
+mc <- table(dados$filial_f, predict(modelo)) #Gerar a matriz de confusão
+kable(mc) #Apresentação da tabela em formato kable
+
+#  |   |  A|  B|  C|
+#  |:--|--:|--:|--:|
+#  |A  |  0|  6|  0|
+#  |B  |  0| 12|  0|
+#  |C  |  0|  5|  0|
+
+#Classificou 6 vezes filial A como B (erro)
+#Classificou 12 vezes filial B como B (acerto)
+#Classificou 5 vezes filial C como B (erro)
+
+#Cálculo da acurácia
+sum(diag(mc))/sum(mc) #Diagonal da matriz de confusão são as previsões corretas.
+#[1] 0.5217391
+#Acurácia = 52%
+#Prever erroneamente  = 48%
+#Esse modelo possui baixa acurácia.
