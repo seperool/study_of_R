@@ -1,6 +1,6 @@
-ESCRITO EM 28/11/23
+ESCRITO EM 29/11/23
 ---
-PARA 29/11/23
+PARA 30/11/23
 ---
 Subir github:
 
@@ -26,7 +26,5 @@ Afazeres:
 				- Categórica ~ categórica
 				- Numérica ~ numérica
 	- script
-		- Categórica ~ numérica
-			- Avaliando a acurácia do modelo
 		- Categórica ~ categórica
 		- Numérica ~ numérica
