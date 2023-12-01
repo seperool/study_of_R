@@ -7,8 +7,9 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
+  pdf_document: 
     number_sections: true
+    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
@@ -19,9 +20,8 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  odt_document: 
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7391,7 +7391,88 @@ shapiro.test(dados$desconto_perc)
 ##### A razão de chance ou Odds Ratio (**OR**)
 ##### Prevendo as probabilidades
 #### Avaliando a significância dos parâmetros
+
+\newpage
+
 #### Avaliando a acurácia do modelo
+
+- Acurácia é a proporção de predições corretas do modelo.\
+- Para obtê-las construímos a matríz de confusão do modelo em análise:\
+
+$$Acurácia = \frac{total \, de \, acertos}{total \, de \, dados}$$
+
+- Gerando matriz de confusão no **R**:\
+`mc <- table(dados$filial_f, predict(modelo))`\
+  - `predict`\
+  Aplica o metodo de regressão `lm` ao objeto.\
+
+- Matriz de confusão
+  - Mostra o número de classificações corretas (em cada linha) vesus o número de classificações preditivas (em cada coluna) para cada nível de variável sob análise.\
+  - A diagonal da matriz de confusão são as previsões corretas.\
+```{r Matriz de confusão,echo=FALSE, message=FALSE, warning=FALSE}
+#Biblioteca
+library(knitr)
+
+#data.frame
+categorias <- c("A", "B", "C")
+A <- c(0,0,0)
+B <- c(6,12,5)
+C <- c(0,0,0)
+mc <- data.frame(categorias,A,B,C)
+
+#Tabela
+kable(mc, col.names = c("","A","B","C"), align = "cccc",
+      caption = "Matriz de confusão do modelo de regressão logística.")
+```
+
+- Análise da matriz de confusão:\
+  - Classificou 6 vezes filial A como B (erro).\
+  - Classificou 12 vezes filial B como B (acerto).\
+  - Classificou 5 vezes filial C como B (erro).\
+
+- Cálculo de acurácia:\
+
+$$Acurácia = \frac{Soma \, diagonal}{Soma \, de \, todos \, os \, valores \, da \, matriz}$$
+
+ou seja,\
+`acuracia <- sum(diag(mc))/sum(mc)`\
+O resultado é a porcentagem de acerto do modelo.\
+
+$$Acurácia = \frac{12}{23}$$
+
+$$Acurácia \approx 52 \%$$
+
+\newpage
+
+- Exemplo - Avaliando a acurácia do modelo:\
+
+```
+#Avaliando a acurácia do modelo
+
+#Acurácia é a proporção de predições corretas do modelo.
+#Gerar uma matriz de confusão do modelo de análise.
+#Acurácia = total de acertos / total de dados
+
+mc <- table(dados$filial_f, predict(modelo)) #Gerar a matriz de confusão
+kable(mc) #Apresentação da tabela em formato kable
+
+#  |   |  A|  B|  C|
+#  |:--|--:|--:|--:|
+#  |A  |  0|  6|  0|
+#  |B  |  0| 12|  0|
+#  |C  |  0|  5|  0|
+
+#Classificou 6 vezes filial A como B (erro)
+#Classificou 12 vezes filial B como B (acerto)
+#Classificou 5 vezes filial C como B (erro)
+
+#Cálculo da acurácia
+sum(diag(mc))/sum(mc) #A diagonal da matriz de confusão são as previsões corretas.
+#[1] 0.5217391
+#Acurácia = 52%
+#Prever erroneamente  = 48%
+#Esse modelo possui baixa acurácia.
+```
 
 \newpage
 
