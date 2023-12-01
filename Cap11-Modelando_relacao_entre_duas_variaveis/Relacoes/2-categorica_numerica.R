@@ -127,7 +127,7 @@ kable(mc) #Apresentação da tabela em formato kable
 #Classificou 5 vezes filial C como B (erro)
 
 #Cálculo da acurácia
-sum(diag(mc))/sum(mc) #Diagonal da matriz de confusão são as previsões corretas.
+sum(diag(mc))/sum(mc) #A diagonal da matriz de confusão são as previsões corretas.
 #[1] 0.5217391
 #Acurácia = 52%
 #Prever erroneamente  = 48%
