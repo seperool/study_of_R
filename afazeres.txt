@@ -1,11 +1,11 @@
-ESCRITO EM 30/11/23
+ESCRITO EM 01/12/23
 ---
-PARA 01/12/23
+PARA 02/12/23
 ---
 Subir github:
 
 Estudar:
-	- Regressão Logística
+
 Afazeres:
 	- Revisar capitulos anteriores
 		- Readme.*
@@ -22,7 +22,6 @@ Afazeres:
 						- A razão de chance ou Odds Ratio (OR)
 						- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
-					- Avaliando a acurácia do modelo
 				- Categórica ~ categórica
 				- Numérica ~ numérica
 	- script
