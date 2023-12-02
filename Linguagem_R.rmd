@@ -7,12 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -20,7 +19,8 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -7390,7 +7390,45 @@ shapiro.test(dados$desconto_perc)
 ##### Modelo de regressão logística
 ##### A razão de chance ou Odds Ratio (**OR**)
 ##### Prevendo as probabilidades
+
+\newpage
+
 #### Avaliando a significância dos parâmetros
+
+- A **análise da significância estatística** é considerado um procedimento para verificar a discrepância de uma hipótese estatística em relação aos dados observados.\
+
+- Para avaliar a significância dos parâmetros estimados vamos obter a estatística de *z* e avaliar o *p-valor* de um teste bicaudal, ou seja, vamos testar se os parâmetros são nulos ou não.\
+
+- Padronizando os coeficientes do modelo:\
+  - Em **R**:\
+  `z <- summary(modelo)$coefficients / summary(modelo)$standard.errors`\
+  - Modelo matemático:\
+  
+  $$z = \frac{coeficientes \, do \, modelo}{erro \, padrão \, da \, função \, lm()}$$
+
+- Obtendo o p-valor, em **R**:\
+`pval <- (1 - pnorm(abs(z),0,1))*2`\
+
+```{r significância de parâmetros, echo=FALSE, message=FALSE, warning=FALSE}
+#Biblioteca
+library(knitr)
+
+#data.frame
+categorias_sig <- c("B","C")
+z_intercept <- c(0.438,-0.803)
+z_x <- c(1.028,0.933)
+pval_intercept <- c(0.661,0.422)
+pval_x <- c(0.304,0.351)
+tb_sig_para <- data.frame(categorias_sig,z_intercept,z_x,pval_intercept,pval_x)
+
+#Tabela
+kable(tb_sig_para, col.names = c("","Z-intercept","Z-x","pval-intercept","pval-x"),
+      align = "ccccc",
+      caption = "Exemplo de coeficiente estimados do modelo de regressão logística")
+```
+
+- Análise dos parâmetros:\
+Como todos os p-valor $> 0.05$, logo os coeficientes estimados são significativos.\
 
 \newpage
 
