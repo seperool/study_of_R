@@ -1,6 +1,6 @@
-ESCRITO EM 01/12/23
+ESCRITO EM 02/12/23
 ---
-PARA 02/12/23
+PARA 03/12/23
 ---
 Subir github:
 
@@ -22,6 +22,7 @@ Afazeres:
 						- A razão de chance ou Odds Ratio (OR)
 						- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
+						- Explicar códigos (variável modelo)
 				- Categórica ~ categórica
 				- Numérica ~ numérica
 	- script
