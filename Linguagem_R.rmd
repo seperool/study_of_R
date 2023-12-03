@@ -7387,6 +7387,19 @@ shapiro.test(dados$desconto_perc)
 
 ##### O que é regressão logística?
 ##### Tipos de regressão logística
+- Tipos de regresão logística:\
+  - Para duas categóricas:\
+    - Binária\
+    - Binomial\
+  - Para mais de duas categórias:\
+    - Politômica\
+    - Multinomial\
+
+- Regressão logística binária:\
+- Regressão logística binomial:\
+- Regressão logística politômica:\
+- Regressão logística multinomial:\
+
 ##### Modelo de regressão logística
 ##### A razão de chance ou Odds Ratio (**OR**)
 ##### Prevendo as probabilidades
