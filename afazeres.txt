@@ -1,6 +1,6 @@
-ESCRITO EM 02/12/23
+ESCRITO EM 03/12/23
 ---
-PARA 03/12/23
+PARA 04/12/23
 ---
 Subir github:
 
@@ -18,6 +18,12 @@ Afazeres:
 					- Passos da criação do modelo categórica ~ numérica
 						- O que é regressão logística?
 						- Tipos de regressão logística
+							- Duas categórias
+								- Binária
+								- Binomial
+							- Mais de duas categórias
+								- Politômica
+								- Multinomial
 						- Modelo de regressão logística
 						- A razão de chance ou Odds Ratio (OR)
 						- Prevendo as probabilidades
