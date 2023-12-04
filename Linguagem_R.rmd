@@ -9,9 +9,9 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   odt_document: 
     number_sections: true
-  pdf_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
-    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -19,9 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  pdf_document: 
     number_sections: true
+    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7386,6 +7386,14 @@ shapiro.test(dados$desconto_perc)
     - Multinomial\
 
 ##### O que é regressão logística?
+
+- **Regressão Logística** é um algoritmo que lida com questões e problemas de classificação.\
+- É importante ter em mente que a **regressão logística** não é apenas para classificar coisas entre duas categórias. A **regressão logística** trabalha com os conceitos de estatística e probabilidade.\
+- A **regressão logística** mede a relação entre a variável dependente categórica e uma ou mais variáveis independentes, estimando as probabilidades usando uma função logística (categórica ~ numérica).\
+- Quer dizer que esse tipo de algortimo de *machine learning* analisa diferentes aspectos ou variáveis de um objeto para depois determinar uma classe na qual ele se encaixa melhor.\
+
+\newpage
+
 ##### Tipos de regressão logística
 - Tipos de regresão logística:\
   - Para duas categóricas:\
