@@ -1,6 +1,6 @@
-ESCRITO EM 03/12/23
+ESCRITO EM 04/12/23
 ---
-PARA 04/12/23
+PARA 05/12/23
 ---
 Subir github:
 
@@ -16,7 +16,9 @@ Afazeres:
 			- Relações entre variáveis
 				- Categórica ~ numérica
 					- Passos da criação do modelo categórica ~ numérica
-						- O que é regressão logística?
+						- O que é regressão logística? 
+							- O que é regressão?
+							- Definição regressão logística
 						- Tipos de regressão logística
 							- Duas categórias
 								- Binária
