@@ -7,10 +7,10 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
+  pdf_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
+    toc: false
+  odt_document: 
     number_sections: true
   md_document:
     number_sections: true
@@ -19,9 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7379,14 +7379,14 @@ shapiro.test(dados$desconto_perc)
 - No Pacote `nnet`, a função `multinom()` é usada para obtenção dos coeficientes do modelo.\
 - Modelos de regressão logística:\
   - Para duas categóricas:\
-    - Binária\
-    - Binomial\
+    - Binária ou Binomial\
   - Para mais de duas categórias:\
-    - Politômica\
-    - Multinomial\
+    - Ordinal\
+    - Politômica ou Multinomial\
 
 ##### O que é regressão logística?
 
+- Análise de **regressão** é usada para modelar a relação entre a variável dependente e uma ou mais variáveis independente.\
 - **Regressão Logística** é um algoritmo que lida com questões e problemas de classificação.\
 - É importante ter em mente que a **regressão logística** não é apenas para classificar coisas entre duas categórias. A **regressão logística** trabalha com os conceitos de estatística e probabilidade.\
 - A **regressão logística** mede a relação entre a variável dependente categórica e uma ou mais variáveis independentes, estimando as probabilidades usando uma função logística (categórica ~ numérica).\
@@ -7396,19 +7396,39 @@ shapiro.test(dados$desconto_perc)
 
 ##### Tipos de regressão logística
 - Tipos de regresão logística:\
-  - Para duas categóricas:\
-    - Binária\
-    - Binomial\
+  - Para duas categórias:\
+    - Binária ou binomial\
   - Para mais de duas categórias:\
-    - Politômica\
-    - Multinomial\
+    - Ordinal\
+    - Politômica ou multinomial\
 
-- Regressão logística binária:\
-- Regressão logística binomial:\
-- Regressão logística politômica:\
-- Regressão logística multinomial:\
+- Regressão logística binária ou binomial:\
+No modelo de regressão logística binomial, os objetos são classificados em dois grupos ou categórias. É quase um jogo do que é e o que não é.\
+Ex.:\
+A mensagem é spam ou não é.\
+A imagem é colorida ou não.\
+A célula é cancerígena ou não.\
+
+- Regressão logística ordinal:\
+Trabalha com o conceito de categórias ordenadas. Neste caso, os objetos são classificados em três ou mais classes que possuem uma ordem já determinada.\
+Ex.:\
+O desempenho do atleta é ruim, justo ou excelente.\
+O grau de satisfação do paciente com o tratamento é insatisfeito, satisfeito ou muito satisfeito.\
+
+- Regressão logística politômica ou multinomial:\
+No modelo de regressão logística multinomial, os objetos são classificados em três ou mais categórias que não possuem ordem entre si.\
+Ex.:
+O animal é gato, leão ou tigre.\
+Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
+
+\newpage
 
 ##### Modelo de regressão logística
+
+
+
+\newpage
+
 ##### A razão de chance ou Odds Ratio (**OR**)
 ##### Prevendo as probabilidades
 
