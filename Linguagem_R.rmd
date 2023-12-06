@@ -7425,11 +7425,37 @@ Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
 
 ##### Modelo de regressão logística
 
-
+- Passos:\
+  - Definir as variáveis\
+  - Formular as hipóteses\
+  - Definir o tipo de regressão logística\
+    - Binomial\
+    - Ordinal\
+    - Multinomial\
+  - Definir o nível de referência da variável resposta (categórica)\
+  - Gerar modelo\
+  - Cálculando a razão de chance ou *Odds Ratio* (**OR**)\
+  - Prevendo cada probabilidade\
 
 \newpage
 
-##### A razão de chance ou Odds Ratio (**OR**)
+##### A razão de chance ou *Odds Ratio* (**OR**)
+
+- Razão de chance ou *Odds Ratio* (**OR**) é dada pela razão entre a probabilidade de um evento ocorrer e de não ocorrer.\
+
+$$OR = \frac{P(A)}{P(\bar{A})}$$
+
+- Analise do **OR**:\
+  - $OR > 1$\
+  Significa que a probabilidade do evento ocorrer é maior do que de não ocorrer.\
+  - $OR < 1$\
+  Significa que a probabilidade do evento ocorrer é menor do que de não ocorrer.\
+  - $OR = 1$\
+  Significa que a probabilidade do evento ocorrer ou não ocorrer é a mesma.\
+
+- Análise do modelo a partir da razão de chance (**OR**):\
+  
+
 ##### Prevendo as probabilidades
 
 \newpage
