@@ -1,6 +1,6 @@
-ESCRITO EM 05/12/23
+ESCRITO EM 06/12/23
 ---
-PARA 06/12/23
+PARA 07/12/23
 ---
 Subir github:
 
@@ -17,7 +17,8 @@ Afazeres:
 				- Categórica ~ numérica
 					- Passos da criação do modelo categórica ~ numérica
 						- Modelo de regressão logística
-						- A razão de chance ou Odds Ratio (OR)
+						- Razão de chance ou Odds Ratio (OR)
+							- Analise do modelo usando razão de chance (depende dos anteriores)
 						- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
 						- Explicar códigos (variável modelo)
