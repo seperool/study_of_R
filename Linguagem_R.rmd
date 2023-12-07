@@ -10,7 +10,8 @@ output:
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   md_document:
     number_sections: true
@@ -19,8 +20,7 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -7437,20 +7437,45 @@ Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
   - Cálculando a razão de chance ou *Odds Ratio* (**OR**)\
   - Prevendo cada probabilidade\
 
+- Definir as variáveis que serão trabalhadas:\
+Logicamente devem ser, para o caso do metodo de regressão logística, variável categórica ~ variável numérica ($Y \sim X$).\
+  - Variável resposta ($Y$): variável categórica.\ 
+  - Variável explicativa($X$): variável numérica.\ 
+  - Nível de significância: normalmente $0.05$ ($5\%$)\
+
+- Formular as hipóteses:\
+  - $H_0$\
+  - $H_1$\
+
+- Definir o tipo de regressão logística aplicada:\
+Com base na caracteristica da variável categórica (resposta), fica claro qual o tipo de regressão logística devemos trabalhar.\
+  
+
 \newpage
 
 ##### A razão de chance ou *Odds Ratio* (**OR**)
 
-- Razão de chance ou *Odds Ratio* (**OR**) é dada pela razão entre a probabilidade de um evento ocorrer e de não ocorrer.\
+- *Odds*\
+É a razão de um evento de interesse ocorrer sobre os eventos de não interesse.\
 
-$$OR = \frac{P(A)}{P(\bar{A})}$$
+$$Odds = \frac{P(A)}{P(\bar{A})}$$
 
-- Analise do **OR**:\
-  - $OR > 1$\
+- Probabilidade\
+É a razão de um evento de interesse ocorrer sobre o total de eventos.\
+
+$$Probabilidade = \frac{P(A)}{Total}$$
+
+- Razão de chance ou *Odds Ratio* (**OR**)\
+É a relação entre dois evendos ocorrerem, dada pela razão entre a probabilidade de um primeiro evento de interesse ocorrer, sobre o evento de não interesse desse primeiro evento, sobre um segundo evento de interesse de ocorrer, sobre o evento de não interesse desse segundo evento.\
+
+$$OR = \frac{\frac{P(A)}{P(\bar{A})}}{\frac{P(B)}{P(\bar{B})}}$$
+
+- Analise do *Odds*:\
+  - $Odds > 1$\
   Significa que a probabilidade do evento ocorrer é maior do que de não ocorrer.\
-  - $OR < 1$\
+  - $Odds < 1$\
   Significa que a probabilidade do evento ocorrer é menor do que de não ocorrer.\
-  - $OR = 1$\
+  - $Odds = 1$\
   Significa que a probabilidade do evento ocorrer ou não ocorrer é a mesma.\
 
 - Análise do modelo a partir da razão de chance (**OR**):\
