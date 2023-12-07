@@ -7,12 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  pdf_document: 
-    number_sections: true
-    toc: false
   word_document: 
     toc: TRUE
     number_sections: true
+  pdf_document: 
+    number_sections: true
+    toc: false
   md_document:
     number_sections: true
     variant: markdown_github
@@ -7469,6 +7469,10 @@ $$Probabilidade = \frac{P(A)}{Total}$$
 É a relação entre dois evendos ocorrerem, dada pela razão entre a probabilidade de um primeiro evento de interesse ocorrer, sobre o evento de não interesse desse primeiro evento, sobre um segundo evento de interesse de ocorrer, sobre o evento de não interesse desse segundo evento.\
 
 $$OR = \frac{\frac{P(A)}{P(\bar{A})}}{\frac{P(B)}{P(\bar{B})}}$$
+
+ou seja,\
+
+$$OR = \frac{Odds(A)}{Odds(B)}$$
 
 - Analise do *Odds*:\
   - $Odds > 1$\
