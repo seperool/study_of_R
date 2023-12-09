@@ -7,12 +7,12 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  word_document: 
-    toc: TRUE
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -7373,18 +7373,9 @@ shapiro.test(dados$desconto_perc)
 
 \newpage
 
-### Categórica $\sim$ numérica
-#### Passos da criação do modelo categórica $\sim$ numérica 
-- Pacote `nnet` fornece modelo de regressão logística.\
-- No Pacote `nnet`, a função `multinom()` é usada para obtenção dos coeficientes do modelo.\
-- Modelos de regressão logística:\
-  - Para duas categóricas:\
-    - Binária ou Binomial\
-  - Para mais de duas categórias:\
-    - Ordinal\
-    - Politômica ou Multinomial\
+### Categórica $\sim$ numérica (regressão logística)
 
-##### O que é regressão logística?
+#### O que é regressão logística?
 
 - Análise de **regressão** é usada para modelar a relação entre a variável dependente e uma ou mais variáveis independente.\
 - **Regressão Logística** é um algoritmo que lida com questões e problemas de classificação.\
@@ -7394,7 +7385,7 @@ shapiro.test(dados$desconto_perc)
 
 \newpage
 
-##### Tipos de regressão logística
+#### Tipos de regressão logística
 - Tipos de regresão logística:\
   - Para duas categórias:\
     - Binária ou binomial\
@@ -7423,9 +7414,9 @@ Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
 
 \newpage
 
-##### Modelo de regressão logística
+#### Modelo de regressão logística
 
-- Passos:\
+- Passos (resumo):\
   - Definir as variáveis\
   - Formular as hipóteses\
   - Definir o tipo de regressão logística\
@@ -7433,7 +7424,14 @@ Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
     - Ordinal\
     - Multinomial\
   - Definir o nível de referência da variável resposta (categórica)\
-  - Gerar modelo\
+  - Modelo\
+    - Checagem de pressupostos:\
+      1. Variável dependente **Dicotômica** (pelo menos).\
+      2. Independencia das observações (sem medidas repetidas).\
+      3. Ausência de outliers/pontos de alavancagem (Plotar gráfico).\
+    - Modelagem:\
+      - Gerar modelo.\
+      - Obter coeficientes do modelo.\
   - Cálculando a razão de chance ou *Odds Ratio* (**OR**)\
   - Prevendo cada probabilidade\
 
@@ -7443,17 +7441,29 @@ Logicamente devem ser, para o caso do metodo de regressão logística, variável
   - Variável explicativa($X$): variável numérica.\ 
   - Nível de significância: normalmente $0.05$ ($5\%$)\
 
-- Formular as hipóteses:\
-  - $H_0$\
-  - $H_1$\
-
-- Definir o tipo de regressão logística aplicada:\
-Com base na caracteristica da variável categórica (resposta), fica claro qual o tipo de regressão logística devemos trabalhar.\
-  
+- Formular as hipóteses serem respondidas pela inferição.\
+Ex.:\
+$H_0$: Não há relação entre local de compra e desconto na compra.\
+$H_1$: Há relação entre local de compra e desconto na compra.\
 
 \newpage
 
-##### A razão de chance ou *Odds Ratio* (**OR**)
+- Definir o tipo de **regressão logística** há aplicar:\
+  - Com base na caracteristica da variável categórica (resposta), fica claro qual o tipo de regressão logística devemos trabalhar (**binomial**, **ordinal** ou **multinomial**).\
+  - Pacote `nnet` fornece modelo de regressão logística, a função `multinom()` é usada para geração do modelo e posteriormente a obtenção dos coeficientes do modelo.\
+
+- Categória de referência:\
+  - Ao preparar os dados, a variável resposta (categórica) deve ser um fator (factor) e é necessário definir o nível de referência desejado pelo analista, da variável resposta, através do comando `relevel` do pacote `stats`.\
+  Exemplo definindo a categória de referência como filial A:\
+  `dados$filial_f <- relevel(dados$filial, ref = "A")`\
+  - Ao interpretar a analise é preciso ter em mente qual a categória usada como referência.\
+  - Para checar a categória de referencia, basta usar a função `levels(data$variável_categórica)`, a primeira na fila apresentada é a categória de referência.\
+  
+- Modelagem:\
+
+\newpage
+
+#### A razão de chance ou *Odds Ratio* (**OR**)
 
 - *Odds*\
 É a razão de um evento de interesse ocorrer sobre os eventos de não interesse.\
@@ -7485,7 +7495,7 @@ $$OR = \frac{Odds(A)}{Odds(B)}$$
 - Análise do modelo a partir da razão de chance (**OR**):\
   
 
-##### Prevendo as probabilidades
+#### Prevendo as probabilidades
 
 \newpage
 
