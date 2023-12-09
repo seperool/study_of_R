@@ -1,6 +1,6 @@
-ESCRITO EM 08/12/23
+ESCRITO EM 09/12/23
 ---
-PARA 09/12/23
+PARA 10/12/23
 ---
 Subir github:
 
@@ -15,11 +15,13 @@ Afazeres:
 		- Cap. 11 - Modelando a relação entre duas variáveis
 			- Relações entre variáveis
 				- Categórica ~ numérica
-					- Passos da criação do modelo categórica ~ numérica
-						- Modelo de regressão logística
-						- Razão de chance ou Odds Ratio (OR)
-							- Analise do modelo usando razão de chance (depende dos anteriores)
-						- Prevendo as probabilidades
+					- Modelo de regressão logística
+						- Modelo
+							- Checagem de pressupostos
+							- Modelagem
+					- Razão de chance ou Odds Ratio (OR)
+						- Analise do modelo usando razão de chance (depende dos anteriores)
+					- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
 						- Explicar códigos (variável modelo)
 				- Categórica ~ categórica
