@@ -1,6 +1,6 @@
-ESCRITO EM 09/12/23
+ESCRITO EM 10/12/23
 ---
-PARA 10/12/23
+PARA 11/12/23
 ---
 Subir github:
 
@@ -18,7 +18,11 @@ Afazeres:
 					- Modelo de regressão logística
 						- Modelo
 							- Checagem de pressupostos
+								- Modelo binomial
+								- Modelo multinomial
 							- Modelagem
+								- Modelo binomial
+								- Modelo multinomial
 					- Razão de chance ou Odds Ratio (OR)
 						- Analise do modelo usando razão de chance (depende dos anteriores)
 					- Prevendo as probabilidades
