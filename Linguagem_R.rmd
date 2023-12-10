@@ -7,12 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -20,7 +19,8 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
@@ -7418,48 +7418,82 @@ Esta fruta é maçã, uma pera, uma manga ou um maracujá.\
 
 - Passos (resumo):\
   - Definir as variáveis\
-  - Formular as hipóteses\
+  - Formular as hipóteses ($H_0$ e $H_1$)\
   - Definir o tipo de regressão logística\
     - Binomial\
     - Ordinal\
     - Multinomial\
   - Definir o nível de referência da variável resposta (categórica)\
   - Modelo\
-    - Checagem de pressupostos:\
-      1. Variável dependente **Dicotômica** (pelo menos).\
-      2. Independencia das observações (sem medidas repetidas).\
-      3. Ausência de outliers/pontos de alavancagem (Plotar gráfico).\
+    - Checagem de pressupostos (Modelo binomial e Modelo multinomial)\
     - Modelagem:\
-      - Gerar modelo.\
+      - Gerar modelo (Binomial e Multinomial).\
       - Obter coeficientes do modelo.\
   - Cálculando a razão de chance ou *Odds Ratio* (**OR**)\
   - Prevendo cada probabilidade\
 
-- Definir as variáveis que serão trabalhadas:\
+##### Definir as variáveis que serão trabalhadas
+
 Logicamente devem ser, para o caso do metodo de regressão logística, variável categórica ~ variável numérica ($Y \sim X$).\
   - Variável resposta ($Y$): variável categórica.\ 
   - Variável explicativa($X$): variável numérica.\ 
   - Nível de significância: normalmente $0.05$ ($5\%$)\
 
-- Formular as hipóteses serem respondidas pela inferição.\
+##### Formulação de hipóteses
+
+Formular as hipóteses serem respondidas pela inferição.\
 Ex.:\
 $H_0$: Não há relação entre local de compra e desconto na compra.\
 $H_1$: Há relação entre local de compra e desconto na compra.\
 
 \newpage
 
-- Definir o tipo de **regressão logística** há aplicar:\
-  - Com base na caracteristica da variável categórica (resposta), fica claro qual o tipo de regressão logística devemos trabalhar (**binomial**, **ordinal** ou **multinomial**).\
-  - Pacote `nnet` fornece modelo de regressão logística, a função `multinom()` é usada para geração do modelo e posteriormente a obtenção dos coeficientes do modelo.\
+##### Definir o tipo de **regressão logística** que será aplicada
 
-- Categória de referência:\
-  - Ao preparar os dados, a variável resposta (categórica) deve ser um fator (factor) e é necessário definir o nível de referência desejado pelo analista, da variável resposta, através do comando `relevel` do pacote `stats`.\
-  Exemplo definindo a categória de referência como filial A:\
-  `dados$filial_f <- relevel(dados$filial, ref = "A")`\
-  - Ao interpretar a analise é preciso ter em mente qual a categória usada como referência.\
-  - Para checar a categória de referencia, basta usar a função `levels(data$variável_categórica)`, a primeira na fila apresentada é a categória de referência.\
-  
-- Modelagem:\
+- Com base na caracteristica da variável categórica (resposta), fica claro qual o tipo de regressão logística devemos trabalhar (**binomial**, **ordinal** ou **multinomial**).\
+- Pacote `nnet` fornece modelo de regressão logística, a função `multinom()` é usada para geração do modelo e posteriormente a obtenção dos coeficientes do modelo.\
+
+##### Categória de referência
+
+- Ao preparar os dados, a variável resposta (categórica) deve ser um fator (factor) e é necessário definir o nível de referência desejado pelo analista, da variável resposta, através do comando `relevel` do pacote `stats`.\
+Exemplo definindo a categória de referência como filial A:\
+`dados$filial_f <- relevel(dados$filial, ref = "A")`\
+- Ao interpretar a analise é preciso ter em mente qual a categória usada como referência.\
+- Para checar a categória de referencia, basta usar a função `levels(data$variável_categórica)`, a primeira na fila apresentada é a categória de referência.\
+
+\newpage
+
+##### Checagem de pressupostos
+
+- Checagem de pressupostos do modelo binário/binomial:\
+  1. A variável dependente deve ser dicotômica e mutuamente exclusivas.\
+  A variável resposta (categórica) deve ter duas categórias (**dicotómica**) e uma variável classificada em uma categória não pode estar em outra categória também (**mutuamente exclusiva**).\
+  2. Indepêndencia das observações (sem medidas repetidas).\
+  Não tem medidas repetidas, nem medidas ao longo do tempo.\
+  3. Ausência de *outliers*/Pontos de alavancagem (Testado no modelo).\
+    - Pontos de alavancagem é a medida dos valores de observação da variável independente, ou seja, valor desproporcional no proprio valor ajustado. São pontos que apresentam um perfil diferente dos demais no que diz respeito aos valores.\ 
+    - Plotando gráfico para identificar *outliers*/Pontos de alavancagem.\
+    `plot(modelo, which = 5)`\
+      - O modelo é uma variável com o modelo de regressão logística salvo dentro dela (será visto no proximo tópico).\
+      - Os pontos *outliers*/pontos de alavancagem aparecem longe da linha de regressão e fora dos limites da linha tracejada.\
+    - Verificar os residos padronizado:\
+      - Verificar o resumo dos residos padronizado, os limites devem estar dentro da faixa $mínimo > -3$ e $máximo < 3$.\
+      `summary(stdres(modelo))`\
+      - Se o limites estiverem fora dessa faixa, existem *outliers*.\
+      - A função `stdres()` é do pacote `MASS`.\
+
+![Gráfico residual, para observar possíveis pontos *outliers*/pontos de alavancagem.](./Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/plot-grafico_analise_outliers-binario-categorica_numerica.png){width=80%}
+
+\newpage
+
+- Checagem de pressupostos do modelo multinomial:\
+
+\newpage
+
+##### Modelagem
+
+- Binomial\
+- Multinomial\
 
 \newpage
 
