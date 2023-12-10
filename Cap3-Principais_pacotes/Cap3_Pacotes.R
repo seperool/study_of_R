@@ -9,6 +9,7 @@ install.packages("data.table") #Manipulação de base de dados DataFrame
 install.packages("janitor") #Limpeza de dados
 install.packages("mice") #Substituir valores perdidos
 install.packages("DescTools") #Análise descritiva de forma rápida e completa
+install.packages("MASS") #função 'stdres' para obter residos padronizados - regressão logística
 install.packages("nnet") #Modelos de regressão logística
 install.packages("lubridate") #Transformar e extrair datas, funções para trabalhar com datas
 install.packages("devtools")
