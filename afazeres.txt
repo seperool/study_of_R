@@ -18,7 +18,6 @@ Afazeres:
 					- Modelo de regressão logística
 						- Modelo
 							- Checagem de pressupostos
-								- Modelo binomial
 								- Modelo multinomial
 							- Modelagem
 								- Modelo binomial
