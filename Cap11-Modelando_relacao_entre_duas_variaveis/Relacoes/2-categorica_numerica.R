@@ -23,7 +23,8 @@ library(mice) #Substitui valores perdidos
 library(janitor) #Limpeza de dados
 library(DescTools) #Análise descritiva de forma rápida e completa
 library(lubridate) #Transformar e extrair datas, funções para trabalhar com datas
-library(MASS) #função 'stdres' para obter residos padronizados - regressão logística
+library(psych) #Função 'pairs.panels' para analise de multicolinearidade - regressão logística
+library(MASS) #Função 'stdres' para obter residos padronizados - regressão logística
 library(nnet) #Modelos de regressão logística
 
 #Importando dados
@@ -41,14 +42,22 @@ dados$filial_f <- relevel(dados$filial, ref = "A")
 head(dados)
 str(dados)
 
+#Analise de multicolinearidade
+pairs.panels(dados)
+#Fechando dispositivo gráfico
+dev.off()
+
 #Modelagem
 
 ## Exemplo modelo Binomial(binário)
 ## Apenas exemplo, não se aplica nesse caso!!!
 modelo_glm <- glm(filial_f ~ desconto_perc, dados,
-                  family = binomial(link = "logit"))
+                  family = binomial(link = 'logit'))
 plot(modelo_glm, which = 5)
+##Fechando dispositivo gráfico
+dev.off()
 summary(stdres(modelo_glm))
+summary(modelo_glm)
 
 #Modelo multinomial
 #(Y(resposta/categória) ~ X(explicação/numérica))
