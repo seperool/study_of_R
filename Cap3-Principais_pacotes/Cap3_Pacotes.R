@@ -9,8 +9,6 @@ install.packages("data.table") #Manipulação de base de dados DataFrame
 install.packages("janitor") #Limpeza de dados
 install.packages("mice") #Substituir valores perdidos
 install.packages("DescTools") #Análise descritiva de forma rápida e completa
-install.packages("MASS") #função 'stdres' para obter residos padronizados - regressão logística
-install.packages("nnet") #Modelos de regressão logística
 install.packages("lubridate") #Transformar e extrair datas, funções para trabalhar com datas
 install.packages("devtools")
 install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
@@ -46,3 +44,8 @@ install.packages("RPostgreSQL") #Alternativo Conexão com PostgreSQL
 install.packages("bigrquery") #Conexão Google’s BigQuery
 install.packages("dbplyr") #Tradução de dplyr em dbplyr (SQL)
 install.packages("sqldf") #Permite manipular data.frame em R com instruções SQL
+
+#Regressão
+install.packages("MASS") #Função 'stdres' para obter residos padronizados - regressão logística
+install.packages("psych") #Função 'pairs.panels' para analise de multicolinearidade - regressão logística
+install.packages("nnet") #Modelos de regressão logística multinomial - Função ''multinom'
