@@ -7,10 +7,10 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
+  pdf_document: 
     number_sections: true
-  word_document: 
-    toc: TRUE
+    toc: false
+  odt_document: 
     number_sections: true
   md_document:
     number_sections: true
@@ -19,9 +19,9 @@ output:
   html_document:
     number_sections: true
     df_print: paged
-  pdf_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
-    toc: false
 bibliography: Cap4-R_markdown/bibliografia_R.bib
 csl: Cap4-R_markdown/abnt.csl
 ---
@@ -7516,10 +7516,11 @@ Exemplo definindo a categória de referência como filial A:\
     - *data* é o banco de dados.\
   - Para extrair os coeficientes do modelo usamos a função `summary(modelo_glm)`.\
   Onde,\
-  $$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável * x$$
+  $$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável \cdot x$$
+    - $x$ é o valor da variável numérica.\
     - É basicamente a equação da reta.\
     - *Estimate* são os coeficientes: *intercept* e valor_variável.\
-    - *Pr* é o *p-valor*, neste caso *p-valor* deve ser menor que $0.05$ para ser estatísticamente significativo para o modelo de previsão.\
+    - *Pr* é o *p-valor*, neste caso *p-valor* deve ser **menor** que $0.05$ para ser estatísticamente significativo para o modelo de previsão.\
   
   
 - Ordinal:\
@@ -7548,7 +7549,27 @@ ou seja,\
 
 $$OR = \frac{Odds(A)}{Odds(B)}$$
 
-- Analise do *Odds*:\
+Para obtermos a razão de chance fornecida pelo modelo construido de regressão logística, utilizamos a função inversa ao logaritmo, ou seja, a função exponencial:\
+
+Se\
+
+$$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável \cdot x$$
+
+então,\
+
+$$OR = exp^{y(x)}$$
+
+$$OR = e^{(intercept + valor\_variavel \cdot x)}$$
+
+$$OR = novo\_intercept + novo\_valor\_variavel^x$$
+
+$x$ é o valor da variável numérica.\
+Logo, para achar os coeficientes da equação de razão de chance (**OR**) no **R**:\
+`exp( coef(modelo) )`\
+
+\newpage
+
+- Análise do *Odds*:\
   - $Odds > 1$\
   Significa que a probabilidade do evento ocorrer é maior do que de não ocorrer.\
   - $Odds < 1$\
@@ -7556,6 +7577,21 @@ $$OR = \frac{Odds(A)}{Odds(B)}$$
   - $Odds = 1$\
   Significa que a probabilidade do evento ocorrer ou não ocorrer é a mesma.\
 
+- Análise dos coeficientes do logaritmo da razão de chance ($y(x)$):\
+  - O aumento de uma unidade de valor da variável numérica ($x$) está associado a um aumento no logaritmo da razão de chance ($y(x)$) entre a variável categórica B versus a variável categórica de referência A, no valor de $valor\_variável$.\
+  $$y(x) = intercept + valor\_variável \cdot x$$
+  - Exemplo:\
+  O desconto na compra fornce resposta quanto ao local de compra?\
+  $$(Y \sim X)$$
+  $y$ é a variável categórica = filial.\
+  $x$ é a variável numérica = o valor de desconto na compra.\
+  $$y(x) = 0.27 + 0.118x$$
+  Então,\
+  o aumento de uma unidade de valor da variável desconto ($x$) está associado a um aumento no logaritmo da razão de chance ($y(x)$) entre comprar na filial **B** versus comprar na filial **A** (categória de referência), no valor de $0.118$.\
+  - Conclusão:\
+    - A análise a partir do logaritmo da razão de chance ($y(x)$) nos oferece informação sobre o modelo, porém para uma análise mais conclusiva a razão de chance (**OR**) se mostra melhor.\
+    - O logaritmo da razão de chance ($y(x)$) é um passo importante para obtenção da razão de chance (**OR**).\
+  
 - Análise do modelo a partir da razão de chance (**OR**):\
   
 
