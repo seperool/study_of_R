@@ -1,6 +1,6 @@
-ESCRITO EM 11/12/23
+ESCRITO EM 12/12/23
 ---
-PARA 12/12/23
+PARA 13/12/23
 ---
 Subir github:
 
@@ -21,11 +21,10 @@ Afazeres:
 								- Modelo ordinal
 								- Modelo multinomial
 							- Modelagem
-								- Modelo binomial <- (trabalhando)
 								- Modelo ordinal
 								- Modelo multinomial
 					- Razão de chance ou Odds Ratio (OR)
-						- Analise do modelo usando razão de chance (depende dos anteriores)
+						- Analise do modelo usando razão de chance <- (trabalhando)
 					- Prevendo as probabilidades
 					- Avaliando a significância dos parâmetros
 						- Explicar códigos (variável modelo)
