@@ -7,11 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  odt_document: 
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -7591,9 +7591,28 @@ Logo, para achar os coeficientes da equação de razão de chance (**OR**) no **
   - Conclusão:\
     - A análise a partir do logaritmo da razão de chance ($y(x)$) nos oferece informação sobre o modelo, porém para uma análise mais conclusiva a razão de chance (**OR**) se mostra melhor.\
     - O logaritmo da razão de chance ($y(x)$) é um passo importante para obtenção da razão de chance (**OR**).\
+
+\newpage
   
 - Análise do modelo a partir da razão de chance (**OR**):\
-  
+  - A partir da equação podemos avaliar a razão de chance em função dos valores de $x$ (variável explicação, numérica).\
+  - Exemplo:\
+  O desconto na compra fornce resposta quanto ao local de compra?\
+  $$(Y \sim X)$$
+  $y$ é a variável categórica = filial.\
+  $x$ é a variável numérica = o valor de desconto na compra.\
+  `summary(modelo)`\
+  $$y(x) = 0.27 + 0.118x$$
+  Logo,\
+  `exp(coef(modelo))`\
+  $$OR = e^{0.27 + 0.118x} = 1.31 + 1.126^x$$
+  Então,\
+  Se $x = 0$ temos que a razão de chance (**OR**) entre filial B e a filial A é de $2.31$ ($1.31 + 1.126^0$), isto é, a probabilidade de não obter desconto na compra é $2.31$ vezes maior na filial B do que na filial A (nível de referência).\
+  - Conclusão:\
+    - Através da análise de razão de chance (**OR**) podemos entender melhor a relação entre o níveis da variável categórica em relação ao nível de referência.\
+    - Obtemos a incidência de determinadas categórias.\
+
+\newpage
 
 #### Prevendo as probabilidades
 
