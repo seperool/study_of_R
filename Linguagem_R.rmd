@@ -7,11 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  odt_document: 
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
@@ -7615,6 +7615,38 @@ Logo, para achar os coeficientes da equação de razão de chance (**OR**) no **
 \newpage
 
 #### Prevendo as probabilidades
+
+- Usamos a função `predict()` para obter as probabilidades estimada a partir do modelo de regressão logística.\
+
+- Sintaxe:\
+A função predict tem como argumentos:\
+  - `objeto = modelo`\
+  O modelo é a variável salva com o modelo de regressão logística.\
+  - `newdata = valor`\
+  Dados de entrada para prever os valores.\
+  Ex.:\
+  `valor <- data.frame(desconto_perc = seq(0,20,5))`\
+  Vetor de valores de 0 a 20 com o passo de 5.\
+  - `type = "prob"`\
+  Retorna uma probabilidade para cada valor da variável numérica distribuido pelos níveis.\
+  Ex.:\
+  Para o valor $0$ (numérico) os níveis A, B e C são $35\%$, $46\%$ e $19\%$ respectivamente, no total somando os percentuais $100\%$.\
+  
+- Exemplo:\
+```
+#Prevendo a probabilidade de cada filial face aos descontos
+valor <- data.frame(desconto_perc = seq(0,20,5))
+p <- predict(modelo,newdata = valor,type = "prob")
+tabela <- data.frame(valor,p)
+tabela
+#  desconto_perc          A         B         C
+#1             0 0.35138307 0.4605713 0.1880456
+#2             5 0.22975316 0.5437937 0.2264532
+#3            10 0.14105843 0.6028764 0.2560651
+#4            15 0.08291156 0.6398835 0.2772050
+#5            20 0.04740715 0.6606725 0.2919203
+
+```
 
 \newpage
 
