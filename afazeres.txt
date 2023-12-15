@@ -1,6 +1,6 @@
-ESCRITO EM 13/12/23
+ESCRITO EM 14/12/23
 ---
-PARA 14/12/23
+PARA 15/12/23
 ---
 Subir github:
 
@@ -19,12 +19,11 @@ Afazeres:
 						- Modelo
 							- Checagem de pressupostos
 								- Modelo ordinal
-								- Modelo multinomial
+								- Modelo multinomial <- (trabalhando)
 							- Modelagem
 								- Modelo ordinal
 								- Modelo multinomial
-					- Prevendo as probabilidades <- (trabalhando)
-					- Avaliando a significância dos parâmetros
+					- Avaliando a significância dos parâmetros (Revisar)
 						- Explicar códigos (variável modelo)
 				- Categórica ~ categórica
 				- Numérica ~ numérica
