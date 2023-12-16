@@ -42,6 +42,11 @@ dados$filial_f <- relevel(dados$filial, ref = "A")
 head(dados)
 str(dados)
 
+#Analise da frequência
+tabyl(dados, filial, desconto_perc) %>%
+  adorn_totals() %>% 
+  adorn_rounding(2)
+
 #Analise de multicolinearidade
 pairs.panels(dados)
 #Fechando dispositivo gráfico
