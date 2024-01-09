@@ -7,17 +7,17 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  word_document: 
+    toc: TRUE
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
   github_document: 
-  word_document: 
-    toc: TRUE
+  odt_document: 
     number_sections: true
   html_document:
     number_sections: true
@@ -7498,13 +7498,38 @@ Exemplo definindo a categória de referência como filial A:\
 
 - Checagem de pressupostos do modelo ordinal:\
 
+\newpage
+
 - Checagem de pressupostos do modelo multinomial:\
   1. A variável dependente seja nominal (categórias mutuamente exclusivas).\
   Uma variável classificada em uma categória não pode estar em outra categória também (**mutuamente exclusiva**).\
   2. Independencia das observações (sem medidas repetidas).\
   Não tem medidas repetidas, nem medidas ao longo do tempo.\
   3. Ausência de multicolinearidade.\
+    - Relação muito alta (acima de $0.8$ ou $0.9$) entre variáveis independentes (de explicação numérica).\
+    - Se a relação entre duas ou mais variáveis independentes for muito alta, torna a análise redundante.\
+    - Usamos a função `pairs.panels(dados)`, do pacote `psych`, que retorna um painel com as relações entre variáveis. Os valores de colinearidade entre as variáveis é a linha e coluna em que as variáveis se encontram.\
+    Ex.: A correlação entre "Etnia" e "libEcon" é de $0.18$.\
+    - Caso o valor for acima de $0.9$ (ou $0.8$ para alguns autores) existe a colinearidade entre as variáveis. Causando redundância na análise dessas duas variáveis.\
   4. Ajuste do modelo.\
+    - Consiste em comparar dois modelos, o modelo construido do problema (mod) e um modelo nulo (mod0) (sem nenhum previsor, ou seja, que não preve nada).\
+    - Salvamos esses modelos em variáveis (mod e mod0).\
+    ```
+    mod <- multinom(Voto ~ ConfPol + LibEcon + Etnia, data = dados, model = TRUE)
+    mod0 <- multinom(Voto ~ 1, data = dados, model = TRUE)
+    ```
+    - Usamos a função `anova()` para comparar os modelos.\
+    `anova(mod, mod0)`\
+    - As hipoteses são:\
+      - $H_0$: Ajuste do modelo construido $=$ ajuste do modelo nulo, ou seja, $p > 0.05$.\
+      Explicação $H_0$: O modelo construido não preve nada, assim como o modelo nulo.\
+      - $H_1$: Ajuste do modelo construido $\neq$ ajuste do modelo nulo, ou seja, $p \leq 0.05$.\
+      Explicação $H_1$: Existe uma diferença entre os modelos, ou seja, o modelo construido é melhor que o modelo nulo, logo, consegue prever algo.\
+      - O valor de $p$ é dado pela elemento `Pr(chi)` na função `anova()`.\
+
+\newpage
+
+![Painel para avaliar possíveis multicolinearidade, usando a função `pairs.panels()`, do pacote `psych`.](./Cap11-Modelando_relacao_entre_duas_variaveis/Imagens/pairs_panels-Analise_de_multicolinearidade-multinomial.png){}
 
 \newpage
 
