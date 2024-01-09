@@ -1,6 +1,6 @@
-ESCRITO EM 08/01/24
+ESCRITO EM 09/01/24
 ---
-PARA 09/01/24
+PARA 10/01/24
 ---
 Subir github:
 
@@ -19,10 +19,9 @@ Afazeres:
 						- Modelo
 							- Checagem de pressupostos
 								- Modelo ordinal
-								- Modelo multinomial <- (trabalhando)
 							- Modelagem
 								- Modelo ordinal
-								- Modelo multinomial
+								- Modelo multinomial <- (trabalhando)
 					- Avaliando a significância dos parâmetros (Revisar)
 						- Explicar códigos (variável modelo)
 				- Categórica ~ categórica
