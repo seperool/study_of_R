@@ -1,6 +1,6 @@
-ESCRITO EM 09/01/24
+ESCRITO EM 10/01/24
 ---
-PARA 10/01/24
+PARA 11/01/24
 ---
 Subir github:
 
@@ -18,10 +18,10 @@ Afazeres:
 					- Modelo de regressão logística
 						- Modelo
 							- Checagem de pressupostos
-								- Modelo ordinal
+								- Modelo ordinal <- (trabalhando)
 							- Modelagem
 								- Modelo ordinal
-								- Modelo multinomial <- (trabalhando)
+								- Modelo multinomial 
 					- Avaliando a significância dos parâmetros (Revisar)
 						- Explicar códigos (variável modelo)
 				- Categórica ~ categórica
