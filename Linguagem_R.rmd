@@ -7,17 +7,17 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
+  odt_document: 
+    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
-  word_document: 
-    toc: TRUE
-    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github
   github_document: 
-  odt_document: 
+  word_document: 
+    toc: TRUE
     number_sections: true
   html_document:
     number_sections: true
@@ -7525,7 +7525,7 @@ Exemplo definindo a categória de referência como filial A:\
       Explicação $H_0$: O modelo construido não preve nada, assim como o modelo nulo.\
       - $H_1$: Ajuste do modelo construido $\neq$ ajuste do modelo nulo, ou seja, $p \leq 0.05$.\
       Explicação $H_1$: Existe uma diferença entre os modelos, ou seja, o modelo construido é melhor que o modelo nulo, logo, consegue prever algo.\
-      - O valor de $p$ é dado pela elemento `Pr(chi)` na função `anova()`.\
+      - O valor de p-valor é dado pela elemento `Pr(chi)` na função `anova()`.\
 
 \newpage
 
@@ -7533,30 +7533,106 @@ Exemplo definindo a categória de referência como filial A:\
 
 \newpage
 
-##### Modelagem
+##### Modelagem \newline
 
-- Binomial:\
-  - Para gerar o modelo binomial, usamos a função `glm()`.\
-  - Sintaxe:\
-  `modelo_glm <- glm(Y ~ X1 + X2 + ..., family = binomial(link = 'logit'), data = dados)`\
-  Onde,\
-    - `modelo_glm` é a variável onde será armazenada o modelo;\
-    - `glm()` é a função de modelos lineares generalizados;\
-    - $Y$ é a variável dependente (categórica binomial, variável resposta);\
-    - $X_n$ são as variáveis independentes (numéricas, variáveis explicação);\
-    - *family* é o tipo de modelo de regressão logística, no caso, binomial com link a função `logit`;\
-    - *data* é o banco de dados.\
-  - Para extrair os coeficientes do modelo usamos a função `summary(modelo_glm)`.\
-  Onde,\
-  $$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável \cdot x$$
-    - $x$ é o valor da variável numérica.\
-    - É basicamente a equação da reta.\
-    - *Estimate* são os coeficientes: *intercept* e valor_variável.\
-    - *Pr* é o *p-valor*, neste caso *p-valor* deve ser **menor** que $0.05$ para ser estatísticamente significativo para o modelo de previsão.\
+###### Binomial
+
+- Para gerar o modelo binomial, usamos a função `glm()`.\
+- Sintaxe:\
+`modelo_glm <- glm(Y ~ X1 + X2 + ..., family = binomial(link = 'logit'), data = dados)`\
+Onde,\
+  - `modelo_glm` é a variável onde será armazenada o modelo;\
+  - `glm()` é a função de modelos lineares generalizados;\
+  - $Y$ é a variável dependente (categórica binomial, variável resposta);\
+  - $X_n$ são as variáveis independentes (numéricas, variáveis explicação);\
+  - *family* é o tipo de modelo de regressão logística, no caso, binomial com link a função `logit`;\
+  - *data* é o banco de dados.\
+- Para extrair os coeficientes do modelo usamos a função `summary(modelo_glm)`.\
+Onde,\
+$$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável \cdot x$$
+  - $x$ é o valor da variável numérica.\
+  - É basicamente a equação da reta.\
+  - *Estimate* são os coeficientes: *intercept* e valor_variável.\
+  - *Pr* é o *p-valor*, neste caso *p-valor* deve ser **menor** que $0.05$ para ser estatísticamente significativo para o modelo de previsão.\
+
+\newpage
   
-  
-- Ordinal:\
-- Multinomial:\
+###### Ordinal
+
+\newpage
+
+###### Multinomial
+- Para gerar o modelo multinomial, usamos a função `multinom()`, do pacote `nnet`.\
+- Sintaxe:\
+`modelo <- multinom(Y ~ X1 + X2 + X3 + ... , data = dados, model = TRUE)`\
+Onde,\
+$Y$ é a variável de resposta (categórica);\
+$X_n$ são as variáveis de explicação (numéricas);\
+`data` é o banco de dados;\
+`model` = `TRUE` para avaliar profundamente o modelo (pode ser omitido).\
+Usamos o $+$ para adicionar diversas analises de variáveis de explicação, simultaneamente.\
+- Exemplo:\
+`modelo <- multinom(Voto ~ ConfPol + LibEcon + Etnia, data = dados, model = TRUE)`\
+- Para extrair os coeficientes do modelo usamos a função `summary()` na variável com o modelo salvo.\
+`summary(modelo)`\
+
+$$y(x) = \ln{ \left( \frac{P(outro \, nível)}{P(nível \, de \, referência)} \right)} = intercept + valor\_variável \cdot x$$
+
+
+- Para obter a razão de chance fornecida pelo modelo usamos a função inversa do $\ln$ a $\exp$.\
+`exp(coef(mod))`\
+
+$$\frac{P(outro \, nível)}{P(nível \, de \, referência)} = e^{intercept + valor\_variável \cdot x} = exp \_ intercept + exp \_ valor\_variável^{x}$$
+
+
+\newpage
+
+- Exemplo para extrair os coeficientes e montar as equações:\
+  - Extrair coeficientes do modelo multinomial:\
+  `summary(modelo)`\
+  ```
+  #Call:
+  #multinom(formula = Voto ~ ConfPol + LibEcon + Etnia, data = dados, 
+  #        model = TRUE)
+  #Coefficients:
+  #                (Intercept)    ConfPol   LibEcon EtniaNão-Caucasiano
+  #Hillary Clinton   -4.314037  0.0190403 0.7055656            1.179179
+  #Outros            -1.742749 -0.1093051 0.2907171            1.563963
+  #Std. Errors:
+  #                (Intercept)    ConfPol    LibEcon EtniaNão-Caucasiano
+  #Hillary Clinton   0.8002395 0.08210046 0.10874035           0.5362631
+  #Outros            0.5865074 0.07842968 0.09636171           0.4945936
+  #Residual Deviance: 265.3559 
+  #AIC: 281.3559 
+  ```
+  - Obter a razão de chance do modelo multinomial:\
+  `exp(coef(modelo))`\
+  ```
+  #                  (Intercept)   ConfPol  LibEcon EtniaNão-Caucasiano
+  #Hillary Clinton  0.01337943 1.0192227 2.024992            3.251702
+  #Outros           0.17503850 0.8964569 1.337386            4.777719
+  ```
+  - Montando as equações:\
+    - Para o voto em Hillary Clinton as equações que descrevem (em relação ao voto no Donald Trump):\
+      - confPol (confiança na política):\
+      $$confPol(voto) = \ln{ \left[ \frac{Hillary}{Trump} \right] } = -4.31 + 0.019x$$
+      $$\frac{Hillary}{Trump} = e^{-4.31 + 0.019x} = 0.013 + 1.019^x$$
+      - LibEcon (liberalismo econômico):\
+      $$LibEcon(voto) = \ln{ \left[ \frac{Hillary}{Trump} \right] } = -4.31 + 0.7x$$
+      $$\frac{Hillary}{Trump} = e^{-4.31 + 0.7x} = 0.013 + 2.02^x$$
+      - EtniaNão-Caucasiano:\
+      $$EtniaNãoCaucasiano(voto) = \ln{ \left[ \frac{Hillary}{Trump} \right] } = -4.31 + 1.18x$$
+      $$\frac{Hillary}{Trump} = e^{-4.31 + 1.18x} = 0.013 + 3.25^x$$
+    - Para o voto em Outros as equações que descrevem (em relação ao voto no Donald Trump):\
+      - confPol (confiança na política):\
+      $$confPol(voto) = \ln{ \left[ \frac{Outros}{Trump} \right] } = -1.74 + -0.11x$$
+      $$\frac{Outros}{Trump} = e^{-1.74 + -0.11x} = 0.17 + 0.90^x$$
+      - LibEcon (liberalismo econômico):\
+      $$LibEcon(voto) = \ln{ \left[ \frac{Outros}{Trump} \right] } = -1.74 + 0.29x$$
+      $$\frac{Outros}{Trump} = e^{-1.74 + 0.29x} = 0.17 + 1.34^x$$
+      - EtniaNão-Caucasiano:\
+      $$EtniaNãoCaucasiano(voto) = \ln{ \left[ \frac{Outros}{Trump} \right] } = -1.74 + 1.56x$$
+      $$\frac{Outros}{Trump} = e^{-1.74 + 1.56x} = 0.17 + 4.78^x$$
 
 \newpage
 
