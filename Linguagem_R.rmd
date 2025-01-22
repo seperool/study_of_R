@@ -7,11 +7,11 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 #lot: true #adiciona lista de tabelas
 #toc-title: SUMÁRIO #nome do sumário
 output:
-  odt_document: 
-    number_sections: true
   pdf_document: 
     number_sections: true
     toc: false
+  odt_document: 
+    number_sections: true
   md_document:
     number_sections: true
     variant: markdown_github

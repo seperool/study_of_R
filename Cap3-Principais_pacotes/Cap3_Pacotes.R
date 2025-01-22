@@ -1,51 +1,51 @@
-install.packages("stringr") #Pacote para trabalhar com strings, texto
-install.packages("rmarkdown") #Pacote para fazer relatorio, rmd
-install.packages("distill") #Autor: url, affiliation e affiliation_url
-install.packages("knitr") #Interpretação e compilação do documento rmd, formato tabela kable
-install.packages("kableExtra") #Mais opções de formatação de tabelas kable
-install.packages("pander") #Converte R em pandoc, para gerar .md
-install.packages("xtable") #Ajuda a fazer tabela
-install.packages("data.table") #Manipulação de base de dados DataFrame
-install.packages("janitor") #Limpeza de dados
-install.packages("mice") #Substituir valores perdidos
-install.packages("DescTools") #Análise descritiva de forma rápida e completa
-install.packages("lubridate") #Transformar e extrair datas, funções para trabalhar com datas
-install.packages("devtools")
-install.packages("tidyverse") #Conjunto de pacotes para leitura, manipulação, exploração e compartilhamento de dados
-#ggplot2 (Elaboração de gráficos)
-#tibble (Estruturação de data.frame) 
-#tidyr (Organização de dados)
-#readr (Leitura de dados)
-#purrr (Programação funcional)
-#magrittr (Operador pipe "%>%", concatena linhas de comando)
-#dplyr (Manipulação de dados)
-install.packages("foreign") #Leitura de arquivos com extensão minitab, Octave, ...
+install.packages("stringr")       # Pacote para trabalhar com strings, texto
+install.packages("rmarkdown")    # Pacote para criar relatórios (arquivos .Rmd)
+install.packages("distill")      # Cria sites e blogs com ênfase em artigos científicos (autor, URL, afiliação)
+install.packages("knitr")        # Interpretação e compilação de documentos .Rmd, formatação de tabelas (kable)
+install.packages("kableExtra")   # Mais opções de formatação para tabelas kable
+install.packages("pander")       # Converte objetos R para formato Pandoc, para gerar .md
+install.packages("xtable")       # Ajuda na criação de tabelas LaTeX e HTML
+install.packages("data.table")   # Manipulação eficiente de data.frames (alta performance)
+install.packages("janitor")      # Limpeza e organização de dados
+install.packages("mice")         # Imputação de valores faltantes
+install.packages("DescTools")    # Análise descritiva rápida e completa
+install.packages("lubridate")    # Manipulação e extração de datas
+install.packages("devtools")     # Ferramentas para desenvolvimento de pacotes R
+install.packages("tidyverse")    # Conjunto de pacotes para ciência de dados (leitura, manipulação, visualização)
+# ggplot2                     # Criação de gráficos
+# tibble                      # Data frames mais modernos e consistentes
+# tidyr                       # Organização de dados (formato tidy)
+# readr                       # Leitura eficiente de dados
+# purrr                       # Programação funcional
+# magrittr                    # Operador pipe "%>%" (encadeamento de operações)
+# dplyr                       # Manipulação de dados (verbos para data frames)
+install.packages("foreign")      # Leitura de arquivos de outros softwares estatísticos (Minitab, Octave, etc.)
 
-#Pacotes auxiliares ggplot2
-install.packages("ggthemes") #Temas adicionais para gráficos
-install.packages("grid") #Adiciona funções gráficas ao sistema ggplot2 e é um pacote gráfico também
-install.packages("patchwork") #Layout, juntar ggplot no mesmo gráfico
-install.packages("RColorBrewer") #Pacote com paleta de cores para gráficos
-install.packages("extrafont") #Opções de fontes de texto para gráficos
-install.packages("showtext")
-install.packages("ggThemeAssist") #Interface gráfica (Addins) para editar elementos do tema 'ggplot2'
-install.packages("hrbrthemes") #Uma compilação de temas, escalas e utilitarios extras de `ggplot2`
-install.packages("esquisse") #Pacote para criação de gráficos (`ggplot2`) de maneira point and click
-install.packages("likert") #Opções de figuras no ggplot para itens com escala likert
+# Pacotes auxiliares ggplot2
+install.packages("ggthemes")     # Temas adicionais para gráficos
+install.packages("grid")         # Funções gráficas de baixo nível (base para ggplot2)
+install.packages("patchwork")    # Combinação de múltiplos gráficos ggplot2
+install.packages("RColorBrewer") # Paletas de cores para gráficos
+install.packages("extrafont")    # Suporte a fontes adicionais em gráficos
+install.packages("showtext")     # Renderização de fontes em gráficos
+install.packages("ggThemeAssist") # Interface gráfica para edição de temas ggplot2
+install.packages("hrbrthemes")    # Temas, escalas e utilitários extras para ggplot2
+install.packages("esquisse")     # Criação interativa de gráficos ggplot2 (point-and-click)
+install.packages("likert")       # Visualizações para escalas Likert em ggplot2
 
-#Conectores com banco de dados
-install.packages("DBI") #Conecta R ao sistema de gerenciamento de banco de dados (SGBD)
-install.packages("odbc") #Componentes de conexão/interação com bancos de dados
-install.packages("RSQLite") #Conexão com SQLite
-install.packages("RMySQL") #Conexão com MySQL e MariaDB
-install.packages("RMariaDB") #Conexão com MySQL e MariaDB
-install.packages("RPostgres") #Conexão com Postgres
-install.packages("RPostgreSQL") #Alternativo Conexão com PostgreSQL
-install.packages("bigrquery") #Conexão Google’s BigQuery
-install.packages("dbplyr") #Tradução de dplyr em dbplyr (SQL)
-install.packages("sqldf") #Permite manipular data.frame em R com instruções SQL
+# Conectores com banco de dados
+install.packages("DBI")          # Interface para bancos de dados
+install.packages("odbc")         # Conexão com bancos de dados via ODBC
+install.packages("RSQLite")      # Conexão com bancos de dados SQLite
+install.packages("RMySQL")       # Conexão com bancos de dados MySQL e MariaDB (pacote mais antigo)
+install.packages("RMariaDB")     # Conexão com bancos de dados MariaDB (recomendado para MariaDB)
+install.packages("RPostgres")    # Conexão com bancos de dados PostgreSQL (recomendado)
+install.packages("RPostgreSQL")  # Conexão com bancos de dados PostgreSQL (alternativo, menos atualizado)
+install.packages("bigrquery")    # Conexão com Google BigQuery
+install.packages("dbplyr")       # Tradução de código dplyr para SQL
+install.packages("sqldf")        # Execução de queries SQL em data.frames
 
-#Regressão
-install.packages("MASS") #Função 'stdres' para obter residos padronizados - regressão logística
-install.packages("psych") #Função 'pairs.panels' para analise de multicolinearidade - regressão logística
-install.packages("nnet") #Modelos de regressão logística multinomial - Função ''multinom'
+# Regressão
+install.packages("MASS")         # Funções estatísticas, incluindo `stdres` para resíduos padronizados
+install.packages("psych")        # Funções para análise psicométrica, incluindo `pairs.panels` para multicolinearidade
+install.packages("nnet")         # Modelos de regressão logística multinomial (`multinom`)
