@@ -1,16 +1,27 @@
-#navegação pelo sistema
-getwd() #pwd
-setwd("caminho/") #cd
-dir() #ls
+###################################### OS ######################################
 
-#arquivos
-file.create("novo_arquivo") #cria um novo arquivo
-file.exists("arquivo") #existe este arquivo? TRUE ou FALSE
-file.rename("old","new") #altera nome de arquivo
-file.copy("arquivo","caminho_novo/") #copia o arquivo para um novo diretorio
-file.remove("arquivo") #remove o arquivo nomeado
+###########################
+# Navegação pelo sistema
+###########################
 
-#diretorios
-dir.create("novo_diretorio") #cria um novo diretorio
-dir.exists("diretorio") #existe o diretorio? TRUE ou FALSE
-unlink("caminho_diretorio/",recursive = TRUE) #deleta um diretorio
+getwd()                                       # Mostra diretório atual (pwd)
+setwd("caminho/")                             # Muda diretório (cd)
+dir()                                         # Lista arquivos/diretórios (ls)
+
+###########################
+# Arquivos
+###########################
+
+file.create("novo_arquivo")                   # Cria arquivo
+file.exists("arquivo")                        # Verifica se arquivo existe (retorna TRUE ou FALSE)
+file.rename("old","new")                      # Renomeia arquivo (exemplo: de "old" para "new")
+file.copy("arquivo","caminho_novo/")          # Copia arquivo
+file.remove("arquivo")                        # Remove arquivo
+
+###########################
+# Diretórios
+###########################
+
+dir.create("novo_diretorio")                  # Cria diretório
+dir.exists("diretorio")                       # Verifica se diretório existe (retorna TRUE ou FALSE)
+unlink("caminho_diretorio/",recursive = TRUE) # Deleta diretório (recursive = TRUE remove subdiretórios e arquivos dentro)
